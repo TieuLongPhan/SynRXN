@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "synrxn"
+version = "0.0.3"
+authors = [
+    { name = "Tieu Long Phan", email = "tieu@bioinf.uni-leipzig.de" }
+]
+description = "Reaction Database for benchmarking"
+readme = "README.md"
+long-description = { file = "CHANGELOG.md" }
+long-description-content-type = "text/markdown"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+# Core runtime dependencies
+dependencies = [
+    "synkit>=1.0.1",
+    "huggingface_hub",
+]
+
+[project.optional-dependencies]
+all = ["numpy>=2.2.0", "pandas>=1.5.3"]
+docs = [
+  "sphinx>=6.0",
+  "sphinx-rtd-theme",
+  "sphinxcontrib-bibtex",
+]
+
+[project.urls]
+homepage = "https://github.com/TieuLongPhan/synrxn"
+source = "https://github.com/TieuLongPhan/synrxn"
+issues = "https://github.com/TieuLongPhan/synrxn/issues"
+documentation = "https://synrxn.readthedocs.io/en/latest/"
+
+# ------------------------------
+# Hatch build configuration
+# ------------------------------
+# Tell hatch explicitly which package(s) to include in the wheel. Adjust
+# the value of `packages` to match your repository layout (see notes below).
+[tool.hatch.build.targets.wheel]
+# If your package lives at the top-level as `synrxn/`, use:
+packages = ["synrxn"]
+
+# Include extra top-level files in the wheel (useful when metadata references them)
+include = [
+  "README.md",
+  "CHANGELOG.md",
+  "LICENSE",
+]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "synrxn",
+  "README.md",
+  "CHANGELOG.md",
+  "LICENSE",
+]

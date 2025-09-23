@@ -1,0 +1,2 @@
+synkit>=1.0.1
+huggingface_hub
