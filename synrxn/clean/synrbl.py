@@ -35,7 +35,7 @@ def clean_synrbl(
 
     :raises ValueError: if the required column ``expected_reaction`` is missing.
     """
-    
+
     if std is None:
         from synkit.Chem.Reaction.standardize import Standardize
 
@@ -44,15 +44,12 @@ def clean_synrbl(
     if drop_cols is None:
         drop_cols = ["R-ids", "wrong_reactions"]
 
-    
     df = data.copy()
 
-    
     cols_to_drop = [c for c in drop_cols if c in df.columns]
     if cols_to_drop:
         df = df.drop(columns=cols_to_drop)
 
-    
     if "expected_reaction" not in df.columns:
         raise ValueError("Input dataframe must contain an 'expected_reaction' column.")
     df = df.dropna(subset=["expected_reaction"])
@@ -61,15 +58,14 @@ def clean_synrbl(
 
     for idx, row in df.iterrows():
         rec: Dict[str, Any] = {}
-        
+
         rec["R-id"] = row.get("id", idx)
 
-        
         gt_raw = row["expected_reaction"]
         gt_err: Optional[str] = None
         try:
             rec["ground_truth"] = std.fit(gt_raw)
-        except Exception as exc:  
+        except Exception as exc:
             logger.exception(
                 "Standardization failed for ground_truth at R-id=%s", rec["R-id"]
             )
