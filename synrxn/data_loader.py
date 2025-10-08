@@ -1,331 +1,349 @@
-"""
-dataloader.py
---------------------
+# synrxn/data_loader.py
+"""SynRXN DataLoader: object-oriented loader for datasets hosted in the SynRXN GitHub repo.
 
-An object-oriented DataLoader for downloading dataset files from a Hugging Face
-dataset repository (e.g. "TieuLongPhan/rxndb").
+The loader fetches files from the public raw tree (default:
+https://github.com/TieuLongPhan/SynRXN/raw/refs/heads/main/Data).
+Files are expected under Data/<task>/<name>.csv(.gz).
 
-Notes
------
-* The docstrings use Sphinx/reST field lists (``:param:``, ``:type:``, ``:returns:``,
-  ``:rtype:``, ``:raises:``) so they work well with Sphinx (autodoc) + Napoleon.
-* Authentication: set environment variable ``HUGGINGFACE_TOKEN`` for private repos,
-  or run ``huggingface-cli login``.
-* Requirements: ``huggingface_hub`` (install with `pip install huggingface_hub`).
+Example
+-------
+>>> from synrxn.data_loader import DataLoader
+>>> dl = DataLoader(task="aam")
+>>> dl.print_names()
+>>> df = dl.load("ecoli")
 """
 
 from __future__ import annotations
-
-import hashlib
-import json
-import logging
-import re
-import shutil
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Dict, Iterable, List, Optional
+import io
+import difflib
+import math
+import requests
+import pandas as pd
 
-from huggingface_hub import HfApi, hf_hub_download
-
-
-__all__ = ["DataLoader"]
+# Default raw base (public)
+_RAW_BASE_TPL = "https://github.com/{owner}/{repo}/raw/refs/heads/{branch}/Data"
+# Default GitHub Contents API base for listing files
+_API_BASE_TPL = (
+    "https://api.github.com/repos/{owner}/{repo}/contents/Data/{task}?ref={branch}"
+)
 
 
 class DataLoader:
     """
-    Object-oriented DataLoader for Hugging Face dataset repositories.
+    Object-oriented loader for CSV(.gz) datasets stored in a GitHub repo Data/ tree.
 
-    The typical usage pattern is to instantiate the loader once (configure repo,
-    prefix, extension, cache directory) and then call :meth:`download` with only
-    a single `data_name` parameter (e.g., "SYNTEMP", "synTemp", "syntemp").
-
-    :param repo_id: Hugging Face dataset repo id (user/repo). Default: "TieuLongPhan/rxndb".
-    :type repo_id: str
-    :param prefix: Folder inside the dataset repo containing files. Trailing slash
-        is optional. Default: "Data/".
-    :type prefix: str
-    :param ext: File extension appended to normalized names. Default: ".csv.gz".
-    :type ext: str
-    :param out_dir: Local directory to copy downloaded files to. If None, uses
-        "~/.cache/synrxn/<repo_id>/". Default: None.
-    :type out_dir: Path | str | None
-    :param revision: Repo revision (branch, tag, commit). Default: "main".
-    :type revision: str
-    :param use_manifest: If True, attempt to load "<prefix>/manifest.json" for
-        SHA-256 verification. Default: True.
-    :type use_manifest: bool
-    :param alias_map: Optional mapping of alias -> canonical names. Keys/values
-        will be normalized. Example: {"syn-temp": "syntemp"}.
-    :type alias_map: dict[str, str] | None
-
-    Example
-    -------
-    Basic usage (only change `data_name`):
-
-    .. code-block:: python
-
-        from rxndb_dataloader import DataLoader
-
-        dl = DataLoader()
-        local_path = dl.download("SYNTEMP")
-        print(local_path)
-
-    :notes: If the repository is private, set HUGGINGFACE_TOKEN in the environment.
+    :param task: Subfolder under `Data/` (e.g. "aam", "rbl", "class", "prop", "synthesis").
+    :param cache_dir: Optional path to cache downloaded gz bytes. If provided, cached files are
+                      stored as ``{task}__{name}.csv.gz``.
+    :param owner: GitHub owner (default: "TieuLongPhan").
+    :param repo: GitHub repository name (default: "SynRXN").
+    :param branch: Branch/ref to use (default: "main").
+    :param timeout: HTTP request timeout in seconds (default: 20).
+    :param user_agent: HTTP User-Agent header (default: "DataLoader/1.0").
     """
 
     def __init__(
         self,
-        repo_id: str = "TieuLongPhan/rxndb",
-        prefix: str = "Data/",
-        ext: str = ".csv.gz",
-        out_dir: Optional[Path | str] = None,
-        revision: str = "main",
-        use_manifest: bool = True,
-        alias_map: Optional[Dict[str, str]] = None,
+        task: str,
+        cache_dir: Optional[Path] = None,
+        owner: str = "TieuLongPhan",
+        repo: str = "SynRXN",
+        branch: str = "main",
+        timeout: int = 20,
+        user_agent: str = "DataLoader/1.0",
+        max_workers: int = 6,
     ) -> None:
-        # repo + path configuration
-        self.repo_id = repo_id
-        self.prefix = prefix.rstrip("/") + "/" if prefix else ""
-        self.ext = ext if ext.startswith(".") else f".{ext}"
-        self.revision = revision
-
-        # HF API helper
-        self.api = HfApi()
-
-        # output/caching directory (deterministic)
-        self.out_dir = (
-            Path(out_dir)
-            if out_dir
-            else Path.home() / ".cache" / "synrxn" / repo_id.replace("/", "_")
+        self.task = str(task).strip("/")
+        self.owner = owner
+        self.repo = repo
+        self.branch = branch
+        self.timeout = int(timeout)
+        self.headers = {"User-Agent": user_agent}
+        self._raw_base = _RAW_BASE_TPL.format(
+            owner=self.owner, repo=self.repo, branch=self.branch
         )
-        self.out_dir.mkdir(parents=True, exist_ok=True)
-
-        # manifest & alias handling
-        self.use_manifest = bool(use_manifest)
-        self._manifest: Optional[Dict[str, Any]] = None
-        self.alias_map = {
-            self._normalize(k): self._normalize(v) for k, v in (alias_map or {}).items()
-        }
-
-        # logging
-        self.log = logging.getLogger(self.__class__.__name__)
-        if not self.log.handlers:
-            handler = logging.StreamHandler()
-            handler.setFormatter(logging.Formatter("%(levelname)s: %(message)s"))
-            self.log.addHandler(handler)
-        self.log.setLevel(logging.INFO)
-
-        # try to load manifest if requested
-        if self.use_manifest:
-            self._try_load_manifest()
-
-    def download(self, data_name: str, overwrite: bool = False) -> Path:
-        """
-        Download a single dataset file by name and return its local path.
-
-        :param data_name: Data handle to download (e.g. "SynTemp", "syntemp", "SYNTEMP").
-                          The name will be normalized (lowercase, alphanumeric).
-        :type data_name: str
-        :param overwrite: If True, replace local file even if it exists and passes checksum.
-        :type overwrite: bool
-        :returns: Local path to the downloaded file (inside ``out_dir``).
-        :rtype: pathlib.Path
-        :raises FileNotFoundError: If the resolved remote file does not exist.
-        :raises IOError: If checksum verification fails when a manifest is available.
-        """
-        canonical = self._canonical_name(data_name)
-        remote_path = f"{self.prefix}{canonical}{self.ext}"
-
-        if not self._exists_remote(remote_path):
-            raise FileNotFoundError(
-                f"Remote file not found: {remote_path} in {self.repo_id} (rev={self.revision})"
-            )
-
-        self.log.info(
-            "Downloading %s from %s (rev=%s)", remote_path, self.repo_id, self.revision
+        self._api_url = _API_BASE_TPL.format(
+            owner=self.owner, repo=self.repo, task=self.task, branch=self.branch
         )
-        # this returns a path inside HF cache
-        cached = hf_hub_download(
-            repo_id=self.repo_id,
-            filename=remote_path,
-            repo_type="dataset",
-            revision=self.revision,
+        self.cache_dir: Optional[Path] = (
+            Path(cache_dir).expanduser().resolve() if cache_dir is not None else None
+        )
+        if self.cache_dir:
+            self.cache_dir.mkdir(parents=True, exist_ok=True)
+
+        self.max_workers = int(max_workers)
+        # in-memory cache of available names (populated on first call)
+        self._names_cache: Optional[List[str]] = None
+
+    # ---------------------------
+    # Representations & OOP niceties
+    # ---------------------------
+    def __repr__(self) -> str:
+        return (
+            f"DataLoader(task={self.task!r}, owner={self.owner!r}, repo={self.repo!r}, "
+            f"branch={self.branch!r}, cache_dir={str(self.cache_dir) if self.cache_dir else None})"
         )
 
-        dest = self.out_dir / f"{canonical}{self.ext}"
+    def __str__(self) -> str:
+        return f"<DataLoader {self.owner}/{self.repo}@{self.branch} task={self.task}>"
 
-        # if already exists and not overwriting, verify (if manifest provided) or return
-        if dest.exists() and not overwrite:
-            expected = self._expected_sha(f"{canonical}{self.ext}")
-            if expected:
-                actual = self._sha256(dest)
-                if actual.lower() == expected.lower():
-                    self.log.info("Local file exists and checksum OK: %s", dest)
-                    return dest
-                self.log.warning(
-                    "Local checksum mismatch; will overwrite from cache: %s", dest
-                )
-            else:
-                self.log.info(
-                    "Local file exists; returning without checksum verification: %s",
-                    dest,
-                )
-                return dest
+    def __len__(self) -> int:
+        """Number of available datasets in this task (0 if unknown until fetched)."""
+        return len(self.names)
 
-        # copy from HF cache to deterministic location
-        shutil.copyfile(cached, dest)
-        self.log.info("Copied to %s", dest)
+    def __contains__(self, name: str) -> bool:
+        """Support ``name in dl`` checks against available names."""
+        return name in self.names
 
-        # verify checksum if manifest is present
-        expected = self._expected_sha(f"{canonical}{self.ext}")
-        if expected:
-            actual = self._sha256(dest)
-            if actual.lower() != expected.lower():
-                dest.unlink(missing_ok=True)
-                raise IOError(
-                    f"Checksum mismatch for {dest.name}: expected {expected}, got {actual}"
-                )
-            self.log.info("Checksum OK for %s", dest.name)
+    def __iter__(self):
+        """Iterate over available dataset base names."""
+        yield from self.names
 
-        return dest
+    # ---------------------------
+    # Properties
+    # ---------------------------
+    @property
+    def raw_base(self) -> str:
+        """Return computed raw base URL for this loader."""
+        return self._raw_base
 
-    def available(self) -> List[str]:
+    @property
+    def api_url(self) -> str:
+        """Return computed GitHub Contents API URL for this task."""
+        return self._api_url
+
+    @property
+    def names(self) -> List[str]:
         """
-        Return a sorted list of available (normalized) dataset names under the
-        configured prefix and extension.
+        Return the cached list of available dataset base names for the task.
 
-        :returns: Sorted list of canonical dataset names.
-        :rtype: list[str]
+        This property triggers a request to the GitHub Contents API on first access and
+        caches the result in memory.
+
+        :return: sorted list of dataset base names (without extension).
         """
-        files = self._list_remote_files()
-        names = []
-        for f in files:
-            if not f.startswith(self.prefix):
-                continue
-            base = Path(f).name
-            if base.endswith(self.ext):
-                name = base[: -len(self.ext)]
-                names.append(self._normalize(name))
-        return sorted(set(names))
+        return self.available_names()
 
-    # ---------------------------- Internal helpers ----------------------------
+    # ---------------------------
+    # Internal helpers
+    # ---------------------------
+    def _raw_urls_for(self, name: str) -> Dict[str, str]:
+        base = f"{self.raw_base}/{self.task}/{name}"
+        return {".csv.gz": f"{base}.csv.gz", ".csv": f"{base}.csv"}
 
-    def _canonical_name(self, raw: str) -> str:
-        """Normalize and apply alias map to get canonical dataset name."""
-        n = self._normalize(raw)
-        return self.alias_map.get(n, n)
-
-    @staticmethod
-    def _normalize(s: str) -> str:
-        """
-        Normalize dataset name to a canonical lowercase alphanumeric string.
-
-        Examples
-        --------
-        >>> DataLoader._normalize("SynTemp")
-        'syntemp'
-        >>> DataLoader._normalize("syn temp!!")
-        'syntemp'
-
-        :param s: input string to normalize
-        :type s: str
-        :returns: normalized string
-        :rtype: str
-        """
-        s = (s or "").lower()
-        return re.sub(r"[^a-z0-9]+", "", s)
-
-    def _try_load_manifest(self) -> None:
-        """
-        Attempt to download and parse '<prefix>manifest.json' from the repo.
-        If unavailable, the loader will continue without checksums.
-
-        :returns: None
-        """
-        manifest_remote = f"{self.prefix}manifest.json"
-        try:
-            local_manifest = hf_hub_download(
-                repo_id=self.repo_id,
-                filename=manifest_remote,
-                repo_type="dataset",
-                revision=self.revision,
-            )
-            with open(local_manifest, "r", encoding="utf-8") as fh:
-                self._manifest = json.load(fh)
-            self.log.info(
-                "Loaded manifest.json (entries: %d)",
-                len(self._manifest.get("files", [])),
-            )
-        except Exception:
-            # manifest is optional — continue without it
-            self._manifest = None
-            self.log.debug(
-                "No manifest.json found at %s (rev=%s)", manifest_remote, self.revision
-            )
-
-    def _expected_sha(self, filename: str) -> Optional[str]:
-        """
-        Return expected sha256 for a filename (basename or prefixed path) from manifest.
-
-        :param filename: filename (basename or prefixed) to look up in manifest
-        :type filename: str
-        :returns: hex sha256 digest or None if not found
-        :rtype: str | None
-        """
-        if not self._manifest:
+    def _cache_path_for(self, name: str) -> Optional[Path]:
+        if not self.cache_dir:
             return None
-        files = self._manifest.get("files", []) or []
-        for entry in files:
-            path = entry.get("path") or entry.get("filename") or entry.get("name")
-            if not path:
-                continue
-            if (
-                path == filename
-                or path == f"{self.prefix}{filename}"
-                or Path(path).name == Path(filename).name
-            ):
-                return (entry.get("sha256") or entry.get("hash") or "").strip() or None
-        return None
+        return (self.cache_dir / f"{self.task}__{name}.csv.gz").resolve()
 
-    def _exists_remote(self, path_in_repo: str) -> bool:
+    # ---------------------------
+    # Public API: names & suggestions
+    # ---------------------------
+    def available_names(self, refresh: bool = False) -> List[str]:
         """
-        Check remote existence by listing repo files and testing membership.
+        Fetch and return a sorted list of available dataset base names for this task using
+        the GitHub Contents API.
 
-        :param path_in_repo: full path inside repo (including prefix)
-        :type path_in_repo: str
-        :returns: True if path exists remotely
-        :rtype: bool
+        The result is cached in memory and refreshed only when ``refresh=True`` is provided.
+
+        :param refresh: Force refresh from GitHub (default: False).
+        :return: Sorted list of dataset base names (no extensions).
         """
+        if self._names_cache is not None and not refresh:
+            return list(self._names_cache)
+
         try:
-            files = self._list_remote_files()
-            return path_in_repo in files
-        except Exception:
-            return False
+            r = requests.get(self.api_url, headers=self.headers, timeout=self.timeout)
+            r.raise_for_status()
+            items = r.json()
+            names = set()
+            for it in items:
+                nm = it.get("name", "")
+                if nm.endswith(".csv.gz"):
+                    names.add(nm[: -len(".csv.gz")])
+                elif nm.endswith(".csv"):
+                    names.add(nm[: -len(".csv")])
+            self._names_cache = sorted(names)
+            return list(self._names_cache)
+        except requests.RequestException:
+            # On failure (rate-limit, network, etc.) return empty cache (but keep it cached)
+            self._names_cache = []
+            return []
 
-    def _list_remote_files(self) -> List[str]:
+    def refresh_names(self) -> List[str]:
         """
-        List files in the dataset repo at the configured revision.
+        Force re-fetch available names from GitHub and return them.
 
-        :returns: list of file paths in the repo
-        :rtype: list[str]
+        :return: list of available names after refresh.
         """
-        return self.api.list_repo_files(
-            repo_id=self.repo_id, repo_type="dataset", revision=self.revision
-        )
+        return self.available_names(refresh=True)
 
-    @staticmethod
-    def _sha256(p: Path, chunk_size: int = 1 << 20) -> str:
+    def suggest(self, name: str, n: int = 5) -> List[str]:
         """
-        Compute SHA-256 of a local file.
+        Return close matches for ``name`` based on currently available names.
 
-        :param p: path to file
-        :type p: pathlib.Path
-        :param chunk_size: read chunk size in bytes
-        :type chunk_size: int
-        :returns: hex digest string
-        :rtype: str
+        :param name: requested dataset base name.
+        :param n: maximum number of suggestions to return.
+        :return: list of suggested names (possibly empty).
         """
-        h = hashlib.sha256()
-        with open(p, "rb") as fh:
-            for chunk in iter(lambda: fh.read(chunk_size), b""):
-                h.update(chunk)
-        return h.hexdigest()
+        names = self.available_names()
+        if not names:
+            return []
+        return difflib.get_close_matches(name, names, n=n, cutoff=0.4)
+
+    def print_names(self, cols: int = 3, show_count: bool = True) -> None:
+        """
+        Pretty-print available dataset names in columns.
+
+        :param cols: Number of columns to display (default: 3).
+        :param show_count: Whether to show a header with the count (default: True).
+        :return: None
+        """
+        names = self.available_names()
+        if show_count:
+            print(f"Datasets in task '{self.task}': {len(names)}")
+        if not names:
+            print("  (no names found or API rate-limited)")
+            return
+        # column layout
+        rows = math.ceil(len(names) / cols)
+        # pad to full matrix
+        padded = names + [""] * (rows * cols - len(names))
+        # fmt: off
+        matrix = [padded[i: i + rows] for i in range(0, rows * cols, rows)]
+        # fmt: on
+        # print rows
+        for r in range(rows):
+            row_items = [matrix[c][r].ljust(30) for c in range(cols) if matrix[c][r]]
+            print("  " + "  ".join(row_items))
+
+    # ---------------------------
+    # Main loading functions
+    # ---------------------------
+    def load(
+        self,
+        name: str,
+        use_cache: bool = True,
+        dtype: Optional[Dict[str, object]] = None,
+        **pd_kw,
+    ) -> pd.DataFrame:
+        """
+        Load ``Data/<task>/<name>.csv.gz`` (preferred) or ``.csv`` from the repository raw tree.
+
+        :param name: Base filename without extension (e.g. ``"ecoli"``).
+        :param use_cache: If True and ``cache_dir`` was provided, use local cached gz bytes when present.
+        :param dtype: Optional dtype mapping forwarded to :func:`pandas.read_csv`.
+        :param pd_kw: Additional keyword arguments forwarded to :func:`pandas.read_csv`.
+        :return: pandas.DataFrame with the loaded dataset.
+        :raises FileNotFoundError: If both ``.csv.gz`` and ``.csv`` cannot be fetched (404 or other HTTP error).
+        """
+        urls = self._raw_urls_for(name)
+
+        # check cache first (only gz cache is stored)
+        cache_path = self._cache_path_for(name)
+        if use_cache and cache_path is not None and cache_path.exists():
+            return pd.read_csv(cache_path, compression="gzip", dtype=dtype, **pd_kw)
+
+        last_err = None
+        for ext in [".csv.gz", ".csv"]:
+            url = urls[ext]
+            try:
+                resp = requests.get(url, headers=self.headers, timeout=self.timeout)
+            except requests.RequestException as e:
+                last_err = e
+                continue
+
+            if resp.status_code == 200:
+                content = resp.content
+                # cache gz bytes if applicable
+                if use_cache and cache_path is not None and ext == ".csv.gz":
+                    try:
+                        cache_path.write_bytes(content)
+                    except Exception:
+                        # ignore caching failures
+                        pass
+
+                buf = io.BytesIO(content)
+                if ext == ".csv.gz":
+                    return pd.read_csv(buf, compression="gzip", dtype=dtype, **pd_kw)
+                else:
+                    return pd.read_csv(buf, compression=None, dtype=dtype, **pd_kw)
+            else:
+                last_err = RuntimeError(f"HTTP {resp.status_code} for {url}")
+
+        # both attempts failed — compose helpful message with available names and suggestions
+        avail = self.available_names(refresh=True)
+        suggestions = self.suggest(name) if avail else []
+        tried = [urls[".csv.gz"], urls[".csv"]]
+        msg_lines = [
+            f"Failed to fetch dataset '{name}' for task '{self.task}'.",
+            "Tried URLs (in order):",
+        ] + [f"  {u}" for u in tried]
+
+        if avail:
+            msg_lines.append("")
+            msg_lines.append("Available dataset names (from GitHub API):")
+            if len(avail) > 200:
+                msg_lines.append(f"  (showing first 200 of {len(avail)}):")
+                avail_display = avail[:200]
+            else:
+                avail_display = avail
+            msg_lines += [f"  {n}" for n in avail_display]
+
+            if suggestions:
+                msg_lines.append("")
+                msg_lines.append(f"Did you mean: {suggestions} ?")
+
+        msg_lines.append("")
+        msg_lines.append(f"Last error: {last_err!s}")
+
+        raise FileNotFoundError("\n".join(msg_lines))
+
+    def load_many(
+        self,
+        names: Iterable[str],
+        use_cache: bool = True,
+        dtype: Optional[Dict[str, object]] = None,
+        parallel: bool = True,
+        **pd_kw,
+    ) -> Dict[str, pd.DataFrame]:
+        """
+        Load multiple datasets and return a mapping name -> DataFrame.
+
+        :param names: Iterable of dataset base names to load.
+        :param use_cache: If True, use cached gz bytes when present (default True).
+        :param dtype: Optional dtype mapping forwarded to pandas.read_csv.
+        :param parallel: If True, load in parallel using threads (default True).
+        :param pd_kw: Additional kwargs forwarded to pandas.read_csv.
+        :return: dict mapping each requested name to its loaded DataFrame.
+        :raises RuntimeError: if any single dataset load raises an exception it will be re-raised
+                              wrapped in a RuntimeError containing the failing name.
+        """
+        names_list = list(names)
+        results: Dict[str, pd.DataFrame] = {}
+
+        if not parallel or self.max_workers <= 1 or len(names_list) == 1:
+            for nm in names_list:
+                try:
+                    results[nm] = self.load(
+                        nm, use_cache=use_cache, dtype=dtype, **pd_kw
+                    )
+                except Exception as e:
+                    raise RuntimeError(f"Failed to load {self.task}/{nm}: {e}") from e
+            return results
+
+        with ThreadPoolExecutor(max_workers=self.max_workers) as ex:
+            futures = {
+                ex.submit(self.load, nm, use_cache, dtype, **pd_kw): nm
+                for nm in names_list
+            }
+            for fut in as_completed(futures):
+                nm = futures[fut]
+                try:
+                    results[nm] = fut.result()
+                except Exception as e:
+                    raise RuntimeError(f"Failed to load {self.task}/{nm}: {e}") from e
+        return results
