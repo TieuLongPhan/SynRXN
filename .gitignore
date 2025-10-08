@@ -206,5 +206,8 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-Data/*
-*.ipynb
+# Data/*
+
+script/chemprop_zenodo/*
+
+test.ipynb
