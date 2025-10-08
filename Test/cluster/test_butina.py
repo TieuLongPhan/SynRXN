@@ -19,7 +19,7 @@ class TestButinaClusterer(unittest.TestCase):
     def test_fit_requires_input(self):
         c = ButinaClusterer()
         with self.assertRaises(ValueError):
-            c.fit()  
+            c.fit()
 
     def test_fit_sim_validation(self):
         c = ButinaClusterer()
@@ -87,7 +87,7 @@ class TestButinaClusterer(unittest.TestCase):
         self.assertEqual(sorted_clusters, [[0], [1]])
 
     def test_min_cluster_size_filtering(self):
-        
+
         sim = np.array(
             [
                 [1.0, 0.95, 0.95, 0.0],
@@ -115,7 +115,7 @@ class TestButinaClusterer(unittest.TestCase):
         )
         c_sorted = ButinaClusterer(cutoff=0.9, sort_clusters=True)
         c_sorted.fit(sim=sim)
-        self.assertEqual(c_sorted.get_clusters()[0], [0, 1, 2])  
+        self.assertEqual(c_sorted.get_clusters()[0], [0, 1, 2])
 
         c_unsorted = ButinaClusterer(cutoff=0.9, sort_clusters=False)
         c_unsorted.fit(sim=sim)
@@ -135,10 +135,10 @@ class TestButinaClusterer(unittest.TestCase):
         sim = ButinaClusterer._tanimoto_matrix(X)
 
         self.assertAlmostEqual(sim[0, 1], 1.0 / 3.0)
-        
+
         self.assertEqual(sim[2, 0], 0.0)
         self.assertEqual(sim[2, 1], 0.0)
-       
+
         row_nonzero = X.astype(bool).sum(axis=1) > 0
         expected_diag = np.where(row_nonzero, 1.0, 0.0)
         assert_allclose(np.diag(sim), expected_diag)
