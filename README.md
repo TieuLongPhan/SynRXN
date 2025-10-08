@@ -5,8 +5,8 @@
 [![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.17297258.svg)](https://doi.org/10.5281/zenodo.17297258)
 [![CI](https://github.com/tieulongphan/synrxn/actions/workflows/test-and-lint.yml/badge.svg?branch=main)](https://github.com/tieulongphan/synrxn/actions/workflows/test-and-lint.yml)
 [![Stars](https://img.shields.io/github/stars/tieulongphan/synrxn.svg?style=social&label=Star)](https://github.com/tieulongphan/synrxn/stargazers)
-**Reaction Database for Benchmarking**
 
+**Reaction Database for Benchmarking**
 SynRXN is a curated, provenance-tracked collection of reaction datasets and evaluation manifests designed for reproducible benchmarking of reaction-informatics tasks (rebalancing, atom-atom mapping, reaction classification, property prediction, and synthesis/retrosynthesis). It provides standardized splits, manifest files (RNG seeds & split indices), and lightweight utilities to load and inspect datasets for fair, reproducible model comparison.
 
 
