@@ -1,4 +1,3 @@
-# synrxn/data_loader.py
 """SynRXN DataLoader: object-oriented loader for datasets hosted in the SynRXN GitHub repo.
 
 The loader fetches files from the public raw tree (default:
