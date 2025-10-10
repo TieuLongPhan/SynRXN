@@ -41,12 +41,12 @@ jobs:
           echo "PWD: $(pwd)"
           echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
           git rev-parse --abbrev-ref HEAD || true
-          echo "Repository listing (top 200 files):"
-          find . -maxdepth 5 -type f -not -path "./.git/*" | sed -n '1,200p' || true
+          echo "Repository listing (depth 4):"
+          find . -maxdepth 4 -type f -not -path "./.git/*" | sed -n '1,200p' || true
           echo "Looking for manifest/verify scripts:"
           find . -iname "build_manifest.py" -o -iname "verify_manifest.py" -o -iname "build_citation_from_manifest.py" -print || true
 
-      - name: Build manifest (flexible)
+      - name: Build manifest (try common locations)
         id: build_manifest
         run: |
           set -euo pipefail
@@ -54,119 +54,117 @@ jobs:
           OUT="${{ env.MANIFEST_OUT }}"
           PYPROJECT="${{ env.PYPROJECT }}"
 
-          try_run() {
-            SCRIPT_PATH="$1"
-            shift
-            if [ -f "$SCRIPT_PATH" ]; then
-              echo "Running $SCRIPT_PATH $*"
-              python "$SCRIPT_PATH" "$@"
+          run_if_exists() {
+            local script="$1"; shift
+            if [ -f "$script" ]; then
+              echo "Running $script $*"
+              python "$script" "$@"
               return 0
             fi
             return 1
           }
 
-          if try_run "./build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
+          # try a few likely script locations
+          if run_if_exists "./build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
             exit 0
           fi
 
-          if try_run "./synrxn/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
+          if run_if_exists "./synrxn/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
             exit 0
           fi
 
-          if try_run "./scripts/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
+          if run_if_exists "./scripts/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
             exit 0
           fi
 
+          # try install-and-run as module if packaging files exist
           if [ -f "./pyproject.toml" ] || [ -f "./setup.py" ] || [ -f "./setup.cfg" ]; then
-            echo "Detected packaging files. Installing package in editable mode..."
+            echo "Detected packaging files — installing in editable mode..."
             pip install -e .
-            if python -c "import importlib, sys; importlib.import_module('synrxn.build_manifest')" 2>/dev/null; then
-              echo "Running as module: python -m synrxn.build_manifest ..."
+            if python -c "import importlib; importlib.import_module('synrxn.build_manifest')" 2>/dev/null; then
               python -m synrxn.build_manifest --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose
               exit 0
             fi
           fi
 
-          echo "ERROR: Could not find a build_manifest entrypoint. Searched: ./build_manifest.py, ./synrxn/build_manifest.py, ./scripts/build_manifest.py and python -m synrxn.build_manifest"
+          echo "ERROR: build_manifest entrypoint not found (searched ./build_manifest.py, ./synrxn/build_manifest.py, ./scripts/build_manifest.py, or python -m synrxn.build_manifest)."
           exit 1
 
-      - name: Verify manifest (flexible)
+      - name: Verify manifest (try common locations, optional)
         id: verify_manifest
         run: |
           set -euo pipefail
           MANIFEST="${{ env.MANIFEST_OUT }}"
           ROOT="${{ env.MANIFEST_ROOT }}"
 
-          try_run() {
-            SCRIPT="$1"; shift
-            if [ -f "$SCRIPT" ]; then
-              echo "Running $SCRIPT $*"
-              python "$SCRIPT" "$@"
+          run_if_exists() {
+            local script="$1"; shift
+            if [ -f "$script" ]; then
+              echo "Running $script $*"
+              python "$script" "$@"
               return 0
             fi
             return 1
           }
 
-          if try_run "./verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then
+          if run_if_exists "./verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then
             exit 0
           fi
 
-          if try_run "./synrxn/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then
+          if run_if_exists "./synrxn/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then
             exit 0
           fi
 
-          if try_run "./scripts/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then
+          if run_if_exists "./scripts/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then
             exit 0
           fi
 
-          if python -c "import importlib, sys; importlib.import_module('synrxn.verify_manifest')" 2>/dev/null; then
-            echo "Running verify as module"
+          # optional: module route
+          if python -c "import importlib; importlib.import_module('synrxn.verify_manifest')" 2>/dev/null; then
             python -m synrxn.verify_manifest --manifest "$MANIFEST" --root "$ROOT"
             exit 0
           fi
 
-          echo "WARNING: verify_manifest entrypoint not found; continuing."
+          echo "verify_manifest not found — continuing."
           exit 0
 
-      - name: Build CITATION.cff from manifest (flexible)
-        id: build_cff
+      - name: Build CITATION.cff (optional)
+        id: build_citation
         run: |
           set -euo pipefail
           MANIFEST="${{ env.MANIFEST_OUT }}"
           OUT="CITATION.cff"
-
-          try_run() {
-            SCRIPT="$1"; shift
-            if [ -f "$SCRIPT" ]; then
-              echo "Running $SCRIPT $*"
-              python "$SCRIPT" "$@"
+          run_if_exists() {
+            local script="$1"; shift
+            if [ -f "$script" ]; then
+              echo "Running $script $*"
+              python "$script" "$@"
               return 0
             fi
             return 1
           }
 
-          if try_run "./build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then
+          if run_if_exists "./build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then
             exit 0
           fi
 
-          if try_run "./synrxn/build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then
+          if run_if_exists "./synrxn/build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then
             exit 0
           fi
 
-          if try_run "./scripts/build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then
+          if run_if_exists "./scripts/build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then
             exit 0
           fi
 
-          if python -c "import importlib, sys; importlib.import_module('synrxn.build_citation_from_manifest')" 2>/dev/null; then
-            echo "Running as module: python -m synrxn.build_citation_from_manifest"
+          if python -c "import importlib; importlib.import_module('synrxn.build_citation_from_manifest')" 2>/dev/null; then
             python -m synrxn.build_citation_from_manifest --manifest "$MANIFEST" --output "$OUT" --verbose
             exit 0
           fi
 
-          echo "No citation builder detected; continuing."
+          echo "No citation builder detected — skipping."
           exit 0
 
-      - name: Locate & copy generated manifest/citation to repo root
+      - name: Locate and copy manifest/citation to repo root
         run: |
           set -euo pipefail
           MANIFEST_LOCATION=$(find . -type f -name "manifest.json" -not -path "./.git/*" -print -quit || true)
@@ -184,28 +182,26 @@ jobs:
           if [ -n "$CITATION_LOCATION" ]; then
             cp -v "$CITATION_LOCATION" ./CITATION.cff
           else
-            echo "Note: CITATION.cff not present (that's OK if you don't generate it)."
+            echo "Note: CITATION.cff not present (ok to skip)."
           fi
 
-          echo "Root files now:"
           ls -l manifest.json CITATION.cff || true
 
-      - name: Show manifest quick info (size, sha256, head)
-        if: ${{ always() }}
+      - name: Show manifest quick info
         run: |
           set -euo pipefail
           if [ -f ./manifest.json ]; then
             echo "manifest.json size and sha256:"
             stat -c "%n %s bytes" manifest.json || true
             sha256sum manifest.json || true
-            echo "First 120 lines of manifest.json for quick inspection:"
-            sed -n '1,120p' manifest.json || true
+            echo "Head of manifest.json:"
+            sed -n '1,80p' manifest.json || true
           else
             echo "manifest.json not present in repo root."
             exit 1
           fi
 
-      - name: Commit updated manifest and CITATION.cff (if any)
+      - name: Commit updated manifest and CITATION.cff (if changed)
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
@@ -215,7 +211,7 @@ jobs:
             git commit -m "chore(manifest): update manifest.json and CITATION.cff [ci skip]" || true
             git push origin HEAD || (echo "git push failed" && exit 1)
           else
-            echo "No changes to commit"
+            echo "No changes to commit."
           fi
 
       - name: Upload artifacts (manifest + citation)
@@ -226,7 +222,7 @@ jobs:
             manifest.json
             CITATION.cff
 
-      - name: Final debug listing (always)
+      - name: Final debug listing
         if: ${{ always() }}
         run: |
           echo "Final workspace listing (top 200 files):"
