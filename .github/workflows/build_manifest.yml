@@ -18,6 +18,7 @@ jobs:
       MANIFEST_ROOT: Data
       MANIFEST_OUT: manifest.json
       PYPROJECT: pyproject.toml
+
     steps:
       - name: Checkout (full history)
         uses: actions/checkout@v4
@@ -67,23 +68,26 @@ jobs:
           if try_run "./build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
             exit 0
           fi
+
           if try_run "./synrxn/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
             exit 0
           fi
+
           if try_run "./scripts/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
             exit 0
           fi
 
           if [ -f "./pyproject.toml" ] || [ -f "./setup.py" ] || [ -f "./setup.cfg" ]; then
-            echo "Installing package (editable) and trying module entrypoints..."
+            echo "Detected packaging files. Installing package in editable mode..."
             pip install -e .
             if python -c "import importlib, sys; importlib.import_module('synrxn.build_manifest')" 2>/dev/null; then
+              echo "Running as module: python -m synrxn.build_manifest ..."
               python -m synrxn.build_manifest --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose
               exit 0
             fi
           fi
 
-          echo "ERROR: build_manifest() entrypoint not found. Searched common locations."
+          echo "ERROR: Could not find a build_manifest entrypoint. Searched: ./build_manifest.py, ./synrxn/build_manifest.py, ./scripts/build_manifest.py and python -m synrxn.build_manifest"
           exit 1
 
       - name: Verify manifest (flexible)
@@ -106,14 +110,17 @@ jobs:
           if try_run "./verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then
             exit 0
           fi
+
           if try_run "./synrxn/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then
             exit 0
           fi
+
           if try_run "./scripts/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then
             exit 0
           fi
 
           if python -c "import importlib, sys; importlib.import_module('synrxn.verify_manifest')" 2>/dev/null; then
+            echo "Running verify as module"
             python -m synrxn.verify_manifest --manifest "$MANIFEST" --root "$ROOT"
             exit 0
           fi
@@ -131,6 +138,7 @@ jobs:
           try_run() {
             SCRIPT="$1"; shift
             if [ -f "$SCRIPT" ]; then
+              echo "Running $SCRIPT $*"
               python "$SCRIPT" "$@"
               return 0
             fi
@@ -140,14 +148,17 @@ jobs:
           if try_run "./build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then
             exit 0
           fi
+
           if try_run "./synrxn/build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then
             exit 0
           fi
+
           if try_run "./scripts/build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then
             exit 0
           fi
 
           if python -c "import importlib, sys; importlib.import_module('synrxn.build_citation_from_manifest')" 2>/dev/null; then
+            echo "Running as module: python -m synrxn.build_citation_from_manifest"
             python -m synrxn.build_citation_from_manifest --manifest "$MANIFEST" --output "$OUT" --verbose
             exit 0
           fi
@@ -155,10 +166,9 @@ jobs:
           echo "No citation builder detected; continuing."
           exit 0
 
-      - name: Locate & copy generated manifest/citation to repo root (so upload/commit works)
+      - name: Locate & copy generated manifest/citation to repo root
         run: |
           set -euo pipefail
-          # Find manifest.json anywhere in workspace (exclude .git)
           MANIFEST_LOCATION=$(find . -type f -name "manifest.json" -not -path "./.git/*" -print -quit || true)
           CITATION_LOCATION=$(find . -type f -name "CITATION.cff" -not -path "./.git/*" -print -quit || true)
 
@@ -181,7 +191,7 @@ jobs:
           ls -l manifest.json CITATION.cff || true
 
       - name: Show manifest quick info (size, sha256, head)
-        if: always()
+        if: ${{ always() }}
         run: |
           set -euo pipefail
           if [ -f ./manifest.json ]; then
@@ -217,7 +227,7 @@ jobs:
             CITATION.cff
 
       - name: Final debug listing (always)
-        if: always()
+        if: ${{ always() }}
         run: |
           echo "Final workspace listing (top 200 files):"
           find . -type f -not -path "./.git/*" | sed -n '1,200p'
