@@ -7,7 +7,6 @@ on:
       - 'v*'
   workflow_dispatch:
 
-# Allow workflow to write to the repo (commit / push)
 permissions:
   contents: write
   id-token: write
@@ -15,6 +14,10 @@ permissions:
 jobs:
   build-and-verify:
     runs-on: ubuntu-latest
+    env:
+      MANIFEST_ROOT: Data
+      MANIFEST_OUT: manifest.json
+      PYPROJECT: pyproject.toml
     steps:
       - name: Checkout (full history)
         uses: actions/checkout@v4
@@ -32,44 +35,154 @@ jobs:
           python -m pip install --upgrade pip
           pip install toml PyYAML
 
-      - name: Show repo & python info
+      - name: Show repo & python info (debug)
         run: |
           echo "PWD: $(pwd)"
-          git status --porcelain -v
+          echo "GITHUB_REF: $GITHUB_REF"
+          git status --porcelain -v || true
           python --version
           pip --version
+          echo "Repository file tree (depth 4):"
+          find . -maxdepth 4 -type f -not -path "./.git/*" | sed -n '1,400p'
+          echo "Looking for manifest-related scripts:"
+          find . -iname "build_manifest.py" -o -iname "verify_manifest.py" -o -iname "build_citation_from_manifest.py" -print || true
 
-      - name: Build manifest (creates manifest.json)
+      - name: Build manifest (flexible)
         id: build_manifest
         run: |
-          # adjust path to build_manifest.py if you kept it under synrxn/
-          python build_manifest.py --root Data --output manifest.json --pyproject pyproject.toml --verbose
+          set -euo pipefail
+          ROOT="${{ env.MANIFEST_ROOT }}"
+          OUT="${{ env.MANIFEST_OUT }}"
+          PYPROJECT="${{ env.PYPROJECT }}"
 
-      - name: Verify manifest (checks sizes & SHA256)
+          try_run() {
+            SCRIPT_PATH="$1"
+            shift
+            if [ -f "$SCRIPT_PATH" ]; then
+              echo "Running $SCRIPT_PATH $*"
+              python "$SCRIPT_PATH" "$@"
+              return 0
+            fi
+            return 1
+          }
+
+          # Try common locations
+          if try_run "./build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
+            exit 0
+          fi
+
+          if try_run "./synrxn/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
+            exit 0
+          fi
+
+          if try_run "./scripts/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
+            exit 0
+          fi
+
+          # If this repo is a package, try installing and run as module
+          if [ -f "./pyproject.toml" ] || [ -f "./setup.cfg" ] || [ -f "./setup.py" ]; then
+            echo "Detected packaging files. Installing package in editable mode..."
+            pip install -e .
+            if python -c "import importlib, sys; importlib.import_module('synrxn.build_manifest')" 2>/dev/null; then
+              echo "Running as module: python -m synrxn.build_manifest"
+              python -m synrxn.build_manifest --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose
+              exit 0
+            fi
+          fi
+
+          echo "ERROR: Could not find a build_manifest entrypoint. Searched: ./build_manifest.py, ./synrxn/build_manifest.py, ./scripts/build_manifest.py and python -m synrxn.build_manifest"
+          exit 1
+
+      - name: Verify manifest (flexible)
         id: verify_manifest
         run: |
-          # ensure verify script path is correct; default here assumes repo root
-          python verify_manifest.py --manifest manifest.json --root Data
-        # If verification fails, we want CI to fail (so we don't push broken manifests)
-        continue-on-error: false
+          set -euo pipefail
+          MANIFEST="${{ env.MANIFEST_OUT }}"
+          ROOT="${{ env.MANIFEST_ROOT }}"
 
-      - name: Build CITATION.cff from manifest
+          try_run() {
+            SCRIPT="$1"; shift
+            if [ -f "$SCRIPT" ]; then
+              echo "Running $SCRIPT $*"
+              python "$SCRIPT" "$@"
+              return 0
+            fi
+            return 1
+          }
+
+          if try_run "./verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then
+            exit 0
+          fi
+
+          if try_run "./synrxn/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then
+            exit 0
+          fi
+
+          if try_run "./scripts/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then
+            exit 0
+          fi
+
+          # Fallback: try module (if available)
+          if python -c "import importlib, sys; importlib.import_module('synrxn.verify_manifest')" 2>/dev/null; then
+            echo "Running verify as module"
+            python -m synrxn.verify_manifest --manifest "$MANIFEST" --root "$ROOT"
+            exit 0
+          fi
+
+          echo "ERROR: verify_manifest.py not found in expected locations."
+          exit 1
+
+      - name: Build CITATION.cff from manifest (flexible)
         id: build_cff
         run: |
-          python build_citation_from_manifest.py --manifest manifest.json --output CITATION.cff --verbose
+          set -euo pipefail
+          MANIFEST="${{ env.MANIFEST_OUT }}"
+          OUT="CITATION.cff"
+
+          try_run() {
+            SCRIPT="$1"; shift
+            if [ -f "$SCRIPT" ]; then
+              echo "Running $SCRIPT $*"
+              python "$SCRIPT" "$@"
+              return 0
+            fi
+            return 1
+          }
+
+          if try_run "./build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then
+            exit 0
+          fi
+
+          if try_run "./synrxn/build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then
+            exit 0
+          fi
+
+          if try_run "./scripts/build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then
+            exit 0
+          fi
+
+          # Try module route if available
+          if python -c "import importlib, sys; importlib.import_module('synrxn.build_citation_from_manifest')" 2>/dev/null; then
+            echo "Running as module: python -m synrxn.build_citation_from_manifest"
+            python -m synrxn.build_citation_from_manifest --manifest "$MANIFEST" --output "$OUT" --verbose
+            exit 0
+          fi
+
+          echo "WARNING: build_citation_from_manifest.py not found. Continuing without CITATION.cff generation."
+          exit 0
 
       - name: Commit updated manifest and CITATION.cff (if any)
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add manifest.json CITATION.cff || true
-          # commit only if there are changes
           if ! git diff --staged --quiet; then
             git commit -m "chore(manifest): update manifest.json and CITATION.cff [ci skip]" || true
-            # push back to the same branch / ref
-            git push origin HEAD
+            # Push back to the current branch/ref
+            git push origin HEAD || (echo "git push failed" && exit 1)
           else
-            echo "No changes to manifest.json or CITATION.cff"
+            echo "No changes to commit"
           fi
 
       - name: Upload artifacts (manifest + citation)
@@ -79,3 +192,9 @@ jobs:
           path: |
             manifest.json
             CITATION.cff
+
+      - name: Final debug listing
+        if: always()
+        run: |
+          echo "Final workspace listing (top 200 files):"
+          find . -type f -not -path "./.git/*" | sed -n '1,200p'
