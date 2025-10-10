@@ -213,3 +213,5 @@ script/chemprop_zenodo/*
 test.ipynb
 Data/property/uspto_yield.csv.gz
 Data/property/suzuki_miyaura.csv.gz
+manifest.json
+CITATION.cff
