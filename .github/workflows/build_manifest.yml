@@ -44,8 +44,10 @@ jobs:
           echo "MANIFEST_OUT=${MANIFEST_OUT}"
           echo "PYPROJECT_PATH=${PYPROJECT_PATH}"
           git rev-parse --abbrev-ref HEAD || true
-          echo "Top-level files:"
+          echo "Top-level files (pwd):"
           ls -la || true
+          echo "Top-level files (workspace):"
+          ls -la "${GITHUB_WORKSPACE:-.}" || true
 
       - name: "Build manifest using ./synrxn/build_manifest.py (preferred)"
         id: build_manifest_script
@@ -108,33 +110,82 @@ jobs:
           echo "out=$OUT" >> $GITHUB_OUTPUT
           exit 0
 
-      - name: "Locate and copy manifest/citation to workspace root (debug)"
+      - name: "Locate and copy manifest/citation to workspace root (robust, handles parent dir)"
         run: |
           set -euo pipefail
+          # canonical workspace destination
           ABS_MANIFEST="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
           ABS_CITATION="${GITHUB_WORKSPACE}/CITATION.cff"
 
-          echo "Canonical manifest path: $ABS_MANIFEST"
-          echo "Canonical citation path: $ABS_CITATION"
+          echo "Canonical manifest destination: $ABS_MANIFEST"
+          echo "Canonical citation destination: $ABS_CITATION"
 
-          echo "Search repo for manifest-like files (non .git):"
-          find . -type f \( -iname "manifest.json" -o -iname "*manifest*.json" -o -iname "CITATION.cff" \) -not -path "*/.git/*" -print -exec stat -c "%n %s bytes" {} \; | sed -n '1,200p' || true
+          # determine repo top-level (this will return parent workspace dir when running inside nested folder)
+          REPO_TOP="$(git rev-parse --show-toplevel 2>/dev/null || true)"
+          echo "git rev-parse --show-toplevel => '${REPO_TOP:-<none>}'"
 
-          FOUND_MANIFEST=$(find . -type f -iname "manifest.json" -not -path "*/.git/*" -print -quit || true)
-          FOUND_CITATION=$(find . -type f -iname "CITATION.cff" -not -path "*/.git/*" -print -quit || true)
+          # Build search roots: include GITHUB_WORKSPACE and REPO_TOP (if different)
+          SEARCH_ROOTS=()
+          SEARCH_ROOTS+=("${GITHUB_WORKSPACE:-.}")
+          if [ -n "${REPO_TOP:-}" ] && [ "${REPO_TOP}" != "${GITHUB_WORKSPACE:-.}" ]; then
+            SEARCH_ROOTS+=("${REPO_TOP}")
+          fi
+          # also include repository parent just in case
+          SEARCH_ROOTS+=("${GITHUB_WORKSPACE:-.}/..")
 
+          echo "Search roots: ${SEARCH_ROOTS[*]}"
+
+          FOUND_MANIFEST=""
+          FOUND_CITATION=""
+
+          for root in "${SEARCH_ROOTS[@]}"; do
+            # normalize root path
+            root=$(cd "$root" 2>/dev/null && pwd || echo "$root")
+            echo "Searching in: $root"
+            # find candidate manifest
+            if [ -z "$FOUND_MANIFEST" ]; then
+              cand=$(find "$root" -maxdepth 6 -type f -iname "manifest.json" -not -path "*/.git/*" -print -quit 2>/dev/null || true)
+              if [ -n "$cand" ]; then
+                FOUND_MANIFEST="$cand"
+                echo "Found manifest candidate: $FOUND_MANIFEST"
+              fi
+            fi
+            if [ -z "$FOUND_CITATION" ]; then
+              candc=$(find "$root" -maxdepth 6 -type f -iname "CITATION.cff" -not -path "*/.git/*" -print -quit 2>/dev/null || true)
+              if [ -n "$candc" ]; then
+                FOUND_CITATION="$candc"
+                echo "Found citation candidate: $FOUND_CITATION"
+              fi
+            fi
+            # break early if both found
+            if [ -n "$FOUND_MANIFEST" ] && [ -n "$FOUND_CITATION" ]; then
+              break
+            fi
+          done
+
+          # copy only when source is different from destination
           if [ -n "$FOUND_MANIFEST" ]; then
-            echo "Copying $FOUND_MANIFEST -> $ABS_MANIFEST"
-            cp -v "$FOUND_MANIFEST" "$ABS_MANIFEST"
+            if [ "$FOUND_MANIFEST" != "$ABS_MANIFEST" ]; then
+              echo "Copying manifest: $FOUND_MANIFEST -> $ABS_MANIFEST"
+              mkdir -p "$(dirname "$ABS_MANIFEST")"
+              cp -v "$FOUND_MANIFEST" "$ABS_MANIFEST" || true
+            else
+              echo "Manifest is already at destination; skipping copy."
+            fi
           else
-            echo "No manifest.json found anywhere."
+            echo "No manifest.json found in any search root."
           fi
 
           if [ -n "$FOUND_CITATION" ]; then
-            echo "Copying $FOUND_CITATION -> $ABS_CITATION"
-            cp -v "$FOUND_CITATION" "$ABS_CITATION"
+            if [ "$FOUND_CITATION" != "$ABS_CITATION" ]; then
+              echo "Copying citation: $FOUND_CITATION -> $ABS_CITATION"
+              mkdir -p "$(dirname "$ABS_CITATION")"
+              cp -v "$FOUND_CITATION" "$ABS_CITATION" || true
+            else
+              echo "Citation is already at destination; skipping copy."
+            fi
           else
-            echo "No CITATION.cff found anywhere."
+            echo "No CITATION.cff found in any search root."
           fi
 
           echo "Workspace root listing after copy attempt:"
@@ -213,7 +264,7 @@ jobs:
         if: ${{ steps.check_files.outputs.found != 'true' }}
         run: |
           echo "No manifest/citation to upload. Printing workspace for debugging:"
-          find . -maxdepth 6 -type f -not -path "./.git/*" -print -exec stat -c "%n %s bytes" {} \; | sed -n '1,400p'
+          find . -maxdepth 8 -type f -not -path "./.git/*" -print -exec stat -c "%n %s bytes" {} \; | sed -n '1,400p'
 
       - name: "Commit updated manifest and CITATION.cff (if changed)"
         run: |
