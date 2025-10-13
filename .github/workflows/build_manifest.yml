@@ -54,7 +54,7 @@ jobs:
           set -euo pipefail
           set -x
 
-          # The repo parent (where some invocations may write) — not used for git pushes
+          # REPO_PARENT is the directory above the workspace (where some invocations may write)
           REPO_PARENT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE:-.}")
           echo "REPO_PARENT: $REPO_PARENT"
 
@@ -81,7 +81,7 @@ jobs:
             echo "./synrxn/build_manifest.py not present; will try fallbacks."
           fi
 
-          # 2) Run script from REPO_PARENT so files written to cwd land in parent
+          # 2) Run script from REPO_PARENT so files written to cwd land in repo parent
           if [ -f "./synrxn/build_manifest.py" ]; then
             echo "Running script from REPO_PARENT so files written to cwd land in repo parent"
             if (cd "$REPO_PARENT" && python synrxn/build_manifest.py -v) 2>&1 | sed -n '1,400p'; then
@@ -108,7 +108,7 @@ jobs:
             exit 0
           fi
 
-          # 4) Last resort: run module without args in repo parent
+          # 4) Last resort: run module without args in REPO_PARENT
           echo "Last-resort: running module without args in REPO_PARENT"
           if (cd "$REPO_PARENT" && python -m synrxn.build_manifest -v) 2>&1 | sed -n '1,400p'; then
             echo "Module ran in repo parent; manifest may be created at default location"
@@ -215,7 +215,7 @@ jobs:
             manifest.json
             CITATION.cff
 
-      - name: "Commit & push manifest and CITATION.cff (workspace-based)"
+      - name: "Commit & push manifest and CITATION.cff (workspace-based, force-add ignored files)"
         env:
           EVENT_NAME: ${{ github.event_name }}
         run: |
@@ -255,8 +255,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # stage files
-          git add manifest.json CITATION.cff || true
+          # FORCE-ADD the ignored files so they are tracked by CI push even though ignored locally
+          git add -f manifest.json CITATION.cff || true
 
           # if nothing staged, exit
           if git diff --cached --quiet; then
