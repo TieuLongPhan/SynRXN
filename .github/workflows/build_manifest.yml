@@ -32,13 +32,11 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        shell: bash
         run: |
           python -m pip install --upgrade pip
           pip install toml PyYAML
 
       - name: Debug: show repo snapshot
-        shell: bash
         run: |
           echo "PWD: $(pwd)"
           echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE:-<not-set>}"
@@ -50,7 +48,6 @@ jobs:
 
       - name: Build manifest (try common locations)
         id: build_manifest
-        shell: bash
         run: |
           set -euo pipefail
           ROOT="${MANIFEST_ROOT}"
@@ -93,7 +90,6 @@ jobs:
 
       - name: Verify manifest (try common locations, optional)
         id: verify_manifest
-        shell: bash
         run: |
           set -euo pipefail
           MANIFEST="${MANIFEST_OUT}"
@@ -131,7 +127,6 @@ jobs:
 
       - name: Build CITATION.cff (optional)
         id: build_citation
-        shell: bash
         run: |
           set -euo pipefail
           MANIFEST="${MANIFEST_OUT}"
@@ -168,7 +163,6 @@ jobs:
           exit 0
 
       - name: Locate and copy manifest/citation to repo root
-        shell: bash
         run: |
           set -euo pipefail
           MANIFEST_LOCATION=$(find . -type f -name "manifest.json" -not -path "./.git/*" -print -quit || true)
@@ -192,7 +186,6 @@ jobs:
           ls -l manifest.json CITATION.cff || true
 
       - name: Show manifest quick info
-        shell: bash
         run: |
           set -euo pipefail
           if [ -f ./manifest.json ]; then
@@ -207,7 +200,6 @@ jobs:
           fi
 
       - name: Commit updated manifest and CITATION.cff (if changed)
-        shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
@@ -230,7 +222,6 @@ jobs:
 
       - name: Final debug listing
         if: ${{ always() }}
-        shell: bash
         run: |
           echo "Final workspace listing (top 200 files):"
           find . -type f -not -path "./.git/*" | sed -n '1,200p'
