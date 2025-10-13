@@ -54,7 +54,6 @@ jobs:
           set -euo pipefail
           set -x
 
-          # repo parent (canonical repo root where you want manifest)
           REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE:-.}")
           echo "REPO_ROOT: $REPO_ROOT"
 
@@ -135,7 +134,7 @@ jobs:
           ABS_MANIFEST="$REPO_ROOT/${MANIFEST_OUT}"
           ABS_CITATION="$REPO_ROOT/CITATION.cff"
 
-          # workspace destination (where upload-artifact will pick from)
+          # workspace destination (upload-artifact reads from here)
           DEST_MANIFEST="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
           DEST_CITATION="${GITHUB_WORKSPACE}/CITATION.cff"
 
@@ -225,24 +224,61 @@ jobs:
             manifest.json
             CITATION.cff
 
-      - name: "Commit manifest and CITATION.cff (if changed)"
+      - name: "Commit & push manifest and CITATION.cff (if changed)"
+        if: ${{ steps.locate.outputs.found == 'true' && github.event_name != 'pull_request' }}
         run: |
           set -euo pipefail
+          set -x
+
+          # canonical repo root (parent of workspace)
           REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "")
-          if [ -d "$REPO_ROOT/.git" ]; then
-            cd "$REPO_ROOT"
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add "${MANIFEST_OUT}" "CITATION.cff" || true
-            if ! git diff --staged --quiet; then
-              git commit -m "chore(manifest): update manifest.json and CITATION.cff [ci skip]" || true
-              git push origin "HEAD:${GITHUB_REF#refs/heads/}" || (echo "git push failed" && exit 1)
-            else
-              echo "No changes to commit."
-            fi
-          else
-            echo "Repo root has no .git; skipping commit."
+          if [ -z "$REPO_ROOT" ]; then
+            echo "Could not determine REPO_ROOT; aborting push."
+            exit 0
           fi
+          echo "REPO_ROOT: $REPO_ROOT"
+
+          # ensure manifest/citation exist in REPO_ROOT; if they only exist in workspace, copy them
+          if [ -f "${GITHUB_WORKSPACE}/manifest.json" ] && [ ! -f "$REPO_ROOT/manifest.json" ]; then
+            echo "Copying workspace manifest to repo root: ${GITHUB_WORKSPACE}/manifest.json -> $REPO_ROOT/manifest.json"
+            cp -v "${GITHUB_WORKSPACE}/manifest.json" "$REPO_ROOT/manifest.json" || true
+          fi
+          if [ -f "${GITHUB_WORKSPACE}/CITATION.cff" ] && [ ! -f "$REPO_ROOT/CITATION.cff" ]; then
+            echo "Copying workspace CITATION to repo root: ${GITHUB_WORKSPACE}/CITATION.cff -> $REPO_ROOT/CITATION.cff"
+            cp -v "${GITHUB_WORKSPACE}/CITATION.cff" "$REPO_ROOT/CITATION.cff" || true
+          fi
+
+          # only commit if repo root is actually a git checkout
+          if [ ! -d "$REPO_ROOT/.git" ]; then
+            echo "Repo root does not contain .git; skipping commit/push."
+            exit 0
+          fi
+
+          cd "$REPO_ROOT"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # stage files (ignore if missing)
+          git add manifest.json CITATION.cff || true
+
+          # if nothing staged, exit early
+          if git diff --cached --quiet; then
+            echo "No changes to manifest/CITATION to commit."
+            exit 0
+          fi
+
+          # commit
+          git commit -m "chore(manifest): update manifest.json and CITATION.cff [ci skip]" || true
+
+          # push to the branch that triggered the workflow
+          BRANCH="${GITHUB_REF#refs/heads/}"
+          if [ -z "$BRANCH" ]; then
+            BRANCH="${GITHUB_HEAD_REF:-main}"
+          fi
+          echo "Pushing to branch: $BRANCH"
+
+          # push using credentials from actions/checkout (GITHUB_TOKEN)
+          git push origin "HEAD:${BRANCH}" || (echo "git push failed" && exit 1)
 
       - name: "Final debug listing"
         if: ${{ always() }}
