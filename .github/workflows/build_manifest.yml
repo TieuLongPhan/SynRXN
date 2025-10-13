@@ -54,16 +54,16 @@ jobs:
           set -euo pipefail
           set -x
 
-          # The repo root (parent of GITHUB_WORKSPACE) is where we want manifest to end up
-          REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE:-.}")
-          echo "REPO_ROOT: $REPO_ROOT"
+          # The repo parent (where some invocations may write) — not used for git pushes
+          REPO_PARENT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE:-.}")
+          echo "REPO_PARENT: $REPO_PARENT"
 
-          OUT="$REPO_ROOT/${MANIFEST_OUT}"
-          CITATION_OUT="$REPO_ROOT/CITATION.cff"
+          OUT="$REPO_PARENT/${MANIFEST_OUT}"
+          CITATION_OUT="$REPO_PARENT/CITATION.cff"
           ROOT="${MANIFEST_ROOT}"
           PYPROJECT="${PYPROJECT_PATH}"
 
-          echo "Target manifest path: $OUT"
+          echo "Target manifest path (preferred): $OUT"
           mkdir -p "$(dirname "$OUT")"
 
           # 1) Preferred: script with short flags (-d data dir, -m manifest, -c citation)
@@ -81,16 +81,16 @@ jobs:
             echo "./synrxn/build_manifest.py not present; will try fallbacks."
           fi
 
-          # 2) Run script with working directory = REPO_ROOT (if script writes to cwd)
+          # 2) Run script from REPO_PARENT so files written to cwd land in parent
           if [ -f "./synrxn/build_manifest.py" ]; then
-            echo "Running script from REPO_ROOT so files written to cwd land in repo root"
-            if (cd "$REPO_ROOT" && python synrxn/build_manifest.py -v) 2>&1 | sed -n '1,400p'; then
-              echo "Script executed in repo root; check $OUT"
+            echo "Running script from REPO_PARENT so files written to cwd land in repo parent"
+            if (cd "$REPO_PARENT" && python synrxn/build_manifest.py -v) 2>&1 | sed -n '1,400p'; then
+              echo "Script executed in repo parent; check $OUT"
               echo "ok=true" >> $GITHUB_OUTPUT
               echo "out=$OUT" >> $GITHUB_OUTPUT
               exit 0
             else
-              echo "Script in REPO_ROOT returned non-zero or didn't create manifest; continuing."
+              echo "Script in REPO_PARENT returned non-zero or didn't create manifest; continuing."
             fi
           fi
 
@@ -108,10 +108,10 @@ jobs:
             exit 0
           fi
 
-          # 4) Last resort: run module/script without args in repo root
-          echo "Last-resort: running module without args in REPO_ROOT"
-          if (cd "$REPO_ROOT" && python -m synrxn.build_manifest -v) 2>&1 | sed -n '1,400p'; then
-            echo "Module ran in repo root; manifest may be created at default location"
+          # 4) Last resort: run module without args in repo parent
+          echo "Last-resort: running module without args in REPO_PARENT"
+          if (cd "$REPO_PARENT" && python -m synrxn.build_manifest -v) 2>&1 | sed -n '1,400p'; then
+            echo "Module ran in repo parent; manifest may be created at default location"
             echo "ok=false" >> $GITHUB_OUTPUT
             echo "out=$OUT" >> $GITHUB_OUTPUT
             exit 0
@@ -128,14 +128,13 @@ jobs:
           set -euo pipefail
           set -x
 
-          REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE:-.}")
-          echo "REPO_ROOT: $REPO_ROOT"
+          REPO_PARENT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE:-.}")
+          echo "REPO_PARENT: $REPO_PARENT"
 
-          # candidate locations
           FOUND_MANIFEST=""
           FOUND_CITATION=""
 
-          for root in "${GITHUB_WORKSPACE:-.}" "$REPO_ROOT"; do
+          for root in "${GITHUB_WORKSPACE:-.}" "$REPO_PARENT"; do
             root=$(cd "$root" 2>/dev/null && pwd || echo "$root")
             echo "Searching in: $root"
             if [ -z "$FOUND_MANIFEST" ]; then
@@ -157,7 +156,6 @@ jobs:
             fi
           done
 
-          # copy found files into workspace root for reliable uploading and commits
           DEST_MANIFEST="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
           DEST_CITATION="${GITHUB_WORKSPACE}/CITATION.cff"
 
@@ -185,7 +183,7 @@ jobs:
             echo "No CITATION.cff found."
           fi
 
-          # emit a simple output (useful for debugging later)
+          # output simple debug keys
           echo "found_manifest=${FOUND_MANIFEST:-}" >> $GITHUB_OUTPUT || true
           echo "found_citation=${FOUND_CITATION:-}" >> $GITHUB_OUTPUT || true
 
@@ -217,7 +215,7 @@ jobs:
             manifest.json
             CITATION.cff
 
-      - name: "Commit & push manifest and CITATION.cff (check workspace files)"
+      - name: "Commit & push manifest and CITATION.cff (workspace-based)"
         env:
           EVENT_NAME: ${{ github.event_name }}
         run: |
@@ -226,28 +224,25 @@ jobs:
 
           echo "github.event_name='${EVENT_NAME:-}'"
 
-          # do not attempt to push on pull_request events (forks won't have push rights)
+          # skip push on pull_request events (GITHUB_TOKEN from forks cannot push)
           if [ "${EVENT_NAME:-}" = "pull_request" ]; then
             echo "Event is pull_request — skipping push to avoid permission issues."
             exit 0
           fi
 
-          REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "")
-          if [ -z "$REPO_ROOT" ]; then
-            echo "Could not determine REPO_ROOT; aborting push."
-            exit 0
-          fi
-          echo "REPO_ROOT: $REPO_ROOT"
+          # operate in workspace (the actual git checkout)
+          WORKSPACE="${GITHUB_WORKSPACE:-.}"
+          echo "Workspace: $WORKSPACE"
+          cd "$WORKSPACE"
 
-          WORK_MANIFEST="${GITHUB_WORKSPACE}/manifest.json"
-          WORK_CITATION="${GITHUB_WORKSPACE}/CITATION.cff"
+          # ensure files exist in workspace (we copied them earlier)
           found_any=false
-          if [ -f "$WORK_MANIFEST" ]; then
-            echo "Found workspace manifest: $WORK_MANIFEST"
+          if [ -f "manifest.json" ]; then
+            echo "Found workspace manifest: $(pwd)/manifest.json"
             found_any=true
           fi
-          if [ -f "$WORK_CITATION" ]; then
-            echo "Found workspace citation: $WORK_CITATION"
+          if [ -f "CITATION.cff" ]; then
+            echo "Found workspace CITATION.cff: $(pwd)/CITATION.cff"
             found_any=true
           fi
 
@@ -256,43 +251,23 @@ jobs:
             exit 0
           fi
 
-          # copy workspace files to repo root so we modify the tracked checkout
-          if [ -f "$WORK_MANIFEST" ]; then
-            if [ ! -f "$REPO_ROOT/manifest.json" ] || ! cmp -s "$WORK_MANIFEST" "$REPO_ROOT/manifest.json"; then
-              echo "Copying workspace manifest to repo root"
-              cp -v "$WORK_MANIFEST" "$REPO_ROOT/manifest.json"
-            else
-              echo "Repo-root manifest identical; no copy."
-            fi
-          fi
-          if [ -f "$WORK_CITATION" ]; then
-            if [ ! -f "$REPO_ROOT/CITATION.cff" ] || ! cmp -s "$WORK_CITATION" "$REPO_ROOT/CITATION.cff"; then
-              echo "Copying workspace CITATION.cff to repo root"
-              cp -v "$WORK_CITATION" "$REPO_ROOT/CITATION.cff"
-            else
-              echo "Repo-root CITATION.cff identical; no copy."
-            fi
-          fi
-
-          # require a git checkout in REPO_ROOT to commit
-          if [ ! -d "$REPO_ROOT/.git" ]; then
-            echo "Repo root is not a git checkout; skipping commit/push."
-            exit 0
-          fi
-
-          cd "$REPO_ROOT"
+          # configure git author (GITHUB_TOKEN provided by checkout with persist-credentials)
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # stage files
           git add manifest.json CITATION.cff || true
 
+          # if nothing staged, exit
           if git diff --cached --quiet; then
             echo "No changes staged for commit."
             exit 0
           fi
 
+          # commit
           git commit -m "chore(manifest): update manifest.json and CITATION.cff [ci skip]" || true
 
+          # determine branch to push to (branch that triggered the workflow)
           BRANCH="${GITHUB_REF#refs/heads/}"
           if [ -z "$BRANCH" ]; then
             BRANCH="${GITHUB_HEAD_REF:-main}"
