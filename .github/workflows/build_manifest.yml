@@ -93,15 +93,12 @@ jobs:
             python -m pip install -e . 2>&1 | sed -n '1,200p' || true
 
             # ensure the module exists
-            if python - <<'PY'
-import importlib.util, sys
-sys.exit(0 if importlib.util.find_spec('synrxn.build_manifest') else 1)
-PY
-            then
+            python -c "import importlib.util,sys; sys.exit(0 if importlib.util.find_spec('synrxn.build_manifest') else 1)"
+            MODULE_OK=$?
+            if [ "$MODULE_OK" -eq 0 ]; then
               echo "Module synrxn.build_manifest detected. Trying invocation variants..."
 
-              # First try module with the same flags (may be supported by some versions)
-              echo "Trying: python -m synrxn.build_manifest --root ... --output ..."
+              # Try module with --root + --output (may or may not be supported)
               if python -m synrxn.build_manifest --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose 2>&1 | sed -n '1,400p'; then
                 echo "Module invocation with --root succeeded"
                 ls -l "$OUT" || true
@@ -110,8 +107,7 @@ PY
                 echo "Module invocation with --root failed — will try fallback (--output only)."
               fi
 
-              # Fallback: call module with --output only (your log showed this is supported)
-              echo "Trying fallback: python -m synrxn.build_manifest --output $OUT --verbose"
+              # Fallback: call module with --output only
               if python -m synrxn.build_manifest --output "$OUT" --verbose 2>&1 | sed -n '1,400p'; then
                 echo "Module fallback invocation succeeded"
                 ls -l "$OUT" || true
@@ -151,11 +147,8 @@ PY
           if run_if_exists "./synrxn/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then exit 0; fi
           if run_if_exists "./scripts/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then exit 0; fi
 
-          if python - <<'PY'
-import importlib.util,sys
-sys.exit(0 if importlib.util.find_spec('synrxn.verify_manifest') else 1)
-PY
-          then
+          python -c "import importlib.util,sys; sys.exit(0 if importlib.util.find_spec('synrxn.verify_manifest') else 1)"
+          if [ $? -eq 0 ]; then
             python -m synrxn.verify_manifest --manifest "$MANIFEST" --root "$ROOT" || true
             exit 0
           fi
@@ -184,11 +177,8 @@ PY
           if run_if_exists "./synrxn/build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then exit 0; fi
           if run_if_exists "./scripts/build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then exit 0; fi
 
-          if python - <<'PY'
-import importlib.util,sys
-sys.exit(0 if importlib.util.find_spec('synrxn.build_citation_from_manifest') else 1)
-PY
-          then
+          python -c "import importlib.util,sys; sys.exit(0 if importlib.util.find_spec('synrxn.build_citation_from_manifest') else 1)"
+          if [ $? -eq 0 ]; then
             python -m synrxn.build_citation_from_manifest --manifest "$MANIFEST" --output "$OUT" --verbose || true
             exit 0
           fi

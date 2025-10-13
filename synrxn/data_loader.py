@@ -10,6 +10,7 @@ Immutable defaults:
 
 Usage examples are in the class docstring.
 """
+
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -34,8 +35,12 @@ GH_REPO = "SynRXN"
 
 _ZENODO_RECORD_API = "https://zenodo.org/api/records/{record_id}"
 _ZENODO_SEARCH_API = "https://zenodo.org/api/records"
-_GH_RAW_TPL = "https://raw.githubusercontent.com/{owner}/{repo}/refs/{ref_type}/{ref}/Data"
-_GH_API_TPL = "https://api.github.com/repos/{owner}/{repo}/contents/Data/{task}?ref={ref}"
+_GH_RAW_TPL = (
+    "https://raw.githubusercontent.com/{owner}/{repo}/refs/{ref_type}/{ref}/Data"
+)
+_GH_API_TPL = (
+    "https://api.github.com/repos/{owner}/{repo}/contents/Data/{task}?ref={ref}"
+)
 
 
 class DataLoader:
@@ -111,17 +116,25 @@ class DataLoader:
             if gh_ref:
                 self._gh_try_refs = [("heads", gh_ref)]
             elif self.version:
-                self._gh_try_refs = [("tags", f"v{self.version}"), ("tags", self.version), ("heads", "main")]
+                self._gh_try_refs = [
+                    ("tags", f"v{self.version}"),
+                    ("tags", self.version),
+                    ("heads", "main"),
+                ]
             else:
                 self._gh_try_refs = [("heads", "main")]
 
         # Cache path
-        self.cache_dir: Optional[Path] = Path(cache_dir).expanduser().resolve() if cache_dir else None
+        self.cache_dir: Optional[Path] = (
+            Path(cache_dir).expanduser().resolve() if cache_dir else None
+        )
         if self.cache_dir:
             self.cache_dir.mkdir(parents=True, exist_ok=True)
 
         # Resolve Zenodo record id and build file index (may raise if DOI not found)
-        self._record_id: Optional[int] = self._resolve_record_id(CONCEPT_DOI, self.version)
+        self._record_id: Optional[int] = self._resolve_record_id(
+            CONCEPT_DOI, self.version
+        )
         self._file_index: Dict[str, Dict] = self._build_file_index(self._record_id)
 
         # name caches
@@ -159,7 +172,11 @@ class DataLoader:
     def available_names(self, refresh: bool = False) -> List[str]:
         """Return sorted combined names from Zenodo and GitHub (if fallback enabled)."""
         z_names = self._available_names_zenodo(refresh=refresh)
-        g_names = self._available_names_github(refresh=refresh) if (self.gh_enable and self.fallback) else []
+        g_names = (
+            self._available_names_github(refresh=refresh)
+            if (self.gh_enable and self.fallback)
+            else []
+        )
         return sorted(set(z_names).union(g_names))
 
     def refresh_names(self) -> List[str]:
@@ -196,7 +213,13 @@ class DataLoader:
     # ---------------------------
     # Core loading
     # ---------------------------
-    def load(self, name: str, use_cache: bool = True, dtype: Optional[Dict[str, object]] = None, **pd_kw) -> pd.DataFrame:
+    def load(
+        self,
+        name: str,
+        use_cache: bool = True,
+        dtype: Optional[Dict[str, object]] = None,
+        **pd_kw,
+    ) -> pd.DataFrame:
         """
         Load Data/<task>/<name>.csv(.gz) from Zenodo (preferred) or GitHub raw fallback.
 
@@ -249,22 +272,34 @@ class DataLoader:
         if not self._file_index:
             if self.fallback and self.gh_enable:
                 for ref_type, ref in self._gh_try_refs:
-                    base = _GH_RAW_TPL.format(owner=self.gh_owner, repo=self.gh_repo, ref_type=ref_type, ref=ref)
+                    base = _GH_RAW_TPL.format(
+                        owner=self.gh_owner,
+                        repo=self.gh_repo,
+                        ref_type=ref_type,
+                        ref=ref,
+                    )
                     for ext in (".csv.gz", ".csv"):
                         url = f"{base}/{self.task}/{name}{ext}"
                         tried.append(url)
                         try:
-                            resp = requests.get(url, headers=self.headers, timeout=self.timeout)
+                            resp = requests.get(
+                                url, headers=self.headers, timeout=self.timeout
+                            )
                             if resp.status_code == 200:
                                 content = resp.content
                                 if ext == ".csv.gz" and use_cache and self.cache_dir:
                                     try:
-                                        (self.cache_dir / f"{self.task}__{name}.csv.gz").write_bytes(content)
+                                        (
+                                            self.cache_dir
+                                            / f"{self.task}__{name}.csv.gz"
+                                        ).write_bytes(content)
                                     except Exception:
                                         pass
                                 return _read_buf(content, ext)
                             else:
-                                last_err = RuntimeError(f"HTTP {resp.status_code} for {url}")
+                                last_err = RuntimeError(
+                                    f"HTTP {resp.status_code} for {url}"
+                                )
                         except Exception as e:
                             last_err = e
             # No Zenodo files and GitHub fallback failed or disabled -> user-visible guidance
@@ -288,20 +323,30 @@ class DataLoader:
             dl_link = _get_download_link_from_meta(meta)
             if not dl_link:
                 tried.append(f"(no usable download link for Zenodo file entry: {key})")
-                last_err = RuntimeError(f"Missing download link for Zenodo file key {key}")
+                last_err = RuntimeError(
+                    f"Missing download link for Zenodo file key {key}"
+                )
             else:
                 tried.append(dl_link)
                 try:
-                    resp = requests.get(dl_link, headers=self.headers, timeout=self.timeout)
+                    resp = requests.get(
+                        dl_link, headers=self.headers, timeout=self.timeout
+                    )
                     resp.raise_for_status()
                     content = resp.content
                     algo, hexdigest = self._parse_checksum(meta.get("checksum", ""))
-                    if algo and hexdigest and not self._verify_checksum(content, algo, hexdigest):
+                    if (
+                        algo
+                        and hexdigest
+                        and not self._verify_checksum(content, algo, hexdigest)
+                    ):
                         raise RuntimeError("Zenodo checksum mismatch")
                     ext = ".csv.gz" if key.endswith(".csv.gz") else ".csv"
                     if use_cache and self.cache_dir and ext == ".csv.gz":
                         try:
-                            (self.cache_dir / f"{self.task}__{name}.csv.gz").write_bytes(content)
+                            (
+                                self.cache_dir / f"{self.task}__{name}.csv.gz"
+                            ).write_bytes(content)
                         except Exception:
                             pass
                     return _read_buf(content, ext)
@@ -324,21 +369,33 @@ class DataLoader:
                 meta = self._file_index[key]
                 dl_link = _get_download_link_from_meta(meta)
                 if not dl_link:
-                    tried.append(f"(no usable download link for Zenodo file entry: {key})")
-                    last_err = RuntimeError(f"Missing download link for Zenodo file key {key}")
+                    tried.append(
+                        f"(no usable download link for Zenodo file entry: {key})"
+                    )
+                    last_err = RuntimeError(
+                        f"Missing download link for Zenodo file key {key}"
+                    )
                     continue
                 tried.append(dl_link)
                 try:
-                    resp = requests.get(dl_link, headers=self.headers, timeout=self.timeout)
+                    resp = requests.get(
+                        dl_link, headers=self.headers, timeout=self.timeout
+                    )
                     resp.raise_for_status()
                     content = resp.content
                     algo, hexdigest = self._parse_checksum(meta.get("checksum", ""))
-                    if algo and hexdigest and not self._verify_checksum(content, algo, hexdigest):
+                    if (
+                        algo
+                        and hexdigest
+                        and not self._verify_checksum(content, algo, hexdigest)
+                    ):
                         raise RuntimeError("Zenodo checksum mismatch")
                     ext = ".csv.gz" if key.endswith(".csv.gz") else ".csv"
                     if use_cache and self.cache_dir and ext == ".csv.gz":
                         try:
-                            (self.cache_dir / f"{self.task}__{name}.csv.gz").write_bytes(content)
+                            (
+                                self.cache_dir / f"{self.task}__{name}.csv.gz"
+                            ).write_bytes(content)
                         except Exception:
                             pass
                     return _read_buf(content, ext)
@@ -347,13 +404,21 @@ class DataLoader:
                     continue
 
         # 3) archives attached to record: try to extract Data/<task>/<name>.csv(.gz)
-        archive_keys = [k for k in self._file_index.keys() if k.lower().endswith((".zip", ".tar.gz", ".tgz", ".tar"))]
+        archive_keys = [
+            k
+            for k in self._file_index.keys()
+            if k.lower().endswith((".zip", ".tar.gz", ".tgz", ".tar"))
+        ]
         for ak in archive_keys:
             meta = self._file_index[ak]
             dl_link = _get_download_link_from_meta(meta)
             if not dl_link:
-                tried.append(f"(no usable download link for Zenodo archive entry: {ak})")
-                last_err = RuntimeError(f"Missing download link for Zenodo archive key {ak}")
+                tried.append(
+                    f"(no usable download link for Zenodo archive entry: {ak})"
+                )
+                last_err = RuntimeError(
+                    f"Missing download link for Zenodo archive key {ak}"
+                )
                 continue
             tried.append(dl_link)
             try:
@@ -361,12 +426,19 @@ class DataLoader:
                 r.raise_for_status()
                 arch_bytes = r.content
                 algo, hexdigest = self._parse_checksum(meta.get("checksum", ""))
-                if algo and hexdigest and not self._verify_checksum(arch_bytes, algo, hexdigest):
+                if (
+                    algo
+                    and hexdigest
+                    and not self._verify_checksum(arch_bytes, algo, hexdigest)
+                ):
                     raise RuntimeError("Zenodo archive checksum mismatch")
                 # zip
                 if ak.lower().endswith(".zip"):
                     with zipfile.ZipFile(io.BytesIO(arch_bytes)) as z:
-                        exact_candidates = [f"Data/{self.task}/{name}.csv.gz", f"Data/{self.task}/{name}.csv"]
+                        exact_candidates = [
+                            f"Data/{self.task}/{name}.csv.gz",
+                            f"Data/{self.task}/{name}.csv",
+                        ]
                         members = z.namelist()
                         member = None
                         for ec in exact_candidates:
@@ -376,21 +448,40 @@ class DataLoader:
                         if member is None:
                             members_lower = [m.lower() for m in members]
                             for idx, m in enumerate(members_lower):
-                                if f"{self.task}/{name}".lower() in m or f"{self.task}_{name}".lower() in m or name.lower() in m:
+                                if (
+                                    f"{self.task}/{name}".lower() in m
+                                    or f"{self.task}_{name}".lower() in m
+                                    or name.lower() in m
+                                ):
                                     member = members[idx]
                                     break
                         if member:
                             with z.open(member) as mf:
                                 content = mf.read()
                                 if member.endswith(".csv.gz"):
-                                    return pd.read_csv(io.BytesIO(content), compression="gzip", dtype=dtype, **pd_kw)
+                                    return pd.read_csv(
+                                        io.BytesIO(content),
+                                        compression="gzip",
+                                        dtype=dtype,
+                                        **pd_kw,
+                                    )
                                 else:
-                                    return pd.read_csv(io.BytesIO(content), compression=None, dtype=dtype, **pd_kw)
+                                    return pd.read_csv(
+                                        io.BytesIO(content),
+                                        compression=None,
+                                        dtype=dtype,
+                                        **pd_kw,
+                                    )
                 else:
                     # tar / tgz
-                    with tarfile.open(fileobj=io.BytesIO(arch_bytes), mode="r:*") as tar:
+                    with tarfile.open(
+                        fileobj=io.BytesIO(arch_bytes), mode="r:*"
+                    ) as tar:
                         member = None
-                        exact_candidates = [f"Data/{self.task}/{name}.csv.gz", f"Data/{self.task}/{name}.csv"]
+                        exact_candidates = [
+                            f"Data/{self.task}/{name}.csv.gz",
+                            f"Data/{self.task}/{name}.csv",
+                        ]
                         members = tar.getmembers()
                         names_list = [m.name for m in members]
                         for ec in exact_candidates:
@@ -400,7 +491,11 @@ class DataLoader:
                         if member is None:
                             for m in names_list:
                                 ml = m.lower()
-                                if f"{self.task}/{name}".lower() in ml or f"{self.task}_{name}".lower() in ml or name.lower() in ml:
+                                if (
+                                    f"{self.task}/{name}".lower() in ml
+                                    or f"{self.task}_{name}".lower() in ml
+                                    or name.lower() in ml
+                                ):
                                     member = m
                                     break
                         if member:
@@ -409,9 +504,19 @@ class DataLoader:
                                 continue
                             content = fobj.read()
                             if member.endswith(".csv.gz"):
-                                return pd.read_csv(io.BytesIO(content), compression="gzip", dtype=dtype, **pd_kw)
+                                return pd.read_csv(
+                                    io.BytesIO(content),
+                                    compression="gzip",
+                                    dtype=dtype,
+                                    **pd_kw,
+                                )
                             else:
-                                return pd.read_csv(io.BytesIO(content), compression=None, dtype=dtype, **pd_kw)
+                                return pd.read_csv(
+                                    io.BytesIO(content),
+                                    compression=None,
+                                    dtype=dtype,
+                                    **pd_kw,
+                                )
             except Exception as e:
                 last_err = e
                 continue
@@ -419,22 +524,30 @@ class DataLoader:
         # 4) GitHub raw fallback (if enabled)
         if self.fallback and self.gh_enable:
             for ref_type, ref in self._gh_try_refs:
-                base = _GH_RAW_TPL.format(owner=self.gh_owner, repo=self.gh_repo, ref_type=ref_type, ref=ref)
+                base = _GH_RAW_TPL.format(
+                    owner=self.gh_owner, repo=self.gh_repo, ref_type=ref_type, ref=ref
+                )
                 for ext in (".csv.gz", ".csv"):
                     url = f"{base}/{self.task}/{name}{ext}"
                     tried.append(url)
                     try:
-                        resp = requests.get(url, headers=self.headers, timeout=self.timeout)
+                        resp = requests.get(
+                            url, headers=self.headers, timeout=self.timeout
+                        )
                         if resp.status_code == 200:
                             content = resp.content
                             if ext == ".csv.gz" and use_cache and self.cache_dir:
                                 try:
-                                    (self.cache_dir / f"{self.task}__{name}.csv.gz").write_bytes(content)
+                                    (
+                                        self.cache_dir / f"{self.task}__{name}.csv.gz"
+                                    ).write_bytes(content)
                                 except Exception:
                                     pass
                             return _read_buf(content, ext)
                         else:
-                            last_err = RuntimeError(f"HTTP {resp.status_code} for {url}")
+                            last_err = RuntimeError(
+                                f"HTTP {resp.status_code} for {url}"
+                            )
                     except Exception as e:
                         last_err = e
 
@@ -454,7 +567,9 @@ class DataLoader:
 
         if avail:
             msg_lines.append("")
-            msg_lines.append("Available dataset names (from Zenodo/GitHub where applicable):")
+            msg_lines.append(
+                "Available dataset names (from Zenodo/GitHub where applicable):"
+            )
             display = avail[:200] if len(avail) > 200 else avail
             msg_lines += [f"  {n}" for n in display]
             if suggestions:
@@ -489,13 +604,18 @@ class DataLoader:
         if not parallel or self.max_workers <= 1 or len(names_list) == 1:
             for nm in names_list:
                 try:
-                    results[nm] = self.load(nm, use_cache=use_cache, dtype=dtype, **pd_kw)
+                    results[nm] = self.load(
+                        nm, use_cache=use_cache, dtype=dtype, **pd_kw
+                    )
                 except Exception as e:
                     raise RuntimeError(f"Failed to load {self.task}/{nm}: {e}") from e
             return results
 
         with ThreadPoolExecutor(max_workers=self.max_workers) as ex:
-            futures = {ex.submit(self.load, nm, use_cache, dtype, **pd_kw): nm for nm in names_list}
+            futures = {
+                ex.submit(self.load, nm, use_cache, dtype, **pd_kw): nm
+                for nm in names_list
+            }
             for fut in as_completed(futures):
                 nm = futures[fut]
                 try:
@@ -513,7 +633,12 @@ class DataLoader:
         return the most recently updated version under the concept DOI.
         """
         params = {"q": f'conceptdoi:"{concept_doi}"', "all_versions": 1, "size": 200}
-        r = requests.get(_ZENODO_SEARCH_API, params=params, headers=self.headers, timeout=self.timeout)
+        r = requests.get(
+            _ZENODO_SEARCH_API,
+            params=params,
+            headers=self.headers,
+            timeout=self.timeout,
+        )
         r.raise_for_status()
         hits = r.json().get("hits", {}).get("hits", [])
         if not hits:
@@ -521,7 +646,9 @@ class DataLoader:
         if version:
             target = self._normalize_version(version)
             for h in hits:
-                meta_ver = self._normalize_version(h.get("metadata", {}).get("version", ""))
+                meta_ver = self._normalize_version(
+                    h.get("metadata", {}).get("version", "")
+                )
                 if meta_ver == target:
                     return int(h["id"])
             # fallback raw compare
@@ -529,10 +656,14 @@ class DataLoader:
                 raw = str(h.get("metadata", {}).get("version", "")).strip()
                 if raw == version or raw == f"v{version}" or f"v{raw}" == version:
                     return int(h["id"])
-            raise RuntimeError(f"Version '{version}' not found under {concept_doi}. "
-                               f"Available: {sorted({h.get('metadata', {}).get('version','') for h in hits})}")
+            raise RuntimeError(
+                f"Version '{version}' not found under {concept_doi}. "
+                f"Available: {sorted({h.get('metadata', {}).get('version','') for h in hits})}"
+            )
         # return most recently updated
-        hits_sorted = sorted(hits, key=lambda h: h.get("updated", h.get("created", "")), reverse=True)
+        hits_sorted = sorted(
+            hits, key=lambda h: h.get("updated", h.get("created", "")), reverse=True
+        )
         return int(hits_sorted[0]["id"])
 
     def _build_file_index(self, record_id: Optional[int]) -> Dict[str, Dict]:
@@ -547,11 +678,16 @@ class DataLoader:
         # index by 'key' (Zenodo's filename path)
         return {f.get("key", ""): f for f in files if f.get("key")}
 
-    def _parse_checksum(self, checksum_field: str) -> Tuple[Optional[str], Optional[str]]:
+    def _parse_checksum(
+        self, checksum_field: str
+    ) -> Tuple[Optional[str], Optional[str]]:
         """Parse Zenodo checksum field like 'md5:abcd...' -> (algo, hex)."""
         if not checksum_field:
             return None, None
-        m = re.match(r"^(md5|sha1|sha224|sha256|sha384|sha512):([0-9A-Fa-f]+)$", checksum_field.strip())
+        m = re.match(
+            r"^(md5|sha1|sha224|sha256|sha384|sha512):([0-9A-Fa-f]+)$",
+            checksum_field.strip(),
+        )
         if not m:
             return None, None
         return m.group(1), m.group(2)
