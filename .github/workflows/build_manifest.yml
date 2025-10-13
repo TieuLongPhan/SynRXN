@@ -48,62 +48,77 @@ jobs:
           echo "Parent of workspace listing:"
           ls -la "${GITHUB_WORKSPACE:-.}/.." || true
 
-      - name: "Build manifest (write to repo root parent of workspace)"
+      - name: "Build manifest (force repo-root output, try short flags + fallbacks)"
         id: build_manifest
         run: |
           set -euo pipefail
           set -x
 
-          # canonical repo-root = parent of GITHUB_WORKSPACE
-          REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "")
-          if [ -z "$REPO_ROOT" ]; then
-            echo "Could not determine REPO_ROOT; defaulting to GITHUB_WORKSPACE"
-            REPO_ROOT="${GITHUB_WORKSPACE:-.}"
-          fi
+          # canonical repo-root = parent of GITHUB_WORKSPACE (e.g. /home/runner/work/RepoName)
+          REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE:-.}")
           echo "REPO_ROOT: $REPO_ROOT"
 
           OUT="$REPO_ROOT/${MANIFEST_OUT}"
+          CITATION_OUT="$REPO_ROOT/CITATION.cff"
           ROOT="${MANIFEST_ROOT}"
           PYPROJECT="${PYPROJECT_PATH}"
 
-          echo "Will attempt to create manifest at: $OUT"
+          echo "Target manifest path: $OUT"
           mkdir -p "$(dirname "$OUT")"
 
-          # preferred: run script with explicit absolute --output
+          # 1) Prefer short-flag invocation on the script (many versions accept -d -m -c)
           if [ -f "./synrxn/build_manifest.py" ]; then
-            echo "Running script with explicit output:"
-            echo "python ./synrxn/build_manifest.py --root \"$ROOT\" --output \"$OUT\" --pyproject \"$PYPROJECT\" --verbose"
-            if python ./synrxn/build_manifest.py --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose 2>&1 | sed -n '1,400p'; then
-              echo "Script finished (exit 0)."
+            echo "Trying script with short flags: -d (data dir), -m (manifest out), -c (citation out)"
+            if python ./synrxn/build_manifest.py -d "$ROOT" -m "$OUT" -c "$CITATION_OUT" -v 2>&1 | sed -n '1,400p'; then
+              echo "Script produced manifest via -m."
               echo "ok=true" >> $GITHUB_OUTPUT
               echo "out=$OUT" >> $GITHUB_OUTPUT
               exit 0
             else
-              echo "Script returned non-zero exit code; will continue to fallback attempts."
+              echo "Script with short flags failed or didn't create manifest; will try other fallbacks."
             fi
           else
-            echo "Script ./synrxn/build_manifest.py not present; will try module fallback."
+            echo "./synrxn/build_manifest.py not present (script path missing)."
           fi
 
-          # fallback: try module with --output
+          # 2) Run the script from REPO_ROOT (so files written to cwd land in repo root)
+          if [ -f "./synrxn/build_manifest.py" ]; then
+            echo "Running script with working dir = REPO_ROOT so generated files land in repo root:"
+            if (cd "$REPO_ROOT" && python synrxn/build_manifest.py -v) 2>&1 | sed -n '1,400p'; then
+              echo "Script executed in repo root; check $OUT."
+              echo "ok=true" >> $GITHUB_OUTPUT
+              echo "out=$OUT" >> $GITHUB_OUTPUT
+              exit 0
+            else
+              echo "Script in REPO_ROOT returned non-zero or didn't create manifest; continuing."
+            fi
+          fi
+
+          # 3) Try installed module with short flags (-m -c)
           if [ -f "./pyproject.toml" ] || [ -f "./setup.py" ] || [ -f "./setup.cfg" ]; then
+            echo "Installing package in editable mode (if packaging files present)..."
             python -m pip install -e . 2>&1 | sed -n '1,200p' || true
           fi
 
-          echo "Trying module invocation with explicit output:"
-          if python -m synrxn.build_manifest --output "$OUT" --verbose 2>&1 | sed -n '1,400p'; then
-            echo "Module invocation succeeded."
+          echo "Trying module: python -m synrxn.build_manifest -m \"$OUT\" -c \"$CITATION_OUT\" -v"
+          if python -m synrxn.build_manifest -m "$OUT" -c "$CITATION_OUT" -v 2>&1 | sed -n '1,400p'; then
+            echo "Module invocation (short flags) succeeded."
             echo "ok=true" >> $GITHUB_OUTPUT
             echo "out=$OUT" >> $GITHUB_OUTPUT
             exit 0
           fi
 
-          # last resort: run script without args (may write to a different location)
-          echo "Trying script/module without args (last resort):"
-          if python ./synrxn/build_manifest.py 2>&1 | sed -n '1,200p'; then
-            echo "Ran script without args; manifest may have been created somewhere else."
+          # 4) Last resort: run module without args in repo root (may write defaults into repo root)
+          echo "Last-resort: run module without args in REPO_ROOT"
+          if (cd "$REPO_ROOT" && python -m synrxn.build_manifest -v) 2>&1 | sed -n '1,400p'; then
+            echo "Module ran without args in repo root; check for created manifest."
+            # we won't assume it's at $OUT, let locate step find it
+            echo "ok=false" >> $GITHUB_OUTPUT
+            echo "out=$OUT" >> $GITHUB_OUTPUT
+            exit 0
           fi
 
+          echo "All build attempts failed."
           echo "ok=false" >> $GITHUB_OUTPUT
           echo "out=$OUT" >> $GITHUB_OUTPUT
           exit 0
@@ -114,10 +129,7 @@ jobs:
           set -euo pipefail
           set -x
 
-          REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "")
-          if [ -z "$REPO_ROOT" ]; then
-            REPO_ROOT="${GITHUB_WORKSPACE:-.}"
-          fi
+          REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE:-.}")
           echo "REPO_ROOT: $REPO_ROOT"
 
           ABS_MANIFEST="$REPO_ROOT/${MANIFEST_OUT}"
@@ -126,7 +138,6 @@ jobs:
           echo "Canonical manifest destination: $ABS_MANIFEST"
           echo "Canonical citation destination: $ABS_CITATION"
 
-          # search roots: workspace and its parent (repo root)
           SEARCH_ROOTS=("${GITHUB_WORKSPACE:-.}" "$REPO_ROOT")
 
           FOUND_MANIFEST=""
@@ -149,9 +160,12 @@ jobs:
                 echo "Found citation candidate: $FOUND_CITATION"
               fi
             fi
+            if [ -n "$FOUND_MANIFEST" ] && [ -n "$FOUND_CITATION" ]; then
+              break
+            fi
           done
 
-          # copy only when needed (source != dest)
+          # copy only if source differs from destination
           if [ -n "$FOUND_MANIFEST" ]; then
             if [ "$FOUND_MANIFEST" != "$ABS_MANIFEST" ]; then
               echo "Copying manifest: $FOUND_MANIFEST -> $ABS_MANIFEST"
@@ -176,7 +190,6 @@ jobs:
             echo "No citation found in search roots."
           fi
 
-          # prepare outputs for uploader: absolute paths that exist
           files=""
           if [ -f "$ABS_MANIFEST" ]; then
             files="$files $ABS_MANIFEST"
@@ -229,15 +242,19 @@ jobs:
         run: |
           set -euo pipefail
           REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "")
-          cd "$REPO_ROOT"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "${MANIFEST_OUT}" "CITATION.cff" || true
-          if ! git diff --staged --quiet; then
-            git commit -m "chore(manifest): update manifest.json and CITATION.cff [ci skip]" || true
-            git push origin "HEAD:${GITHUB_REF#refs/heads/}" || (echo "git push failed" && exit 1)
+          if [ -d "$REPO_ROOT/.git" ]; then
+            cd "$REPO_ROOT"
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add "${MANIFEST_OUT}" "CITATION.cff" || true
+            if ! git diff --staged --quiet; then
+              git commit -m "chore(manifest): update manifest.json and CITATION.cff [ci skip]" || true
+              git push origin "HEAD:${GITHUB_REF#refs/heads/}" || (echo "git push failed" && exit 1)
+            else
+              echo "No changes to commit."
+            fi
           else
-            echo "No changes to commit."
+            echo "Repo root has no .git; skipping commit."
           fi
 
       - name: "Final debug listing"
