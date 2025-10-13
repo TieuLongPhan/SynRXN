@@ -43,55 +43,54 @@ jobs:
           echo "MANIFEST_ROOT=${MANIFEST_ROOT}"
           echo "MANIFEST_OUT=${MANIFEST_OUT}"
           echo "PYPROJECT_PATH=${PYPROJECT_PATH}"
-          echo "Top-level (pwd) listing:"
-          ls -la || true
           echo "Workspace listing:"
           ls -la "${GITHUB_WORKSPACE:-.}" || true
+          echo "Parent of workspace listing:"
+          ls -la "${GITHUB_WORKSPACE:-.}/.." || true
 
-      - name: "Build manifest (write to repo top-level)"
+      - name: "Build manifest (write to repo root parent of workspace)"
         id: build_manifest
         run: |
           set -euo pipefail
           set -x
 
-          # determine canonical repository top-level (target directory for manifest)
-          REPO_TOP=$(git rev-parse --show-toplevel 2>/dev/null || true)
-          if [ -z "$REPO_TOP" ]; then
-            # fallback: parent directory of GITHUB_WORKSPACE
-            REPO_TOP=$(cd "${GITHUB_WORKSPACE:-.}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE}/..")
+          # canonical repo-root = parent of GITHUB_WORKSPACE
+          REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "")
+          if [ -z "$REPO_ROOT" ]; then
+            echo "Could not determine REPO_ROOT; defaulting to GITHUB_WORKSPACE"
+            REPO_ROOT="${GITHUB_WORKSPACE:-.}"
           fi
-          REPO_TOP=$(cd "$REPO_TOP" 2>/dev/null && pwd || echo "$REPO_TOP")
-          echo "Repo top-level: $REPO_TOP"
+          echo "REPO_ROOT: $REPO_ROOT"
 
-          OUT="$REPO_TOP/${MANIFEST_OUT}"
+          OUT="$REPO_ROOT/${MANIFEST_OUT}"
           ROOT="${MANIFEST_ROOT}"
           PYPROJECT="${PYPROJECT_PATH}"
 
           echo "Will attempt to create manifest at: $OUT"
           mkdir -p "$(dirname "$OUT")"
 
-          # Preferred invocation: script file (give absolute output path)
+          # preferred: run script with explicit absolute --output
           if [ -f "./synrxn/build_manifest.py" ]; then
-            echo "Running script: python ./synrxn/build_manifest.py --root \"$ROOT\" --output \"$OUT\" --pyproject \"$PYPROJECT\" --verbose"
+            echo "Running script with explicit output:"
+            echo "python ./synrxn/build_manifest.py --root \"$ROOT\" --output \"$OUT\" --pyproject \"$PYPROJECT\" --verbose"
             if python ./synrxn/build_manifest.py --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose 2>&1 | sed -n '1,400p'; then
-              echo "Script completed (exit 0)."
+              echo "Script finished (exit 0)."
               echo "ok=true" >> $GITHUB_OUTPUT
               echo "out=$OUT" >> $GITHUB_OUTPUT
               exit 0
             else
-              echo "Script returned non-zero exit code (will try fallback)."
+              echo "Script returned non-zero exit code; will continue to fallback attempts."
             fi
           else
-            echo "./synrxn/build_manifest.py not found; will try module fallback."
+            echo "Script ./synrxn/build_manifest.py not present; will try module fallback."
           fi
 
-          # Fallback: try installed module (use --output only, many versions support that)
+          # fallback: try module with --output
           if [ -f "./pyproject.toml" ] || [ -f "./setup.py" ] || [ -f "./setup.cfg" ]; then
-            echo "Installing package editable (if packaging files exist)..."
             python -m pip install -e . 2>&1 | sed -n '1,200p' || true
           fi
 
-          echo "Trying module: python -m synrxn.build_manifest --output \"$OUT\" --verbose"
+          echo "Trying module invocation with explicit output:"
           if python -m synrxn.build_manifest --output "$OUT" --verbose 2>&1 | sed -n '1,400p'; then
             echo "Module invocation succeeded."
             echo "ok=true" >> $GITHUB_OUTPUT
@@ -99,49 +98,36 @@ jobs:
             exit 0
           fi
 
-          # last resort: attempt the module without args (some versions write default location)
-          echo "Trying module without args (last-resort)"
-          if python -m synrxn.build_manifest 2>&1 | sed -n '1,400p'; then
-            echo "Module ran without args; check for manifest file."
-            echo "ok=false" >> $GITHUB_OUTPUT
-            echo "out=$OUT" >> $GITHUB_OUTPUT
-            exit 0
+          # last resort: run script without args (may write to a different location)
+          echo "Trying script/module without args (last resort):"
+          if python ./synrxn/build_manifest.py 2>&1 | sed -n '1,200p'; then
+            echo "Ran script without args; manifest may have been created somewhere else."
           fi
 
-          echo "All attempts to build manifest failed."
           echo "ok=false" >> $GITHUB_OUTPUT
           echo "out=$OUT" >> $GITHUB_OUTPUT
           exit 0
 
-      - name: "Locate and copy manifest/citation to repo top (robust)"
+      - name: "Locate and copy manifest/citation to repo root (parent of workspace)"
         id: locate
         run: |
           set -euo pipefail
           set -x
 
-          # compute repo top-level again
-          REPO_TOP=$(git rev-parse --show-toplevel 2>/dev/null || true)
-          if [ -z "$REPO_TOP" ]; then
-            REPO_TOP=$(cd "${GITHUB_WORKSPACE:-.}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE}/..")
+          REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "")
+          if [ -z "$REPO_ROOT" ]; then
+            REPO_ROOT="${GITHUB_WORKSPACE:-.}"
           fi
-          REPO_TOP=$(cd "$REPO_TOP" 2>/dev/null && pwd || echo "$REPO_TOP")
-          echo "Repo top-level: $REPO_TOP"
+          echo "REPO_ROOT: $REPO_ROOT"
 
-          ABS_MANIFEST="$REPO_TOP/${MANIFEST_OUT}"
-          ABS_CITATION="$REPO_TOP/CITATION.cff"
+          ABS_MANIFEST="$REPO_ROOT/${MANIFEST_OUT}"
+          ABS_CITATION="$REPO_ROOT/CITATION.cff"
 
           echo "Canonical manifest destination: $ABS_MANIFEST"
           echo "Canonical citation destination: $ABS_CITATION"
 
-          # Search roots: workspace, repo top, parent of workspace
-          SEARCH_ROOTS=()
-          SEARCH_ROOTS+=("${GITHUB_WORKSPACE:-.}")
-          if [ -n "$REPO_TOP" ] && [ "$REPO_TOP" != "${GITHUB_WORKSPACE:-.}" ]; then
-            SEARCH_ROOTS+=("$REPO_TOP")
-          fi
-          SEARCH_ROOTS+=("${GITHUB_WORKSPACE:-.}/..")
-
-          echo "Search roots: ${SEARCH_ROOTS[*]}"
+          # search roots: workspace and its parent (repo root)
+          SEARCH_ROOTS=("${GITHUB_WORKSPACE:-.}" "$REPO_ROOT")
 
           FOUND_MANIFEST=""
           FOUND_CITATION=""
@@ -163,12 +149,9 @@ jobs:
                 echo "Found citation candidate: $FOUND_CITATION"
               fi
             fi
-            if [ -n "$FOUND_MANIFEST" ] && [ -n "$FOUND_CITATION" ]; then
-              break
-            fi
           done
 
-          # copy only when source != destination
+          # copy only when needed (source != dest)
           if [ -n "$FOUND_MANIFEST" ]; then
             if [ "$FOUND_MANIFEST" != "$ABS_MANIFEST" ]; then
               echo "Copying manifest: $FOUND_MANIFEST -> $ABS_MANIFEST"
@@ -193,7 +176,7 @@ jobs:
             echo "No citation found in search roots."
           fi
 
-          # prepare outputs for uploader: list absolute paths that exist
+          # prepare outputs for uploader: absolute paths that exist
           files=""
           if [ -f "$ABS_MANIFEST" ]; then
             files="$files $ABS_MANIFEST"
@@ -213,22 +196,21 @@ jobs:
             echo "files=$files" >> $GITHUB_OUTPUT
           fi
 
-      - name: "Debug: show files-to-upload and existence"
+      - name: "Debug: show locate outputs and repo-root files"
         run: |
           echo "locate outputs: found='${{ steps.locate.outputs.found }}'"
           echo "locate outputs: files='${{ steps.locate.outputs.files }}'"
-          echo "Listing repo-top files:"
-          git_root=$(git rev-parse --show-toplevel 2>/dev/null || echo "")
-          if [ -n "$git_root" ]; then ls -la "$git_root" || true; else ls -la "${GITHUB_WORKSPACE}/.." || true; fi
-          echo "Checking canonical files:"
-          if [ -f "${GITHUB_WORKSPACE}/../${MANIFEST_OUT}" ]; then
-            echo "manifest found at ${GITHUB_WORKSPACE}/../${MANIFEST_OUT} ($(stat -c '%s' "${GITHUB_WORKSPACE}/../${MANIFEST_OUT}")) bytes"
-          fi
-          if [ -f "${GITHUB_WORKSPACE}/../CITATION.cff" ]; then
-            echo "CITATION.cff found at ${GITHUB_WORKSPACE}/../CITATION.cff ($(stat -c '%s' "${GITHUB_WORKSPACE}/../CITATION.cff" )) bytes"
+          echo "Repo-root listing:"
+          REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "")
+          ls -la "${REPO_ROOT}" || true
+          echo "Check manifest at repo-root:"
+          if [ -f "${REPO_ROOT}/${MANIFEST_OUT}" ]; then
+            echo "manifest exists: $(stat -c '%s' "${REPO_ROOT}/${MANIFEST_OUT}") bytes"
+          else
+            echo "manifest not found at ${REPO_ROOT}/${MANIFEST_OUT}"
           fi
 
-      - name: "Upload artifacts (from repo top-level)"
+      - name: "Upload artifacts (from repo root parent of workspace)"
         if: ${{ steps.locate.outputs.found == 'true' }}
         uses: actions/upload-artifact@v4
         with:
@@ -238,18 +220,16 @@ jobs:
       - name: "Upload artifacts - none found (debug)"
         if: ${{ steps.locate.outputs.found != 'true' }}
         run: |
-          echo "No manifest/citation found to upload. Full workspace listing:"
+          echo "No manifest/citation found to upload. Full workspace listing (parent included):"
           find . -maxdepth 8 -type f -not -path "./.git/*" -print -exec stat -c "%n %s bytes" {} \; | sed -n '1,400p'
+          echo "Parent listing:"
+          ls -la "${GITHUB_WORKSPACE}/.." || true
 
       - name: "Commit manifest and CITATION.cff (if changed)"
         run: |
           set -euo pipefail
-          # attempt to commit files that live in repo top-level
-          REPO_TOP=$(git rev-parse --show-toplevel 2>/dev/null || true)
-          if [ -z "$REPO_TOP" ]; then
-            REPO_TOP=$(cd "${GITHUB_WORKSPACE:-.}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE}/..")
-          fi
-          cd "$REPO_TOP"
+          REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "")
+          cd "$REPO_ROOT"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "${MANIFEST_OUT}" "CITATION.cff" || true
