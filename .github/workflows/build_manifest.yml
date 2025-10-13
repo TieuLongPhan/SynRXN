@@ -34,7 +34,7 @@ jobs:
       - name: "Install Python runtime deps"
         run: |
           python -m pip install --upgrade pip
-          pip install tomli PyYAML
+          pip install toml PyYAML
 
       - name: "Debug initial repo snapshot"
         run: |
@@ -54,17 +54,16 @@ jobs:
           set -x
           ROOT="${MANIFEST_ROOT}"
           OUT="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
-          CITATION="${GITHUB_WORKSPACE}/CITATION.cff"
+          PYPROJECT="${PYPROJECT_PATH}"
 
           echo "Attempting to run the script at ./synrxn/build_manifest.py"
           mkdir -p "$(dirname "$OUT")"
 
           if [ -f "./synrxn/build_manifest.py" ]; then
-            echo "Invoking: python ./synrxn/build_manifest.py --data-dir \"$ROOT\" --manifest-output \"$OUT\" --citation-output \"$CITATION\" --verbose"
-            if python ./synrxn/build_manifest.py --data-dir "$ROOT" --manifest-output "$OUT" --citation-output "$CITATION" --verbose 2>&1 | sed -n '1,400p'; then
+            echo "Invoking: python ./synrxn/build_manifest.py --root \"$ROOT\" --output \"$OUT\" --pyproject \"$PYPROJECT\" --verbose"
+            if python ./synrxn/build_manifest.py --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose 2>&1 | sed -n '1,400p'; then
               echo "Script succeeded. Listing output:"
               ls -l "$OUT" || true
-              ls -l "$CITATION" || true
               echo "ok=true" >> $GITHUB_OUTPUT
               echo "out=$OUT" >> $GITHUB_OUTPUT
               exit 0
@@ -87,7 +86,7 @@ jobs:
           set -euo pipefail
           set -x
           OUT="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
-          CITATION="${GITHUB_WORKSPACE}/CITATION.cff"
+          PYPROJECT="${PYPROJECT_PATH}"
           ROOT="${MANIFEST_ROOT}"
 
           echo "Installing package in editable mode (if packaging files present)..."
@@ -95,11 +94,10 @@ jobs:
             python -m pip install -e . 2>&1 | sed -n '1,200p' || true
           fi
 
-          echo "Trying: python -m synrxn.build_manifest --data-dir \"$ROOT\" --manifest-output \"$OUT\" --citation-output \"$CITATION\" --verbose"
-          if python -m synrxn.build_manifest --data-dir "$ROOT" --manifest-output "$OUT" --citation-output "$CITATION" --verbose 2>&1 | sed -n '1,400p'; then
+          echo "Trying: python -m synrxn.build_manifest --output \"$OUT\" --verbose"
+          if python -m synrxn.build_manifest --output "$OUT" --verbose 2>&1 | sed -n '1,400p'; then
             echo "Module invocation succeeded and (hopefully) created $OUT"
             ls -l "$OUT" || true
-            ls -l "$CITATION" || true
             echo "ok=true" >> $GITHUB_OUTPUT
             echo "out=$OUT" >> $GITHUB_OUTPUT
             exit 0
