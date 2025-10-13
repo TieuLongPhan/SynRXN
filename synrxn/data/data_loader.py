@@ -23,8 +23,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 from urllib.parse import quote as urlquote
 import io
-import os
-import tempfile
+from pathlib import Path
 import requests
 import pandas as pd
 
@@ -166,7 +165,7 @@ class DataLoader:
         self,
         task: str,
         version: Optional[str] = None,
-        cache_dir: Optional[Path] = None,
+        cache_dir: Optional[Path] = Path("~/.cache/synrxn").expanduser(),
         timeout: int = 20,
         user_agent: str = "SynRXN-DataLoader/2.0",
         max_workers: int = 6,

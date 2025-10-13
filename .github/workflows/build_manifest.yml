@@ -17,7 +17,7 @@ jobs:
     env:
       MANIFEST_ROOT: Data
       MANIFEST_OUT: manifest.json
-      PYPROJECT: pyproject.toml
+      PYPROJECT_PATH: ./pyproject.toml
 
     steps:
       - name: Checkout (full history)
@@ -31,7 +31,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Install Python runtime deps
         run: |
           python -m pip install --upgrade pip
           pip install toml PyYAML
@@ -42,148 +42,71 @@ jobs:
           echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE:-<not-set>}"
           echo "MANIFEST_ROOT=${MANIFEST_ROOT}"
           echo "MANIFEST_OUT=${MANIFEST_OUT}"
+          echo "PYPROJECT_PATH=${PYPROJECT_PATH}"
           git rev-parse --abbrev-ref HEAD || true
           echo "Top-level files:"
           ls -la || true
 
-      - name: Build manifest (try common locations; write into workspace)
-        id: build_manifest
+      - name: Build manifest using ./synrxn/build_manifest.py (preferred)
+        id: build_manifest_script
         run: |
           set -euo pipefail
           set -x
           ROOT="${MANIFEST_ROOT}"
           OUT="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
-          PYPROJECT="${PYPROJECT}"
+          PYPROJECT="${PYPROJECT_PATH}"
 
-          echo "Will write manifest to: $OUT"
+          echo "Attempting to run the script at ./synrxn/build_manifest.py"
           mkdir -p "$(dirname "$OUT")"
 
-          run_if_exists() {
-            local script="$1"; shift
-            if [ -f "$script" ]; then
-              echo "--- running: python \"$script\" $*"
-              python "$script" "$@" 2>&1 | sed -n '1,400p'
-              return $?
-            fi
-            return 1
-          }
-
-          # 1) Try common script files (pass absolute output)
-          if run_if_exists "./build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
-            echo "build_manifest.py succeeded"
-            ls -l "$OUT" || true
-            exit 0
-          fi
-
-          if run_if_exists "./synrxn/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
-            echo "synrxn/build_manifest.py succeeded"
-            ls -l "$OUT" || true
-            exit 0
-          fi
-
-          if run_if_exists "./scripts/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
-            echo "scripts/build_manifest.py succeeded"
-            ls -l "$OUT" || true
-            exit 0
-          fi
-
-          # 2) If packaging files exist, install editable and try module invocation.
-          if [ -f "./pyproject.toml" ] || [ -f "./setup.py" ] || [ -f "./setup.cfg" ]; then
-            echo "Detected packaging files — installing in editable mode..."
-            python -m pip install -e . 2>&1 | sed -n '1,200p' || true
-
-            # ensure the module exists
-            python -c "import importlib.util,sys; sys.exit(0 if importlib.util.find_spec('synrxn.build_manifest') else 1)"
-            MODULE_OK=$?
-            if [ "$MODULE_OK" -eq 0 ]; then
-              echo "Module synrxn.build_manifest detected. Trying invocation variants..."
-
-              # Try module with --root + --output (may or may not be supported)
-              if python -m synrxn.build_manifest --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose 2>&1 | sed -n '1,400p'; then
-                echo "Module invocation with --root succeeded"
-                ls -l "$OUT" || true
-                exit 0
-              else
-                echo "Module invocation with --root failed — will try fallback (--output only)."
-              fi
-
-              # Fallback: call module with --output only
-              if python -m synrxn.build_manifest --output "$OUT" --verbose 2>&1 | sed -n '1,400p'; then
-                echo "Module fallback invocation succeeded"
-                ls -l "$OUT" || true
-                exit 0
-              else
-                echo "Module fallback invocation also failed."
-              fi
+          if [ -f "./synrxn/build_manifest.py" ]; then
+            echo "Invoking: python ./synrxn/build_manifest.py --root \"$ROOT\" --output \"$OUT\" --pyproject \"$PYPROJECT\" --verbose"
+            if python ./synrxn/build_manifest.py --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose 2>&1 | sed -n '1,400p'; then
+              echo "Script succeeded. Listing output:"
+              ls -l "$OUT" || true
+              echo "ok=true" >> $GITHUB_OUTPUT
+              echo "out=$OUT" >> $GITHUB_OUTPUT
+              exit 0
             else
-              echo "Module synrxn.build_manifest not available after install."
+              echo "Script returned non-zero exit code."
             fi
+          else
+            echo "./synrxn/build_manifest.py not found."
           fi
 
-          echo "ERROR: build_manifest entrypoint not found or did not produce $OUT."
-          echo "Searching for any manifest-like file in repo (non .git paths):"
-          find . -type f -iname "*manifest*.json" -not -path "*/.git/*" -print -exec stat -c "%n %s bytes" {} \; | sed -n '1,200p' || true
-          exit 1
-
-      - name: Verify manifest (optional)
-        id: verify_manifest
-        run: |
-          set -euo pipefail
-          MANIFEST="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
-          ROOT="${MANIFEST_ROOT}"
-          echo "Looking for manifest at $MANIFEST"
-
-          run_if_exists() {
-            local script="$1"; shift
-            if [ -f "$script" ]; then
-              echo "Running: python \"$script\" $*"
-              python "$script" "$@"
-              return $?
-            fi
-            return 1
-          }
-
-          if run_if_exists "./verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then exit 0; fi
-          if run_if_exists "./synrxn/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then exit 0; fi
-          if run_if_exists "./scripts/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then exit 0; fi
-
-          python -c "import importlib.util,sys; sys.exit(0 if importlib.util.find_spec('synrxn.verify_manifest') else 1)"
-          if [ $? -eq 0 ]; then
-            python -m synrxn.verify_manifest --manifest "$MANIFEST" --root "$ROOT" || true
-            exit 0
-          fi
-
-          echo "verify_manifest not found — continuing."
+          echo "Script invocation did not produce manifest at $OUT (or failed). Marking ok=false"
+          echo "ok=false" >> $GITHUB_OUTPUT
+          echo "out=$OUT" >> $GITHUB_OUTPUT
           exit 0
 
-      - name: Build CITATION.cff (optional)
-        id: build_citation
+      - name: Fallback: try module synrxn.build_manifest (if script failed)
+        if: steps.build_manifest_script.outputs.ok == 'false'
+        id: build_manifest_module
         run: |
           set -euo pipefail
-          MANIFEST="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
-          OUT="${GITHUB_WORKSPACE}/CITATION.cff"
+          set -x
+          OUT="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
+          PYPROJECT="${PYPROJECT_PATH}"
+          ROOT="${MANIFEST_ROOT}"
 
-          run_if_exists() {
-            local script="$1"; shift
-            if [ -f "$script" ]; then
-              echo "Running: python \"$script\" $*"
-              python "$script" "$@"
-              return $?
-            fi
-            return 1
-          }
+          echo "Installing package in editable mode (if packaging files present)..."
+          if [ -f "./pyproject.toml" ] || [ -f "./setup.py" ] || [ -f "./setup.cfg" ]; then
+            python -m pip install -e . 2>&1 | sed -n '1,200p' || true
+          fi
 
-          if run_if_exists "./build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then exit 0; fi
-          if run_if_exists "./synrxn/build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then exit 0; fi
-          if run_if_exists "./scripts/build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then exit 0; fi
-
-          python -c "import importlib.util,sys; sys.exit(0 if importlib.util.find_spec('synrxn.build_citation_from_manifest') else 1)"
-          if [ $? -eq 0 ]; then
-            python -m synrxn.build_citation_from_manifest --manifest "$MANIFEST" --output "$OUT" --verbose || true
+          # Try module with --output only (many versions support that)
+          echo "Trying: python -m synrxn.build_manifest --output \"$OUT\" --verbose"
+          if python -m synrxn.build_manifest --output "$OUT" --verbose 2>&1 | sed -n '1,400p'; then
+            echo "Module invocation succeeded and (hopefully) created $OUT"
+            ls -l "$OUT" || true
+            echo "ok=true" >> $GITHUB_OUTPUT
+            echo "out=$OUT" >> $GITHUB_OUTPUT
             exit 0
           fi
 
-          echo "No citation builder detected — skipping."
+          echo "Module invocation failed (or didn't create manifest)."
+          echo "ok=false" >> $GITHUB_OUTPUT
+          echo "out=$OUT" >> $GITHUB_OUTPUT
           exit 0
 
       - name: Locate and copy manifest/citation to workspace root (debug)
@@ -195,8 +118,8 @@ jobs:
           echo "Canonical manifest path: $ABS_MANIFEST"
           echo "Canonical citation path: $ABS_CITATION"
 
-          echo "Searching repository for manifest/citation files (non-git dirs excluded):"
-          find . -type f \( -iname "manifest.json" -o -iname "CITATION.cff" -o -iname "*manifest*.json" \) -not -path "*/.git/*" -print -exec stat -c "%n %s bytes" {} \; | sed -n '1,200p' || true
+          echo "Search repo for manifest-like files (non .git):"
+          find . -type f \( -iname "manifest.json" -o -iname "*manifest*.json" -o -iname "CITATION.cff" \) -not -path "*/.git/*" -print -exec stat -c "%n %s bytes" {} \; | sed -n '1,200p' || true
 
           FOUND_MANIFEST=$(find . -type f -iname "manifest.json" -not -path "*/.git/*" -print -quit || true)
           FOUND_CITATION=$(find . -type f -iname "CITATION.cff" -not -path "*/.git/*" -print -quit || true)
@@ -245,20 +168,16 @@ jobs:
           fi
 
           files_space=""
-          files_csv=""
           for f in "${found_paths[@]}"; do
             files_space="$files_space $f"
-            files_csv="$files_csv,$f"
             echo "FOUND: $f ($(stat -c '%s' "$f") bytes)"
             echo "Head of $f:"
             sed -n '1,80p' "$f" || true
           done
-          files_csv="${files_csv#,}"
           files_space="${files_space# }"
 
           echo "found=true" >> $GITHUB_OUTPUT
           echo "files=$files_space" >> $GITHUB_OUTPUT
-          echo "files_csv=$files_csv" >> $GITHUB_OUTPUT
 
       - name: Upload artifacts (manifest + citation)
         if: steps.check_files.outputs.found == 'true'

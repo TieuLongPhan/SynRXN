@@ -1,251 +1,257 @@
-#!/usr/bin/env python3
-"""
-build_citation_from_manifest.py
-
-Generate a CITATION.cff file from a manifest.json produced by build_manifest.py.
-
-Usage:
-    python build_citation_from_manifest.py \
-        --manifest manifest.json \
-        --output CITATION.cff \
-        --repo-url "https://github.com/TieuLongPhan/SynRXN/tree/v0.0.5" \
-        --doi "10.5281/zenodo.17297723" \
-        --verbose
-"""
 from __future__ import annotations
-import argparse
-import json
+import sys
+import os
 import re
-from datetime import datetime
+import json
+import hashlib
+import argparse
+import subprocess
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Optional, Any
+from typing import Any, Dict, List, Optional, Tuple
 
 try:
-    import yaml  # PyYAML if installed
+    import tomllib  # Python 3.11+
+except Exception:
+    tomllib = None  # type: ignore
+
+try:
+    import yaml  # optional (for nicer CFF output)
 
     HAVE_PYYAML = True
 except Exception:
     HAVE_PYYAML = False
 
-
-def load_manifest(path: Path) -> Dict[str, Any]:
-    with path.open("r", encoding="utf8") as fh:
-        return json.load(fh)
+ISO_FMT = "%Y-%m-%dT%H:%M:%SZ"
+DEFAULT_ZENODO_DOI = "10.5281/zenodo.17297723"
 
 
-def iso_to_date(iso: str) -> Optional[str]:
-    if not iso:
+def now_iso_utc() -> str:
+    return datetime.now(timezone.utc).strftime(ISO_FMT)
+
+
+def sha256_file(p: Path, chunk: int = 1024 * 1024) -> str:
+    h = hashlib.sha256()
+    with p.open("rb") as fh:
+        for ch in iter(lambda: fh.read(chunk), b""):
+            h.update(ch)
+    return h.hexdigest()
+
+
+def mtime_iso(p: Path) -> str:
+    ts = p.stat().st_mtime
+    return datetime.fromtimestamp(ts, timezone.utc).strftime(ISO_FMT)
+
+
+def run(
+    argv: List[str], cwd: Optional[Path] = None, timeout: int = 10
+) -> Tuple[int, str, str]:
+    try:
+        proc = subprocess.run(
+            argv,
+            cwd=str(cwd) if cwd else None,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+            timeout=timeout,
+        )
+        out = proc.stdout.decode("utf8", "replace").strip()
+        err = proc.stderr.decode("utf8", "replace").strip()
+        return proc.returncode, out, err
+    except Exception as e:
+        return 1, "", str(e)
+
+
+def find_git_root(start: Optional[Path] = None) -> Optional[Path]:
+    start = (start or Path.cwd()).resolve()
+    code, out, _ = run(["git", "rev-parse", "--show-toplevel"], cwd=start)
+    if code == 0 and out:
+        try:
+            return Path(out).resolve()
+        except Exception:
+            return None
+    return None
+
+
+def git_provenance(repo_root: Optional[Path]) -> Dict[str, Optional[str]]:
+    prov = {"git_root": None, "commit": None, "branch": None, "remotes": None}
+    root = find_git_root(repo_root)
+    if not root:
+        return prov
+    prov["git_root"] = str(root)
+    _, commit, _ = run(["git", "rev-parse", "HEAD"], cwd=root)
+    prov["commit"] = commit or None
+    c, branch, _ = run(["git", "rev-parse", "--abbrev-ref", "HEAD"], cwd=root)
+    prov["branch"] = branch if (c == 0 and branch and branch != "HEAD") else None
+    _, remotes, _ = run(["git", "remote", "-v"], cwd=root)
+    prov["remotes"] = remotes or None
+    return prov
+
+
+def load_pyproject(pyproject_path: Path) -> Dict[str, Any]:
+    data: Dict[str, Any] = {}
+    if not pyproject_path.exists() or not tomllib:
+        return data
+    with pyproject_path.open("rb") as fh:
+        data = tomllib.load(fh)  # type: ignore
+    return data
+
+
+def extract_project_meta(pyproj: Dict[str, Any]) -> Dict[str, Any]:
+    meta: Dict[str, Any] = {}
+    p = pyproj.get("project") or {}
+    if p:
+        meta["name"] = p.get("name")
+        meta["version"] = p.get("version")
+        meta["description"] = p.get("description")
+        authors = p.get("authors") or []
+        a_norm = []
+        for a in authors:
+            if isinstance(a, dict):
+                nm = a.get("name") or ""
+                em = a.get("email") or None
+                if nm:
+                    item = {"name": nm}
+                    if em:
+                        item["email"] = em
+                    a_norm.append(item)
+        meta["authors"] = a_norm
+        meta["license"] = (
+            (p.get("license") or {}).get("text")
+            if isinstance(p.get("license"), dict)
+            else p.get("license")
+        )
+    tp = pyproj.get("tool", {}).get("poetry") or {}
+    if tp:
+        meta.setdefault("name", tp.get("name"))
+        meta.setdefault("version", tp.get("version"))
+        meta.setdefault("description", tp.get("description"))
+        authors = tp.get("authors") or []
+        a_norm = meta.get("authors") or []
+        for a in authors:
+            s = str(a)
+            if "<" in s and ">" in s:
+                nm, rest = s.split("<", 1)
+                em = rest.split(">", 1)[0].strip()
+                a_norm.append({"name": nm.strip(), "email": em})
+            else:
+                a_norm.append({"name": s.strip()})
+        if a_norm:
+            meta["authors"] = a_norm
+        meta.setdefault("license", tp.get("license"))
+    return meta
+
+
+def scan_files(data_root: Path, follow_symlinks: bool = False) -> List[Dict[str, Any]]:
+    files: List[Dict[str, Any]] = []
+    for root, _dirs, names in os.walk(str(data_root), followlinks=follow_symlinks):
+        root_path = Path(root)
+        for fn in sorted(names):
+            p = root_path / fn
+            try:
+                if not p.is_file():
+                    continue
+                rel = p.relative_to(data_root).as_posix()
+                files.append(
+                    {
+                        "key": rel,
+                        "size": p.stat().st_size,
+                        "sha256": sha256_file(p),
+                        "mtime": mtime_iso(p),
+                    }
+                )
+            except Exception:
+                continue
+    files.sort(key=lambda d: d["key"])
+    return files
+
+
+def summarize(files: List[Dict[str, Any]]) -> Dict[str, Any]:
+    total = sum(int(f.get("size", 0)) for f in files)
+    by_dir: Dict[str, Dict[str, int]] = {}
+    for f in files:
+        key = f["key"]
+        top = key.split("/", 1)[0] if "/" in key else "."
+        ent = by_dir.setdefault(top, {"count": 0, "bytes": 0})
+        ent["count"] += 1
+        ent["bytes"] += int(f.get("size", 0))
+    return {"file_count": len(files), "total_bytes": total, "by_dir": by_dir}
+
+
+def iso_date(iso_or_date: Optional[str]) -> Optional[str]:
+    if not iso_or_date:
         return None
     try:
-        # allow either "2025-10-09T..." or "2025-10-09"
-        dt = datetime.fromisoformat(iso.replace("Z", "+00:00"))
+        dt = datetime.fromisoformat(iso_or_date.replace("Z", "+00:00"))
         return dt.date().isoformat()
     except Exception:
-        # last resort: extract leading YYYY-MM-DD
-        m = re.match(r"(\d{4}-\d{2}-\d{2})", iso)
+        m = re.match(r"(\d{4}-\d{2}-\d{2})", iso_or_date)
         return m.group(1) if m else None
 
 
 def split_name(full: str) -> Dict[str, str]:
-    """
-    Best-effort split of a human name into given-names and family-names.
-    Heuristics:
-      - if comma in name: assume "Family, Given" or "Family, Given Middlename"
-      - else: last token is family-name, rest are given-names
-      - fallback: put entire name as family-names
-    """
     s = full.strip()
     if not s:
         return {"given-names": "", "family-names": ""}
     if "," in s:
-        parts = [p.strip() for p in s.split(",", 1)]
-        family = parts[0]
-        given = parts[1]
-        return {"given-names": given, "family-names": family}
-    tokens = s.split()
-    if len(tokens) == 1:
-        return {"given-names": "", "family-names": tokens[0]}
-    # handle simple "First Middle Last" -> given = "First Middle", family = "Last"
-    return {"given-names": " ".join(tokens[:-1]), "family-names": tokens[-1]}
+        fam, giv = [p.strip() for p in s.split(",", 1)]
+        return {"given-names": giv, "family-names": fam}
+    toks = s.split()
+    if len(toks) == 1:
+        return {"given-names": "", "family-names": toks[0]}
+    return {"given-names": " ".join(toks[:-1]), "family-names": toks[-1]}
 
 
 def normalize_license(lic: Optional[str]) -> Optional[str]:
-    if not lic:
+    return str(lic).strip().replace(" ", "-") if lic else None
+
+
+def first_remote_url(remotes: Optional[str]) -> Optional[str]:
+    if not remotes:
         return None
-    # simple normalization: if license is "CC-BY-4.0" or "CC-BY 4.0", return SPDX-like "CC-BY-4.0"
-    s = str(lic).strip()
-    s = s.replace(" ", "-")
-    return s
+    m = re.search(r"(https?://[^\s]+|git@[^)\s]+)", remotes)
+    return m.group(1) if m else None
 
 
-def build_cff_dict(
-    manifest: Dict[str, Any], overrides: Dict[str, Any]
-) -> Dict[str, Any]:
-    ds = manifest.get("dataset", {})
-    prov = manifest.get("provenance", {}) or {}
-    cff: Dict[str, Any] = {}
-    # cff version
-    cff["cff-version"] = "1.2.0"
-
-    # title: prefer override, then dataset.title, fallback to repo info
-    title = (
-        overrides.get("title")
-        or ds.get("title")
-        or f"Dataset: {ds.get('title', 'Unknown')}"
-    )
-    cff["title"] = str(title)
-
-    # version: prefer override, then ds.version, else try manifest.generated_at date
-    version = overrides.get("version") or ds.get("version")
-    if not version:
-        # try to coerce generated_at YYYY.MM.DD or use manifest generated_at
-        gen = manifest.get("generated_at")
-        if gen:
-            try:
-                dt = datetime.fromisoformat(gen.replace("Z", "+00:00"))
-                version = f"v{dt.strftime('%Y.%m.%d')}"
-            except Exception:
-                version = None
-    if version:
-        cff["version"] = str(version)
-
-    # type: dataset or software? use override or default to 'dataset'
-    cff["type"] = overrides.get("type") or "dataset"
-
-    # message
-    cff["message"] = (
-        overrides.get("message")
-        or "If you use this dataset, please cite it using the metadata from this file."
-    )
-
-    # abstract: prefer override, then dataset.description
-    abstract = overrides.get("abstract") or ds.get("description")
-    if abstract:
-        # strip HTML tags if any (basic)
-        abstract = re.sub(r"<[^>]+>", "", str(abstract)).strip()
-        cff["abstract"] = abstract
-
-    # date-released: prefer override then dataset.generated_at or manifest.generated_at
-    date = (
-        overrides.get("date_released")
-        or ds.get("date_released")
-        or manifest.get("generated_at")
-    )
-    date_iso = iso_to_date(date) if date else None
-    if date_iso:
-        cff["date-released"] = date_iso
-
-    # doi: prefer override then dataset.doi then manifest-level doi if present
-    doi = overrides.get("doi") or ds.get("doi") or manifest.get("doi")
-    if doi:
-        # canonicalize: allow either 10.5281/... or https://doi.org/...
-        doi_str = str(doi).strip()
-        # if it's a full https URL, leave it in doi field but also add identifiers later
-        cff["doi"] = doi_str
-
-    # license
-    lic = overrides.get("license") or ds.get("license")
-    if lic:
-        cff["license"] = normalize_license(lic)
-
-    # repository-code: prefer override, then ds.source_url, then first git remote if available
-    repo = overrides.get("repository_code") or ds.get("source_url")
-    if not repo:
-        remotes = prov.get("remotes")
-        if remotes:
-            # try to extract github url from remotes string like "origin\tgit@github.com:User/Repo.git (fetch)\n..."
-            m = re.search(r"(https?://[^\s]+|git@[^)\s]+)", remotes)
-            if m:
-                repo = m.group(1)
-    if repo:
-        cff["repository-code"] = str(repo)
-
-    # authors: try to convert manifest authors list to CFF authors
-    manifest_authors = ds.get("authors") or []
-    cff_authors: List[Dict[str, str]] = []
-    if manifest_authors:
-        for a in manifest_authors:
-            # a might be {"name": "...", "email": "...", "affiliation": "..."} or already split
-            if isinstance(a, dict):
-                name = a.get("name") or ""
-                em = a.get("email")
-                aff = a.get("affiliation") or a.get("affiliaton")  # common typo
-                # if manifest already has given/family, keep them
-                if a.get("given-names") or a.get("family-names"):
-                    entry = {}
-                    if a.get("given-names"):
-                        entry["given-names"] = a.get("given-names")
-                    if a.get("family-names"):
-                        entry["family-names"] = a.get("family-names")
-                    if em:
-                        entry["email"] = em
-                    if aff:
-                        entry["affiliation"] = aff
-                else:
-                    splitted = split_name(name)
-                    entry = {}
-                    if splitted.get("given-names"):
-                        entry["given-names"] = splitted["given-names"]
-                    entry["family-names"] = splitted.get("family-names") or name
-                    if em:
-                        entry["email"] = em
-                    if aff:
-                        entry["affiliation"] = aff
-            else:
-                # manifest author entry could be a string
-                splitted = split_name(str(a))
-                entry = {}
-                if splitted.get("given-names"):
-                    entry["given-names"] = splitted["given-names"]
-                entry["family-names"] = splitted.get("family-names")
-            cff_authors.append(entry)
-    else:
-        # fallback: if git user available in provenance, use it
-        git_root = prov.get("git_root")
-        if git_root:
-            # don't auto-add fake authors; leave authors absent if not provided
-            pass
-    if cff_authors:
-        cff["authors"] = cff_authors
-
-    # optional identifiers block: include commit hash as identifier if present
-    identifiers: List[Dict[str, str]] = []
-    commit = prov.get("commit")
-    if commit:
-        identifiers.append({"type": "commit", "value": commit})
-    if doi and doi.startswith("http"):
-        identifiers.append({"type": "doi", "value": doi})
-    elif doi and re.match(r"^\d+\.\d+\/", str(doi)):
-        identifiers.append({"type": "doi", "value": str(doi)})
-
-    if identifiers:
-        cff["identifiers"] = identifiers
-
-    return cff
+def authors_to_cff(auth: List[Dict[str, Any]]) -> List[Dict[str, str]]:
+    out: List[Dict[str, str]] = []
+    for a in auth:
+        if isinstance(a, dict) and (a.get("given-names") or a.get("family-names")):
+            ent = {}
+            if a.get("given-names"):
+                ent["given-names"] = a["given-names"]
+            if a.get("family-names"):
+                ent["family-names"] = a["family-names"]
+            if a.get("email"):
+                ent["email"] = a["email"]
+            if a.get("affiliation"):
+                ent["affiliation"] = a["affiliation"]
+            out.append(ent)
+            continue
+        name = (a.get("name") if isinstance(a, dict) else str(a)) or ""
+        email = a.get("email") if isinstance(a, dict) else None
+        sp = split_name(name)
+        ent = {}
+        if sp.get("given-names"):
+            ent["given-names"] = sp["given-names"]
+        if sp.get("family-names"):
+            ent["family-names"] = sp["family-names"]
+        if email:
+            ent["email"] = email
+        out.append(ent)
+    return out
 
 
-def dump_cff_yaml(cff: Dict[str, Any], outpath: Path) -> None:
-    if HAVE_PYYAML:
-        # Use safe_dump with explicit string quoting where needed
-        with outpath.open("w", encoding="utf8") as fh:
-            yaml.safe_dump(cff, fh, sort_keys=False, allow_unicode=True)
-        print(f"Wrote CITATION.cff using PyYAML to {outpath}")
-        return
-
-    # Manual conservative YAML emitter (safe for our simple types)
+def dump_yaml_manual(data: Dict[str, Any], outpath: Path) -> None:
     def esc(s: Any) -> str:
         if s is None:
             return ""
         s = str(s)
-        # Simple heuristic: quote if special chars present or leading/trailing spaces
         if re.search(r"[:\-\[\]\{\},#&*!|>\'\"%@`]", s) or s.strip() != s or "\n" in s:
-            # double-quote and escape internal quotes/backslashes
             s = s.replace("\\", "\\\\").replace('"', '\\"')
             return f'"{s}"'
         return s
 
-    lines: List[str] = []
-    # keep ordering reasonable
     order = [
         "cff-version",
         "title",
@@ -255,79 +261,282 @@ def dump_cff_yaml(cff: Dict[str, Any], outpath: Path) -> None:
         "abstract",
         "date-released",
         "doi",
+        "url",
         "license",
         "repository-code",
         "authors",
         "identifiers",
     ]
-    for key in order:
-        if key not in cff:
+    lines: List[str] = []
+    for k in order:
+        if k not in data:
             continue
-        val = cff[key]
-        if key == "authors" and isinstance(val, list):
-            lines.append("authors:")
-            for a in val:
+        v = data[k]
+        if k in ("authors", "identifiers") and isinstance(v, list):
+            lines.append(f"{k}:")
+            for item in v:
                 lines.append("  -")
-                for k2, v2 in a.items():
-                    lines.append(f"    {k2}: {esc(v2)}")
-            continue
-        if key == "identifiers" and isinstance(val, list):
-            lines.append("identifiers:")
-            for ident in val:
-                lines.append("  -")
-                for k2, v2 in ident.items():
-                    lines.append(f"    {k2}: {esc(v2)}")
-            continue
-        lines.append(f"{key}: {esc(val)}")
+                for kk, vv in item.items():
+                    lines.append(f"    {kk}: {esc(vv)}")
+        else:
+            lines.append(f"{k}: {esc(v)}")
     outpath.write_text("\n".join(lines) + "\n", encoding="utf8")
-    print(f"Wrote CITATION.cff (manual emitter) to {outpath}")
 
 
-def main():
-    p = argparse.ArgumentParser()
-    p.add_argument(
-        "--manifest", "-m", default="manifest.json", help="Path to manifest.json"
+def build_cff_from_manifest(
+    manifest: Dict[str, Any], overrides: Dict[str, Any]
+) -> Dict[str, Any]:
+    ds = manifest.get("dataset", {}) or {}
+    prov = manifest.get("provenance", {}) or {}
+
+    cff: Dict[str, Any] = {"cff-version": "1.2.0"}
+    cff["title"] = overrides.get("title") or ds.get("title") or "SynRXN dataset"
+    v = overrides.get("version") or ds.get("version")
+    if v:
+        cff["version"] = str(v)
+
+    cff["type"] = overrides.get("type") or "dataset"
+    cff["message"] = (
+        overrides.get("message")
+        or "If you use this work, please cite it using this file."
+    )
+    if ds.get("description"):
+        cff["abstract"] = ds["description"]
+
+    doi = overrides.get("doi") or ds.get("doi")
+    if doi:
+        cff["doi"] = str(doi)
+
+    if overrides.get("url"):
+        cff["url"] = overrides["url"]
+    elif doi and not overrides.get("url"):
+        cff["url"] = f"https://doi.org/{doi}"
+
+    lic = overrides.get("license") or ds.get("license")
+    lic = normalize_license(lic)
+    if lic:
+        cff["license"] = lic
+
+    repo = overrides.get("repo_url") or first_remote_url(prov.get("remotes"))
+    if repo:
+        cff["repository-code"] = repo
+
+    date_rel = overrides.get("date_released") or manifest.get("generated_at")
+    if date_rel:
+        dr = iso_date(date_rel)
+        if dr:
+            cff["date-released"] = dr
+
+    authors = ds.get("authors") or []
+    if authors:
+        cff["authors"] = authors_to_cff(authors)
+
+    idents: List[Dict[str, str]] = []
+    if prov.get("commit"):
+        idents.append({"type": "commit", "value": prov["commit"]})
+    if doi:
+        idents.append({"type": "doi", "value": str(doi)})
+    if overrides.get("swhid"):
+        idents.append({"type": "swh", "value": str(overrides["swhid"])})
+    if idents:
+        cff["identifiers"] = idents
+    return cff
+
+
+def build_manifest(
+    data_dir: Path,
+    meta: Dict[str, Any],
+    follow_symlinks: bool = False,
+    doi: Optional[str] = None,
+    license_str: Optional[str] = None,
+) -> Dict[str, Any]:
+    generated_at = now_iso_utc()
+    root = data_dir
+    if (root / "Data").is_dir():
+        root = root / "Data"
+    if not root.exists():
+        raise FileNotFoundError(f"data-dir not found: {root}")
+
+    files = scan_files(root, follow_symlinks=follow_symlinks)
+    stats = summarize(files)
+
+    prov = git_provenance(repo_root=root)
+
+    dataset = {
+        "title": meta.get("title"),
+        "version": meta.get("version"),
+        "description": meta.get("description"),
+        "license": license_str,
+        "doi": doi,
+        "authors": meta.get("authors") or [],
+        "files": files,
+        "summary": stats,
+    }
+    dataset = {k: v for k, v in dataset.items() if v not in (None, "", [])}
+
+    man = {
+        "generated_at": generated_at,
+        "dataset": dataset,
+        "provenance": prov,
+        "project": {
+            "name": meta.get("name"),
+            "pyproject": meta.get("_pyproject_path"),
+        },
+    }
+    return man
+
+
+def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
+    p = argparse.ArgumentParser(
+        description="Build manifest.json and CITATION.cff (CITATION always generated)."
     )
     p.add_argument(
-        "--output", "-o", default="CITATION.cff", help="Output CITATION.cff path"
+        "-d", "--data-dir", default="Data", help="Directory to scan (default: Data)"
     )
+    p.add_argument(
+        "-m", "--manifest-output", default="manifest.json", help="Output manifest path"
+    )
+    p.add_argument(
+        "-c",
+        "--citation-output",
+        default="CITATION.cff",
+        help="CITATION.cff path (always written)",
+    )
+    p.add_argument(
+        "--title", help="Dataset title (default: from pyproject name or SynRXN dataset)"
+    )
+    p.add_argument("--version", help="Override version (default: from pyproject)")
+    p.add_argument(
+        "--description", help="Override description (default: from pyproject)"
+    )
+    p.add_argument(
+        "--author", action="append", help="Extra author 'Name <email>' (can repeat)"
+    )
+    p.add_argument(
+        "--license",
+        dest="license_str",
+        help="SPDX id or human license text (e.g. CC-BY-4.0)",
+    )
+    # Default Zenodo DOI baked in; user can override if they want.
     p.add_argument(
         "--doi",
-        help="Override DOI (e.g. 10.5281/zenodo.17297723 or https://doi.org/...)",
+        default=DEFAULT_ZENODO_DOI,
+        help=f"Zenodo DOI to include (default: {DEFAULT_ZENODO_DOI})",
     )
-    p.add_argument("--title", help="Override title")
-    p.add_argument("--version", help="Override version")
     p.add_argument("--repo-url", help="Override repository-code URL")
-    p.add_argument("--abstract", help="Override abstract")
-    p.add_argument("--date-released", help="Override release date (YYYY-MM-DD)")
-    p.add_argument("--verbose", "-v", action="store_true")
-    args = p.parse_args()
-
-    manifest_path = Path(args.manifest)
-    if not manifest_path.exists():
-        raise SystemExit(f"manifest not found: {manifest_path}")
-
-    manifest = load_manifest(manifest_path)
-
-    overrides = {
-        "doi": args.doi,
-        "title": args.title,
-        "version": args.version,
-        "repository_code": args.repo_url,
-        "abstract": args.abstract,
-        "date_released": args.date_released,
-    }
-
-    cff = build_cff_dict(
-        manifest, {k: v for k, v in overrides.items() if v is not None}
+    p.add_argument(
+        "--url", help="Override project URL for CFF (e.g., https://doi.org/...)"
     )
-    outpath = Path(args.output)
-    dump_cff_yaml(cff, outpath)
+    p.add_argument("--swhid", help="Add SWHID to CFF identifiers")
+    p.add_argument("--follow-symlinks", action="store_true", help="Follow symlinks")
+    p.add_argument("-v", "--verbose", action="store_true", help="Verbose logging")
+    return p.parse_args(argv)
+
+
+def main(argv: Optional[List[str]] = None) -> int:
+    args = parse_args(argv)
+
+    data_dir = Path(args.data_dir).expanduser().resolve()
+    manifest_out = Path(args.manifest_output).expanduser().resolve()
+    citation_out = Path(args.citation_output).expanduser().resolve()
+
+    repo_root = find_git_root(data_dir) or data_dir
+    pyproject_path = repo_root / "pyproject.toml"
+    pyproj = load_pyproject(pyproject_path)
+    proj_meta = extract_project_meta(pyproj)
+    proj_meta["_pyproject_path"] = (
+        str(pyproject_path) if pyproject_path.exists() else None
+    )
+
+    meta: Dict[str, Any] = {}
+    meta["name"] = proj_meta.get("name") or "SynRXN"
+    # version precedence: CLI override > pyproject version
+    meta["version"] = args.version or proj_meta.get("version")
+    meta["description"] = args.description or proj_meta.get("description")
+    authors = proj_meta.get("authors") or []
+    extra = []
+    for s in args.author or []:
+        s = str(s).strip()
+        if "<" in s and ">" in s:
+            nm, rest = s.split("<", 1)
+            em = rest.split(">", 1)[0].strip()
+            extra.append({"name": nm.strip(), "email": em})
+        else:
+            extra.append({"name": s})
+    if extra:
+        authors = (authors or []) + extra
+    meta["authors"] = authors
+    meta["title"] = (
+        args.title
+        or f"{meta['name']}: A Benchmarking Framework and Open Data Repository for Computer-Aided Synthesis Planning"
+    )
+
+    # If no version found, warn (but still proceed); CITATION will include whatever version we can find.
+    if not meta.get("version"):
+        print(
+            "[warning] version not found in pyproject.toml and --version not provided; CITATION.cff will omit version.",
+            file=sys.stderr,
+        )
+
+    try:
+        manifest = build_manifest(
+            data_dir=data_dir,
+            meta=meta,
+            follow_symlinks=args.follow_symlinks,
+            doi=args.doi,
+            license_str=args.license_str,
+        )
+    except Exception as exc:
+        print(f"[manifest] error: {exc}", file=sys.stderr)
+        return 2
+
+    try:
+        manifest_out.parent.mkdir(parents=True, exist_ok=True)
+        manifest_out.write_text(
+            json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf8"
+        )
+    except Exception as exc:
+        print(f"[manifest] write failed: {exc} (path: {manifest_out})", file=sys.stderr)
+        return 3
 
     if args.verbose:
-        print("Generated CITATION.cff content:")
-        print(outpath.read_text(encoding="utf8"))
+        ds = manifest["dataset"]
+        print(f"[manifest] wrote {manifest_out}")
+        print(
+            f"  files={ds['summary']['file_count']} bytes={ds['summary']['total_bytes']} version={ds.get('version')}"
+        )
+
+    # CITATION.cff: ALWAYS generated
+    overrides = {
+        "title": meta.get("title"),
+        "version": meta.get("version"),
+        "doi": args.doi,
+        "license": args.license_str,
+        "repo_url": args.repo_url,
+        "url": args.url or (f"https://doi.org/{args.doi}" if args.doi else None),
+        "date_released": manifest.get("generated_at"),
+        "swhid": args.swhid,
+    }
+    try:
+        cff = build_cff_from_manifest(manifest, overrides)
+    except Exception as exc:
+        print(f"[citation] build failed: {exc}", file=sys.stderr)
+        return 4
+    try:
+        citation_out.parent.mkdir(parents=True, exist_ok=True)
+        if HAVE_PYYAML:
+            with citation_out.open("w", encoding="utf8") as fh:
+                yaml.safe_dump(cff, fh, sort_keys=False, allow_unicode=True)  # type: ignore
+        else:
+            dump_yaml_manual(cff, citation_out)
+    except Exception as exc:
+        print(f"[citation] write failed: {exc} (path: {citation_out})", file=sys.stderr)
+        return 5
+    if args.verbose:
+        print(f"[citation] wrote {citation_out}")
+
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

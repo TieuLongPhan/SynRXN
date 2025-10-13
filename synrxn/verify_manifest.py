@@ -1,5 +1,8 @@
 from __future__ import annotations
-import argparse, json, hashlib, sys
+import argparse
+import json
+import hashlib
+import sys
 from pathlib import Path
 from typing import List, Dict, Any
 
@@ -80,7 +83,8 @@ def main():
         print("Trying root:", r)
         res = verify_with_root(manifest, r, quiet=args.quiet)
         print(
-            f" missing={len(res['missing'])}, size_mismatch={len(res['size_mismatch'])}, checksum_mismatch={len(res['checksum_mismatch'])}"
+            f" missing={len(res['missing'])}, size_mismatch={len(res['size_mismatch'])},"
+            + f" checksum_mismatch={len(res['checksum_mismatch'])}"
         )
         if (
             len(res["missing"]) == 0
@@ -97,7 +101,8 @@ def main():
     print("  sample missing (first 10):", best_res["missing"][:10])
     print("\nSuggested fixes:")
     print(
-        f"  - If your data folder is '{best}/', run: python synrxn/verify_manifest.py --manifest {manifest_path} --root {best}"
+        f"  - If your data folder is '{best}/', run: python synrxn/verify_manifest.py"
+        + f" --manifest {manifest_path} --root {best}"
     )
     print("  - Or regenerate manifest using the correct root, e.g.:")
     print(f"      python build_manifest.py --root {best} --output {manifest_path}")
