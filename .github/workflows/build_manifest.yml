@@ -54,6 +54,7 @@ jobs:
           set -euo pipefail
           set -x
 
+          # The repo root (parent of GITHUB_WORKSPACE) is where we want manifest to end up
           REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE:-.}")
           echo "REPO_ROOT: $REPO_ROOT"
 
@@ -65,26 +66,26 @@ jobs:
           echo "Target manifest path: $OUT"
           mkdir -p "$(dirname "$OUT")"
 
-          # 1) Try short-flag invocation on the script (many versions accept -d -m -c)
+          # 1) Preferred: script with short flags (-d data dir, -m manifest, -c citation)
           if [ -f "./synrxn/build_manifest.py" ]; then
-            echo "Trying script with short flags: -d (data dir), -m (manifest out), -c (citation out)"
+            echo "Trying script with short flags (-d -m -c)"
             if python ./synrxn/build_manifest.py -d "$ROOT" -m "$OUT" -c "$CITATION_OUT" -v 2>&1 | sed -n '1,400p'; then
-              echo "Script produced manifest via -m."
+              echo "Script created manifest using -m."
               echo "ok=true" >> $GITHUB_OUTPUT
               echo "out=$OUT" >> $GITHUB_OUTPUT
               exit 0
             else
-              echo "Script with short flags failed or didn't create manifest; will try other fallbacks."
+              echo "Script with short flags failed or didn't create manifest; trying fallbacks."
             fi
           else
-            echo "./synrxn/build_manifest.py not present (script path missing)."
+            echo "./synrxn/build_manifest.py not present; will try fallbacks."
           fi
 
-          # 2) Run the script from REPO_ROOT (so files written to cwd land in repo root)
+          # 2) Run script with working directory = REPO_ROOT (if script writes to cwd)
           if [ -f "./synrxn/build_manifest.py" ]; then
-            echo "Running script in REPO_ROOT so generated files land there:"
+            echo "Running script from REPO_ROOT so files written to cwd land in repo root"
             if (cd "$REPO_ROOT" && python synrxn/build_manifest.py -v) 2>&1 | sed -n '1,400p'; then
-              echo "Script executed in repo root; check $OUT."
+              echo "Script executed in repo root; check $OUT"
               echo "ok=true" >> $GITHUB_OUTPUT
               echo "out=$OUT" >> $GITHUB_OUTPUT
               exit 0
@@ -93,30 +94,30 @@ jobs:
             fi
           fi
 
-          # 3) Try installed module with short flags (-m -c)
+          # 3) Install editable and try module with short flags
           if [ -f "./pyproject.toml" ] || [ -f "./setup.py" ] || [ -f "./setup.cfg" ]; then
-            echo "Installing package in editable mode (if packaging files present)..."
+            echo "Attempting to install package in editable mode..."
             python -m pip install -e . 2>&1 | sed -n '1,200p' || true
           fi
 
-          echo "Trying module: python -m synrxn.build_manifest -m \"$OUT\" -c \"$CITATION_OUT\" -v"
+          echo "Trying module invocation with -m and -c"
           if python -m synrxn.build_manifest -m "$OUT" -c "$CITATION_OUT" -v 2>&1 | sed -n '1,400p'; then
-            echo "Module invocation (short flags) succeeded."
+            echo "Module invocation succeeded and should have created $OUT"
             echo "ok=true" >> $GITHUB_OUTPUT
             echo "out=$OUT" >> $GITHUB_OUTPUT
             exit 0
           fi
 
-          # 4) Last resort: run module without args in repo root (may write defaults into repo root)
-          echo "Last-resort: run module without args in REPO_ROOT"
+          # 4) Last resort: run module/script without args in repo root
+          echo "Last-resort: running module without args in REPO_ROOT"
           if (cd "$REPO_ROOT" && python -m synrxn.build_manifest -v) 2>&1 | sed -n '1,400p'; then
-            echo "Module ran in repo root; check for created manifest."
+            echo "Module ran in repo root; manifest may be created at default location"
             echo "ok=false" >> $GITHUB_OUTPUT
             echo "out=$OUT" >> $GITHUB_OUTPUT
             exit 0
           fi
 
-          echo "All build attempts failed."
+          echo "All attempts to build manifest failed."
           echo "ok=false" >> $GITHUB_OUTPUT
           echo "out=$OUT" >> $GITHUB_OUTPUT
           exit 0
@@ -130,15 +131,7 @@ jobs:
           REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE:-.}")
           echo "REPO_ROOT: $REPO_ROOT"
 
-          # canonical repo-root paths (where build may have written)
-          ABS_MANIFEST="$REPO_ROOT/${MANIFEST_OUT}"
-          ABS_CITATION="$REPO_ROOT/CITATION.cff"
-
-          # workspace destination (upload-artifact reads from here)
-          DEST_MANIFEST="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
-          DEST_CITATION="${GITHUB_WORKSPACE}/CITATION.cff"
-
-          echo "Will search for manifest/citation in: workspace=${GITHUB_WORKSPACE:-.} and repo_root=${REPO_ROOT}"
+          # candidate locations
           FOUND_MANIFEST=""
           FOUND_CITATION=""
 
@@ -164,17 +157,20 @@ jobs:
             fi
           done
 
-          # Copy into workspace root for reliable uploading (skip if source == dest)
+          # copy found files into workspace root for reliable uploading and commits
+          DEST_MANIFEST="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
+          DEST_CITATION="${GITHUB_WORKSPACE}/CITATION.cff"
+
           if [ -n "$FOUND_MANIFEST" ]; then
             if [ "$FOUND_MANIFEST" != "$DEST_MANIFEST" ]; then
               echo "Copying manifest: $FOUND_MANIFEST -> $DEST_MANIFEST"
               mkdir -p "$(dirname "$DEST_MANIFEST")"
               cp -v "$FOUND_MANIFEST" "$DEST_MANIFEST" || true
             else
-              echo "Manifest already in workspace; skipping copy."
+              echo "Manifest already in workspace; no copy needed."
             fi
           else
-            echo "No manifest found in search roots."
+            echo "No manifest found."
           fi
 
           if [ -n "$FOUND_CITATION" ]; then
@@ -183,21 +179,18 @@ jobs:
               mkdir -p "$(dirname "$DEST_CITATION")"
               cp -v "$FOUND_CITATION" "$DEST_CITATION" || true
             else
-              echo "Citation already in workspace; skipping copy."
+              echo "Citation already in workspace; no copy needed."
             fi
           else
-            echo "No CITATION.cff found in search roots."
+            echo "No CITATION.cff found."
           fi
 
-          # Print what we will upload
-          echo "Workspace root listing (top):"
+          # emit a simple output (useful for debugging later)
+          echo "found_manifest=${FOUND_MANIFEST:-}" >> $GITHUB_OUTPUT || true
+          echo "found_citation=${FOUND_CITATION:-}" >> $GITHUB_OUTPUT || true
+
+          echo "Workspace top listing:"
           ls -la "${GITHUB_WORKSPACE}" | sed -n '1,200p' || true
-          if [ -f "$DEST_MANIFEST" ]; then
-            echo "Manifest at workspace: $DEST_MANIFEST ($(stat -c '%s' "$DEST_MANIFEST") bytes)"
-          fi
-          if [ -f "$DEST_CITATION" ]; then
-            echo "Citation at workspace: $DEST_CITATION ($(stat -c '%s' "$DEST_CITATION") bytes)"
-          fi
 
       - name: "Debug: show files-to-upload and existence"
         run: |
@@ -224,30 +217,21 @@ jobs:
             manifest.json
             CITATION.cff
 
-      - name: "Commit & push manifest and CITATION.cff (if changed)"
+      - name: "Commit & push manifest and CITATION.cff (check workspace files)"
         env:
-          LOCATE_FOUND: ${{ steps.locate.outputs.found }}
           EVENT_NAME: ${{ github.event_name }}
         run: |
           set -euo pipefail
           set -x
 
-          echo "locate.outputs.found='${LOCATE_FOUND:-}'"
           echo "github.event_name='${EVENT_NAME:-}'"
 
-          # skip if locate did not find anything
-          if [ "${LOCATE_FOUND:-}" != "true" ]; then
-            echo "locate reported no files to push (found != 'true'). Skipping commit/push."
-            exit 0
-          fi
-
-          # avoid pushing from pull_request events (GITHUB_TOKEN from forks cannot push)
-          if [ "${EVENT_NAME}" = "pull_request" ]; then
+          # do not attempt to push on pull_request events (forks won't have push rights)
+          if [ "${EVENT_NAME:-}" = "pull_request" ]; then
             echo "Event is pull_request — skipping push to avoid permission issues."
             exit 0
           fi
 
-          # canonical repo root (parent of workspace)
           REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "")
           if [ -z "$REPO_ROOT" ]; then
             echo "Could not determine REPO_ROOT; aborting push."
@@ -255,19 +239,44 @@ jobs:
           fi
           echo "REPO_ROOT: $REPO_ROOT"
 
-          # ensure workspace files are copied to repo root if needed
-          if [ -f "${GITHUB_WORKSPACE}/manifest.json" ] && [ ! -f "$REPO_ROOT/manifest.json" ]; then
-            echo "Copying workspace manifest to repo root: ${GITHUB_WORKSPACE}/manifest.json -> $REPO_ROOT/manifest.json"
-            cp -v "${GITHUB_WORKSPACE}/manifest.json" "$REPO_ROOT/manifest.json" || true
+          WORK_MANIFEST="${GITHUB_WORKSPACE}/manifest.json"
+          WORK_CITATION="${GITHUB_WORKSPACE}/CITATION.cff"
+          found_any=false
+          if [ -f "$WORK_MANIFEST" ]; then
+            echo "Found workspace manifest: $WORK_MANIFEST"
+            found_any=true
           fi
-          if [ -f "${GITHUB_WORKSPACE}/CITATION.cff" ] && [ ! -f "$REPO_ROOT/CITATION.cff" ]; then
-            echo "Copying workspace CITATION.cff to repo root: ${GITHUB_WORKSPACE}/CITATION.cff -> $REPO_ROOT/CITATION.cff"
-            cp -v "${GITHUB_WORKSPACE}/CITATION.cff" "$REPO_ROOT/CITATION.cff" || true
+          if [ -f "$WORK_CITATION" ]; then
+            echo "Found workspace citation: $WORK_CITATION"
+            found_any=true
           fi
 
-          # only commit if repo root is a git checkout
+          if [ "$found_any" != "true" ]; then
+            echo "No manifest/CITATION in workspace to commit. Exiting."
+            exit 0
+          fi
+
+          # copy workspace files to repo root so we modify the tracked checkout
+          if [ -f "$WORK_MANIFEST" ]; then
+            if [ ! -f "$REPO_ROOT/manifest.json" ] || ! cmp -s "$WORK_MANIFEST" "$REPO_ROOT/manifest.json"; then
+              echo "Copying workspace manifest to repo root"
+              cp -v "$WORK_MANIFEST" "$REPO_ROOT/manifest.json"
+            else
+              echo "Repo-root manifest identical; no copy."
+            fi
+          fi
+          if [ -f "$WORK_CITATION" ]; then
+            if [ ! -f "$REPO_ROOT/CITATION.cff" ] || ! cmp -s "$WORK_CITATION" "$REPO_ROOT/CITATION.cff"; then
+              echo "Copying workspace CITATION.cff to repo root"
+              cp -v "$WORK_CITATION" "$REPO_ROOT/CITATION.cff"
+            else
+              echo "Repo-root CITATION.cff identical; no copy."
+            fi
+          fi
+
+          # require a git checkout in REPO_ROOT to commit
           if [ ! -d "$REPO_ROOT/.git" ]; then
-            echo "Repo root does not contain .git; skipping commit/push."
+            echo "Repo root is not a git checkout; skipping commit/push."
             exit 0
           fi
 
@@ -275,26 +284,22 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # stage files (ignore if missing)
           git add manifest.json CITATION.cff || true
 
-          # if nothing staged, exit
           if git diff --cached --quiet; then
-            echo "No changes to manifest/CITATION to commit."
+            echo "No changes staged for commit."
             exit 0
           fi
 
-          # commit
           git commit -m "chore(manifest): update manifest.json and CITATION.cff [ci skip]" || true
 
-          # determine branch to push to (branch that triggered the workflow)
           BRANCH="${GITHUB_REF#refs/heads/}"
           if [ -z "$BRANCH" ]; then
             BRANCH="${GITHUB_HEAD_REF:-main}"
           fi
           echo "Pushing to branch: $BRANCH"
 
-          # push via the origin already configured by actions/checkout (uses GITHUB_TOKEN)
+          # push using origin configured by actions/checkout (GITHUB_TOKEN)
           git push origin "HEAD:${BRANCH}" || (echo "git push failed" && exit 1)
 
       - name: "Final debug listing"
