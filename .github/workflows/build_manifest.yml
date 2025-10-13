@@ -32,32 +32,35 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
+        shell: bash -l {0}
         run: |
           python -m pip install --upgrade pip
           pip install toml PyYAML
 
       - name: Debug: show repo snapshot
+        shell: bash -l {0}
         run: |
           echo "PWD: $(pwd)"
-          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+          echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE:-<not-set>}"
           git rev-parse --abbrev-ref HEAD || true
           echo "Repository listing (depth 4):"
           find . -maxdepth 4 -type f -not -path "./.git/*" | sed -n '1,200p' || true
           echo "Looking for manifest/verify scripts:"
-          find . -iname "build_manifest.py" -o -iname "verify_manifest.py" -o -iname "build_citation_from_manifest.py" -print || true
+          find . -iname "build_manifest.py" -o -iname "verify_manifest.py" -o -iname "build_citation_from_manifest.py" -print | sed -n '1,200p' || true
 
       - name: Build manifest (try common locations)
         id: build_manifest
+        shell: bash -l {0}
         run: |
           set -euo pipefail
-          ROOT="${{ env.MANIFEST_ROOT }}"
-          OUT="${{ env.MANIFEST_OUT }}"
-          PYPROJECT="${{ env.PYPROJECT }}"
+          ROOT="${MANIFEST_ROOT}"
+          OUT="${MANIFEST_OUT}"
+          PYPROJECT="${PYPROJECT}"
 
           run_if_exists() {
             local script="$1"; shift
             if [ -f "$script" ]; then
-              echo "Running $script $*"
+              echo "Running: python \"$script\" $*"
               python "$script" "$@"
               return 0
             fi
@@ -80,8 +83,8 @@ jobs:
           # try install-and-run as module if packaging files exist
           if [ -f "./pyproject.toml" ] || [ -f "./setup.py" ] || [ -f "./setup.cfg" ]; then
             echo "Detected packaging files — installing in editable mode..."
-            pip install -e .
-            if python -c "import importlib; importlib.import_module('synrxn.build_manifest')" 2>/dev/null; then
+            pip install -e . || true
+            if python -c "import importlib, sys; sys.exit(0 if importlib.util.find_spec('synrxn.build_manifest') else 1)" 2>/dev/null; then
               python -m synrxn.build_manifest --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose
               exit 0
             fi
@@ -92,15 +95,16 @@ jobs:
 
       - name: Verify manifest (try common locations, optional)
         id: verify_manifest
+        shell: bash -l {0}
         run: |
           set -euo pipefail
-          MANIFEST="${{ env.MANIFEST_OUT }}"
-          ROOT="${{ env.MANIFEST_ROOT }}"
+          MANIFEST="${MANIFEST_OUT}"
+          ROOT="${MANIFEST_ROOT}"
 
           run_if_exists() {
             local script="$1"; shift
             if [ -f "$script" ]; then
-              echo "Running $script $*"
+              echo "Running: python \"$script\" $*"
               python "$script" "$@"
               return 0
             fi
@@ -120,7 +124,7 @@ jobs:
           fi
 
           # optional: module route
-          if python -c "import importlib; importlib.import_module('synrxn.verify_manifest')" 2>/dev/null; then
+          if python -c "import importlib,sys; sys.exit(0 if importlib.util.find_spec('synrxn.verify_manifest') else 1)" 2>/dev/null; then
             python -m synrxn.verify_manifest --manifest "$MANIFEST" --root "$ROOT"
             exit 0
           fi
@@ -130,14 +134,16 @@ jobs:
 
       - name: Build CITATION.cff (optional)
         id: build_citation
+        shell: bash -l {0}
         run: |
           set -euo pipefail
-          MANIFEST="${{ env.MANIFEST_OUT }}"
+          MANIFEST="${MANIFEST_OUT}"
           OUT="CITATION.cff"
+
           run_if_exists() {
             local script="$1"; shift
             if [ -f "$script" ]; then
-              echo "Running $script $*"
+              echo "Running: python \"$script\" $*"
               python "$script" "$@"
               return 0
             fi
@@ -156,7 +162,7 @@ jobs:
             exit 0
           fi
 
-          if python -c "import importlib; importlib.import_module('synrxn.build_citation_from_manifest')" 2>/dev/null; then
+          if python -c "import importlib,sys; sys.exit(0 if importlib.util.find_spec('synrxn.build_citation_from_manifest') else 1)" 2>/dev/null; then
             python -m synrxn.build_citation_from_manifest --manifest "$MANIFEST" --output "$OUT" --verbose
             exit 0
           fi
@@ -165,6 +171,7 @@ jobs:
           exit 0
 
       - name: Locate and copy manifest/citation to repo root
+        shell: bash -l {0}
         run: |
           set -euo pipefail
           MANIFEST_LOCATION=$(find . -type f -name "manifest.json" -not -path "./.git/*" -print -quit || true)
@@ -173,13 +180,13 @@ jobs:
           echo "manifest found at: ${MANIFEST_LOCATION:-<none>}"
           echo "citation found at: ${CITATION_LOCATION:-<none>}"
 
-          if [ -n "$MANIFEST_LOCATION" ]; then
+          if [ -n "${MANIFEST_LOCATION:-}" ]; then
             cp -v "$MANIFEST_LOCATION" ./manifest.json
           else
             echo "Warning: manifest.json not generated."
           fi
 
-          if [ -n "$CITATION_LOCATION" ]; then
+          if [ -n "${CITATION_LOCATION:-}" ]; then
             cp -v "$CITATION_LOCATION" ./CITATION.cff
           else
             echo "Note: CITATION.cff not present (ok to skip)."
@@ -188,6 +195,7 @@ jobs:
           ls -l manifest.json CITATION.cff || true
 
       - name: Show manifest quick info
+        shell: bash -l {0}
         run: |
           set -euo pipefail
           if [ -f ./manifest.json ]; then
@@ -202,6 +210,7 @@ jobs:
           fi
 
       - name: Commit updated manifest and CITATION.cff (if changed)
+        shell: bash -l {0}
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
@@ -209,7 +218,8 @@ jobs:
           git add manifest.json CITATION.cff || true
           if ! git diff --staged --quiet; then
             git commit -m "chore(manifest): update manifest.json and CITATION.cff [ci skip]" || true
-            git push origin HEAD || (echo "git push failed" && exit 1)
+            # Use the current ref to push back to the same branch
+            git push origin "HEAD:${GITHUB_REF#refs/heads/}" || (echo "git push failed" && exit 1)
           else
             echo "No changes to commit."
           fi
@@ -224,6 +234,7 @@ jobs:
 
       - name: Final debug listing
         if: ${{ always() }}
+        shell: bash -l {0}
         run: |
           echo "Final workspace listing (top 200 files):"
           find . -type f -not -path "./.git/*" | sed -n '1,200p'
