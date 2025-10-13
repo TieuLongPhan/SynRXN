@@ -36,7 +36,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install toml PyYAML
 
-      - name: Debug: show repo snapshot
+      - name: Debug - show repo snapshot
         run: |
           echo "PWD: $(pwd)"
           echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE:-<not-set>}"
@@ -64,22 +64,14 @@ jobs:
             return 1
           }
 
-          if run_if_exists "./build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
-            exit 0
-          fi
-
-          if run_if_exists "./synrxn/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
-            exit 0
-          fi
-
-          if run_if_exists "./scripts/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
-            exit 0
-          fi
+          if run_if_exists "./build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then exit 0; fi
+          if run_if_exists "./synrxn/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then exit 0; fi
+          if run_if_exists "./scripts/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then exit 0; fi
 
           if [ -f "./pyproject.toml" ] || [ -f "./setup.py" ] || [ -f "./setup.cfg" ]; then
             echo "Detected packaging files — installing in editable mode..."
             pip install -e . || true
-            if python -c "import importlib, sys; sys.exit(0 if importlib.util.find_spec('synrxn.build_manifest') else 1)" 2>/dev/null; then
+            if python -c "import importlib, sys; sys.exit(0 if importlib.util.find_spec('synrxn.build_manifest') else 1)"; then
               python -m synrxn.build_manifest --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose
               exit 0
             fi
@@ -105,19 +97,11 @@ jobs:
             return 1
           }
 
-          if run_if_exists "./verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then
-            exit 0
-          fi
+          if run_if_exists "./verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then exit 0; fi
+          if run_if_exists "./synrxn/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then exit 0; fi
+          if run_if_exists "./scripts/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then exit 0; fi
 
-          if run_if_exists "./synrxn/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then
-            exit 0
-          fi
-
-          if run_if_exists "./scripts/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then
-            exit 0
-          fi
-
-          if python -c "import importlib,sys; sys.exit(0 if importlib.util.find_spec('synrxn.verify_manifest') else 1)" 2>/dev/null; then
+          if python -c "import importlib,sys; sys.exit(0 if importlib.util.find_spec('synrxn.verify_manifest') else 1)"; then
             python -m synrxn.verify_manifest --manifest "$MANIFEST" --root "$ROOT"
             exit 0
           fi
