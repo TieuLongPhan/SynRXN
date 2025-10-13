@@ -112,7 +112,6 @@ jobs:
           echo "Last-resort: run module without args in REPO_ROOT"
           if (cd "$REPO_ROOT" && python -m synrxn.build_manifest -v) 2>&1 | sed -n '1,400p'; then
             echo "Module ran without args in repo root; check for created manifest."
-            # we won't assume it's at $OUT, let locate step find it
             echo "ok=false" >> $GITHUB_OUTPUT
             echo "out=$OUT" >> $GITHUB_OUTPUT
             exit 0
@@ -201,12 +200,18 @@ jobs:
           fi
 
           files="${files# }"
+
+          # --- IMPORTANT: write 'files' as newline-separated multiline output for upload-artifact ---
           if [ -z "$files" ]; then
             echo "found=false" >> $GITHUB_OUTPUT
             echo "files=" >> $GITHUB_OUTPUT
           else
+            # convert space-separated list to newline-separated
+            files_nl=$(printf "%s\n" $files)
             echo "found=true" >> $GITHUB_OUTPUT
-            echo "files=$files" >> $GITHUB_OUTPUT
+            echo "files<<EOF" >> $GITHUB_OUTPUT
+            printf "%s" "$files_nl" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
           fi
 
       - name: "Debug: show locate outputs and repo-root files"
