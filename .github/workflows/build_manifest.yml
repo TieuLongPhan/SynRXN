@@ -1,0 +1,284 @@
+name: "Build & Verify Manifest"
+
+on:
+  push:
+    branches: ['main', 'data']
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    env:
+      MANIFEST_ROOT: Data
+      MANIFEST_OUT: manifest.json
+      PYPROJECT_PATH: ./pyproject.toml
+
+    steps:
+      - name: "Checkout (full history)"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: "Set up Python 3.11"
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: "Install Python runtime deps"
+        run: |
+          python -m pip install --upgrade pip
+          pip install toml PyYAML
+
+      - name: "Debug initial repo snapshot"
+        run: |
+          echo "pwd: $(pwd)"
+          echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE:-<not-set>}"
+          echo "MANIFEST_ROOT=${MANIFEST_ROOT}"
+          echo "MANIFEST_OUT=${MANIFEST_OUT}"
+          echo "PYPROJECT_PATH=${PYPROJECT_PATH}"
+          echo "Workspace listing:"
+          ls -la "${GITHUB_WORKSPACE:-.}" || true
+          echo "Parent of workspace listing:"
+          ls -la "${GITHUB_WORKSPACE:-.}/.." || true
+
+      - name: "Build manifest (try short flags + fallbacks)"
+        id: build_manifest
+        run: |
+          set -euo pipefail
+          set -x
+
+          # REPO_PARENT is the directory above the workspace (where some invocations may write)
+          REPO_PARENT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE:-.}")
+          echo "REPO_PARENT: $REPO_PARENT"
+
+          OUT="$REPO_PARENT/${MANIFEST_OUT}"
+          CITATION_OUT="$REPO_PARENT/CITATION.cff"
+          ROOT="${MANIFEST_ROOT}"
+          PYPROJECT="${PYPROJECT_PATH}"
+
+          echo "Target manifest path (preferred): $OUT"
+          mkdir -p "$(dirname "$OUT")"
+
+          # 1) Preferred: script with short flags (-d data dir, -m manifest, -c citation)
+          if [ -f "./synrxn/build_manifest.py" ]; then
+            echo "Trying script with short flags (-d -m -c)"
+            if python ./synrxn/build_manifest.py -d "$ROOT" -m "$OUT" -c "$CITATION_OUT" -v 2>&1 | sed -n '1,400p'; then
+              echo "Script created manifest using -m."
+              echo "ok=true" >> $GITHUB_OUTPUT
+              echo "out=$OUT" >> $GITHUB_OUTPUT
+              exit 0
+            else
+              echo "Script with short flags failed or didn't create manifest; trying fallbacks."
+            fi
+          else
+            echo "./synrxn/build_manifest.py not present; will try fallbacks."
+          fi
+
+          # 2) Run script from REPO_PARENT so files written to cwd land in repo parent
+          if [ -f "./synrxn/build_manifest.py" ]; then
+            echo "Running script from REPO_PARENT so files written to cwd land in repo parent"
+            if (cd "$REPO_PARENT" && python synrxn/build_manifest.py -v) 2>&1 | sed -n '1,400p'; then
+              echo "Script executed in repo parent; check $OUT"
+              echo "ok=true" >> $GITHUB_OUTPUT
+              echo "out=$OUT" >> $GITHUB_OUTPUT
+              exit 0
+            else
+              echo "Script in REPO_PARENT returned non-zero or didn't create manifest; continuing."
+            fi
+          fi
+
+          # 3) Install editable and try module with short flags
+          if [ -f "./pyproject.toml" ] || [ -f "./setup.py" ] || [ -f "./setup.cfg" ]; then
+            echo "Attempting to install package in editable mode..."
+            python -m pip install -e . 2>&1 | sed -n '1,200p' || true
+          fi
+
+          echo "Trying module invocation with -m and -c"
+          if python -m synrxn.build_manifest -m "$OUT" -c "$CITATION_OUT" -v 2>&1 | sed -n '1,400p'; then
+            echo "Module invocation succeeded and should have created $OUT"
+            echo "ok=true" >> $GITHUB_OUTPUT
+            echo "out=$OUT" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # 4) Last resort: run module without args in REPO_PARENT
+          echo "Last-resort: running module without args in REPO_PARENT"
+          if (cd "$REPO_PARENT" && python -m synrxn.build_manifest -v) 2>&1 | sed -n '1,400p'; then
+            echo "Module ran in repo parent; manifest may be created at default location"
+            echo "ok=false" >> $GITHUB_OUTPUT
+            echo "out=$OUT" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          echo "All attempts to build manifest failed."
+          echo "ok=false" >> $GITHUB_OUTPUT
+          echo "out=$OUT" >> $GITHUB_OUTPUT
+          exit 0
+
+      - name: "Locate and copy manifest/citation into workspace root"
+        id: locate
+        run: |
+          set -euo pipefail
+          set -x
+
+          REPO_PARENT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE:-.}")
+          echo "REPO_PARENT: $REPO_PARENT"
+
+          FOUND_MANIFEST=""
+          FOUND_CITATION=""
+
+          for root in "${GITHUB_WORKSPACE:-.}" "$REPO_PARENT"; do
+            root=$(cd "$root" 2>/dev/null && pwd || echo "$root")
+            echo "Searching in: $root"
+            if [ -z "$FOUND_MANIFEST" ]; then
+              cand=$(find "$root" -maxdepth 6 -type f -iname "manifest.json" -not -path "*/.git/*" -print -quit 2>/dev/null || true)
+              if [ -n "$cand" ]; then
+                FOUND_MANIFEST="$cand"
+                echo "Found manifest candidate: $FOUND_MANIFEST"
+              fi
+            fi
+            if [ -z "$FOUND_CITATION" ]; then
+              candc=$(find "$root" -maxdepth 6 -type f -iname "CITATION.cff" -not -path "*/.git/*" -print -quit 2>/dev/null || true)
+              if [ -n "$candc" ]; then
+                FOUND_CITATION="$candc"
+                echo "Found citation candidate: $FOUND_CITATION"
+              fi
+            fi
+            if [ -n "$FOUND_MANIFEST" ] && [ -n "$FOUND_CITATION" ]; then
+              break
+            fi
+          done
+
+          DEST_MANIFEST="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
+          DEST_CITATION="${GITHUB_WORKSPACE}/CITATION.cff"
+
+          if [ -n "$FOUND_MANIFEST" ]; then
+            if [ "$FOUND_MANIFEST" != "$DEST_MANIFEST" ]; then
+              echo "Copying manifest: $FOUND_MANIFEST -> $DEST_MANIFEST"
+              mkdir -p "$(dirname "$DEST_MANIFEST")"
+              cp -v "$FOUND_MANIFEST" "$DEST_MANIFEST" || true
+            else
+              echo "Manifest already in workspace; no copy needed."
+            fi
+          else
+            echo "No manifest found."
+          fi
+
+          if [ -n "$FOUND_CITATION" ]; then
+            if [ "$FOUND_CITATION" != "$DEST_CITATION" ]; then
+              echo "Copying citation: $FOUND_CITATION -> $DEST_CITATION"
+              mkdir -p "$(dirname "$DEST_CITATION")"
+              cp -v "$FOUND_CITATION" "$DEST_CITATION" || true
+            else
+              echo "Citation already in workspace; no copy needed."
+            fi
+          else
+            echo "No CITATION.cff found."
+          fi
+
+          # output simple debug keys
+          echo "found_manifest=${FOUND_MANIFEST:-}" >> $GITHUB_OUTPUT || true
+          echo "found_citation=${FOUND_CITATION:-}" >> $GITHUB_OUTPUT || true
+
+          echo "Workspace top listing:"
+          ls -la "${GITHUB_WORKSPACE}" | sed -n '1,200p' || true
+
+      - name: "Debug: show files-to-upload and existence"
+        run: |
+          echo "Listing workspace root:"
+          ls -la "${GITHUB_WORKSPACE:-.}" | sed -n '1,200p' || true
+          echo "Check manifest.json in workspace:"
+          if [ -f "${GITHUB_WORKSPACE:-.}/manifest.json" ]; then
+            echo "manifest.json present ($(stat -c '%s' "${GITHUB_WORKSPACE:-.}/manifest.json")) bytes"
+          else
+            echo "manifest.json NOT found at ${GITHUB_WORKSPACE:-.}/manifest.json"
+          fi
+          echo "Check CITATION.cff in workspace:"
+          if [ -f "${GITHUB_WORKSPACE:-.}/CITATION.cff" ]; then
+            echo "CITATION.cff present ($(stat -c '%s' "${GITHUB_WORKSPACE:-.}/CITATION.cff")) bytes"
+          else
+            echo "CITATION.cff NOT found at ${GITHUB_WORKSPACE:-.}/CITATION.cff"
+          fi
+
+      - name: "Upload artifacts (manifest + citation from workspace)"
+        uses: actions/upload-artifact@v4
+        with:
+          name: dataset-manifest
+          path: |
+            manifest.json
+            CITATION.cff
+
+      - name: "Commit & push manifest and CITATION.cff (workspace-based, force-add ignored files)"
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          set -x
+
+          echo "github.event_name='${EVENT_NAME:-}'"
+
+          # skip push on pull_request events (GITHUB_TOKEN from forks cannot push)
+          if [ "${EVENT_NAME:-}" = "pull_request" ]; then
+            echo "Event is pull_request — skipping push to avoid permission issues."
+            exit 0
+          fi
+
+          # operate in workspace (the actual git checkout)
+          WORKSPACE="${GITHUB_WORKSPACE:-.}"
+          echo "Workspace: $WORKSPACE"
+          cd "$WORKSPACE"
+
+          # ensure files exist in workspace (we copied them earlier)
+          found_any=false
+          if [ -f "manifest.json" ]; then
+            echo "Found workspace manifest: $(pwd)/manifest.json"
+            found_any=true
+          fi
+          if [ -f "CITATION.cff" ]; then
+            echo "Found workspace CITATION.cff: $(pwd)/CITATION.cff"
+            found_any=true
+          fi
+
+          if [ "$found_any" != "true" ]; then
+            echo "No manifest/CITATION in workspace to commit. Exiting."
+            exit 0
+          fi
+
+          # configure git author (GITHUB_TOKEN provided by checkout with persist-credentials)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # FORCE-ADD the ignored files so they are tracked by CI push even though ignored locally
+          git add -f manifest.json CITATION.cff || true
+
+          # if nothing staged, exit
+          if git diff --cached --quiet; then
+            echo "No changes staged for commit."
+            exit 0
+          fi
+
+          # commit
+          git commit -m "chore(manifest): update manifest.json and CITATION.cff [ci skip]" || true
+
+          # determine branch to push to (branch that triggered the workflow)
+          BRANCH="${GITHUB_REF#refs/heads/}"
+          if [ -z "$BRANCH" ]; then
+            BRANCH="${GITHUB_HEAD_REF:-main}"
+          fi
+          echo "Pushing to branch: $BRANCH"
+
+          # push using origin configured by actions/checkout (GITHUB_TOKEN)
+          git push origin "HEAD:${BRANCH}" || (echo "git push failed" && exit 1)
+
+      - name: "Final debug listing"
+        if: ${{ always() }}
+        run: |
+          echo "Final workspace listing (top 400 files):"
+          find . -type f -not -path "./.git/*" | sed -n '1,400p'

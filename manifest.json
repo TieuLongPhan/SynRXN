@@ -1,0 +1,239 @@
+{
+  "generated_at": "2025-10-13T10:04:38Z",
+  "dataset": {
+    "title": "synrxn: A Benchmarking Framework and Open Data Repository for Computer-Aided Synthesis Planning",
+    "version": "0.0.6",
+    "description": "Reaction Database for benchmarking",
+    "doi": "10.5281/zenodo.17297723",
+    "authors": [
+      {
+        "name": "Tieu Long Phan",
+        "email": "tieu@bioinf.uni-leipzig.de"
+      }
+    ],
+    "files": [
+      {
+        "key": "aam/ecoli.csv.gz",
+        "size": 113442,
+        "sha256": "0f66f64173857219cea5a8688a68888da8dd4e8e3d0f39a9cf77829d18d46c17",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "aam/golden.csv.gz",
+        "size": 522549,
+        "sha256": "d85d35f178ea3d32980fe8029fa738945ef34652a28de61dc04d4648ee361dab",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "aam/natcomm.csv.gz",
+        "size": 131190,
+        "sha256": "15855232e79d958c688ffdb3cf84dc519d8bf4fb1fa7c6bfb73daff8e1af03c1",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "aam/recon3d.csv.gz",
+        "size": 190062,
+        "sha256": "0c9ea4c3c566ff1e380f35cd2878cb93f9798981899402686c04184a51348417",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "aam/uspto_3k.csv.gz",
+        "size": 1027890,
+        "sha256": "de7cc2f1e84886b5665fe3831b76a5bc5569209ae54d7e844b097311d68177c1",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "classification/claire.csv.gz",
+        "size": 2300505,
+        "sha256": "4e9f22b011b9c4fb242e1340344f7983da64f7f3e4acefcd64fd84911de62eb3",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "classification/schneider_b.csv.gz",
+        "size": 1737511,
+        "sha256": "61dd633446a0ec677335480d8f9422f948fb3f8d1306dbe49ab0fa6d39e77a0f",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "classification/schneider_u.csv.gz",
+        "size": 1517538,
+        "sha256": "ccb9f64da4425c4311f706d445078f25988a203bc7c15c43b612b020f56cf387",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "classification/syntemp.csv.gz",
+        "size": 1346725,
+        "sha256": "a4a1093df6fdeb9d8a1bde18f27a8e08769f138cb2a353a277fd8ff61ab35b3c",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "classification/tpl_b.csv.gz",
+        "size": 1737505,
+        "sha256": "8deaea0acc849b77ae6c317c6710df4dc31174037845ded8b9b4640482e93d5d",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "classification/tpl_u.csv.gz",
+        "size": 1517532,
+        "sha256": "a0408c8d885982bba6545d3b783f8722783200b204d2c0b44decb8cb371cc8bd",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "classification/uspto_50k_b.csv.gz",
+        "size": 1474592,
+        "sha256": "be6c7daa2b59a149d0d81137ded171a28ae2177aa0550542352c920e7b4604ed",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "classification/uspto_50k_u.csv.gz",
+        "size": 1398819,
+        "sha256": "9f425c806a52e5e4f9840079e55cdcd15a0f9a3b1281fa7c0583c9bd1ff2dfb0",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "property/b97xd3.csv.gz",
+        "size": 641402,
+        "sha256": "d5690edea0ceb80237c4a961b25291f076f762f6095de14be73b5b0832e512f2",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "property/cycloadd.csv.gz",
+        "size": 381702,
+        "sha256": "d14cc729444148f14e9e86dbad49051c54dbba65028fb672eb5d8adb0068ea00",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "property/e2.csv.gz",
+        "size": 31806,
+        "sha256": "0f8a5e7fab719cf07ff0b54ff1215604021580364ec00c3a4f9ef6fdf3b27fcb",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "property/e2sn2.csv.gz",
+        "size": 79332,
+        "sha256": "1df1b32244d517cdb0e71fc14e438408b90eb80461fe32ffc9e3d0d33ebf1eaf",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "property/lograte.csv.gz",
+        "size": 20167,
+        "sha256": "c7f35bdafb9cfee384ef616e720c2948f21bae2afd417b6de549b130127e2393",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "property/phosphatase.csv.gz",
+        "size": 1682309,
+        "sha256": "98a84a4cb8cd50939222a718632e3530e54da27bc1f5da1df91708433c971963",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "property/rad6re.csv.gz",
+        "size": 866921,
+        "sha256": "ecfdcda009bf27f0bff6416aa77cfcbb88d8c4d49fbe56b455667bddb8673b17",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "property/rdb7.csv.gz",
+        "size": 640318,
+        "sha256": "9db9557acb279b56cf2bd281b01e52c189f19bffc3a81001ea0d1e7dd2f698e2",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "property/rgd1.csv.gz",
+        "size": 13199958,
+        "sha256": "cb9879588e7279884eecb126d24a276ff4e25f5475d89bebc145c402b8760770",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "property/sn2.csv.gz",
+        "size": 58135,
+        "sha256": "55e7bf4a063324ea399625a03caff17455d701d27e9bb74a1791768b9758d58c",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "property/snar.csv.gz",
+        "size": 6085,
+        "sha256": "7c139c4a744e855c50f1e0ebe87608ef162b95aadcc41d35af2e66915c7af3f4",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "rbl/complex.csv.gz",
+        "size": 57548,
+        "sha256": "498bbb8109683c7264f21d1e65febb99816dd904b32d072f9f2244df18b6378b",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "rbl/mbs.csv.gz",
+        "size": 15500,
+        "sha256": "3235fcab73ca8324138e357245dee2f572101d6d5dc86587b696ae974fb4f984",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "rbl/mnc.csv.gz",
+        "size": 1098019,
+        "sha256": "0e38444f37e4eadaef7f3aa70f48ac56d3794664d0bf06ec51465e5ebf9534aa",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "rbl/mos.csv.gz",
+        "size": 459265,
+        "sha256": "5c5503fd3170f54dd9e7239fcc93f777b1b58ef0d66b4fe1b6f9e8e5d13c498c",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "synthesis/uspto_500.csv.gz",
+        "size": 4066585,
+        "sha256": "fce1ea40bd8f914ff8eee875ed6684d5175e0c9cdc0ea1ccc4c9391a1252ba48",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "synthesis/uspto_50k.csv.gz",
+        "size": 4393394,
+        "sha256": "243d819b6c19ae3f08d8e26022f972149457fafab57dfa62930b27264b48828b",
+        "mtime": "2025-10-13T10:04:35Z"
+      },
+      {
+        "key": "synthesis/uspto_mit.csv.gz",
+        "size": 55587588,
+        "sha256": "d8078682760346f7080714f6b6617d38311f6dd5ae430b429d0594c5ffa488aa",
+        "mtime": "2025-10-13T10:04:35Z"
+      }
+    ],
+    "summary": {
+      "file_count": 31,
+      "total_bytes": 98301894,
+      "by_dir": {
+        "aam": {
+          "count": 5,
+          "bytes": 1985133
+        },
+        "classification": {
+          "count": 8,
+          "bytes": 13030727
+        },
+        "property": {
+          "count": 11,
+          "bytes": 17608135
+        },
+        "rbl": {
+          "count": 4,
+          "bytes": 1630332
+        },
+        "synthesis": {
+          "count": 3,
+          "bytes": 64047567
+        }
+      }
+    }
+  },
+  "provenance": {
+    "git_root": "/home/runner/work/SynRXN/SynRXN",
+    "commit": "4f9a9b39d85ca392d27392164ed00e82dab3ab20",
+    "branch": "data",
+    "remotes": "origin\thttps://github.com/TieuLongPhan/SynRXN (fetch)\norigin\thttps://github.com/TieuLongPhan/SynRXN (push)"
+  },
+  "project": {
+    "name": "synrxn",
+    "pyproject": null
+  }
+}

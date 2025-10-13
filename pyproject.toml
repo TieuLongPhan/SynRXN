@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "synrxn"
-version = "0.0.5"
+version = "0.0.6"
 authors = [
     { name = "Tieu Long Phan", email = "tieu@bioinf.uni-leipzig.de" }
 ]
@@ -19,14 +19,21 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
-# Core runtime dependencies
 dependencies = [
-    "synkit>=1.0.1",
-    "huggingface_hub",
+  "synkit>=1.0.1",
+  "scikit-learn>=1.7.2",
+  "openpyxl>=3.1.5",
 ]
 
 [project.optional-dependencies]
-all = ["numpy>=2.2.0", "pandas>=1.5.3"]
+all = [
+  "numpy>=2.2.0",
+  "pandas>=1.5.3",
+  "scikit-posthocs>=0.11.4",
+  "scipy>=1.16.2",
+  "seaborn>=0.13.0",
+]
+
 docs = [
   "sphinx>=6.0",
   "sphinx-rtd-theme",

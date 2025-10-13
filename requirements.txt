@@ -1,3 +1,11 @@
+# Core dependencies
 synkit>=1.0.1
-scikit-learn
-huggingface_hub
+scikit-learn>=1.7.2
+openpyxl>=3.1.5
+
+# "all" optional dependencies
+numpy>=2.2.0
+pandas>=1.5.3
+scikit-posthocs>=0.11.4
+scipy>=1.16.2
+seaborn>=0.13.0

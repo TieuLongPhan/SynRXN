@@ -42,22 +42,21 @@ SynRXN is a curated, provenance-tracked collection of reaction datasets and eval
   ```
 ## Example
 ```python
-from synrxn.data_loader import DataLoader
+from synrxn.data import DataLoader
 from synrxn.split.repeated_kfold import RepeatedKFoldsSplitter
 
-# create a loader for the 'property' task and print available dataset names
-dl = DataLoader(task="property")
-dl.print_names()
+# create a loader for the 'property' task (GitHub backend; resolve metadata on init)
+dl = DataLoader(task="property", source="github", gh_enable=True, resolve_on_init=True)
 
-# expected stdout:
-# >>Datasets in task 'property': 11
-#   b97xd3                          lograte                         rgd1                          
-#   cycloadd                        phosphatase                     sn2                           
-#   e2                              rad6re                          snar                          
-#   e2sn2                
+# list available dataset names (returns a list[str])
+print(dl.available_names())
+# expected stdout (example):
+# ['b97xd3', 'lograte', 'rgd1', 'cycloadd', 'phosphatase', 'sn2',
+#  'e2', 'rad6re', 'snar', 'e2sn2', ...]
 
 # load the 'b97xd3' dataset (returns a pandas.DataFrame)
 df = dl.load("b97xd3")
+
 splitter = RepeatedKFoldsSplitter(
     n_splits=5,
     n_repeats=5,
@@ -73,9 +72,9 @@ splitter.split(df, stratify_col=None)
 train_df, val_df, test_df = splitter.get_split(repeat=0, fold=0, as_frame=True)
 
 # quick checks
-print(type(train_df), type(val_df), type(test_df))     
-print(len(train_df), len(val_df), len(test_df))        
-print(train_df.columns.tolist())          
+print(type(train_df), type(val_df), type(test_df))     # <class 'pandas.core.frame.DataFrame'> ...
+print(len(train_df), len(val_df), len(test_df))        # e.g.  (N_train, N_val, N_test)
+print(train_df.columns.tolist())                       # list of column names          
 ```
 
 ## Contributing
