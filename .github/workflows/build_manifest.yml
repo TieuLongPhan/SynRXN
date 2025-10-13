@@ -178,12 +178,36 @@ jobs:
           echo "found=true" >> $GITHUB_OUTPUT
           echo "files=$files_space" >> $GITHUB_OUTPUT
 
-      - name: "Upload artifacts (manifest + citation)"
+      - name: "Debug: show files-to-upload and existence"
+        run: |
+          echo "check_files outputs:"
+          echo "  found:  '${{ steps.check_files.outputs.found }}'"
+          echo "  files:  '${{ steps.check_files.outputs.files }}'"
+          echo
+          echo "Listing explicit expected files in workspace:"
+          ls -la "${GITHUB_WORKSPACE:-.}" | sed -n '1,200p' || true
+          echo
+          echo "Check manifest.json:"
+          if [ -f "${GITHUB_WORKSPACE:-.}/manifest.json" ]; then
+            echo "manifest.json present ($(stat -c '%s' "${GITHUB_WORKSPACE:-.}/manifest.json")) bytes"
+          else
+            echo "manifest.json NOT found at ${GITHUB_WORKSPACE:-.}/manifest.json"
+          fi
+          echo "Check CITATION.cff:"
+          if [ -f "${GITHUB_WORKSPACE:-.}/CITATION.cff" ]; then
+            echo "CITATION.cff present ($(stat -c '%s' "${GITHUB_WORKSPACE:-.}/CITATION.cff")) bytes"
+          else
+            echo "CITATION.cff NOT found at ${GITHUB_WORKSPACE:-.}/CITATION.cff"
+          fi
+
+      - name: "Upload artifacts (explicit paths)"
         if: ${{ steps.check_files.outputs.found == 'true' }}
         uses: actions/upload-artifact@v4
         with:
           name: dataset-manifest
-          path: ${{ steps.check_files.outputs.files }}
+          path: |
+            manifest.json
+            CITATION.cff
 
       - name: "Upload artifacts - no files found (debug)"
         if: ${{ steps.check_files.outputs.found != 'true' }}
