@@ -225,10 +225,27 @@ jobs:
             CITATION.cff
 
       - name: "Commit & push manifest and CITATION.cff (if changed)"
-        if: ${{ steps.locate.outputs.found == 'true' && github.event_name != 'pull_request' }}
+        env:
+          LOCATE_FOUND: ${{ steps.locate.outputs.found }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
           set -euo pipefail
           set -x
+
+          echo "locate.outputs.found='${LOCATE_FOUND:-}'"
+          echo "github.event_name='${EVENT_NAME:-}'"
+
+          # skip if locate did not find anything
+          if [ "${LOCATE_FOUND:-}" != "true" ]; then
+            echo "locate reported no files to push (found != 'true'). Skipping commit/push."
+            exit 0
+          fi
+
+          # avoid pushing from pull_request events (GITHUB_TOKEN from forks cannot push)
+          if [ "${EVENT_NAME}" = "pull_request" ]; then
+            echo "Event is pull_request — skipping push to avoid permission issues."
+            exit 0
+          fi
 
           # canonical repo root (parent of workspace)
           REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "")
@@ -238,17 +255,17 @@ jobs:
           fi
           echo "REPO_ROOT: $REPO_ROOT"
 
-          # ensure manifest/citation exist in REPO_ROOT; if they only exist in workspace, copy them
+          # ensure workspace files are copied to repo root if needed
           if [ -f "${GITHUB_WORKSPACE}/manifest.json" ] && [ ! -f "$REPO_ROOT/manifest.json" ]; then
             echo "Copying workspace manifest to repo root: ${GITHUB_WORKSPACE}/manifest.json -> $REPO_ROOT/manifest.json"
             cp -v "${GITHUB_WORKSPACE}/manifest.json" "$REPO_ROOT/manifest.json" || true
           fi
           if [ -f "${GITHUB_WORKSPACE}/CITATION.cff" ] && [ ! -f "$REPO_ROOT/CITATION.cff" ]; then
-            echo "Copying workspace CITATION to repo root: ${GITHUB_WORKSPACE}/CITATION.cff -> $REPO_ROOT/CITATION.cff"
+            echo "Copying workspace CITATION.cff to repo root: ${GITHUB_WORKSPACE}/CITATION.cff -> $REPO_ROOT/CITATION.cff"
             cp -v "${GITHUB_WORKSPACE}/CITATION.cff" "$REPO_ROOT/CITATION.cff" || true
           fi
 
-          # only commit if repo root is actually a git checkout
+          # only commit if repo root is a git checkout
           if [ ! -d "$REPO_ROOT/.git" ]; then
             echo "Repo root does not contain .git; skipping commit/push."
             exit 0
@@ -261,7 +278,7 @@ jobs:
           # stage files (ignore if missing)
           git add manifest.json CITATION.cff || true
 
-          # if nothing staged, exit early
+          # if nothing staged, exit
           if git diff --cached --quiet; then
             echo "No changes to manifest/CITATION to commit."
             exit 0
@@ -270,14 +287,14 @@ jobs:
           # commit
           git commit -m "chore(manifest): update manifest.json and CITATION.cff [ci skip]" || true
 
-          # push to the branch that triggered the workflow
+          # determine branch to push to (branch that triggered the workflow)
           BRANCH="${GITHUB_REF#refs/heads/}"
           if [ -z "$BRANCH" ]; then
             BRANCH="${GITHUB_HEAD_REF:-main}"
           fi
           echo "Pushing to branch: $BRANCH"
 
-          # push using credentials from actions/checkout (GITHUB_TOKEN)
+          # push via the origin already configured by actions/checkout (uses GITHUB_TOKEN)
           git push origin "HEAD:${BRANCH}" || (echo "git push failed" && exit 1)
 
       - name: "Final debug listing"
