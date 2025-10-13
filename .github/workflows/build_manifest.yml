@@ -36,24 +36,26 @@ jobs:
           python -m pip install --upgrade pip
           pip install toml PyYAML
 
-      - name: Debug - show repo snapshot
+      - name: Debug - initial repo snapshot
         run: |
           echo "PWD: $(pwd)"
           echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE:-<not-set>}"
+          echo "MANIFEST_ROOT=${MANIFEST_ROOT}"
+          echo "MANIFEST_OUT=${MANIFEST_OUT}"
           git rev-parse --abbrev-ref HEAD || true
-          echo "Repository listing (depth 4):"
-          find . -maxdepth 4 -type f -not -path "./.git/*" | sed -n '1,200p' || true
-          echo "Looking for manifest/verify scripts:"
-          find . -iname "build_manifest.py" -o -iname "verify_manifest.py" -o -iname "build_citation_from_manifest.py" -print | sed -n '1,200p' || true
+          echo "Top-level files:"
+          ls -la || true
 
-      - name: Build manifest (try common locations)
+      - name: Build manifest (try common locations; write into workspace)
         id: build_manifest
         run: |
           set -euo pipefail
           ROOT="${MANIFEST_ROOT}"
-          OUT="${MANIFEST_OUT}"
+          # force absolute output path inside the runner workspace so we always know where it will be
+          OUT="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
           PYPROJECT="${PYPROJECT}"
 
+          echo "Will write manifest to: $OUT"
           run_if_exists() {
             local script="$1"; shift
             if [ -f "$script" ]; then
@@ -64,30 +66,56 @@ jobs:
             return 1
           }
 
-          # try a few likely script locations
-          if run_if_exists "./build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then exit 0; fi
-          if run_if_exists "./synrxn/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then exit 0; fi
-          if run_if_exists "./scripts/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then exit 0; fi
+          # -- try calling scripts with explicit absolute output
+          if run_if_exists "./build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
+            echo "build_manifest.py succeeded"
+            ls -l "$OUT" || true
+            exit 0
+          fi
+
+          if run_if_exists "./synrxn/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
+            echo "synrxn/build_manifest.py succeeded"
+            ls -l "$OUT" || true
+            exit 0
+          fi
+
+          if run_if_exists "./scripts/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then
+            echo "scripts/build_manifest.py succeeded"
+            ls -l "$OUT" || true
+            exit 0
+          fi
 
           # try install-and-run as module if packaging files exist
           if [ -f "./pyproject.toml" ] || [ -f "./setup.py" ] || [ -f "./setup.cfg" ]; then
             echo "Detected packaging files — installing in editable mode..."
             pip install -e . || true
+            # attempt to call the module and pass the absolute output path
             if python -c "import importlib,sys; sys.exit(0 if importlib.util.find_spec('synrxn.build_manifest') else 1)" 2>/dev/null; then
               python -m synrxn.build_manifest --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose
+              echo "python -m synrxn.build_manifest attempted"
+              ls -l "$OUT" || true
               exit 0
             fi
           fi
 
-          echo "ERROR: build_manifest entrypoint not found (searched ./build_manifest.py, ./synrxn/build_manifest.py, ./scripts/build_manifest.py, or python -m synrxn.build_manifest)."
+          # fallback: try running any python file that prints files created recently (best-effort)
+          echo "No explicit builder found or it didn't create $OUT"
+          echo "Searching for any manifest.json anywhere in repo:"
+          find . -type f -iname "manifest.json" -not -path "./.git/*" -print -exec stat -c "%n %s bytes" {} \; || true
           exit 1
 
       - name: Verify manifest (optional)
         id: verify_manifest
         run: |
           set -euo pipefail
-          MANIFEST="${MANIFEST_OUT}"
+          # absolute manifest location in workspace
+          MANIFEST="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
           ROOT="${MANIFEST_ROOT}"
+
+          echo "Looking for manifest at $MANIFEST"
+          if [ -f "$MANIFEST" ]; then
+            echo "Found manifest, attempting verify..."
+          fi
 
           run_if_exists() {
             local script="$1"; shift
@@ -115,8 +143,10 @@ jobs:
         id: build_citation
         run: |
           set -euo pipefail
-          MANIFEST="${MANIFEST_OUT}"
-          OUT="CITATION.cff"
+          MANIFEST="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
+          OUT="${GITHUB_WORKSPACE}/CITATION.cff"
+
+          echo "Will attempt to build citation at: $OUT (manifest: $MANIFEST)"
 
           run_if_exists() {
             local script="$1"; shift
@@ -140,45 +170,60 @@ jobs:
           echo "No citation builder detected — skipping."
           exit 0
 
-      - name: Locate and copy manifest/citation to repo root
+      - name: Locate and copy manifest/citation to repo root (and debug)
         run: |
           set -euo pipefail
-          MANIFEST_LOCATION=$(find . -type f -name "manifest.json" -not -path "./.git/*" -print -quit || true)
-          CITATION_LOCATION=$(find . -type f -name "CITATION.cff" -not -path "./.git/*" -print -quit || true)
+          # our canonical expected locations (absolute in workspace)
+          ABS_MANIFEST="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
+          ABS_CITATION="${GITHUB_WORKSPACE}/CITATION.cff"
 
-          echo "manifest found at: ${MANIFEST_LOCATION:-<none>}"
-          echo "citation found at: ${CITATION_LOCATION:-<none>}"
-
-          if [ -n "${MANIFEST_LOCATION:-}" ]; then
-            cp -v "$MANIFEST_LOCATION" ./manifest.json
-          else
-            echo "Warning: manifest.json not generated."
+          echo "Checking canonical locations:"
+          if [ -f "${ABS_MANIFEST}" ]; then
+            echo "Found manifest at canonical path: ${ABS_MANIFEST}"
+          fi
+          if [ -f "${ABS_CITATION}" ]; then
+            echo "Found CITATION.cff at canonical path: ${ABS_CITATION}"
           fi
 
-          if [ -n "${CITATION_LOCATION:-}" ]; then
-            cp -v "$CITATION_LOCATION" ./CITATION.cff
+          echo "Also search anywhere in repo for manifest.json / CITATION.cff (non-git dirs excluded):"
+          find . -type f \( -iname "manifest.json" -o -iname "CITATION.cff" \) -not -path "./.git/*" -print -exec stat -c "%n %s bytes" {} \; | sed -n '1,200p' || true
+
+          # If manifest was written somewhere else, copy the first one found into the repo root
+          FOUND_MANIFEST=$(find . -type f -iname "manifest.json" -not -path "./.git/*" -print -quit || true)
+          FOUND_CITATION=$(find . -type f -iname "CITATION.cff" -not -path "./.git/*" -print -quit || true)
+
+          if [ -n "$FOUND_MANIFEST" ]; then
+            echo "Copying $FOUND_MANIFEST -> ${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
+            cp -v "$FOUND_MANIFEST" "${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
           else
-            echo "Note: CITATION.cff not present (ok to skip)."
+            echo "No manifest.json found anywhere."
           fi
 
-          echo "Top-level workspace listing:"
-          ls -la || true
+          if [ -n "$FOUND_CITATION" ]; then
+            echo "Copying $FOUND_CITATION -> ${GITHUB_WORKSPACE}/CITATION.cff"
+            cp -v "$FOUND_CITATION" "${GITHUB_WORKSPACE}/CITATION.cff"
+          else
+            echo "No CITATION.cff found anywhere."
+          fi
+
+          echo "Top-level workspace listing after copy:"
+          ls -la "${GITHUB_WORKSPACE}" || true
 
       - name: Check manifest and citation files
         id: check_files
         run: |
           files=""
-          if [ -f manifest.json ]; then
-            files="$files manifest.json"
-            echo "Found manifest.json ($(stat -c '%s bytes' manifest.json))"
-            echo "Head of manifest.json:"
-            sed -n '1,80p' manifest.json || true
+          # check canonical absolute paths first
+          if [ -f "${GITHUB_WORKSPACE}/${MANIFEST_OUT}" ]; then
+            files="$files ${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
+            echo "Found manifest: ${GITHUB_WORKSPACE}/${MANIFEST_OUT} ($(stat -c '%s bytes' "${GITHUB_WORKSPACE}/${MANIFEST_OUT}"))"
+            echo "Head of manifest:"
+            sed -n '1,120p' "${GITHUB_WORKSPACE}/${MANIFEST_OUT}" || true
           fi
-          if [ -f CITATION.cff ]; then
-            files="$files CITATION.cff"
-            echo "Found CITATION.cff ($(stat -c '%s bytes' CITATION.cff))"
-            echo "Head of CITATION.cff:"
-            sed -n '1,80p' CITATION.cff || true
+          if [ -f "${GITHUB_WORKSPACE}/CITATION.cff" ]; then
+            files="$files ${GITHUB_WORKSPACE}/CITATION.cff"
+            echo "Found CITATION.cff: ${GITHUB_WORKSPACE}/CITATION.cff ($(stat -c '%s bytes' "${GITHUB_WORKSPACE}/CITATION.cff"))"
+            sed -n '1,80p' "${GITHUB_WORKSPACE}/CITATION.cff" || true
           fi
 
           if [ -z "$files" ]; then
@@ -186,7 +231,6 @@ jobs:
             echo "found=false" >> $GITHUB_OUTPUT
             echo "files=" >> $GITHUB_OUTPUT
           else
-            # trim leading space
             files="${files# }"
             echo "found=true" >> $GITHUB_OUTPUT
             echo "files=$files" >> $GITHUB_OUTPUT
@@ -204,14 +248,14 @@ jobs:
         if: steps.check_files.outputs.found != 'true'
         run: |
           echo "No manifest/citation to upload. Printing workspace for debugging:"
-          find . -maxdepth 4 -type f -not -path "./.git/*" -print -exec stat -c "%n %s bytes" {} \; | sed -n '1,200p'
+          find . -maxdepth 6 -type f -not -path "./.git/*" -print -exec stat -c "%n %s bytes" {} \; | sed -n '1,400p'
 
       - name: Commit updated manifest and CITATION.cff (if changed)
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add manifest.json CITATION.cff || true
+          git add "${GITHUB_WORKSPACE}/${MANIFEST_OUT}" "${GITHUB_WORKSPACE}/CITATION.cff" || true
           if ! git diff --staged --quiet; then
             git commit -m "chore(manifest): update manifest.json and CITATION.cff [ci skip]" || true
             git push origin "HEAD:${GITHUB_REF#refs/heads/}" || (echo "git push failed" && exit 1)
@@ -222,5 +266,5 @@ jobs:
       - name: Final debug listing
         if: ${{ always() }}
         run: |
-          echo "Final workspace listing (top 200 files):"
-          find . -type f -not -path "./.git/*" | sed -n '1,200p'
+          echo "Final workspace listing (top 400 files):"
+          find . -type f -not -path "./.git/*" | sed -n '1,400p'
