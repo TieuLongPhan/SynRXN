@@ -63,7 +63,7 @@ jobs:
 
           if [ -f "./synrxn/build_manifest.py" ]; then
             echo "Invoking: python ./synrxn/build_manifest.py --root \"$ROOT\" --output \"$OUT\" --pyproject \"$PYPROJECT\" --verbose"
-            if python ./synrxn/build_manifest.py --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose 2>&1 | sed -n '1,400p'; then
+            if python ./synrxn/build_manifest.py ; then
               echo "Script succeeded. Listing output:"
               ls -l "$OUT" || true
               echo "ok=true" >> $GITHUB_OUTPUT
