@@ -64,20 +64,22 @@ jobs:
             return 1
           }
 
+          # try a few likely script locations
           if run_if_exists "./build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then exit 0; fi
           if run_if_exists "./synrxn/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then exit 0; fi
           if run_if_exists "./scripts/build_manifest.py" --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose; then exit 0; fi
 
+          # try install-and-run as module if packaging files exist
           if [ -f "./pyproject.toml" ] || [ -f "./setup.py" ] || [ -f "./setup.cfg" ]; then
             echo "Detected packaging files — installing in editable mode..."
             pip install -e . || true
-            if python -c "import importlib, sys; sys.exit(0 if importlib.util.find_spec('synrxn.build_manifest') else 1)"; then
+            if python -c "import importlib,sys; sys.exit(0 if importlib.util.find_spec('synrxn.build_manifest') else 1)" 2>/dev/null; then
               python -m synrxn.build_manifest --root "$ROOT" --output "$OUT" --pyproject "$PYPROJECT" --verbose
               exit 0
             fi
           fi
 
-          echo "ERROR: build_manifest entrypoint not found."
+          echo "ERROR: build_manifest entrypoint not found (searched ./build_manifest.py, ./synrxn/build_manifest.py, ./scripts/build_manifest.py, or python -m synrxn.build_manifest)."
           exit 1
 
       - name: Verify manifest (optional)
@@ -101,12 +103,41 @@ jobs:
           if run_if_exists "./synrxn/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then exit 0; fi
           if run_if_exists "./scripts/verify_manifest.py" --manifest "$MANIFEST" --root "$ROOT"; then exit 0; fi
 
-          if python -c "import importlib,sys; sys.exit(0 if importlib.util.find_spec('synrxn.verify_manifest') else 1)"; then
+          if python -c "import importlib,sys; sys.exit(0 if importlib.util.find_spec('synrxn.verify_manifest') else 1)" 2>/dev/null; then
             python -m synrxn.verify_manifest --manifest "$MANIFEST" --root "$ROOT"
             exit 0
           fi
 
           echo "verify_manifest not found — continuing."
+          exit 0
+
+      - name: Build CITATION.cff (optional)
+        id: build_citation
+        run: |
+          set -euo pipefail
+          MANIFEST="${MANIFEST_OUT}"
+          OUT="CITATION.cff"
+
+          run_if_exists() {
+            local script="$1"; shift
+            if [ -f "$script" ]; then
+              echo "Running: python \"$script\" $*"
+              python "$script" "$@"
+              return 0
+            fi
+            return 1
+          }
+
+          if run_if_exists "./build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then exit 0; fi
+          if run_if_exists "./synrxn/build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then exit 0; fi
+          if run_if_exists "./scripts/build_citation_from_manifest.py" --manifest "$MANIFEST" --output "$OUT" --verbose; then exit 0; fi
+
+          if python -c "import importlib,sys; sys.exit(0 if importlib.util.find_spec('synrxn.build_citation_from_manifest') else 1)" 2>/dev/null; then
+            python -m synrxn.build_citation_from_manifest --manifest "$MANIFEST" --output "$OUT" --verbose
+            exit 0
+          fi
+
+          echo "No citation builder detected — skipping."
           exit 0
 
       - name: Locate and copy manifest/citation to repo root
@@ -130,7 +161,50 @@ jobs:
             echo "Note: CITATION.cff not present (ok to skip)."
           fi
 
-          ls -l manifest.json CITATION.cff || true
+          echo "Top-level workspace listing:"
+          ls -la || true
+
+      - name: Check manifest and citation files
+        id: check_files
+        run: |
+          files=""
+          if [ -f manifest.json ]; then
+            files="$files manifest.json"
+            echo "Found manifest.json ($(stat -c '%s bytes' manifest.json))"
+            echo "Head of manifest.json:"
+            sed -n '1,80p' manifest.json || true
+          fi
+          if [ -f CITATION.cff ]; then
+            files="$files CITATION.cff"
+            echo "Found CITATION.cff ($(stat -c '%s bytes' CITATION.cff))"
+            echo "Head of CITATION.cff:"
+            sed -n '1,80p' CITATION.cff || true
+          fi
+
+          if [ -z "$files" ]; then
+            echo "No files to upload."
+            echo "found=false" >> $GITHUB_OUTPUT
+            echo "files=" >> $GITHUB_OUTPUT
+          else
+            # trim leading space
+            files="${files# }"
+            echo "found=true" >> $GITHUB_OUTPUT
+            echo "files=$files" >> $GITHUB_OUTPUT
+            echo "Files to upload: $files"
+          fi
+
+      - name: Upload artifacts (manifest + citation)
+        if: steps.check_files.outputs.found == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: dataset-manifest
+          path: ${{ steps.check_files.outputs.files }}
+
+      - name: Upload artifacts - no files found (debug)
+        if: steps.check_files.outputs.found != 'true'
+        run: |
+          echo "No manifest/citation to upload. Printing workspace for debugging:"
+          find . -maxdepth 4 -type f -not -path "./.git/*" -print -exec stat -c "%n %s bytes" {} \; | sed -n '1,200p'
 
       - name: Commit updated manifest and CITATION.cff (if changed)
         run: |
@@ -144,14 +218,6 @@ jobs:
           else
             echo "No changes to commit."
           fi
-
-      - name: Upload artifacts (manifest + citation)
-        uses: actions/upload-artifact@v4
-        with:
-          name: dataset-manifest
-          path: |
-            manifest.json
-            CITATION.cff
 
       - name: Final debug listing
         if: ${{ always() }}
