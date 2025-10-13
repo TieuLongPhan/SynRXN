@@ -48,13 +48,13 @@ jobs:
           echo "Parent of workspace listing:"
           ls -la "${GITHUB_WORKSPACE:-.}/.." || true
 
-      - name: "Build manifest (force repo-root output, try short flags + fallbacks)"
+      - name: "Build manifest (try short flags + fallbacks)"
         id: build_manifest
         run: |
           set -euo pipefail
           set -x
 
-          # canonical repo-root = parent of GITHUB_WORKSPACE (e.g. /home/runner/work/RepoName)
+          # repo parent (canonical repo root where you want manifest)
           REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE:-.}")
           echo "REPO_ROOT: $REPO_ROOT"
 
@@ -66,7 +66,7 @@ jobs:
           echo "Target manifest path: $OUT"
           mkdir -p "$(dirname "$OUT")"
 
-          # 1) Prefer short-flag invocation on the script (many versions accept -d -m -c)
+          # 1) Try short-flag invocation on the script (many versions accept -d -m -c)
           if [ -f "./synrxn/build_manifest.py" ]; then
             echo "Trying script with short flags: -d (data dir), -m (manifest out), -c (citation out)"
             if python ./synrxn/build_manifest.py -d "$ROOT" -m "$OUT" -c "$CITATION_OUT" -v 2>&1 | sed -n '1,400p'; then
@@ -83,7 +83,7 @@ jobs:
 
           # 2) Run the script from REPO_ROOT (so files written to cwd land in repo root)
           if [ -f "./synrxn/build_manifest.py" ]; then
-            echo "Running script with working dir = REPO_ROOT so generated files land in repo root:"
+            echo "Running script in REPO_ROOT so generated files land there:"
             if (cd "$REPO_ROOT" && python synrxn/build_manifest.py -v) 2>&1 | sed -n '1,400p'; then
               echo "Script executed in repo root; check $OUT."
               echo "ok=true" >> $GITHUB_OUTPUT
@@ -111,7 +111,7 @@ jobs:
           # 4) Last resort: run module without args in repo root (may write defaults into repo root)
           echo "Last-resort: run module without args in REPO_ROOT"
           if (cd "$REPO_ROOT" && python -m synrxn.build_manifest -v) 2>&1 | sed -n '1,400p'; then
-            echo "Module ran without args in repo root; check for created manifest."
+            echo "Module ran in repo root; check for created manifest."
             echo "ok=false" >> $GITHUB_OUTPUT
             echo "out=$OUT" >> $GITHUB_OUTPUT
             exit 0
@@ -122,7 +122,7 @@ jobs:
           echo "out=$OUT" >> $GITHUB_OUTPUT
           exit 0
 
-      - name: "Locate and copy manifest/citation to repo root (parent of workspace)"
+      - name: "Locate and copy manifest/citation into workspace root"
         id: locate
         run: |
           set -euo pipefail
@@ -131,18 +131,19 @@ jobs:
           REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "${GITHUB_WORKSPACE:-.}")
           echo "REPO_ROOT: $REPO_ROOT"
 
+          # canonical repo-root paths (where build may have written)
           ABS_MANIFEST="$REPO_ROOT/${MANIFEST_OUT}"
           ABS_CITATION="$REPO_ROOT/CITATION.cff"
 
-          echo "Canonical manifest destination: $ABS_MANIFEST"
-          echo "Canonical citation destination: $ABS_CITATION"
+          # workspace destination (where upload-artifact will pick from)
+          DEST_MANIFEST="${GITHUB_WORKSPACE}/${MANIFEST_OUT}"
+          DEST_CITATION="${GITHUB_WORKSPACE}/CITATION.cff"
 
-          SEARCH_ROOTS=("${GITHUB_WORKSPACE:-.}" "$REPO_ROOT")
-
+          echo "Will search for manifest/citation in: workspace=${GITHUB_WORKSPACE:-.} and repo_root=${REPO_ROOT}"
           FOUND_MANIFEST=""
           FOUND_CITATION=""
 
-          for root in "${SEARCH_ROOTS[@]}"; do
+          for root in "${GITHUB_WORKSPACE:-.}" "$REPO_ROOT"; do
             root=$(cd "$root" 2>/dev/null && pwd || echo "$root")
             echo "Searching in: $root"
             if [ -z "$FOUND_MANIFEST" ]; then
@@ -164,84 +165,65 @@ jobs:
             fi
           done
 
-          # copy only if source differs from destination
+          # Copy into workspace root for reliable uploading (skip if source == dest)
           if [ -n "$FOUND_MANIFEST" ]; then
-            if [ "$FOUND_MANIFEST" != "$ABS_MANIFEST" ]; then
-              echo "Copying manifest: $FOUND_MANIFEST -> $ABS_MANIFEST"
-              mkdir -p "$(dirname "$ABS_MANIFEST")"
-              cp -v "$FOUND_MANIFEST" "$ABS_MANIFEST" || true
+            if [ "$FOUND_MANIFEST" != "$DEST_MANIFEST" ]; then
+              echo "Copying manifest: $FOUND_MANIFEST -> $DEST_MANIFEST"
+              mkdir -p "$(dirname "$DEST_MANIFEST")"
+              cp -v "$FOUND_MANIFEST" "$DEST_MANIFEST" || true
             else
-              echo "Manifest already at canonical destination; skipping copy."
+              echo "Manifest already in workspace; skipping copy."
             fi
           else
             echo "No manifest found in search roots."
           fi
 
           if [ -n "$FOUND_CITATION" ]; then
-            if [ "$FOUND_CITATION" != "$ABS_CITATION" ]; then
-              echo "Copying citation: $FOUND_CITATION -> $ABS_CITATION"
-              mkdir -p "$(dirname "$ABS_CITATION")"
-              cp -v "$FOUND_CITATION" "$ABS_CITATION" || true
+            if [ "$FOUND_CITATION" != "$DEST_CITATION" ]; then
+              echo "Copying citation: $FOUND_CITATION -> $DEST_CITATION"
+              mkdir -p "$(dirname "$DEST_CITATION")"
+              cp -v "$FOUND_CITATION" "$DEST_CITATION" || true
             else
-              echo "Citation already at canonical destination; skipping copy."
+              echo "Citation already in workspace; skipping copy."
             fi
           else
-            echo "No citation found in search roots."
+            echo "No CITATION.cff found in search roots."
           fi
 
-          files=""
-          if [ -f "$ABS_MANIFEST" ]; then
-            files="$files $ABS_MANIFEST"
-            echo "Manifest ready at $ABS_MANIFEST ($(stat -c '%s' "$ABS_MANIFEST") bytes)"
+          # Print what we will upload
+          echo "Workspace root listing (top):"
+          ls -la "${GITHUB_WORKSPACE}" | sed -n '1,200p' || true
+          if [ -f "$DEST_MANIFEST" ]; then
+            echo "Manifest at workspace: $DEST_MANIFEST ($(stat -c '%s' "$DEST_MANIFEST") bytes)"
           fi
-          if [ -f "$ABS_CITATION" ]; then
-            files="$files $ABS_CITATION"
-            echo "Citation ready at $ABS_CITATION ($(stat -c '%s' "$ABS_CITATION") bytes)"
-          fi
-
-          files="${files# }"
-
-          # --- IMPORTANT: write 'files' as newline-separated multiline output for upload-artifact ---
-          if [ -z "$files" ]; then
-            echo "found=false" >> $GITHUB_OUTPUT
-            echo "files=" >> $GITHUB_OUTPUT
-          else
-            # convert space-separated list to newline-separated
-            files_nl=$(printf "%s\n" $files)
-            echo "found=true" >> $GITHUB_OUTPUT
-            echo "files<<EOF" >> $GITHUB_OUTPUT
-            printf "%s" "$files_nl" >> $GITHUB_OUTPUT
-            echo "EOF" >> $GITHUB_OUTPUT
+          if [ -f "$DEST_CITATION" ]; then
+            echo "Citation at workspace: $DEST_CITATION ($(stat -c '%s' "$DEST_CITATION") bytes)"
           fi
 
-      - name: "Debug: show locate outputs and repo-root files"
+      - name: "Debug: show files-to-upload and existence"
         run: |
-          echo "locate outputs: found='${{ steps.locate.outputs.found }}'"
-          echo "locate outputs: files='${{ steps.locate.outputs.files }}'"
-          echo "Repo-root listing:"
-          REPO_ROOT=$(cd "${GITHUB_WORKSPACE}/.." 2>/dev/null && pwd || echo "")
-          ls -la "${REPO_ROOT}" || true
-          echo "Check manifest at repo-root:"
-          if [ -f "${REPO_ROOT}/${MANIFEST_OUT}" ]; then
-            echo "manifest exists: $(stat -c '%s' "${REPO_ROOT}/${MANIFEST_OUT}") bytes"
+          echo "Listing workspace root:"
+          ls -la "${GITHUB_WORKSPACE:-.}" | sed -n '1,200p' || true
+          echo "Check manifest.json in workspace:"
+          if [ -f "${GITHUB_WORKSPACE:-.}/manifest.json" ]; then
+            echo "manifest.json present ($(stat -c '%s' "${GITHUB_WORKSPACE:-.}/manifest.json")) bytes"
           else
-            echo "manifest not found at ${REPO_ROOT}/${MANIFEST_OUT}"
+            echo "manifest.json NOT found at ${GITHUB_WORKSPACE:-.}/manifest.json"
+          fi
+          echo "Check CITATION.cff in workspace:"
+          if [ -f "${GITHUB_WORKSPACE:-.}/CITATION.cff" ]; then
+            echo "CITATION.cff present ($(stat -c '%s' "${GITHUB_WORKSPACE:-.}/CITATION.cff")) bytes"
+          else
+            echo "CITATION.cff NOT found at ${GITHUB_WORKSPACE:-.}/CITATION.cff"
           fi
 
-      - name: "Upload artifacts (from repo root parent of workspace)"
-        if: ${{ steps.locate.outputs.found == 'true' }}
+      - name: "Upload artifacts (manifest + citation from workspace)"
         uses: actions/upload-artifact@v4
         with:
           name: dataset-manifest
-          path: ${{ steps.locate.outputs.files }}
-
-      - name: "Upload artifacts - none found (debug)"
-        if: ${{ steps.locate.outputs.found != 'true' }}
-        run: |
-          echo "No manifest/citation found to upload. Full workspace listing (parent included):"
-          find . -maxdepth 8 -type f -not -path "./.git/*" -print -exec stat -c "%n %s bytes" {} \; | sed -n '1,400p'
-          echo "Parent listing:"
-          ls -la "${GITHUB_WORKSPACE}/.." || true
+          path: |
+            manifest.json
+            CITATION.cff
 
       - name: "Commit manifest and CITATION.cff (if changed)"
         run: |
