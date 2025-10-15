@@ -2,9 +2,44 @@ import io
 import json
 import gzip
 import requests
+import numpy as np
 import pandas as pd
 from pathlib import Path
 from typing import Optional, Union, Dict, Any
+
+
+def save_results_json(path: str, results: Dict[str, Dict[str, Any]]):
+    # convert numpy arrays to lists
+    serial = {}
+    for key, sub in results.items():
+        serial[key] = {}
+        for k, v in sub.items():
+            if isinstance(v, np.ndarray):
+                serial[key][k] = {
+                    "__ndarray__": True,
+                    "dtype": str(v.dtype),
+                    "shape": v.shape,
+                    "data": v.tolist(),
+                }
+            else:
+                serial[key][k] = v  # if it's JSON-serializable
+    with open(path, "w", encoding="utf8") as fh:
+        json.dump(serial, fh, indent=2)
+
+
+def load_results_json(path: str):
+    with open(path, "r", encoding="utf8") as fh:
+        serial = json.load(fh)
+    results = {}
+    for key, sub in serial.items():
+        results[key] = {}
+        for k, v in sub.items():
+            if isinstance(v, dict) and v.get("__ndarray__"):
+                arr = np.asarray(v["data"], dtype=v["dtype"])
+                results[key][k] = arr.reshape(v["shape"])
+            else:
+                results[key][k] = v
+    return results
 
 
 def load_json_from_raw_github(

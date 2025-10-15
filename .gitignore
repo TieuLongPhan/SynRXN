@@ -216,3 +216,4 @@ Data/property/suzuki_miyaura.csv.gz
 manifest.json
 CITATION.cff
 *.ipynb
+Data/Benchmark/*

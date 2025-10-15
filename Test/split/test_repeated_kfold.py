@@ -19,7 +19,8 @@ class TestRepeatedKFoldsSplitter(unittest.TestCase):
         df = pd.DataFrame({"a": list(range(3))})
         splitter = RepeatedKFoldsSplitter(n_splits=5, n_repeats=1)
         with self.assertRaises(ValueError):
-            splitter.split(df)
+            # use split_with_val to trigger computation and the size check
+            list(splitter.split_with_val(df))
 
     def test_basic_split_and_get_split(self):
         n = 10
@@ -27,7 +28,7 @@ class TestRepeatedKFoldsSplitter(unittest.TestCase):
         splitter = RepeatedKFoldsSplitter(
             n_splits=5, n_repeats=1, ratio=(8, 1, 1), shuffle=True, random_state=42
         )
-        splits = splitter.split(df)  # returns list[SplitIndices]
+        splits = list(splitter.split_with_val(df))  # returns list[SplitIndices]
 
         # number of generated splits equals n_splits * n_repeats
         self.assertEqual(len(splits), splitter.n_splits * splitter.n_repeats)
@@ -79,7 +80,8 @@ class TestRepeatedKFoldsSplitter(unittest.TestCase):
         splitter = RepeatedKFoldsSplitter(
             n_splits=3, n_repeats=2, shuffle=True, random_state=7
         )
-        splitter.split(df)
+        # compute splits first
+        _ = list(splitter.split_with_val(df))
 
         # integer indexing returns SplitIndices
         first = splitter[0]
@@ -102,7 +104,7 @@ class TestRepeatedKFoldsSplitter(unittest.TestCase):
     def test_iter_splits_and_splits_property(self):
         df = pd.DataFrame({"x": np.arange(6)})
         splitter = RepeatedKFoldsSplitter(n_splits=3, n_repeats=1, random_state=1)
-        splitter.split(df)
+        _ = list(splitter.split_with_val(df))
 
         iter_list = list(splitter.iter_splits())
         prop_list = splitter.splits
@@ -117,9 +119,10 @@ class TestRepeatedKFoldsSplitter(unittest.TestCase):
     def test_stratify_length_mismatch_raises(self):
         df = pd.DataFrame({"x": np.arange(10)})
         splitter = RepeatedKFoldsSplitter(n_splits=5, n_repeats=1)
-        # stratify series of wrong length
+        # stratify series of wrong length -> expect ValueError
         with self.assertRaises(ValueError):
-            splitter.split(df, stratify_col=pd.Series(np.arange(5)))
+            # use keyword 'stratify' (new API)
+            list(splitter.split_with_val(df, stratify=pd.Series(np.arange(5))))
 
     def test_stratified_splits_preserve_label_proportions_in_holdout(self):
         # Use larger class counts so stratified train_test_split inside the splitter
@@ -133,7 +136,7 @@ class TestRepeatedKFoldsSplitter(unittest.TestCase):
         splitter = RepeatedKFoldsSplitter(
             n_splits=5, n_repeats=1, shuffle=True, random_state=0, ratio=(8, 1, 1)
         )
-        splits = splitter.split(df, stratify_col="y")
+        splits = list(splitter.split_with_val(df, stratify="y"))
 
         # For each holdout, check that holdout indices (val+test) maintain class proportions reasonably
         overall_pos_frac = labels.mean()
@@ -154,8 +157,8 @@ class TestRepeatedKFoldsSplitter(unittest.TestCase):
             n_splits=4, n_repeats=2, shuffle=True, random_state=123
         )
 
-        splits_a = splitter_a.split(df)
-        splits_b = splitter_b.split(df)
+        splits_a = list(splitter_a.split_with_val(df))
+        splits_b = list(splitter_b.split_with_val(df))
 
         self.assertEqual(len(splits_a), len(splits_b))
         for a, b in zip(splits_a, splits_b):
