@@ -1,19 +1,15 @@
 """
 synrxn.data.data_loader
 
-High-level DataLoader for SynRXN datasets with explicit source selection,
-version->record caching (via ZenodoClient), archive inspection (via ZenodoClient),
-and GitHub mirror support (via GitHubClient).
+DataLoader with support for:
+ - Zenodo records (also datasets inside attached archives)
+ - GitHub tags
+ - GitHub commit SHA (including version='latest' resolution)
 
-This file assumes `ZenodoClient` and `GitHubClient` live in the same package
-(`synrxn.data.zenodo_client`, `synrxn.data.github_client`) and that shared
-helpers exist in `synrxn.data.utils`.
-
-:features:
-  - source='zenodo' | 'github' | 'any'
-  - inspects CSVs inside attached ZIP/TAR archives (cached)
-  - stream hashing and 1 MiB chunks for IO
-  - prefers the pyarrow CSV engine when available
+Key behaviour:
+ - If a dataset is inside an attached archive (zip/tar*), DataLoader will
+   download the archive, extract the member file and load it.
+ - Cached zenodo .csv.gz files are verified with parse_checksum_field.
 """
 
 from __future__ import annotations
@@ -21,144 +17,162 @@ from __future__ import annotations
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
-from urllib.parse import quote as urlquote
 import io
-from pathlib import Path
+import json
 import requests
 import pandas as pd
+from difflib import get_close_matches
+import hashlib
 
 from .constants import CONCEPT_DOI, GH_OWNER, GH_REPO
 from .zenodo_client import ZenodoClient
 from .github_client import GitHubClient
-from .utils import normalize_version, parse_checksum_field
+from .utils import (
+    normalize_version,
+    load_json_silent,
+    save_json_silent,
+    parse_checksum_field,
+)
 
 
 class DataLoader:
     """
-    Load CSV(.gz) datasets stored under `Data/<task>/<name>.csv(.gz)`.
+    DataLoader for SynRXN data stored under ``Data/<task>/<name>.csv(.gz)``.
 
-    :param task: Subfolder under `Data/` (e.g., "aam", "rbl", "class", "prop", "synthesis").
-    :param version: Version label to pin (e.g., "0.0.5" or "v0.0.5"). If None, uses latest under the concept DOI.
-    :param cache_dir: Optional path to cache Zenodo record indices, version map, downloaded `.csv.gz` payloads,
-                      and archive member lists (all handled in clients).
-    :param timeout: HTTP timeout (seconds). Default: 20.
-    :param user_agent: HTTP User-Agent header. Default: "SynRXN-DataLoader/2.0".
-    :param max_workers: Max threads for load_many. Default: 6.
-    :param gh_ref: Optional explicit GitHub ref for listing/reads. If None and version exists, tries
-                   "v{version}", "{version}", then "main".
-    :param gh_enable: Whether GitHub network calls are permitted. Must be True for source='github' or to use GH in 'any'.
-    :param source: One of {"zenodo", "github", "any"}; default "zenodo".
-    :param resolve_on_init: If True, resolve Zenodo record id and file index during __init__ (may incur network).
-    :param verify_checksum: Verify Zenodo-provided checksums when available (handled in client). Default True.
-    :param cache_record_index: Persist Zenodo record file index to cache_dir (handled in client). Default True.
-    :param force_record_id: (Discouraged) Provide a fixed Zenodo record id to bypass version lookup.
+    The loader supports three sources:
+      - ``'zenodo'``: pulls files from the Zenodo record for the project's concept DOI
+      - ``'github'``: pulls files from a GitHub release tag or branch
+      - ``'commit'``: pulls files from a specific commit SHA (``version='latest'`` resolves the tip SHA)
+
+    :param task: Subfolder name under the repository's `Data/` directory (e.g. ``"class"``, ``"aam"``).
+    :type task: str
+    :param version:
+        Source-dependent version identifier:
+
+        - If ``source=='zenodo'``: Zenodo version string (e.g. ``"0.0.6"``) or ``None`` for the latest record.
+        - If ``source=='github'``: GitHub release tag (e.g. ``"v0.0.6"`` or ``"0.0.6"``). ``'latest'`` can be used
+          and will resolve to the latest release tag (when available) and otherwise fall back to a branch ref.
+        - If ``source=='commit'``: commit SHA (40-char) or the string ``'latest'`` to resolve the tip SHA of a branch.
+    :type version: Optional[str]
+    :param cache_dir:
+        Directory used to cache downloaded gz payloads, Zenodo record indices, and GitHub latest lookups.
+        Defaults to ``~/.cache/synrxn``.
+    :type cache_dir: Optional[pathlib.Path]
+    :param timeout: HTTP timeout in seconds for requests. Default is ``20``.
+    :type timeout: int
+    :param user_agent: User-Agent string for outbound HTTP requests.
+    :type user_agent: str
+    :param max_workers: Maximum worker threads for :meth:`load_many`. Default ``6``.
+    :type max_workers: int
+    :param gh_ref:
+        Optional explicit GitHub ref (branch name) used when resolving ``latest`` (commit or release fallback).
+        If omitted, the repo default branch is used.
+    :type gh_ref: Optional[str]
+    :param gh_enable:
+        If True enables GitHub-based retrieval. Required when ``source`` is ``'github'`` or ``'commit'``.
+    :type gh_enable: bool
+    :param source:
+        One of ``{'zenodo', 'github', 'commit'}``.
+    :type source: str
+    :param resolve_on_init:
+        If True and ``source=='zenodo'``, resolves the Zenodo record and file index during initialization.
+    :type resolve_on_init: bool
+    :param verify_checksum:
+        If True, verifies Zenodo-provided checksums for downloads and cached payloads.
+    :type verify_checksum: bool
+    :param cache_record_index:
+        If True, the Zenodo record file index will be cached in ``cache_dir``.
+    :type cache_record_index: bool
+    :param force_record_id:
+        If provided, this numeric Zenodo record id will be used directly (bypassing version lookup).
+    :type force_record_id: Optional[int]
+
+    :raises ValueError:
+        If ``source`` is not one of the supported values, or if GitHub retrieval is requested but ``gh_enable`` is False.
+    :raises RuntimeError:
+        If resolving ``version='latest'`` for ``source='commit'`` fails to return a commit SHA.
 
     Examples
     --------
-    The following examples are written in Sphinx-friendly rst style and demonstrate
-    how to construct and use the loader with different `source` settings.
-
-    Zenodo-first (recommended for reproducibility)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Resolve the Zenodo record for the configured ``version`` (provenance-first),
-    list discovered datasets (including CSVs inside attached archives), and load one.
+    Zenodo (specific version):
 
     .. code-block:: python
 
-        from pathlib import Path
         from synrxn.data import DataLoader
+        from pathlib import Path
 
-        # Zenodo-first (recommended for reproducibility)
-        ldr = DataLoader(
-            task="rbl",
-            version="0.0.5",
-            source="zenodo",               # only use Zenodo
+        dl = DataLoader(
+            task="classification",
+            source="zenodo",
+            version="0.0.6",
             cache_dir=Path("~/.cache/synrxn").expanduser(),
-            gh_enable=False,               # ensure we don't hit GitHub
-            resolve_on_init=True           # optional: resolve record & index on init
         )
+        print(dl.available_names())
+        df = dl.load('schneider_b')
+        print(df.head())
 
-        # print top-level Zenodo file keys (archives, zips, etc.)
-        ldr.print_zenodo_files()
-
-        # see discovered names (includes CSVs inside archives attached to the record)
-        names = ldr.names
-        print("Detected datasets:", names)
-
-        # load a single dataset (raises FileNotFoundError with helpful diagnostics if missing)
-        try:
-            df = ldr.load("mis")          # loads Data/rbl/mis.csv(.gz)
-        except FileNotFoundError as e:
-            print("Load failed:", e)
-        else:
-            print(df.shape)
-            print(df.head())
-
-    GitHub-only usage (fast mirror)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    If you want to bypass Zenodo and pull directly from the repository (useful for development),
-    set ``source='github'`` and enable GitHub calls.
+    GitHub (release tag):
 
     .. code-block:: python
 
         from synrxn.data import DataLoader
         from pathlib import Path
 
-        gh = DataLoader(
-            task="rbl",
-            source="github",               # only use GitHub
-            gh_enable=True,                # permit GitHub network calls
-            gh_ref="main",                 # explicit branch/tag/ref to try
-            cache_dir=Path("~/.cache/synrxn").expanduser()
+        dl = DataLoader(
+            task="classification",
+            source="github",
+            version="v0.0.6",
+            gh_enable=True,
+            cache_dir=Path("~/.cache/synrxn").expanduser(),
         )
+        print(dl.available_names())
+        df = dl.load('schneider_b')
+        print(df.head())
 
-        # list names from the GitHub Data/<task>/ folder (first successful ref)
-        print("GitHub names:", gh.names)
-
-        # load (tries raw.githubusercontent.com)
-        df = gh.load("schneider_rbl")
-        print(df.columns)
-
-    Mixed strategy: zenodo -> github -> archives
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Use ``source='any'`` to try Zenodo direct files first, then GitHub, then Zenodo archives.
+    Commit (explicit commit SHA):
 
     .. code-block:: python
 
-        dl = DataLoader(task="rbl", version="0.0.5", source="any", gh_enable=True,
-                        cache_dir=Path("~/.cache/synrxn").expanduser())
+        from synrxn.data import DataLoader
+        from pathlib import Path
 
-        # load_many uses a threadpool by default (max_workers from constructor)
-        dfs = dl.load_many(["mis", "schneider_rbl"])
+        dl = DataLoader(
+            task="classification",
+            source="commit",
+            version="3e1612e2199e8b0e369fce3ed9aff3dda68e4c32",
+            gh_enable=True,
+            cache_dir=Path("~/.cache/synrxn").expanduser(),
+        )
+        print(dl.available_names())
+        df = dl.load('schneider_b')
+        print(df.head())
 
-        # iterate
-        for name, df in dfs.items():
-            print(name, df.shape)
-
-    Error handling and diagnostics
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    When a dataset is not found the loader raises ``FileNotFoundError`` with:
-    * attempted candidate URLs,
-    * canonical candidate filenames,
-    * Zenodo record file keys (and archive member names when available),
-    * GitHub filenames (if enabled),
-    * close-match suggestions.
+    Commit (resolve latest tip of a branch):
 
     .. code-block:: python
 
-        try:
-            df = dl.load("not_a_dataset")
-        except FileNotFoundError as exc:
-            # helpful, multi-line diagnostic for debugging
-            print(str(exc))
+        from synrxn.data import DataLoader
+        from pathlib import Path
 
-    Caching notes
-    ~~~~~~~~~~~~~
-    * Provide ``cache_dir`` to persist:
-      - the Zenodo record index (file index & version->record mapping),
-      - archive member listings (so we do not re-download archives just to inspect them),
-      - downloaded ``*.csv.gz`` payloads (when available).
-    * ``resolve_on_init=True`` will populate the record index on construction (useful in scripts).
+        dl = DataLoader(
+            task="classification",
+            source="commit",
+            version="latest",
+            gh_enable=True,
+            gh_ref="main",
+            cache_dir=Path("~/.cache/synrxn").expanduser(),
+        )
+        # dl.version will be replaced with the resolved 40-char SHA
+        print("resolved sha:", dl.version)
+        print(dl.available_names())
+        df = dl.load('schneider_b')
+        print(df.head())
+
+    Notes
+    -----
+    - ``version='latest'`` (commit or release) is non-deterministic; record the resolved value
+      (``dl.version``) if you need reproducible results.
+    - For heavy GitHub API usage, provide an authenticated session (add an Authorization token to ``dl._session.headers``).
     """
 
     def __init__(
@@ -184,11 +198,11 @@ class DataLoader:
         self.max_workers = int(max_workers)
         self.verify_checksum = bool(verify_checksum)
 
-        if source not in {"zenodo", "github", "any"}:
-            raise ValueError("source must be one of {'zenodo', 'github', 'any'}")
+        if source not in {"zenodo", "github", "commit"}:
+            raise ValueError("source must be one of {'zenodo', 'github', 'commit'}")
         self.source = source
 
-        # session with light retries
+        # HTTP session with small retry policy
         self._session = requests.Session()
         self._session.headers.update(self.headers)
         try:
@@ -207,9 +221,12 @@ class DataLoader:
             Path(cache_dir).expanduser().resolve() if cache_dir else None
         )
         if self.cache_dir:
-            self.cache_dir.mkdir(parents=True, exist_ok=True)
+            try:
+                self.cache_dir.mkdir(parents=True, exist_ok=True)
+            except Exception:
+                pass
 
-        # clients
+        # Zenodo client
         self._zenodo = ZenodoClient(
             session=self._session,
             cache_dir=self.cache_dir,
@@ -217,42 +234,64 @@ class DataLoader:
             timeout=self.timeout,
         )
 
+        # GitHub options
         self.gh_enable = bool(gh_enable)
-        if self.source == "github" and not self.gh_enable:
-            raise ValueError("source='github' requires gh_enable=True")
+        if self.source in {"github", "commit"} and not self.gh_enable:
+            raise ValueError("source='github' or 'commit' requires gh_enable=True")
 
+        self._explicit_gh_ref = gh_ref
         self._gh_refs: List[Tuple[str, str]] = []
-        if self.gh_enable and self.source in {"github", "any"}:
-            if gh_ref:
-                self._gh_refs = [("heads", gh_ref)]
-            elif self.version:
-                norm = normalize_version(self.version)
-                self._gh_refs = [
-                    ("tags", f"v{norm}"),
-                    ("tags", norm),
-                    ("heads", "main"),
-                ]
-            else:
-                self._gh_refs = [("heads", "main")]
-        self._github = GitHubClient(
-            session=self._session,
-            timeout=self.timeout,
-            owner=GH_OWNER,
-            repo=GH_REPO,
-            ref_candidates=self._gh_refs,
-        )
+        self._github: Optional[GitHubClient] = None
 
-        # lazy Zenodo state
+        # Zenodo lazy state
         self._record_id: Optional[int] = (
             int(force_record_id) if force_record_id is not None else None
         )
         self._file_index: Dict[str, Dict] = {}
 
-        # caches for name listings
         self._names_cache_zenodo: Optional[List[str]] = None
         self._names_cache_github: Optional[List[str]] = None
 
-        if resolve_on_init and self.source in {"zenodo", "any"}:
+        # Resolve 'latest' commit if requested
+        if self.source == "commit":
+            if not self.gh_enable:
+                raise ValueError("source='commit' requires gh_enable=True")
+            if not self.version or self.version.lower() in {"latest", "head", "tip"}:
+                resolved = self._resolve_latest_commit_sha(
+                    branch=self._explicit_gh_ref, force_refresh=False
+                )
+                if resolved is None:
+                    raise RuntimeError(
+                        "Failed to resolve latest commit SHA from GitHub for repository "
+                        f"{GH_OWNER}/{GH_REPO}"
+                    )
+                self.version = resolved
+                self._gh_refs = [("commit", resolved)]
+            else:
+                self._gh_refs = [("commit", self.version)]
+
+        # GitHub tag handling for source == 'github'
+        if self.source == "github":
+            if self.version:
+                norm = normalize_version(self.version)
+                self._gh_refs = [("tag", f"v{norm}"), ("tag", norm)]
+            else:
+                self._gh_refs = [("branch", self._explicit_gh_ref or "main")]
+
+        # Create GitHub client if enabled
+        if self.gh_enable:
+            if not self._gh_refs:
+                ref = self._explicit_gh_ref or "main"
+                self._gh_refs = [("branch", ref)]
+            self._github = GitHubClient(
+                session=self._session,
+                timeout=self.timeout,
+                owner=GH_OWNER,
+                repo=GH_REPO,
+                ref_candidates=self._gh_refs,
+            )
+
+        if resolve_on_init and self.source == "zenodo":
             self._ensure_record_resolved()
 
     def __del__(self):
@@ -267,79 +306,30 @@ class DataLoader:
             f"source={self.source!r}, gh_refs={self._gh_refs}, cache_dir={self.cache_dir})"
         )
 
-    # ---------- Debug helper ----------
-    def print_zenodo_files(self, limit: int = 200) -> None:
-        """
-        Print visible file keys attached to the resolved Zenodo record.
-
-        :param limit: Max entries to print.
-        """
-        if self.source == "github":
-            print("(Zenodo not in use for source='github')")
-            return
-        self._ensure_record_resolved()
-        keys = list(self._file_index.keys())
-        print(f"Zenodo record {self._record_id} has {len(keys)} file(s).")
-        for k in keys[:limit]:
-            print(" ", k)
-        if len(keys) > limit:
-            print("  ... (remaining files elided)")
-
-    # ---------- Listing ----------
-    @property
-    def names(self) -> List[str]:
-        """Alias for available_names()."""
-        return self.available_names()
-
-    def available_names(self, refresh: bool = False) -> List[str]:
-        """
-        List dataset base names discovered in the selected source(s).
-
-        :param refresh: If True, re-fetch and rebuild caches.
-        :return: Sorted list of base names without extensions.
-        """
-        z_names: List[str] = []
-        g_names: List[str] = []
-        if self.source in {"zenodo", "any"}:
-            self._ensure_record_resolved(force_refresh=refresh)
-            z_names = self._available_names_zenodo(refresh=refresh)
-        if self.source in {"github", "any"} and self.gh_enable:
-            g_names = self._available_names_github(refresh=refresh)
-        if self.source == "zenodo":
-            return z_names
-        if self.source == "github":
-            return g_names
-        return sorted(set(z_names).union(g_names))
-
-    def _available_names_zenodo(self, refresh: bool = False) -> List[str]:
-        if self._names_cache_zenodo is not None and not refresh:
-            return list(self._names_cache_zenodo)
-        names = self._zenodo.available_names(
-            task=self.task,
-            record_id=self._record_id or 0,
-            file_index=self._file_index,
-            include_archives=True,
-        )
-        self._names_cache_zenodo = names
-        return list(self._names_cache_zenodo)
-
-    def _available_names_github(self, refresh: bool = False) -> List[str]:
-        if not self.gh_enable:
-            return []
-        if self._names_cache_github is not None and not refresh:
-            return list(self._names_cache_github)
-        self._names_cache_github = self._github.list_names(self.task)
-        return list(self._names_cache_github)
-
-    # ---------- Core loading ----------
-    def _ensure_record_resolved(self, force_refresh: bool = False) -> None:
-        if self.source == "github":
-            return
-        if self._record_id is None:
-            self._record_id = self._zenodo.resolve_record_id(CONCEPT_DOI, self.version)
-        if force_refresh or not self._file_index:
-            self._file_index = self._zenodo.build_file_index(self._record_id)
-            self._names_cache_zenodo = None  # invalidate names cache
+    # ------------------ utilities ------------------
+    def _normalize_basename(self, name: str) -> str:
+        if not isinstance(name, str):
+            raise TypeError("name must be a string")
+        n = name.strip()
+        prefixes = [
+            f"Data/{self.task}/",
+            f"data/{self.task}/",
+            f"{self.task}/",
+            f"/{self.task}/",
+            "Data/",
+            "data/",
+        ]
+        for p in prefixes:
+            if n.startswith(p):
+                n = n[len(p) :]
+                break
+        n = n.strip("/\\ ").strip()
+        lower = n.lower()
+        if lower.endswith(".csv.gz"):
+            n = n[: -len(".csv.gz")]
+        elif lower.endswith(".csv"):
+            n = n[: -len(".csv")]
+        return n.strip()
 
     def _maybe_set_pyarrow(self, pd_kw: Dict) -> None:
         if "engine" in pd_kw:
@@ -351,18 +341,132 @@ class DataLoader:
         except Exception:
             pass
 
+    # ------------------ GitHub latest resolution ------------------
+    def _github_latest_cache_path(self) -> Optional[Path]:
+        if not self.cache_dir:
+            return None
+        return (self.cache_dir / "github_latest_cache.json").resolve()
+
+    def _resolve_latest_commit_sha(
+        self, branch: Optional[str] = None, force_refresh: bool = False
+    ) -> Optional[str]:
+        if not self.gh_enable:
+            return None
+
+        cache_path = self._github_latest_cache_path()
+        cache = load_json_silent(cache_path) if cache_path else {}
+        cache_key = branch or "__default__"
+        if not force_refresh:
+            cached = cache.get(cache_key)
+            if cached and isinstance(cached, dict):
+                sha = cached.get("sha")
+                if sha:
+                    return sha
+
+        br = branch
+        if not br:
+            try:
+                repo_url = f"https://api.github.com/repos/{GH_OWNER}/{GH_REPO}"
+                r = self._session.get(repo_url, timeout=self.timeout)
+                r.raise_for_status()
+                br = r.json().get("default_branch") or "main"
+            except Exception:
+                br = "main"
+
+        try:
+            commits_url = (
+                f"https://api.github.com/repos/{GH_OWNER}/{GH_REPO}/commits/{br}"
+            )
+            r = self._session.get(commits_url, timeout=self.timeout)
+            r.raise_for_status()
+            data = r.json()
+            sha = data.get("sha") or (
+                data[0].get("sha") if isinstance(data, list) and data else None
+            )
+            if sha:
+                try:
+                    cache[cache_key] = {"sha": sha}
+                    if cache_path:
+                        save_json_silent(cache_path, cache)
+                except Exception:
+                    pass
+                return sha
+        except Exception:
+            pass
+        return None
+
+    # ------------------ Zenodo helpers ------------------
+    def _ensure_record_resolved(self, force_refresh: bool = False) -> None:
+        if self.source != "zenodo":
+            return
+        if self._record_id is None:
+            self._record_id = self._zenodo.resolve_record_id(CONCEPT_DOI, self.version)
+        if force_refresh or not self._file_index:
+            self._file_index = self._zenodo.build_file_index(self._record_id)
+            self._names_cache_zenodo = None
+
     def find_zenodo_keys(self, term: str) -> List[str]:
         """
-        Case-insensitive search over the Zenodo record file keys.
+        Public helper to search keys in the currently-loaded Zenodo file index.
 
-        :param term: Substring to search for (e.g., "rbl/mis" or "mis").
-        :return: List of matching keys.
+        Resolves the record index if not already loaded. Returns an empty list if
+        no client/index is available or if an error occurs.
         """
-        if self.source == "github":
+        try:
+            if not self._file_index:
+                # best-effort: attempt to resolve the record (only when source is zenodo)
+                try:
+                    self._ensure_record_resolved()
+                except Exception:
+                    pass
+            return self._zenodo.find_keys(self._file_index, term)
+        except Exception:
             return []
-        self._ensure_record_resolved()
-        return self._zenodo.find_keys(self._file_index, term)
 
+    def available_names(self, refresh: bool = False) -> List[str]:
+        if self.source == "zenodo":
+            self._ensure_record_resolved(force_refresh=refresh)
+            raw_names = self._zenodo.available_names(
+                task=self.task,
+                record_id=self._record_id or 0,
+                file_index=self._file_index,
+                include_archives=True,
+            )
+            names = sorted(
+                {self._normalize_basename(n) for n in raw_names if isinstance(n, str)}
+            )
+            self._names_cache_zenodo = names
+            return list(names)
+        else:
+            if not self.gh_enable:
+                return []
+            if self._names_cache_github is not None and not refresh:
+                return list(self._names_cache_github)
+            if not self._github:
+                self._github = GitHubClient(
+                    session=self._session,
+                    timeout=self.timeout,
+                    owner=GH_OWNER,
+                    repo=GH_REPO,
+                    ref_candidates=self._gh_refs,
+                )
+            raw = self._github.list_names(self.task)
+            names = sorted(
+                {self._normalize_basename(n) for n in raw if isinstance(n, str)}
+            )
+            self._names_cache_github = names
+            return list(names)
+
+    # ------------------ checksum helper ------------------
+    def _compute_hex(self, data: bytes, algo: str) -> str:
+        try:
+            h = hashlib.new(algo)
+        except Exception:
+            h = hashlib.sha256()
+        h.update(data)
+        return h.hexdigest().lower()
+
+    # ------------------ core loader ------------------
     def load(
         self,
         name: str,
@@ -370,20 +474,12 @@ class DataLoader:
         dtype: Optional[Dict[str, object]] = None,
         **pd_kw,
     ) -> pd.DataFrame:
-        """
-        Load `Data/<task>/<name>.csv(.gz)` according to `source`.
-
-        :param name: Base dataset name (no extension).
-        :param use_cache: Persist gz payloads to cache_dir if True.
-        :param dtype: Optional pandas dtype mapping.
-        :param pd_kw: Extra pandas.read_csv kwargs.
-        :return: pandas.DataFrame
-        :raises FileNotFoundError: if dataset not found in selected source(s).
-        """
         self._maybe_set_pyarrow(pd_kw)
+        name = self._normalize_basename(name)
 
         rel_gz = f"Data/{self.task}/{name}.csv.gz"
         rel_csv = f"Data/{self.task}/{name}.csv"
+
         tried: List[str] = []
         last_err = None
 
@@ -393,20 +489,51 @@ class DataLoader:
                 buf, compression=("gzip" if gz else None), dtype=dtype, **pd_kw
             )
 
-        # ---- strategies (each returns DataFrame or None) ----
-        def _try_zenodo_files() -> Optional[pd.DataFrame]:
+        # --- 1) exact keys on Zenodo ---
+        def _try_exact_zenodo() -> Optional[pd.DataFrame]:
             nonlocal last_err
             self._ensure_record_resolved()
 
-            # exact keys
+            cache_path = (
+                (self.cache_dir / f"{self.task}__{name}.csv.gz")
+                if (self.cache_dir)
+                else None
+            )
+
             for key in (rel_gz, rel_csv):
                 if key in self._file_index:
                     meta = self._file_index[key]
+                    # verify cached gz if present and meta has checksum
+                    if (
+                        key.endswith(".csv.gz")
+                        and use_cache
+                        and cache_path
+                        and cache_path.exists()
+                    ):
+                        algo, expected_hex = parse_checksum_field(
+                            meta.get("checksum", "") or ""
+                        )
+                        if algo and expected_hex:
+                            try:
+                                cached_bytes = cache_path.read_bytes()
+                                got_hex = self._compute_hex(cached_bytes, algo)
+                                if got_hex.lower() == expected_hex.lower():
+                                    return _read_bytes(cached_bytes, gz=True)
+                                else:
+                                    try:
+                                        cache_path.unlink()
+                                    except Exception:
+                                        pass
+                            except Exception:
+                                pass
+
+                    # download via ZenodoClient (stream_to_temp_and_verify will check checksum)
                     resp = self._zenodo.get_download_response(
                         meta, self._record_id or 0
                     )
                     if resp is not None:
                         tried.append(resp.url)
+                        temp_path = None
                         try:
                             suffix = ".gz" if key.endswith(".gz") else ".csv"
                             temp_path = self._zenodo.stream_to_temp_and_verify(
@@ -433,21 +560,25 @@ class DataLoader:
                         tried.append(
                             f"(no usable download candidate from Zenodo metadata for {key})"
                         )
+            return None
 
-            # fuzzy candidates within record index
+        # --- 2) fuzzy: check direct keys (non-archive) ---
+        def _try_fuzzy_zenodo() -> Optional[pd.DataFrame]:
+            nonlocal last_err
+            # look for candidate keys in record index matching name/task patterns
             candidates = (
-                self.find_zenodo_keys(f"{self.task}/{name}")
-                + self.find_zenodo_keys(f"{self.task}_{name}")
-                + self.find_zenodo_keys(name)
+                self._zenodo.find_keys(self._file_index, f"{self.task}/{name}")
+                + self._zenodo.find_keys(self._file_index, f"{self.task}_{name}")
+                + self._zenodo.find_keys(self._file_index, name)
             )
-            seen: List[str] = []
+            seen = []
             for c in candidates:
                 if c not in seen:
                     seen.append(c)
             for key in seen:
                 if not (key.endswith(".csv") or key.endswith(".csv.gz")):
                     continue
-                meta = self._file_index[key]
+                meta = self._file_index.get(key, {})
                 resp = self._zenodo.get_download_response(meta, self._record_id or 0)
                 if resp is None:
                     tried.append(
@@ -483,10 +614,114 @@ class DataLoader:
                         pass
             return None
 
-        def _try_github() -> Optional[pd.DataFrame]:
+        # --- 3) archive members: inspect archives and extract member if present ---
+        def _try_archive_members() -> Optional[pd.DataFrame]:
             nonlocal last_err
-            if not self.gh_enable or self.source not in {"github", "any"}:
+            # find archive keys in record index
+            archive_keys = [
+                k
+                for k in self._file_index.keys()
+                if k.lower().endswith((".zip", ".tgz", ".tar.gz", ".tar"))
+            ]
+            if not archive_keys:
                 return None
+
+            # build possible member tails to match (lowered)
+            candidates_tail = [
+                f"data/{self.task}/{name}.csv.gz",
+                f"data/{self.task}/{name}.csv",
+                f"data/{self.task}/{name.replace('_','-')}.csv.gz",
+                f"data/{self.task}/{name.replace('_','-')}.csv",
+                f"data/{self.task}/{name.replace('-','_')}.csv.gz",
+                f"data/{self.task}/{name.replace('-','_')}.csv",
+                f"{self.task}/{name}.csv.gz",
+                f"{self.task}/{name}.csv",
+                f"{name}.csv.gz",
+                f"{name}.csv",
+            ]
+
+            # search archive member listings (cached) first
+            for ak in archive_keys:
+                meta = self._file_index.get(ak, {})
+                try:
+                    members = self._zenodo.list_archive_members_cached(
+                        self._record_id or 0, ak, meta
+                    )
+                except Exception:
+                    members = []
+                if not members:
+                    continue
+                for m in members:
+                    ml = m.replace("\\", "/").lower()
+                    for tail in candidates_tail:
+                        if ml.endswith(tail):
+                            # found candidate member inside archive
+                            try:
+                                # download archive (stream_to_temp_and_verify will verify checksum)
+                                resp = self._zenodo.get_download_response(
+                                    meta, self._record_id or 0
+                                )
+                                if resp is None:
+                                    tried.append(
+                                        f"(no usable download candidate for archive {ak})"
+                                    )
+                                    continue
+                                tried.append(resp.url)
+                                temp_path = None
+                                try:
+                                    suffix = (
+                                        ".zip"
+                                        if ak.lower().endswith(".zip")
+                                        else ".tar"
+                                    )
+                                    temp_path = self._zenodo.stream_to_temp_and_verify(
+                                        resp, meta, suffix=suffix
+                                    )
+                                    # extract bytes for member m
+                                    member_bytes = self._zenodo.extract_member_bytes(
+                                        Path(temp_path), m
+                                    )
+                                    if member_bytes is None:
+                                        last_err = RuntimeError(
+                                            f"Member {m} not found in archive after download"
+                                        )
+                                        continue
+                                    # if the member name endswith .csv.gz, it's gzipped inside archive
+                                    is_gz = m.lower().endswith(".csv.gz")
+                                    # optionally cache extracted gz to cache_dir for future
+                                    if is_gz and use_cache and self.cache_dir:
+                                        try:
+                                            (
+                                                self.cache_dir
+                                                / f"{self.task}__{name}.csv.gz"
+                                            ).write_bytes(member_bytes)
+                                        except Exception:
+                                            pass
+                                    return _read_bytes(member_bytes, gz=is_gz)
+                                finally:
+                                    try:
+                                        if temp_path and Path(temp_path).exists():
+                                            Path(temp_path).unlink()
+                                    except Exception:
+                                        pass
+                            except Exception as e:
+                                last_err = e
+                                continue
+            return None
+
+        # --- 4) GitHub-like retrieval ---
+        def _try_github_like() -> Optional[pd.DataFrame]:
+            nonlocal last_err
+            if not self.gh_enable:
+                return None
+            if not self._github:
+                self._github = GitHubClient(
+                    session=self._session,
+                    timeout=self.timeout,
+                    owner=GH_OWNER,
+                    repo=GH_REPO,
+                    ref_candidates=self._gh_refs,
+                )
             for ext in (".csv.gz", ".csv"):
                 url = self._github.raw_url(self.task, name, ext)
                 if not url:
@@ -510,116 +745,29 @@ class DataLoader:
                     last_err = e
             return None
 
-        def _try_zenodo_archives() -> Optional[pd.DataFrame]:
-            nonlocal last_err
-            self._ensure_record_resolved()
-            archive_keys = [
-                k
-                for k in self._file_index.keys()
-                if k.lower().endswith((".zip", ".tar.gz", ".tgz", ".tar"))
-            ]
-            # candidates to look for inside archives
-            inner_exact = [
-                f"Data/{self.task}/{name}.csv.gz",
-                f"Data/{self.task}/{name}.csv",
-            ]
-
-            for ak in archive_keys:
-                meta = self._file_index[ak]
-                resp = self._zenodo.get_download_response(meta, self._record_id or 0)
-                if resp is None:
-                    tried.append(f"(no usable download candidate for archive {ak})")
-                    last_err = RuntimeError(
-                        f"No usable download candidate for archive {ak}"
-                    )
-                    continue
-                tried.append(resp.url)
-                temp_path = None
-                try:
-                    suffix = ".zip" if ak.lower().endswith(".zip") else ".tar"
-                    temp_path = self._zenodo.stream_to_temp_and_verify(
-                        resp, meta, suffix=suffix
-                    )
-
-                    # First try exact members, else scan for loose match under Data/<task>/
-                    members = self._zenodo.list_archive_members_cached(
-                        self._record_id or 0, ak, meta
-                    )
-                    member = None
-                    # exact
-                    for ec in inner_exact:
-                        if ec in members:
-                            member = ec
-                            break
-                    # loose
-                    if member is None:
-                        low_members = [m.lower().replace("\\", "/") for m in members]
-                        for idx, m in enumerate(low_members):
-                            if (
-                                f"data/{self.task}/{name}" in m
-                                or f"data/{self.task}_{name}" in m
-                                or name.lower() in m
-                            ):
-                                member = members[idx]
-                                break
-
-                    if member:
-                        content = self._zenodo.extract_member_bytes(temp_path, member)
-                        if content is not None:
-                            gz = member.endswith(".gz")
-                            if gz and use_cache and self.cache_dir:
-                                try:
-                                    (
-                                        self.cache_dir / f"{self.task}__{name}.csv.gz"
-                                    ).write_bytes(content)
-                                except Exception:
-                                    pass
-                            return _read_bytes(content, gz=gz)
-                except Exception as e:
-                    last_err = e
-                finally:
-                    try:
-                        if temp_path and Path(temp_path).exists():
-                            Path(temp_path).unlink()
-                    except Exception:
-                        pass
-            return None
-
-        # Strategy
+        # Try strategies in order
         if self.source == "zenodo":
-            df = _try_zenodo_files()
-            if df is not None:
-                return df
-            df = _try_zenodo_archives()
-            if df is not None:
-                return df
-        elif self.source == "github":
-            df = _try_github()
-            if df is not None:
-                return df
-        else:  # any
-            df = _try_zenodo_files()
-            if df is not None:
-                return df
-            df = _try_github()
-            if df is not None:
-                return df
-            df = _try_zenodo_archives()
+            for fn in (_try_exact_zenodo, _try_fuzzy_zenodo, _try_archive_members):
+                df = fn()
+                if df is not None:
+                    return df
+        else:
+            df = _try_github_like()
             if df is not None:
                 return df
 
-        # -------- Not found — improved diagnostic --------
-        zenodo_keys: List[str] = []
+        # Not found: diagnostics
+        zenodo_keys = []
         try:
             if self._file_index:
                 zenodo_keys = sorted(self._file_index.keys())
         except Exception:
             zenodo_keys = []
 
-        github_names: List[str] = []
+        github_names = []
         try:
-            if self.gh_enable and self.source in {"github", "any"}:
-                github_names = self._available_names_github(refresh=True)
+            if self.gh_enable and self.source in {"github", "commit"}:
+                github_names = self.available_names(refresh=True)
         except Exception:
             github_names = []
 
@@ -641,59 +789,52 @@ class DataLoader:
                 f"Data/{self.task}/{name.replace('_', '-')}.csv.gz",
                 f"Data/{self.task}/{name.replace('_', '-')}.csv",
             ]
-        seen = set()
-        canonical_candidates = [
-            c for c in canonical_candidates if not (c in seen or seen.add(c))
-        ]
 
-        msg_lines: List[str] = [
+        msg_lines = [
             f"Failed to fetch dataset '{name}' for task '{self.task}'.",
             f"Concept DOI: {CONCEPT_DOI}",
             f"Version: {self.version or 'latest'} (record {self._record_id})",
             f"Source: {self.source}",
             "",
-            "Tried URLs / archives (in order attempted):",
+            "Tried URLs:",
         ]
         if tried:
             msg_lines += [f"  {u}" for u in tried]
         else:
-            msg_lines += ["  (no candidate URLs/archives were attempted)"]
+            msg_lines += ["  (no candidate URLs were attempted)"]
 
         msg_lines += ["", "Canonical candidate file names we would look for:"]
         msg_lines += [f"  {c}" for c in canonical_candidates]
 
-        if zenodo_keys:
+        if zenodo_keys and self.source == "zenodo":
             msg_lines += [
                 "",
                 f"Zenodo record {self._record_id} contains these file keys ({len(zenodo_keys)}):",
             ]
-            if len(zenodo_keys) > 300:
-                msg_lines += [f"  {k}" for k in zenodo_keys[:200]]
-                msg_lines += [f"  ... ({len(zenodo_keys)-200} more keys elided)"]
-            else:
-                msg_lines += [f"  {k}" for k in zenodo_keys]
+            msg_lines += [f"  {k}" for k in zenodo_keys]
 
-        if github_names:
+        if github_names and self.source in {"github", "commit"}:
             msg_lines += [
                 "",
-                "GitHub Data/ filenames discovered for this task (from configured refs):",
+                "GitHub Data/ filenames discovered for this ref:",
             ]
             msg_lines += [f"  {n}" for n in github_names]
 
-        # Suggestions
-        avail = self.available_names(refresh=False)
-        from difflib import get_close_matches
-
-        suggestions = get_close_matches(name, avail, n=5, cutoff=0.4) if avail else []
-        if suggestions:
-            msg_lines += ["", f"Did you mean: {suggestions} ?"]
+        try:
+            avail = self.available_names(refresh=False)
+        except Exception:
+            avail = []
+        if avail:
+            suggestions = get_close_matches(name, avail, n=5, cutoff=0.4)
+            if suggestions:
+                msg_lines += ["", f"Did you mean: {suggestions} ?"]
 
         if last_err:
             msg_lines += ["", f"Last error: {last_err!s}"]
 
         raise FileNotFoundError("\n".join(msg_lines))
 
-    # ---------- Batch ----------
+    # ------------------ batch loader ------------------
     def load_many(
         self,
         names: Iterable[str],
@@ -702,17 +843,6 @@ class DataLoader:
         parallel: bool = True,
         **pd_kw,
     ) -> Dict[str, pd.DataFrame]:
-        """
-        Load many datasets into a dict.
-
-        :param names: Iterable of base names.
-        :param use_cache: If True, cache gz payloads to disk.
-        :param dtype: Optional dtype mapping for pandas.
-        :param parallel: If True and max_workers>1, use ThreadPoolExecutor.
-        :param pd_kw: Additional pandas.read_csv kwargs.
-        :return: {name: DataFrame}
-        :raises RuntimeError: On first failed load (with chained FileNotFoundError).
-        """
         names_list = list(names)
         results: Dict[str, pd.DataFrame] = {}
 

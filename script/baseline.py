@@ -1,10 +1,6 @@
-#!/usr/bin/env python3
-# main.py - unified runner: per-round run-files + single-master CSV appended at end
-
 from __future__ import annotations
 
 import argparse
-import csv
 import json
 import logging
 import sys
@@ -15,6 +11,11 @@ from typing import Any, Dict, Iterable, List, Tuple
 
 import numpy as np
 import pandas as pd
+import sys
+from pathlib import Path
+
+parents = Path(__file__).resolve().parents
+sys.path.append(str(parents[0]))
 
 try:
     from synrxn.baseline.classification import Benchmark as classification_Benchmark
@@ -57,7 +58,7 @@ PROPERTY_PAIRS: List[Tuple[str, str]] = [
     ("phosphatase", "Conversion"),
     ("rad6re", "dh"),
     ("rdb7", "ea"),
-    ("rgd1", "ea"),
+    # ("rgd1", "ea"),
     ("sn2", "ea"),
     ("snar", "ea"),
     ("suzuki_miyaura", "yield"),
@@ -141,7 +142,13 @@ def write_run_jsonl(run_jsonl: Path, rows: Iterable[Dict[str, Any]]) -> None:
     logging.info("Wrote run jsonl: %s", run_jsonl)
 
 
-def find_existing_run_file(run_dir: Path, task: str, name: str, level: int | None = None, target: str | None = None) -> Path | None:
+def find_existing_run_file(
+    run_dir: Path,
+    task: str,
+    name: str,
+    level: int | None = None,
+    target: str | None = None,
+) -> Path | None:
     """Search run_dir for an existing run file for (task,name,level/target)."""
     name_s = sanitize_for_fname(name)
     if level is not None:
@@ -205,7 +212,7 @@ def append_runs_to_master(run_files: List[Path], master_csv: Path) -> None:
         return
 
     # Read and concat in chunks/one by one to avoid huge memory spikes
-    first = True
+    # first = True
     for run_file in run_files:
         try:
             df = pd.read_csv(run_file)
@@ -217,7 +224,12 @@ def append_runs_to_master(run_files: List[Path], master_csv: Path) -> None:
         # append to master
         if not master_csv.exists():
             df.to_csv(master_csv, index=False)
-            logging.info("Created master CSV %s with %d rows (from %s)", master_csv, len(df), run_file)
+            logging.info(
+                "Created master CSV %s with %d rows (from %s)",
+                master_csv,
+                len(df),
+                run_file,
+            )
         else:
             # ensure consistent columns: reorder df columns to master if possible
             try:
@@ -226,7 +238,9 @@ def append_runs_to_master(run_files: List[Path], master_csv: Path) -> None:
             except Exception:
                 pass
             df.to_csv(master_csv, mode="a", header=False, index=False)
-            logging.info("Appended %d rows from %s to master %s", len(df), run_file, master_csv)
+            logging.info(
+                "Appended %d rows from %s to master %s", len(df), run_file, master_csv
+            )
 
 
 def produce_summary_csv_from_master(task: str, master_csv: Path, outpath: Path) -> None:
@@ -284,24 +298,36 @@ def run_classification(
             # duplicate protection based on per-run files
             existing = find_existing_run_file(run_folder, task, name, level=level)
             if existing is not None:
-                logging.info("  - %s level %d: run file exists (%s), skipping", name, level, existing.name)
+                logging.info(
+                    "  - %s level %d: run file exists (%s), skipping",
+                    name,
+                    level,
+                    existing.name,
+                )
                 run_files.append(existing)
                 continue
 
             if dry_run:
-                logging.info("  -> [dry-run] would run Benchmark(name=%s, level=%d)", name, level)
+                logging.info(
+                    "  -> [dry-run] would run Benchmark(name=%s, level=%d)", name, level
+                )
                 # write a stub run file
                 ts = int(time.time())
-                run_path = run_folder / f"{task}__{sanitize_for_fname(name)}__level{level}__{ts}.csv"
-                stub = [{
-                    "task": task,
-                    "name": name,
-                    "level": level,
-                    "feature_mode": "NA",
-                    "metric": "NA",
-                    "fold": -1,
-                    "value": float("nan"),
-                }]
+                run_path = (
+                    run_folder
+                    / f"{task}__{sanitize_for_fname(name)}__level{level}__{ts}.csv"
+                )
+                stub = [
+                    {
+                        "task": task,
+                        "name": name,
+                        "level": level,
+                        "feature_mode": "NA",
+                        "metric": "NA",
+                        "fold": -1,
+                        "value": float("nan"),
+                    }
+                ]
                 write_run_file(run_path, stub)
                 if write_jsonl:
                     write_run_jsonl(run_path.with_suffix(".jsonl"), stub)
@@ -322,19 +348,26 @@ def run_classification(
                 elapsed = time.time() - start
                 logging.info("  -> Completed in %.1fs", elapsed)
             except Exception as e:
-                logging.error("  !!! Error running Benchmark for %s level %d: %s", name, level, e)
+                logging.error(
+                    "  !!! Error running Benchmark for %s level %d: %s", name, level, e
+                )
                 logging.debug("Traceback:\n%s", traceback.format_exc())
                 ts = int(time.time())
-                run_path = run_folder / f"{task}__{sanitize_for_fname(name)}__level{level}__{ts}.csv"
-                stub = [{
-                    "task": task,
-                    "name": name,
-                    "level": level,
-                    "feature_mode": "ERROR",
-                    "metric": "exception",
-                    "fold": -1,
-                    "value": float("nan"),
-                }]
+                run_path = (
+                    run_folder
+                    / f"{task}__{sanitize_for_fname(name)}__level{level}__{ts}.csv"
+                )
+                stub = [
+                    {
+                        "task": task,
+                        "name": name,
+                        "level": level,
+                        "feature_mode": "ERROR",
+                        "metric": "exception",
+                        "fold": -1,
+                        "value": float("nan"),
+                    }
+                ]
                 write_run_file(run_path, stub)
                 if write_jsonl:
                     write_run_jsonl(run_path.with_suffix(".jsonl"), stub)
@@ -344,7 +377,10 @@ def run_classification(
             # write per-run CSV immediately
             rows = flatten_cv_to_rows_class(name, level, res)
             ts = int(time.time())
-            run_path = run_folder / f"{task}__{sanitize_for_fname(name)}__level{level}__{ts}.csv"
+            run_path = (
+                run_folder
+                / f"{task}__{sanitize_for_fname(name)}__level{level}__{ts}.csv"
+            )
             write_run_file(run_path, rows)
             if write_jsonl:
                 write_run_jsonl(run_path.with_suffix(".jsonl"), rows)
@@ -377,25 +413,36 @@ def run_property(
     run_files: List[Path] = []
 
     for name, target in pairs:
-        existing = find_existing_run_file(run_folder, task, name, level=None, target=target)
+        existing = find_existing_run_file(
+            run_folder, task, name, level=None, target=target
+        )
         if existing is not None:
-            logging.info("  - %s:%s run file exists (%s), skipping", name, target, existing.name)
+            logging.info(
+                "  - %s:%s run file exists (%s), skipping", name, target, existing.name
+            )
             run_files.append(existing)
             continue
 
         if dry_run:
-            logging.info("  -> [dry-run] would run Benchmark(name=%s, target=%s)", name, target)
+            logging.info(
+                "  -> [dry-run] would run Benchmark(name=%s, target=%s)", name, target
+            )
             ts = int(time.time())
-            run_path = run_folder / f"{task}__{sanitize_for_fname(name)}__target_{sanitize_for_fname(target)}__{ts}.csv"
-            stub = [{
-                "task": task,
-                "name": name,
-                "target": target,
-                "feature_mode": "NA",
-                "metric": "NA",
-                "fold": -1,
-                "value": float("nan"),
-            }]
+            run_path = (
+                run_folder
+                / f"{task}__{sanitize_for_fname(name)}__target_{sanitize_for_fname(target)}__{ts}.csv"
+            )
+            stub = [
+                {
+                    "task": task,
+                    "name": name,
+                    "target": target,
+                    "feature_mode": "NA",
+                    "metric": "NA",
+                    "fold": -1,
+                    "value": float("nan"),
+                }
+            ]
             write_run_file(run_path, stub)
             if write_jsonl:
                 write_run_jsonl(run_path.with_suffix(".jsonl"), stub)
@@ -416,19 +463,29 @@ def run_property(
             elapsed = time.time() - start
             logging.info("  -> Completed in %.1fs", elapsed)
         except Exception as e:
-            logging.error("  !!! Error running property Benchmark for %s:%s -> %s", name, target, e)
+            logging.error(
+                "  !!! Error running property Benchmark for %s:%s -> %s",
+                name,
+                target,
+                e,
+            )
             logging.debug("Traceback:\n%s", traceback.format_exc())
             ts = int(time.time())
-            run_path = run_folder / f"{task}__{sanitize_for_fname(name)}__target_{sanitize_for_fname(target)}__{ts}.csv"
-            stub = [{
-                "task": task,
-                "name": name,
-                "target": target,
-                "feature_mode": "ERROR",
-                "metric": "exception",
-                "fold": -1,
-                "value": float("nan"),
-            }]
+            run_path = (
+                run_folder
+                / f"{task}__{sanitize_for_fname(name)}__target_{sanitize_for_fname(target)}__{ts}.csv"
+            )
+            stub = [
+                {
+                    "task": task,
+                    "name": name,
+                    "target": target,
+                    "feature_mode": "ERROR",
+                    "metric": "exception",
+                    "fold": -1,
+                    "value": float("nan"),
+                }
+            ]
             write_run_file(run_path, stub)
             if write_jsonl:
                 write_run_jsonl(run_path.with_suffix(".jsonl"), stub)
@@ -437,7 +494,10 @@ def run_property(
 
         rows = flatten_cv_to_rows_property(name, target, res)
         ts = int(time.time())
-        run_path = run_folder / f"{task}__{sanitize_for_fname(name)}__target_{sanitize_for_fname(target)}__{ts}.csv"
+        run_path = (
+            run_folder
+            / f"{task}__{sanitize_for_fname(name)}__target_{sanitize_for_fname(target)}__{ts}.csv"
+        )
         write_run_file(run_path, rows)
         if write_jsonl:
             write_run_jsonl(run_path.with_suffix(".jsonl"), rows)
@@ -452,21 +512,35 @@ def run_property(
 # CLI
 # ------------------------------
 def main(argv: List[str] | None = None):
-    p = argparse.ArgumentParser(description="Run classification or property benchmarks (per-run files + master appended at end)")
+    p = argparse.ArgumentParser(
+        description="Run classification or property benchmarks (per-run files + master appended at end)"
+    )
     p.add_argument(
         "--task",
         choices=["classification", "property"],
         required=True,
         help="Which task to run",
     )
-    p.add_argument("--dry-run", action="store_true", help="Do not execute Benchmarks, just iterate and write stub run files")
+    p.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Do not execute Benchmarks, just iterate and write stub run files",
+    )
     p.add_argument("--n-splits", type=int, default=5)
     p.add_argument("--n-repeats", type=int, default=5)
     p.add_argument("--random-state", type=int, default=42)
     p.add_argument("--n-jobs", type=int, default=4)
     p.add_argument("--out-dir", type=str, default="results_benchmark")
-    p.add_argument("--no-jsonl", action="store_true", help="Disable JSONL run logging (CSV per-run files are always written)")
-    p.add_argument("--quiet", action="store_true", help="Disable console logging (file logging remains)")
+    p.add_argument(
+        "--no-jsonl",
+        action="store_true",
+        help="Disable JSONL run logging (CSV per-run files are always written)",
+    )
+    p.add_argument(
+        "--quiet",
+        action="store_true",
+        help="Disable console logging (file logging remains)",
+    )
     args = p.parse_args(argv)
 
     out_dir = Path(args.out_dir)
@@ -477,7 +551,9 @@ def main(argv: List[str] | None = None):
 
     if args.task == "classification":
         if classification_Benchmark is None:
-            logging.error("classification Benchmark not importable. Ensure synrxn.baseline.classification is available.")
+            logging.error(
+                "classification Benchmark not importable. Ensure synrxn.baseline.classification is available."
+            )
             sys.exit(1)
         run_classification(
             classification_Benchmark,
@@ -492,7 +568,9 @@ def main(argv: List[str] | None = None):
         )
     else:
         if property_Benchmark is None:
-            logging.error("property Benchmark not importable. Ensure synrxn.baseline.property is available.")
+            logging.error(
+                "property Benchmark not importable. Ensure synrxn.baseline.property is available."
+            )
             sys.exit(1)
         run_property(
             property_Benchmark,
