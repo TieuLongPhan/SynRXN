@@ -11,8 +11,6 @@ from typing import Any, Dict, Iterable, List, Tuple
 
 import numpy as np
 import pandas as pd
-import sys
-from pathlib import Path
 
 parents = Path(__file__).resolve().parents
 sys.path.append(str(parents[0]))
@@ -61,8 +59,8 @@ PROPERTY_PAIRS: List[Tuple[str, str]] = [
     # ("rgd1", "ea"),
     ("sn2", "ea"),
     ("snar", "ea"),
-    ("suzuki_miyaura", "yield"),
-    ("uspto_yield", "yield"),
+    # ("suzuki_miyaura", "yield"),
+    # ("uspto_yield", "yield"),
 ]
 
 

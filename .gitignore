@@ -217,6 +217,6 @@ manifest.json
 CITATION.cff
 *.ipynb
 Data/Benchmark/*
-results_benchmark/runs/*
+Data/results_benchmark/runs/*
 results_benchmark/summary_metrics_classification.csv
 results_benchmark/summary.csv

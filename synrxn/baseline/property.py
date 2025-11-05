@@ -1,4 +1,3 @@
-# benchmark_property.py
 from __future__ import annotations
 
 import os
@@ -9,25 +8,86 @@ from synrxn.io.io import load_df_gz, save_results_json
 
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import cross_validate, RepeatedKFold
-from sklearn.metrics import make_scorer, mean_squared_error, mean_absolute_error
-
 
 SCORING = {
     "r2": "r2",
-    "rmse": make_scorer(mean_squared_error, greater_is_better=False, squared=False),
-    "mae": make_scorer(mean_absolute_error, greater_is_better=False),
+    "mae": "neg_mean_absolute_error",
+    "rmse": "neg_root_mean_squared_error",
 }
 
 
-def summarize_cv_results(cv_res: Dict[str, Any], tag: str) -> None:
-    """Print mean/std and per-split values for test_* metrics from cross_validate output."""
+def summarize_cv_results(
+    cv_res: Dict[str, Any], tag: str, scoring: Dict[str, Any] | None = None
+) -> None:
+    """
+    Print mean/std and per-split values for test_* metrics from cross_validate output.
+
+    If `scoring` is provided, any metrics that come from scorers with
+    greater_is_better==False (i.e., sklearn's negated scorers) are printed
+    with sign inverted so humans see positive MAE/RMSE values.
+    """
     import numpy as _np
 
     print(f"\n--- {tag} ---")
     keys = [k for k in cv_res.keys() if k.startswith("test_")]
+    # detect negated scorers from scoring dict
+    negated = set()
+    if scoring is not None:
+        for name, scorer in scoring.items():
+            try:
+                if getattr(scorer, "greater_is_better", True) is False:
+                    negated.add(name)
+            except Exception:
+                # scoring entry might be a string (e.g. 'r2') -> skip
+                pass
+
     for k in keys:
-        arr = _np.asarray(cv_res[k])
+        arr = _np.asarray(cv_res[k], dtype=float)
+        metric_name = k.split("_", 1)[1]
+        if metric_name in negated:
+            arr = -arr
         print(f"{k}: mean={arr.mean():.4f}, std={arr.std(ddof=0):.4f}, values={arr}")
+
+
+def _is_scorer_neg(scoring_obj: Any) -> bool:
+    """Return True if scorer object indicates it returns negated values (greater_is_better == False)."""
+    try:
+        return getattr(scoring_obj, "greater_is_better", True) is False
+    except Exception:
+        # scoring could be a string like 'r2'
+        return False
+
+
+def normalize_cv_results(
+    cv_res: Dict[str, Any], scoring: Dict[str, Any]
+) -> Dict[str, Any]:
+    """
+    Return a copy of cv_res where arrays produced by scorers that have
+    greater_is_better==False are multiplied by -1 (so we report positive MAE/RMSE).
+
+    This returns a new dict with the same keys; arrays are converted to lists
+    (JSON-serializable) where appropriate.
+    """
+    out: Dict[str, Any] = {}
+    # copy arrays/lists to numpy arrays for manipulation
+    for k, v in cv_res.items():
+        if isinstance(v, (list, tuple, np.ndarray)):
+            out[k] = np.asarray(v, dtype=float).copy()
+        else:
+            out[k] = v
+
+    # find which scorers are negated
+    negated = {name for name, scorer in scoring.items() if _is_scorer_neg(scorer)}
+
+    # flip sign for 'test_X' and 'train_X' where X in negated
+    for key in list(out.keys()):
+        if not (key.startswith("test_") or key.startswith("train_")):
+            continue
+        metric_name = key.split("_", 1)[1]
+        if metric_name in negated and isinstance(out[key], np.ndarray):
+            out[key] = (-out[key]).tolist()
+
+    return out
 
 
 def get_data(name: str, target_col: str) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
@@ -38,11 +98,6 @@ def get_data(name: str, target_col: str) -> Tuple[np.ndarray, np.ndarray, np.nda
       ./Data/Benchmark/drfp/property/drfp_{name}.npz   (npz with 'fps')
       ./Data/Benchmark/rxnfp/property/rxnfp_{name}.npz (npz with 'fps')
       Data/property/{name}.csv.gz  (contains target_col)
-
-    :param name: dataset id (filename base)
-    :param target_col: column name in CSV to use as target
-    :returns: X_drfp, X_rxnfp, y (numpy arrays)
-    :raises FileNotFoundError / KeyError
     """
     drfp_path = f"./Data/Benchmark/drfp/property/drfp_{name}.npz"
     rxnfp_path = f"./Data/Benchmark/rxnfp/property/rxnfp_{name}.npz"
@@ -78,14 +133,9 @@ def Benchmark(
     """
     Run RANDOM (unstratified) cross-validation for a property dataset.
 
-    :param name: dataset id (matches filenames under Data/)
-    :param target_col: the CSV column to use as regression target
-    :param n_splits: number of outer folds
-    :param n_repeats: number of repeats
-    :param random_state: RNG seed
-    :param n_jobs: n_jobs passed to RandomForestRegressor (internal parallelism)
-    :param scoring: scoring dict for cross_validate
-    :returns: dict with keys: 'drfp_random','rxnfp_random' each mapping to cross_validate output
+    Returns a dict with keys 'drfp_random' and 'rxnfp_random' mapping to
+    the cross_validate output, but where MAE/RMSE entries have been normalized
+    to positive values (for human readability and downstream reporting).
     """
     X_drfp, X_rxnfp, y = get_data(name=name, target_col=target_col)
     results: Dict[str, Dict[str, Any]] = {}
@@ -107,15 +157,24 @@ def Benchmark(
     cv_drfp_random = cross_validate(
         reg, X_drfp, y=y, cv=rkf, scoring=scoring, return_train_score=False, n_jobs=1
     )
-    summarize_cv_results(cv_drfp_random, tag=f"{name}:{target_col} - DRFP - random")
-    results["drfp_random"] = cv_drfp_random
+    # normalize negated scorers to positive reporting values
+    cv_drfp_random_pos = normalize_cv_results(cv_drfp_random, scoring)
+    summarize_cv_results(
+        cv_drfp_random_pos, tag=f"{name}:{target_col} - DRFP - random", scoring=scoring
+    )
+    results["drfp_random"] = cv_drfp_random_pos
 
     # run on rxnfp
     cv_rxnfp_random = cross_validate(
         reg, X_rxnfp, y=y, cv=rkf, scoring=scoring, return_train_score=False, n_jobs=1
     )
-    summarize_cv_results(cv_rxnfp_random, tag=f"{name}:{target_col} - RXNFP - random")
-    results["rxnfp_random"] = cv_rxnfp_random
+    cv_rxnfp_random_pos = normalize_cv_results(cv_rxnfp_random, scoring)
+    summarize_cv_results(
+        cv_rxnfp_random_pos,
+        tag=f"{name}:{target_col} - RXNFP - random",
+        scoring=scoring,
+    )
+    results["rxnfp_random"] = cv_rxnfp_random_pos
 
     # save JSON results (create directory if needed)
     out_dir = os.path.dirname(
