@@ -318,6 +318,35 @@ class RepeatedKFoldsSplitter:
                     )
                 )
 
+    def prepare_splits(
+        self,
+        X: Any,
+        y: Optional[Any] = None,
+        groups: Optional[Any] = None,
+        stratify: Optional[Union[str, Any]] = None,
+    ) -> None:
+        """
+        Compute and store all splits immediately (equivalent to iterating split(...) fully).
+        After calling this, self._splits is populated and get_split(...) may be used.
+        """
+        # handle stratify same as split()
+        stratify_arr = None
+        if isinstance(stratify, str):
+            if not isinstance(X, pd.DataFrame):
+                raise ValueError(
+                    "When passing stratify as a column name (str), X must be a pandas.DataFrame"
+                )
+            stratify_arr = X[stratify].values
+        elif stratify is not None:
+            stratify_arr = np.asarray(stratify)
+
+        y_for_split = stratify_arr if stratify_arr is not None else y
+        X_arr, y_arr, groups_arr = indexable(X, y_for_split, groups)
+        self._X_provided = X
+        # compute and save splits
+        self._compute_splits(X_arr, y_arr, groups_arr)
+
+
     def get_split(self, repeat: int = 0, fold: int = 0, as_frame: bool = False):
         """
         Retrieve either index arrays (train_idx, val_idx, test_idx) or slices

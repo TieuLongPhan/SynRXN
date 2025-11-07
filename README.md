@@ -45,36 +45,86 @@ SynRXN is a curated, provenance-tracked collection of reaction datasets and eval
 from synrxn.data import DataLoader
 from synrxn.split.repeated_kfold import RepeatedKFoldsSplitter
 
-# create a loader for the 'property' task (GitHub backend; resolve metadata on init)
-dl = DataLoader(task="property", source="github", gh_enable=True, resolve_on_init=True)
+# 1) Zenodo (stable release)
+from pathlib import Path
+from synrxn import DataLoader
 
-# list available dataset names (returns a list[str])
+dl = DataLoader(
+    task="classification",
+    source="zenodo",
+    version="0.0.6",
+    cache_dir=Path("~/.cache/synrxn").expanduser(),
+)
+print(dl.available_names())   # list available datasets
+df = dl.load("schneider_b")
+print(len(df), df.columns.tolist())
+
+# 2) GitHub release tag
+from pathlib import Path
+from synrxn.data import DataLoader
+
+dl = DataLoader(
+    task="classification",
+    source="github",
+    version="v0.0.6",
+    cache_dir=Path("~/.cache/synrxn").expanduser(),
+    gh_enable=True,
+)
 print(dl.available_names())
-# expected stdout (example):
-# ['b97xd3', 'lograte', 'rgd1', 'cycloadd', 'phosphatase', 'sn2',
-#  'e2', 'rad6re', 'snar', 'e2sn2', ...]
+df = dl.load("schneider_b")
+print(len(df))
 
-# load the 'b97xd3' dataset (returns a pandas.DataFrame)
+# 3) GitHub commit (pin to SHA)
+from pathlib import Path
+from synrxn.data import DataLoader
+
+dl = DataLoader(
+    task="classification",
+    source="commit",
+    version="3e1612e2199e8b0e369fce3ed9aff3dda68e4c32",
+    cache_dir=Path("~/.cache/synrxn").expanduser(),
+    gh_enable=True,
+)
+print(dl.available_names())
+df = dl.load("schneider_b")
+print(df.head(2))
+
+# 4) GitHub latest
+from pathlib import Path
+from synrxn.data import DataLoader
+
+dl = DataLoader(
+    task="classification",
+    source="github",
+    version="latest",
+    cache_dir=Path("~/.cache/synrxn").expanduser(),
+    gh_enable=True,
+)
+print(dl.available_names())
+df = dl.load("schneider_b")
+print(df.shape)
+
+# Simple splitting example (property dataset)
+from synrxn.data import DataLoader
+from synrxn.split.repeated_kfold import RepeatedKFoldsSplitter
+from pathlib import Path
+
+dl = DataLoader(
+    task="property",
+    source="commit",
+    version="latest",
+    cache_dir=Path("~/.cache/synrxn").expanduser(),
+    gh_enable=True,
+)
 df = dl.load("b97xd3")
 
 splitter = RepeatedKFoldsSplitter(
-    n_splits=5,
-    n_repeats=5,
-    ratio=(8, 1, 1),
-    shuffle=True,
-    random_state=42,
+    n_splits=5, n_repeats=2, ratio=(8,1,1), shuffle=True, random_state=1
 )
 
-# compute splits (no stratification in this example)
-splitter.split(df, stratify_col=None)
-
-# retrieve one specific split (repeat 0, fold 0) as pandas DataFrames
-train_df, val_df, test_df = splitter.get_split(repeat=0, fold=0, as_frame=True)
-
-# quick checks
-print(type(train_df), type(val_df), type(test_df))     # <class 'pandas.core.frame.DataFrame'> ...
-print(len(train_df), len(val_df), len(test_df))        # e.g.  (N_train, N_val, N_test)
-print(train_df.columns.tolist())                       # list of column names          
+splitter.prepare_splits(df, stratify=None)           
+train_df, val_df, test_df = splitter.get_split(0, 0, as_frame=True)
+print(len(train_df), len(val_df), len(test_df))
 ```
 
 ## Contributing
