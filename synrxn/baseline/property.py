@@ -12,7 +12,7 @@ from sklearn.model_selection import cross_validate, RepeatedKFold
 SCORING = {
     "r2": "r2",
     "mae": "neg_mean_absolute_error",
-    "rmse": "neg_root_mean_squared_error",
+    "mse": "neg_mean_squared_error",
 }
 
 
@@ -113,6 +113,10 @@ def get_data(name: str, target_col: str) -> Tuple[np.ndarray, np.ndarray, np.nda
     X_drfp = np.load(drfp_path)["fps"]
     X_rxnfp = np.load(rxnfp_path)["fps"]
     data = load_df_gz(csv_path)
+    if name == "snar":
+        X_drfp = np.delete(X_drfp, data[data["ea"].isna()].index, axis=0)
+        X_rxnfp = np.delete(X_rxnfp, data[data["ea"].isna()].index, axis=0)
+        data = data.dropna()
 
     if target_col not in data.columns:
         raise KeyError(f"Target column '{target_col}' not found in {csv_path}")

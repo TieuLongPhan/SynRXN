@@ -7,14 +7,14 @@ message: If you use this work, please cite it using this file.
 abstract: Reaction Database for benchmarking
 doi: 10.5281/zenodo.17297723
 url: https://doi.org/10.5281/zenodo.17297723
-repository-code: https://github.com/TieuLongPhan/SynRXN
-date-released: '2025-10-13'
+repository-code: git@github.com:TieuLongPhan/SynRXN.git
+date-released: '2025-11-05'
 authors:
 - given-names: Tieu Long
   family-names: Phan
   email: tieu@bioinf.uni-leipzig.de
 identifiers:
 - type: commit
-  value: 4f9a9b39d85ca392d27392164ed00e82dab3ab20
+  value: 9b951a4fd07baaded3b2cc4a1b2c50bd7424f260
 - type: doi
   value: 10.5281/zenodo.17297723

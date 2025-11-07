@@ -1,14 +1,18 @@
+# updated build_manifest.py
 from __future__ import annotations
 import sys
 import os
 import re
+import csv
+import gzip
+import io
 import json
 import hashlib
 import argparse
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple, IO
 
 try:
     import tomllib  # Python 3.11+
@@ -22,10 +26,22 @@ try:
 except Exception:
     HAVE_PYYAML = False
 
+# optional dependencies for robust tabular handling
+try:
+    import pandas as pd  # type: ignore
+
+    HAVE_PANDAS = True
+except Exception:
+    pd = None  # type: ignore
+    HAVE_PANDAS = False
+
 ISO_FMT = "%Y-%m-%dT%H:%M:%SZ"
 DEFAULT_ZENODO_DOI = "10.5281/zenodo.17297723"
 
 
+# -------------------------
+# Utilities
+# -------------------------
 def now_iso_utc() -> str:
     return datetime.now(timezone.utc).strftime(ISO_FMT)
 
@@ -142,8 +158,274 @@ def extract_project_meta(pyproj: Dict[str, Any]) -> Dict[str, Any]:
     return meta
 
 
-def scan_files(data_root: Path, follow_symlinks: bool = False) -> List[Dict[str, Any]]:
+# -------------------------
+# Sidecar metadata loading
+# -------------------------
+def load_sidecar_metadata(root: Path) -> Dict[str, Dict[str, Any]]:
+    """
+    Search for top-level metadata files (metadata.yaml/json) and per-file sidecars.
+    Returns a mapping: relative-path -> dict with keys like 'description', 'license'.
+    """
+    out: Dict[str, Dict[str, Any]] = {}
+
+    # top-level metadata candidates
+    candidates = [
+        "metadata.yaml",
+        "metadata.yml",
+        "file_metadata.json",
+        "metadata.json",
+    ]
+    for c in candidates:
+        p = root / c
+        if p.exists():
+            try:
+                if p.suffix in (".yaml", ".yml") and HAVE_PYYAML:
+                    with p.open("r", encoding="utf8") as fh:
+                        data = yaml.safe_load(fh) or {}
+                else:
+                    with p.open("r", encoding="utf8") as fh:
+                        data = json.load(fh)
+                if isinstance(data, dict):
+                    # expected mapping of file-key -> metadata
+                    for k, v in data.items():
+                        if not isinstance(v, dict):
+                            continue
+                        out[str(k)] = v
+            except Exception:
+                continue
+
+    # per-file sidecars: look for files named <file>.meta.json or <file>.meta.yaml
+    for rootdir, _dirs, files in os.walk(str(root)):
+        root_path = Path(rootdir)
+        for fn in files:
+            if (
+                fn.endswith(".meta.json")
+                or fn.endswith(".meta.yaml")
+                or fn.endswith(".meta.yml")
+            ):
+                try:
+                    meta_p = root_path / fn
+                    with meta_p.open("r", encoding="utf8") as fh:
+                        if meta_p.suffix == ".json":
+                            data = json.load(fh)
+                        else:
+                            if HAVE_PYYAML:
+                                data = yaml.safe_load(fh) or {}
+                            else:
+                                # naive yaml-ish fallback: try json load
+                                try:
+                                    data = json.load(fh)
+                                except Exception:
+                                    data = {}
+                    # determine target key: strip .meta.* and relative to root
+                    target_name = fn.rsplit(".meta", 1)[0]
+                    rel = None
+                    # try to find the corresponding file under root
+                    cand = list(root_path.glob(target_name)) or []
+                    # store under relative path (best-effort)
+                    if cand:
+                        rel = str(cand[0].relative_to(root).as_posix())
+                    else:
+                        rel = target_name
+                    if isinstance(data, dict):
+                        out[rel] = data
+                except Exception:
+                    continue
+    return out
+
+
+def _open_maybe_gz(p: Path) -> IO[bytes]:
+    if str(p).endswith(".gz"):
+        return gzip.open(p, "rb")
+    return p.open("rb")
+
+
+def detect_format_from_name(p: Path) -> str:
+    name = p.name.lower()
+    if name.endswith(".csv") or name.endswith(".csv.gz"):
+        return "csv"
+    if (
+        name.endswith(".tsv")
+        or name.endswith(".tsv.gz")
+        or name.endswith(".txt")
+        or name.endswith(".txt.gz")
+    ):
+        return "tsv"
+    if name.endswith(".parquet"):
+        return "parquet"
+    if name.endswith(".ndjson") or name.endswith(".jsonl"):
+        return "ndjson"
+    if name.endswith(".json"):
+        return "json"
+    return "binary"
+
+
+def analyze_file(
+    p: Path, count_rows: bool = True, rows_size_limit: int = 100 * 1024 * 1024
+) -> Dict[str, Any]:
+    """
+    Return additional metadata for a file: format, mime, rows (int|None), columns (list|None).
+    For performance reasons, row/column extraction is skipped if file size > rows_size_limit (in bytes)
+    unless count_rows is False (then they are always skipped).
+    """
+    info: Dict[str, Any] = {"format": None, "mime": None, "rows": None, "columns": None}
+    fmt = detect_format_from_name(p)
+    info["format"] = fmt
+
+    # small mime hint
+    if fmt in ("csv", "tsv"):
+        info["mime"] = "text/tabular"
+    elif fmt in ("json", "ndjson"):
+        info["mime"] = "application/json"
+    elif fmt == "parquet":
+        info["mime"] = "application/parquet"
+    else:
+        info["mime"] = None
+
+    size = p.stat().st_size
+    # if file is large and counting rows, skip by default
+    if not count_rows or size > rows_size_limit:
+        return info
+
+    # CSV/TSV handling (gzip support)
+    try:
+        if fmt in ("csv", "tsv"):
+            delim = ","
+            if fmt == "tsv":
+                delim = "\t"
+            # open as text with correct newline handling
+            bfh = _open_maybe_gz(p)
+            with io.TextIOWrapper(
+                bfh, encoding="utf8", errors="replace", newline=""
+            ) as fh:
+                # sniff delimiter if possible (may fail on weird inputs)
+                sample = fh.read(8192)
+                fh.seek(0)
+                try:
+                    sniffer = csv.Sniffer()
+                    dialect = sniffer.sniff(sample)
+                    delim = dialect.delimiter
+                except Exception:
+                    pass
+                reader = csv.reader(fh, delimiter=delim)
+                # attempt to read header as columns
+                try:
+                    first = next(reader)
+                except StopIteration:
+                    return info
+                # determine if header-like: heuristics (no strictly numeric or small tokens)
+                header_is_strings = any(not is_number(x) for x in first)
+                if header_is_strings:
+                    columns = [c.strip() for c in first]
+                    info["columns"] = columns
+                else:
+                    info["columns"] = None
+                # continue counting rows (count including header if header present)
+                count = 1
+                for _ in reader:
+                    count += 1
+                info["rows"] = count
+                return info
+
+        # NDJSON / JSON-lines
+        if fmt in ("ndjson",):
+            bfh = _open_maybe_gz(p)
+            with io.TextIOWrapper(bfh, encoding="utf8", errors="replace") as fh:
+                count = 0
+                columns = None
+                for ln in fh:
+                    ln = ln.strip()
+                    if not ln:
+                        continue
+                    try:
+                        obj = json.loads(ln)
+                        if isinstance(obj, dict):
+                            if columns is None:
+                                columns = list(obj.keys())
+                        count += 1
+                    except Exception:
+                        # skip bad lines
+                        continue
+                info["rows"] = count
+                info["columns"] = columns
+                return info
+
+        # JSON array (["obj", ...] or [{"k":v},...])
+        if fmt == "json":
+            # try to parse safely
+            bfh = _open_maybe_gz(p)
+            with io.TextIOWrapper(bfh, encoding="utf8", errors="replace") as fh:
+                try:
+                    data = json.load(fh)
+                    if isinstance(data, list):
+                        info["rows"] = len(data)
+                        if len(data) > 0 and isinstance(data[0], dict):
+                            info["columns"] = list(data[0].keys())
+                    elif isinstance(data, dict):
+                        info["rows"] = 1
+                        info["columns"] = list(data.keys())
+                    return info
+                except Exception:
+                    # fallback to streaming counting per-line objects
+                    fh.seek(0)
+                    count = 0
+                    columns = None
+                    for ln in fh:
+                        ln = ln.strip()
+                        if not ln:
+                            continue
+                        try:
+                            obj = json.loads(ln)
+                            if isinstance(obj, dict) and columns is None:
+                                columns = list(obj.keys())
+                            count += 1
+                        except Exception:
+                            continue
+                    if count > 0:
+                        info["rows"] = count
+                        info["columns"] = columns
+                        return info
+                    return info
+
+        # Parquet (use pandas if available)
+        if fmt == "parquet" and HAVE_PANDAS:
+            try:
+                # read only meta to avoid reading whole file
+                df = pd.read_parquet(str(p), engine=None)
+                info["rows"] = int(df.shape[0])
+                info["columns"] = list(df.columns.astype(str))
+                return info
+            except Exception:
+                # swallow and return best-effort
+                return info
+
+    except Exception:
+        # never crash manifest build due to file analysis
+        return info
+
+    return info
+
+
+def is_number(s: str) -> bool:
+    try:
+        float(s)
+        return True
+    except Exception:
+        return False
+
+
+# -------------------------
+# Files scan & summary (enhanced)
+# -------------------------
+def scan_files(
+    data_root: Path,
+    follow_symlinks: bool = False,
+    count_rows: bool = True,
+    rows_size_limit: int = 100 * 1024 * 1024,
+    sidecar: Optional[Dict[str, Dict[str, Any]]] = None,
+) -> List[Dict[str, Any]]:
     files: List[Dict[str, Any]] = []
+    sidecar = sidecar or {}
     for root, _dirs, names in os.walk(str(data_root), followlinks=follow_symlinks):
         root_path = Path(root)
         for fn in sorted(names):
@@ -152,14 +434,31 @@ def scan_files(data_root: Path, follow_symlinks: bool = False) -> List[Dict[str,
                 if not p.is_file():
                     continue
                 rel = p.relative_to(data_root).as_posix()
-                files.append(
-                    {
-                        "key": rel,
-                        "size": p.stat().st_size,
-                        "sha256": sha256_file(p),
-                        "mtime": mtime_iso(p),
-                    }
+                entry: Dict[str, Any] = {
+                    "key": rel,
+                    "size": p.stat().st_size,
+                    "sha256": sha256_file(p),
+                    "mtime": mtime_iso(p),
+                }
+                # augment with analysis when reasonable
+                analysis = analyze_file(
+                    p, count_rows=count_rows, rows_size_limit=rows_size_limit
                 )
+                # copy non-null analysis fields
+                for k, v in analysis.items():
+                    if v is not None:
+                        entry[k] = v
+
+                # inject sidecar metadata (description/license) if present
+                # sidecar keys may be full relative path or just filename keys
+                sc = sidecar.get(rel) or sidecar.get(p.name)
+                if sc and isinstance(sc, dict):
+                    if "description" in sc:
+                        entry["description"] = sc["description"]
+                    if "license" in sc:
+                        entry["license"] = sc["license"]
+
+                files.append(entry)
             except Exception:
                 continue
     files.sort(key=lambda d: d["key"])
@@ -343,12 +642,17 @@ def build_cff_from_manifest(
     return cff
 
 
+# -------------------------
+# Build manifest (updated)
+# -------------------------
 def build_manifest(
     data_dir: Path,
     meta: Dict[str, Any],
     follow_symlinks: bool = False,
     doi: Optional[str] = None,
     license_str: Optional[str] = None,
+    count_rows: bool = True,
+    rows_size_limit: int = 100 * 1024 * 1024,
 ) -> Dict[str, Any]:
     generated_at = now_iso_utc()
     root = data_dir
@@ -357,7 +661,16 @@ def build_manifest(
     if not root.exists():
         raise FileNotFoundError(f"data-dir not found: {root}")
 
-    files = scan_files(root, follow_symlinks=follow_symlinks)
+    # load sidecar metadata map (optional)
+    sidecar = load_sidecar_metadata(root)
+
+    files = scan_files(
+        root,
+        follow_symlinks=follow_symlinks,
+        count_rows=count_rows,
+        rows_size_limit=rows_size_limit,
+        sidecar=sidecar,
+    )
     stats = summarize(files)
 
     prov = git_provenance(repo_root=root)
@@ -386,6 +699,9 @@ def build_manifest(
     return man
 
 
+# -------------------------
+# CLI
+# -------------------------
 def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     p = argparse.ArgumentParser(
         description="Build manifest.json and CITATION.cff (CITATION always generated)."
@@ -430,6 +746,26 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     p.add_argument("--swhid", help="Add SWHID to CFF identifiers")
     p.add_argument("--follow-symlinks", action="store_true", help="Follow symlinks")
     p.add_argument("-v", "--verbose", action="store_true", help="Verbose logging")
+    # new options for row counting
+    p.add_argument(
+        "--count-rows",
+        dest="count_rows",
+        action="store_true",
+        default=True,
+        help="Attempt to count rows and list columns for tabular files (default: True)",
+    )
+    p.add_argument(
+        "--no-count-rows",
+        dest="count_rows",
+        action="store_false",
+        help="Do not attempt to count rows / columns (faster)",
+    )
+    p.add_argument(
+        "--rows-size-limit",
+        type=int,
+        default=100 * 1024 * 1024,
+        help="Maximum file size (bytes) to scan for rows/columns (default 100MB). Set 0 for no limit.",
+    )
     return p.parse_args(argv)
 
 
@@ -485,6 +821,10 @@ def main(argv: Optional[List[str]] = None) -> int:
             follow_symlinks=args.follow_symlinks,
             doi=args.doi,
             license_str=args.license_str,
+            count_rows=args.count_rows,
+            rows_size_limit=(
+                args.rows_size_limit if args.rows_size_limit > 0 else sys.maxsize
+            ),
         )
     except Exception as exc:
         print(f"[manifest] error: {exc}", file=sys.stderr)

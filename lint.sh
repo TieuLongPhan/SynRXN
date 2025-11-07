@@ -6,7 +6,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # default exclude patterns (comma-separated)
-EXCLUDE=".git,__pycache__,.venv,venv,env,build,dist,.eggs,.mypy_cache,.pytest_cache,.cache,data,script"
+EXCLUDE=".git,__pycache__,.venv,venv,env,build,dist,.eggs,.mypy_cache,.pytest_cache,.cache,data,script,build_manifest.py"
 
 # require flake8
 if ! command -v flake8 >/dev/null 2>&1; then

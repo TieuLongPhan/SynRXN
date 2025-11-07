@@ -46,6 +46,7 @@ CLASS_SPECIAL_LEVELS = {
 }
 
 PROPERTY_PAIRS: List[Tuple[str, str]] = [
+    ("snar", "ea"),
     ("b97xd3", "ea"),
     ("b97xd3", "dh"),
     ("cycloadd", "G_act"),
@@ -56,9 +57,8 @@ PROPERTY_PAIRS: List[Tuple[str, str]] = [
     ("phosphatase", "Conversion"),
     ("rad6re", "dh"),
     ("rdb7", "ea"),
-    # ("rgd1", "ea"),
     ("sn2", "ea"),
-    ("snar", "ea"),
+    ("rgd1", "ea"),
     # ("suzuki_miyaura", "yield"),
     # ("uspto_yield", "yield"),
 ]
@@ -411,6 +411,8 @@ def run_property(
     run_files: List[Path] = []
 
     for name, target in pairs:
+        if name == "rgd1":
+            n_repeats = 1  # large dataset; avoid excessive time
         existing = find_existing_run_file(
             run_folder, task, name, level=None, target=target
         )

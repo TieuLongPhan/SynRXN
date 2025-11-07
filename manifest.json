@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-10-13T10:04:38Z",
+  "generated_at": "2025-11-05T16:38:17Z",
   "dataset": {
     "title": "synrxn: A Benchmarking Framework and Open Data Repository for Computer-Aided Synthesis Planning",
     "version": "0.0.6",
@@ -13,211 +13,2769 @@
     ],
     "files": [
       {
+        "key": "Benchmark/drfp/classification/drfp_claire.npz",
+        "size": 10030300,
+        "sha256": "35791f71a66f843984a9cd2db9c5eefd77e86a9eb4796676a662f45fec90ae16",
+        "mtime": "2025-10-13T23:05:12Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/classification/drfp_schneider_b.npz",
+        "size": 2881743,
+        "sha256": "edba2eb83ee6e3f1874ec6ffd960fad4fb8408601e74c8f13ef3e609a3f826f5",
+        "mtime": "2025-10-13T23:07:22Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/classification/drfp_schneider_u.npz",
+        "size": 3419196,
+        "sha256": "3c3639569e98f87495173a2b95d2e09b96506342825d9a1d67bd509bf67ecbe5",
+        "mtime": "2025-10-13T23:08:22Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/classification/drfp_syntemp.npz",
+        "size": 2504058,
+        "sha256": "effd488b93f815caaff51765c38ae5554678d74cc9dca6be95c236be10858438",
+        "mtime": "2025-10-13T23:09:02Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/classification/drfp_tpl_b.npz",
+        "size": 2881743,
+        "sha256": "edba2eb83ee6e3f1874ec6ffd960fad4fb8408601e74c8f13ef3e609a3f826f5",
+        "mtime": "2025-10-13T23:14:36Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/classification/drfp_tpl_u.npz",
+        "size": 3419196,
+        "sha256": "3c3639569e98f87495173a2b95d2e09b96506342825d9a1d67bd509bf67ecbe5",
+        "mtime": "2025-10-13T23:15:22Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/classification/drfp_uspto_50k_b.npz",
+        "size": 2916600,
+        "sha256": "37ed8ca434d5d2fbce6f5775011cd02408e2c8dff17f56bd342a9f77936889de",
+        "mtime": "2025-10-13T23:17:48Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/classification/drfp_uspto_50k_u.npz",
+        "size": 2853794,
+        "sha256": "a247755bfe5c719050052782fa935fca699aa237933800c3795ad2906323f691",
+        "mtime": "2025-10-13T23:18:18Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/property/drfp_b97xd3.npz",
+        "size": 1029300,
+        "sha256": "4b4995ddc5b2e219473ee62e0fc2cc0b082bc6aad9b87229870d604afcb760ec",
+        "mtime": "2025-10-13T23:20:20Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/property/drfp_cycloadd.npz",
+        "size": 610698,
+        "sha256": "5616f38f6e6824763e69556ecf10e138259722434be6b33d34b8063019d7c7a2",
+        "mtime": "2025-10-13T23:20:56Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/property/drfp_e2.npz",
+        "size": 83498,
+        "sha256": "2af359b5a6f3073f171e07fa1b19b7026f2118f73ac2136efbbf9224cd1db546",
+        "mtime": "2025-10-13T23:21:14Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/property/drfp_e2sn2.npz",
+        "size": 206379,
+        "sha256": "c8a9965ed835e46ce80162ea0dedd76b0de4663c02ac85c39cb7b79aba074caf",
+        "mtime": "2025-10-13T23:21:26Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/property/drfp_lograte.npz",
+        "size": 33214,
+        "sha256": "ac48ffa3bd560697b63143700b60574cc5bd0369b1b4770f51e2994d55c8793c",
+        "mtime": "2025-10-13T23:21:44Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/property/drfp_phosphatase.npz",
+        "size": 2126554,
+        "sha256": "fa6be287ea9c2a1913421e010ea3a8e5737cefdd01a420ab215c8d2d3cd2f9ae",
+        "mtime": "2025-10-13T23:22:12Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/property/drfp_rad6re.npz",
+        "size": 1506892,
+        "sha256": "1895a3a3477de8a1bb4a4630f90ae0c3564135b093141d57ea31dd83a22ba5f4",
+        "mtime": "2025-10-13T23:22:48Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/property/drfp_rdb7.npz",
+        "size": 1127535,
+        "sha256": "51e0d174804ee87c435d23a41a3922412871065f856c012a001ce4a57a03bcf9",
+        "mtime": "2025-10-13T23:23:04Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/property/drfp_rgd1.npz",
+        "size": 16138883,
+        "sha256": "df080d556a1a1daa874edd4f9a1e2b091a0d75c0adf73ed24595bf1cbb272831",
+        "mtime": "2025-10-13T23:23:46Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/property/drfp_sn2.npz",
+        "size": 135034,
+        "sha256": "23ce8a4c776bd00b1df84473bdcfa8aaaa497aa6539ffba7fcba9ed900a29eda",
+        "mtime": "2025-10-13T23:24:28Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/drfp/property/drfp_snar.npz",
+        "size": 22908,
+        "sha256": "df33e3c0eedb19f12faea4f0f9ccfa95064a9b93e3920c67eba2193f113ba0e3",
+        "mtime": "2025-10-13T23:24:42Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/result/classification/claire.json",
+        "size": 16821,
+        "sha256": "fe6583d40d8e27762bda33e8d5fde6e5f98de2f52e9066d721efcbf86895abca",
+        "mtime": "2025-10-30T19:41:45Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random",
+          "drfp_strat",
+          "rxnfp_strat"
+        ]
+      },
+      {
+        "key": "Benchmark/result/classification/schneider_b.json",
+        "size": 15688,
+        "sha256": "94e2471f8c0873cb20c25b2d537c6d8be4d99b7bcfddc4f02fe20cf2bc7a9cdb",
+        "mtime": "2025-10-30T21:55:50Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random",
+          "drfp_strat",
+          "rxnfp_strat"
+        ]
+      },
+      {
+        "key": "Benchmark/result/classification/schneider_u.json",
+        "size": 15672,
+        "sha256": "7fb6dc4012e16b6192a860d70eb53f2002445eb7917900b6560b760dc0fde828",
+        "mtime": "2025-10-31T00:07:48Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random",
+          "drfp_strat",
+          "rxnfp_strat"
+        ]
+      },
+      {
+        "key": "Benchmark/result/classification/syntemp.json",
+        "size": 16825,
+        "sha256": "04c4e8812cd92762e5c09bdcf61c302bf3b5a2d34e413c17903d4d935b481cc5",
+        "mtime": "2025-10-31T05:04:23Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random",
+          "drfp_strat",
+          "rxnfp_strat"
+        ]
+      },
+      {
+        "key": "Benchmark/result/classification/tpl_b.json",
+        "size": 15682,
+        "sha256": "61ee28fbea54b55cbbcccb5b033420df1e2ec091c26ded6c9b17bf1eca6f03ea",
+        "mtime": "2025-10-31T07:18:20Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random",
+          "drfp_strat",
+          "rxnfp_strat"
+        ]
+      },
+      {
+        "key": "Benchmark/result/classification/tpl_u.json",
+        "size": 15674,
+        "sha256": "28e486868aca76720b8d566c5854a667b3f42212c0bc734d512d422bb4853891",
+        "mtime": "2025-10-31T09:30:09Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random",
+          "drfp_strat",
+          "rxnfp_strat"
+        ]
+      },
+      {
+        "key": "Benchmark/result/classification/uspto_50k_b.json",
+        "size": 16882,
+        "sha256": "8c915a5316bafa7ff79def539f9f0d6b0388bd26f89b80b96f870d3ebb464bfc",
+        "mtime": "2025-10-31T11:01:02Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random",
+          "drfp_strat",
+          "rxnfp_strat"
+        ]
+      },
+      {
+        "key": "Benchmark/result/classification/uspto_50k_u.json",
+        "size": 16892,
+        "sha256": "1e250f40c86e1f2633b2c6f45963aef3e84fa29be9eedb20616ed2d77031b768",
+        "mtime": "2025-10-31T12:33:02Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random",
+          "drfp_strat",
+          "rxnfp_strat"
+        ]
+      },
+      {
+        "key": "Benchmark/result/property/b97xd3_dh.json",
+        "size": 7774,
+        "sha256": "0accab61ff9882dd99085cde1eb35881bec5204e48d5651542b2faff6e076fd8",
+        "mtime": "2025-11-04T22:07:50Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random"
+        ]
+      },
+      {
+        "key": "Benchmark/result/property/b97xd3_ea.json",
+        "size": 7774,
+        "sha256": "f26b2fdcee77054291e0d86d2ceac72a27db3598488d6c38913fae62a9e8fcb8",
+        "mtime": "2025-11-04T19:11:35Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random"
+        ]
+      },
+      {
+        "key": "Benchmark/result/property/cycloadd_G_act.json",
+        "size": 7720,
+        "sha256": "fe57564dcc1f51bef083d40fde062822e32c80a19210fdce7b7e50ab7c13925d",
+        "mtime": "2025-11-04T22:46:36Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random"
+        ]
+      },
+      {
+        "key": "Benchmark/result/property/cycloadd_G_r.json",
+        "size": 7755,
+        "sha256": "9372db500785ca94abf6f62c9191782556c0b01c005a54a8501c7077bd626061",
+        "mtime": "2025-11-04T23:19:42Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random"
+        ]
+      },
+      {
+        "key": "Benchmark/result/property/e2_ea.json",
+        "size": 7715,
+        "sha256": "effb3e35b08af8a8f3d1377905f0e5040b6f219845a92fe99b855325047aa129",
+        "mtime": "2025-11-04T23:23:59Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random"
+        ]
+      },
+      {
+        "key": "Benchmark/result/property/e2sn2_ea.json",
+        "size": 7728,
+        "sha256": "c31a3aa88fdd52388eb533177bfe6e6b396fb6231c09bda0a17dbd215987ec1c",
+        "mtime": "2025-11-04T23:36:25Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random"
+        ]
+      },
+      {
+        "key": "Benchmark/result/property/lograte_lograte.json",
+        "size": 7744,
+        "sha256": "802f1f15cf304ed1b312f4c0e171b09c6eb7c08e64069f54c2095f71817df209",
+        "mtime": "2025-11-04T23:39:24Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random"
+        ]
+      },
+      {
+        "key": "Benchmark/result/property/phosphatase_Conversion.json",
+        "size": 7870,
+        "sha256": "abd53847af60e98aa38d507e807b85dbd7049ee510d4c5f565e1141ef7ba6816",
+        "mtime": "2025-11-05T00:50:15Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random"
+        ]
+      },
+      {
+        "key": "Benchmark/result/property/rad6re_dh.json",
+        "size": 7717,
+        "sha256": "1325fdac297bab59f8a8125cdc7cfa7b9030af8ce2cba3c6e989b773a87896fe",
+        "mtime": "2025-11-05T10:15:05Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random"
+        ]
+      },
+      {
+        "key": "Benchmark/result/property/rdb7_ea.json",
+        "size": 7753,
+        "sha256": "7cd40d7bd3f44a112b28c0fea0f41d8660b70c3b8c340ad9b8963d8d7740ba2c",
+        "mtime": "2025-11-05T15:29:26Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random"
+        ]
+      },
+      {
+        "key": "Benchmark/result/property/sn2_ea.json",
+        "size": 7678,
+        "sha256": "69bf06210f07204cb2e06a7e9ce0b2722d2d4ba30042455c25ab4c892d8457c4",
+        "mtime": "2025-11-05T15:36:42Z",
+        "format": "json",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "drfp_random",
+          "rxnfp_random"
+        ]
+      },
+      {
+        "key": "Benchmark/rxnfp/classification/rxnfp_claire.npz",
+        "size": 199627755,
+        "sha256": "71d8c53aa522894be1b5935ad00da6fc65ec01a664d2a122fa0d8ce5d4da1ccb",
+        "mtime": "2025-10-13T23:53:46Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/classification/rxnfp_schneider_b.npz",
+        "size": 55600975,
+        "sha256": "33670e874c81ffd1dc036e7ccce9808d8ee0a4d3fcd39cdc1f2955b9d423ef1a",
+        "mtime": "2025-10-13T23:53:52Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/classification/rxnfp_schneider_u.npz",
+        "size": 55595576,
+        "sha256": "a64810afd24e4c8dce47db68d45060d9e7fd27d11aaee7cc23248f6b285cf46b",
+        "mtime": "2025-10-13T23:53:58Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/classification/rxnfp_syntemp.npz",
+        "size": 48303305,
+        "sha256": "98418652dce93f5d72955e492dd6ef76b184ce6eddd1dec59a7f95227cce0242",
+        "mtime": "2025-10-13T23:54:04Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/classification/rxnfp_tpl_b.npz",
+        "size": 55600975,
+        "sha256": "33670e874c81ffd1dc036e7ccce9808d8ee0a4d3fcd39cdc1f2955b9d423ef1a",
+        "mtime": "2025-10-13T23:54:12Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/classification/rxnfp_tpl_u.npz",
+        "size": 55595576,
+        "sha256": "a64810afd24e4c8dce47db68d45060d9e7fd27d11aaee7cc23248f6b285cf46b",
+        "mtime": "2025-10-13T23:54:18Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/classification/rxnfp_uspto_50k_b.npz",
+        "size": 55608384,
+        "sha256": "c7e11baf673f0b13ad7c7ed9e447c25ef280aa8d4f638ba3491892f88d739eef",
+        "mtime": "2025-10-13T23:54:24Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/classification/rxnfp_uspto_50k_u.npz",
+        "size": 55607248,
+        "sha256": "31881bb49e9cee33d41ff4f13e12ffd9b2005f13df0039f0d2fe3381d83cc337",
+        "mtime": "2025-10-13T23:54:30Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/property/rxnfp_b97xd3.npz",
+        "size": 18067199,
+        "sha256": "88bf7a776366d3820e893a046eb7a87026e057d2b3d75f7628bc941aeb142a46",
+        "mtime": "2025-10-13T23:37:44Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/property/rxnfp_cycloadd.npz",
+        "size": 5854192,
+        "sha256": "7ae34ca291171e517081f337fc37648fb8d98ee1b4d857c4a206617e3284d3de",
+        "mtime": "2025-10-13T23:38:32Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/property/rxnfp_e2.npz",
+        "size": 1373288,
+        "sha256": "7202c6484520b2eef1bb7a6d86dac7c7fd6a624dea9e11f2779066cb86491bba",
+        "mtime": "2025-10-13T23:38:40Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/property/rxnfp_e2sn2.npz",
+        "size": 2863443,
+        "sha256": "c2679285a9b05c3f46c5a5addee2bae0b26f12a30b2b1797d02fa15da362aebc",
+        "mtime": "2025-10-13T23:38:54Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/property/rxnfp_lograte.npz",
+        "size": 854238,
+        "sha256": "43a208424ddbed6af5a6416692930e1941fac38ab49dcf1181320d908f458682",
+        "mtime": "2025-10-13T23:39:22Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/property/rxnfp_phosphatase.npz",
+        "size": 24280957,
+        "sha256": "f750dd215106f696418a6b10f60122ee8df417bd85a379d5f98648235b97fd1e",
+        "mtime": "2025-10-13T23:40:54Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/property/rxnfp_rad6re.npz",
+        "size": 35461466,
+        "sha256": "963b4d5cab96f3e4a164aee8dde690ad5ac26d4ce817d87a5427396ebeacdd2b",
+        "mtime": "2025-10-13T23:42:00Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/property/rxnfp_rdb7.npz",
+        "size": 26370825,
+        "sha256": "8d39112bb7d26cbdf1c3f7074758b3b0628f98f471044dd2665d0771da0a8596",
+        "mtime": "2025-10-13T23:42:50Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/property/rxnfp_rgd1.npz",
+        "size": 390486466,
+        "sha256": "cc820ecaa3bea7a0b8ef4f388a1d2a1ab9fbe8aeb88bc91f5898dc8c1c1bc88a",
+        "mtime": "2025-10-13T23:54:50Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/property/rxnfp_sn2.npz",
+        "size": 2550720,
+        "sha256": "eb34b6ec60e9e92102a3ce967a8587354d6e8cf75e3663eab763e622742e1bfe",
+        "mtime": "2025-10-13T23:54:58Z",
+        "format": "binary"
+      },
+      {
+        "key": "Benchmark/rxnfp/property/rxnfp_snar.npz",
+        "size": 424651,
+        "sha256": "f69e042e3f4dcdd392b9bc698c5ec4cef9138a8e1d99674f2b9b0267e4b9a843",
+        "mtime": "2025-10-13T23:55:10Z",
+        "format": "binary"
+      },
+      {
         "key": "aam/ecoli.csv.gz",
         "size": 113442,
         "sha256": "0f66f64173857219cea5a8688a68888da8dd4e8e3d0f39a9cf77829d18d46c17",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 274,
+        "columns": [
+          "ground_truth,R-",
+          "d,rxn_mapper,graphormer,local_mapper,rdt,rxn"
+        ]
       },
       {
         "key": "aam/golden.csv.gz",
         "size": 522549,
         "sha256": "d85d35f178ea3d32980fe8029fa738945ef34652a28de61dc04d4648ee361dab",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 1759,
+        "columns": [
+          "R-id",
+          "rxn",
+          "ground_truth",
+          "rxn_mapper",
+          "graphormer",
+          "local_mapper",
+          "rdt"
+        ]
       },
       {
         "key": "aam/natcomm.csv.gz",
         "size": 131190,
         "sha256": "15855232e79d958c688ffdb3cf84dc519d8bf4fb1fa7c6bfb73daff8e1af03c1",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 492,
+        "columns": [
+          "R-id",
+          "rxn",
+          "ground_truth",
+          "rxn_mapper",
+          "graphormer",
+          "local_mapper",
+          "rdt"
+        ]
       },
       {
         "key": "aam/recon3d.csv.gz",
         "size": 190062,
         "sha256": "0c9ea4c3c566ff1e380f35cd2878cb93f9798981899402686c04184a51348417",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 383,
+        "columns": [
+          "R-id",
+          "ground_truth",
+          "rxn_mapper",
+          "graphormer",
+          "rdt"
+        ]
       },
       {
         "key": "aam/uspto_3k.csv.gz",
         "size": 1027890,
         "sha256": "de7cc2f1e84886b5665fe3831b76a5bc5569209ae54d7e844b097311d68177c1",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 3001,
+        "columns": [
+          "R-id",
+          "rxn",
+          "ground_truth",
+          "rxn_mapper",
+          "graphormer",
+          "local_mapper",
+          "rdt"
+        ]
       },
       {
-        "key": "classification/claire.csv.gz",
-        "size": 2300505,
-        "sha256": "4e9f22b011b9c4fb242e1340344f7983da64f7f3e4acefcd64fd84911de62eb3",
-        "mtime": "2025-10-13T10:04:35Z"
+        "key": "classification/ecreact.csv.gz",
+        "size": 2300506,
+        "sha256": "60fedf21be5826fbf685157b69af883cb2b12ceaa58d4c910a49078b6107da0a",
+        "mtime": "2025-11-04T18:15:06Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 185735,
+        "columns": [
+          "R-id",
+          "rxn",
+          "ec1",
+          "ec2",
+          "ec3",
+          "split"
+        ]
       },
       {
         "key": "classification/schneider_b.csv.gz",
         "size": 1737511,
         "sha256": "61dd633446a0ec677335480d8f9422f948fb3f8d1306dbe49ab0fa6d39e77a0f",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 50001,
+        "columns": [
+          "R-id",
+          "rxn",
+          "label",
+          "split"
+        ]
       },
       {
         "key": "classification/schneider_u.csv.gz",
         "size": 1517538,
         "sha256": "ccb9f64da4425c4311f706d445078f25988a203bc7c15c43b612b020f56cf387",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 50001,
+        "columns": [
+          "R-id",
+          "rxn",
+          "label",
+          "split"
+        ]
       },
       {
         "key": "classification/syntemp.csv.gz",
         "size": 1346725,
         "sha256": "a4a1093df6fdeb9d8a1bde18f27a8e08769f138cb2a353a277fd8ff61ab35b3c",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 43442,
+        "columns": [
+          "R-id",
+          "rxn",
+          "label_0",
+          "label_1",
+          "label_2"
+        ]
       },
       {
         "key": "classification/tpl_b.csv.gz",
         "size": 1737505,
         "sha256": "8deaea0acc849b77ae6c317c6710df4dc31174037845ded8b9b4640482e93d5d",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 50001,
+        "columns": [
+          "R-id",
+          "rxn",
+          "label",
+          "split"
+        ]
       },
       {
         "key": "classification/tpl_u.csv.gz",
         "size": 1517532,
         "sha256": "a0408c8d885982bba6545d3b783f8722783200b204d2c0b44decb8cb371cc8bd",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 50001,
+        "columns": [
+          "R-id",
+          "rxn",
+          "label",
+          "split"
+        ]
       },
       {
         "key": "classification/uspto_50k_b.csv.gz",
         "size": 1474592,
         "sha256": "be6c7daa2b59a149d0d81137ded171a28ae2177aa0550542352c920e7b4604ed",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 50017,
+        "columns": [
+          "R-id",
+          "rxn",
+          "label",
+          "split"
+        ]
       },
       {
         "key": "classification/uspto_50k_u.csv.gz",
         "size": 1398819,
         "sha256": "9f425c806a52e5e4f9840079e55cdcd15a0f9a3b1281fa7c0583c9bd1ff2dfb0",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 50017,
+        "columns": [
+          "R-id",
+          "rxn",
+          "label",
+          "split"
+        ]
       },
       {
         "key": "property/b97xd3.csv.gz",
         "size": 641402,
         "sha256": "d5690edea0ceb80237c4a961b25291f076f762f6095de14be73b5b0832e512f2",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 16366,
+        "columns": [
+          "R-id",
+          "rxn",
+          "ea",
+          "dh"
+        ]
       },
       {
         "key": "property/cycloadd.csv.gz",
         "size": 381702,
         "sha256": "d14cc729444148f14e9e86dbad49051c54dbba65028fb672eb5d8adb0068ea00",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 5270,
+        "columns": [
+          "R-id",
+          "rxn",
+          "G_act",
+          "G_r",
+          "split"
+        ]
       },
       {
         "key": "property/e2.csv.gz",
         "size": 31806,
         "sha256": "0f8a5e7fab719cf07ff0b54ff1215604021580364ec00c3a4f9ef6fdf3b27fcb",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 1265,
+        "columns": [
+          "R-id",
+          "rxn",
+          "ea",
+          "split"
+        ]
       },
       {
         "key": "property/e2sn2.csv.gz",
         "size": 79332,
         "sha256": "1df1b32244d517cdb0e71fc14e438408b90eb80461fe32ffc9e3d0d33ebf1eaf",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 3626,
+        "columns": [
+          "R-id",
+          "rxn",
+          "ea"
+        ]
       },
       {
         "key": "property/lograte.csv.gz",
         "size": 20167,
         "sha256": "c7f35bdafb9cfee384ef616e720c2948f21bae2afd417b6de549b130127e2393",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 779,
+        "columns": [
+          "R-id",
+          "rxn",
+          "lograte"
+        ]
       },
       {
         "key": "property/phosphatase.csv.gz",
         "size": 1682309,
         "sha256": "98a84a4cb8cd50939222a718632e3530e54da27bc1f5da1df91708433c971963",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 33355,
+        "columns": [
+          "R-id",
+          "rxn",
+          "Conversion",
+          "onehot"
+        ]
       },
       {
         "key": "property/rad6re.csv.gz",
         "size": 866921,
         "sha256": "ecfdcda009bf27f0bff6416aa77cfcbb88d8c4d49fbe56b455667bddb8673b17",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 31924,
+        "columns": [
+          "R-id",
+          "rxn",
+          "dh"
+        ]
       },
       {
         "key": "property/rdb7.csv.gz",
         "size": 640318,
         "sha256": "9db9557acb279b56cf2bd281b01e52c189f19bffc3a81001ea0d1e7dd2f698e2",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:55Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 23853,
+        "columns": [
+          "R-id",
+          "rxn",
+          "ea",
+          "split"
+        ]
       },
       {
         "key": "property/rgd1.csv.gz",
         "size": 13199958,
         "sha256": "cb9879588e7279884eecb126d24a276ff4e25f5475d89bebc145c402b8760770",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:56Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 353985,
+        "columns": [
+          "R-id",
+          "rxn",
+          "ea",
+          "split"
+        ]
       },
       {
         "key": "property/sn2.csv.gz",
         "size": 58135,
         "sha256": "55e7bf4a063324ea399625a03caff17455d701d27e9bb74a1791768b9758d58c",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:56Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 2362,
+        "columns": [
+          "R-id",
+          "rxn",
+          "ea",
+          "split"
+        ]
       },
       {
         "key": "property/snar.csv.gz",
         "size": 6085,
         "sha256": "7c139c4a744e855c50f1e0ebe87608ef162b95aadcc41d35af2e66915c7af3f4",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:56Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 519,
+        "columns": [
+          "R-id",
+          "rxn",
+          "ea"
+        ]
+      },
+      {
+        "key": "property/suzuki_miyaura.csv.gz",
+        "size": 1122790,
+        "sha256": "9dca28aeadae8593b0ed859f30b170f633e0b16cd8e7580d94ce3b4c33a73398",
+        "mtime": "2025-10-09T12:52:37Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 57601,
+        "columns": [
+          "R-id",
+          "rxn",
+          "yield",
+          "source"
+        ]
+      },
+      {
+        "key": "property/uspto_yield.csv.gz",
+        "size": 13506082,
+        "sha256": "31539f947cdf05c99ac4d027afc954454089d5ba692527fb1888dc710e0541c9",
+        "mtime": "2025-10-09T14:32:45Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 499660,
+        "columns": [
+          "index",
+          "yield",
+          "split",
+          "rxn",
+          "Type"
+        ]
       },
       {
         "key": "rbl/complex.csv.gz",
         "size": 57548,
         "sha256": "498bbb8109683c7264f21d1e65febb99816dd904b32d072f9f2244df18b6378b",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:56Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 1893,
+        "columns": [
+          "R-id",
+          "rxn",
+          "ground_truth"
+        ]
       },
       {
         "key": "rbl/mbs.csv.gz",
         "size": 15500,
         "sha256": "3235fcab73ca8324138e357245dee2f572101d6d5dc86587b696ae974fb4f984",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:56Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 500,
+        "columns": [
+          "R-id",
+          "rxn",
+          "ground_truth"
+        ]
       },
       {
         "key": "rbl/mnc.csv.gz",
         "size": 1098019,
         "sha256": "0e38444f37e4eadaef7f3aa70f48ac56d3794664d0bf06ec51465e5ebf9534aa",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:56Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 33406,
+        "columns": [
+          "R-id",
+          "rxn",
+          "ground_truth"
+        ]
       },
       {
         "key": "rbl/mos.csv.gz",
         "size": 459265,
         "sha256": "5c5503fd3170f54dd9e7239fcc93f777b1b58ef0d66b4fe1b6f9e8e5d13c498c",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:56Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 12882,
+        "columns": [
+          "R-id",
+          "rxn",
+          "ground_truth"
+        ]
+      },
+      {
+        "key": "results_benchmark/classification.log",
+        "size": 20984,
+        "sha256": "485cbc296abb4fd5d3eb5d738e78cd8ffbde1b8e7707de2f77db963adc0bab75",
+        "mtime": "2025-10-31T12:33:04Z",
+        "format": "binary"
+      },
+      {
+        "key": "results_benchmark/classification_rows.csv",
+        "size": 1057632,
+        "sha256": "607ea095f1162091f05402f08ba733d1be38d8bcae4b10613c3dfd5ca74e7da2",
+        "mtime": "2025-10-31T12:33:03Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 15001,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/property.log",
+        "size": 11767,
+        "sha256": "089df963386036cf5a0000b6def067bdec7173c9077d34e77e46f8b6b0d98512",
+        "mtime": "2025-11-05T15:36:42Z",
+        "format": "binary"
+      },
+      {
+        "key": "results_benchmark/property_rows.csv",
+        "size": 166090,
+        "sha256": "e7e6650786d3beecd4e7e36b9842cfd0dec3e3709684044154bb500f655f56f2",
+        "mtime": "2025-11-05T15:36:42Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 2754,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__claire__level1__1761831333.csv",
+        "size": 34780,
+        "sha256": "ede6256749552f121f8eccac9ba38c9fe9df7071c55ec494db40bba174541af4",
+        "mtime": "2025-10-30T13:35:33Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__claire__level1__1761831333.jsonl",
+        "size": 76733,
+        "sha256": "539da5bd625a51f21e8cf46b4476d9b0aca2c6e2dbfa826469f38959966bf5c5",
+        "mtime": "2025-10-30T13:35:33Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__claire__level2__1761839696.csv",
+        "size": 34766,
+        "sha256": "95142c6d91726b2a5dbcdaad3711b9ffee917bd70eded92d12cf989604316205",
+        "mtime": "2025-10-30T15:54:56Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__claire__level2__1761839696.jsonl",
+        "size": 76719,
+        "sha256": "3201cb9c536c82ca1e169ae8c0a10709867680d82ebf5fa964fcb1c611bfd52d",
+        "mtime": "2025-10-30T15:54:56Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__claire__level3__1761853305.csv",
+        "size": 34754,
+        "sha256": "8fce4167ff7551481086c7c9e167f718371cb134dd4587e49d2f2c8ad01d1d77",
+        "mtime": "2025-10-30T19:41:45Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__claire__level3__1761853305.jsonl",
+        "size": 76707,
+        "sha256": "3db36b38b90954d25aaba2cd17b53e673946017f64ff3ebc1ed52656cdcfcf90",
+        "mtime": "2025-10-30T19:41:45Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_b__level0__1761855315.csv",
+        "size": 36123,
+        "sha256": "b01d18da43bcec4524d50a5ee1ef66fd051be3c6fce1e3588dae5f35adacc1ea",
+        "mtime": "2025-10-30T20:15:15Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_b__level0__1761855315.jsonl",
+        "size": 78076,
+        "sha256": "0c9e513dfe4fe5bec60eb1631b3eb3aa46eea4b6cc4e90dce545fe3c8a9c7b3d",
+        "mtime": "2025-10-30T20:15:15Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_b__level1__1761857326.csv",
+        "size": 36117,
+        "sha256": "29bd0fd02f29ea805d0bd0b5fac982240b695ac22120ec7a0d259ba95de49484",
+        "mtime": "2025-10-30T20:48:46Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_b__level1__1761857326.jsonl",
+        "size": 78070,
+        "sha256": "8cc6d1e52bf46fe66d38a69c5cfce13e155ea786ebc610dc7d7aee6f3617b14a",
+        "mtime": "2025-10-30T20:48:46Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_b__level2__1761859337.csv",
+        "size": 36100,
+        "sha256": "7b9fcb49fc6003febc434625236851d39047e914035d4f65b5ad74f8b38253a3",
+        "mtime": "2025-10-30T21:22:17Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_b__level2__1761859337.jsonl",
+        "size": 78053,
+        "sha256": "190b943c6ee3f37a42ffacc0df5a1ac5a59275c68d639c03287249ae4c561989",
+        "mtime": "2025-10-30T21:22:17Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_b__level3__1761861350.csv",
+        "size": 36121,
+        "sha256": "cafd9750723bcf0cd347eebe5dd4d0612ad566ee5269299bc249ee1ee43c2bed",
+        "mtime": "2025-10-30T21:55:50Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_b__level3__1761861350.jsonl",
+        "size": 78074,
+        "sha256": "83cfff9031b2fc7f50e29095ee7b968b1a58359adc5517a9149fc90cde7c7739",
+        "mtime": "2025-10-30T21:55:50Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_u__level0__1761863329.csv",
+        "size": 36126,
+        "sha256": "6ffc8c3265c15ee31436614d6a02c5040abdb292057342fab4b10eeea7e58729",
+        "mtime": "2025-10-30T22:28:49Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_u__level0__1761863329.jsonl",
+        "size": 78079,
+        "sha256": "2d2707fd02ad27c85d2a38d8763d36522e492a945d9257d29809fdbe21053e41",
+        "mtime": "2025-10-30T22:28:49Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_u__level1__1761865309.csv",
+        "size": 36125,
+        "sha256": "51a46a7c9d121065dcfbb5507ec4245f2c8bf86902f6566825373891e2ca7c7c",
+        "mtime": "2025-10-30T23:01:49Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_u__level1__1761865309.jsonl",
+        "size": 78078,
+        "sha256": "abf195e9f57abc65a3306d0aadcf271581055b5ff5b1491870769b998d0886ee",
+        "mtime": "2025-10-30T23:01:49Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_u__level2__1761867289.csv",
+        "size": 36111,
+        "sha256": "9a9740de5fda4c4942d86285d3729e9f0dfe46fe80761b2e6240194b11ff6a8b",
+        "mtime": "2025-10-30T23:34:49Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_u__level2__1761867289.jsonl",
+        "size": 78064,
+        "sha256": "9fcbe17d0f26324320a1ad54e4ebdaba1456b252829f5437a54ccccb99970fff",
+        "mtime": "2025-10-30T23:34:49Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_u__level3__1761869268.csv",
+        "size": 36105,
+        "sha256": "306c73db9fa52f4aa087ce41dd5fc5319bd45de8061697af677a9f8126e77395",
+        "mtime": "2025-10-31T00:07:48Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__schneider_u__level3__1761869268.jsonl",
+        "size": 78058,
+        "sha256": "05f2ad11e95961f79513fd1c3ec1744bc81a6ea21c6de7482b8a6a1f4abb8036",
+        "mtime": "2025-10-31T00:07:48Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__syntemp__level0__1761871603.csv",
+        "size": 35288,
+        "sha256": "487ad32fb9831224e4cd57344fc6242c4e89c3771a0ee80cbfba013c09c6ca35",
+        "mtime": "2025-10-31T00:46:43Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__syntemp__level0__1761871603.jsonl",
+        "size": 77241,
+        "sha256": "743b40b561ca984f2a8bbeb19783ca2dec516d0ffb926f67e4744244a211391a",
+        "mtime": "2025-10-31T00:46:43Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__syntemp__level1__1761877537.csv",
+        "size": 35218,
+        "sha256": "c5d1152fe2194a66eb34d4c5e4e165ed189d657e27f7f946bfe6c2330c40c235",
+        "mtime": "2025-10-31T02:25:37Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__syntemp__level1__1761877537.jsonl",
+        "size": 77171,
+        "sha256": "3dbf783c73467b5e239225a88c286fb755cd39cdd764fde86b2939723c2dcc38",
+        "mtime": "2025-10-31T02:25:37Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__syntemp__level2__1761887063.csv",
+        "size": 35258,
+        "sha256": "542d1c60881148239ba4f7c6fe4edbffd7c1325ff8db7ae2a230b905dbab2418",
+        "mtime": "2025-10-31T05:04:23Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__syntemp__level2__1761887063.jsonl",
+        "size": 77211,
+        "sha256": "ee3c85e58c5672d69d4e2ca61adc082bf0b6a91eb86bf80fa810ac4b6d720c8d",
+        "mtime": "2025-10-31T05:04:23Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_b__level0__1761889072.csv",
+        "size": 33120,
+        "sha256": "086fb99f7fe26962093cf3bba2ca4ca496d2cae9d3d937c243191754fd1080c8",
+        "mtime": "2025-10-31T05:37:52Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_b__level0__1761889072.jsonl",
+        "size": 75073,
+        "sha256": "601e93f128b1f27ee73f76d6dd7c88487327f26d20319251ac720034142e8867",
+        "mtime": "2025-10-31T05:37:52Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_b__level1__1761891082.csv",
+        "size": 33130,
+        "sha256": "be45abb1cdea6319d4988a6b7a8ed8a6edfc3de5046e12511460a32d305214c1",
+        "mtime": "2025-10-31T06:11:22Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_b__level1__1761891082.jsonl",
+        "size": 75083,
+        "sha256": "8b094d3cd0b8e373793001b6ea907029473b5a099b7f5769afb314f5857f0969",
+        "mtime": "2025-10-31T06:11:22Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_b__level2__1761893089.csv",
+        "size": 33108,
+        "sha256": "d4e358cf314f60af9704e5d78ed75b3511bd20d394b43c643054bbcdd3ddc2af",
+        "mtime": "2025-10-31T06:44:49Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_b__level2__1761893089.jsonl",
+        "size": 75061,
+        "sha256": "1de868c15505e8048f32c7b3dde97a6085f8af020f478e524903247a0c8b6e03",
+        "mtime": "2025-10-31T06:44:49Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_b__level3__1761895100.csv",
+        "size": 33115,
+        "sha256": "9c2ce277f3a379bd909f7c897669a4c1e474949d91f06b44d8a593ebb25b48de",
+        "mtime": "2025-10-31T07:18:20Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_b__level3__1761895100.jsonl",
+        "size": 75068,
+        "sha256": "82f3d02bafe32640e74069a765c5ad0a0800f616076f9e92009b27189a7bc61e",
+        "mtime": "2025-10-31T07:18:20Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_u__level0__1761897080.csv",
+        "size": 33129,
+        "sha256": "959a75b589d3e959f61189c69a6118867513be7e6834785bf1e3a28ebb0015f9",
+        "mtime": "2025-10-31T07:51:20Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_u__level0__1761897080.jsonl",
+        "size": 75082,
+        "sha256": "c2d1728b28b04cc5dad17a0ab8249fb830ff9d576059ce69dded7aacf5fffcb0",
+        "mtime": "2025-10-31T07:51:20Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_u__level1__1761899056.csv",
+        "size": 33113,
+        "sha256": "b4d7b7a660ece42db76d895f075aa37ccf408fd3b7a11629e413c4836e599e0b",
+        "mtime": "2025-10-31T08:24:16Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_u__level1__1761899056.jsonl",
+        "size": 75066,
+        "sha256": "a61f2661927043fe72108ec2831383f11fbbe309bb1e56badcd604254bb2fced",
+        "mtime": "2025-10-31T08:24:16Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_u__level2__1761901033.csv",
+        "size": 33118,
+        "sha256": "3ed682cb5732b607e9971a36c2fd32e33ae44eb2d9d3a2946a11e915c657421a",
+        "mtime": "2025-10-31T08:57:13Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_u__level2__1761901033.jsonl",
+        "size": 75071,
+        "sha256": "da177751e3ae97b30b954d451cbd62af67ded28e0b1875571be90f18942b51b8",
+        "mtime": "2025-10-31T08:57:13Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_u__level3__1761903009.csv",
+        "size": 33107,
+        "sha256": "fa90a9f9a809c0a2f0ff055f48f562bacd7f9229d7ca2a23cc5a0ecb88617d14",
+        "mtime": "2025-10-31T09:30:09Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__tpl_u__level3__1761903009.jsonl",
+        "size": 75060,
+        "sha256": "d29a860b087a161757a9a0c11354cee5fe8ff87723e8182375ae0ab61dafdaac",
+        "mtime": "2025-10-31T09:30:09Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_b__level0__1761904373.csv",
+        "size": 37314,
+        "sha256": "ac3c9883e99f2473083e59f4c04c99a5c00e5b22480ac8e09687b61d2e509bee",
+        "mtime": "2025-10-31T09:52:53Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_b__level0__1761904373.jsonl",
+        "size": 79267,
+        "sha256": "0a098e064415cfcc6b0785ead1b1e18002544c2d2b47f54a9bb9dba9e96b1da0",
+        "mtime": "2025-10-31T09:52:53Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_b__level1__1761905737.csv",
+        "size": 37320,
+        "sha256": "c0e7da7ed7270b9d2393cfff3656e6f6b015a11a5b929de478e82f3f3a3e3397",
+        "mtime": "2025-10-31T10:15:37Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_b__level1__1761905737.jsonl",
+        "size": 79273,
+        "sha256": "62c35c183163efdf6f15fe8c89b75eab20c275046cfe31bfd59f04cb02901771",
+        "mtime": "2025-10-31T10:15:37Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_b__level2__1761907102.csv",
+        "size": 37302,
+        "sha256": "d206898b1c3ed262d542f5b2cadfcbaf191175d757520ee2d0a951bd45fe2f09",
+        "mtime": "2025-10-31T10:38:22Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_b__level2__1761907102.jsonl",
+        "size": 79255,
+        "sha256": "b4dd7b866712b5d943e4b1ce52bd9e8e77da41feb98317f2997d23e55306880f",
+        "mtime": "2025-10-31T10:38:22Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_b__level3__1761908462.csv",
+        "size": 37315,
+        "sha256": "4c3c895f5fbd3da19483ccac3165527b3f22af17d4f2b131a450710123d11587",
+        "mtime": "2025-10-31T11:01:02Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_b__level3__1761908462.jsonl",
+        "size": 79268,
+        "sha256": "09781a3cd81e36ae1ff7cf3b70917036ed44b5a47f212ce9ff43c384e943006c",
+        "mtime": "2025-10-31T11:01:02Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_u__level0__1761909843.csv",
+        "size": 37320,
+        "sha256": "f94470f2dd8e03b5b169169fbac66c25a0ba648f782beb58b039a001f9ce2e01",
+        "mtime": "2025-10-31T11:24:03Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_u__level0__1761909843.jsonl",
+        "size": 79273,
+        "sha256": "6635e8b03920bcb4db4deb970453d5bd4125d487e8333f6fed78f3d3d11d35f3",
+        "mtime": "2025-10-31T11:24:03Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_u__level1__1761911222.csv",
+        "size": 37330,
+        "sha256": "05e28c5de29ecee230580982ae77c559e0a087d787c670a54c62ff719bef7428",
+        "mtime": "2025-10-31T11:47:02Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_u__level1__1761911222.jsonl",
+        "size": 79283,
+        "sha256": "4b2f2c3503f74977389503342a0f5eab75bb81845343e92e5d5e2488a48d237f",
+        "mtime": "2025-10-31T11:47:02Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_u__level2__1761912602.csv",
+        "size": 37316,
+        "sha256": "b9236f9310b3fd5bbdda5c5c12e7645c45081a75b4176474ad31f1afc180b2f1",
+        "mtime": "2025-10-31T12:10:02Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_u__level2__1761912602.jsonl",
+        "size": 79269,
+        "sha256": "1f3fbdcce523dbf055ba0a5a07f74f43ca136ae6007975a3683522e01a98f37c",
+        "mtime": "2025-10-31T12:10:02Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_u__level3__1761913982.csv",
+        "size": 37325,
+        "sha256": "739279e2c9695fe0dcb5d452707fc25a9fa8fdaa76d5e17ff7b6af191fc43e0f",
+        "mtime": "2025-10-31T12:33:02Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 501,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/classification/classification__uspto_50k_u__level3__1761913982.jsonl",
+        "size": 79278,
+        "sha256": "e72480859b7c3746faab677e5eab409ce665afc5c30ae849e1004eeaa8d5268b",
+        "mtime": "2025-10-31T12:33:02Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 500,
+        "columns": [
+          "task",
+          "name",
+          "level",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__b97xd3__target_dh__1762294070.csv",
+        "size": 14864,
+        "sha256": "b254bf556371c394728953e96bb67d3dc3a6352b38723eea6bb01f3a2496ee48",
+        "mtime": "2025-11-04T22:07:50Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 251,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__b97xd3__target_dh__1762294070.jsonl",
+        "size": 36716,
+        "sha256": "fe06cda4fb335bd3c4193087125490c52f727bd6e35b4a57f008afd1debe926c",
+        "mtime": "2025-11-04T22:07:50Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 250,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__b97xd3__target_ea__1762283495.csv",
+        "size": 14864,
+        "sha256": "5d668018b55fb0455997ac155dd7880eb8b02d56178ac6a5423d6fbb39877ba1",
+        "mtime": "2025-11-04T19:11:35Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 251,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__b97xd3__target_ea__1762283495.jsonl",
+        "size": 36716,
+        "sha256": "ba1d5d3c212e1fb0f715ad08564da0d1903d20cf39ccb5aaf95fc192f427f552",
+        "mtime": "2025-11-04T19:11:35Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 250,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__cycloadd__target_G_act__1762296396.csv",
+        "size": 16060,
+        "sha256": "d978e567ef56103cf4e382ab531de4ee4ed1093caf3713db7f68656ad82a82d0",
+        "mtime": "2025-11-04T22:46:36Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 251,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__cycloadd__target_G_act__1762296396.jsonl",
+        "size": 37912,
+        "sha256": "f895265a7c42be6c3b2101b4fc104637493476d9f1a6e1c85760876bc727facb",
+        "mtime": "2025-11-04T22:46:36Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 250,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__cycloadd__target_G_r__1762298382.csv",
+        "size": 15595,
+        "sha256": "515e956de8c7f953f7399595b1be65b186c84744fec511e684663d601d03518a",
+        "mtime": "2025-11-04T23:19:42Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 251,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__cycloadd__target_G_r__1762298382.jsonl",
+        "size": 37447,
+        "sha256": "307c3d8eacda58006e5ce3f5c31acba6e6adcd474c5c23f4be809a84e725b28e",
+        "mtime": "2025-11-04T23:19:42Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 250,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__e2__target_ea__1762298639.csv",
+        "size": 13805,
+        "sha256": "4399928c6254563d72bcda6fd71b6a694cd203c4ef3f0aa1cf301eb07d4a4843",
+        "mtime": "2025-11-04T23:23:59Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 251,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__e2__target_ea__1762298639.jsonl",
+        "size": 35657,
+        "sha256": "bdcae8e87e8515e156c33a6d30ccf2f22aed755fc6ed41d704285c4817db1a90",
+        "mtime": "2025-11-04T23:23:59Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 250,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__e2sn2__target_ea__1762299385.csv",
+        "size": 14568,
+        "sha256": "8ebc327ef16aff86d060457dfa2b77b933fdcfe16bdec7bbb546842cc4a5027e",
+        "mtime": "2025-11-04T23:36:25Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 251,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__e2sn2__target_ea__1762299385.jsonl",
+        "size": 36420,
+        "sha256": "d1c9f5ff1096fbf018acaefe0134a71a7fa79db6d74f5100fb9b629b5f4e7cc0",
+        "mtime": "2025-11-04T23:36:25Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 250,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__lograte__target_lograte__1762299564.csv",
+        "size": 16334,
+        "sha256": "306f4124360aae6d4342cc5ffaaf49b0fac21020905c7fe44f91468a95cafad7",
+        "mtime": "2025-11-04T23:39:24Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 251,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__lograte__target_lograte__1762299564.jsonl",
+        "size": 38186,
+        "sha256": "0ec4e3dfc1c72d1c48252ad667dbaf80d97d14127ee9a5c816784d8b98e6940f",
+        "mtime": "2025-11-04T23:39:24Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 250,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__phosphatase__target_Conversion__1762303815.csv",
+        "size": 18210,
+        "sha256": "d448185098353ec7a947cae9ee5ff9a2965b87a33f246687d3cc1f0080202b2d",
+        "mtime": "2025-11-05T00:50:15Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 251,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__phosphatase__target_Conversion__1762303815.jsonl",
+        "size": 40062,
+        "sha256": "179a9b61e0e13fb226d7516ed3bc05d6dbc5e6a56fd4df0fab806acdd44b15ca",
+        "mtime": "2025-11-05T00:50:15Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 250,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__rad6re__target_dh__1762337705.csv",
+        "size": 14807,
+        "sha256": "206044fa3e6572695fb4fdab4f548a1393d1796241d999bdbd5851dc3de2d515",
+        "mtime": "2025-11-05T10:15:05Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 251,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__rad6re__target_dh__1762337705.jsonl",
+        "size": 36659,
+        "sha256": "b4b3aa60f0e1250a512949a389cb35bc081a70c6cd5904e60181075fe51170ae",
+        "mtime": "2025-11-05T10:15:05Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 250,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__rdb7__target_ea__1762356566.csv",
+        "size": 14343,
+        "sha256": "6802b00f71892c567ad624f75dc6bd0da8039c4d6158ed40917a4f0cd2805abe",
+        "mtime": "2025-11-05T15:29:26Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 251,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__rdb7__target_ea__1762356566.jsonl",
+        "size": 36195,
+        "sha256": "608103fc7b073736309785194183fee352affe37db59d6a7ce9b2ab26a67b2de",
+        "mtime": "2025-11-05T15:29:26Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 250,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__sn2__target_ea__1762357002.csv",
+        "size": 14018,
+        "sha256": "1c7c3a20f1e0a714761af8f621cf4db0a27f5ac08d6d8acc1c5cc6a48ce5e343",
+        "mtime": "2025-11-05T15:36:42Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 251,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__sn2__target_ea__1762357002.jsonl",
+        "size": 35870,
+        "sha256": "192f7356ec431d9e35126576376c9ab0fe4292a5ba662438b09b4344b518f95b",
+        "mtime": "2025-11-05T15:36:42Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 250,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__snar__target_ea__1762357002.csv",
+        "size": 85,
+        "sha256": "69368e8fae5d99879f7d5cf7a6507c9fe8d2369b885903ef2192d8da60c6847a",
+        "mtime": "2025-11-05T15:36:42Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 2,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__snar__target_ea__1762357002.jsonl",
+        "size": 127,
+        "sha256": "3ef98413ede4422921ec7b8e0cbafd602ebdc3cd7aafc84bfacc38b8050e3d0a",
+        "mtime": "2025-11-05T15:36:42Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__suzuki_miyaura__target_yield__1762357002.csv",
+        "size": 98,
+        "sha256": "24542dd263608a904caca44ba8ffe021d48cb8733ca01ec5799be89da7e1b6f7",
+        "mtime": "2025-11-05T15:36:42Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 2,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__suzuki_miyaura__target_yield__1762357002.jsonl",
+        "size": 140,
+        "sha256": "536c675fcf07ba2b05863f8f5205f5ba1e7708fd61ae039e85c39efbfac4e9f7",
+        "mtime": "2025-11-05T15:36:42Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__uspto_yield__target_yield__1762357002.csv",
+        "size": 95,
+        "sha256": "a219b8a6b1a6f0632e69e5070f238d3690fb14ee63008c32dbeb923e2cf07edc",
+        "mtime": "2025-11-05T15:36:42Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 2,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/runs/property/property__uspto_yield__target_yield__1762357002.jsonl",
+        "size": 137,
+        "sha256": "521cf2fd5139f166f82c366e9b375e044f45816d9ed124063fc5467725cadf84",
+        "mtime": "2025-11-05T15:36:42Z",
+        "format": "ndjson",
+        "mime": "application/json",
+        "rows": 1,
+        "columns": [
+          "task",
+          "name",
+          "target",
+          "feature_mode",
+          "metric",
+          "fold",
+          "value"
+        ]
+      },
+      {
+        "key": "results_benchmark/summary_classification.csv",
+        "size": 44323,
+        "sha256": "b0044d0cd815fd55602bedbed91382b2a5c2d9a0678cade6c3149ab11ea57b0c",
+        "mtime": "2025-11-05T15:55:07Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 121,
+        "columns": [
+          "",
+          "name",
+          "level",
+          "feature_mode",
+          "fit_time_mean",
+          "fit_time_std",
+          "fit_time_count",
+          "fit_time_summary",
+          "fit_time_n_folds_ok",
+          "score_time_mean",
+          "score_time_std",
+          "score_time_count",
+          "score_time_summary",
+          "score_time_n_folds_ok",
+          "test_accuracy_mean",
+          "test_accuracy_std",
+          "test_accuracy_count",
+          "test_accuracy_summary",
+          "test_accuracy_n_folds_ok",
+          "test_f1_weighted_mean",
+          "test_f1_weighted_std",
+          "test_f1_weighted_count",
+          "test_f1_weighted_summary",
+          "test_f1_weighted_n_folds_ok",
+          "test_mcc_mean",
+          "test_mcc_std",
+          "test_mcc_count",
+          "test_mcc_summary",
+          "test_mcc_n_folds_ok"
+        ]
+      },
+      {
+        "key": "results_benchmark/summary_prop.csv",
+        "size": 6825,
+        "sha256": "93b6b5c2817579b23d7bd8c7383b5d0f862297035d10d6814407459d9c4c91bd",
+        "mtime": "2025-11-05T15:55:49Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 23,
+        "columns": [
+          "",
+          "name",
+          "target",
+          "feature_mode",
+          "fit_time_mean",
+          "fit_time_std",
+          "fit_time_count",
+          "fit_time_summary",
+          "fit_time_n_folds_ok",
+          "score_time_mean",
+          "score_time_std",
+          "score_time_count",
+          "score_time_summary",
+          "score_time_n_folds_ok",
+          "test_r2_mean",
+          "test_r2_std",
+          "test_r2_count",
+          "test_r2_summary",
+          "test_r2_n_folds_ok",
+          "test_mae_mean",
+          "test_mae_std",
+          "test_mae_count",
+          "test_mae_summary",
+          "test_mae_n_folds_ok"
+        ]
       },
       {
         "key": "synthesis/uspto_500.csv.gz",
         "size": 4066585,
         "sha256": "fce1ea40bd8f914ff8eee875ed6684d5175e0c9cdc0ea1ccc4c9391a1252ba48",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:56Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 143536,
+        "columns": [
+          "rxn",
+          "reagent",
+          "split"
+        ]
       },
       {
         "key": "synthesis/uspto_50k.csv.gz",
         "size": 4393394,
         "sha256": "243d819b6c19ae3f08d8e26022f972149457fafab57dfa62930b27264b48828b",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:56Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 50017,
+        "columns": [
+          "R-id",
+          "aam",
+          "split",
+          "source"
+        ]
       },
       {
         "key": "synthesis/uspto_mit.csv.gz",
         "size": 55587588,
         "sha256": "d8078682760346f7080714f6b6617d38311f6dd5ae430b429d0594c5ffa488aa",
-        "mtime": "2025-10-13T10:04:35Z"
+        "mtime": "2025-10-14T15:47:56Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 479036,
+        "columns": [
+          "aam",
+          "split",
+          "rc"
+        ]
       }
     ],
     "summary": {
-      "file_count": 31,
-      "total_bytes": 98301894,
+      "file_count": 184,
+      "total_bytes": 1262468044,
       "by_dir": {
+        "Benchmark": {
+          "count": 57,
+          "bytes": 1144270128
+        },
         "aam": {
           "count": 5,
           "bytes": 1985133
         },
         "classification": {
           "count": 8,
-          "bytes": 13030727
+          "bytes": 13030728
         },
         "property": {
-          "count": 11,
-          "bytes": 17608135
+          "count": 13,
+          "bytes": 32237007
         },
         "rbl": {
           "count": 4,
           "bytes": 1630332
+        },
+        "results_benchmark": {
+          "count": 94,
+          "bytes": 5267149
         },
         "synthesis": {
           "count": 3,
@@ -227,10 +2785,10 @@
     }
   },
   "provenance": {
-    "git_root": "/home/runner/work/SynRXN/SynRXN",
-    "commit": "4f9a9b39d85ca392d27392164ed00e82dab3ab20",
-    "branch": "data",
-    "remotes": "origin\thttps://github.com/TieuLongPhan/SynRXN (fetch)\norigin\thttps://github.com/TieuLongPhan/SynRXN (push)"
+    "git_root": "/homes/biertank/tieu/Documents/Project/TACsy/SynEco/SynRXN",
+    "commit": "9b951a4fd07baaded3b2cc4a1b2c50bd7424f260",
+    "branch": "benchmark",
+    "remotes": "origin\tgit@github.com:TieuLongPhan/SynRXN.git (fetch)\norigin\tgit@github.com:TieuLongPhan/SynRXN.git (push)"
   },
   "project": {
     "name": "synrxn",
