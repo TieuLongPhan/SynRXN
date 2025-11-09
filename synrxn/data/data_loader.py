@@ -18,7 +18,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 import io
-import json
 import requests
 import pandas as pd
 from difflib import get_close_matches
@@ -88,7 +87,8 @@ class DataLoader:
     :type force_record_id: Optional[int]
 
     :raises ValueError:
-        If ``source`` is not one of the supported values, or if GitHub retrieval is requested but ``gh_enable`` is False.
+        If ``source`` is not one of the supported values, or if GitHub retrieval
+        is requested but ``gh_enable`` is False.
     :raises RuntimeError:
         If resolving ``version='latest'`` for ``source='commit'`` fails to return a commit SHA.
 
@@ -172,7 +172,8 @@ class DataLoader:
     -----
     - ``version='latest'`` (commit or release) is non-deterministic; record the resolved value
       (``dl.version``) if you need reproducible results.
-    - For heavy GitHub API usage, provide an authenticated session (add an Authorization token to ``dl._session.headers``).
+    - For heavy GitHub API usage, provide an authenticated session
+    (add an Authorization token to ``dl._session.headers``).
     """
 
     def __init__(
@@ -333,7 +334,7 @@ class DataLoader:
         ]
         for p in prefixes:
             if n.startswith(p):
-                n = n[len(p) :]
+                n = n[len(p) :]  # noqa
                 break
         n = n.strip("/\\ ").strip()
         lower = n.lower()

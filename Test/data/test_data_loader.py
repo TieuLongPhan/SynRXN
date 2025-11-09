@@ -63,7 +63,8 @@ class FakeZenodoClient:
                     "Content-Length": str(len(gz_bytes)),
                 },
                 iter_content=lambda chunk_size=8192, _b=gz_bytes: (
-                    _b[i : i + chunk_size] for i in range(0, len(_b), chunk_size)
+                    _b[i : i + chunk_size]  # noqa
+                    for i in range(0, len(_b), chunk_size)  # noqa
                 ),
                 content=gz_bytes,
                 url="https://fake/mis.csv.gz",
@@ -86,7 +87,8 @@ class FakeZenodoClient:
                     "Content-Length": str(len(bb)),
                 },
                 iter_content=lambda chunk_size=8192, _bb=bb: (
-                    _bb[i : i + chunk_size] for i in range(0, len(_bb), chunk_size)
+                    _bb[i : i + chunk_size]  # noqa
+                    for i in range(0, len(_bb), chunk_size)  # noqa
                 ),
                 content=bb,
                 url="https://fake/archive.zip",
