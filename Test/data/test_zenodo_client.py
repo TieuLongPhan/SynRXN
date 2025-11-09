@@ -1,10 +1,7 @@
 import unittest
 import io
 from synrxn.data.zenodo_client import ZenodoClient
-from types import SimpleNamespace
-import json
 import zipfile
-import tarfile
 from pathlib import Path
 import tempfile
 import hashlib
@@ -23,7 +20,7 @@ class FakeResponse:
     def iter_content(self, chunk_size=8192):
         # yield from content in chunks
         for i in range(0, len(self._content), chunk_size):
-            yield self._content[i : i + chunk_size]
+            yield self._content[i : i + chunk_size]  # noqa
 
     @property
     def content(self):

@@ -1,6 +1,5 @@
 import unittest
 from synrxn.data.github_client import GitHubClient
-from types import SimpleNamespace
 
 
 class FakeResp:

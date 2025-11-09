@@ -4,9 +4,7 @@ Thin client for Zenodo lookups, downloads, archive listing/extraction, and name 
 
 from __future__ import annotations
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional, Tuple, Union
-import io
-import os
+from typing import Dict, List, Optional
 import json
 import zipfile
 import tarfile
@@ -245,9 +243,9 @@ class ZenodoClient:
             if not key.startswith(base):
                 continue
             if key.endswith(".csv.gz"):
-                names.add(key[len(base) : -len(".csv.gz")])
+                names.add(key[len(base) : -len(".csv.gz")])  # noqa
             elif key.endswith(".csv"):
-                names.add(key[len(base) : -len(".csv")])
+                names.add(key[len(base) : -len(".csv")])  # noqa
 
         if not include_archives:
             return sorted(names)
@@ -275,7 +273,7 @@ class ZenodoClient:
                             continue
                         if idx == -1:
                             continue
-                    tail = ml[idx + len(needle) :]
+                    tail = ml[idx + len(needle) :]  # noqa
                     if tail.endswith(".csv.gz"):
                         names.add(tail[: -len(".csv.gz")])
                     elif tail.endswith(".csv"):

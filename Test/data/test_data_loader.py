@@ -3,7 +3,6 @@ from synrxn.data.data_loader import DataLoader
 from types import SimpleNamespace
 import io
 import pandas as pd
-from pathlib import Path
 import tempfile
 import gzip
 
@@ -63,9 +62,9 @@ class FakeZenodoClient:
                     "Content-Type": "application/octet-stream",
                     "Content-Length": str(len(gz_bytes)),
                 },
-                # iter_content yields chunks; emulate generator
                 iter_content=lambda chunk_size=8192, _b=gz_bytes: (
-                    _b[i : i + chunk_size] for i in range(0, len(_b), chunk_size)
+                    _b[i : i + chunk_size]  # noqa
+                    for i in range(0, len(_b), chunk_size)  # noqa
                 ),
                 content=gz_bytes,
                 url="https://fake/mis.csv.gz",
@@ -88,7 +87,8 @@ class FakeZenodoClient:
                     "Content-Length": str(len(bb)),
                 },
                 iter_content=lambda chunk_size=8192, _bb=bb: (
-                    _bb[i : i + chunk_size] for i in range(0, len(_bb), chunk_size)
+                    _bb[i : i + chunk_size]  # noqa
+                    for i in range(0, len(_bb), chunk_size)  # noqa
                 ),
                 content=bb,
                 url="https://fake/archive.zip",
@@ -127,8 +127,8 @@ class FakeGitHubClient:
         return ["gh_one", "gh_two"]
 
     def raw_url(self, task, name, ext):
-        # Simulate that raw URLs exist for gh_one.csv.gz
-        if name == "gh_one" and ext == ".csv.gz":
+        # Return a plain CSV URL only for the ".csv" ext so loader will pick it
+        if name == "gh_one" and ext == ".csv":
             return f"https://raw/{task}/{name}{ext}"
         return None
 
@@ -168,15 +168,16 @@ class TestDataLoader(unittest.TestCase):
         self.assertListEqual(list(df.columns), ["x", "y"])
 
     def test_github_fallback(self):
-        # Create loader that allows github and 'any' source, then test github retrieval
+        # Use source='github' (valid for DataLoader) and fake GitHub client
         dl2 = DataLoader(
-            task="rbl", source="any", gh_enable=True, resolve_on_init=False
+            task="rbl", source="github", gh_enable=True, resolve_on_init=False
         )
         dl2._zenodo = self.dl._zenodo
         dl2._github = FakeGitHubClient()
         dl2._record_id = 123
         dl2._file_index = dl2._zenodo.build_file_index(123)
-        # Patch DataLoader._github.raw_url to return a fake url; patch dl2._session.get to return CSV bytes
+
+        # Patch DataLoader._session.get to return CSV bytes
         original_session_get = dl2._session.get
 
         def fake_get(url, timeout=None, stream=False):
@@ -190,8 +191,10 @@ class TestDataLoader(unittest.TestCase):
             return R()
 
         dl2._session.get = fake_get
+
+        # ensure raw_url only returns plain .csv so loader picks the CSV branch
         dl2._github.raw_url = lambda task, name, ext: (
-            "https://fake/gh_one.csv.gz" if name == "gh_one" else None
+            "https://fake/gh_one.csv" if name == "gh_one" and ext == ".csv" else None
         )
 
         df = dl2.load("gh_one")

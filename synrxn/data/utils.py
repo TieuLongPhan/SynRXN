@@ -1,7 +1,3 @@
-"""
-Shared helpers for hashing, normalization, and small I/O utilities.
-"""
-
 from __future__ import annotations
 from pathlib import Path
 from typing import Dict, Optional, Tuple
