@@ -191,7 +191,19 @@ class DataLoader:
         cache_record_index: bool = True,
         force_record_id: Optional[int] = None,
     ) -> None:
-        self.task = str(task).strip("/")
+        # normalize common short aliases to canonical folder names
+        _alias_map = {
+            "class": "classification",
+            "prop": "property",
+            "syn": "synthesis",
+        }
+
+        task_str = str(task).strip()
+        task_clean = task_str.lower().strip("/\\ ")
+
+        self.task = _alias_map.get(task_clean, task_clean)
+        self.task = self.task.strip("/\\ ")
+
         self.version = version.strip() if isinstance(version, str) else None
         self.timeout = int(timeout)
         self.headers = {"User-Agent": user_agent}

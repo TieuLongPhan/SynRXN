@@ -8,13 +8,13 @@ abstract: Reaction Database for benchmarking
 doi: 10.5281/zenodo.17297723
 url: https://doi.org/10.5281/zenodo.17297723
 repository-code: git@github.com:TieuLongPhan/SynRXN.git
-date-released: '2025-11-05'
+date-released: '2025-11-09'
 authors:
 - given-names: Tieu Long
   family-names: Phan
   email: tieu@bioinf.uni-leipzig.de
 identifiers:
 - type: commit
-  value: 9b951a4fd07baaded3b2cc4a1b2c50bd7424f260
+  value: 68fcd3a7f7d3eb73eed6fcb67e99ac4c4c743e7e
 - type: doi
   value: 10.5281/zenodo.17297723

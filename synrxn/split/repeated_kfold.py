@@ -346,7 +346,6 @@ class RepeatedKFoldsSplitter:
         # compute and save splits
         self._compute_splits(X_arr, y_arr, groups_arr)
 
-
     def get_split(self, repeat: int = 0, fold: int = 0, as_frame: bool = False):
         """
         Retrieve either index arrays (train_idx, val_idx, test_idx) or slices

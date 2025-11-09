@@ -1,4 +1,4 @@
-# updated build_manifest.py
+#!/usr/bin/env python3
 from __future__ import annotations
 import sys
 import os
@@ -643,6 +643,65 @@ def build_cff_from_manifest(
 
 
 # -------------------------
+# Code manifest generator
+# -------------------------
+def generate_code_manifest(
+    repo_root: Path,
+    subdirs: Optional[List[str]] = None,
+    exclude_patterns: Optional[List[str]] = None,
+) -> Dict[str, Any]:
+    """
+    Generate a code manifest dict for files under repo_root/subdirs.
+    Returns a mapping:
+    {
+      "generated_at": ...,
+      "repo_root": "...",
+      "subdirs": [...],
+      "entries": [{ "key": "synrxn/...", "size": ..., "sha256": "...", "mtime": "..." }, ...],
+      "count": N
+    }
+    """
+    subdirs = subdirs or ["synrxn"]
+    exclude_patterns = exclude_patterns or []
+    repo_root = repo_root.resolve()
+    entries: List[Dict[str, Any]] = []
+    for sd in subdirs:
+        base = repo_root / sd
+        if not base.exists():
+            continue
+        for root, _dirs, files in os.walk(str(base)):
+            rootp = Path(root)
+            for fn in sorted(files):
+                path = rootp / fn
+                rel = path.relative_to(repo_root).as_posix()
+                # skip unwanted patterns
+                if any(re.search(pat, rel) for pat in exclude_patterns):
+                    continue
+                try:
+                    if not path.is_file():
+                        continue
+                    entry = {
+                        "key": rel,
+                        "size": path.stat().st_size,
+                        "sha256": sha256_file(path),
+                        "mtime": mtime_iso(path),
+                    }
+                    entries.append(entry)
+                except Exception:
+                    # non-fatal: skip problematic files
+                    continue
+    entries.sort(key=lambda e: e["key"])
+    code_manifest = {
+        "generated_at": now_iso_utc(),
+        "repo_root": str(repo_root),
+        "subdirs": subdirs,
+        "entries": entries,
+        "count": len(entries),
+    }
+    return code_manifest
+
+
+# -------------------------
 # Build manifest (updated)
 # -------------------------
 def build_manifest(
@@ -653,7 +712,19 @@ def build_manifest(
     license_str: Optional[str] = None,
     count_rows: bool = True,
     rows_size_limit: int = 100 * 1024 * 1024,
+    include_tests: bool = False,
+    include_code_archive: bool = False,
+    include_code_manifest: bool = True,
+    repo_root_hint: Optional[Path] = None,
 ) -> Dict[str, Any]:
+    """
+    Build manifest for the dataset under `data_dir`.
+
+    - include_tests: when True include top-level Test/ files found under the Data root.
+    - include_code_archive: when True create a git archive (synrxn/ or whole repo) and add it as a dataset file.
+    - include_code_manifest: when True compute per-file sha256 for synrxn/* and embed under manifest['code'].
+    - repo_root_hint: optional Path to repository root to prefer when creating archive/code manifest.
+    """
     generated_at = now_iso_utc()
     root = data_dir
     if (root / "Data").is_dir():
@@ -664,6 +735,7 @@ def build_manifest(
     # load sidecar metadata map (optional)
     sidecar = load_sidecar_metadata(root)
 
+    # scan everything under Data (we will filter to allowed prefixes below)
     files = scan_files(
         root,
         follow_symlinks=follow_symlinks,
@@ -671,9 +743,120 @@ def build_manifest(
         rows_size_limit=rows_size_limit,
         sidecar=sidecar,
     )
+
+    # Filter to allowed Data subfolders by default
+    allowed = {"rbl", "aam", "classification", "property", "synthesis"}
+    filtered: List[Dict[str, Any]] = []
+    for f in files:
+        top = f["key"].split("/", 1)[0] if "/" in f["key"] else f["key"]
+        # keep allowed data subdirs
+        if top in allowed:
+            filtered.append(f)
+            continue
+        # optionally include Test/*
+        if include_tests and top == "Test":
+            filtered.append(f)
+            continue
+        # allow some top-level helper files (README, CITATION, top-level metadata)
+        if top.lower() in {"readme.md", "readme", "citation.cff", "citation", "."}:
+            filtered.append(f)
+            continue
+        # otherwise skip
+    files = filtered
+
     stats = summarize(files)
 
+    # provenance from git (try data root, then repo_root_hint)
     prov = git_provenance(repo_root=root)
+    if not prov.get("git_root") and repo_root_hint:
+        prov = git_provenance(repo_root_hint)
+
+    # Prepare code container for embedding (if requested)
+    code_section: Dict[str, Any] = {}
+
+    # Optionally create a git archive for synrxn/ (or whole repo) and include it
+    if include_code_archive:
+        gitroot = (
+            find_git_root(root)
+            or find_git_root(repo_root_hint)
+            or find_git_root(Path.cwd())
+        )
+        if gitroot:
+            # determine commit
+            _, commit_out, _ = run(["git", "rev-parse", "HEAD"], cwd=gitroot)
+            commit = commit_out.strip() if commit_out else "HEAD"
+            short = commit[:7] if commit and commit != "HEAD" else "HEAD"
+            # name archive
+            archive_name = f"synrxn-code-{short}.tar.gz"
+            archive_path = gitroot / archive_name
+            # decide whether to archive only synrxn/ or whole repo
+            synrxn_dir = gitroot / "synrxn"
+            try:
+                if synrxn_dir.exists():
+                    cmd = [
+                        "git",
+                        "archive",
+                        "--format=tar.gz",
+                        "-o",
+                        str(archive_path),
+                        commit,
+                        "synrxn",
+                    ]
+                else:
+                    # no synrxn/ dir — archive whole repo at commit
+                    cmd = [
+                        "git",
+                        "archive",
+                        "--format=tar.gz",
+                        "-o",
+                        str(archive_path),
+                        commit,
+                        "HEAD",
+                    ]
+                code, out, err = run(cmd, cwd=gitroot, timeout=60)
+                if code == 0 and archive_path.exists():
+                    try:
+                        sh = sha256_file(archive_path)
+                        archive_entry = {
+                            "key": f"code/{archive_name}",
+                            "size": archive_path.stat().st_size,
+                            "sha256": sh,
+                            "mtime": mtime_iso(archive_path),
+                            "description": "git archive of repository (synrxn/ or whole repo) at commit "
+                            + (commit or "HEAD"),
+                            "format": "tar.gz",
+                            "mime": "application/gzip",
+                        }
+                        files.append(archive_entry)
+                        # also expose as code section metadata
+                        code_section["archive"] = {
+                            "path": archive_entry["key"],
+                            "size": archive_entry["size"],
+                            "sha256": archive_entry["sha256"],
+                            "commit": commit,
+                        }
+                    except Exception:
+                        # non-fatal: continue without archive metadata
+                        pass
+            except Exception:
+                # non-fatal: continue without adding archive
+                pass
+
+    # Optionally generate per-file code manifest and embed it under 'code' in manifest
+    if include_code_manifest:
+        gitroot = (
+            find_git_root(root)
+            or find_git_root(repo_root_hint)
+            or find_git_root(Path.cwd())
+        )
+        if gitroot:
+            cm = generate_code_manifest(
+                repo_root=gitroot,
+                subdirs=["synrxn"],
+                exclude_patterns=[r"\.pyc$", r"__pycache__"],
+            )
+            # embed code manifest (in-memory)
+            code_section["manifest"] = cm
 
     dataset = {
         "title": meta.get("title"),
@@ -687,7 +870,7 @@ def build_manifest(
     }
     dataset = {k: v for k, v in dataset.items() if v not in (None, "", [])}
 
-    man = {
+    man: Dict[str, Any] = {
         "generated_at": generated_at,
         "dataset": dataset,
         "provenance": prov,
@@ -696,6 +879,10 @@ def build_manifest(
             "pyproject": meta.get("_pyproject_path"),
         },
     }
+
+    if code_section:
+        man["code"] = code_section
+
     return man
 
 
@@ -766,6 +953,34 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
         default=100 * 1024 * 1024,
         help="Maximum file size (bytes) to scan for rows/columns (default 100MB). Set 0 for no limit.",
     )
+
+    # new options for included paths and code archive/manifest
+    p.add_argument(
+        "--include-tests",
+        action="store_true",
+        help="Also include Test/* paths in the manifest (default: False)",
+    )
+    p.add_argument(
+        "--include-code-archive",
+        action="store_true",
+        help="Create a git-archive of repository (synrxn/* or whole repo) and include it in manifest files.",
+    )
+    # include code manifest by default; add inverse flag to disable
+    p.add_argument(
+        "--include-code-manifest",
+        dest="include_code_manifest",
+        action="store_true",
+        help="Embed a per-file code manifest for synrxn/* inside manifest.json (default: True).",
+    )
+    p.add_argument(
+        "--no-include-code-manifest",
+        dest="include_code_manifest",
+        action="store_false",
+        help="Do not embed per-file code manifest for synrxn/* inside manifest.json.",
+    )
+    # set default True
+    p.set_defaults(include_code_manifest=True)
+
     return p.parse_args(argv)
 
 
@@ -825,6 +1040,10 @@ def main(argv: Optional[List[str]] = None) -> int:
             rows_size_limit=(
                 args.rows_size_limit if args.rows_size_limit > 0 else sys.maxsize
             ),
+            include_tests=args.include_tests,
+            include_code_archive=args.include_code_archive,
+            include_code_manifest=args.include_code_manifest,
+            repo_root_hint=repo_root,
         )
     except Exception as exc:
         print(f"[manifest] error: {exc}", file=sys.stderr)
@@ -845,6 +1064,14 @@ def main(argv: Optional[List[str]] = None) -> int:
         print(
             f"  files={ds['summary']['file_count']} bytes={ds['summary']['total_bytes']} version={ds.get('version')}"
         )
+        if manifest.get("code"):
+            cs = manifest["code"]
+            if "archive" in cs:
+                print(
+                    f"  code archive: {cs['archive'].get('path')} sha256={cs['archive'].get('sha256')}"
+                )
+            if "manifest" in cs:
+                print(f"  code manifest entries: {cs['manifest'].get('count')}")
 
     # CITATION.cff: ALWAYS generated
     overrides = {
