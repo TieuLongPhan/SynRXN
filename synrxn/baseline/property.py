@@ -1,133 +1,186 @@
 from __future__ import annotations
 
 import os
+import gzip
+from io import BytesIO
 from typing import Dict, Any, Tuple
 import numpy as np
 
 from synrxn.io.io import load_df_gz, save_results_json
+from synrxn.split.repeated_kfold import RepeatedKFoldsSplitter
 
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import cross_validate, RepeatedKFold
+from sklearn.metrics import make_scorer, f1_score, matthews_corrcoef
 
+# ----------------------------
+# scoring
+# ----------------------------
 SCORING = {
-    "r2": "r2",
-    "mae": "neg_mean_absolute_error",
-    "mse": "neg_mean_squared_error",
+    "accuracy": "accuracy",
+    "f1_weighted": make_scorer(f1_score, average="weighted"),
+    "mcc": make_scorer(matthews_corrcoef),
 }
 
 
-def summarize_cv_results(
-    cv_res: Dict[str, Any], tag: str, scoring: Dict[str, Any] | None = None
-) -> None:
-    """
-    Print mean/std and per-split values for test_* metrics from cross_validate output.
+# ----------------------------
+# helpers: printing + jsonability
+# ----------------------------
+def summarize_cv_results(cv_res: Dict[str, Any], tag: str) -> None:
+    """Print mean/std and per-split values for test_* metrics from cross_validate output.
 
-    If `scoring` is provided, any metrics that come from scorers with
-    greater_is_better==False (i.e., sklearn's negated scorers) are printed
-    with sign inverted so humans see positive MAE/RMSE values.
+    :param cv_res: dict returned by sklearn.model_selection.cross_validate
+    :param tag: short string used as header when printing
     """
     import numpy as _np
 
     print(f"\n--- {tag} ---")
     keys = [k for k in cv_res.keys() if k.startswith("test_")]
-    # detect negated scorers from scoring dict
-    negated = set()
-    if scoring is not None:
-        for name, scorer in scoring.items():
-            try:
-                if getattr(scorer, "greater_is_better", True) is False:
-                    negated.add(name)
-            except Exception:
-                # scoring entry might be a string (e.g. 'r2') -> skip
-                pass
-
     for k in keys:
         arr = _np.asarray(cv_res[k], dtype=float)
-        metric_name = k.split("_", 1)[1]
-        if metric_name in negated:
-            arr = -arr
         print(f"{k}: mean={arr.mean():.4f}, std={arr.std(ddof=0):.4f}, values={arr}")
 
 
-def _is_scorer_neg(scoring_obj: Any) -> bool:
-    """Return True if scorer object indicates it returns negated values (greater_is_better == False)."""
-    try:
-        return getattr(scoring_obj, "greater_is_better", True) is False
-    except Exception:
-        # scoring could be a string like 'r2'
-        return False
-
-
-def normalize_cv_results(
-    cv_res: Dict[str, Any], scoring: Dict[str, Any]
-) -> Dict[str, Any]:
+def _make_cv_results_jsonable(cv_res: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Return a copy of cv_res where arrays produced by scorers that have
-    greater_is_better==False are multiplied by -1 (so we report positive MAE/RMSE).
-
-    This returns a new dict with the same keys; arrays are converted to lists
-    (JSON-serializable) where appropriate.
+    Convert numpy arrays/lists in sklearn cross_validate output to plain Python lists
+    so the structure is JSON serializable (safe to pass to save_results_json).
     """
     out: Dict[str, Any] = {}
-    # copy arrays/lists to numpy arrays for manipulation
     for k, v in cv_res.items():
-        if isinstance(v, (list, tuple, np.ndarray)):
-            out[k] = np.asarray(v, dtype=float).copy()
+        if isinstance(v, np.ndarray):
+            out[k] = v.tolist()
+        elif isinstance(v, (list, tuple)):
+            # convert list of numpy scalars/arrays -> list
+            converted = []
+            for x in v:
+                if isinstance(x, (np.ndarray, np.generic)):
+                    try:
+                        converted.append(np.asarray(x).tolist())
+                    except Exception:
+                        converted.append(x)
+                else:
+                    converted.append(x)
+            out[k] = converted
         else:
             out[k] = v
-
-    # find which scorers are negated
-    negated = {name for name, scorer in scoring.items() if _is_scorer_neg(scorer)}
-
-    # flip sign for 'test_X' and 'train_X' where X in negated
-    for key in list(out.keys()):
-        if not (key.startswith("test_") or key.startswith("train_")):
-            continue
-        metric_name = key.split("_", 1)[1]
-        if metric_name in negated and isinstance(out[key], np.ndarray):
-            out[key] = (-out[key]).tolist()
-
     return out
 
 
-def get_data(name: str, target_col: str) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+# ----------------------------
+# robust .npz / .npz.gz loader
+# ----------------------------
+def _try_load_npz_fps(path: str) -> np.ndarray:
     """
-    Load features and the target column for a property dataset.
-
-    Expects:
-      ./Data/Benchmark/drfp/property/drfp_{name}.npz   (npz with 'fps')
-      ./Data/Benchmark/rxnfp/property/rxnfp_{name}.npz (npz with 'fps')
-      Data/property/{name}.csv.gz  (contains target_col)
+    Load 'fps' array from .npz or .npz.gz file.
+    Returns numpy array on success or raises Exception with descriptive message.
     """
-    drfp_path = f"./Data/Benchmark/drfp/property/drfp_{name}.npz"
-    rxnfp_path = f"./Data/Benchmark/rxnfp/property/rxnfp_{name}.npz"
-    csv_path = f"Data/property/{name}.csv.gz"
+    if not os.path.exists(path):
+        raise FileNotFoundError(path)
 
-    if not os.path.exists(drfp_path):
-        raise FileNotFoundError(drfp_path)
-    if not os.path.exists(rxnfp_path):
-        raise FileNotFoundError(rxnfp_path)
+    if path.endswith(".gz"):
+        # read gz bytes and pass to numpy load via BytesIO
+        with gzip.open(path, "rb") as fh:
+            data = fh.read()
+            buf = BytesIO(data)
+            arrs = np.load(buf, allow_pickle=False)
+    else:
+        arrs = np.load(path, allow_pickle=False)
+
+    if "fps" not in arrs:
+        raise KeyError(f"'fps' not found in {path}")
+
+    fps = arrs["fps"]
+    # ensure we return a real ndarray (not an open NpzFile)
+    fps = np.asarray(fps)
+    print(f"Loaded 'fps' from: {path} (shape={fps.shape})")
+    return fps
+
+
+def get_data(name: str, level: int = 0) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """
+    Load features and labels for a benchmark dataset.
+
+    This loader will try:
+      ./Data/Benchmark/drfp/classification/drfp_{name}.npz
+      ./Data/Benchmark/drfp/classification/drfp_{name}.npz.gz
+      ./Data/Benchmark/drfp/classification/drfp_{base}.npz
+      ./Data/Benchmark/drfp/classification/drfp_{base}.npz.gz
+
+    and similarly for rxnfp. 'base' is name.split('_', 1)[0], so datasets
+    like 'ecreact_1' will fall back to 'ecreact'.
+
+    :param name: dataset name (e.g., 'ecreact_1' or 'ecreact')
+    :param level: integer label level for datasets that use levels (syntemp, claire)
+    :returns: (X_drfp, X_rxnfp, y)
+    :raises FileNotFoundError / KeyError if files or expected columns are missing
+    """
+    drfp_dir = "./Data/Benchmark/drfp/classification"
+    rxnfp_dir = "./Data/Benchmark/rxnfp/classification"
+    csv_path = f"Data/classification/{name}.csv.gz"
+
+    # candidate base names: name itself, then prefix before first '_'
+    candidates = [name]
+    if "_" in name:
+        base = name.split("_", 1)[0]
+        if base != name:
+            candidates.append(base)
+
+    tried = []
+    X_drfp = X_rxnfp = None
+
+    for cand in candidates:
+        for ext in (".npz", ".npz.gz"):
+            drfp_path = os.path.join(drfp_dir, f"drfp_{cand}{ext}")
+            rxnfp_path = os.path.join(rxnfp_dir, f"rxnfp_{cand}{ext}")
+            tried.append(drfp_path)
+            tried.append(rxnfp_path)
+            if os.path.exists(drfp_path) and os.path.exists(rxnfp_path):
+                # load them and return
+                X_drfp = _try_load_npz_fps(drfp_path)
+                X_rxnfp = _try_load_npz_fps(rxnfp_path)
+                break
+        if X_drfp is not None and X_rxnfp is not None:
+            break
+
+    if X_drfp is None or X_rxnfp is None:
+        tried_unique = sorted(set(tried))
+        raise FileNotFoundError(
+            "Could not find DRFP/RXNFP feature files for dataset. "
+            "Tried the following paths:\n  " + "\n  ".join(tried_unique)
+        )
+
     if not os.path.exists(csv_path):
         raise FileNotFoundError(csv_path)
 
-    X_drfp = np.load(drfp_path)["fps"]
-    X_rxnfp = np.load(rxnfp_path)["fps"]
     data = load_df_gz(csv_path)
-    if name == "snar":
-        X_drfp = np.delete(X_drfp, data[data["ea"].isna()].index, axis=0)
-        X_rxnfp = np.delete(X_rxnfp, data[data["ea"].isna()].index, axis=0)
-        data = data.dropna()
+    print(name)
+    # label logic (dataset-specific)
+    if name.startswith("syntemp"):
+        # allow calling with 'syntemp' or 'syntemp_0' etc.
+        if f"label_{level}" not in data.columns:
+            raise KeyError(f"label_{level} not found in {csv_path}")
+        y = data[f"label_{level}"].values
+    elif name.startswith("ecreact"):
+        # claire and ecreact use ec{level}
+        if f"ec{level}" not in data.columns:
+            raise KeyError(f"ec{level} not found in {csv_path}")
+        y = data[f"ec{level}"].values
+    else:
+        if "label" not in data.columns:
+            raise KeyError(f"'label' column not found in {csv_path}")
+        y = data["label"].values
 
-    if target_col not in data.columns:
-        raise KeyError(f"Target column '{target_col}' not found in {csv_path}")
-
-    y = np.asarray(data[target_col].values).ravel()
+    y = np.asarray(y).ravel()
     return X_drfp, X_rxnfp, y
 
 
+# ----------------------------
+# Benchmark runner
+# ----------------------------
 def Benchmark(
     name: str,
-    target_col: str,
+    level: int = 0,
     n_splits: int = 5,
     n_repeats: int = 2,
     random_state: int = 42,
@@ -135,23 +188,22 @@ def Benchmark(
     scoring: Dict[str, Any] = SCORING,
 ) -> Dict[str, Dict[str, Any]]:
     """
-    Run RANDOM (unstratified) cross-validation for a property dataset.
+    Run random and stratified cross-validation for DRFP and RXNFP feature sets.
 
-    Returns a dict with keys 'drfp_random' and 'rxnfp_random' mapping to
-    the cross_validate output, but where MAE/RMSE entries have been normalized
-    to positive values (for human readability and downstream reporting).
+    Returns a dict with the 4 cv result dicts. Also saves a JSON file into:
+      Data/Benchmark/result/classification/{name}_{level}.json
     """
-    X_drfp, X_rxnfp, y = get_data(name=name, target_col=target_col)
+    X_drfp, X_rxnfp, y = get_data(name=name, level=level)
     results: Dict[str, Dict[str, Any]] = {}
 
-    print(
-        f"\nBenchmark (property RANDOM only): {name}  target={target_col}  (n_samples={len(y)})\n"
-    )
+    print(f"\nBenchmark: {name}  (n_samples={len(y)})\n")
 
-    # RANDOM mode (unstratified) using RepeatedKFold
+    # ----------------------
+    # 1) RANDOM mode (unstratified) using RepeatedKFold
+    # ----------------------
     print("=== RANDOM mode (unstratified, RepeatedKFold) ===")
-    reg = RandomForestRegressor(
-        n_estimators=200, random_state=random_state, n_jobs=n_jobs
+    clf = RandomForestClassifier(
+        n_estimators=100, random_state=random_state, n_jobs=n_jobs
     )
     rkf = RepeatedKFold(
         n_splits=n_splits, n_repeats=n_repeats, random_state=random_state
@@ -159,34 +211,69 @@ def Benchmark(
 
     # run on drfp
     cv_drfp_random = cross_validate(
-        reg, X_drfp, y=y, cv=rkf, scoring=scoring, return_train_score=False, n_jobs=1
+        clf, X_drfp, y=y, cv=rkf, scoring=scoring, return_train_score=False, n_jobs=1
     )
-    # normalize negated scorers to positive reporting values
-    cv_drfp_random_pos = normalize_cv_results(cv_drfp_random, scoring)
-    summarize_cv_results(
-        cv_drfp_random_pos, tag=f"{name}:{target_col} - DRFP - random", scoring=scoring
-    )
-    results["drfp_random"] = cv_drfp_random_pos
+    summarize_cv_results(cv_drfp_random, tag="DRFP - random")
+    results["drfp_random"] = cv_drfp_random
 
     # run on rxnfp
     cv_rxnfp_random = cross_validate(
-        reg, X_rxnfp, y=y, cv=rkf, scoring=scoring, return_train_score=False, n_jobs=1
+        clf, X_rxnfp, y=y, cv=rkf, scoring=scoring, return_train_score=False, n_jobs=1
     )
-    cv_rxnfp_random_pos = normalize_cv_results(cv_rxnfp_random, scoring)
-    summarize_cv_results(
-        cv_rxnfp_random_pos,
-        tag=f"{name}:{target_col} - RXNFP - random",
+    summarize_cv_results(cv_rxnfp_random, tag="RXNFP - random")
+    results["rxnfp_random"] = cv_rxnfp_random
+
+    # ----------------------
+    # 2) STRATIFIED mode (use RepeatedKFoldsSplitter)
+    # ----------------------
+    print("\n=== STRATIFIED mode (RepeatedKFoldsSplitter) ===")
+    splitter = RepeatedKFoldsSplitter(
+        n_splits=n_splits,
+        n_repeats=n_repeats,
+        ratio=(8, 1, 1),
+        shuffle=True,
+        random_state=random_state,
+    )
+    clf = RandomForestClassifier(
+        n_estimators=100, random_state=random_state, n_jobs=n_jobs
+    )
+
+    # cross_validate will call splitter.split(X, y), so pass y (used for stratification)
+    cv_drfp_strat = cross_validate(
+        clf,
+        X_drfp,
+        y=y,
+        cv=splitter,
         scoring=scoring,
+        return_train_score=False,
+        n_jobs=1,
     )
-    results["rxnfp_random"] = cv_rxnfp_random_pos
+    summarize_cv_results(cv_drfp_strat, tag="DRFP - stratified")
+    results["drfp_strat"] = cv_drfp_strat
 
-    # save JSON results (create directory if needed)
-    out_dir = os.path.dirname(
-        f"Data/Benchmark/result/property/{name}_{target_col}.json"
+    cv_rxnfp_strat = cross_validate(
+        clf,
+        X_rxnfp,
+        y=y,
+        cv=splitter,
+        scoring=scoring,
+        return_train_score=False,
+        n_jobs=1,
     )
+    summarize_cv_results(cv_rxnfp_strat, tag="RXNFP - stratified")
+    results["rxnfp_strat"] = cv_rxnfp_strat
+
+    print("\nBenchmark completed.\n")
+
+    # --- ensure result directory exists and make cv results jsonable ---
+    out_path = f"Data/Benchmark/result/classification/{name}_{level}.json"
+    out_dir = os.path.dirname(out_path)
     os.makedirs(out_dir, exist_ok=True)
-    save_results_json(
-        f"Data/Benchmark/result/property/{name}_{target_col}.json", results
-    )
 
+    jsonable_results: Dict[str, Any] = {}
+    for k, v in results.items():
+        jsonable_results[k] = _make_cv_results_jsonable(v)
+
+    save_results_json(out_path, jsonable_results)
+    print(f"Saved results to: {out_path}")
     return results

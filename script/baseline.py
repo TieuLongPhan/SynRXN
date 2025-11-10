@@ -30,10 +30,10 @@ except Exception:
 # Configuration: datasets, levels, targets
 # ------------------------------
 CLASS_NAMES = [
-    "claire",
+    "ecreact",
+    "syntemp",
     "schneider_b",
     "schneider_u",
-    "syntemp",
     "tpl_b",
     "tpl_u",
     "uspto_50k_b",
@@ -42,7 +42,7 @@ CLASS_NAMES = [
 CLASS_BASE_LEVELS = [0, 1, 2, 3]
 CLASS_SPECIAL_LEVELS = {
     "syntemp": [0, 1, 2],
-    "claire": [1, 2, 3],
+    "ecreact": [1, 2, 3],
 }
 
 PROPERTY_PAIRS: List[Tuple[str, str]] = [
