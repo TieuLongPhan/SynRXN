@@ -1,6 +1,7 @@
 # Core dependencies
 synkit>=1.0.1
-scikit-learn>=1.7.2
+# scikit-learn>=1.7.2
+scikit_learn==1.4.0
 openpyxl>=3.1.5
 
 # "all" optional dependencies

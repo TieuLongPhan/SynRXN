@@ -2,109 +2,106 @@
 """
 build_classification_dataset.py
 
-Same behavior as before, but now collects a processing summary table that records
-success/failure and metrics per dataset and writes a summary CSV.
+Build classification datasets from raw reaction CSVs, mirroring the logic
+originally implemented in a Jupyter notebook.
 
-Usage examples:
+Datasets covered (from DEFAULT_CONFIG):
+ - USPTO_50k (balanced / unbalanced)
+ - Schneider_50k (balanced / unbalanced)
+ - USPTO_TPL (balanced / unbalanced)
+ - SynTemp cluster dataset
+ - ECREACT (Claire)
+
+Each curated dataset is written as a gzipped CSV with a common schema:
+
+  - For single-label datasets:
+      columns: ["r_id", "rxn", "label", "split"]
+
+  - For ECREACT:
+      columns: ["r_id", "rxn", "ec1", "ec2", "ec3", "split"]
+
+Usage examples
+--------------
+From repo root:
+
   PYTHONPATH=. python script/build_classification_dataset.py --dry-run
-  PYTHONPATH=. python script/build_classification_dataset.py --entries syntemp,ecreact
-  PYTHONPATH=. python script/build_classification_dataset.py --summary-out reports/classification_summary.csv.gz
+  PYTHONPATH=. python script/build_classification_dataset.py --entries uspto_50k_u,uspto_50k_b
+  PYTHONPATH=. python script/build_classification_dataset.py --entries ecreact
+  python script/build_classification_dataset.py --write-default classification_default.json
+
+Ad-hoc example (non-default source):
+
+  python script/build_classification_dataset.py \\
+      --src path_or_url.csv.gz \\
+      --out Data/classification/custom.csv.gz \\
+      --curate uspto
+
 """
+
 from __future__ import annotations
+
 import argparse
-import gzip
+import ast
 import json
 import logging
 import math
+import sys
 import time
-import traceback
 from pathlib import Path
-from typing import Any, Dict, Optional, Sequence
+from typing import Any, Dict, Iterable, Mapping, Optional, Sequence, List
 
 logger = logging.getLogger(__name__)
 
-# ---------------------------
-# DEFAULT CONFIG (built-in)
-# ---------------------------
-DEFAULT_CONFIG: Dict[str, Dict[str, str]] = {
-    "ecreact": {
-        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/claire_full.csv.gz",
-        "out": "Data/classification/ecreact.csv.gz",
-    },
-    "uspto_50k_b": {
-        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/USPTO_50k_balanced.csv.gz",
-        "out": "Data/classification/uspto_50k_b.csv.gz",
-    },
-    "uspto_50k_u": {
-        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/USPTO_50k_unbalanced.csv.gz",
-        "out": "Data/classification/uspto_50k_u.csv.gz",
-    },
-    "tpl_b": {
-        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/USPTO_TPL_balanced.csv.gz",
-        "out": "Data/classification/tpl_b.csv.gz",
-    },
-    "tpl_u": {
-        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/USPTO_TPL_unbalanced.csv.gz",
-        "out": "Data/classification/tpl_u.csv.gz",
-    },
-    "schneider_b": {
-        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/schneider50k_balanced.csv.gz",
-        "out": "Data/classification/schneider_b.csv.gz",
-    },
-    "schneider_u": {
-        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/schneider50k_unbalanced.csv.gz",
-        "out": "Data/classification/schneider_u.csv.gz",
-    },
-    "syntemp": {
-        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/Syntemp_cluster.csv.gz",
-        "out": "Data/classification/syntemp.csv.gz",
-    },
-}
+# ---------------------------------------------------------------------------
+# Optional import of synrxn.io.io helpers
+# ---------------------------------------------------------------------------
+
+try:
+    # When called from script/, this makes project root importable.
+    sys.path.append(str(Path(__file__).resolve().parents[1]))
+    from synrxn.io.io import save_df_gz  # type: ignore
+except Exception:
+    save_df_gz = None  # fallback implemented below
 
 
-# ---------------------------
-# Helpers (unchanged from previous version, with small additions)
-# ---------------------------
-def ensure_pandas():
+def _fallback_save_df_gz(df, out_path: str) -> None:
+    """Simple fallback if synrxn.io.io.save_df_gz is not available."""
+    import pandas as pd  # noqa: F401  # only for type checking
+
+    out = Path(out_path)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(out, index=False, compression="gzip")
+
+
+def _ensure_pandas():
+    """Lazy import of pandas with a clearer error."""
     try:
         import pandas as pd  # type: ignore
     except Exception as e:
-        raise RuntimeError("pandas is required but not importable") from e
+        raise RuntimeError("pandas is required but could not be imported") from e
     return pd
 
 
-def download_or_open_csv(
-    path_or_url: str, timeout: int = 60, **pd_read_csv_kwargs
-) -> "pandas.DataFrame":
-    pd = ensure_pandas()
-    p = Path(path_or_url)
-    if p.exists():
-        logger.debug("Reading local file %s", p)
-        return pd.read_csv(
-            p, compression="infer", low_memory=False, **pd_read_csv_kwargs
-        )
-
-    import requests, io
-
-    logger.debug("Fetching remote URL %s", path_or_url)
-    resp = requests.get(path_or_url, timeout=timeout)
-    resp.raise_for_status()
-    raw = resp.content
-    try:
-        buf = gzip.decompress(raw)
-        return pd.read_csv(
-            io.BytesIO(buf), compression="infer", low_memory=False, **pd_read_csv_kwargs
-        )
-    except (OSError, gzip.BadGzipFile):
-        return pd.read_csv(
-            io.BytesIO(raw), compression="infer", low_memory=False, **pd_read_csv_kwargs
-        )
+# ---------------------------------------------------------------------------
+# Shared small helpers (ported and slightly cleaned from the notebook)
+# ---------------------------------------------------------------------------
 
 
 def _extract_first_str(value: Any) -> Optional[str]:
-    pd = ensure_pandas()
+    """
+    Return the first non-empty string from value which may be:
+      - a string
+      - a list/tuple of strings
+      - a stringified python list "['a','b']"
+      - None / NaN -> returns None
+    """
+    pd = _ensure_pandas()
+
+    # Missing / NaN
     if value is None or (isinstance(value, float) and pd.isna(value)):
         return None
+
+    # List / tuple: first non-empty element
     if isinstance(value, (list, tuple)):
         for el in value:
             if el is None:
@@ -113,322 +110,848 @@ def _extract_first_str(value: Any) -> Optional[str]:
             if s:
                 return s
         return None
+
+    # Strings: maybe literal list
     if isinstance(value, str):
         s = value.strip()
+        if not s:
+            return None
+        # Try to parse python literal list/tuple e.g. "['a','b']"
         if (s.startswith("[") and s.endswith("]")) or (
             s.startswith("(") and s.endswith(")")
         ):
-            import ast
-
             try:
                 parsed = ast.literal_eval(s)
-                if isinstance(parsed, (list, tuple)) and parsed:
-                    return _extract_first_str(parsed)
+                if isinstance(parsed, (list, tuple)):
+                    for el in parsed:
+                        if el is None:
+                            continue
+                        ss = str(el).strip()
+                        if ss:
+                            return ss
+                    return None
             except Exception:
+                # fall back to raw string
                 pass
-        return s or None
-    try:
-        s = str(value).strip()
-        return s or None
-    except Exception:
-        return None
+        return s
+
+    # Fallback: coerce to string
+    s = str(value).strip()
+    return s or None
 
 
-def _extract_nth_from_listish(value: Any, n: int) -> Optional[str]:
-    if value is None:
-        return None
-    if isinstance(value, (list, tuple)):
-        if len(value) > n:
-            return _extract_first_str(value[n])
-        return None
-    if isinstance(value, str):
-        s = value.strip()
-        if (s.startswith("[") and s.endswith("]")) or (
-            s.startswith("(") and s.endswith(")")
-        ):
-            import ast
-
-            try:
-                parsed = ast.literal_eval(s)
-                return _extract_nth_from_listish(parsed, n)
-            except Exception:
-                pass
-        for sep in [",", ";", "|"]:
-            parts = [p.strip() for p in s.split(sep) if p.strip()]
-            if len(parts) > n:
-                return parts[n]
-        return s if n == 0 else None
-    try:
-        seq = list(value)
-        if len(seq) > n:
-            return _extract_first_str(seq[n])
-    except Exception:
-        pass
+def _first_present_column(df, candidates: Iterable[str]) -> Optional[str]:
+    """
+    Return the first candidate column name that exists in df.columns.
+    """
+    for c in candidates:
+        if c in df.columns:
+            return c
     return None
 
 
-def curate_to_ec123_split(
-    df_in,
+def _try_int(v: Any) -> Optional[int]:
+    """
+    Attempt to cast v to int; return None if NaN or casting fails.
+    """
+    pd = _ensure_pandas()
+    if v is None or (isinstance(v, float) and pd.isna(v)):
+        return None
+    try:
+        return int(v)
+    except Exception:
+        return None
+
+
+# ---------------------------------------------------------------------------
+# Dataset-specific curation functions
+# ---------------------------------------------------------------------------
+
+
+def uspto_curate(
+    df,
     *,
-    rxn_col_candidates: Sequence[str] = (
-        "rxn",
-        "reaction",
-        "reaction_smiles",
-        "smiles",
-        "reactants>products",
-        "reaction_smiles",
-    ),
-    ec_cols_candidates: Sequence[str] = (
-        "ec1",
-        "ec2",
-        "ec3",
-        "ec1_encode",
-        "ec2_encode",
-        "ec3_encode",
-        "ec",
-        "ec_number",
-        "ec_numbers",
-        "label",
-        "class",
-    ),
-    split_col_candidates: Sequence[str] = ("split", "set", "split_col"),
-    id_col_candidates: Sequence[str] = ("id", "R-id", "R_ID", "R-id", "rid"),
-    id_prefix: str = "rx",
+    id_col: str = "uspto_index",
+    id_prefix: str = "USPTO",
+    class_col: str = "new_class",
+    reactions_col: str = "reactions",
+    split_col: str = "split",
+    class_map: Optional[Mapping[int, str]] = None,
+    default_split: str = "train",
+):
+    """
+    Curate a USPTO-style dataframe.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        Input dataframe (must contain `reactions` and `new_class` in typical usage).
+    id_col : str
+        Column to use for a numeric/index identifier; if missing, df.index is used.
+    id_prefix : str
+        Prefix for r_id (final id is f"{id_prefix}_{id_value}").
+    class_col : str
+        Column containing class labels (integers or strings).
+    reactions_col : str
+        Column containing reaction SMILES (renamed to `rxn`).
+    split_col : str
+        Optional column specifying split label.
+    class_map : Mapping[int,str] or None
+        Optional mapping from class int -> human-readable label.
+    default_split : str
+        Used when split_col is missing or NaN.
+
+    Returns
+    -------
+    pandas.DataFrame
+        Columns: ["r_id", "rxn", "label", "split"].
+    """
+    pd = _ensure_pandas()
+    df_in = df.copy()
+
+    # Determine id values
+    if id_col in df_in.columns:
+        id_values = df_in[id_col].astype(str)
+    else:
+        id_values = df_in.index.astype(str)
+
+    R_ids = [f"{id_prefix}_{int(v)+1}" for v in id_values]
+
+    # Reaction SMILES
+    if reactions_col not in df_in.columns:
+        raise ValueError(f"Input dataframe must contain a '{reactions_col}' column.")
+    rxn_series = df_in[reactions_col].apply(_extract_first_str)
+
+    # Class labels
+    if class_col in df_in.columns:
+        raw_labels = df_in[class_col]
+
+        if class_map is not None:
+
+            def _map_label(x: Any) -> Any:
+                try:
+                    # try integer key first
+                    ix = int(x)
+                    return class_map.get(ix, class_map.get(x, x))
+                except Exception:
+                    return class_map.get(x, x)
+
+            label_series = raw_labels.map(_map_label)
+        else:
+            # Try to convert to int when possible, else keep as-is
+            def _to_int_or_pass(x: Any) -> Any:
+                if x is None or (isinstance(x, float) and pd.isna(x)):
+                    return None
+                try:
+                    return int(x)
+                except Exception:
+                    return x
+
+            label_series = raw_labels.map(_to_int_or_pass)
+    else:
+        label_series = pd.Series([None] * len(df_in), index=df_in.index)
+
+    # Split handling
+    if split_col in df_in.columns:
+        split_series = df_in[split_col].fillna(default_split).astype(str)
+    else:
+        split_series = pd.Series([default_split] * len(df_in), index=df_in.index)
+
+    out = pd.DataFrame(
+        {
+            "r_id": R_ids,
+            "rxn": rxn_series,
+            "label": label_series,
+            "split": split_series,
+        },
+        index=df_in.index,
+    )
+
+    out = out[["r_id", "rxn", "label", "split"]].reset_index(drop=True)
+    return out
+
+
+def schneider_curate(
+    df,
+    *,
+    id_col: str = "schneider_index",
+    id_prefix: str = "sch",
+    rxn_col: str = "rxn",
+    split_col: str = "split",
+    y_col: str = "y",
+    class_map: Optional[Mapping[int, str]] = None,
+    default_split: str = "train",
+):
+    """
+    Curate Schneider-style classification data (balanced or unbalanced).
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        Input dataframe; typically has columns such as 'rxn' or 'reactions' and 'y'.
+    id_col : str
+        Column providing numeric id; if missing, df.index is used.
+    id_prefix : str
+        Prefix for r_id.
+    rxn_col : str
+        Column name containing reaction SMILES.
+    split_col : str
+        Optional column specifying split.
+    y_col : str
+        Column name for labels.
+    class_map : Mapping[int,str] or None
+        Optional mapping from y -> human-readable label.
+    default_split : str
+        Split when split_col is missing/NaN.
+
+    Returns
+    -------
+    pandas.DataFrame
+        Columns: ["r_id", "rxn", "label", "split"].
+    """
+    pd = _ensure_pandas()
+    df_in = df.copy()
+
+    # ID / r_id
+    if id_col in df_in.columns:
+        id_values = df_in[id_col].astype(str)
+    else:
+        id_values = df_in.index.astype(str)
+
+    R_ids = [f"{id_prefix}_{int(v)+1}" for v in id_values]
+
+    # Reaction SMILES
+    if rxn_col not in df_in.columns:
+        raise ValueError(f"Input dataframe must contain a '{rxn_col}' column.")
+    rxn_series = df_in[rxn_col].apply(_extract_first_str)
+
+    # Labels
+    if y_col in df_in.columns:
+        raw_labels = df_in[y_col]
+
+        if class_map is not None:
+
+            def _map_label(x: Any) -> Any:
+                try:
+                    ix = int(x)
+                    return class_map.get(ix, class_map.get(x, x))
+                except Exception:
+                    return class_map.get(x, x)
+
+            label_series = raw_labels.map(_map_label)
+        else:
+            # try to cast to int when possible
+            def _to_int_or_pass(x: Any) -> Any:
+                if x is None or (isinstance(x, float) and pd.isna(x)):
+                    return None
+                try:
+                    return int(x)
+                except Exception:
+                    return x
+
+            label_series = raw_labels.map(_to_int_or_pass)
+    else:
+        label_series = pd.Series([None] * len(df_in), index=df_in.index)
+
+    # Split
+    if split_col in df_in.columns:
+        split_series = df_in[split_col].fillna(default_split).astype(str)
+    else:
+        split_series = pd.Series([default_split] * len(df_in), index=df_in.index)
+
+    out = pd.DataFrame(
+        {
+            "r_id": R_ids,
+            "rxn": rxn_series,
+            "label": label_series,
+            "split": split_series,
+        },
+        index=df_in.index,
+    )
+
+    out = out[["r_id", "rxn", "label", "split"]].reset_index(drop=True)
+    return out
+
+
+def rxnclass_curate(
+    df,
+    *,
+    id_col: Optional[str] = None,
+    id_prefix: str = "RXN",
+    rxn_col: str = "rxn",
+    class_col: str = "rxn_class",
+    split_col: str = "split",
+    class_map: Optional[Mapping[int, str]] = None,
+    default_split: str = "train",
+    zero_pad: Optional[int] = None,
+    keep_orig_index: bool = False,
+):
+    """
+    Curate a reaction-classification dataframe (e.g. USPTO_TPL).
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+    id_col : str or None
+        Optional explicit id column; if None or missing, df.index is used.
+    id_prefix : str
+        Prefix for generated r_id (default 'RXN').
+    rxn_col : str
+        Column containing reaction SMILES.
+    class_col : str
+        Column containing integer or encoded class labels.
+    split_col : str
+        Column for dataset split (train/valid/test); optional.
+    class_map : Mapping[int,str] or None
+        Optional mapping from integer label -> human-readable string.
+    default_split : str
+        Default split if split_col is missing.
+    zero_pad : int or None
+        If provided and id is numeric, zero-pad to this width.
+    keep_orig_index : bool
+        If True, keep original index in an 'orig_index' column.
+
+    Returns
+    -------
+    pandas.DataFrame
+        Columns: ["r_id", "rxn", "label", "split"] plus optional 'orig_index'.
+    """
+    pd = _ensure_pandas()
+    df_in = df.copy()
+
+    # ID / r_id
+    if id_col is not None and id_col in df_in.columns:
+        id_values = df_in[id_col]
+    else:
+        id_values = df_in.index
+
+    def _fmt_id(v: Any) -> str:
+        ni = _try_int(v)
+        if ni is not None:
+            if zero_pad is not None:
+                return f"{ni:0{zero_pad}d}"
+            return str(ni)
+        return str(v)
+
+    R_ids = [f"{id_prefix}_{int(_fmt_id(v))+1}" for v in id_values]
+
+    # Reaction SMILES
+    if rxn_col not in df_in.columns:
+        raise ValueError(f"Input dataframe must contain a '{rxn_col}' column.")
+    rxn_series = df_in[rxn_col].apply(_extract_first_str)
+
+    # Labels
+    if class_col in df_in.columns:
+        raw_labels = df_in[class_col]
+
+        if class_map is not None:
+
+            def _map_label(x: Any) -> Any:
+                try:
+                    ix = int(x)
+                    return class_map.get(ix, class_map.get(x, x))
+                except Exception:
+                    return class_map.get(x, x)
+
+            label_series = raw_labels.map(_map_label)
+        else:
+
+            def _to_int_or_pass(x: Any) -> Any:
+                if x is None or (isinstance(x, float) and pd.isna(x)):
+                    return None
+                try:
+                    return int(x)
+                except Exception:
+                    return x
+
+            label_series = raw_labels.map(_to_int_or_pass)
+    else:
+        label_series = pd.Series([None] * len(df_in), index=df_in.index)
+
+    # Split
+    if split_col in df_in.columns:
+        split_series = df_in[split_col].fillna(default_split).astype(str)
+    else:
+        split_series = pd.Series([default_split] * len(df_in), index=df_in.index)
+
+    out_dict = {
+        "r_id": R_ids,
+        "rxn": rxn_series,
+        "label": label_series,
+        "split": split_series,
+    }
+
+    if keep_orig_index:
+        out_dict["orig_index"] = df_in.index
+
+    out = pd.DataFrame(out_dict, index=df_in.index)
+    cols = ["r_id", "rxn", "label", "split"]
+    if keep_orig_index:
+        cols.append("orig_index")
+    out = out[cols].reset_index(drop=True)
+    return out
+
+
+def syntemp_curate(
+    df,
+    *,
+    id_col_candidates: Optional[List[str]] = None,
+    rsmicol_candidates: Optional[List[str]] = None,
+    newr0_candidates: Optional[List[str]] = None,
+    newr1_candidates: Optional[List[str]] = None,
+    newr2_candidates: Optional[List[str]] = None,
+    id_prefix: str = "syntemp",
+    zero_pad: Optional[int] = None,
+    keep_orig_index: bool = False,
+):
+    """
+    Curate a 'syntemp' DataFrame into columns:
+        ["r_id", "rxn", "label_0", "label_1", "label_2"]
+
+    Expected columns in raw SynTemp:
+        - RSMI / RsmI / R_smI / rxn / reaction
+        - New_R0 / New_R1 / New_R2  (or variants)
+        - R_ID / r_id / R_ID / index
+    """
+    pd = _ensure_pandas()
+    df_in = df.copy()
+
+    # --- Default candidate lists ------------------------------
+    if id_col_candidates is None:
+        id_col_candidates = ["R_ID", "r_id", "r_id", "R_ID", "id", "index"]
+    if rsmicol_candidates is None:
+        rsmicol_candidates = [
+            "RSMI",
+            "RsmI",
+            "R_smI",
+            "rsmi",
+            "rxn",
+            "reaction",
+            "RSmiles",
+        ]
+    if newr0_candidates is None:
+        newr0_candidates = ["New_R0", "NewR0", "New_R_0", "New0"]
+    if newr1_candidates is None:
+        newr1_candidates = ["New_R1", "NewR1", "New_R_1", "New1"]
+    if newr2_candidates is None:
+        newr2_candidates = ["New_R2", "NewR2", "New_R_2", "New2"]
+
+    # --- Select columns -----------------------------------------
+    id_col = _first_present_column(df_in, id_col_candidates)
+    rsmicol = _first_present_column(df_in, rsmicol_candidates)
+    c_newr0 = _first_present_column(df_in, newr0_candidates)
+    c_newr1 = _first_present_column(df_in, newr1_candidates)
+    c_newr2 = _first_present_column(df_in, newr2_candidates)
+
+    # ---- Prepare ID values -------------------------------------
+    if id_col is not None:
+        id_vals = df_in[id_col].astype(str)
+    else:
+        id_vals = df_in.index.astype(str)
+
+    def _maybe_pad(v: str) -> str:
+        if zero_pad is None:
+            return v
+        try:
+            return str(int(v)).zfill(zero_pad)
+        except Exception:
+            return v
+
+    R_ids = [f"{id_prefix}_{_maybe_pad(v)}" for v in id_vals]
+
+    # ---- Reaction SMILES ---------------------------------------
+    if rsmicol is None:
+        # Try a lower-case fallback
+        fallback = [c for c in df_in.columns if c.lower() == "rsmi"]
+        rsmicol = fallback[0] if fallback else None
+
+    if rsmicol is None:
+        raise ValueError(f"No reaction SMILES column found among: {rsmicol_candidates}")
+
+    rxn_series = df_in[rsmicol].apply(_extract_first_str)
+
+    # ---- Extract labels -----------------------------------------
+    def _get_label(col):
+        if col is None or col not in df_in.columns:
+            return pd.Series([None] * len(df_in))
+        extracted = df_in[col].map(_extract_first_str)
+        return extracted.map(_try_int)
+
+    label_0 = _get_label(c_newr0)
+    label_1 = _get_label(c_newr1)
+    label_2 = _get_label(c_newr2)
+
+    # ---- Build output -------------------------------------------
+    out = pd.DataFrame(
+        {
+            "r_id": R_ids,
+            "rxn": rxn_series,
+            "label_0": label_0,
+            "label_1": label_1,
+            "label_2": label_2,
+        }
+    )
+
+    if keep_orig_index:
+        out.insert(0, "orig_index", df_in.index)
+
+    return out.reset_index(drop=True)
+
+
+def claire_curate(
+    df,
+    *,
+    id_col_candidates: Optional[Sequence[str]] = None,
+    rxn_col_candidates: Optional[Sequence[str]] = None,
+    ec1_col_candidates: Optional[Sequence[str]] = None,
+    ec2_col_candidates: Optional[Sequence[str]] = None,
+    ec3_col_candidates: Optional[Sequence[str]] = None,
+    id_prefix: str = "ecreact",
     zero_pad: Optional[int] = None,
     default_split: str = "train",
     keep_orig_index: bool = False,
 ):
     """
-    Convert raw DataFrame to canonical columns ["R-id", "rxn", "ec1","ec2","ec3","split"].
-    Enhanced rxn detection: handles RSMI and New_R* patterns.
+    Curate the ECREACT (Claire) dataset into multi-task EC classification.
+
+    This follows the structure in the notebook:
+    - find 'rxn_smiles'/'rxn' as reaction column
+    - find EC encoding columns (ec1encode/ec2_encode/ec3encode or similar)
+    - produce columns: ["r_id","rxn","ec1","ec2","ec3","split"]
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+    id_col_candidates : sequence[str] or None
+        Candidate ID columns; if None, defaults to ["id", "index", "orig_index"].
+    rxn_col_candidates : sequence[str] or None
+        Candidate reaction SMILES columns; defaults to ["rxn_smiles","rxn","reaction"].
+    ec1_col_candidates/ec2_col_candidates/ec3_col_candidates : sequence[str] or None
+        Candidate names for EC encodings. Defaults prefer "*encode" then plain "ec1".
+    id_prefix : str
+        Prefix for r_id (default 'ecreact').
+    zero_pad : int or None
+        If provided and id is numeric, zero-pad to this width.
+    default_split : str
+        Default split when no split column present.
+    keep_orig_index : bool
+        If True, keep 'orig_index' column.
+
+    Returns
+    -------
+    pandas.DataFrame
+        Columns: ["r_id","rxn","ec1","ec2","ec3","split"] (+ optional 'orig_index').
     """
-    pd = ensure_pandas()
-    df = df_in.copy()
+    pd = _ensure_pandas()
+    df_in = df.copy()
 
-    def _first_non_null_of_list(values):
-        for v in values:
-            s = _extract_first_str(v)
-            if s is not None:
-                return s
-        return None
+    if id_col_candidates is None:
+        id_col_candidates = ("id", "index", "orig_index")
+    if rxn_col_candidates is None:
+        rxn_col_candidates = ("rxn_smiles", "rxn", "reaction")
+    if ec1_col_candidates is None:
+        ec1_col_candidates = ("ec1encode", "ec1_encode", "ec1")
+    if ec2_col_candidates is None:
+        ec2_col_candidates = ("ec2encode", "ec2_encode", "ec2")
+    if ec3_col_candidates is None:
+        ec3_col_candidates = ("ec3encode", "ec3_encode", "ec3")
 
-    # --- rxn detection ---
-    rxn_series = None
-    # direct candidates (include RSMI)
-    for cand in (
-        "RSMI",
-        "RsmI",
-        "rsmI",
-        "RSMI".lower(),
-    ) + tuple(rxn_col_candidates):
-        if cand in df.columns:
-            logger.info("Using rxn column candidate '%s'", cand)
-            rxn_series = df[cand].apply(_extract_first_str)
-            break
+    id_col = _first_present_column(df_in, id_col_candidates)
+    rxn_col = _first_present_column(df_in, rxn_col_candidates)
 
-    # New_R* pattern
-    if rxn_series is None:
-        new_r_cols = [c for c in df.columns if c.lower().startswith("new_r")]
-        if new_r_cols:
-            try:
-                new_r_cols_sorted = sorted(
-                    new_r_cols,
-                    key=lambda c: int("".join(ch for ch in c if ch.isdigit()) or 0),
-                )
-            except Exception:
-                new_r_cols_sorted = new_r_cols
-            logger.info("Detected New_R* columns: %s", new_r_cols_sorted)
-            rxn_series = df[new_r_cols_sorted].apply(
-                lambda row: _first_non_null_of_list(row.values), axis=1
-            )
+    if rxn_col is None:
+        raise ValueError(f"No reaction SMILES column found among {rxn_col_candidates}")
 
-    # fallback keyword search
-    if rxn_series is None:
-        for c in df.columns:
-            if any(k in c.lower() for k in ("rxn", "reaction", "smiles", "rsm")):
-                logger.info("Falling back to column '%s' for rxn detection", c)
-                rxn_series = df[c].apply(_extract_first_str)
-                break
-
-    if rxn_series is None:
-        raise RuntimeError(
-            "Could not find reaction column among candidates; available columns: {}".format(
-                list(df.columns)
-            )
-        )
-
-    # --- ID generation ---
-    id_col = None
-    for cand in id_col_candidates:
-        if cand in df.columns:
-            id_col = cand
-            logger.info("Using ID column '%s' for R-id", cand)
-            break
-    if id_col:
-        R_ids = df[id_col].apply(lambda x: str(x).strip() if x is not None else "")
-        if zero_pad:
-
-            def try_pad(val):
-                try:
-                    n = int(val)
-                    return str(n).zfill(zero_pad)
-                except Exception:
-                    return val
-
-            R_ids = R_ids.map(try_pad)
+    # IDs
+    if id_col is None:
+        id_values = df_in.index
     else:
-        if zero_pad:
-            R_ids = df.index.to_series().apply(
-                lambda i: f"{id_prefix}{str(int(i)).zfill(zero_pad)}"
-            )
-        else:
-            R_ids = df.index.to_series().apply(lambda i: f"{id_prefix}{i}")
+        id_values = df_in[id_col]
 
-    # --- split detection ---
-    split_col = None
-    for cand in split_col_candidates:
-        if cand in df.columns:
-            split_col = cand
-            break
-    if split_col is None:
-        for c in df.columns:
-            if c.lower() in ("set", "split"):
-                split_col = c
-                break
-    if split_col is not None:
-        split_series = df[split_col].apply(_extract_first_str).fillna(default_split)
+    def _fmt_id(v: Any) -> str:
+        ni = _try_int(v)
+        if ni is not None:
+            if zero_pad is not None:
+                return f"{ni:0{zero_pad}d}"
+            return str(ni)
+        return str(v)
+
+    R_ids = [f"{id_prefix}_{int(_fmt_id(v))+1}" for v in id_values]
+
+    rxn_series = df_in[rxn_col].apply(_extract_first_str)
+
+    # EC label columns
+    ec1_col = _first_present_column(df_in, ec1_col_candidates)
+    ec2_col = _first_present_column(df_in, ec2_col_candidates)
+    ec3_col = _first_present_column(df_in, ec3_col_candidates)
+
+    if ec1_col is not None:
+        ec1 = df_in[ec1_col].map(_try_int)
     else:
-        split_series = pd.Series([default_split] * len(df), index=df.index)
+        ec1 = pd.Series([None] * len(df_in), index=df_in.index)
 
-    # --- ec extraction ---
-    ec1_series = pd.Series([None] * len(df), index=df.index)
-    ec2_series = pd.Series([None] * len(df), index=df.index)
-    ec3_series = pd.Series([None] * len(df), index=df.index)
+    if ec2_col is not None:
+        ec2 = df_in[ec2_col].map(_try_int)
+    else:
+        ec2 = pd.Series([None] * len(df_in), index=df_in.index)
 
-    if "ec1" in df.columns:
-        ec1_series = df["ec1"].apply(_extract_first_str)
-    if "ec2" in df.columns:
-        ec2_series = df["ec2"].apply(_extract_first_str)
-    if "ec3" in df.columns:
-        ec3_series = df["ec3"].apply(_extract_first_str)
+    if ec3_col is not None:
+        ec3 = df_in[ec3_col].map(_try_int)
+    else:
+        ec3 = pd.Series([None] * len(df_in), index=df_in.index)
 
-    if ec1_series.isna().all() or ec1_series.eq(None).all():
-        for cand in ec_cols_candidates:
-            if cand in ("ec1", "ec2", "ec3"):
-                continue
-            if cand in df.columns:
-                ec1_series = df[cand].apply(lambda v: _extract_nth_from_listish(v, 0))
-                ec2_series = df[cand].apply(lambda v: _extract_nth_from_listish(v, 1))
-                ec3_series = df[cand].apply(lambda v: _extract_nth_from_listish(v, 2))
-                logger.info("Extracted ECs from column '%s'", cand)
-                break
+    # Split (if present)
+    if "split" in df_in.columns:
+        split_series = df_in["split"].fillna(default_split).astype(str)
+    else:
+        split_series = pd.Series([default_split] * len(df_in), index=df_in.index)
 
-    if (ec1_series.isna().all() or ec1_series.eq(None).all()) and "label" in df.columns:
-        ec1_series = df["label"].apply(_extract_first_str)
-
-    ec1_series = ec1_series.apply(
-        lambda x: x if (x is None or (isinstance(x, str) and x.strip())) else None
-    )
-    ec2_series = ec2_series.apply(
-        lambda x: x if (x is None or (isinstance(x, str) and x.strip())) else None
-    )
-    ec3_series = ec3_series.apply(
-        lambda x: x if (x is None or (isinstance(x, str) and x.strip())) else None
-    )
-
-    out = pd.DataFrame(
-        {
-            "R-id": R_ids,
-            "rxn": rxn_series,
-            "ec1": ec1_series,
-            "ec2": ec2_series,
-            "ec3": ec3_series,
-            "split": split_series,
-        },
-        index=df.index,
-    )
-
+    out_dict = {
+        "r_id": R_ids,
+        "rxn": rxn_series,
+        "ec1": ec1,
+        "ec2": ec2,
+        "ec3": ec3,
+        "split": split_series,
+    }
     if keep_orig_index:
-        out.insert(0, "orig_index", df.index)
+        out_dict["orig_index"] = df_in.index
 
-    final_cols = ["R-id", "rxn", "ec1", "ec2", "ec3", "split"]
+    final_cols = ["r_id", "rxn", "ec1", "ec2", "ec3", "split"]
+    if keep_orig_index:
+        final_cols.append("orig_index")
+
+    out = pd.DataFrame(out_dict, index=df_in.index)
     out = out[final_cols].reset_index(drop=True)
     return out
 
 
-def fallback_save_df_gz(df, out_path: str) -> None:
-    out = Path(out_path)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    df.to_csv(out, index=False, compression="gzip")
+# Registry to look up curator functions by short name
+CURATORS = {
+    "uspto": uspto_curate,
+    "schneider": schneider_curate,
+    "tpl": rxnclass_curate,
+    "rxnclass": rxnclass_curate,
+    "syntemp": syntemp_curate,
+    "ecreact": claire_curate,
+    "claire": claire_curate,
+}
 
 
-# ---------------------------
-# Processing with summary collection
-# ---------------------------
+# ---------------------------------------------------------------------------
+# DEFAULT CONFIG (built-in)
+# ---------------------------------------------------------------------------
+
+DEFAULT_CONFIG: Dict[str, Dict[str, Any]] = {
+    # 1. USPTO 50k (balanced / unbalanced)
+    "uspto_50k_u": {
+        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/USPTO_50k_unbalanced.csv.gz",
+        "out": "Data/classification/uspto_50k_u.csv.gz",
+        "curate": "uspto",
+        "curate_kwargs": {},
+    },
+    "uspto_50k_b": {
+        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/USPTO_50k_balanced.csv.gz",
+        "out": "Data/classification/uspto_50k_b.csv.gz",
+        "curate": "uspto",
+        "curate_kwargs": {},
+    },
+    # 2. Schneider 50k
+    "schneider_u": {
+        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/schneider50k_unbalanced.csv.gz",
+        "out": "Data/classification/schneider_u.csv.gz",
+        "curate": "schneider",
+        "curate_kwargs": {},  # uses default rxn_col="rxn"
+    },
+    "schneider_b": {
+        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/schneider50k_balanced.csv.gz",
+        "out": "Data/classification/schneider_b.csv.gz",
+        "curate": "schneider",
+        "curate_kwargs": {"rxn_col": "reactions"},
+    },
+    # 3. USPTO_TPL (balanced / unbalanced)
+    "tpl_u": {
+        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/USPTO_TPL_unbalanced.csv.gz",
+        "out": "Data/classification/tpl_u.csv.gz",
+        "curate": "tpl",
+        "curate_kwargs": {"id_prefix": "tpl", "zero_pad": 6},
+    },
+    "tpl_b": {
+        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/USPTO_TPL_balanced.csv.gz",
+        "out": "Data/classification/tpl_b.csv.gz",
+        "curate": "tpl",
+        "curate_kwargs": {"id_prefix": "tpl", "zero_pad": 6},
+    },
+    # 4. SynTemp
+    "syntemp": {
+        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/Syntemp_cluster.csv.gz",
+        "out": "Data/classification/syntemp.csv.gz",
+        "curate": "syntemp",
+        "curate_kwargs": {"keep_orig_index": True},
+    },
+    # 5. ECREACT (Claire)
+    "ecreact": {
+        "src": "https://raw.githubusercontent.com/phuocchung123/SynCat/main/Data/raw/claire_full.csv.gz",
+        "out": "Data/classification/ecreact.csv.gz",
+        "curate": "ecreact",
+        "curate_kwargs": {"keep_orig_index": True},
+    },
+}
+
+
+# ---------------------------------------------------------------------------
+# I/O helpers
+# ---------------------------------------------------------------------------
+
+
+def _load_csv_gz(url_or_path: str, *, low_memory: bool = False):
+    """
+    Load a CSV (optionally gzipped) from a local path or URL using pandas.
+    """
+    pd = _ensure_pandas()
+    return pd.read_csv(url_or_path, compression="gzip", low_memory=low_memory)
+
+
+def load_config_file(path: Path) -> Dict[str, Dict[str, Any]]:
+    """
+    Load a JSON or YAML configuration file describing datasets.
+
+    Expected structure:
+      {
+        "key": {
+          "src": "...",
+          "out": "...",
+          "curate": "uspto",
+          "curate_kwargs": {...}
+        },
+        ...
+      }
+    """
+    text = path.read_text(encoding="utf-8")
+    try:
+        cfg = json.loads(text)
+        if not isinstance(cfg, dict):
+            raise ValueError("Top-level config must be an object/dict.")
+        return cfg
+    except Exception:
+        try:
+            import yaml  # type: ignore
+
+            cfg = yaml.safe_load(text)
+            if not isinstance(cfg, dict):
+                raise ValueError("Top-level config must be an object/dict.")
+            return cfg
+        except Exception as e:
+            raise RuntimeError("Config must be valid JSON or YAML") from e
+
+
+def _print_summary_table(results):
+    """
+    Pretty print a summary table using tabulate if available, otherwise pandas.
+    """
+    cols = [
+        "name",
+        "status",
+        "input_size",
+        "processed_items",
+        "saved",
+        "time_s",
+        "message",
+    ]
+
+    try:
+        from tabulate import tabulate  # type: ignore
+
+        table = [[r.get(c) for c in cols] for r in results]
+        print(tabulate(table, headers=cols, tablefmt="github"))
+    except Exception:
+        pd = _ensure_pandas()
+        df = pd.DataFrame(results)
+        print(df[cols].to_string(index=False))
+
+
+# ---------------------------------------------------------------------------
+# Core processing
+# ---------------------------------------------------------------------------
+
+
 def process_single_entry(
-    name: str, src: str, out: str, *, dry_run: bool = False, retries: int = 2
-):
+    name: str,
+    src: str,
+    out: str,
+    curate_name: str,
+    curate_kwargs: Optional[Dict[str, Any]] = None,
+    *,
+    dry_run: bool = False,
+    retries: int = 2,
+) -> Dict[str, Any]:
     """
-    Returns a result dict with keys:
-      name, src, out, status ('success'/'failed'), message, input_rows, output_rows, saved (bool), time_s
-    """
-    pd = ensure_pandas()
-    loader = download_or_open_csv
-    saver = fallback_save_df_gz
+    Load -> curate -> save and return a result dict:
 
-    last_exc = None
-    start_time = time.time()
-    input_rows = None
-    output_rows = None
+    {
+        "name", "src", "out", "status", "message",
+        "input_size", "processed_items", "saved", "time_s"
+    }
+    """
+    pd = _ensure_pandas()
+    saver = save_df_gz or _fallback_save_df_gz
+    curate_fn = CURATORS.get(curate_name)
+    if curate_fn is None:
+        raise ValueError(f"Unknown curator name: {curate_name}")
+
+    if curate_kwargs is None:
+        curate_kwargs = {}
+
+    start = time.time()
+    input_size: Optional[int] = None
+    processed_count: Optional[int] = None
     saved = False
-    message = ""
     status = "failed"
+    message = ""
+    last_exc: Optional[BaseException] = None
 
     for attempt in range(1, retries + 1):
         try:
-            logger.info("[%s] Loading %s (attempt %d/%d)", name, src, attempt, retries)
-            df = loader(src)
-            input_rows = getattr(df, "shape", (None, None))[0]
             logger.info(
-                "[%s] Loaded DataFrame shape=%s", name, getattr(df, "shape", None)
+                "[%s] Loading source %s (attempt %d/%d)...",
+                name,
+                src,
+                attempt,
+                retries,
             )
+            df_in = _load_csv_gz(src, low_memory=False)
 
-            curated = curate_to_ec123_split(df, id_prefix=name, default_split="train")
-            output_rows = getattr(curated, "shape", (None, None))[0]
+            try:
+                input_size = int(len(df_in))
+            except Exception:
+                input_size = None
 
-            # count missing rxn rows
-            missing_rxn = (
-                curated["rxn"].isna().sum()
-                if "rxn" in curated.columns
-                else (output_rows if output_rows is not None else None)
-            )
-            if missing_rxn and missing_rxn > 0:
-                logger.warning(
-                    "[%s] %d rows have missing 'rxn' after curation",
-                    name,
-                    int(missing_rxn),
-                )
+            logger.info("[%s] Running %s(...)", name, curate_name)
+            df_out = curate_fn(df_in, **curate_kwargs)
+
+            processed_count = len(df_out)
+            logger.info("[%s] Curator produced %d rows", name, processed_count)
 
             if dry_run:
                 logger.info("[%s] dry-run: skipping save to %s", name, out)
                 saved = False
             else:
-                saver(curated, out)
+                saver(df_out, out)
                 saved = True
-                logger.info("[%s] saved curated file to %s", name, out)
+                logger.info("[%s] Saved curated dataset to %s", name, out)
 
             status = "success"
-            message = f"Processed OK; missing_rxn={int(missing_rxn)}"
+            message = "Processed OK"
             break
+
         except Exception as exc:
-            tb = traceback.format_exc()
-            logger.exception("[%s] attempt %d failed: %s", name, attempt, exc)
             last_exc = exc
             message = str(exc)
-            # keep trying until retries exhausted
-    end_time = time.time()
-    time_s = end_time - start_time
-    # truncate long messages
+            logger.exception("[%s] attempt %d failed: %s", name, attempt, exc)
+
+    end = time.time()
+    time_s = round(end - start, 3)
+
     if message is None:
         message = ""
     if len(message) > 400:
@@ -440,97 +963,75 @@ def process_single_entry(
         "out": out,
         "status": status,
         "message": message,
-        "input_rows": (
-            int(input_rows)
-            if input_rows is not None
-            and not (isinstance(input_rows, float) and math.isnan(input_rows))
+        "input_size": (
+            int(input_size)
+            if input_size is not None
+            and not isinstance(input_size, float)
+            and not (isinstance(input_size, float) and math.isnan(input_size))
             else None
         ),
-        "output_rows": (
-            int(output_rows)
-            if output_rows is not None
-            and not (isinstance(output_rows, float) and math.isnan(output_rows))
-            else None
+        "processed_items": (
+            int(processed_count) if processed_count is not None else None
         ),
         "saved": bool(saved),
-        "time_s": round(time_s, 3),
+        "time_s": time_s,
     }
     return result
 
 
-def load_config_file(path: Path) -> Dict[str, Dict[str, str]]:
-    text = path.read_text(encoding="utf-8")
-    try:
-        return json.loads(text)
-    except Exception:
-        try:
-            import yaml  # type: ignore
-
-            return yaml.safe_load(text)
-        except Exception as e:
-            raise RuntimeError("Config must be valid JSON or YAML") from e
+# ---------------------------------------------------------------------------
+# CLI
+# ---------------------------------------------------------------------------
 
 
 def parse_args():
     p = argparse.ArgumentParser(
-        description="Build classification datasets (curate -> save) with summary."
+        description="Build classification datasets (load CSV -> curate -> save)."
     )
     p.add_argument(
-        "--config", help="JSON/YAML config file; if omitted DEFAULT_CONFIG is used."
+        "--config",
+        help="JSON/YAML config file overriding DEFAULT_CONFIG.",
+    )
+    p.add_argument(
+        "--src",
+        help="Process a single source URL or local path (overrides config).",
+    )
+    p.add_argument("--out", help="Output path for --src (required with --src).")
+    p.add_argument(
+        "--curate",
+        choices=sorted(CURATORS.keys()),
+        help="Curator name to use for --src (e.g. uspto, schneider, tpl, syntemp, ecreact).",
+    )
+    p.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Do everything except saving files.",
+    )
+    p.add_argument(
+        "--retries",
+        type=int,
+        default=2,
+        help="Retries for load/curate (default: 2).",
+    )
+    p.add_argument(
+        "--log-level",
+        default="INFO",
+        help="Logging level (DEBUG/INFO/WARNING/ERROR).",
+    )
+    p.add_argument(
+        "--write-default",
+        help="Write the builtin DEFAULT_CONFIG JSON (without functions) to this path and exit.",
     )
     p.add_argument(
         "--entries",
         help="Comma-separated subset of config keys to process (default: all).",
     )
     p.add_argument(
-        "--src", help="Process a single source URL/local_path (overrides config)."
-    )
-    p.add_argument("--out", help="Output path when using --src (required).")
-    p.add_argument(
-        "--dry-run", action="store_true", help="Do everything except saving files."
-    )
-    p.add_argument("--retries", type=int, default=2, help="Load/process retries.")
-    p.add_argument("--write-default", help="Write DEFAULT_CONFIG to file and exit.")
-    p.add_argument("--log-level", default="INFO", help="Logging level.")
-    p.add_argument(
         "--summary-out",
         default="reports/classification_summary.csv.gz",
         help="Path to write summary CSV (gzipped).",
     )
     return p.parse_args()
-
-
-def _print_summary_table(results):
-    # pretty print with tabulate if available
-    try:
-        from tabulate import tabulate  # type: ignore
-
-        # choose columns and order
-        cols = [
-            "name",
-            "status",
-            "input_rows",
-            "output_rows",
-            "saved",
-            "time_s",
-            "message",
-        ]
-        table = [[r.get(c) for c in cols] for r in results]
-        print(tabulate(table, headers=cols, tablefmt="github"))
-    except Exception:
-        pd = ensure_pandas()
-        df = pd.DataFrame(results)
-        # show a compact view
-        display_cols = [
-            "name",
-            "status",
-            "input_rows",
-            "output_rows",
-            "saved",
-            "time_s",
-            "message",
-        ]
-        print(df[display_cols].to_string(index=False))
 
 
 def main():
@@ -541,25 +1042,49 @@ def main():
     )
     logger.info("build_classification_dataset starting")
 
+    # Write default config (only serializable bits)
     if args.write_default:
         outp = Path(args.write_default)
         outp.parent.mkdir(parents=True, exist_ok=True)
-        outp.write_text(json.dumps(DEFAULT_CONFIG, indent=2), encoding="utf-8")
+
+        serializable_cfg: Dict[str, Dict[str, Any]] = {}
+        for name, info in DEFAULT_CONFIG.items():
+            serializable_cfg[name] = {
+                "src": info.get("src"),
+                "out": info.get("out"),
+                "curate": info.get("curate"),
+                "curate_kwargs": info.get("curate_kwargs", {}),
+            }
+
+        outp.write_text(json.dumps(serializable_cfg, indent=2), encoding="utf-8")
         logger.info("Wrote default config to %s", outp)
         return
 
     results = []
 
-    # single src shortcut
+    # Single-source quick path
     if args.src:
         if not args.out:
             raise SystemExit("When --src is provided you must also provide --out")
+        if not args.curate:
+            raise SystemExit(
+                "When --src is provided you must also specify --curate "
+                f"from: {sorted(CURATORS.keys())}"
+            )
+
         res = process_single_entry(
-            "single", args.src, args.out, dry_run=args.dry_run, retries=args.retries
+            "single",
+            args.src,
+            args.out,
+            args.curate,
+            curate_kwargs={},
+            dry_run=args.dry_run,
+            retries=args.retries,
         )
         results.append(res)
+
     else:
-        # load config or use default
+        # Use config (either external or built-in)
         if args.config:
             cfg_path = Path(args.config)
             if not cfg_path.exists():
@@ -568,55 +1093,84 @@ def main():
         else:
             cfg = DEFAULT_CONFIG
             logger.info(
-                "No config provided: using DEFAULT_CONFIG with %d entries", len(cfg)
+                "No config provided: using DEFAULT_CONFIG with %d entries",
+                len(cfg),
             )
 
-        entries = None
+        entries: Optional[Sequence[str]] = None
         if args.entries:
             entries = [e.strip() for e in args.entries.split(",") if e.strip()]
+            logger.info("Processing subset entries: %s", entries)
 
         for name, info in cfg.items():
             if entries and name not in entries:
                 logger.debug("Skipping %s (not requested)", name)
                 continue
+
             if not isinstance(info, dict) or "src" not in info:
                 logger.warning(
-                    "Skipping invalid config entry %s (expected dict with 'src')", name
+                    "Skipping invalid config entry %s (expected dict with 'src')",
+                    name,
                 )
                 continue
+
             src = info["src"]
             out = info.get("out") or f"Data/classification/{name}.csv.gz"
-            logger.info("Processing '%s': %s -> %s", name, src, out)
+            curate_name = info.get("curate")
+            if not curate_name:
+                logger.warning("Skipping %s: no 'curate' field in config entry", name)
+                continue
+            curate_kwargs = info.get("curate_kwargs") or {}
+
+            logger.info(
+                "Entry '%s': %s -> %s (curate=%s)",
+                name,
+                src,
+                out,
+                curate_name,
+            )
+
             try:
                 res = process_single_entry(
-                    name, src, out, dry_run=args.dry_run, retries=args.retries
+                    name,
+                    src,
+                    out,
+                    curate_name,
+                    curate_kwargs=curate_kwargs,
+                    dry_run=args.dry_run,
+                    retries=args.retries,
                 )
             except Exception as exc:
-                logger.exception("Failed to process %s: %s", name, exc)
+                logger.exception("Failed to process entry %s: %s", name, exc)
+                msg = str(exc)
+                if len(msg) > 400:
+                    msg = msg[:400] + "...(truncated)"
                 res = {
                     "name": name,
                     "src": src,
                     "out": out,
                     "status": "failed",
-                    "message": str(exc)[:400]
-                    + ("...(truncated)" if len(str(exc)) > 400 else ""),
-                    "input_rows": None,
-                    "output_rows": None,
+                    "message": msg,
+                    "input_size": None,
+                    "processed_items": None,
                     "saved": False,
                     "time_s": None,
                 }
+
             results.append(res)
 
     # Print and save summary
     _print_summary_table(results)
 
-    # save summary as gzipped csv
-    pd = ensure_pandas()
-    summary_df = pd.DataFrame(results)
-    summary_out = Path(args.summary_out)
-    summary_out.parent.mkdir(parents=True, exist_ok=True)
-    summary_df.to_csv(summary_out, index=False, compression="gzip")
-    logger.info("Wrote summary to %s", summary_out)
+    try:
+        pd = _ensure_pandas()
+        summary_df = pd.DataFrame(results)
+        summary_out = Path(args.summary_out)
+        summary_out.parent.mkdir(parents=True, exist_ok=True)
+        summary_df.to_csv(summary_out, index=False, compression="gzip")
+        logger.info("Wrote summary to %s", summary_out)
+    except Exception:
+        logger.exception("Failed to write summary CSV; printing only.")
 
     logger.info("build_classification_dataset finished")
 
