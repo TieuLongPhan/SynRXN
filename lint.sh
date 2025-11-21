@@ -32,6 +32,8 @@ fi
 # run flake8 on repository root; allow extra args to be passed through
 # Use "$ROOT" to ensure consistent path
 $FLAKE8_CMD "$ROOT" \
+# Use "$ROOT" to ensure consistent path
+$FLAKE8_CMD "$ROOT" \
   --count \
   --statistics \
   --max-complexity=16 \
