@@ -32,6 +32,7 @@ all = [
   "scikit-posthocs>=0.11.4",
   "scipy>=1.16.2",
   "seaborn>=0.13.0",
+  "synrbl>=1.0.4"
 ]
 
 docs = [
