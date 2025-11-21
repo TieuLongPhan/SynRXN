@@ -207,17 +207,20 @@ marimo/_lsp/
 __marimo__/
 
 # Data/*
-
-script/chemprop_zenodo/*
-
 test.ipynb
 Data/property/uspto_yield.csv.gz
 Data/property/suzuki_miyaura.csv.gz
 manifest.json
 CITATION.cff
 *.ipynb
-Data/Benchmark/*
+Data/Benchmark/drfp/*
+Data/Benchmark/rxnfp/*
 Data/results_benchmark/runs/*
 results_benchmark/summary_metrics_classification.csv
 results_benchmark/summary.csv
 results_benchmark/*
+
+reports/*
+chemprop_zenodo/*
+script/notebook/*
+docs/*

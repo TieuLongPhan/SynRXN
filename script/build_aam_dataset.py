@@ -51,7 +51,7 @@ DEFAULT_CONFIG: Dict[str, Dict[str, str]] = {
     },
     "uspto3k": {
         "src": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/main/Data/AAM/results_benchmark/uspto_3k/uspto_3k_aam_reactions.json.gz",
-        "out": "Data/aam/uspto3k.csv.gz",
+        "out": "Data/aam/uspto_3k.csv.gz",
     },
 }
 
@@ -239,8 +239,16 @@ def process_single_entry(
             processed_count = len(processed_list)
             logger.info("[%s] process_aam produced %d items", name, processed_count)
 
+            for key, value in enumerate(processed_list):
+                value["original_id"] = value["R-id"]
+                value["r_id"] = f"{name}_{key+1}"
+
             # make DataFrame
             df = pd.DataFrame(processed_list)
+            df.drop(columns=["R-id"], inplace=True)
+            # df.drop(['R-id'], inplace=True)
+            df = df[["r_id"] + [c for c in df.columns if c != "r_id"]]
+
             logger.info(
                 "[%s] DataFrame created with shape %s", name, getattr(df, "shape", None)
             )
@@ -249,6 +257,8 @@ def process_single_entry(
                 logger.info("[%s] dry-run: skipping save to %s", name, out)
                 saved = False
             else:
+                # df.rename(columns={"ground_truth": "aam"}, inplace=True)
+
                 saver(df, out)
                 saved = True
                 logger.info("[%s] Saved DataFrame to %s", name, out)

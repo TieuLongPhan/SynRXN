@@ -6,7 +6,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # default exclude patterns (comma-separated)
-EXCLUDE=".git,__pycache__,.venv,venv,env,build,dist,.eggs,.mypy_cache,.pytest_cache,.cache,Data,script,build_manifest.py,data_loader.py"
+EXCLUDE=".git,__pycache__,.venv,venv,env,build,dist,.eggs,.mypy_cache,.pytest_cache,.cache,Data,script,build_manifest.py,data_loader.py,auto_test.py"
 
 # helper: print diagnostic info
 echo "[lint] running from ROOT=$ROOT"
