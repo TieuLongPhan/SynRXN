@@ -1,0 +1,756 @@
+{
+  "generated_at": "2025-11-21T15:03:23Z",
+  "dataset": {
+    "title": "synrxn: A Benchmarking Framework and Open Data Repository for Computer-Aided Synthesis Planning",
+    "version": "0.0.8",
+    "description": "Reaction Database for benchmarking",
+    "doi": "10.5281/zenodo.17297723",
+    "authors": [
+      {
+        "name": "Tieu Long Phan",
+        "email": "tieu@bioinf.uni-leipzig.de"
+      }
+    ],
+    "files": [
+      {
+        "key": "aam/ecoli.csv.gz",
+        "size": 114116,
+        "sha256": "9d7bb5d409e088efc9110e3906f3c29463b6d1b697e95d60f46d3996ab7a4523",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 274,
+        "columns": [
+          "r_id",
+          "ground_truth",
+          "rxn_mapper",
+          "graphormer",
+          "local_mapper",
+          "rdt",
+          "rxn",
+          "original_id"
+        ]
+      },
+      {
+        "key": "aam/golden.csv.gz",
+        "size": 572468,
+        "sha256": "b0b5e2b1d3d8684ead135fd5610aeeab97ee798264cb1c83ab3dbdf3b03e283f",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 1759,
+        "columns": [
+          "r_id",
+          "ground_truth",
+          "rxn_mapper",
+          "graphormer",
+          "local_mapper",
+          "rdt",
+          "rxn",
+          "original_id"
+        ]
+      },
+      {
+        "key": "aam/natcomm.csv.gz",
+        "size": 142385,
+        "sha256": "dda015a9f94ea34c2b28028c2896dfe4d2709d0b427fa759e00915f8cf40aab4",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 492,
+        "columns": [
+          "r_id",
+          "ground_truth",
+          "rxn_mapper",
+          "graphormer",
+          "local_mapper",
+          "rdt",
+          "rxn",
+          "original_id"
+        ]
+      },
+      {
+        "key": "aam/recon3d.csv.gz",
+        "size": 221459,
+        "sha256": "1b2268f06ac39445377cfdb8ccba5f04569efbfceb4c696f8d2bc5a0a98007b6",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 383,
+        "columns": [
+          "r_id",
+          "ground_truth",
+          "rxn_mapper",
+          "graphormer",
+          "local_mapper",
+          "rdt",
+          "rxn",
+          "original_id"
+        ]
+      },
+      {
+        "key": "aam/uspto_3k.csv.gz",
+        "size": 1275421,
+        "sha256": "b26601ef06b31c0f45cbec9711e56ff63553780b5f4ec403663d317850baab01",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 3001,
+        "columns": [
+          "r_id",
+          "ground_truth",
+          "rxn_mapper",
+          "graphormer",
+          "local_mapper",
+          "rdt",
+          "rxn",
+          "original_id"
+        ]
+      },
+      {
+        "key": "classification/ecreact.csv.gz",
+        "size": 2874798,
+        "sha256": "c730e5bd196dc69b5ebc421cce37010162f7e129f149b28196f0069ee242bdcd",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 185735,
+        "columns": [
+          "r_id",
+          "rxn",
+          "ec1",
+          "ec2",
+          "ec3",
+          "split",
+          "orig_index"
+        ]
+      },
+      {
+        "key": "classification/schneider_b.csv.gz",
+        "size": 1737472,
+        "sha256": "72c6560f458c3777f1e0f1e73c3a35ac7974cc4a49e3ae6441421d4e91bf86b2",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 50001,
+        "columns": [
+          "r_id",
+          "rxn",
+          "label",
+          "split"
+        ]
+      },
+      {
+        "key": "classification/schneider_u.csv.gz",
+        "size": 1517500,
+        "sha256": "fbd6e409459354ade4a6d15aeaf2206694f7df335a315384ca7dbcf06d2ee5b4",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 50001,
+        "columns": [
+          "r_id",
+          "rxn",
+          "label",
+          "split"
+        ]
+      },
+      {
+        "key": "classification/syntemp.csv.gz",
+        "size": 1478384,
+        "sha256": "5ace42ff5d956a4c5180ca854bbbd441bdbac5b71903a6bcd4684bb77320c1ed",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 43442,
+        "columns": [
+          "orig_index",
+          "r_id",
+          "rxn",
+          "label_0",
+          "label_1",
+          "label_2"
+        ]
+      },
+      {
+        "key": "classification/tpl_b.csv.gz",
+        "size": 17266004,
+        "sha256": "106cec5db1b37757483d7d99f2d9dde34e89315af54fdb9aa2e3cf0770fb4dbc",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 445116,
+        "columns": [
+          "r_id",
+          "rxn",
+          "label",
+          "split"
+        ]
+      },
+      {
+        "key": "classification/tpl_u.csv.gz",
+        "size": 15207379,
+        "sha256": "6b6a649e1cc13f17418a4ce3a8b63663a7f66c1777abfc66c16bce8e0efa2912",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 445116,
+        "columns": [
+          "r_id",
+          "rxn",
+          "label",
+          "split"
+        ]
+      },
+      {
+        "key": "classification/uspto_50k_b.csv.gz",
+        "size": 1474615,
+        "sha256": "098f85a386e25742791e5b87b8be8a7a090e920b6eca5f2b85452aa913ddba51",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 50017,
+        "columns": [
+          "r_id",
+          "rxn",
+          "label",
+          "split"
+        ]
+      },
+      {
+        "key": "classification/uspto_50k_u.csv.gz",
+        "size": 1398804,
+        "sha256": "355d38f0ef86b6546bfd24bbee97ebfe09d16c9ffed8b13282dc336734421fdb",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 50017,
+        "columns": [
+          "r_id",
+          "rxn",
+          "label",
+          "split"
+        ]
+      },
+      {
+        "key": "property/b97xd3.csv.gz",
+        "size": 641403,
+        "sha256": "33f881612842378a6cff97b2db0c99b1c4877a7e81a318129a26dd58e9702d73",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 16366,
+        "columns": [
+          "r_id",
+          "aam",
+          "ea",
+          "dh"
+        ]
+      },
+      {
+        "key": "property/cycloadd.csv.gz",
+        "size": 381702,
+        "sha256": "afd03a88ef6268350f2c176b70a67396ff1902b85e6742bb2ac3ef0d9ca84004",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 5270,
+        "columns": [
+          "r_id",
+          "aam",
+          "G_act",
+          "G_r",
+          "split"
+        ]
+      },
+      {
+        "key": "property/e2.csv.gz",
+        "size": 31804,
+        "sha256": "2b2177235aeddf06b9fa29abe9836e6a3c520ccdbd1530b9757f8e8c4c23d99e",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 1265,
+        "columns": [
+          "r_id",
+          "aam",
+          "ea",
+          "split"
+        ]
+      },
+      {
+        "key": "property/e2sn2.csv.gz",
+        "size": 79331,
+        "sha256": "d3b27039841da7ea9bb18e511271fbaddfcb61d826ec1c5e31b50f71c1d3e044",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 3626,
+        "columns": [
+          "r_id",
+          "aam",
+          "ea"
+        ]
+      },
+      {
+        "key": "property/lograte.csv.gz",
+        "size": 20166,
+        "sha256": "ca79d7de36fde44961dd093a53c999356ac9aacf3aee524eb18bf90219f120f0",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 779,
+        "columns": [
+          "r_id",
+          "aam",
+          "lograte"
+        ]
+      },
+      {
+        "key": "property/phosphatase.csv.gz",
+        "size": 1137562,
+        "sha256": "aca656158cb5b96cfa3378234641796e5becdf6647d7af0ae9f91b9e53639917",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 33355,
+        "columns": [
+          "r_id",
+          "aam",
+          "Conversion",
+          "onehot"
+        ]
+      },
+      {
+        "key": "property/rad6re.csv.gz",
+        "size": 866920,
+        "sha256": "fd78145b61bf50e0267f61ae5e45681020a7de7d3fe552da26feabc3096db1d5",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 31924,
+        "columns": [
+          "r_id",
+          "aam",
+          "dh"
+        ]
+      },
+      {
+        "key": "property/rdb7.csv.gz",
+        "size": 640317,
+        "sha256": "5980529ee8cf8ab0922df24048c69ba131d2f7ad623f5cdf9d7fb67b6466849e",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 23853,
+        "columns": [
+          "r_id",
+          "aam",
+          "ea",
+          "split"
+        ]
+      },
+      {
+        "key": "property/rgd1.csv.gz",
+        "size": 13199958,
+        "sha256": "74c5fbfd38b24409c17ddf2d8dc105ad728479df8a17b2bcf65c51a3ed8bed30",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 353985,
+        "columns": [
+          "r_id",
+          "aam",
+          "ea",
+          "split"
+        ]
+      },
+      {
+        "key": "property/sn2.csv.gz",
+        "size": 58133,
+        "sha256": "2e3c58220e44dbf7597088861d642378abead0048f1a6c12f99771a0719db2ac",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 2362,
+        "columns": [
+          "r_id",
+          "aam",
+          "ea",
+          "split"
+        ]
+      },
+      {
+        "key": "property/snar.csv.gz",
+        "size": 5965,
+        "sha256": "df8df5b8bc8b74910c7fe9960a8dd200182c5ef1bf91de906286cb71bfe60bcd",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 504,
+        "columns": [
+          "r_id",
+          "rxn",
+          "ea"
+        ]
+      },
+      {
+        "key": "rbl/complex.csv.gz",
+        "size": 54517,
+        "sha256": "a2a2d887a65806fbd27596147f6209213cb3eedfbafd428370ec68586827db4c",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 1749,
+        "columns": [
+          "r_id",
+          "rxn",
+          "ground_truth"
+        ]
+      },
+      {
+        "key": "rbl/mbs.csv.gz",
+        "size": 14727,
+        "sha256": "d7cb14f9604328dcc86bd0ab10503d7649ff50a3d823a45cb02fb874bca1bd1d",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 492,
+        "columns": [
+          "r_id",
+          "rxn",
+          "ground_truth"
+        ]
+      },
+      {
+        "key": "rbl/mnc.csv.gz",
+        "size": 1090524,
+        "sha256": "ed66cd15303b63fd9e0e6ea0f0ad396bada423a36d5f290dec5ee7cdf447c6cf",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 33148,
+        "columns": [
+          "r_id",
+          "rxn",
+          "ground_truth"
+        ]
+      },
+      {
+        "key": "rbl/mos.csv.gz",
+        "size": 452394,
+        "sha256": "d8c6d663ad21cafba9dc64259ba435924926305af2b87a785795c289da39fc31",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 12782,
+        "columns": [
+          "r_id",
+          "rxn",
+          "ground_truth"
+        ]
+      },
+      {
+        "key": "synthesis/uspto_500.csv.gz",
+        "size": 4485501,
+        "sha256": "fad362c125f8fc6195d49748bbd9f381ca4c9d3f03935d82f457b350ab46bef1",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 143536,
+        "columns": [
+          "r_id",
+          "rxn",
+          "reagent",
+          "split"
+        ]
+      },
+      {
+        "key": "synthesis/uspto_50k.csv.gz",
+        "size": 4411638,
+        "sha256": "a23d355405f037cc4ecc751cf094003f3b64c115dd212f20d99015bc9ba05ac4",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 50017,
+        "columns": [
+          "r_id",
+          "aam",
+          "split",
+          "source"
+        ]
+      },
+      {
+        "key": "synthesis/uspto_mit.csv.errors.csv.gz",
+        "size": 1006,
+        "sha256": "ab7f1977e37c032bd9a0300d5cf699613768b78780ff904e15b44e5fd0d231a7",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 4,
+        "columns": [
+          "index",
+          "R-id",
+          "source",
+          "original",
+          "error"
+        ]
+      },
+      {
+        "key": "synthesis/uspto_mit.csv.gz",
+        "size": 57264696,
+        "sha256": "74dffc5bb8e5fdfb41c11676deb5fedb9bb63d28325bdfc719ea68d8b8d9f33b",
+        "mtime": "2025-11-21T15:03:18Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 479036,
+        "columns": [
+          "r_id",
+          "aam",
+          "split",
+          "rc"
+        ]
+      }
+    ],
+    "summary": {
+      "file_count": 32,
+      "total_bytes": 130119069,
+      "by_dir": {
+        "aam": {
+          "count": 5,
+          "bytes": 2325849
+        },
+        "classification": {
+          "count": 8,
+          "bytes": 42954956
+        },
+        "property": {
+          "count": 11,
+          "bytes": 17063261
+        },
+        "rbl": {
+          "count": 4,
+          "bytes": 1612162
+        },
+        "synthesis": {
+          "count": 4,
+          "bytes": 66162841
+        }
+      }
+    }
+  },
+  "provenance": {
+    "git_root": "/home/runner/work/SynRXN/SynRXN",
+    "commit": "166b2deef4981ca60bfc61cc6d138f943adf9830",
+    "branch": "main",
+    "remotes": "origin\thttps://github.com/TieuLongPhan/SynRXN (fetch)\norigin\thttps://github.com/TieuLongPhan/SynRXN (push)"
+  },
+  "project": {
+    "name": "synrxn",
+    "pyproject": null
+  },
+  "code": {
+    "manifest": {
+      "generated_at": "2025-11-21T15:03:32Z",
+      "repo_root": "/home/runner/work/SynRXN/SynRXN",
+      "subdirs": [
+        "synrxn"
+      ],
+      "entries": [
+        {
+          "key": "synrxn/__init__.py",
+          "size": 55,
+          "sha256": "0884f906efb4ef96cc6299958d31811c89710664276c0b8fb0cd6adffd47a5ff",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/__main__.py",
+          "size": 9234,
+          "sha256": "1f7977ad05c485122f30e5e96d3df4aa316789f72d9dc73a84f44e851349b2a9",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/baseline/__init__.py",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/baseline/classification.py",
+          "size": 7839,
+          "sha256": "51e371c58d9652672e78aff909019ec82d6a298f581bbd8e520461a5c78fff0b",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/baseline/property.py",
+          "size": 9404,
+          "sha256": "5bf26934ddd6ba955c6acae53dfb2715c4fa1cb8959c049f275fd99ef9ebef14",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/build_manifest.py",
+          "size": 38534,
+          "sha256": "f6688dd39be7a8de23a0c14d79b72f4418451dc8fbbdb6292ebde5d66f86dda8",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/cluster/__init__.py",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/cluster/butina.py",
+          "size": 8860,
+          "sha256": "8623790d22a0ede93b43ddc4383486b8b00841ca95f5a8f12bddf7d16a477c91",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/cluster/ecfp.py",
+          "size": 11262,
+          "sha256": "99ce9980a447651e45e469653de9a9bcb841a8645d0a97b577d44fc3ed1695af",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/cluster/wlfp.py",
+          "size": 10596,
+          "sha256": "729036e18fa527ce1006d68bc720fdc7e1d32c921002089c4bf86b00e27a1fd4",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/data/__init__.py",
+          "size": 126,
+          "sha256": "da85f9b3ea3c34cbfe2997ebbec2b26d11c30b3eb99c9364c046bdff73783a22",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/data/constants.py",
+          "size": 785,
+          "sha256": "86a6d7098e4ac97cd4fd41dd945d520b68a5595453ee1a74afb12a626960f252",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/data/data_loader.py",
+          "size": 34442,
+          "sha256": "f469a14e96b9c362ba60cca99ebc41312aa5edf5d2d3d2ce7fdd157eacea66bb",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/data/github_client.py",
+          "size": 4170,
+          "sha256": "1dfe84c187af8da740a566da307c6043dd5aa63878246eb5cf5b189a28faef50",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/data/utils.py",
+          "size": 1960,
+          "sha256": "f4db45e4c046fbf3e920d3aeca79c69fe21cb37844d4efb728d068e06514650e",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/data/zenodo_client.py",
+          "size": 14446,
+          "sha256": "6529d6b7e3ea3cc047f22d05fdb4250a955681485120ed60579c5424d199ec70",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/io/__init__.py",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/io/io.py",
+          "size": 7194,
+          "sha256": "c3fd36fd8a4179c920054df318658fa693b811b712d30655ef6456462bdab9bc",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/metrics/__init__.py",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/metrics/synthesis.py",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/metrics/template.py",
+          "size": 8472,
+          "sha256": "ab0ae867bc9541dd82063eedc42c4892077ba0ea872e7607abe6bcc87e873c7b",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/split/__init__.py",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/split/repeated_group_aware_kfold.py",
+          "size": 19443,
+          "sha256": "9f383e2a3ec0a798ffb7b50cbd6c822ab19c240a2785e5f9c8b455c4a69c3459",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/split/repeated_kfold.py",
+          "size": 18274,
+          "sha256": "1cf6a7d5d5f344892f9276ab2328f9d9c471fd9ecc52aeb4f56a53baebd4e861",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/statistics/__init__.py",
+          "size": 514,
+          "sha256": "2c9ac14c8fd537ed6e7ce7bb9611f96b088e18f0b899c5e0b9400e1c196af5f7",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/statistics/assumptions.py",
+          "size": 3850,
+          "sha256": "f3a101be564823c1fc027f36418f97fe4e3fdddbcfa419ea6ab6f6762973dd53",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/statistics/auto_test.py",
+          "size": 16444,
+          "sha256": "48573efef150fce3724483badaf2670610f33148ad400640581ff23730172497",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/statistics/common.py",
+          "size": 5067,
+          "sha256": "fb7ba48bed1815e6bf19570fa4db1bd94b40934f879f2fbdabbda703c532d36b",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/statistics/nonparametric.py",
+          "size": 4620,
+          "sha256": "07d0d52d6f5a432058d79d186c3ba5bfd27ff5d49147ddcf1f3b594594518f15",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/statistics/parametric.py",
+          "size": 14657,
+          "sha256": "5f20c80869fbd9014ec027ab69ff2d7d5a95b479259c7494f1b466d9141e86de",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/statistics/runner.py",
+          "size": 2994,
+          "sha256": "1a2b7bab8ebb3d8caaa38c4063085f18e87eac4387f2eca46a39013cb9d87d79",
+          "mtime": "2025-11-21T15:03:18Z"
+        },
+        {
+          "key": "synrxn/verify_manifest.py",
+          "size": 3717,
+          "sha256": "1fb2c631e62a47628ea08892908694fe070dc1b3478f9e3a3abf852125896f4a",
+          "mtime": "2025-11-21T15:03:18Z"
+        }
+      ],
+      "count": 32
+    }
+  }
+}

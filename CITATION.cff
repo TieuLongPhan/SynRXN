@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: 'synrxn: A Benchmarking Framework and Open Data Repository for Computer-Aided
+  Synthesis Planning'
+version: 0.0.8
+type: dataset
+message: If you use this work, please cite it using this file.
+abstract: Reaction Database for benchmarking
+doi: 10.5281/zenodo.17297723
+url: https://doi.org/10.5281/zenodo.17297723
+repository-code: https://github.com/TieuLongPhan/SynRXN
+date-released: '2025-11-21'
+authors:
+- given-names: Tieu Long
+  family-names: Phan
+  email: tieu@bioinf.uni-leipzig.de
+identifiers:
+- type: commit
+  value: 166b2deef4981ca60bfc61cc6d138f943adf9830
+- type: doi
+  value: 10.5281/zenodo.17297723
