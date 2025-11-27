@@ -43,6 +43,15 @@ reproduced exactly across machines, time, and library versions.
 If you are new to **SynRXN**, this page shows how to install the package and run
 a minimal sanity check.
 
+.. _fig:synrxn-workflow:
+
+.. figure:: figure/synrxn.png
+   :alt: SynRXN pipeline
+   :align: center
+
+   Figure 1 — Overview of the SynRXN pipeline.
+
+
 Installation
 ------------
 

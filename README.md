@@ -9,6 +9,7 @@
 **Reaction Database for Benchmarking**
 SynRXN is a curated, provenance-tracked collection of reaction datasets and evaluation manifests designed for reproducible benchmarking of reaction-informatics tasks (rebalancing, atom-atom mapping, reaction classification, property prediction, and synthesis/retrosynthesis). It provides standardized splits, manifest files (RNG seeds & split indices), and lightweight utilities to load and inspect datasets for fair, reproducible model comparison.
 
+![SynRXN Workflow](https://raw.githubusercontent.com/TieuLongPhan/SynRXN/main/doc/figure/synrxn.png)
 
 ## Installation
 
