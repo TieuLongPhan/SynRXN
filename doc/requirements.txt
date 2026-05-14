@@ -1,0 +1,5 @@
+sphinx>=8.2.3
+pydata-sphinx-theme>=0.17,<0.18
+sphinx-copybutton>=0.5
+sphinxcontrib-bibtex>=2.6
+pandas>=2.0

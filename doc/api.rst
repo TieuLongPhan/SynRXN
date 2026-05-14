@@ -3,103 +3,124 @@
 API Reference
 =============
 
-This page provides an overview of the public Python API exposed by
-:mod:`synrxn`. It focuses on:
+This section documents the public Python API exposed by SynRXN. For practical
+usage examples, start with :doc:`Getting Started <getting_started>` and
+:ref:`tutorials-and-examples`.
 
-- dataset access via :class:`synrxn.data.DataLoader`,
-- splitting utilities via :class:`synrxn.split.repeated_kfold.RepeatedKFoldsSplitter`,
-- the command-line interface entry point (:mod:`synrxn.main`), and
+.. raw:: html
 
-If you are looking for high-level usage examples, see
-:doc:`Getting Started <getting_started>` and :ref:`tutorials-and-examples`.
+   <div class="synrxn-card-grid">
+     <a class="synrxn-card" href="#data-access-synrxn-data">
+       <strong><i class="fa-solid fa-database" aria-hidden="true"></i> Data access</strong>
+       <span>Load curated benchmark tables and discover available records.</span>
+     </a>
+     <a class="synrxn-card" href="#splitting-utilities-synrxn-split-repeated-kfold">
+       <strong><i class="fa-solid fa-shuffle" aria-hidden="true"></i> Splitting</strong>
+       <span>Create reproducible repeated k-fold and train/validation/test splits.</span>
+     </a>
+     <a class="synrxn-card" href="#command-line-interface-synrxn-main">
+       <strong><i class="fa-solid fa-terminal" aria-hidden="true"></i> CLI</strong>
+       <span>Inspect developer commands for rebuilding datasets and manifests.</span>
+     </a>
+   </div>
 
--------------------------------
 Data access: :mod:`synrxn.data`
 -------------------------------
 
 The :mod:`synrxn.data` module is the main entry point for accessing curated
 datasets and their manifests.
 
+Typical responsibilities of :class:`synrxn.data.DataLoader` include:
+
+- listing datasets for a task family,
+- resolving data sources such as Zenodo, GitHub tags, exact commits, or latest,
+- managing local cache directories,
+- verifying or tracking downloaded assets when metadata is available,
+- returning records as pandas DataFrames.
+
 .. automodule:: synrxn.data
    :members:
    :undoc-members:
    :show-inheritance:
 
-Key classes
-~~~~~~~~~~~
+Minimal usage
+~~~~~~~~~~~~~
 
-.. autosummary::
-   :toctree: _autosummary
-   :nosignatures:
+.. code-block:: python
 
-   synrxn.data.DataLoader
+   from pathlib import Path
+   from synrxn.data import DataLoader
 
-Typical responsibilities of :class:`synrxn.data.DataLoader` include:
+   loader = DataLoader(
+       task="classification",
+       source="zenodo",
+       version="1.0.0",
+       cache_dir=Path("~/.cache/synrxn").expanduser(),
+   )
 
-- listing available datasets for a given task (classification, property, …),
-- resolving data sources (Zenodo, GitHub release, specific commit, latest),
-- managing local caching directories, and
-- returning data in a convenient tabular form (e.g. Pandas ``DataFrame``).
+   print(loader.available_names())
+   df = loader.load("schneider_b")
 
-For concrete examples of how to configure and use :class:`~synrxn.data.DataLoader`,
-see :ref:`tutorials-and-examples`.
-
-----------------------------------------------------------
 Splitting utilities: :mod:`synrxn.split.repeated_kfold`
-----------------------------------------------------------
+-------------------------------------------------------
 
-The :mod:`synrxn.split.repeated_kfold` module provides tools for
-reproducible repeated k-fold splitting of datasets.
+The :mod:`synrxn.split.repeated_kfold` module provides tools for reproducible
+repeated k-fold splitting of datasets.
+
+Typical use cases include:
+
+- generating repeated k-fold splits for property and classification tasks,
+- deriving train/validation/test partitions via a user-specified validation
+  ratio,
+- preserving label distributions through stratified splitting when supported,
+- exporting/importing split indices for exact reproducibility.
 
 .. automodule:: synrxn.split.repeated_kfold
    :members:
    :undoc-members:
    :show-inheritance:
 
-Key classes
-~~~~~~~~~~~
+Minimal usage
+~~~~~~~~~~~~~
 
-.. autosummary::
-   :toctree: _autosummary
-   :nosignatures:
+.. code-block:: python
 
-   synrxn.split.repeated_kfold.RepeatedKFoldsSplitter
+   from synrxn.split.repeated_kfold import RepeatedKFoldsSplitter
 
-Typical use cases include:
+   splitter = RepeatedKFoldsSplitter(
+       n_splits=5,
+       n_repeats=3,
+       random_state=2026,
+       val_ratio=0.1,
+   )
 
-- generating repeated k-fold splits for property and classification tasks,
-- deriving approximate train/validation/test splits via a user-specified ratio,
-- preserving label distributions via stratified splitting, and
-- exporting/importing split indices for exact reproducibility.
+   split_indices = splitter.split(df)
 
-Examples of end-to-end usage are provided in
-:ref:`tutorials-and-examples`.
+Command-line interface: :mod:`synrxn.__main__`
+----------------------------------------------
 
-------------------------------------------------
-Command-line interface: :mod:`synrxn.main`
-------------------------------------------------
-
-The :mod:`synrxn.main` module exposes the command-line interface used when
-invoking:
-
-.. code-block:: bash
-
-   python -m synrxn ...
-
-In particular, it provides the ``build`` subcommand that can be used to
-rebuild datasets and manifests from their original sources (intended for
-advanced users and developers).
-
-.. automodule:: synrxn.main
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Depending on your installed version, you can inspect available commands via:
+The :mod:`synrxn.__main__` module exposes the command-line interface used when
+invoking SynRXN as a module.
 
 .. code-block:: bash
 
    python -m synrxn --help
+   python -m synrxn build --help
 
-and consult :ref:`tutorials-and-examples` for concrete ``python -m synrxn build``
-usage patterns.
+The ``build`` subcommand is intended for maintainers and advanced users who need
+to rebuild datasets or manifests from original sources.
+
+.. automodule:: synrxn.__main__
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+API usage guidance
+------------------
+
+- Use :class:`synrxn.data.DataLoader` for all dataset access instead of hardcoding
+  local paths.
+- Prefer ``source="zenodo"`` for published experiments.
+- Prefer exact commit SHAs for development snapshots.
+- Export split indices whenever generated splits are part of a benchmark.
+- Keep package version, data version, and split settings in experiment logs.

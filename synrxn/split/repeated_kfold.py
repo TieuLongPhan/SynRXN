@@ -56,10 +56,13 @@ class RepeatedKFoldsSplitter:
     means the holdout is split val:test = 1:1.
 
     Notes on stratification:
+
     - Pass `y` (array-like) to stratify by labels (sklearn-conventional).
     - Alternatively pass `stratify` to `split(...)` or `split_with_val(...)`. `stratify` may be:
+
         - a column name (str) when `X` is a pandas.DataFrame, or
         - an array-like of the same length as `X`.
+
     - If both `y` and `stratify` are provided, `stratify` takes precedence.
     - If stratification is requested but not possible (e.g., a class has fewer than `n_splits` members),
       the splitter falls back to non-stratified `KFold` and emits a warning.

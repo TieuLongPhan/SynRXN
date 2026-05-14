@@ -1,4 +1,9 @@
 # SynRXN
+
+<p align="center">
+  <img src="doc/_static/synrxn-logo.svg" alt="SynRXN logo" width="320">
+</p>
+
 [![PyPI version](https://img.shields.io/pypi/v/synrxn.svg)](https://pypi.org/project/synrxn/)
 [![Release](https://img.shields.io/github/v/release/tieulongphan/synrxn.svg)](https://github.com/tieulongphan/synrxn/releases)
 [![Last Commit](https://img.shields.io/github/last-commit/tieulongphan/synrxn.svg)](https://github.com/tieulongphan/synrxn/commits)
@@ -6,140 +11,150 @@
 [![CI](https://github.com/tieulongphan/synrxn/actions/workflows/test-and-lint.yml/badge.svg?branch=main)](https://github.com/tieulongphan/synrxn/actions/workflows/test-and-lint.yml)
 [![Stars](https://img.shields.io/github/stars/tieulongphan/synrxn.svg?style=social&label=Star)](https://github.com/tieulongphan/synrxn/stargazers)
 
-**Reaction Database for Benchmarking**
-SynRXN is a curated, provenance-tracked collection of reaction datasets and evaluation manifests designed for reproducible benchmarking of reaction-informatics tasks (rebalancing, atom-atom mapping, reaction classification, property prediction, and synthesis/retrosynthesis). It provides standardized splits, manifest files (RNG seeds & split indices), and lightweight utilities to load and inspect datasets for fair, reproducible model comparison.
+**SynRXN is an open reaction benchmark repository for reproducible reaction-informatics evaluation.**
+
+SynRXN collects curated reaction datasets, canonical task folders, versioned data releases, and lightweight loading utilities for benchmarking atom-atom mapping, reaction classification, property prediction, reaction balancing, and synthesis/retrosynthesis workflows.
 
 ![SynRXN Workflow](https://raw.githubusercontent.com/TieuLongPhan/SynRXN/main/doc/figure/synrxn.png)
 
+## Highlights
+
+- **Five task families:** `aam`, `classification`, `property`, `rbl`, and `synthesis`.
+- **Consistent tabular format:** each dataset is a compressed CSV under `Data/<task>/<name>.csv.gz`.
+- **Stable identifiers:** most curated rows use `r_id`; task-specific columns store reactions, labels, targets, splits, mappings, or references.
+- **Version-aware access:** load data from Zenodo releases, GitHub tags, or exact Git commits.
+- **Reproducible benchmarking:** use published splits when present, or generate deterministic repeated k-fold splits through `synrxn.split`.
+
 ## Installation
 
-1. **Python Installation:**
-  Ensure that Python 3.11 or later is installed on your system. You can download it from [python.org](https://www.python.org/downloads/).
+SynRXN requires Python 3.11 or later.
 
-2. **Creating a Virtual Environment (Optional but Recommended):**
-  It's recommended to use a virtual environment to avoid conflicts with other projects or system-wide packages. Use the following commands to create and activate a virtual environment:
+```bash
+pip install synrxn
+```
 
-  ```bash
-  python -m venv synrxn-env
-  source synrxn-env/bin/activate  
-  ```
-  Or Conda
+Install optional dependencies when you need the broader tooling stack:
 
-  ```bash
-  conda create --name synrxn-env python=3.11
-  conda activate synrxn-env
-  ```
+```bash
+pip install "synrxn[all]"
+```
 
-3. **Install from PyPi:**
-  The easiest way to use SynTemp is by installing the PyPI package 
-  [synrxn](https://pypi.org/project/synrxn/).
+For development:
 
-  ```
-  pip install synrxn
-  ```
-  Optional if you want to install full version
-  ```
-  pip install synrxn[all]
-  ```
-## Example
+```bash
+git clone https://github.com/TieuLongPhan/SynRXN.git
+cd SynRXN
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+```
+
+## Quick Start
+
 ```python
-from synrxn.data import DataLoader
-from synrxn.split.repeated_kfold import RepeatedKFoldsSplitter
-
-# 1) Zenodo (stable release)
 from pathlib import Path
-from synrxn import DataLoader
+from synrxn.data import DataLoader
 
 dl = DataLoader(
     task="classification",
     source="zenodo",
-    version="0.0.6",
+    version="1.0.0",
     cache_dir=Path("~/.cache/synrxn").expanduser(),
 )
-print(dl.available_names())   # list available datasets
-df = dl.load("schneider_b")
-print(len(df), df.columns.tolist())
 
-# 2) GitHub release tag
-from pathlib import Path
-from synrxn.data import DataLoader
-
-dl = DataLoader(
-    task="classification",
-    source="github",
-    version="v0.0.6",
-    cache_dir=Path("~/.cache/synrxn").expanduser(),
-    gh_enable=True,
-)
 print(dl.available_names())
 df = dl.load("schneider_b")
-print(len(df))
+print(df.shape)
+print(df.columns.tolist())
+```
 
-# 3) GitHub commit (pin to SHA)
+Use an exact commit for development snapshots you want to reproduce later:
+
+```python
 from pathlib import Path
 from synrxn.data import DataLoader
 
 dl = DataLoader(
-    task="classification",
+    task="property",
     source="commit",
     version="3e1612e2199e8b0e369fce3ed9aff3dda68e4c32",
     cache_dir=Path("~/.cache/synrxn").expanduser(),
     gh_enable=True,
 )
-print(dl.available_names())
-df = dl.load("schneider_b")
-print(df.head(2))
 
-# 4) GitHub latest
+df = dl.load("b97xd3")
+print(df[["r_id", "ea", "dh"]].head())
+```
+
+## Data Concept
+
+The public data lives in `Data/` and is grouped by benchmark task:
+
+| Folder | Purpose | Example datasets | Core columns |
+| --- | --- | --- | --- |
+| `Data/aam/` | Atom-atom mapping comparison | `uspto_3k`, `golden`, `ecoli` | `ground_truth`, mapper outputs, `rxn` |
+| `Data/classification/` | Reaction class, template, and enzyme classification | `uspto_50k_b`, `tpl_u`, `ecreact` | `rxn`, labels, optional `split` |
+| `Data/property/` | Reaction property prediction | `b97xd3`, `rgd1`, `sn2` | `aam` or `rxn`, target values, optional `split` |
+| `Data/rbl/` | Reaction balancing and rebalancing | `mos`, `mnc`, `mbs`, `complex` | unbalanced `rxn`, balanced `ground_truth` |
+| `Data/synthesis/` | Synthesis and retrosynthesis datasets | `uspto_mit`, `uspto_50k`, `da` | reactions, split/source metadata, optional reagents |
+
+## Reproducible Splits
+
+```python
 from pathlib import Path
-from synrxn.data import DataLoader
-
-dl = DataLoader(
-    task="classification",
-    source="github",
-    version="latest",
-    cache_dir=Path("~/.cache/synrxn").expanduser(),
-    gh_enable=True,
-)
-print(dl.available_names())
-df = dl.load("schneider_b")
-print(df.shape)
-
-# Simple splitting example (property dataset)
 from synrxn.data import DataLoader
 from synrxn.split.repeated_kfold import RepeatedKFoldsSplitter
-from pathlib import Path
 
 dl = DataLoader(
     task="property",
-    source="commit",
-    version="latest",
+    source="zenodo",
+    version="1.0.0",
     cache_dir=Path("~/.cache/synrxn").expanduser(),
-    gh_enable=True,
 )
 df = dl.load("b97xd3")
 
 splitter = RepeatedKFoldsSplitter(
-    n_splits=5, n_repeats=2, ratio=(8,1,1), shuffle=True, random_state=1
+    n_splits=5,
+    n_repeats=2,
+    ratio=(8, 1, 1),
+    shuffle=True,
+    random_state=1,
 )
-
-splitter.prepare_splits(df, stratify=None)           
+splitter.prepare_splits(df, stratify=None)
 train_df, val_df, test_df = splitter.get_split(0, 0, as_frame=True)
 print(len(train_df), len(val_df), len(test_df))
 ```
 
-## Contributing
-- [Tieu-Long Phan](https://tieulongphan.github.io/)
+## Documentation
 
-## Publication
+- Documentation: https://synrxn.readthedocs.io/en/latest/
+- Data release: https://doi.org/10.5281/zenodo.17297258
+- Source code: https://github.com/TieuLongPhan/SynRXN
+- Issues: https://github.com/TieuLongPhan/SynRXN/issues
 
-[**SynRXN**: A Benchmarking Framework and Open Data Repository for Computer-Aided Synthesis Planning]()
+## Citation
 
+If you use SynRXN in your research, please cite:
+
+> Tieu-Long Phan, Nhu-Ngoc Nguyen Song, and Peter F. Stadler. SynRXN: An Open Benchmark and Curated Dataset for Computational Reaction Modeling. *Scientific Data* **13**, 625 (2026). https://doi.org/10.1038/s41597-026-07260-w
+
+```bibtex
+@article{phan2026synrxn,
+  title = {SynRXN: An Open Benchmark and Curated Dataset for Computational Reaction Modeling},
+  author = {Phan, Tieu-Long and Nguyen Song, Nhu-Ngoc and Stadler, Peter F.},
+  journal = {Scientific Data},
+  volume = {13},
+  pages = {625},
+  year = {2026},
+  doi = {10.1038/s41597-026-07260-w},
+  url = {https://www.nature.com/articles/s41597-026-07260-w}
+}
+```
 
 ## License
 
-This project is licensed under MIT License - see the [License](LICENSE) file for details.
+This project is licensed under the MIT License. Dataset-specific terms are summarized in [Data/LICENSE](Data/LICENSE) when applicable.
 
 ## Acknowledgments
 
-This project has received funding from the European Unions Horizon Europe Doctoral Network programme under the Marie-Skłodowska-Curie grant agreement No 101072930 ([TACsy](https://tacsy.eu/) -- Training Alliance for Computational)
+This project has received funding from the European Union's Horizon Europe Doctoral Network programme under the Marie Sklodowska-Curie grant agreement No. 101072930 ([TACsy](https://tacsy.eu/)).

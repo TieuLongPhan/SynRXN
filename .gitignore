@@ -224,3 +224,7 @@ reports/*
 chemprop_zenodo/*
 script/notebook/*
 docs/*
+*.npz
+Data/raw/*
+test1.py
+test2.py

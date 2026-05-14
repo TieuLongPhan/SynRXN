@@ -3,147 +3,33 @@
 Tutorials and Examples
 ======================
 
-This page collects practical examples that show how to:
+This page collects practical workflows for loading SynRXN datasets, switching
+between data sources, caching assets, creating reproducible splits, and rebuilding
+curated records during development.
 
-- load **SynRXN** datasets from different sources (Zenodo, GitHub releases, specific commits, latest),
-- cache datasets locally for efficient reuse,
-- build reproducible train/validation/test splits with
-  :class:`synrxn.split.repeated_kfold.RepeatedKFoldsSplitter`, and
-- optionally **rebuild** datasets from source using the CLI.
+.. raw:: html
 
-If you have not installed **SynRXN** yet, see :doc:`Getting Started <getting_started>` first.
-
-Overview
---------
-
-The examples below focus on two main components:
-
-- :class:`synrxn.data.DataLoader` for accessing curated datasets and manifests.
-- :class:`synrxn.split.repeated_kfold.RepeatedKFoldsSplitter` for building
-  repeated k-fold splits in a reproducible way.
-
-Loading datasets with ``DataLoader``
-------------------------------------
-
-The central entry point is :class:`synrxn.data.DataLoader`.  
-It abstracts over:
-
-- **task type** (e.g. ``"classification"`` vs ``"property"``),
-- **source** (Zenodo, GitHub release, specific commit, latest),
-- **version** (release number, tag, or commit SHA), and
-- a local **cache directory**.
+   <div class="synrxn-card-grid">
+     <a class="synrxn-card" href="#load-a-released-dataset-from-zenodo">
+       <strong><i class="fa-solid fa-box-archive" aria-hidden="true"></i> Released data</strong>
+       <span>Use Zenodo when you need citable, stable benchmark snapshots.</span>
+     </a>
+     <a class="synrxn-card" href="#pin-a-github-release-or-commit">
+       <strong><i class="fa-brands fa-github" aria-hidden="true"></i> Git snapshots</strong>
+       <span>Use tags or exact commit SHAs to match source code and data state.</span>
+     </a>
+     <a class="synrxn-card" href="#make-reproducible-splits">
+       <strong><i class="fa-solid fa-shuffle" aria-hidden="true"></i> Splits</strong>
+       <span>Create repeated k-fold splits or train/validation/test partitions.</span>
+     </a>
+     <a class="synrxn-card" href="#rebuild-datasets-from-source">
+       <strong><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Rebuilds</strong>
+       <span>Regenerate curated artifacts and manifests from upstream raw sources.</span>
+     </a>
+   </div>
 
 Canonical imports
-~~~~~~~~~~~~~~~~~
-
-.. code-block:: python
-
-   from pathlib import Path
-   from synrxn.data import DataLoader
-
-1) Zenodo (stable release)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Use this when you want a **stable, archived release** of the data, e.g. for a
-paper or a long-term benchmark.
-
-.. code-block:: python
-
-   dl = DataLoader(
-       task="classification",
-       source="zenodo",
-       version="0.0.6",  # SynRXN data release on Zenodo
-       cache_dir=Path("~/.cache/synrxn").expanduser(),
-   )
-
-   print("Available datasets:", dl.available_names())
-   df = dl.load("schneider_b")
-   print("Rows:", len(df), "Columns:", df.columns.tolist())
-
-This will download the archive from the Zenodo record linked to version
-``0.0.6`` (if not already cached), verify checksums, and return a ``DataFrame``
-for the requested dataset.
-
-2) GitHub release tag
-~~~~~~~~~~~~~~~~~~~~~
-
-Use this when you want to align with a **GitHub release** (e.g. for synchronising
-with code at the same tag).
-
-.. code-block:: python
-
-   dl = DataLoader(
-       task="classification",
-       source="github",
-       version="v0.0.6",  # Git tag in the SynRXN repo
-       cache_dir=Path("~/.cache/synrxn").expanduser(),
-       gh_enable=True,
-   )
-
-   print(dl.available_names())
-   df = dl.load("schneider_b")
-   print("Rows:", len(df))
-
-Here ``gh_enable=True`` allows :class:`DataLoader` to query and download assets
-directly from the GitHub repository.
-
-3) GitHub commit (pin to SHA)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-For **maximum reproducibility**, pin to an exact commit SHA. This guarantees you
-can re-create the exact state of the data and code at that revision.
-
-.. code-block:: python
-
-   dl = DataLoader(
-       task="classification",
-       source="commit",
-       version="3e1612e2199e8b0e369fce3ed9aff3dda68e4c32",  # commit SHA
-       cache_dir=Path("~/.cache/synrxn").expanduser(),
-       gh_enable=True,
-   )
-
-   print(dl.available_names())
-   df = dl.load("schneider_b")
-   print(df.head(2))
-
-In your experiment logs, record the commit SHA and the dataset name to make this
-reproducible.
-
-4) GitHub latest (development)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Use ``version="latest"`` for **development and exploratory work**, when you want
-to track the tip of the main branch.
-
-.. code-block:: python
-
-   dl = DataLoader(
-       task="classification",
-       source="github",
-       version="latest",
-       cache_dir=Path("~/.cache/synrxn").expanduser(),
-       gh_enable=True,
-   )
-
-   print(dl.available_names())
-   df = dl.load("schneider_b")
-   print(df.shape)
-
-Note that ``latest`` is **not stable** over time. If you obtain important results
-using this configuration, record the manifest’s commit hash or export it
-alongside your outputs.
-
-Property datasets and repeated k-fold splitting
------------------------------------------------
-
-For property prediction tasks, **SynRXN** provides datasets such as ``"b97xd3"``.
-You can combine :class:`DataLoader` with
-:class:`synrxn.split.repeated_kfold.RepeatedKFoldsSplitter` to generate
-reproducible splits.
-
-Simple property-dataset example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
 
 .. code-block:: python
 
@@ -151,181 +37,318 @@ Simple property-dataset example
    from synrxn.data import DataLoader
    from synrxn.split.repeated_kfold import RepeatedKFoldsSplitter
 
-   dl = DataLoader(
-       task="property",
-       source="commit",
-       version="latest",  # development; pin to a SHA for stable experiments
-       cache_dir=Path("~/.cache/synrxn").expanduser(),
-       gh_enable=True,
-   )
-   df = dl.load("b97xd3")
-
-   splitter = RepeatedKFoldsSplitter(
-       n_splits=5,
-       n_repeats=2,
-       ratio=(8, 1, 1),      # train:val:test ratio in "fold units"
-       shuffle=True,
-       random_state=1,       # ensures deterministic shuffling
-   )
-
-   # Pre-compute and store all splits (indices) internally
-   splitter.prepare_splits(df, stratify=None)
-
-   # Retrieve repetition 0, fold 0 as (train, val, test) DataFrames
-   train_df, val_df, test_df = splitter.get_split(
-       rep_index=0,
-       fold_index=0,
-       as_frame=True,
-   )
-
-   print("train/val/test:", len(train_df), len(val_df), len(test_df))
-
-Typical output (exact numbers depend on dataset size) might look like:
-
-.. code-block:: text
-
-   train/val/test: 8000 1000 1000
-
-Stratified splits (classification)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-For classification tasks, you can preserve label distributions by passing a
-column to ``stratify``:
+A reusable cache path keeps downloaded archives local:
 
 .. code-block:: python
 
-   df = dl.load("schneider_b")
+   CACHE = Path("~/.cache/synrxn").expanduser()
+
+Task aliases
+------------
+
+``DataLoader`` normalizes common task aliases.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 30 40
+   :class: synrxn-table
+
+   * - Alias
+     - Canonical task
+     - Typical use
+   * - ``class``
+     - ``classification``
+     - reaction class, template, and enzyme labels
+   * - ``prop``
+     - ``property``
+     - reaction property prediction
+   * - ``syn``
+     - ``synthesis``
+     - synthesis and retrosynthesis records
+
+Load a released dataset from Zenodo
+-----------------------------------
+
+Use Zenodo for a citable release snapshot. This is the recommended mode for
+published experiments.
+
+.. code-block:: python
+
+   from pathlib import Path
+   from synrxn.data import DataLoader
+
+   loader = DataLoader(
+       task="classification",
+       source="zenodo",
+       version="1.0.0",
+       cache_dir=Path("~/.cache/synrxn").expanduser(),
+   )
+
+   print("Available datasets:", loader.available_names())
+
+   df = loader.load("schneider_b")
+   print("Rows:", len(df))
+   print("Columns:", df.columns.tolist())
+   print(df.head(3))
+
+Expected workflow:
+
+1. Resolve the versioned release.
+2. Download the archive if it is not already cached.
+3. Load the selected compressed CSV as a pandas DataFrame.
+4. Use the documented columns for training or evaluation.
+
+Pin a GitHub release or commit
+------------------------------
+
+GitHub release tag
+~~~~~~~~~~~~~~~~~~
+
+Use a release tag when you want data and code aligned with a repository tag.
+
+.. code-block:: python
+
+   loader = DataLoader(
+       task="classification",
+       source="github",
+       version="v1.0.0",
+       cache_dir=Path("~/.cache/synrxn").expanduser(),
+       gh_enable=True,
+   )
+
+   print(loader.available_names())
+   df = loader.load("schneider_b")
+   print(df.shape)
+
+Exact commit SHA
+~~~~~~~~~~~~~~~~
+
+Use a full commit SHA for the strongest development-snapshot reproducibility.
+
+.. code-block:: python
+
+   loader = DataLoader(
+       task="property",
+       source="commit",
+       version="3e1612e2199e8b0e369fce3ed9aff3dda68e4c32",
+       cache_dir=Path("~/.cache/synrxn").expanduser(),
+       gh_enable=True,
+   )
+
+   df = loader.load("b97xd3")
+   print(df[["r_id", "ea", "dh"]].head())
+
+Development latest
+~~~~~~~~~~~~~~~~~~
+
+``latest`` is convenient during exploration but should not be the only version
+record in a formal benchmark.
+
+.. code-block:: python
+
+   loader = DataLoader(
+       task="classification",
+       source="github",
+       version="latest",
+       cache_dir=Path("~/.cache/synrxn").expanduser(),
+       gh_enable=True,
+   )
+
+   df = loader.load("schneider_b")
+   print(df.shape)
+
+.. raw:: html
+
+   <div class="synrxn-callout">
+     <p><strong>Best practice:</strong> If exploratory results from <code>latest</code> become important, rerun the experiment with the resolved commit SHA or an archived release before reporting the result.</p>
+   </div>
+
+Explore dataset schemas
+-----------------------
+
+List available datasets, load one table, and summarize column types.
+
+.. code-block:: python
+
+   loader = DataLoader(
+       task="property",
+       source="zenodo",
+       version="1.0.0",
+       cache_dir=CACHE,
+   )
+
+   for name in loader.available_names():
+       print(name)
+
+   df = loader.load("rgd1")
+   print(df.dtypes)
+   print(df.describe(include="all").T.head(10))
+
+A compact helper for quick inspection:
+
+.. code-block:: python
+
+   def inspect_dataset(task: str, name: str, version: str = "1.0.0"):
+       loader = DataLoader(task=task, source="zenodo", version=version, cache_dir=CACHE)
+       df = loader.load(name)
+       return {
+           "task": task,
+           "name": name,
+           "shape": df.shape,
+           "columns": df.columns.tolist(),
+           "has_split": "split" in df.columns,
+       }
+
+   print(inspect_dataset("classification", "schneider_b"))
+   print(inspect_dataset("property", "b97xd3"))
+
+Make reproducible splits
+------------------------
+
+Use published splits when available
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Some benchmark records contain a ``split`` column. Keep it for direct comparison
+with upstream or previously published results.
+
+.. code-block:: python
+
+   df = loader.load("schneider_b")
+
+   if "split" in df.columns:
+       print(df["split"].value_counts(dropna=False))
+
+Generate repeated k-fold splits
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When a dataset does not include the split you need, use a deterministic splitter.
+
+.. code-block:: python
+
+   loader = DataLoader(
+       task="property",
+       source="zenodo",
+       version="1.0.0",
+       cache_dir=CACHE,
+   )
+   df = loader.load("b97xd3")
 
    splitter = RepeatedKFoldsSplitter(
        n_splits=5,
        n_repeats=3,
-       ratio=(8, 1, 1),
-       shuffle=True,
-       random_state=42,
+       random_state=2026,
+       val_ratio=0.1,
    )
 
-   splitter.prepare_splits(df, stratify=df["label"])   # column name may differ
+   split_indices = splitter.split(df)
+   print(split_indices)
 
-   train_df, val_df, test_df = splitter.get_split(0, 0, as_frame=True)
+Export split indices
+~~~~~~~~~~~~~~~~~~~~
 
-Saving and reusing split indices
---------------------------------
-
-Although :class:`RepeatedKFoldsSplitter` can reconstruct splits from its RNG
-configuration, it is often convenient to save explicit indices.
-
-If your version exposes a helper such as ``get_indices``, the pattern is:
+Persist generated split indices next to model outputs.
 
 .. code-block:: python
 
    import json
+   from pathlib import Path
 
-   # Example for repetition 0 (API sketch; adapt to your actual splitter)
-   indices_rep0 = splitter.get_indices(rep_index=0)  # e.g. returns a dict with 'train', 'val', 'test'
+   out = Path("runs/b97xd3_splits.json")
+   out.parent.mkdir(parents=True, exist_ok=True)
 
-   with open("splits_rep0.json", "w") as fh:
-       json.dump(indices_rep0, fh, indent=2)
+   with out.open("w") as fh:
+       json.dump(split_indices.to_dict(), fh, indent=2)
 
-Later, in a different script:
+   print("Wrote", out)
+
+Train/evaluate loop sketch
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The exact training code depends on your model, but the pattern is stable:
 
 .. code-block:: python
 
-   import json
+   for split_name, indices in split_indices.items():
+       train_df = df.iloc[indices["train"]]
+       valid_df = df.iloc[indices["valid"]]
+       test_df = df.iloc[indices["test"]]
 
-   with open("splits_rep0.json") as fh:
-       saved = json.load(fh)
+       # model = fit_model(train_df, valid_df)
+       # metrics = evaluate_model(model, test_df)
+       # save_metrics(split_name, metrics)
 
-   # assuming saved["train"] etc. are index lists
-   train_df = df.iloc[saved["train"]]
-   val_df   = df.iloc[saved["val"]]
-   test_df  = df.iloc[saved["test"]]
+       print(split_name, len(train_df), len(valid_df), len(test_df))
 
-Rebuilding datasets via the CLI
--------------------------------
+Rebuild datasets from source
+----------------------------
 
-In addition to loading published datasets, **SynRXN** can rebuild dataset artifacts
-from source using its command-line interface. This is useful when:
+Dataset rebuilding is intended for maintainers and advanced users who need to
+verify a release, add a dataset, or regenerate manifests after modifying build
+scripts.
 
-- you want to verify that the published Zenodo/GitHub archives are reproducible,
-- you are developing new datasets or modifying existing build scripts, or
-- you need to regenerate manifests and split indices after making changes.
+When to rebuild
+~~~~~~~~~~~~~~~
 
-Basic usage
-~~~~~~~~~~~
+- You want to verify that published archives are reproducible.
+- You are developing new curated records.
+- You modified preprocessing, schema normalization, or split-generation logic.
+- You need to regenerate manifests and checksums.
 
-From the root of the **SynRXN** repository (editable install recommended), run:
+CLI smoke test
+~~~~~~~~~~~~~~
+
+Inspect the available command-line interface:
 
 .. code-block:: bash
 
-   cd SynRXN
-
    python -m synrxn --help
+   python -m synrxn build --help
 
-You should see a list of available subcommands and build targets, for example
-(informally):
+Typical rebuild command
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   python -m synrxn build \
+     --task classification \
+     --dataset schneider_b \
+     --output Data/classification
+
+A rebuild workflow should record:
+
+- the raw upstream source and retrieval date,
+- the SynRXN Git commit,
+- the builder command and configuration,
+- generated row counts and checksums,
+- schema changes compared with the previous release.
+
+Caching and reproducibility tips
+--------------------------------
+
+- Use a persistent cache such as ``~/.cache/synrxn``.
+- Prefer ``source="zenodo"`` for published experiments.
+- Prefer exact commit SHAs over ``latest`` for development snapshots.
+- Keep generated split indices under version control or alongside run outputs.
+- Record the package version and the data version in each experiment log.
+
+Minimal experiment log
+----------------------
 
 .. code-block:: text
 
-   usage: python -m synrxn [-h] {build,...} ...
+   package: synrxn==1.0.0
+   task: property
+   dataset: b97xd3
+   source: zenodo
+   version: 1.0.0
+   cache_dir: ~/.cache/synrxn
+   split: repeated k-fold, n_splits=5, n_repeats=3, random_state=2026, val_ratio=0.1
+   model_commit: <your-method-commit>
 
-   positional arguments:
-     {build,...}
-       build        build datasets and manifests
+See also
+--------
 
-   optional arguments:
-     -h, --help     show this help message and exit
-
-Property datasets
-~~~~~~~~~~~~~~~~~
-
-To rebuild the property-prediction datasets (e.g. ``b97xd3`` and related
-benchmarks) and their manifests:
-
-.. code-block:: bash
-
-   python -m synrxn build --property
-
-This will:
-
-- download or locate the raw source files,
-- process them into the canonical **SynRXN** format,
-- generate or update manifest files (schema, counts, checksums, splits), and
-- write the results to the configured output directory (typically under a
-  dedicated data/build folder in the repository).
-
-Dry-run mode
-~~~~~~~~~~~~
-
-If your version includes a dry-run flag, you can preview which commands would
-run *without* writing files (useful for debugging and CI):
-
-.. code-block:: bash
-
-   python -m synrxn build --property --dry-run
-
-Consult the CLI help in your installed version for the exact set of flags and
-available build targets.
-
-Practical tips and common patterns
-----------------------------------
-
-- Use a **persistent cache directory** (e.g. ``~/.cache/synrxn``) so you do not
-  redownload datasets.
-- For **published** work, prefer:
-
-  - ``source="zenodo", version="0.0.6"`` (or later stable release), or
-  - ``source="commit", version="<full SHA>"``
-
-  and record this choice in your methods section.
-
-- When debugging or exploring new datasets, ``version="latest"`` is convenient,
-  but always log the associated manifest or commit for future reference.
-- If you hit GitHub rate limits, either:
-
-  - fall back to the Zenodo source, or
-  - configure authentication (e.g. via ``GITHUB_TOKEN``) for the process.
-- When you rebuild datasets with ``python -m synrxn build``, record:
-
-  - the exact command (including flags),
-  - the **SynRXN** version and repository commit, and
-  - the resulting manifest(s).
+- :doc:`Getting Started <getting_started>` for the first installation and load.
+- :doc:`Data Concept <data_concept>` for task folders and schema conventions.
+- :doc:`Data Records <data_records>` for dataset counts and citations.
+- :doc:`API Reference <api>` for generated class and module documentation.

@@ -1,33 +1,117 @@
-Creative Commons Attribution 4.0 International (CC BY 4.0) — Data License
+SynRXN Data License and Attribution Notice
+==========================================
 
-This license applies ONLY to the SynRXN dataset files and data artifacts.
+This file describes the reuse terms for the curated dataset files and data
+artifacts distributed under the SynRXN `Data/` directory.
 
-Covered (“Data”):
-- All files under the Data/ directory (e.g., Data/rbl/, Data/aam/, Data/class/, Data/prop/, Data/synthesis/),
-  including .csv.gz tables, splits, derived labels, and any released metadata files that describe the dataset
-  (e.g., manifest.json), unless a file states otherwise.
+This notice is not a license for SynRXN source code. Source code and software
+utilities are licensed separately; see the repository-level `LICENSE` file.
 
-Not covered:
-- Source code and software (licensed separately; see the repository LICENSE file).
-- Third-party material that is included under a different license; such files remain under their original terms.
 
-License:
-The Data is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+Default data license
+--------------------
 
-You are free to:
-- Share — copy and redistribute the material in any medium or format
-- Adapt — remix, transform, and build upon the material
-for any purpose, even commercially.
+Unless a dataset-specific entry below states otherwise, curated SynRXN data
+tables and released metadata artifacts are distributed under:
 
-Under the following terms:
-- Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
-- No additional restrictions — You may not apply legal terms or technological measures that legally restrict others
-  from doing anything the license permits.
-
-To view a copy of this license, visit:
-https://creativecommons.org/licenses/by/4.0/
-
-Full legal code:
-https://creativecommons.org/licenses/by/4.0/legalcode
-
+Creative Commons Attribution 4.0 International (CC BY 4.0)
 SPDX identifier: CC-BY-4.0
+License URL: https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Under CC BY 4.0, you may share and adapt the material for any purpose, including
+commercial use, provided that you give appropriate credit, provide a link to the
+license, and indicate if changes were made.
+
+
+Dataset-specific licenses
+-------------------------
+
+The table below records the license for each curated benchmark table as
+distributed by SynRXN. Upstream publications, source repositories, and original
+data providers should still be cited as documented in `doc/data_records.rst` and
+`doc/reference.rst`.
+
+Task family              Dataset(s)                                      License
+-----------              ----------                                      -------
+rbl                      complex, mbs, mnc, mos                          CC BY 4.0
+aam                      ecoli, enzyme_map, golden, natcomm,             CC BY 4.0
+                         recon3d, uspto_3k
+classification           ecreact, schneider_b, schneider_u,              CC BY 4.0
+                         syntemp, tpl_b, tpl_u,
+                         uspto_50k_b, uspto_50k_u
+property                 b97xd3, cycloadd, e2, e2sn2,                    CC BY 4.0
+                         lograte, phosphatase, rad6re,
+                         rdb7, rgd1, sn2
+property                 snar                                            CC BY 3.0
+synthesis                uspto_500, uspto_50k, uspto_mit                 CC BY 4.0
+synthesis                da                                              CC BY 3.0
+
+CC BY 3.0 license URL:
+https://creativecommons.org/licenses/by/3.0/
+CC BY 3.0 legal code:
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+
+Covered data artifacts
+----------------------
+
+Covered files include curated `.csv.gz` tables and release metadata artifacts
+under `Data/`, including:
+
+- `Data/rbl/`
+- `Data/aam/`
+- `Data/classification/`
+- `Data/property/`
+- `Data/synthesis/`
+- `Data/metadata.yaml`
+
+Generated benchmark summaries or result files under `Data/results_benchmark/`
+and `Data/Benchmark/` are included only when they are part of a released SynRXN
+data archive. If a generated artifact contains third-party results or model
+outputs, check the accompanying release notes for additional terms.
+
+
+Not covered
+-----------
+
+This data license does not cover:
+
+- SynRXN source code or scripts; see the repository-level `LICENSE`.
+- Third-party source material that is referenced but not redistributed.
+- Third-party material redistributed under different terms; such material
+  remains under its original license.
+- Model weights, external benchmark outputs, or user-generated experimental
+  results unless a release explicitly states otherwise.
+
+
+Attribution guidance
+--------------------
+
+When using SynRXN data, cite:
+
+1. The primary SynRXN paper:
+
+   Tieu-Long Phan, Nhu-Ngoc Nguyen Song, and Peter F. Stadler.
+   "SynRXN: An Open Benchmark and Curated Dataset for Computational Reaction
+   Modeling." Scientific Data 13, 625 (2026).
+   DOI: https://doi.org/10.1038/s41597-026-07260-w
+
+2. The exact SynRXN data archive or version used in your experiment
+   (for example, a Zenodo version DOI or Git commit SHA).
+
+3. The upstream dataset or method citations listed in `doc/data_records.rst` for
+   the specific benchmark tables you used.
+
+Recommended wording:
+
+   "We used SynRXN v<version> dataset <task>/<dataset>, distributed under
+   <license>, and cite the SynRXN Scientific Data descriptor plus the upstream
+   source references listed in the SynRXN documentation."
+
+
+No additional restrictions
+--------------------------
+
+You may not apply legal terms or technological measures that legally restrict
+others from doing anything permitted by the applicable Creative Commons license.
