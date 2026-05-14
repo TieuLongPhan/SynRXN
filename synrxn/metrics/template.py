@@ -218,7 +218,7 @@ def acc_aam(
     # 4) instantiate validator if not provided
     if validator is None:
         try:
-            from synkit.Chem.Reaction.aam_validator import AAMValidator
+            from synrxn.aam.aam_validator import AAMValidator
 
             validator = AAMValidator()
         except Exception as exc:
@@ -229,12 +229,18 @@ def acc_aam(
 
     # 5) Call validator and extract accuracy
     try:
-        results = validator.validate_smiles(df, "ground_truth", [mapper_name])
+        results = validator.validate_smiles(
+            data=df,
+            ground_truth_col="ground_truth",
+            mapped_cols=[mapper_name],
+            ignore_tautomers=False,
+        )
+
         if not results or not isinstance(results, (list, tuple)):
             raise RuntimeError(
                 "Unexpected return value from validator.validate_smiles()"
             )
-        accuracy = results[0].get("accuracy")
+        accuracy = results[0][0].get("accuracy")
         if accuracy is None:
             raise KeyError("No 'accuracy' key found in validator result[0].")
         return float(accuracy)

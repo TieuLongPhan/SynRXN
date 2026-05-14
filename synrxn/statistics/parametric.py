@@ -244,7 +244,13 @@ def _mcs_heatmap(
     sig[(pc < 0.01) & (pc >= 0.001)] = "**"
     sig[(pc < 0.05) & (pc >= 0.01)] = "*"
     sig[(pc >= 0.05)] = ""
-    np.fill_diagonal(sig.values, "")
+
+    # pandas may expose a read-only backing array for object frames on some
+    # CI dependency combinations. Work on a writable copy before replacing the
+    # diagonal significance labels.
+    sig_values = sig.to_numpy(dtype=object, copy=True)
+    np.fill_diagonal(sig_values, "")
+    sig = pd.DataFrame(sig_values, index=sig.index, columns=sig.columns)
 
     annot = effect_size.round(3).astype(str) + sig
 

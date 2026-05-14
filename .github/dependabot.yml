@@ -1,10 +1,80 @@
-# .github/dependabot.yml
+# Dependabot keeps runtime, documentation, and CI dependencies current.
+# PRs are opened against staging so dependency updates can be tested before
+# merging into main.
 version: 2
+
 updates:
+  # Runtime package dependencies:
+  # - pyproject.toml
+  # - requirements.txt
   - package-ecosystem: "pip"
-    directory: "/"                # location of requirements.txt or pyproject.toml
-    target-branch: "staging"      # open PRs against staging instead of main
+    directory: "/"
+    target-branch: "staging"
     schedule:
-      interval: "weekly"          # check for updates once a week
-    open-pull-requests-limit: 5   # max concurrent Dependabot PRs
-    rebase-strategy: "auto"       # auto-rebase PRs when they fall out of date
+      interval: "weekly"
+      day: "monday"
+      time: "07:00"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 5
+    rebase-strategy: "auto"
+    labels:
+      - "dependencies"
+      - "python"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    groups:
+      runtime-dependencies:
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "sphinx*"
+          - "pydata-sphinx-theme"
+          - "sphinx-copybutton"
+          - "sphinxcontrib-bibtex"
+
+  # Documentation dependencies:
+  # - doc/requirements.txt
+  - package-ecosystem: "pip"
+    directory: "/doc"
+    target-branch: "staging"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:15"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 3
+    rebase-strategy: "auto"
+    labels:
+      - "dependencies"
+      - "documentation"
+    commit-message:
+      prefix: "deps"
+      prefix-development: "deps-dev"
+      include: "scope"
+    groups:
+      docs-dependencies:
+        patterns:
+          - "*"
+
+  # GitHub Actions used by CI, package publishing, and manifest generation.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    target-branch: "staging"
+    schedule:
+      interval: "monthly"
+      day: "monday"
+      time: "07:30"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 3
+    rebase-strategy: "auto"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    groups:
+      github-actions:
+        patterns:
+          - "*"

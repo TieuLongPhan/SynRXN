@@ -228,7 +228,8 @@ def process_single_entry(
                     "process_aam not importable. Run script from repository root or ensure package is on PYTHONPATH."
                 )
             logger.info("[%s] Running process_aam(...)", name)
-            processed = process_aam(entries)
+            # processed = process_aam(entries)
+            processed = entries
 
             # coerce processed to list
             try:

@@ -1,0 +1,769 @@
+/* SynRXN documentation UI polish for PyData Sphinx Theme.
+   Goals: compact sidebar, wider article area, consistent icon language,
+   cleaner cards, better tables, and responsive spacing. */
+
+:root {
+  --synrxn-navy: #17324d;
+  --synrxn-blue: #2f77a8;
+  --synrxn-cyan: #56b6d8;
+  --synrxn-sky: #dff1ff;
+  --synrxn-ice: #f7fbfe;
+  --synrxn-border: #d8e5ef;
+  --synrxn-text: #243746;
+  --synrxn-muted: #536575;
+  --synrxn-shadow: rgba(23, 50, 77, 0.10);
+  --synrxn-shadow-strong: rgba(23, 50, 77, 0.18);
+  --pst-color-primary: #2f77a8;
+  --pst-color-secondary: #17324d;
+  --pst-color-link: #256e9f;
+  --pst-color-link-hover: #17324d;
+  --pst-sidebar-primary: 14rem;
+  --pst-sidebar-secondary: 13rem;
+}
+
+html[data-theme="dark"] {
+  --synrxn-navy: #9fd6ff;
+  --synrxn-blue: #8ac8f1;
+  --synrxn-cyan: #6fc7e7;
+  --synrxn-sky: #172331;
+  --synrxn-ice: #101b27;
+  --synrxn-border: #30485c;
+  --synrxn-text: #eaf4fb;
+  --synrxn-muted: #b5cad8;
+  --synrxn-shadow: rgba(0, 0, 0, 0.24);
+  --synrxn-shadow-strong: rgba(0, 0, 0, 0.34);
+}
+
+/* -------- Page layout: less left rail, more central reading width -------- */
+.bd-page-width {
+  max-width: 1500px;
+}
+
+.bd-main .bd-content .bd-article-container {
+  max-width: 1120px;
+}
+
+@media (min-width: 992px) {
+  .bd-sidebar-primary {
+    flex: 0 0 14rem;
+    max-width: 14rem;
+    min-width: 14rem;
+    width: 14rem;
+  }
+
+  .bd-sidebar-secondary {
+    flex: 0 0 13rem;
+    max-width: 13rem;
+    min-width: 13rem;
+    width: 13rem;
+  }
+
+  .bd-main .bd-content .bd-article {
+    padding-left: 1.35rem;
+    padding-right: 1.35rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .bd-main .bd-content .bd-article-container {
+    max-width: 1180px;
+  }
+}
+
+.bd-sidebar-primary {
+  border-right: 1px solid var(--synrxn-border);
+}
+
+.bd-sidebar-primary .sidebar-header-items,
+.bd-sidebar-primary .sidebar-primary-items__end {
+  margin-top: 0.5rem;
+}
+
+.bd-sidebar-primary .caption,
+.bd-sidebar-primary .sidebar-caption {
+  color: var(--synrxn-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bd-sidebar-primary a,
+.bd-sidebar-primary .reference {
+  border-radius: 10px;
+  font-size: 0.92rem;
+}
+
+.bd-sidebar-primary .current > a,
+.bd-sidebar-primary a.current,
+.bd-sidebar-primary .toctree-l1.current > a {
+  background: var(--synrxn-sky);
+  color: var(--synrxn-navy) !important;
+  font-weight: 800;
+}
+
+.bd-header .navbar-brand img {
+  max-height: 42px;
+}
+
+.bd-header .navbar-nav > li > a.nav-link {
+  font-weight: 700;
+}
+
+.bd-header .navbar-nav > li > a.nav-link:hover {
+  color: var(--synrxn-blue);
+}
+
+/* -------- Typography -------- */
+.rst-content h1,
+.bd-article h1 {
+  color: var(--synrxn-navy);
+  font-weight: 850;
+  letter-spacing: -0.032em;
+}
+
+.bd-article h2 {
+  border-bottom: 1px solid var(--synrxn-border);
+  color: var(--synrxn-navy);
+  font-weight: 800;
+  margin-top: 2.1rem;
+  padding-bottom: 0.45rem;
+}
+
+.bd-article h3,
+.bd-article h4 {
+  color: var(--synrxn-text);
+  font-weight: 750;
+}
+
+.bd-article p,
+.bd-article li {
+  line-height: 1.68;
+}
+
+/* -------- Hero -------- */
+.synrxn-hero {
+  background:
+    radial-gradient(circle at 7% 18%, rgba(223, 241, 255, 0.38), transparent 24rem),
+    radial-gradient(circle at 94% 8%, rgba(86, 182, 216, 0.42), transparent 18rem),
+    linear-gradient(135deg, #17324d 0%, #245e84 54%, #2f77a8 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  box-shadow: 0 18px 48px var(--synrxn-shadow-strong);
+  color: #fff;
+  margin: 0.85rem 0 1.65rem;
+  overflow: hidden;
+  padding: clamp(1.45rem, 3vw, 2.65rem);
+  position: relative;
+}
+
+.synrxn-hero::before {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  content: "";
+  height: 10rem;
+  position: absolute;
+  right: -2.5rem;
+  top: -3rem;
+  width: 10rem;
+}
+
+.synrxn-hero::after {
+  background: linear-gradient(90deg, rgba(255,255,255,0.20), rgba(255,255,255,0));
+  content: "";
+  inset: auto 0 0 0;
+  height: 5px;
+  position: absolute;
+}
+
+.synrxn-hero h1,
+.synrxn-hero p,
+.synrxn-hero strong {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.synrxn-hero h1 {
+  font-size: clamp(2rem, 3.9vw, 3.55rem);
+  line-height: 1.04;
+  margin: 0 0 0.8rem;
+  max-width: 980px;
+}
+
+.synrxn-hero p {
+  font-size: clamp(1rem, 1.45vw, 1.18rem);
+  line-height: 1.62;
+  margin: 0 0 1.1rem;
+  max-width: 900px;
+}
+
+.synrxn-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.synrxn-button {
+  align-items: center;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  color: #17324d !important;
+  display: inline-flex;
+  font-weight: 800;
+  gap: 0.48rem;
+  padding: 0.7rem 1.05rem;
+  text-decoration: none !important;
+  transition: box-shadow 0.15s ease, transform 0.15s ease, background 0.15s ease;
+}
+
+.synrxn-button.secondary {
+  background: rgba(255, 255, 255, 0.13);
+  color: #fff !important;
+}
+
+.synrxn-button:hover {
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+  transform: translateY(-1px);
+}
+
+.synrxn-button .fa-solid,
+.synrxn-button .fa-brands {
+  font-size: 0.95rem;
+}
+
+/* -------- Badges -------- */
+.synrxn-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0.95rem 0 1.45rem;
+}
+
+.synrxn-badge {
+  align-items: center;
+  background: var(--synrxn-ice);
+  border: 1px solid var(--synrxn-border);
+  border-radius: 999px;
+  color: var(--synrxn-navy) !important;
+  display: inline-flex;
+  font-size: 0.86rem;
+  font-weight: 800;
+  gap: 0.42rem;
+  padding: 0.42rem 0.78rem;
+  text-decoration: none !important;
+}
+
+.synrxn-badge:hover {
+  border-color: var(--synrxn-blue);
+  box-shadow: 0 4px 12px var(--synrxn-shadow);
+}
+
+/* -------- Cards and icon blocks -------- */
+.synrxn-card-grid,
+.synrxn-icon-grid,
+.synrxn-collection-grid {
+  display: grid;
+  gap: 0.95rem;
+  margin: 1.15rem 0 1.8rem;
+}
+
+.synrxn-card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+}
+
+.synrxn-icon-grid {
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.synrxn-collection-grid {
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+}
+
+.synrxn-card,
+.synrxn-icon-card,
+.synrxn-collection-card {
+  background: linear-gradient(180deg, var(--pst-color-background), var(--synrxn-ice));
+  border: 1px solid var(--synrxn-border);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px var(--synrxn-shadow);
+  color: var(--synrxn-text) !important;
+  display: block;
+  min-height: 120px;
+  padding: 1rem 1.08rem;
+  position: relative;
+  text-decoration: none !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.synrxn-card:hover,
+.synrxn-icon-card:hover,
+.synrxn-collection-card:hover {
+  border-color: var(--synrxn-blue);
+  box-shadow: 0 12px 32px var(--synrxn-shadow-strong);
+  transform: translateY(-2px);
+}
+
+.synrxn-card strong,
+.synrxn-icon-card strong,
+.synrxn-collection-card strong {
+  color: var(--synrxn-navy);
+  display: block;
+  font-size: 1.04rem;
+  line-height: 1.3;
+  margin-bottom: 0.42rem;
+}
+
+.synrxn-card span,
+.synrxn-icon-card p,
+.synrxn-collection-card span,
+.synrxn-collection-card p {
+  color: var(--synrxn-muted);
+  display: block;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.synrxn-card strong {
+  align-items: center;
+  display: flex;
+  gap: 0.55rem;
+}
+
+.synrxn-card strong .fa-solid,
+.synrxn-card strong .fa-brands,
+.synrxn-card strong .fa-regular,
+.synrxn-collection-card .tagline .fa-solid,
+.synrxn-collection-card .tagline .fa-brands {
+  color: var(--synrxn-blue);
+}
+
+.synrxn-card::after,
+.synrxn-collection-card::after {
+  color: var(--synrxn-blue);
+  content: "›";
+  font-family: inherit;
+  font-size: 1.35rem;
+  font-weight: 900;
+  opacity: 0.65;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.synrxn-icon {
+  align-items: center;
+  background: linear-gradient(135deg, var(--synrxn-navy), var(--synrxn-blue));
+  border-radius: 14px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 900;
+  height: 2.35rem;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  min-width: 2.35rem;
+  padding: 0 0.55rem;
+}
+
+.synrxn-icon .fa-solid,
+.synrxn-icon .fa-brands,
+.synrxn-icon .fa-regular {
+  font-size: 1rem;
+}
+
+.synrxn-collection-card .tagline {
+  align-items: center;
+  color: var(--synrxn-blue);
+  display: flex;
+  font-size: 0.81rem;
+  font-weight: 850;
+  gap: 0.42rem;
+  letter-spacing: 0.055em;
+  margin-bottom: 0.55rem;
+  text-transform: uppercase;
+}
+
+/* -------- Steps and callouts -------- */
+.synrxn-steps {
+  counter-reset: synrxn-step;
+  display: grid;
+  gap: 0.85rem;
+  margin: 1rem 0 1.65rem;
+}
+
+.synrxn-step {
+  background: var(--synrxn-ice);
+  border: 1px solid var(--synrxn-border);
+  border-radius: 16px;
+  padding: 1rem 1rem 1rem 4.55rem;
+  position: relative;
+}
+
+.synrxn-step::before {
+  display: none;
+}
+
+.synrxn-step-icon {
+  align-items: center;
+  background: linear-gradient(135deg, var(--synrxn-navy), var(--synrxn-blue));
+  border-radius: 14px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 1rem;
+  height: 2.6rem;
+  justify-content: center;
+  left: 1rem;
+  position: absolute;
+  top: 1rem;
+  width: 2.6rem;
+}
+
+.synrxn-step strong {
+  color: var(--synrxn-navy);
+  display: block;
+  margin-bottom: 0.28rem;
+}
+
+.synrxn-callout {
+  background: var(--synrxn-ice);
+  border: 1px solid var(--synrxn-border);
+  border-left: 5px solid var(--synrxn-blue);
+  border-radius: 14px;
+  margin: 1rem 0 1.45rem;
+  padding: 1rem 1.15rem;
+}
+
+.synrxn-callout p:last-child {
+  margin-bottom: 0;
+}
+
+.synrxn-callout strong::before {
+  color: var(--synrxn-blue);
+  content: "\f0eb";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 0.4rem;
+}
+
+/* Make native Sphinx admonitions blend with the custom visual language. */
+.admonition,
+div.admonition {
+  border-radius: 14px;
+  box-shadow: 0 6px 18px var(--synrxn-shadow);
+}
+
+.admonition-title::before {
+  opacity: 0.85;
+}
+
+/* -------- Figures, code, and tables -------- */
+.synrxn-hero-figure img,
+.synrxn-figure img {
+  background: var(--pst-color-background);
+  border: 1px solid var(--synrxn-border);
+  border-radius: 18px;
+  box-shadow: 0 14px 36px var(--synrxn-shadow-strong);
+  padding: 0.65rem;
+}
+
+.highlight,
+div[class*="highlight-"] {
+  border-radius: 14px;
+}
+
+.highlight pre {
+  padding: 1rem 1.1rem;
+}
+
+.synrxn-table td,
+.synrxn-table th {
+  vertical-align: top;
+}
+
+.synrxn-table table.docutils {
+  border: 1px solid var(--synrxn-border);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px var(--synrxn-shadow);
+  overflow: hidden;
+}
+
+.synrxn-table table.docutils thead th {
+  background: var(--synrxn-navy);
+  color: #ffffff;
+}
+
+.synrxn-table table.docutils tbody tr:nth-child(even) {
+  background: var(--synrxn-ice);
+}
+
+.synrxn-table table.docutils tbody tr:hover {
+  background: color-mix(in srgb, var(--synrxn-sky) 55%, transparent);
+}
+
+.rst-content blockquote,
+.bd-article blockquote {
+  border-left: 4px solid var(--synrxn-blue);
+  color: var(--synrxn-muted);
+  margin-left: 0;
+  padding-left: 1rem;
+}
+
+.prev-next-area a {
+  border-radius: 14px;
+}
+
+/* -------- Mobile polish -------- */
+@media (max-width: 767px) {
+  .synrxn-hero {
+    border-radius: 18px;
+  }
+
+  .synrxn-card-grid,
+  .synrxn-icon-grid,
+  .synrxn-collection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .synrxn-card,
+  .synrxn-icon-card,
+  .synrxn-collection-card {
+    min-height: auto;
+  }
+}
+
+
+
+/* -------- Citation, changelog, paper, and issue pages -------- */
+.synrxn-callout-card,
+.synrxn-paper-card {
+  align-items: flex-start;
+  background: linear-gradient(135deg, var(--synrxn-ice), #fff);
+  border: 1px solid var(--synrxn-border);
+  border-radius: 20px;
+  box-shadow: 0 12px 28px var(--synrxn-shadow);
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0 1.4rem;
+  padding: 1.15rem;
+}
+
+html[data-theme="dark"] .synrxn-callout-card,
+html[data-theme="dark"] .synrxn-paper-card {
+  background: linear-gradient(135deg, var(--synrxn-ice), #132232);
+}
+
+.synrxn-callout-card p,
+.synrxn-paper-card p {
+  margin-bottom: 0;
+}
+
+.synrxn-callout-icon,
+.synrxn-paper-icon {
+  align-items: center;
+  background: var(--synrxn-sky);
+  border-radius: 16px;
+  color: var(--synrxn-navy);
+  display: inline-flex;
+  flex: 0 0 3rem;
+  font-size: 1.25rem;
+  height: 3rem;
+  justify-content: center;
+  width: 3rem;
+}
+
+.synrxn-citation-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 1rem 0 1.4rem;
+}
+
+.synrxn-citation-card {
+  background: var(--synrxn-ice);
+  border: 1px solid var(--synrxn-border);
+  border-radius: 18px;
+  box-shadow: 0 10px 24px var(--synrxn-shadow);
+  padding: 1rem;
+}
+
+.synrxn-citation-card span {
+  align-items: center;
+  background: var(--synrxn-sky);
+  border-radius: 14px;
+  color: var(--synrxn-navy);
+  display: inline-flex;
+  height: 2.65rem;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  width: 2.65rem;
+}
+
+.synrxn-citation-card strong {
+  color: var(--synrxn-navy);
+  display: block;
+  font-size: 1.02rem;
+  margin-bottom: 0.3rem;
+}
+
+.synrxn-citation-card p {
+  color: var(--synrxn-muted);
+  margin: 0;
+}
+
+.synrxn-citation-strip {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin: 1rem 0 1.35rem;
+}
+
+.synrxn-citation-strip a {
+  align-items: center;
+  background: var(--synrxn-ice);
+  border: 1px solid var(--synrxn-border);
+  border-radius: 18px;
+  box-shadow: 0 10px 24px var(--synrxn-shadow);
+  color: var(--synrxn-text) !important;
+  display: grid;
+  gap: 0.2rem 0.8rem;
+  grid-template-columns: 2.4rem 1fr;
+  padding: 0.95rem;
+  text-decoration: none !important;
+}
+
+.synrxn-citation-strip i {
+  align-items: center;
+  background: var(--synrxn-sky);
+  border-radius: 14px;
+  color: var(--synrxn-navy);
+  display: inline-flex;
+  grid-row: span 2;
+  height: 2.4rem;
+  justify-content: center;
+  width: 2.4rem;
+}
+
+.synrxn-citation-strip span {
+  color: var(--synrxn-muted);
+  font-size: 0.92rem;
+}
+
+.synrxn-button.compact {
+  font-size: 0.92rem;
+  padding: 0.52rem 0.86rem;
+}
+
+.synrxn-button.secondary-light {
+  background: var(--synrxn-sky);
+  border-color: var(--synrxn-border);
+  color: var(--synrxn-navy) !important;
+}
+
+.synrxn-issue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0 1.4rem;
+}
+
+.synrxn-icon-grid.compact {
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+}
+
+/* Make project nav readable even after adding more sidebar entries. */
+.bd-sidebar-primary .toctree-l1 > a {
+  padding-top: 0.36rem;
+  padding-bottom: 0.36rem;
+}
+
+@media (max-width: 640px) {
+  .synrxn-callout-card,
+  .synrxn-paper-card {
+    display: block;
+  }
+
+  .synrxn-callout-icon,
+  .synrxn-paper-icon {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* -------- Top navigation --------
+   The left sidebar is a curated custom block; sidebar-nav-bs is intentionally
+   disabled in conf.py to avoid duplicate Section Navigation headings. */
+.synrxn-top-nav {
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.synrxn-top-nav .nav-link {
+  border-radius: 999px;
+  font-weight: 750;
+  padding: 0.45rem 0.8rem !important;
+}
+
+.synrxn-top-nav .nav-link:hover,
+.synrxn-top-nav .nav-link:focus {
+  background: var(--synrxn-sky);
+  color: var(--synrxn-navy) !important;
+}
+
+@media (min-width: 960px) {
+  .bd-sidebar-primary {
+    display: block;
+  }
+}
+
+/* -------- Persistent left-sidebar project navigation -------- */
+.synrxn-sidebar-section {
+  border-bottom: 1px solid var(--synrxn-border);
+  margin: 0.4rem 0 0.9rem;
+  padding: 0.2rem 0 0.85rem;
+}
+
+.synrxn-sidebar-title {
+  color: var(--pst-color-text-base, var(--synrxn-text));
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin: 0.6rem 0 0.45rem;
+  text-transform: none;
+}
+
+.synrxn-sidebar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.synrxn-sidebar-list li {
+  margin: 0.02rem 0;
+}
+
+.synrxn-sidebar-list a {
+  border-radius: 0.375rem;
+  color: var(--pst-color-text-base, var(--synrxn-text)) !important;
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.25;
+  padding: 0.32rem 0.5rem;
+  text-decoration: none !important;
+}
+
+.synrxn-sidebar-list a:hover,
+.synrxn-sidebar-list a:focus {
+  background: var(--synrxn-sky);
+  color: var(--synrxn-navy) !important;
+}
+
+.synrxn-sidebar-list a::before,
+.synrxn-sidebar-list a::after {
+  content: none !important;
+}

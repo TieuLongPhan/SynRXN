@@ -48,8 +48,8 @@ class DataLoader:
     :param version:
         Source-dependent version identifier:
 
-        - If ``source=='zenodo'``: Zenodo version string (e.g. ``"0.0.6"``) or ``None`` for the latest record.
-        - If ``source=='github'``: GitHub release tag (e.g. ``"v0.0.6"`` or ``"0.0.6"``). ``'latest'`` can be used
+        - If ``source=='zenodo'``: Zenodo version string (e.g. ``"1.0.0"``) or ``None`` for the latest record.
+        - If ``source=='github'``: GitHub release tag (e.g. ``"v1.0.0"`` or ``"1.0.0"``). ``'latest'`` can be used
           and will resolve to the latest release tag (when available) and otherwise fall back to a branch ref.
         - If ``source=='commit'``: commit SHA (40-char) or the string ``'latest'`` to resolve the tip SHA of a branch.
     :type version: Optional[str]
@@ -104,7 +104,7 @@ class DataLoader:
         dl = DataLoader(
             task="classification",
             source="zenodo",
-            version="0.0.6",
+            version="1.0.0",
             cache_dir=Path("~/.cache/synrxn").expanduser(),
         )
         print(dl.available_names())
@@ -121,7 +121,7 @@ class DataLoader:
         dl = DataLoader(
             task="classification",
             source="github",
-            version="v0.0.6",
+            version="v1.0.0",
             gh_enable=True,
             cache_dir=Path("~/.cache/synrxn").expanduser(),
         )
@@ -173,7 +173,7 @@ class DataLoader:
     - ``version='latest'`` (commit or release) is non-deterministic; record the resolved value
       (``dl.version``) if you need reproducible results.
     - For heavy GitHub API usage, provide an authenticated session
-    (add an Authorization token to ``dl._session.headers``).
+      (add an Authorization token to ``dl._session.headers``).
     """
 
     def __init__(
