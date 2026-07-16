@@ -70,7 +70,11 @@ print(df.shape)
 print(df.columns.tolist())
 ```
 
-Browse the packaged catalog or load a checkout without a network request:
+Browse the interactive [Dataset Catalog](https://synrxn.readthedocs.io/en/latest/catalog.html)
+to compare task, split, target, provenance, and reaction previews. It opens with
+the split-bearing `classification/schneider_b` benchmark as a concrete example.
+The same metadata is available in Python, including when working from a local
+checkout without a network request:
 
 ```python
 from synrxn import DataLoader, DatasetCatalog
@@ -192,6 +196,18 @@ pagination. It validates the derived release index before startup and exposes a
 bounded read-only API with OpenAPI documentation. PostgreSQL becomes useful
 only for future mutable shared state such as user accounts, annotations,
 curation workflows, or benchmark submissions—not for the release datasets.
+
+```bash
+pip install "synrxn[service]"
+SYNRXN_PARQUET_DIR=Parquet SYNRXN_MANIFEST=manifest.json synrxn-service
+
+# In a second terminal: inspect a bounded, projected page of the benchmark.
+curl 'http://127.0.0.1:8000/v1/datasets/classification/schneider_b/rows?columns=r_id,label,split&filter=split%3Dtest&limit=5'
+```
+
+The interactive OpenAPI interface is available at `http://127.0.0.1:8000/docs`.
+The service is read-only and rejects releases whose Parquet index does not
+match the canonical manifest.
 
 ## AAM Validation
 
