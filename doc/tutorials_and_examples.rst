@@ -34,6 +34,7 @@ Canonical imports
 .. code-block:: python
 
    from pathlib import Path
+   from synrxn import DatasetCatalog
    from synrxn.data import DataLoader
    from synrxn.split.repeated_kfold import RepeatedKFoldsSplitter
 
@@ -65,6 +66,38 @@ Task aliases
    * - ``syn``
      - ``synthesis``
      - synthesis and retrosynthesis records
+
+Browse the catalog and local data
+---------------------------------
+
+The packaged catalog can be inspected without a network request:
+
+.. code-block:: python
+
+   from synrxn import DataLoader, DatasetCatalog
+
+   catalog = DatasetCatalog()
+   for record in catalog.list(task="classification", has_split=True):
+       print(record.name, record.targets, record.split_values)
+
+   loader = DataLoader(
+       task="classification",
+       source="local",
+       data_dir="Data",
+   )
+   test_sample = loader.load(
+       "schneider_b",
+       columns=["r_id", "label", "split"],
+       filters={"split": "test"},
+       nrows=10_000,
+   )
+
+For bounded-memory processing, iterate local records in batches:
+
+.. code-block:: python
+
+   for batch in loader.iter_batches("schneider_b", batch_size=25_000):
+       print(len(batch))
 
 Load a released dataset from Zenodo
 -----------------------------------
@@ -303,16 +336,34 @@ Inspect the available command-line interface:
 
    python -m synrxn --help
    python -m synrxn build --help
+   python -m synrxn verify-manifest --help
+   python -m synrxn validate --help
+
+Verify the committed release before rebuilding it:
+
+.. code-block:: bash
+
+   python -m synrxn verify-manifest --manifest manifest.json --root Data
+   python -m synrxn validate \
+     --data-dir Data \
+     --metadata Data/metadata.yaml \
+     --manifest manifest.json
 
 Typical rebuild command
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
-   python -m synrxn build \
-     --task classification \
-     --dataset schneider_b \
-     --output Data/classification
+   python -m synrxn build --classification -- --out-dir Data/classification
+
+Regenerate the release manifest after the dataset builders finish:
+
+.. code-block:: bash
+
+   python -m synrxn.build_manifest \
+     --data-dir Data \
+     --manifest-output manifest.json \
+     --citation-output /tmp/CITATION.generated.cff
 
 A rebuild workflow should record:
 

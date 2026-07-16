@@ -10,8 +10,6 @@ authors = [
 ]
 description = "Reaction Database for benchmarking"
 readme = "README.md"
-long-description = { file = "CHANGELOG.md" }
-long-description-content-type = "text/markdown"
 requires-python = ">=3.11"
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -20,20 +18,56 @@ classifiers = [
 ]
 
 dependencies = [
-  "synkit>=1.0.1",
+  "numpy>=2.2.0",
+  "pandas>=1.5.3",
+  "PyYAML>=6.0",
+  "requests>=2.31.0",
+  "synkit>=1.5.0,<1.6.0",
   "scikit-learn>=1.7.2",
-  "openpyxl>=3.1.5",
 ]
+
+[project.scripts]
+synrxn = "synrxn.__main__:main"
+synrxn-service = "synrxn.service:main"
 
 [project.optional-dependencies]
 all = [
-  "numpy>=2.2.0",
-  "pandas>=1.5.3",
+  "duckdb>=1.3.0",
+  "fastapi>=0.115.0",
+  "httpx>=0.28.0",
+  "pyarrow>=20.0.0",
   "scikit-posthocs>=0.11.4",
   "scipy>=1.16.2",
   "seaborn>=0.13.0",
   "statsmodels>=0.14.0",
-  "synrbl>=1.0.4"
+  "synrbl>=1.0.4",
+  "openpyxl>=3.1.5",
+]
+
+maintenance = [
+  "openpyxl>=3.1.5",
+]
+
+dev = [
+  "build>=1.2.0",
+  "flake8>=7.0.0",
+  "hatchling>=1.25.0",
+  "pytest>=8.0.0",
+  "PyYAML>=6.0",
+  "httpx>=0.28.0"
+]
+
+query = [
+  "duckdb>=1.3.0",
+  "pyarrow>=20.0.0"
+]
+
+service = [
+  "duckdb>=1.3.0",
+  "fastapi>=0.115.0",
+  "pyarrow>=20.0.0",
+  "uvicorn>=0.34.0",
+  "httpx>=0.28.0"
 ]
 
 docs = [
@@ -58,18 +92,22 @@ documentation = "https://synrxn.readthedocs.io/en/latest/"
 [tool.hatch.build.targets.wheel]
 # If your package lives at the top-level as `synrxn/`, use:
 packages = ["synrxn"]
-
 # Include extra top-level files in the wheel (useful when metadata references them)
 include = [
   "README.md",
-  "CHANGELOG.md",
   "LICENSE",
+  "manifest.schema.json",
 ]
+
+[tool.hatch.build.targets.wheel.force-include]
+"manifest.schema.json" = "synrxn/manifest.schema.json"
+"Data/metadata.yaml" = "synrxn/data/metadata.yaml"
 
 [tool.hatch.build.targets.sdist]
 include = [
   "synrxn",
+  "Data/metadata.yaml",
   "README.md",
-  "CHANGELOG.md",
   "LICENSE",
+  "manifest.schema.json",
 ]

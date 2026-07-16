@@ -2,6 +2,7 @@
 synrxn.data.data_loader
 
 DataLoader with support for:
+ - Local Data/ directories
  - Zenodo records (also datasets inside attached archives)
  - GitHub tags
  - GitHub commit SHA (including version='latest' resolution)
@@ -26,6 +27,9 @@ import hashlib
 from .constants import CONCEPT_DOI, GH_OWNER, GH_REPO
 from .zenodo_client import ZenodoClient
 from .github_client import GitHubClient
+from .catalog import DatasetCatalog, Task
+from .sources import LocalSource
+from .cache import CacheManager
 from .utils import (
     normalize_version,
     load_json_silent,
@@ -38,7 +42,8 @@ class DataLoader:
     """
     DataLoader for SynRXN data stored under ``Data/<task>/<name>.csv(.gz)``.
 
-    The loader supports three sources:
+    The loader supports four sources:
+      - ``'local'``: reads files from a local ``Data/``-style directory
       - ``'zenodo'``: pulls files from the Zenodo record for the project's concept DOI
       - ``'github'``: pulls files from a GitHub release tag or branch
       - ``'commit'``: pulls files from a specific commit SHA (``version='latest'`` resolves the tip SHA)
@@ -71,7 +76,7 @@ class DataLoader:
         If True enables GitHub-based retrieval. Required when ``source`` is ``'github'`` or ``'commit'``.
     :type gh_enable: bool
     :param source:
-        One of ``{'zenodo', 'github', 'commit'}``.
+        One of ``{'local', 'zenodo', 'github', 'commit'}``.
     :type source: str
     :param resolve_on_init:
         If True and ``source=='zenodo'``, resolves the Zenodo record and file index during initialization.
@@ -85,6 +90,10 @@ class DataLoader:
     :param force_record_id:
         If provided, this numeric Zenodo record id will be used directly (bypassing version lookup).
     :type force_record_id: Optional[int]
+    :param data_dir:
+        Root of a local ``Data/``-style directory. Used with ``source='local'``
+        and defaults to ``Data`` below the current working directory.
+    :type data_dir: Optional[pathlib.Path]
 
     :raises ValueError:
         If ``source`` is not one of the supported values, or if GitHub retrieval
@@ -191,19 +200,11 @@ class DataLoader:
         verify_checksum: bool = True,
         cache_record_index: bool = True,
         force_record_id: Optional[int] = None,
+        data_dir: Optional[Path] = None,
+        parquet_dir: Optional[Path] = None,
     ) -> None:
-        # normalize common short aliases to canonical folder names
-        _alias_map = {
-            "class": "classification",
-            "prop": "property",
-            "syn": "synthesis",
-        }
-
-        task_str = str(task).strip()
-        task_clean = task_str.lower().strip("/\\ ")
-
-        self.task = _alias_map.get(task_clean, task_clean)
-        self.task = self.task.strip("/\\ ")
+        self.catalog = DatasetCatalog()
+        self.task = Task.normalize(task).value
 
         self.version = version.strip() if isinstance(version, str) else None
         self.timeout = int(timeout)
@@ -211,9 +212,22 @@ class DataLoader:
         self.max_workers = int(max_workers)
         self.verify_checksum = bool(verify_checksum)
 
-        if source not in {"zenodo", "github", "commit"}:
-            raise ValueError("source must be one of {'zenodo', 'github', 'commit'}")
+        if source not in {"local", "zenodo", "github", "commit"}:
+            raise ValueError(
+                "source must be one of {'local', 'zenodo', 'github', 'commit'}"
+            )
         self.source = source
+        self.data_dir = (
+            Path(data_dir).expanduser().resolve()
+            if data_dir is not None
+            else Path("Data").resolve()
+        )
+        self.parquet_dir = (
+            Path(parquet_dir).expanduser().resolve()
+            if parquet_dir is not None
+            else self.data_dir.parent / "Parquet"
+        )
+        self._local = LocalSource(self.data_dir) if source == "local" else None
 
         # HTTP session with small retry policy
         self._session = requests.Session()
@@ -238,6 +252,7 @@ class DataLoader:
                 self.cache_dir.mkdir(parents=True, exist_ok=True)
             except Exception:
                 pass
+        self._cache = CacheManager(self.cache_dir) if self.cache_dir else None
 
         # Zenodo client
         self._zenodo = ZenodoClient(
@@ -345,7 +360,7 @@ class DataLoader:
         return n.strip()
 
     def _maybe_set_pyarrow(self, pd_kw: Dict) -> None:
-        if "engine" in pd_kw:
+        if "engine" in pd_kw or "nrows" in pd_kw or "chunksize" in pd_kw:
             return
         try:
             import pyarrow  # noqa: F401
@@ -437,6 +452,8 @@ class DataLoader:
             return []
 
     def available_names(self, refresh: bool = False) -> List[str]:
+        if self.source == "local":
+            return self._local.available_names(self.task) if self._local else []
         if self.source == "zenodo":
             self._ensure_record_resolved(force_refresh=refresh)
             raw_names = self._zenodo.available_names(
@@ -479,16 +496,81 @@ class DataLoader:
         h.update(data)
         return h.hexdigest().lower()
 
+    def _artifact_cache_path(self, name: str) -> Optional[Path]:
+        if self._cache is None:
+            return None
+        if self.source == "zenodo":
+            version = self._record_id or self.version or "latest"
+        elif self.source in {"github", "commit"}:
+            version = self.version or (self._gh_refs[0][1] if self._gh_refs else "main")
+        else:
+            version = "local"
+        return self._cache.artifact_path(self.source, version, self.task, name)
+
+    def _cache_artifact(self, path: Optional[Path], content: bytes) -> None:
+        if path is not None and self._cache is not None:
+            self._cache.write_atomic(path, content)
+
     # ------------------ core loader ------------------
     def load(
         self,
         name: str,
         use_cache: bool = True,
         dtype: Optional[Dict[str, object]] = None,
+        *,
+        columns: Optional[Iterable[str]] = None,
+        filters: Optional[Dict[str, object]] = None,
+        nrows: Optional[int] = None,
+        format: str = "pandas",
         **pd_kw,
-    ) -> pd.DataFrame:
-        self._maybe_set_pyarrow(pd_kw)
+    ):
+        if format not in {"pandas", "arrow"}:
+            raise ValueError("format must be 'pandas' or 'arrow'")
         name = self._normalize_basename(name)
+
+        if columns is not None:
+            if "usecols" in pd_kw:
+                raise ValueError("pass either columns or usecols, not both")
+            pd_kw["usecols"] = list(columns)
+        if nrows is not None:
+            if nrows < 0:
+                raise ValueError("nrows must be non-negative")
+            if "nrows" in pd_kw:
+                raise ValueError("pass either nrows or pandas nrows, not both")
+            pd_kw["nrows"] = int(nrows)
+        self._maybe_set_pyarrow(pd_kw)
+
+        def _apply_filters(frame: pd.DataFrame):
+            if filters:
+                mask = pd.Series(True, index=frame.index)
+                for column, expected in filters.items():
+                    if column not in frame.columns:
+                        raise KeyError(f"filter column {column!r} is not loaded")
+                    if isinstance(expected, (list, tuple, set, frozenset)):
+                        mask &= frame[column].isin(expected)
+                    else:
+                        mask &= frame[column] == expected
+                frame = frame.loc[mask].reset_index(drop=True)
+            if format == "arrow":
+                try:
+                    import pyarrow as pa
+                except ImportError as exc:
+                    raise RuntimeError(
+                        "Arrow output requires: pip install synrxn[query]"
+                    ) from exc
+                return pa.Table.from_pandas(frame, preserve_index=False)
+            return frame
+
+        if self.source == "local":
+            path = self._local.resolve(self.task, name) if self._local else None
+            if path is None:
+                available = self.available_names()
+                suggestions = get_close_matches(name, available, n=5, cutoff=0.4)
+                hint = f" Did you mean: {suggestions}?" if suggestions else ""
+                raise FileNotFoundError(
+                    f"Local dataset {self.task}/{name} not found below {self.data_dir}.{hint}"
+                )
+            return _apply_filters(pd.read_csv(path, dtype=dtype, **pd_kw))
 
         rel_gz = f"Data/{self.task}/{name}.csv.gz"
         rel_csv = f"Data/{self.task}/{name}.csv"
@@ -498,8 +580,10 @@ class DataLoader:
 
         def _read_bytes(content: bytes, gz: bool) -> pd.DataFrame:
             buf = io.BytesIO(content)
-            return pd.read_csv(
-                buf, compression=("gzip" if gz else None), dtype=dtype, **pd_kw
+            return _apply_filters(
+                pd.read_csv(
+                    buf, compression=("gzip" if gz else None), dtype=dtype, **pd_kw
+                )
             )
 
         # --- 1) exact keys on Zenodo ---
@@ -507,11 +591,7 @@ class DataLoader:
             nonlocal last_err
             self._ensure_record_resolved()
 
-            cache_path = (
-                (self.cache_dir / f"{self.task}__{name}.csv.gz")
-                if (self.cache_dir)
-                else None
-            )
+            cache_path = self._artifact_cache_path(name)
 
             for key in (rel_gz, rel_csv):
                 if key in self._file_index:
@@ -526,19 +606,17 @@ class DataLoader:
                         algo, expected_hex = parse_checksum_field(
                             meta.get("checksum", "") or ""
                         )
-                        if algo and expected_hex:
-                            try:
-                                cached_bytes = cache_path.read_bytes()
+                        try:
+                            cached_bytes = cache_path.read_bytes()
+                            if self.verify_checksum and algo and expected_hex:
                                 got_hex = self._compute_hex(cached_bytes, algo)
                                 if got_hex.lower() == expected_hex.lower():
                                     return _read_bytes(cached_bytes, gz=True)
-                                else:
-                                    try:
-                                        cache_path.unlink()
-                                    except Exception:
-                                        pass
-                            except Exception:
-                                pass
+                                cache_path.unlink(missing_ok=True)
+                            else:
+                                return _read_bytes(cached_bytes, gz=True)
+                        except Exception:
+                            pass
 
                     # download via ZenodoClient (stream_to_temp_and_verify will check checksum)
                     resp = self._zenodo.get_download_response(
@@ -549,15 +627,14 @@ class DataLoader:
                         temp_path = None
                         try:
                             suffix = ".gz" if key.endswith(".gz") else ".csv"
+                            verify_meta = meta if self.verify_checksum else {}
                             temp_path = self._zenodo.stream_to_temp_and_verify(
-                                resp, meta, suffix=suffix
+                                resp, verify_meta, suffix=suffix
                             )
                             content = Path(temp_path).read_bytes()
-                            if use_cache and self.cache_dir and key.endswith(".csv.gz"):
+                            if use_cache and key.endswith(".csv.gz"):
                                 try:
-                                    (
-                                        self.cache_dir / f"{self.task}__{name}.csv.gz"
-                                    ).write_bytes(content)
+                                    self._cache_artifact(cache_path, content)
                                 except Exception:
                                     pass
                             return _read_bytes(content, gz=key.endswith(".csv.gz"))
@@ -578,6 +655,12 @@ class DataLoader:
         # --- 2) fuzzy: check direct keys (non-archive) ---
         def _try_fuzzy_zenodo() -> Optional[pd.DataFrame]:
             nonlocal last_err
+            cache_path = self._artifact_cache_path(name)
+            if use_cache and cache_path and cache_path.is_file():
+                try:
+                    return _read_bytes(cache_path.read_bytes(), gz=True)
+                except Exception:
+                    cache_path.unlink(missing_ok=True)
             # look for candidate keys in record index matching name/task patterns
             candidates = (
                 self._zenodo.find_keys(self._file_index, f"{self.task}/{name}")
@@ -605,15 +688,14 @@ class DataLoader:
                 temp_path = None
                 try:
                     suffix = ".gz" if key.endswith(".gz") else ".csv"
+                    verify_meta = meta if self.verify_checksum else {}
                     temp_path = self._zenodo.stream_to_temp_and_verify(
-                        resp, meta, suffix=suffix
+                        resp, verify_meta, suffix=suffix
                     )
                     content = Path(temp_path).read_bytes()
-                    if use_cache and self.cache_dir and key.endswith(".csv.gz"):
+                    if use_cache and key.endswith(".csv.gz"):
                         try:
-                            (
-                                self.cache_dir / f"{self.task}__{name}.csv.gz"
-                            ).write_bytes(content)
+                            self._cache_artifact(cache_path, content)
                         except Exception:
                             pass
                     return _read_bytes(content, gz=key.endswith(".csv.gz"))
@@ -630,6 +712,12 @@ class DataLoader:
         # --- 3) archive members: inspect archives and extract member if present ---
         def _try_archive_members() -> Optional[pd.DataFrame]:
             nonlocal last_err
+            cache_path = self._artifact_cache_path(name)
+            if use_cache and cache_path and cache_path.is_file():
+                try:
+                    return _read_bytes(cache_path.read_bytes(), gz=True)
+                except Exception:
+                    cache_path.unlink(missing_ok=True)
             # find archive keys in record index
             archive_keys = [
                 k
@@ -643,10 +731,10 @@ class DataLoader:
             candidates_tail = [
                 f"data/{self.task}/{name}.csv.gz",
                 f"data/{self.task}/{name}.csv",
-                f"data/{self.task}/{name.replace('_','-')}.csv.gz",
-                f"data/{self.task}/{name.replace('_','-')}.csv",
-                f"data/{self.task}/{name.replace('-','_')}.csv.gz",
-                f"data/{self.task}/{name.replace('-','_')}.csv",
+                f"data/{self.task}/{name.replace('_', '-')}.csv.gz",
+                f"data/{self.task}/{name.replace('_', '-')}.csv",
+                f"data/{self.task}/{name.replace('-', '_')}.csv.gz",
+                f"data/{self.task}/{name.replace('-', '_')}.csv",
                 f"{self.task}/{name}.csv.gz",
                 f"{self.task}/{name}.csv",
                 f"{name}.csv.gz",
@@ -687,8 +775,9 @@ class DataLoader:
                                         if ak.lower().endswith(".zip")
                                         else ".tar"
                                     )
+                                    verify_meta = meta if self.verify_checksum else {}
                                     temp_path = self._zenodo.stream_to_temp_and_verify(
-                                        resp, meta, suffix=suffix
+                                        resp, verify_meta, suffix=suffix
                                     )
                                     # extract bytes for member m
                                     member_bytes = self._zenodo.extract_member_bytes(
@@ -702,12 +791,9 @@ class DataLoader:
                                     # if the member name endswith .csv.gz, it's gzipped inside archive
                                     is_gz = m.lower().endswith(".csv.gz")
                                     # optionally cache extracted gz to cache_dir for future
-                                    if is_gz and use_cache and self.cache_dir:
+                                    if is_gz and use_cache:
                                         try:
-                                            (
-                                                self.cache_dir
-                                                / f"{self.task}__{name}.csv.gz"
-                                            ).write_bytes(member_bytes)
+                                            self._cache_artifact(cache_path, member_bytes)
                                         except Exception:
                                             pass
                                     return _read_bytes(member_bytes, gz=is_gz)
@@ -735,6 +821,12 @@ class DataLoader:
                     repo=GH_REPO,
                     ref_candidates=self._gh_refs,
                 )
+            cache_path = self._artifact_cache_path(name)
+            if use_cache and cache_path and cache_path.is_file():
+                try:
+                    return _read_bytes(cache_path.read_bytes(), gz=True)
+                except Exception:
+                    cache_path.unlink(missing_ok=True)
             for ext in (".csv.gz", ".csv"):
                 url = self._github.raw_url(self.task, name, ext)
                 if not url:
@@ -744,11 +836,9 @@ class DataLoader:
                     r = self._session.get(url, timeout=self.timeout, stream=True)
                     if r.status_code == 200:
                         content = r.content
-                        if ext == ".csv.gz" and use_cache and self.cache_dir:
+                        if ext == ".csv.gz" and use_cache:
                             try:
-                                (
-                                    self.cache_dir / f"{self.task}__{name}.csv.gz"
-                                ).write_bytes(content)
+                                self._cache_artifact(cache_path, content)
                             except Exception:
                                 pass
                         return _read_bytes(content, gz=(ext == ".csv.gz"))
@@ -846,6 +936,74 @@ class DataLoader:
             msg_lines += ["", f"Last error: {last_err!s}"]
 
         raise FileNotFoundError("\n".join(msg_lines))
+
+    def describe(self, name: str):
+        """Return authoritative catalog metadata for a dataset."""
+        return self.catalog.get(self.task, self._normalize_basename(name))
+
+    def iter_batches(
+        self,
+        name: str,
+        batch_size: int = 100_000,
+        *,
+        columns: Optional[Iterable[str]] = None,
+        filters: Optional[Dict[str, object]] = None,
+        dtype: Optional[Dict[str, object]] = None,
+        format: str = "pandas",
+        **pd_kw,
+    ):
+        """Yield bounded pandas batches from a local dataset."""
+        if batch_size <= 0:
+            raise ValueError("batch_size must be positive")
+        if format not in {"pandas", "arrow"}:
+            raise ValueError("format must be 'pandas' or 'arrow'")
+        if self.source != "local" or self._local is None:
+            raise NotImplementedError(
+                "bounded batch iteration currently requires source='local'"
+            )
+        clean_name = self._normalize_basename(name)
+        path = self._local.resolve(self.task, clean_name)
+        if path is None:
+            raise FileNotFoundError(
+                f"Local dataset {self.task}/{clean_name} not found below {self.data_dir}"
+            )
+        if columns is not None:
+            pd_kw["usecols"] = list(columns)
+        for frame in pd.read_csv(path, dtype=dtype, chunksize=batch_size, **pd_kw):
+            if filters:
+                mask = pd.Series(True, index=frame.index)
+                for column, expected in filters.items():
+                    if column not in frame.columns:
+                        raise KeyError(f"filter column {column!r} is not loaded")
+                    if isinstance(expected, (list, tuple, set, frozenset)):
+                        mask &= frame[column].isin(expected)
+                    else:
+                        mask &= frame[column] == expected
+                frame = frame.loc[mask]
+            frame = frame.reset_index(drop=True)
+            if format == "arrow":
+                try:
+                    import pyarrow as pa
+                except ImportError as exc:
+                    raise RuntimeError(
+                        "Arrow output requires: pip install synrxn[query]"
+                    ) from exc
+                yield pa.Table.from_pandas(frame, preserve_index=False)
+            else:
+                yield frame
+
+    def scan(self, name: str):
+        """Return a lazy, bounded Parquet scan for a local derived release."""
+        from ..query import DatasetScan
+
+        clean_name = self._normalize_basename(name)
+        self.catalog.get(self.task, clean_name)
+        return DatasetScan(
+            self.parquet_dir,
+            self.task,
+            clean_name,
+            catalog=self.catalog,
+        )
 
     # ------------------ batch loader ------------------
     def load_many(

@@ -149,6 +149,21 @@ def _normalize_cell_to_string(x: Any, choose_first: bool = True) -> Optional[str
     return s if s else None
 
 
+def _validator_accuracy(results: Any) -> float:
+    """Extract percentage accuracy from SynKit or the legacy tuple response."""
+    if not results or not isinstance(results, (list, tuple)):
+        raise RuntimeError("Unexpected return value from validator.validate_smiles()")
+    first_result = results[0]
+    if isinstance(first_result, tuple):
+        first_result = first_result[0]
+    if isinstance(first_result, list):
+        first_result = first_result[0]
+    accuracy = first_result.get("accuracy")
+    if accuracy is None:
+        raise KeyError("No 'accuracy' key found in validator result[0].")
+    return float(accuracy)
+
+
 def acc_aam(
     ground_truth: Union[Sequence[Union[str, Sequence[str]]], str],
     pred: Union[Sequence[Union[str, Sequence[str]]], str],
@@ -157,7 +172,7 @@ def acc_aam(
     choose_first: bool = True,
 ) -> float:
     """
-    Compute AAM-based accuracy using synkit.Chem.Reaction.aam_validator.AAMValidator.
+    Compute AAM-based accuracy using SynKit 1.5's AAMValidator.
 
     Top-level inputs may be:
       - a pandas Series / numpy array / list of items (batch),
@@ -172,7 +187,7 @@ def acc_aam(
     :param mapper_name: column name for predictions in the DataFrame passed to the validator
     :param validator: optional pre-created AAMValidator instance to reuse
     :param choose_first: whether to pick the first non-empty candidate from sequence-like items
-    :returns: accuracy as returned by AAMValidator (float between 0.0 and 1.0)
+    :returns: percentage accuracy as returned by AAMValidator (0.0 to 100.0)
     :raises ValueError: if top-level lengths differ (when both are sequences after normalization)
     :raises ImportError: if AAMValidator cannot be imported/instantiated and no validator provided
     """
@@ -218,7 +233,7 @@ def acc_aam(
     # 4) instantiate validator if not provided
     if validator is None:
         try:
-            from synrxn.aam.aam_validator import AAMValidator
+            from synkit.Chem.Reaction.Mapper import AAMValidator
 
             validator = AAMValidator()
         except Exception as exc:
@@ -236,14 +251,7 @@ def acc_aam(
             ignore_tautomers=False,
         )
 
-        if not results or not isinstance(results, (list, tuple)):
-            raise RuntimeError(
-                "Unexpected return value from validator.validate_smiles()"
-            )
-        accuracy = results[0][0].get("accuracy")
-        if accuracy is None:
-            raise KeyError("No 'accuracy' key found in validator result[0].")
-        return float(accuracy)
+        return _validator_accuracy(results)
     except Exception as exc:
         logger.exception("AAM validation failed: %s", exc)
         raise

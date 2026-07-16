@@ -10,10 +10,71 @@ what changed, which datasets moved, and which archive should be cited.
    <div class="synrxn-callout-card">
      <span class="synrxn-callout-icon"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></span>
      <div>
-       <strong>Current release: SynRXN 1.0.0.</strong>
-       <p>This release aligns the documentation with the Scientific Data descriptor, adds new AAM and synthesis records, and promotes the public API/documentation to a stable 1.0 series.</p>
+       <strong>Next planned release: SynRXN 1.1.0.</strong>
+       <p>This release prepares SynRXN as a verified benchmark workspace with a static dataset catalog, efficient local queries, a read-only service, and SynKit 1.5 compatibility.</p>
      </div>
    </div>
+
+v1.1.0 — verified benchmark workspace (pending release)
+-------------------------------------------------------
+
+Added
+~~~~~
+
+- Added a manifest schema, release verifier, and metadata validator.  The
+  published dataset inventory can now be checked against artifact sizes and
+  SHA-256 checksums before derived catalog, Parquet, or service assets are
+  generated.
+- Added a static, filterable :doc:`Dataset Catalog <catalog>` with task,
+  target, license, scale, and split filters; dataset comparison and export;
+  compact sample/schema inspection; and manifest-backed citation and loading
+  snippets.
+- Added generated reaction depictions for catalog datasets.  The catalog opens
+  with a representative ``classification/schneider_b`` benchmark example and
+  remains usable when viewed from a local static documentation preview.
+- Added a deterministic CSV-to-Parquet query layer, checksum index, CLI
+  commands for building and verifying derived assets, and an allowlisted query
+  API for projections, filters, ordering, pagination, batches, and statistics.
+- Added an optional read-only FastAPI service with bounded requests, release
+  integrity checks at startup, response caching headers, and a container
+  definition for mounting a verified release.
+- Added a reproducible SynKit AAM validator comparison script, an AAM
+  compatibility test, and :doc:`AAM validation documentation <aam_validation>`.
+
+Changed
+~~~~~~~
+
+- Updated the SynKit requirement to ``>=1.5.0,<1.6.0`` and adapted the public
+  AAM accuracy helper to the SynKit validator interface.
+- Updated the documentation interface from a promotional landing-page style to
+  a restrained benchmark-workspace layout, with a simplified abstract SynRXN
+  wordmark and benchmark-oriented catalog presentation.
+- Extended ``DataLoader`` with local column projection, bounded filtering,
+  batches, Arrow output, and Parquet scanning for large benchmark workflows.
+- Updated package, documentation, and CI configuration so catalog and query
+  assets are generated from the verified release metadata rather than manually
+  maintained copies.
+
+Fixed
+~~~~~
+
+- Restored compatibility of the legacy SynRXN AAM normalization utilities with
+  the installed RDKit standardization API.
+- Verified that legacy SynRXN and SynKit 1.5 AAM validation decisions agree for
+  both reaction-center and ITS validation across 47,232 evaluated mapper
+  decisions; the stricter SynKit mode remains intentionally distinct.
+- Fixed catalog startup in Sphinx and standalone local HTML previews.  Catalog
+  data is now available as a generated page asset instead of relying solely on
+  a browser ``fetch`` request.
+
+Release and citation notes
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- This entry describes pending v1.1.0 work.  The package metadata and Zenodo
+  archive remain at v1.0.0 until a v1.1.0 release is tagged and deposited.
+- At publication, update the package version, manifest release metadata, and
+  exact Zenodo version DOI together; benchmark users should cite that exact
+  archive alongside the primary paper.
 
 v1.0.0 — Scientific Data release
 --------------------------------

@@ -37,6 +37,8 @@ Install optional dependencies when you need the broader tooling stack:
 
 ```bash
 pip install "synrxn[all]"
+pip install "synrxn[query]"    # PyArrow + embedded DuckDB
+pip install "synrxn[service]"  # optional read-only HTTP API
 ```
 
 For development:
@@ -66,6 +68,23 @@ print(dl.available_names())
 df = dl.load("schneider_b")
 print(df.shape)
 print(df.columns.tolist())
+```
+
+Browse the packaged catalog or load a checkout without a network request:
+
+```python
+from synrxn import DataLoader, DatasetCatalog
+
+catalog = DatasetCatalog()
+print([item.name for item in catalog.list(task="property", has_split=True)])
+
+local = DataLoader(task="classification", source="local", data_dir="Data")
+sample = local.load(
+    "schneider_b",
+    columns=["r_id", "label", "split"],
+    filters={"split": "test"},
+    nrows=1_000,
+)
 ```
 
 Use an exact commit for development snapshots you want to reproduce later:
@@ -123,6 +142,66 @@ splitter = RepeatedKFoldsSplitter(
 splitter.prepare_splits(df, stratify=None)
 train_df, val_df, test_df = splitter.get_split(0, 0, as_frame=True)
 print(len(train_df), len(val_df), len(test_df))
+```
+
+## Validate a Checkout
+
+Release integrity and catalog metadata can be checked through the installed CLI:
+
+```bash
+synrxn verify-manifest --manifest manifest.json --root Data
+synrxn validate --data-dir Data --metadata Data/metadata.yaml --manifest manifest.json
+synrxn datasets list --task property --has-split
+synrxn datasets describe property rgd1
+```
+
+The first command verifies every declared size and SHA-256 checksum. The second
+checks catalog coverage, observed schemas, row identifiers, published split
+values, and manifest row counts.
+
+## Query Layer and Optional Service
+
+SynRXN does not migrate its immutable benchmark records to a relational
+database. Compressed CSV remains the canonical release format. Deterministic
+Parquet derivatives add typed, projected access, and embedded DuckDB provides
+SQL execution behind an allowlisted Python API without operating a database
+server.
+
+```bash
+synrxn parquet build --data-dir Data --output-dir Parquet
+synrxn parquet verify --data-dir Data --parquet-dir Parquet
+```
+
+```python
+loader = DataLoader(
+    task="classification",
+    source="local",
+    data_dir="Data",
+    parquet_dir="Parquet",
+)
+with loader.scan("schneider_b") as scan:
+    page = scan.collect(
+        columns=["r_id", "label", "split"],
+        filters={"split": "test"},
+        limit=100,
+    )
+```
+
+Run `synrxn-service` only when a deployed client needs remote, record-level
+pagination. It validates the derived release index before startup and exposes a
+bounded read-only API with OpenAPI documentation. PostgreSQL becomes useful
+only for future mutable shared state such as user accounts, annotations,
+curation workflows, or benchmark submissions—not for the release datasets.
+
+## AAM Validation
+
+SynRXN now requires `synkit>=1.5.0,<1.6.0`, and `acc_aam` uses SynKit's 1.5
+`AAMValidator`. Keep its default `strip_unbalanced_maps=True` to reproduce the
+historical SynRXN metric. A full RC and ITS comparison across 5,904 reactions
+and four mapper outputs produced zero differences in 47,232 row-level decisions.
+
+```bash
+python script/compare_aam_validators.py --methods RC ITS --n-jobs -1
 ```
 
 ## Documentation

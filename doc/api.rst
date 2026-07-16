@@ -61,6 +61,26 @@ Minimal usage
    print(loader.available_names())
    df = loader.load("schneider_b")
 
+Catalog and local projected access
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+   from synrxn import DataLoader, DatasetCatalog
+
+   catalog = DatasetCatalog()
+   property_records = catalog.list(task="property", has_split=True)
+
+   loader = DataLoader(task="property", source="local", data_dir="Data")
+   test_rows = loader.load(
+       "rgd1",
+       columns=["r_id", "ea", "split"],
+       filters={"split": "test"},
+   )
+
+Use :meth:`synrxn.data.DataLoader.iter_batches` for bounded-memory iteration
+over local data.
+
 Splitting utilities: :mod:`synrxn.split.repeated_kfold`
 -------------------------------------------------------
 
@@ -106,11 +126,36 @@ invoking SynRXN as a module.
 
    python -m synrxn --help
    python -m synrxn build --help
+   python -m synrxn verify-manifest --help
+   python -m synrxn validate --help
+   python -m synrxn datasets list --task property --has-split
 
-The ``build`` subcommand is intended for maintainers and advanced users who need
-to rebuild datasets or manifests from original sources.
+The ``build`` subcommand is repository-only and intended for maintainers who
+need to rebuild datasets from original sources. ``verify-manifest`` verifies
+artifact sizes and checksums, while ``validate`` checks the metadata catalog,
+schemas, identifiers, split values, and manifest record counts.
 
 .. automodule:: synrxn.__main__
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Query layer: :mod:`synrxn.query`
+--------------------------------
+
+.. automodule:: synrxn.query
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Read-only service: :mod:`synrxn.service`
+----------------------------------------
+
+The optional FastAPI application is created with
+:func:`synrxn.service.create_app`. See :ref:`query-and-service` for its bounded
+HTTP contract and deployment guidance.
+
+.. automodule:: synrxn.service
    :members:
    :undoc-members:
    :show-inheritance:

@@ -371,9 +371,9 @@ def auto_test_repeated(
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
             try:
-                stat, p = stats.wilcoxon(groups_arr[0], groups_arr[1])
+                _, p = stats.wilcoxon(groups_arr[0], groups_arr[1])
             except Exception:
-                stat, p = np.nan, np.nan
+                _, p = np.nan, np.nan
 
         if np.isnan(p):
             if np.allclose(groups_arr[0], groups_arr[1]):

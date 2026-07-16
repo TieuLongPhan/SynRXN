@@ -1,0 +1,9 @@
+[flake8]
+# These orchestration functions predate the component refactor planned for
+# Sprint 01. They remain linted for correctness/style; only C901 is deferred.
+per-file-ignores =
+    synrxn/build_manifest.py:C901
+    synrxn/__main__.py:C901
+    synrxn/data/data_loader.py:C901
+    synrxn/statistics/auto_test.py:C901
+    synrxn/validate_data.py:C901

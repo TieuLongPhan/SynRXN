@@ -36,7 +36,8 @@ except Exception:
     HAVE_PANDAS = False
 
 ISO_FMT = "%Y-%m-%dT%H:%M:%SZ"
-DEFAULT_ZENODO_DOI = "10.5281/zenodo.17297723"
+MANIFEST_SCHEMA_VERSION = "1.0"
+DEFAULT_ZENODO_DOI = "10.5281/zenodo.17297258"
 
 
 # -------------------------
@@ -186,8 +187,12 @@ def load_sidecar_metadata(root: Path) -> Dict[str, Dict[str, Any]]:
                     with p.open("r", encoding="utf8") as fh:
                         data = json.load(fh)
                 if isinstance(data, dict):
-                    # expected mapping of file-key -> metadata
-                    for k, v in data.items():
+                    # Current catalogs nest artifact records below ``datasets``;
+                    # retain support for the legacy direct path -> metadata mapping.
+                    records = data.get("datasets", data)
+                    if not isinstance(records, dict):
+                        continue
+                    for k, v in records.items():
                         if not isinstance(v, dict):
                             continue
                         out[str(k)] = v
@@ -298,15 +303,8 @@ def analyze_file(
             with io.TextIOWrapper(
                 bfh, encoding="utf8", errors="replace", newline=""
             ) as fh:
-                # sniff delimiter if possible (may fail on weird inputs)
-                sample = fh.read(8192)
-                fh.seek(0)
-                try:
-                    sniffer = csv.Sniffer()
-                    dialect = sniffer.sniff(sample)
-                    delim = dialect.delimiter
-                except Exception:
-                    pass
+                # The extension defines the release delimiter. Sniffing reaction
+                # strings can incorrectly select a common SMILES character.
                 reader = csv.reader(fh, delimiter=delim)
                 # attempt to read header as columns
                 try:
@@ -320,8 +318,8 @@ def analyze_file(
                     info["columns"] = columns
                 else:
                     info["columns"] = None
-                # continue counting rows (count including header if header present)
-                count = 1
+                # Count data records. A header describes the records and is not itself a row.
+                count = 0 if header_is_strings else 1
                 for _ in reader:
                     count += 1
                 info["rows"] = count
@@ -449,14 +447,27 @@ def scan_files(
                     if v is not None:
                         entry[k] = v
 
-                # inject sidecar metadata (description/license) if present
+                # Inject catalog fields without replacing measured file properties
+                # such as size, checksum, row count, or the observed column list.
                 # sidecar keys may be full relative path or just filename keys
                 sc = sidecar.get(rel) or sidecar.get(p.name)
                 if sc and isinstance(sc, dict):
-                    if "description" in sc:
-                        entry["description"] = sc["description"]
-                    if "license" in sc:
-                        entry["license"] = sc["license"]
+                    catalog_fields = {
+                        "title",
+                        "description",
+                        "license",
+                        "citations",
+                        "source",
+                        "benchmark_role",
+                        "targets",
+                        "split_values",
+                        "row_identifier",
+                        "row_identifier_unique",
+                    }
+                    for field in catalog_fields:
+                        value = sc.get(field)
+                        if value not in (None, "", []):
+                            entry[field] = value
 
                 files.append(entry)
             except Exception:
@@ -758,7 +769,16 @@ def build_manifest(
             filtered.append(f)
             continue
         # allow some top-level helper files (README, CITATION, top-level metadata)
-        if top.lower() in {"readme.md", "readme", "citation.cff", "citation", "."}:
+        if top.lower() in {
+            "readme.md",
+            "readme",
+            "citation.cff",
+            "citation",
+            "metadata.yaml",
+            "metadata.yml",
+            "metadata.json",
+            ".",
+        }:
             filtered.append(f)
             continue
         # otherwise skip
@@ -871,6 +891,7 @@ def build_manifest(
     dataset = {k: v for k, v in dataset.items() if v not in (None, "", [])}
 
     man: Dict[str, Any] = {
+        "schema_version": MANIFEST_SCHEMA_VERSION,
         "generated_at": generated_at,
         "dataset": dataset,
         "provenance": prov,

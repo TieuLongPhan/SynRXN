@@ -1,0 +1,18 @@
+FROM python:3.11-slim AS runtime
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    SYNRXN_HOST=0.0.0.0 \
+    SYNRXN_PARQUET_DIR=/release/Parquet \
+    SYNRXN_MANIFEST=/release/manifest.json
+
+WORKDIR /app
+COPY pyproject.toml README.md LICENSE manifest.schema.json ./
+COPY synrxn ./synrxn
+COPY Data/metadata.yaml ./Data/metadata.yaml
+RUN pip install --no-cache-dir ".[service]" \
+    && useradd --create-home --uid 10001 synrxn
+
+USER 10001
+EXPOSE 8000
+CMD ["synrxn-service"]

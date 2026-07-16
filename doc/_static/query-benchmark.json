@@ -1,0 +1,23 @@
+{
+  "environment": {
+    "python": "3.12.12",
+    "platform": "Linux x86_64",
+    "pandas": "2.3.3",
+    "pyarrow": "25.0.0",
+    "duckdb": "1.5.4"
+  },
+  "results": [
+    {"dataset": "aam/ecoli", "case": "csv-full", "seconds": 0.0178, "peak_kib": 117972, "rows": 273},
+    {"dataset": "aam/ecoli", "case": "csv-projected", "seconds": 0.0078, "peak_kib": 118520, "rows": 273},
+    {"dataset": "aam/ecoli", "case": "parquet-filtered", "seconds": 0.0531, "peak_kib": 155312, "rows": 273},
+    {"dataset": "aam/ecoli", "case": "parquet-first-page", "seconds": 0.0541, "peak_kib": 154668, "rows": 100},
+    {"dataset": "classification/schneider_b", "case": "csv-full", "seconds": 0.0858, "peak_kib": 141688, "rows": 50000},
+    {"dataset": "classification/schneider_b", "case": "csv-projected", "seconds": 0.0605, "peak_kib": 131860, "rows": 50000},
+    {"dataset": "classification/schneider_b", "case": "parquet-filtered", "seconds": 0.0694, "peak_kib": 158668, "rows": 10000},
+    {"dataset": "classification/schneider_b", "case": "parquet-first-page", "seconds": 0.0633, "peak_kib": 155588, "rows": 100},
+    {"dataset": "synthesis/uspto_mit", "case": "csv-full", "seconds": 2.8669, "peak_kib": 496920, "rows": 479035},
+    {"dataset": "synthesis/uspto_mit", "case": "csv-projected", "seconds": 1.3328, "peak_kib": 244744, "rows": 479035},
+    {"dataset": "synthesis/uspto_mit", "case": "parquet-filtered", "seconds": 0.0903, "peak_kib": 228028, "rows": 10000},
+    {"dataset": "synthesis/uspto_mit", "case": "parquet-first-page", "seconds": 0.0602, "peak_kib": 172964, "rows": 100}
+  ]
+}

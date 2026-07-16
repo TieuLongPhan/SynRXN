@@ -5,14 +5,18 @@ SynRXN
 
 .. raw:: html
 
-   <section class="synrxn-hero">
-     <h1>SynRXN: curated reaction benchmarks for reproducible reaction informatics</h1>
-     <p>SynRXN organizes atom mapping, reaction classification, property prediction, reaction rebalancing, and synthesis datasets into a versioned, citable benchmark resource with a lightweight Python API.</p>
-     <div class="synrxn-hero-actions">
-       <a class="synrxn-button" href="getting_started.html"><i class="fa-solid fa-rocket" aria-hidden="true"></i> Get started</a>
-       <a class="synrxn-button secondary" href="data_records.html"><i class="fa-solid fa-table-list" aria-hidden="true"></i> Browse datasets</a>
-       <a class="synrxn-button secondary" href="api.html"><i class="fa-solid fa-code" aria-hidden="true"></i> API reference</a>
+   <section class="synrxn-intro">
+     <div class="synrxn-intro-copy">
+       <p class="synrxn-kicker">Reaction benchmark infrastructure</p>
+       <h1>Curated reaction benchmarks for reproducible reaction informatics.</h1>
+       <p>SynRXN brings atom mapping, classification, property prediction, rebalancing, and synthesis data into one versioned, citable resource for fair model evaluation.</p>
+       <p class="synrxn-intro-links"><a href="catalog.html">Browse the benchmark catalog <span aria-hidden="true">→</span></a><a href="getting_started.html">Read the quickstart</a><a href="api.html">API reference</a></p>
      </div>
+     <dl class="synrxn-intro-facts">
+       <div><dt>Coverage</dt><dd>Five reaction task families</dd></div>
+       <div><dt>Release model</dt><dd>Versioned, manifest-verified assets</dd></div>
+       <div><dt>Evaluation</dt><dd>Published or reproducible splits</dd></div>
+     </dl>
    </section>
 
 .. raw:: html
@@ -176,6 +180,9 @@ exact Zenodo version used for your data archive.
 
    Getting Started <getting_started>
    Data Concept <data_concept>
+   Dataset Catalog <catalog>
+   Parquet Queries and Service <query_and_service>
+   AAM Validation <aam_validation>
    Data Records <data_records>
    Tutorials and Examples <tutorials_and_examples>
 

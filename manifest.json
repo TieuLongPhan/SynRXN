@@ -1,10 +1,11 @@
 {
-  "generated_at": "2025-11-21T15:03:23Z",
+  "schema_version": "1.0",
+  "generated_at": "2026-07-16T09:02:37Z",
   "dataset": {
     "title": "synrxn: A Benchmarking Framework and Open Data Repository for Computer-Aided Synthesis Planning",
-    "version": "0.0.8",
+    "version": "1.0.0",
     "description": "Reaction Database for benchmarking",
-    "doi": "10.5281/zenodo.17297723",
+    "doi": "10.5281/zenodo.17297258",
     "authors": [
       {
         "name": "Tieu Long Phan",
@@ -14,107 +15,195 @@
     "files": [
       {
         "key": "aam/ecoli.csv.gz",
-        "size": 114116,
-        "sha256": "9d7bb5d409e088efc9110e3906f3c29463b6d1b697e95d60f46d3996ab7a4523",
-        "mtime": "2025-11-21T15:03:18Z",
+        "size": 95991,
+        "sha256": "d38436457c5f5d82149981005a2c39d289d56467fb45ffdeb294f0c62b631866",
+        "mtime": "2026-07-16T07:12:22Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 274,
+        "rows": 273,
         "columns": [
           "r_id",
           "ground_truth",
+          "reactions",
           "rxn_mapper",
           "graphormer",
           "local_mapper",
           "rdt",
+          "original_id"
+        ],
+        "benchmark_role": "Compare mapper outputs with curated biochemical reference mappings.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Biochemical atom-mapping benchmark derived from E. coli reactions.",
+        "title": "E. coli atom mapping",
+        "row_identifier": "r_id",
+        "targets": [
+          "ground_truth"
+        ],
+        "citations": [
+          "beier2026computing"
+        ]
+      },
+      {
+        "key": "aam/enzyme_map.csv.gz",
+        "size": 3818594,
+        "sha256": "303e6638819a008f1442291443459795e9bb40b3cdea9e9da01732d05f20b807",
+        "mtime": "2026-07-16T07:12:22Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 47974,
+        "columns": [
+          "r_id",
+          "ground_truth",
           "rxn",
           "original_id"
+        ],
+        "benchmark_role": "Evaluate atom mapping at scale on enzymatic reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Enzymatic atom-mapping benchmark from the EnzymeMap reaction collection.",
+        "title": "EnzymeMap atom mapping",
+        "row_identifier": "r_id",
+        "targets": [
+          "ground_truth"
+        ],
+        "citations": [
+          "heid2023enzymemap"
         ]
       },
       {
         "key": "aam/golden.csv.gz",
-        "size": 572468,
-        "sha256": "b0b5e2b1d3d8684ead135fd5610aeeab97ee798264cb1c83ab3dbdf3b03e283f",
-        "mtime": "2025-11-21T15:03:18Z",
+        "size": 528456,
+        "sha256": "ccce1ab8a18a45559cdbf87bcd3ecd838fc6e1cd1e3ad8d5815e39af5ddd49d9",
+        "mtime": "2026-07-16T07:12:22Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 1759,
+        "rows": 1758,
         "columns": [
           "r_id",
+          "reactions",
           "ground_truth",
           "rxn_mapper",
           "graphormer",
           "local_mapper",
           "rdt",
-          "rxn",
           "original_id"
+        ],
+        "benchmark_role": "Compare mapper outputs with a curated synthetic reference set.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Curated synthetic-chemistry atom-mapping benchmark.",
+        "title": "Golden atom-mapping set",
+        "row_identifier": "r_id",
+        "targets": [
+          "ground_truth"
+        ],
+        "citations": [
+          "chen2024precise",
+          "lin2022atom"
         ]
       },
       {
         "key": "aam/natcomm.csv.gz",
-        "size": 142385,
-        "sha256": "dda015a9f94ea34c2b28028c2896dfe4d2709d0b427fa759e00915f8cf40aab4",
-        "mtime": "2025-11-21T15:03:18Z",
+        "size": 132874,
+        "sha256": "c62f4084990533d36bd9ba706cd78a80de0bad14ee139cdf1fb3c00422da2343",
+        "mtime": "2026-07-16T07:12:22Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 492,
+        "rows": 491,
         "columns": [
           "r_id",
+          "reactions",
           "ground_truth",
           "rxn_mapper",
           "graphormer",
           "local_mapper",
           "rdt",
-          "rxn",
           "original_id"
+        ],
+        "benchmark_role": "Compare mapping methods on literature-derived reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Literature-derived reference atom-mapping set.",
+        "title": "Nature Communications atom mapping",
+        "row_identifier": "r_id",
+        "targets": [
+          "ground_truth"
+        ],
+        "citations": [
+          "jaworski2019automatic"
         ]
       },
       {
         "key": "aam/recon3d.csv.gz",
-        "size": 221459,
-        "sha256": "1b2268f06ac39445377cfdb8ccba5f04569efbfceb4c696f8d2bc5a0a98007b6",
-        "mtime": "2025-11-21T15:03:18Z",
+        "size": 230314,
+        "sha256": "a5dc370de65eb8efde9ecd703ef1f2a021d5713b850944530092798628dea45e",
+        "mtime": "2026-07-16T07:12:22Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 383,
+        "rows": 382,
         "columns": [
           "r_id",
           "ground_truth",
+          "reactions",
           "rxn_mapper",
           "graphormer",
           "local_mapper",
           "rdt",
-          "rxn",
           "original_id"
+        ],
+        "benchmark_role": "Compare atom mappers on metabolic reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Biochemical atom-mapping benchmark derived from Recon3D reactions.",
+        "title": "Recon3D atom mapping",
+        "row_identifier": "r_id",
+        "targets": [
+          "ground_truth"
+        ],
+        "citations": [
+          "litsa2018machine"
         ]
       },
       {
         "key": "aam/uspto_3k.csv.gz",
-        "size": 1275421,
-        "sha256": "b26601ef06b31c0f45cbec9711e56ff63553780b5f4ec403663d317850baab01",
-        "mtime": "2025-11-21T15:03:18Z",
+        "size": 1039902,
+        "sha256": "7d46de323ec918550fd742ea5e839fc976cd451058eca061b1e2023354698145",
+        "mtime": "2026-07-16T07:12:22Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 3001,
+        "rows": 3000,
         "columns": [
           "r_id",
           "ground_truth",
+          "reactions",
           "rxn_mapper",
           "graphormer",
           "local_mapper",
           "rdt",
-          "rxn",
           "original_id"
+        ],
+        "benchmark_role": "Compare mapper accuracy on a compact patent-reaction set.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "USPTO-derived synthetic-chemistry atom-mapping benchmark.",
+        "title": "USPTO 3K atom mapping",
+        "row_identifier": "r_id",
+        "targets": [
+          "ground_truth"
+        ],
+        "citations": [
+          "chen2024precise"
         ]
       },
       {
         "key": "classification/ecreact.csv.gz",
         "size": 2874798,
         "sha256": "c730e5bd196dc69b5ebc421cce37010162f7e129f149b28196f0069ee242bdcd",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 185735,
+        "rows": 185734,
         "columns": [
           "r_id",
           "rxn",
@@ -123,46 +212,97 @@
           "ec3",
           "split",
           "orig_index"
+        ],
+        "benchmark_role": "Predict hierarchical enzyme classes from reactions.",
+        "row_identifier_unique": false,
+        "license": "CC BY 4.0",
+        "description": "Enzyme Commission hierarchy classification benchmark.",
+        "title": "ECReact classification",
+        "row_identifier": "r_id",
+        "targets": [
+          "ec1",
+          "ec2",
+          "ec3"
+        ],
+        "citations": [
+          "zeng2025claire"
+        ],
+        "split_values": [
+          "train",
+          "test"
         ]
       },
       {
         "key": "classification/schneider_b.csv.gz",
         "size": 1737472,
         "sha256": "72c6560f458c3777f1e0f1e73c3a35ac7974cc4a49e3ae6441421d4e91bf86b2",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 50001,
+        "rows": 50000,
         "columns": [
           "r_id",
           "rxn",
           "label",
           "split"
+        ],
+        "benchmark_role": "Predict reaction class from balanced reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Balanced Schneider reaction-class benchmark.",
+        "title": "Schneider balanced classification",
+        "row_identifier": "r_id",
+        "targets": [
+          "label"
+        ],
+        "citations": [
+          "schneider2015development",
+          "vannguyen2025syncat"
+        ],
+        "split_values": [
+          "train",
+          "test"
         ]
       },
       {
         "key": "classification/schneider_u.csv.gz",
         "size": 1517500,
         "sha256": "fbd6e409459354ade4a6d15aeaf2206694f7df335a315384ca7dbcf06d2ee5b4",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 50001,
+        "rows": 50000,
         "columns": [
           "r_id",
           "rxn",
           "label",
           "split"
+        ],
+        "benchmark_role": "Predict reaction class from unbalanced reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Unbalanced and product-focused Schneider reaction-class benchmark.",
+        "title": "Schneider unbalanced classification",
+        "row_identifier": "r_id",
+        "targets": [
+          "label"
+        ],
+        "citations": [
+          "schneider2015development"
+        ],
+        "split_values": [
+          "train",
+          "test"
         ]
       },
       {
         "key": "classification/syntemp.csv.gz",
         "size": 1478384,
         "sha256": "5ace42ff5d956a4c5180ca854bbbd441bdbac5b71903a6bcd4684bb77320c1ed",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 43442,
+        "rows": 43441,
         "columns": [
           "orig_index",
           "r_id",
@@ -170,359 +310,726 @@
           "label_0",
           "label_1",
           "label_2"
+        ],
+        "benchmark_role": "Predict hierarchical reaction-template labels.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Reaction-template benchmark with three hierarchical label levels.",
+        "title": "SynTemp hierarchical classification",
+        "row_identifier": "r_id",
+        "targets": [
+          "label_0",
+          "label_1",
+          "label_2"
+        ],
+        "citations": [
+          "phan2025syntemp",
+          "liu2017retrosynthetic"
         ]
       },
       {
         "key": "classification/tpl_b.csv.gz",
         "size": 17266004,
         "sha256": "106cec5db1b37757483d7d99f2d9dde34e89315af54fdb9aa2e3cf0770fb4dbc",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 445116,
+        "rows": 445115,
         "columns": [
           "r_id",
           "rxn",
           "label",
           "split"
+        ],
+        "benchmark_role": "Predict template labels from balanced reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Large balanced reaction-template classification benchmark.",
+        "title": "Balanced template classification",
+        "row_identifier": "r_id",
+        "targets": [
+          "label"
+        ],
+        "citations": [
+          "vannguyen2025syncat",
+          "schwaller2021mapping"
+        ],
+        "split_values": [
+          "train",
+          "test"
         ]
       },
       {
         "key": "classification/tpl_u.csv.gz",
         "size": 15207379,
         "sha256": "6b6a649e1cc13f17418a4ce3a8b63663a7f66c1777abfc66c16bce8e0efa2912",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 445116,
+        "rows": 445115,
         "columns": [
           "r_id",
           "rxn",
           "label",
           "split"
+        ],
+        "benchmark_role": "Predict template labels from unbalanced reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Large unbalanced and product-focused template classification benchmark.",
+        "title": "Unbalanced template classification",
+        "row_identifier": "r_id",
+        "targets": [
+          "label"
+        ],
+        "citations": [
+          "schwaller2021mapping"
+        ],
+        "split_values": [
+          "train",
+          "test"
         ]
       },
       {
         "key": "classification/uspto_50k_b.csv.gz",
         "size": 1474615,
         "sha256": "098f85a386e25742791e5b87b8be8a7a090e920b6eca5f2b85452aa913ddba51",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 50017,
+        "rows": 50016,
         "columns": [
           "r_id",
           "rxn",
           "label",
           "split"
+        ],
+        "benchmark_role": "Predict reaction classes from balanced patent reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Balanced USPTO-50K reaction-class benchmark.",
+        "title": "USPTO-50K balanced classification",
+        "row_identifier": "r_id",
+        "targets": [
+          "label"
+        ],
+        "citations": [
+          "vannguyen2025syncat",
+          "liu2017retrosynthetic"
+        ],
+        "split_values": [
+          "train",
+          "test"
         ]
       },
       {
         "key": "classification/uspto_50k_u.csv.gz",
         "size": 1398804,
         "sha256": "355d38f0ef86b6546bfd24bbee97ebfe09d16c9ffed8b13282dc336734421fdb",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 50017,
+        "rows": 50016,
         "columns": [
           "r_id",
           "rxn",
           "label",
           "split"
+        ],
+        "benchmark_role": "Predict reaction classes from unbalanced patent reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Unbalanced and product-focused USPTO-50K classification benchmark.",
+        "title": "USPTO-50K unbalanced classification",
+        "row_identifier": "r_id",
+        "targets": [
+          "label"
+        ],
+        "citations": [
+          "liu2017retrosynthetic"
+        ],
+        "split_values": [
+          "train",
+          "test"
         ]
+      },
+      {
+        "key": "metadata.yaml",
+        "size": 15280,
+        "sha256": "a3c8dbe1aab9c4547324fc0a14167d64232dcb929e981b683bbbba996dc6065c",
+        "mtime": "2026-07-16T07:41:02Z",
+        "format": "binary"
       },
       {
         "key": "property/b97xd3.csv.gz",
         "size": 641403,
         "sha256": "33f881612842378a6cff97b2db0c99b1c4877a7e81a318129a26dd58e9702d73",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 16366,
+        "rows": 16365,
         "columns": [
           "r_id",
           "aam",
           "ea",
           "dh"
+        ],
+        "benchmark_role": "Predict activation energy and reaction enthalpy.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Quantum-chemistry reaction-property prediction benchmark.",
+        "title": "B97-D3 reaction properties",
+        "row_identifier": "r_id",
+        "targets": [
+          "ea",
+          "dh"
+        ],
+        "citations": [
+          "grambow2020scientificdata",
+          "grambow2020zenodo"
         ]
       },
       {
         "key": "property/cycloadd.csv.gz",
         "size": 381702,
         "sha256": "afd03a88ef6268350f2c176b70a67396ff1902b85e6742bb2ac3ef0d9ca84004",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 5270,
+        "rows": 5269,
         "columns": [
           "r_id",
           "aam",
           "G_act",
           "G_r",
           "split"
+        ],
+        "benchmark_role": "Predict activation and reaction free energies.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Cycloaddition activation and reaction free-energy benchmark.",
+        "title": "Cycloaddition free energies",
+        "row_identifier": "r_id",
+        "targets": [
+          "G_act",
+          "G_r"
+        ],
+        "citations": [
+          "heid2023benchmark_chemprop"
+        ],
+        "split_values": [
+          "train",
+          "val",
+          "test"
         ]
       },
       {
         "key": "property/e2.csv.gz",
         "size": 31804,
         "sha256": "2b2177235aeddf06b9fa29abe9836e6a3c520ccdbd1530b9757f8e8c4c23d99e",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 1265,
+        "rows": 1264,
         "columns": [
           "r_id",
           "aam",
           "ea",
           "split"
+        ],
+        "benchmark_role": "Predict activation energies for E2 reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "E2 reaction activation-energy benchmark.",
+        "title": "E2 activation energies",
+        "row_identifier": "r_id",
+        "targets": [
+          "ea"
+        ],
+        "citations": [
+          "heid2023benchmark_chemprop"
+        ],
+        "split_values": [
+          "train",
+          "val",
+          "test"
         ]
       },
       {
         "key": "property/e2sn2.csv.gz",
         "size": 79331,
         "sha256": "d3b27039841da7ea9bb18e511271fbaddfcb61d826ec1c5e31b50f71c1d3e044",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 3626,
+        "rows": 3625,
         "columns": [
           "r_id",
           "aam",
           "ea"
+        ],
+        "benchmark_role": "Predict activation energies across E2 and SN2 mechanisms.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Combined E2 and SN2 activation-energy benchmark.",
+        "title": "E2/SN2 activation energies",
+        "row_identifier": "r_id",
+        "targets": [
+          "ea"
+        ],
+        "citations": [
+          "heid2022machine",
+          "vonrudorff2020thousands"
         ]
       },
       {
         "key": "property/lograte.csv.gz",
         "size": 20166,
         "sha256": "ca79d7de36fde44961dd093a53c999356ac9aacf3aee524eb18bf90219f120f0",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 779,
+        "rows": 778,
         "columns": [
           "r_id",
           "aam",
           "lograte"
+        ],
+        "benchmark_role": "Predict log reaction rates.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Logarithmic reaction-rate prediction benchmark.",
+        "title": "Reaction log rates",
+        "row_identifier": "r_id",
+        "targets": [
+          "lograte"
+        ],
+        "citations": [
+          "heid2022machine",
+          "bhoorasingh2017automated"
         ]
       },
       {
         "key": "property/phosphatase.csv.gz",
         "size": 1137562,
         "sha256": "aca656158cb5b96cfa3378234641796e5becdf6647d7af0ae9f91b9e53639917",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 33355,
+        "rows": 33354,
         "columns": [
           "r_id",
           "aam",
           "Conversion",
           "onehot"
+        ],
+        "benchmark_role": "Predict phosphatase conversion.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Phosphatase reaction-conversion prediction benchmark.",
+        "title": "Phosphatase conversion",
+        "row_identifier": "r_id",
+        "targets": [
+          "Conversion"
+        ],
+        "citations": [
+          "heid2022machine",
+          "huang2015panoramic"
         ]
       },
       {
         "key": "property/rad6re.csv.gz",
         "size": 866920,
         "sha256": "fd78145b61bf50e0267f61ae5e45681020a7de7d3fe552da26feabc3096db1d5",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 31924,
+        "rows": 31923,
         "columns": [
           "r_id",
           "aam",
           "dh"
+        ],
+        "benchmark_role": "Predict reaction enthalpy.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Reaction-enthalpy prediction benchmark.",
+        "title": "RAD-6 reaction enthalpies",
+        "row_identifier": "r_id",
+        "targets": [
+          "dh"
+        ],
+        "citations": [
+          "heid2022machine",
+          "stocker2020machine"
         ]
       },
       {
         "key": "property/rdb7.csv.gz",
         "size": 640317,
         "sha256": "5980529ee8cf8ab0922df24048c69ba131d2f7ad623f5cdf9d7fb67b6466849e",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 23853,
+        "rows": 23852,
         "columns": [
           "r_id",
           "aam",
           "ea",
           "split"
+        ],
+        "benchmark_role": "Predict reaction activation energy.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Activation-energy benchmark with published partitions.",
+        "title": "RDB7 activation energies",
+        "row_identifier": "r_id",
+        "targets": [
+          "ea"
+        ],
+        "citations": [
+          "heid2023benchmark_chemprop"
+        ],
+        "split_values": [
+          "train",
+          "val",
+          "test"
         ]
       },
       {
         "key": "property/rgd1.csv.gz",
         "size": 13199958,
         "sha256": "74c5fbfd38b24409c17ddf2d8dc105ad728479df8a17b2bcf65c51a3ed8bed30",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 353985,
+        "rows": 353984,
         "columns": [
           "r_id",
           "aam",
           "ea",
           "split"
+        ],
+        "benchmark_role": "Predict activation energy at reaction-dataset scale.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Large-scale reaction activation-energy benchmark.",
+        "title": "RGD1 activation energies",
+        "row_identifier": "r_id",
+        "targets": [
+          "ea"
+        ],
+        "citations": [
+          "heid2023benchmark_chemprop"
+        ],
+        "split_values": [
+          "train",
+          "val",
+          "test"
         ]
       },
       {
         "key": "property/sn2.csv.gz",
         "size": 58133,
         "sha256": "2e3c58220e44dbf7597088861d642378abead0048f1a6c12f99771a0719db2ac",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 2362,
+        "rows": 2361,
         "columns": [
           "r_id",
           "aam",
           "ea",
           "split"
+        ],
+        "benchmark_role": "Predict activation energies for SN2 reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "SN2 reaction activation-energy benchmark.",
+        "title": "SN2 activation energies",
+        "row_identifier": "r_id",
+        "targets": [
+          "ea"
+        ],
+        "citations": [
+          "heid2023benchmark_chemprop"
+        ],
+        "split_values": [
+          "train",
+          "val",
+          "test"
         ]
       },
       {
         "key": "property/snar.csv.gz",
         "size": 5965,
         "sha256": "df8df5b8bc8b74910c7fe9960a8dd200182c5ef1bf91de906286cb71bfe60bcd",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 504,
+        "rows": 503,
         "columns": [
           "r_id",
           "rxn",
           "ea"
+        ],
+        "benchmark_role": "Predict activation energies for SNAr reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 3.0",
+        "description": "Nucleophilic aromatic substitution activation-energy benchmark.",
+        "title": "SNAr activation energies",
+        "row_identifier": "r_id",
+        "targets": [
+          "ea"
+        ],
+        "citations": [
+          "jorner2021machine"
         ]
       },
       {
         "key": "rbl/complex.csv.gz",
         "size": 54517,
         "sha256": "a2a2d887a65806fbd27596147f6209213cb3eedfbafd428370ec68586827db4c",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 1749,
+        "rows": 1748,
         "columns": [
           "r_id",
           "rxn",
           "ground_truth"
+        ],
+        "benchmark_role": "Recover balanced reactions for complex transformations and rearrangements.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Manually validated complex-transformation rebalancing benchmark.",
+        "title": "Complex reaction rebalancing",
+        "row_identifier": "r_id",
+        "targets": [
+          "ground_truth"
+        ],
+        "citations": [
+          "jaworski2019automatic",
+          "lin2022atom"
         ]
       },
       {
         "key": "rbl/mbs.csv.gz",
         "size": 14727,
         "sha256": "d7cb14f9604328dcc86bd0ab10503d7649ff50a3d823a45cb02fb874bca1bd1d",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 492,
+        "rows": 491,
         "columns": [
           "r_id",
           "rxn",
           "ground_truth"
+        ],
+        "benchmark_role": "Recover omitted species on both sides of a reaction.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Reaction-rebalancing benchmark with species missing from both sides.",
+        "title": "Missing both sides rebalancing",
+        "row_identifier": "r_id",
+        "targets": [
+          "ground_truth"
+        ],
+        "citations": [
+          "liu2017retrosynthetic"
         ]
       },
       {
         "key": "rbl/mnc.csv.gz",
         "size": 1090524,
         "sha256": "ed66cd15303b63fd9e0e6ea0f0ad396bada423a36d5f290dec5ee7cdf447c6cf",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 33148,
+        "rows": 33147,
         "columns": [
           "r_id",
           "rxn",
           "ground_truth"
+        ],
+        "benchmark_role": "Recover omitted non-carbon species.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Reaction-rebalancing benchmark with missing non-carbon species.",
+        "title": "Missing non-carbon rebalancing",
+        "row_identifier": "r_id",
+        "targets": [
+          "ground_truth"
+        ],
+        "citations": [
+          "liu2017retrosynthetic"
         ]
       },
       {
         "key": "rbl/mos.csv.gz",
         "size": 452394,
         "sha256": "d8c6d663ad21cafba9dc64259ba435924926305af2b87a785795c289da39fc31",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 12782,
+        "rows": 12781,
         "columns": [
           "r_id",
           "rxn",
           "ground_truth"
+        ],
+        "benchmark_role": "Recover omitted species on one side of a reaction.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Reaction-rebalancing benchmark with species missing from one side.",
+        "title": "Missing one side rebalancing",
+        "row_identifier": "r_id",
+        "targets": [
+          "ground_truth"
+        ],
+        "citations": [
+          "liu2017retrosynthetic"
+        ]
+      },
+      {
+        "key": "synthesis/da.csv.gz",
+        "size": 2340912,
+        "sha256": "ddfb98a997ef53161ee43743dbd7431a31c5c674c172f5034e637eaad562afe0",
+        "mtime": "2026-07-16T07:12:22Z",
+        "format": "csv",
+        "mime": "text/tabular",
+        "rows": 11011,
+        "columns": [
+          "code",
+          "reaction_original",
+          "reaction",
+          "r_id",
+          "rsmi"
+        ],
+        "benchmark_role": "Evaluate synthesis prediction for Diels–Alder reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 3.0",
+        "description": "Class-specific Diels–Alder synthesis benchmark.",
+        "title": "Diels–Alder synthesis",
+        "row_identifier": "r_id",
+        "targets": [
+          "reaction",
+          "rsmi"
+        ],
+        "citations": [
+          "lam2024every"
         ]
       },
       {
         "key": "synthesis/uspto_500.csv.gz",
         "size": 4485501,
         "sha256": "fad362c125f8fc6195d49748bbd9f381ca4c9d3f03935d82f457b350ab46bef1",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 143536,
+        "rows": 143535,
         "columns": [
           "r_id",
           "rxn",
           "reagent",
           "split"
+        ],
+        "benchmark_role": "Predict reagents and catalysts from patent reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Reagent and catalyst inference benchmark.",
+        "title": "USPTO-500 reagent prediction",
+        "row_identifier": "r_id",
+        "targets": [
+          "reagent"
+        ],
+        "citations": [
+          "lu2022unified"
+        ],
+        "split_values": [
+          "train",
+          "val",
+          "test"
         ]
       },
       {
         "key": "synthesis/uspto_50k.csv.gz",
         "size": 4411638,
         "sha256": "a23d355405f037cc4ecc751cf094003f3b64c115dd212f20d99015bc9ba05ac4",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 50017,
+        "rows": 50016,
         "columns": [
           "r_id",
           "aam",
           "split",
           "source"
-        ]
-      },
-      {
-        "key": "synthesis/uspto_mit.csv.errors.csv.gz",
-        "size": 1006,
-        "sha256": "ab7f1977e37c032bd9a0300d5cf699613768b78780ff904e15b44e5fd0d231a7",
-        "mtime": "2025-11-21T15:03:18Z",
-        "format": "csv",
-        "mime": "text/tabular",
-        "rows": 4,
-        "columns": [
-          "index",
-          "R-id",
-          "source",
-          "original",
-          "error"
+        ],
+        "benchmark_role": "Evaluate single-step synthesis and retrosynthesis methods.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "USPTO-50K synthesis and retrosynthesis benchmark.",
+        "title": "USPTO-50K synthesis",
+        "row_identifier": "r_id",
+        "citations": [
+          "chen2024precise",
+          "liu2017retrosynthetic"
+        ],
+        "split_values": [
+          "train",
+          "valid",
+          "test"
         ]
       },
       {
         "key": "synthesis/uspto_mit.csv.gz",
         "size": 57264696,
         "sha256": "74dffc5bb8e5fdfb41c11676deb5fedb9bb63d28325bdfc719ea68d8b8d9f33b",
-        "mtime": "2025-11-21T15:03:18Z",
+        "mtime": "2025-11-21T15:10:57Z",
         "format": "csv",
         "mime": "text/tabular",
-        "rows": 479036,
+        "rows": 479035,
         "columns": [
           "r_id",
           "aam",
           "split",
           "rc"
+        ],
+        "benchmark_role": "Evaluate synthesis and reaction-center prediction at scale.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "description": "Large-scale USPTO-MIT synthesis-prediction benchmark.",
+        "title": "USPTO-MIT synthesis",
+        "row_identifier": "r_id",
+        "targets": [
+          "rc"
+        ],
+        "citations": [
+          "jin2017predicting_outcomes"
+        ],
+        "split_values": [
+          "train",
+          "valid",
+          "test"
         ]
       }
     ],
     "summary": {
-      "file_count": 32,
-      "total_bytes": 130119069,
+      "file_count": 34,
+      "total_bytes": 135994537,
       "by_dir": {
         "aam": {
-          "count": 5,
-          "bytes": 2325849
+          "count": 6,
+          "bytes": 5846131
         },
         "classification": {
           "count": 8,
           "bytes": 42954956
+        },
+        ".": {
+          "count": 1,
+          "bytes": 15280
         },
         "property": {
           "count": 11,
@@ -534,16 +1041,16 @@
         },
         "synthesis": {
           "count": 4,
-          "bytes": 66162841
+          "bytes": 68502747
         }
       }
     }
   },
   "provenance": {
-    "git_root": "/home/runner/work/SynRXN/SynRXN",
-    "commit": "166b2deef4981ca60bfc61cc6d138f943adf9830",
+    "git_root": "/home/lolo/Documents/TACsy/SynEco/SynRXN",
+    "commit": "c74187e840c53aa86d3be9218ab70116f8649f7a",
     "branch": "main",
-    "remotes": "origin\thttps://github.com/TieuLongPhan/SynRXN (fetch)\norigin\thttps://github.com/TieuLongPhan/SynRXN (push)"
+    "remotes": "origin\tgit@github.com:TieuLongPhan/SynRXN.git (fetch)\norigin\tgit@github.com:TieuLongPhan/SynRXN.git (push)"
   },
   "project": {
     "name": "synrxn",
@@ -551,206 +1058,296 @@
   },
   "code": {
     "manifest": {
-      "generated_at": "2025-11-21T15:03:32Z",
-      "repo_root": "/home/runner/work/SynRXN/SynRXN",
+      "generated_at": "2026-07-16T09:02:47Z",
+      "repo_root": "/home/lolo/Documents/TACsy/SynEco/SynRXN",
       "subdirs": [
         "synrxn"
       ],
       "entries": [
         {
           "key": "synrxn/__init__.py",
-          "size": 55,
-          "sha256": "0884f906efb4ef96cc6299958d31811c89710664276c0b8fb0cd6adffd47a5ff",
-          "mtime": "2025-11-21T15:03:18Z"
+          "size": 139,
+          "sha256": "30ee1bc2574f847a02a5304ce0493650b2833f469c052fbe76b2f2ba0cd399b5",
+          "mtime": "2026-07-16T07:56:59Z"
         },
         {
           "key": "synrxn/__main__.py",
-          "size": 9234,
-          "sha256": "1f7977ad05c485122f30e5e96d3df4aa316789f72d9dc73a84f44e851349b2a9",
-          "mtime": "2025-11-21T15:03:18Z"
+          "size": 15449,
+          "sha256": "ecece179237698427d04faefd09c5a26a1dbc34cbd7858b89e3f06afd05b9151",
+          "mtime": "2026-07-16T08:49:29Z"
+        },
+        {
+          "key": "synrxn/aam/__init__.py",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "mtime": "2026-07-16T07:12:22Z"
+        },
+        {
+          "key": "synrxn/aam/aam_validator.py",
+          "size": 12656,
+          "sha256": "54a069c6c692fdc5039b07703d90ac08cabf3f385b693b1dba11161643e8da4c",
+          "mtime": "2026-07-16T07:12:22Z"
+        },
+        {
+          "key": "synrxn/aam/io.py",
+          "size": 14427,
+          "sha256": "3cc32266bf5b3ef51e6196fba8a5207d3ec8a46a2dc7699c48e3e62a4392c63c",
+          "mtime": "2026-07-16T07:12:22Z"
+        },
+        {
+          "key": "synrxn/aam/its_construction.py",
+          "size": 8548,
+          "sha256": "9a5882f144c4fd9e9f59a420650a1c32fef4f664579d0765de3d7398856faf60",
+          "mtime": "2026-07-16T07:12:22Z"
+        },
+        {
+          "key": "synrxn/aam/its_extraction.py",
+          "size": 9687,
+          "sha256": "67d0c1e9ce0aebe437aa7d1c3ef2195a387b4c4b442d9de4c93771b055a42009",
+          "mtime": "2026-07-16T07:12:22Z"
+        },
+        {
+          "key": "synrxn/aam/mol_to_graph.py",
+          "size": 5698,
+          "sha256": "1f86aba1076610088a25819ba51d324af4aaa2ba209c2aa899311248d8ad744e",
+          "mtime": "2026-07-16T07:12:22Z"
+        },
+        {
+          "key": "synrxn/aam/rules_extraction.py",
+          "size": 8034,
+          "sha256": "d54b1d618e92942613808a4c4793cd7b195d29ffcb9e2411b7ddc3baa70942be",
+          "mtime": "2026-07-16T07:12:22Z"
+        },
+        {
+          "key": "synrxn/aam/utils.py",
+          "size": 17441,
+          "sha256": "6ac8c71fa7b603edffda568ab1a6531fa82464b3d096da0e8e39ca18cb82e442",
+          "mtime": "2026-07-16T08:54:54Z"
         },
         {
           "key": "synrxn/baseline/__init__.py",
           "size": 0,
           "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/baseline/classification.py",
           "size": 7839,
           "sha256": "51e371c58d9652672e78aff909019ec82d6a298f581bbd8e520461a5c78fff0b",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-21T15:10:57Z"
         },
         {
           "key": "synrxn/baseline/property.py",
           "size": 9404,
           "sha256": "5bf26934ddd6ba955c6acae53dfb2715c4fa1cb8959c049f275fd99ef9ebef14",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-21T15:10:57Z"
+        },
+        {
+          "key": "synrxn/build_catalog.py",
+          "size": 8732,
+          "sha256": "58dce28079d27ac12ffc6741cd97e118552643718131648b9066a43f2328b95d",
+          "mtime": "2026-07-16T08:37:59Z"
         },
         {
           "key": "synrxn/build_manifest.py",
-          "size": 38534,
-          "sha256": "f6688dd39be7a8de23a0c14d79b72f4418451dc8fbbdb6292ebde5d66f86dda8",
-          "mtime": "2025-11-21T15:03:18Z"
+          "size": 39389,
+          "sha256": "5719fcc4e3269c48dee34a229b2c6cce2e6560569673095e7840055604a9a418",
+          "mtime": "2026-07-16T07:51:13Z"
         },
         {
           "key": "synrxn/cluster/__init__.py",
           "size": 0,
           "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/cluster/butina.py",
           "size": 8860,
           "sha256": "8623790d22a0ede93b43ddc4383486b8b00841ca95f5a8f12bddf7d16a477c91",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/cluster/ecfp.py",
           "size": 11262,
           "sha256": "99ce9980a447651e45e469653de9a9bcb841a8645d0a97b577d44fc3ed1695af",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/cluster/wlfp.py",
           "size": 10596,
           "sha256": "729036e18fa527ce1006d68bc720fdc7e1d32c921002089c4bf86b00e27a1fd4",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/data/__init__.py",
-          "size": 126,
-          "sha256": "da85f9b3ea3c34cbfe2997ebbec2b26d11c30b3eb99c9364c046bdff73783a22",
-          "mtime": "2025-11-21T15:03:18Z"
+          "size": 381,
+          "sha256": "4054e84dada663b6e3c7e01feb7e7a5d8b53b89fc386721679d26a04a80a9669",
+          "mtime": "2026-07-16T07:59:06Z"
+        },
+        {
+          "key": "synrxn/data/cache.py",
+          "size": 1520,
+          "sha256": "a078426984069279ee8b4ddc8aae7f29ba64e98a5bd66e2d3546bf857a15dd8d",
+          "mtime": "2026-07-16T07:59:06Z"
+        },
+        {
+          "key": "synrxn/data/catalog.py",
+          "size": 6117,
+          "sha256": "dec7b7ceaf9393f40b86ee9d5d40f393b1f5d6efd7f4c6ab73a7bb957fc9cb14",
+          "mtime": "2026-07-16T07:57:38Z"
         },
         {
           "key": "synrxn/data/constants.py",
           "size": 785,
           "sha256": "86a6d7098e4ac97cd4fd41dd945d520b68a5595453ee1a74afb12a626960f252",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/data/data_loader.py",
-          "size": 34442,
-          "sha256": "f469a14e96b9c362ba60cca99ebc41312aa5edf5d2d3d2ce7fdd157eacea66bb",
-          "mtime": "2025-11-21T15:03:18Z"
+          "size": 41648,
+          "sha256": "b4b50a86b207a920ce7681d848088233dae1d2fbf102c71153b172f9cca7aab5",
+          "mtime": "2026-07-16T08:28:51Z"
         },
         {
           "key": "synrxn/data/github_client.py",
           "size": 4170,
           "sha256": "1dfe84c187af8da740a566da307c6043dd5aa63878246eb5cf5b189a28faef50",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
+        },
+        {
+          "key": "synrxn/data/sources.py",
+          "size": 1608,
+          "sha256": "1b223f97ff5c869e2fdce5cc650b24850507f9bc167c49d36f985f74d988d384",
+          "mtime": "2026-07-16T07:56:59Z"
         },
         {
           "key": "synrxn/data/utils.py",
           "size": 1960,
           "sha256": "f4db45e4c046fbf3e920d3aeca79c69fe21cb37844d4efb728d068e06514650e",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/data/zenodo_client.py",
-          "size": 14446,
-          "sha256": "6529d6b7e3ea3cc047f22d05fdb4250a955681485120ed60579c5424d199ec70",
-          "mtime": "2025-11-21T15:03:18Z"
+          "size": 14447,
+          "sha256": "15561a793334f6d93d8407acbf3da9c21143dcd7838d7b8d5d1b341813d1c9cf",
+          "mtime": "2026-07-16T07:45:51Z"
         },
         {
           "key": "synrxn/io/__init__.py",
           "size": 0,
           "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/io/io.py",
           "size": 7194,
           "sha256": "c3fd36fd8a4179c920054df318658fa693b811b712d30655ef6456462bdab9bc",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/metrics/__init__.py",
           "size": 0,
           "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/metrics/synthesis.py",
           "size": 0,
           "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/metrics/template.py",
-          "size": 8472,
-          "sha256": "ab0ae867bc9541dd82063eedc42c4892077ba0ea872e7607abe6bcc87e873c7b",
-          "mtime": "2025-11-21T15:03:18Z"
+          "size": 8868,
+          "sha256": "5b0a3a6b00d3210b2b6527df8ffbd34153d78b49129937bfe1cb9c5c9054672e",
+          "mtime": "2026-07-16T08:57:48Z"
+        },
+        {
+          "key": "synrxn/query.py",
+          "size": 19077,
+          "sha256": "b63161acc3583eaa6b5c8c603e04700a4f3f922a257c1425497e90fb2dffe9f7",
+          "mtime": "2026-07-16T08:49:52Z"
+        },
+        {
+          "key": "synrxn/service.py",
+          "size": 13445,
+          "sha256": "ed7ee162e264a9e1f38409ec1bce45be35f16c68ce05872619ddf37a77c5f7b0",
+          "mtime": "2026-07-16T08:49:39Z"
         },
         {
           "key": "synrxn/split/__init__.py",
           "size": 0,
           "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/split/repeated_group_aware_kfold.py",
           "size": 19443,
           "sha256": "9f383e2a3ec0a798ffb7b50cbd6c822ab19c240a2785e5f9c8b455c4a69c3459",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/split/repeated_kfold.py",
-          "size": 18274,
-          "sha256": "1cf6a7d5d5f344892f9276ab2328f9d9c471fd9ecc52aeb4f56a53baebd4e861",
-          "mtime": "2025-11-21T15:03:18Z"
+          "size": 18277,
+          "sha256": "f1df732101dd12f6dd4899f6e4c5320a111475c5161b3374f37fc232cdabce80",
+          "mtime": "2026-07-16T07:12:22Z"
         },
         {
           "key": "synrxn/statistics/__init__.py",
           "size": 514,
           "sha256": "2c9ac14c8fd537ed6e7ce7bb9611f96b088e18f0b899c5e0b9400e1c196af5f7",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/statistics/assumptions.py",
           "size": 3850,
           "sha256": "f3a101be564823c1fc027f36418f97fe4e3fdddbcfa419ea6ab6f6762973dd53",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/statistics/auto_test.py",
-          "size": 16444,
-          "sha256": "48573efef150fce3724483badaf2670610f33148ad400640581ff23730172497",
-          "mtime": "2025-11-21T15:03:18Z"
+          "size": 16438,
+          "sha256": "ee03f63f7fc27b50d9d541cb46e880ab2c6fe0a138d9aa895478e3cfea353dea",
+          "mtime": "2026-07-16T07:46:13Z"
         },
         {
           "key": "synrxn/statistics/common.py",
           "size": 5067,
           "sha256": "fb7ba48bed1815e6bf19570fa4db1bd94b40934f879f2fbdabbda703c532d36b",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/statistics/nonparametric.py",
           "size": 4620,
           "sha256": "07d0d52d6f5a432058d79d186c3ba5bfd27ff5d49147ddcf1f3b594594518f15",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
         },
         {
           "key": "synrxn/statistics/parametric.py",
-          "size": 14657,
-          "sha256": "5f20c80869fbd9014ec027ab69ff2d7d5a95b479259c7494f1b466d9141e86de",
-          "mtime": "2025-11-21T15:03:18Z"
+          "size": 14977,
+          "sha256": "534475f89fee89c4c357814753fa0e38abec13498a33f64ba61b44bd6f0ad7ad",
+          "mtime": "2026-07-16T07:12:22Z"
         },
         {
           "key": "synrxn/statistics/runner.py",
           "size": 2994,
           "sha256": "1a2b7bab8ebb3d8caaa38c4063085f18e87eac4387f2eca46a39013cb9d87d79",
-          "mtime": "2025-11-21T15:03:18Z"
+          "mtime": "2025-11-19T13:36:12Z"
+        },
+        {
+          "key": "synrxn/validate_data.py",
+          "size": 8860,
+          "sha256": "726148e6dd4419b4c1891c21fe0686805f446767e96a0a8241d94d1fa03f4ca5",
+          "mtime": "2026-07-16T07:51:13Z"
         },
         {
           "key": "synrxn/verify_manifest.py",
-          "size": 3717,
-          "sha256": "1fb2c631e62a47628ea08892908694fe070dc1b3478f9e3a3abf852125896f4a",
-          "mtime": "2025-11-21T15:03:18Z"
+          "size": 7632,
+          "sha256": "d51c24adfb87af9f082051a94cc8ca2427f230cb55bc96532b62e3a986546f5e",
+          "mtime": "2026-07-16T07:38:31Z"
         }
       ],
-      "count": 32
+      "count": 47
     }
   }
 }

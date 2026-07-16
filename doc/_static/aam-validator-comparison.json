@@ -1,0 +1,26 @@
+{
+  "synkit_version": "1.5.0",
+  "legacy_validator": "synrxn.aam.aam_validator.AAMValidator",
+  "current_validator": "synkit.Chem.Reaction.Mapper.AAMValidator",
+  "settings": {
+    "methods": ["RC", "ITS"],
+    "ignore_tautomers": true,
+    "strip_unbalanced_maps": true
+  },
+  "coverage": {
+    "datasets": ["ecoli", "golden", "natcomm", "recon3d", "uspto_3k"],
+    "reactions_per_method": 5904,
+    "mappers": ["rxn_mapper", "graphormer", "local_mapper", "rdt"],
+    "decisions_per_method": 23616,
+    "total_decisions": 47232,
+    "excluded": {
+      "enzyme_map": "Ground-truth-only artifact with no mapper prediction columns."
+    }
+  },
+  "results": {
+    "RC": {"result_vectors": 20, "mismatches": 0, "accuracies_identical": true},
+    "ITS": {"result_vectors": 20, "mismatches": 0, "accuracies_identical": true},
+    "total_mismatches": 0
+  },
+  "compatibility_note": "Disabling strip_unbalanced_maps changes expected SynRXN results."
+}

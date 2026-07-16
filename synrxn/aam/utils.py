@@ -1,6 +1,5 @@
 import re
 from rdkit import Chem
-from rdkit.Chem.MolStandardize import normalize, tautomer, charge
 from rdkit.Chem.SaltRemover import SaltRemover
 from rdkit.Chem import rdmolops
 from rdkit.Chem.MolStandardize import rdMolStandardize
@@ -20,7 +19,7 @@ def normalize_molecule(mol: Chem.Mol) -> Chem.Mol:
     Returns:
         Chem.Mol: Normalized RDKit Mol object.
     """
-    return normalize.Normalizer().normalize(mol)
+    return rdMolStandardize.Normalizer().normalize(mol)
 
 
 def canonicalize_tautomer(mol: Chem.Mol) -> Chem.Mol:
@@ -33,7 +32,7 @@ def canonicalize_tautomer(mol: Chem.Mol) -> Chem.Mol:
     Returns:
     - Chem.Mol: Mol object with canonicalized tautomer.
     """
-    return tautomer.TautomerCanonicalizer().canonicalize(mol)
+    return rdMolStandardize.TautomerEnumerator().Canonicalize(mol)
 
 
 def salts_remover(mol: Chem.Mol) -> Chem.Mol:
@@ -60,7 +59,7 @@ def reionize_charges(mol: Chem.Mol) -> Chem.Mol:
     Returns:
     - Mol object with reionized charges.
     """
-    return charge.Reionizer().reionize(mol)
+    return rdMolStandardize.Reionizer().reionize(mol)
 
 
 def uncharge_molecule(mol: Chem.Mol) -> Chem.Mol:

@@ -1,0 +1,10 @@
+.git
+.github
+.pytest_cache
+Data/**
+!Data/metadata.yaml
+Parquet
+dist
+doc/_build
+*.pyc
+__pycache__

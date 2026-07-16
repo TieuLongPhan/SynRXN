@@ -1,0 +1,384 @@
+schema_version: "1.0"
+
+# Shared meanings used by the catalog UI and validation tooling. Dataset-specific
+# units are intentionally not inferred when the upstream datasets differ.
+column_definitions:
+  r_id: {role: identifier, description: Stable row identifier supplied by SynRXN.}
+  original_id: {role: source_identifier, description: Identifier in the upstream dataset.}
+  orig_index: {role: source_identifier, description: Row index in the upstream dataset.}
+  rxn: {role: reaction, description: Reaction SMILES string.}
+  reactions: {role: reaction, description: Reaction SMILES string retained under the upstream plural field name.}
+  aam: {role: reaction, description: Atom-mapped reaction SMILES.}
+  ground_truth: {role: reference, description: Curated reference reaction or atom mapping.}
+  rxn_mapper: {role: prediction, description: Mapping predicted by RXNMapper.}
+  graphormer: {role: prediction, description: Mapping predicted by Graphormer.}
+  local_mapper: {role: prediction, description: Mapping predicted by LocalMapper.}
+  rdt: {role: prediction, description: Mapping predicted by RDT.}
+  label: {role: target, description: Reaction class or template label.}
+  label_0: {role: target, description: Top-level hierarchical template label.}
+  label_1: {role: target, description: Second-level hierarchical template label.}
+  label_2: {role: target, description: Third-level hierarchical template label.}
+  ec1: {role: target, description: First Enzyme Commission hierarchy level.}
+  ec2: {role: target, description: Second Enzyme Commission hierarchy level.}
+  ec3: {role: target, description: Third Enzyme Commission hierarchy level.}
+  ea: {role: target, description: Activation-energy target; consult the upstream record for units.}
+  dh: {role: target, description: Reaction-enthalpy target; consult the upstream record for units.}
+  G_act: {role: target, description: Activation free-energy target; consult the upstream record for units.}
+  G_r: {role: target, description: Reaction free-energy target; consult the upstream record for units.}
+  lograte: {role: target, description: Logarithmic reaction-rate target.}
+  Conversion: {role: target, description: Reaction conversion target.}
+  onehot: {role: feature, description: Upstream one-hot encoded reaction context.}
+  split: {role: partition, description: Published train, validation, or test assignment.}
+  code: {role: source_identifier, description: Upstream reaction code.}
+  reaction_original: {role: reaction, description: Original upstream reaction representation.}
+  reaction: {role: reaction, description: Processed reaction representation.}
+  rsmi: {role: reaction, description: Reaction SMILES representation.}
+  reagent: {role: target, description: Reagent or catalyst target.}
+  source: {role: provenance, description: Upstream source or subset marker.}
+  rc: {role: target, description: Reaction-center annotation.}
+
+datasets:
+  aam/ecoli.csv.gz:
+    title: E. coli atom mapping
+    description: Biochemical atom-mapping benchmark derived from E. coli reactions.
+    benchmark_role: Compare mapper outputs with curated biochemical reference mappings.
+    license: CC BY 4.0
+    citations: [beier2026computing]
+    targets: [ground_truth]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  aam/enzyme_map.csv.gz:
+    title: EnzymeMap atom mapping
+    description: Enzymatic atom-mapping benchmark from the EnzymeMap reaction collection.
+    benchmark_role: Evaluate atom mapping at scale on enzymatic reactions.
+    license: CC BY 4.0
+    citations: [heid2023enzymemap]
+    targets: [ground_truth]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  aam/golden.csv.gz:
+    title: Golden atom-mapping set
+    description: Curated synthetic-chemistry atom-mapping benchmark.
+    benchmark_role: Compare mapper outputs with a curated synthetic reference set.
+    license: CC BY 4.0
+    citations: [chen2024precise, lin2022atom]
+    targets: [ground_truth]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  aam/natcomm.csv.gz:
+    title: Nature Communications atom mapping
+    description: Literature-derived reference atom-mapping set.
+    benchmark_role: Compare mapping methods on literature-derived reactions.
+    license: CC BY 4.0
+    citations: [jaworski2019automatic]
+    targets: [ground_truth]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  aam/recon3d.csv.gz:
+    title: Recon3D atom mapping
+    description: Biochemical atom-mapping benchmark derived from Recon3D reactions.
+    benchmark_role: Compare atom mappers on metabolic reactions.
+    license: CC BY 4.0
+    citations: [litsa2018machine]
+    targets: [ground_truth]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  aam/uspto_3k.csv.gz:
+    title: USPTO 3K atom mapping
+    description: USPTO-derived synthetic-chemistry atom-mapping benchmark.
+    benchmark_role: Compare mapper accuracy on a compact patent-reaction set.
+    license: CC BY 4.0
+    citations: [chen2024precise]
+    targets: [ground_truth]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  classification/ecreact.csv.gz:
+    title: ECReact classification
+    description: Enzyme Commission hierarchy classification benchmark.
+    benchmark_role: Predict hierarchical enzyme classes from reactions.
+    license: CC BY 4.0
+    citations: [zeng2025claire]
+    targets: [ec1, ec2, ec3]
+    split_values: [train, test]
+    row_identifier: r_id
+    row_identifier_unique: false
+
+  classification/schneider_b.csv.gz:
+    title: Schneider balanced classification
+    description: Balanced Schneider reaction-class benchmark.
+    benchmark_role: Predict reaction class from balanced reactions.
+    license: CC BY 4.0
+    citations: [schneider2015development, vannguyen2025syncat]
+    targets: [label]
+    split_values: [train, test]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  classification/schneider_u.csv.gz:
+    title: Schneider unbalanced classification
+    description: Unbalanced and product-focused Schneider reaction-class benchmark.
+    benchmark_role: Predict reaction class from unbalanced reactions.
+    license: CC BY 4.0
+    citations: [schneider2015development]
+    targets: [label]
+    split_values: [train, test]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  classification/syntemp.csv.gz:
+    title: SynTemp hierarchical classification
+    description: Reaction-template benchmark with three hierarchical label levels.
+    benchmark_role: Predict hierarchical reaction-template labels.
+    license: CC BY 4.0
+    citations: [phan2025syntemp, liu2017retrosynthetic]
+    targets: [label_0, label_1, label_2]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  classification/tpl_b.csv.gz:
+    title: Balanced template classification
+    description: Large balanced reaction-template classification benchmark.
+    benchmark_role: Predict template labels from balanced reactions.
+    license: CC BY 4.0
+    citations: [vannguyen2025syncat, schwaller2021mapping]
+    targets: [label]
+    split_values: [train, test]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  classification/tpl_u.csv.gz:
+    title: Unbalanced template classification
+    description: Large unbalanced and product-focused template classification benchmark.
+    benchmark_role: Predict template labels from unbalanced reactions.
+    license: CC BY 4.0
+    citations: [schwaller2021mapping]
+    targets: [label]
+    split_values: [train, test]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  classification/uspto_50k_b.csv.gz:
+    title: USPTO-50K balanced classification
+    description: Balanced USPTO-50K reaction-class benchmark.
+    benchmark_role: Predict reaction classes from balanced patent reactions.
+    license: CC BY 4.0
+    citations: [vannguyen2025syncat, liu2017retrosynthetic]
+    targets: [label]
+    split_values: [train, test]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  classification/uspto_50k_u.csv.gz:
+    title: USPTO-50K unbalanced classification
+    description: Unbalanced and product-focused USPTO-50K classification benchmark.
+    benchmark_role: Predict reaction classes from unbalanced patent reactions.
+    license: CC BY 4.0
+    citations: [liu2017retrosynthetic]
+    targets: [label]
+    split_values: [train, test]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  property/b97xd3.csv.gz:
+    title: B97-D3 reaction properties
+    description: Quantum-chemistry reaction-property prediction benchmark.
+    benchmark_role: Predict activation energy and reaction enthalpy.
+    license: CC BY 4.0
+    citations: [grambow2020scientificdata, grambow2020zenodo]
+    targets: [ea, dh]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  property/cycloadd.csv.gz:
+    title: Cycloaddition free energies
+    description: Cycloaddition activation and reaction free-energy benchmark.
+    benchmark_role: Predict activation and reaction free energies.
+    license: CC BY 4.0
+    citations: [heid2023benchmark_chemprop]
+    targets: [G_act, G_r]
+    split_values: [train, val, test]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  property/e2.csv.gz:
+    title: E2 activation energies
+    description: E2 reaction activation-energy benchmark.
+    benchmark_role: Predict activation energies for E2 reactions.
+    license: CC BY 4.0
+    citations: [heid2023benchmark_chemprop]
+    targets: [ea]
+    split_values: [train, val, test]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  property/e2sn2.csv.gz:
+    title: E2/SN2 activation energies
+    description: Combined E2 and SN2 activation-energy benchmark.
+    benchmark_role: Predict activation energies across E2 and SN2 mechanisms.
+    license: CC BY 4.0
+    citations: [heid2022machine, vonrudorff2020thousands]
+    targets: [ea]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  property/lograte.csv.gz:
+    title: Reaction log rates
+    description: Logarithmic reaction-rate prediction benchmark.
+    benchmark_role: Predict log reaction rates.
+    license: CC BY 4.0
+    citations: [heid2022machine, bhoorasingh2017automated]
+    targets: [lograte]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  property/phosphatase.csv.gz:
+    title: Phosphatase conversion
+    description: Phosphatase reaction-conversion prediction benchmark.
+    benchmark_role: Predict phosphatase conversion.
+    license: CC BY 4.0
+    citations: [heid2022machine, huang2015panoramic]
+    targets: [Conversion]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  property/rad6re.csv.gz:
+    title: RAD-6 reaction enthalpies
+    description: Reaction-enthalpy prediction benchmark.
+    benchmark_role: Predict reaction enthalpy.
+    license: CC BY 4.0
+    citations: [heid2022machine, stocker2020machine]
+    targets: [dh]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  property/rdb7.csv.gz:
+    title: RDB7 activation energies
+    description: Activation-energy benchmark with published partitions.
+    benchmark_role: Predict reaction activation energy.
+    license: CC BY 4.0
+    citations: [heid2023benchmark_chemprop]
+    targets: [ea]
+    split_values: [train, val, test]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  property/rgd1.csv.gz:
+    title: RGD1 activation energies
+    description: Large-scale reaction activation-energy benchmark.
+    benchmark_role: Predict activation energy at reaction-dataset scale.
+    license: CC BY 4.0
+    citations: [heid2023benchmark_chemprop]
+    targets: [ea]
+    split_values: [train, val, test]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  property/sn2.csv.gz:
+    title: SN2 activation energies
+    description: SN2 reaction activation-energy benchmark.
+    benchmark_role: Predict activation energies for SN2 reactions.
+    license: CC BY 4.0
+    citations: [heid2023benchmark_chemprop]
+    targets: [ea]
+    split_values: [train, val, test]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  property/snar.csv.gz:
+    title: SNAr activation energies
+    description: Nucleophilic aromatic substitution activation-energy benchmark.
+    benchmark_role: Predict activation energies for SNAr reactions.
+    license: CC BY 3.0
+    citations: [jorner2021machine]
+    targets: [ea]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  rbl/complex.csv.gz:
+    title: Complex reaction rebalancing
+    description: Manually validated complex-transformation rebalancing benchmark.
+    benchmark_role: Recover balanced reactions for complex transformations and rearrangements.
+    license: CC BY 4.0
+    citations: [jaworski2019automatic, lin2022atom]
+    targets: [ground_truth]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  rbl/mbs.csv.gz:
+    title: Missing both sides rebalancing
+    description: Reaction-rebalancing benchmark with species missing from both sides.
+    benchmark_role: Recover omitted species on both sides of a reaction.
+    license: CC BY 4.0
+    citations: [liu2017retrosynthetic]
+    targets: [ground_truth]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  rbl/mnc.csv.gz:
+    title: Missing non-carbon rebalancing
+    description: Reaction-rebalancing benchmark with missing non-carbon species.
+    benchmark_role: Recover omitted non-carbon species.
+    license: CC BY 4.0
+    citations: [liu2017retrosynthetic]
+    targets: [ground_truth]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  rbl/mos.csv.gz:
+    title: Missing one side rebalancing
+    description: Reaction-rebalancing benchmark with species missing from one side.
+    benchmark_role: Recover omitted species on one side of a reaction.
+    license: CC BY 4.0
+    citations: [liu2017retrosynthetic]
+    targets: [ground_truth]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  synthesis/da.csv.gz:
+    title: Diels–Alder synthesis
+    description: Class-specific Diels–Alder synthesis benchmark.
+    benchmark_role: Evaluate synthesis prediction for Diels–Alder reactions.
+    license: CC BY 3.0
+    citations: [lam2024every]
+    targets: [reaction, rsmi]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  synthesis/uspto_500.csv.gz:
+    title: USPTO-500 reagent prediction
+    description: Reagent and catalyst inference benchmark.
+    benchmark_role: Predict reagents and catalysts from patent reactions.
+    license: CC BY 4.0
+    citations: [lu2022unified]
+    targets: [reagent]
+    split_values: [train, val, test]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  synthesis/uspto_50k.csv.gz:
+    title: USPTO-50K synthesis
+    description: USPTO-50K synthesis and retrosynthesis benchmark.
+    benchmark_role: Evaluate single-step synthesis and retrosynthesis methods.
+    license: CC BY 4.0
+    citations: [chen2024precise, liu2017retrosynthetic]
+    targets: []
+    split_values: [train, valid, test]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  synthesis/uspto_mit.csv.gz:
+    title: USPTO-MIT synthesis
+    description: Large-scale USPTO-MIT synthesis-prediction benchmark.
+    benchmark_role: Evaluate synthesis and reaction-center prediction at scale.
+    license: CC BY 4.0
+    citations: [jin2017predicting_outcomes]
+    targets: [rc]
+    split_values: [train, valid, test]
+    row_identifier: r_id
+    row_identifier_unique: true

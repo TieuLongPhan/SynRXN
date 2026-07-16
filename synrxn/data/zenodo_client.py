@@ -90,7 +90,7 @@ class ZenodoClient:
                     return rid
             raise RuntimeError(
                 f"Version '{version}' not found under {concept_doi}. "
-                f"Available: {sorted({h.get('metadata', {}).get('version','') for h in hits})}"
+                f"Available: {sorted({h.get('metadata', {}).get('version', '') for h in hits})}"
             )
 
         hits_sorted = sorted(

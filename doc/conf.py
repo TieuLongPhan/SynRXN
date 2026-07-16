@@ -81,6 +81,7 @@ html_short_title = "SynRXN"
 html_logo = "_static/synrxn-logo.svg"
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
+html_js_files = ["catalog.js"]
 
 html_theme_options = {
     "show_toc_level": 2,
