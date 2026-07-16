@@ -1,9 +1,9 @@
 window.SYNRXN_CATALOG = {
   "schema_version": "1.0",
   "release": {
-    "version": "1.0.0",
+    "version": "1.1.1",
     "doi": "10.5281/zenodo.17297258",
-    "generated_at": "2026-07-16T09:02:37Z",
+    "generated_at": "2026-07-16T10:59:56Z",
     "dataset_count": 33,
     "integrity": "verified"
   },

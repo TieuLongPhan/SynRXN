@@ -121,7 +121,9 @@ def verify_with_root(
             checksum_mismatch.append((key, entry["sha256"], actual_checksum))
 
     expected = {entry["key"] for entry in files}
-    unexpected = [] if allow_unexpected else sorted(discovered_artifact_keys(root) - expected)
+    unexpected = (
+        [] if allow_unexpected else sorted(discovered_artifact_keys(root) - expected)
+    )
     return {
         "root": str(root),
         "missing": missing,

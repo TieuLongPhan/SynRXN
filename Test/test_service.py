@@ -37,7 +37,7 @@ def app(tmp_path):
         "schema_version": "1.0",
         "generated_at": "2026-07-16T00:00:00Z",
         "dataset": {
-            "version": "1.0.0",
+            "version": "1.1.1",
             "doi": "10.0000/fixture",
             "summary": {"datasets": 1},
         },
@@ -104,7 +104,7 @@ async def test_service_rejects_arbitrary_query_fields_and_exposes_release(client
     assert invalid.status_code == 422
     missing = await client.get("/v1/datasets/aam/missing/rows?limit=1")
     assert missing.status_code == 404, missing.text
-    release = await client.get("/v1/releases/1.0.0")
+    release = await client.get("/v1/releases/1.1.1")
     assert release.status_code == 200
     assert release.json()["doi"] == "10.0000/fixture"
     assert (await client.get("/metrics")).json()["requests"] >= 3

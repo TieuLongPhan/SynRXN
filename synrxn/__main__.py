@@ -226,10 +226,14 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     datasets_list = datasets_sub.add_parser("list", help="List catalog datasets.")
     datasets_list.add_argument("--task", default=None)
     datasets_list.add_argument(
-        "--has-split", action="store_true", help="Show only datasets with published splits."
+        "--has-split",
+        action="store_true",
+        help="Show only datasets with published splits.",
     )
     datasets_list.add_argument("--json", action="store_true", dest="as_json")
-    datasets_describe = datasets_sub.add_parser("describe", help="Describe one dataset.")
+    datasets_describe = datasets_sub.add_parser(
+        "describe", help="Describe one dataset."
+    )
     datasets_describe.add_argument("task")
     datasets_describe.add_argument("name")
     datasets_describe.add_argument("--json", action="store_true", dest="as_json")
@@ -255,9 +259,7 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     catalog_p.add_argument("--metadata", default="Data/metadata.yaml")
     catalog_p.add_argument("--manifest", default="manifest.json")
     catalog_p.add_argument("--output", default="doc/_static/catalog-data.json")
-    catalog_p.add_argument(
-        "--reaction-dir", default="doc/_static/catalog-reactions"
-    )
+    catalog_p.add_argument("--reaction-dir", default="doc/_static/catalog-reactions")
 
     return parser.parse_args(argv)
 

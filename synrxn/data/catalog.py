@@ -28,7 +28,9 @@ class Task(str, Enum):
             return cls(aliases.get(cleaned, cleaned))
         except ValueError as exc:
             supported = ", ".join(task.value for task in cls)
-            raise ValueError(f"unsupported task {value!r}; choose one of: {supported}") from exc
+            raise ValueError(
+                f"unsupported task {value!r}; choose one of: {supported}"
+            ) from exc
 
 
 @dataclass(frozen=True)
@@ -81,13 +83,17 @@ class DatasetCatalog:
                 text = resource.read_text(encoding="utf8")
             except FileNotFoundError:
                 # Editable/source checkout: the canonical catalog lives in Data/.
-                checkout_catalog = Path(__file__).resolve().parents[2] / "Data" / "metadata.yaml"
+                checkout_catalog = (
+                    Path(__file__).resolve().parents[2] / "Data" / "metadata.yaml"
+                )
                 text = checkout_catalog.read_text(encoding="utf8")
         else:
             text = Path(metadata_path).read_text(encoding="utf8")
         raw = yaml.safe_load(text) or {}
         if raw.get("schema_version") != "1.0":
-            raise ValueError(f"unsupported catalog schema: {raw.get('schema_version')!r}")
+            raise ValueError(
+                f"unsupported catalog schema: {raw.get('schema_version')!r}"
+            )
         records = raw.get("datasets")
         if not isinstance(records, dict) or not records:
             raise ValueError("catalog.datasets must be a non-empty mapping")

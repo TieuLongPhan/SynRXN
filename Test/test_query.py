@@ -59,7 +59,9 @@ def test_allowlisted_query_projection_filter_order_and_batches(parquet_release):
     assert frame.shape == (5, 2)
     assert frame.attrs["synrxn"]["source_sha256"]
     assert frame.attrs["synrxn"]["ordering"] == "source_row"
-    assert sum(batch.num_rows for batch in engine.iter_batches("aam", "ecoli", 100)) == 273
+    assert (
+        sum(batch.num_rows for batch in engine.iter_batches("aam", "ecoli", 100)) == 273
+    )
     with pytest.raises(KeyError):
         engine.query("aam", "ecoli", filters={"not_a_column": "x"})
     with pytest.raises(ValueError):
@@ -69,9 +71,7 @@ def test_allowlisted_query_projection_filter_order_and_batches(parquet_release):
 
 def test_loader_arrow_output_and_lazy_scan(parquet_release):
     output, _, _ = parquet_release
-    loader = DataLoader(
-        task="aam", source="local", data_dir="Data", parquet_dir=output
-    )
+    loader = DataLoader(task="aam", source="local", data_dir="Data", parquet_dir=output)
     table = loader.load("ecoli", columns=["r_id"], nrows=3, format="arrow")
     assert isinstance(table, pa.Table)
     assert table.num_rows == 3

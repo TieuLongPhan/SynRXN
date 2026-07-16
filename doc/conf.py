@@ -25,7 +25,7 @@ except PackageNotFoundError:
         with (ROOT / "pyproject.toml").open("rb") as fh:
             release = tomllib.load(fh)["project"]["version"]
     except Exception:
-        release = os.environ.get("SYNRXN_DOC_VERSION", "1.0.0")
+        release = os.environ.get("SYNRXN_DOC_VERSION", "1.1.1")
 
 version = ".".join(release.split(".")[:2])
 

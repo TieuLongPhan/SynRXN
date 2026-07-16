@@ -13,8 +13,13 @@ def test_synkit_15_matches_synrxn_for_balanced_and_unbalanced_maps():
 
     for method in ("RC", "ITS"):
         expected = legacy.smiles_check(row.rxn_mapper, row.ground_truth, method)
-        assert current.smiles_check(row.rxn_mapper, row.ground_truth, method) is expected
-        assert strict.smiles_check(row.rxn_mapper, row.ground_truth, method) is not expected
+        assert (
+            current.smiles_check(row.rxn_mapper, row.ground_truth, method) is expected
+        )
+        assert (
+            strict.smiles_check(row.rxn_mapper, row.ground_truth, method)
+            is not expected
+        )
 
 
 def test_public_aam_metric_uses_synkit_15_response_shape():

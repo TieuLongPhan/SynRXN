@@ -50,7 +50,9 @@ def test_local_source_loader_projection_filter_and_batches(tmp_path):
         {"r_id": "r3", "split": "test"},
     ]
     assert loader.describe("schneider_b").title == "Schneider balanced classification"
-    assert [len(batch) for batch in loader.iter_batches("schneider_b", batch_size=2)] == [2, 1]
+    assert [
+        len(batch) for batch in loader.iter_batches("schneider_b", batch_size=2)
+    ] == [2, 1]
 
 
 def test_local_loader_nrows_and_errors(tmp_path):
@@ -68,7 +70,7 @@ def test_local_loader_nrows_and_errors(tmp_path):
 
 def test_cache_manager_namespaces_and_writes_atomically(tmp_path):
     cache = CacheManager(tmp_path)
-    first = cache.artifact_path("github", "v1.0.0", "aam", "sample")
+    first = cache.artifact_path("github", "v1.1.1", "aam", "sample")
     second = cache.artifact_path("github", "v2.0.0", "aam", "sample")
     assert first != second
     cache.write_atomic(first, b"payload")

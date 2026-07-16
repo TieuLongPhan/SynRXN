@@ -115,17 +115,25 @@ def validate_catalog(
             targets = metadata.get("targets") or []
             for target in targets:
                 if target not in columns:
-                    errors.append(f"{key}: target {target!r} is absent from CSV columns")
+                    errors.append(
+                        f"{key}: target {target!r} is absent from CSV columns"
+                    )
 
             identifier = metadata.get("row_identifier")
             if not identifier or identifier not in columns:
                 errors.append(f"{key}: row_identifier {identifier!r} is absent")
 
-            declared_splits = set(str(value) for value in metadata.get("split_values", []))
+            declared_splits = set(
+                str(value) for value in metadata.get("split_values", [])
+            )
             if declared_splits and "split" not in columns:
-                errors.append(f"{key}: split_values declared but split column is absent")
+                errors.append(
+                    f"{key}: split_values declared but split column is absent"
+                )
             if "split" in columns and not declared_splits:
-                errors.append(f"{key}: split column exists but split_values are not declared")
+                errors.append(
+                    f"{key}: split column exists but split_values are not declared"
+                )
 
             manifest_entry = manifest.get(key)
             if manifest_entry and manifest_entry.get("columns") != columns:
@@ -185,7 +193,9 @@ def parse_args(argv: Optional[Iterable[str]] = None) -> argparse.Namespace:
     parser.add_argument("--data-dir", type=Path, default=Path("Data"))
     parser.add_argument("--metadata", type=Path, default=Path("Data/metadata.yaml"))
     parser.add_argument("--manifest", type=Path, default=Path("manifest.json"))
-    parser.add_argument("--quick", action="store_true", help="Validate headers without scanning rows")
+    parser.add_argument(
+        "--quick", action="store_true", help="Validate headers without scanning rows"
+    )
     parser.add_argument("--json-output", type=Path)
     return parser.parse_args(argv)
 
@@ -199,12 +209,20 @@ def main(argv: Optional[Iterable[str]] = None) -> int:
             args.manifest.resolve() if args.manifest else None,
             quick=args.quick,
         )
-    except (OSError, ValueError, RuntimeError, json.JSONDecodeError, ManifestContractError) as exc:
+    except (
+        OSError,
+        ValueError,
+        RuntimeError,
+        json.JSONDecodeError,
+        ManifestContractError,
+    ) as exc:
         print(f"catalog validation failed: {exc}", file=sys.stderr)
         return 2
     if args.json_output:
         args.json_output.parent.mkdir(parents=True, exist_ok=True)
-        args.json_output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf8")
+        args.json_output.write_text(
+            json.dumps(result, indent=2) + "\n", encoding="utf8"
+        )
     print(
         f"Catalog validation: artifacts={result['artifacts_checked']} "
         f"rows={result['rows_checked']} errors={len(result['errors'])} "

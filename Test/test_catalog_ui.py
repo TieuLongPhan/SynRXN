@@ -42,7 +42,7 @@ def test_catalog_asset_is_bounded_and_derived_from_manifest(tmp_path):
         "schema_version": "1.0",
         "generated_at": "2026-07-16T00:00:00Z",
         "dataset": {
-            "version": "1.0.0",
+            "version": "1.1.1",
             "doi": "10.0000/fixture",
             "files": [
                 {
@@ -66,7 +66,9 @@ def test_catalog_asset_is_bounded_and_derived_from_manifest(tmp_path):
     assert output.is_file()
     script_output = output.with_suffix(".js")
     assert script_output.is_file()
-    assert script_output.read_text(encoding="utf8").startswith("window.SYNRXN_CATALOG = ")
+    assert script_output.read_text(encoding="utf8").startswith(
+        "window.SYNRXN_CATALOG = "
+    )
     assert catalog["release"]["dataset_count"] == 1
     record = catalog["datasets"][0]
     assert record["rows"] == 2

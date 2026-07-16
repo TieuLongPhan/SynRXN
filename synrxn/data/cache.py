@@ -24,7 +24,12 @@ class CacheManager:
         object.__setattr__(self, "root", resolved)
 
     def artifact_path(
-        self, source: str, version: object, task: str, name: str, suffix: str = ".csv.gz"
+        self,
+        source: str,
+        version: object,
+        task: str,
+        name: str,
+        suffix: str = ".csv.gz",
     ) -> Path:
         return (
             self.root

@@ -1,69 +1,20 @@
 cff-version: 1.2.0
-message: >-
-  If you use SynRXN, please cite the preferred citation below and record the
-  exact SynRXN data/software version, Zenodo archive DOI, or Git commit used in
-  your experiments.
-title: "SynRXN"
-type: software
-version: "1.0.0"
-date-released: "2026-05-14"
-abstract: >-
-  SynRXN is a curated, versioned benchmark resource for computational reaction
-  modeling. It organizes reaction rebalancing, atom-to-atom mapping, reaction
-  classification, property prediction, and synthesis datasets with a lightweight
-  Python API for reproducible loading, caching, and splitting.
+title: 'synrxn: A Benchmarking Framework and Open Data Repository for Computer-Aided
+  Synthesis Planning'
+version: 1.1.1
+type: dataset
+message: If you use this work, please cite it using this file.
+abstract: Reaction Database for benchmarking
+doi: 10.5281/zenodo.17297258
+url: https://doi.org/10.5281/zenodo.17297258
+repository-code: git@github.com:TieuLongPhan/SynRXN.git
+date-released: '2026-07-16'
 authors:
-  - given-names: Tieu-Long
-    family-names: Phan
-    email: tieu@bioinf.uni-leipzig.de
-  - given-names: Nhu-Ngoc
-    family-names: Nguyen Song
-  - given-names: Peter F.
-    family-names: Stadler
-repository-code: "https://github.com/TieuLongPhan/SynRXN"
-url: "https://synrxn.readthedocs.io/en/latest/"
-license: MIT
-keywords:
-  - reaction informatics
-  - computational chemistry
-  - benchmark dataset
-  - atom-to-atom mapping
-  - reaction classification
-  - property prediction
-  - retrosynthesis
-  - synthesis prediction
+- given-names: Tieu Long
+  family-names: Phan
+  email: tieu@bioinf.uni-leipzig.de
 identifiers:
-  - type: doi
-    value: "10.5281/zenodo.17297258"
-    description: "SynRXN Zenodo concept DOI for versioned data/software archives"
-  - type: url
-    value: "https://pypi.org/project/synrxn/"
-    description: "SynRXN package on PyPI"
-preferred-citation:
-  type: article
-  title: "SynRXN: An Open Benchmark and Curated Dataset for Computational Reaction Modeling"
-  authors:
-    - given-names: Tieu-Long
-      family-names: Phan
-    - given-names: Nhu-Ngoc
-      family-names: Nguyen Song
-    - given-names: Peter F.
-      family-names: Stadler
-  journal: "Scientific Data"
-  volume: "13"
-  start: "625"
-  year: 2026
-  date-published: "2026-04-20"
-  doi: "10.1038/s41597-026-07260-w"
-  url: "https://www.nature.com/articles/s41597-026-07260-w"
-references:
-  - type: dataset
-    title: "SynRXN data archives"
-    authors:
-      - given-names: Tieu-Long
-        family-names: Phan
-    doi: "10.5281/zenodo.17297258"
-    url: "https://doi.org/10.5281/zenodo.17297258"
-    notes: >-
-      Cite the exact Zenodo version DOI used for a specific benchmark run when
-      available; the DOI here is the SynRXN concept DOI.
+- type: commit
+  value: fe757ee1f4beb9f2ddec9675a56c8e865daed396
+- type: doi
+  value: 10.5281/zenodo.17297258

@@ -31,7 +31,9 @@ def create_app(  # noqa: C901
         from fastapi import FastAPI, HTTPException, Query, Request, Response
         from pydantic import BaseModel, ConfigDict
     except ImportError as exc:  # pragma: no cover
-        raise RuntimeError("HTTP service requires: pip install synrxn[service]") from exc
+        raise RuntimeError(
+            "HTTP service requires: pip install synrxn[service]"
+        ) from exc
     if max_page_size < 1 or max_concurrent_queries < 1:
         raise ValueError("service limits must be positive")
 
@@ -65,15 +67,20 @@ def create_app(  # noqa: C901
         doi: Optional[str]
         generated_at: Optional[str]
         summary: Optional[dict[str, Any]]
+
     # FastAPI resolves postponed annotations from module globals.
     globals().update({"Request": Request, "Response": Response})
 
-    parquet_root = Path(
-        parquet_dir or os.environ.get("SYNRXN_PARQUET_DIR", "Parquet")
-    ).expanduser().resolve()
-    manifest_file = Path(
-        manifest_path or os.environ.get("SYNRXN_MANIFEST", "manifest.json")
-    ).expanduser().resolve()
+    parquet_root = (
+        Path(parquet_dir or os.environ.get("SYNRXN_PARQUET_DIR", "Parquet"))
+        .expanduser()
+        .resolve()
+    )
+    manifest_file = (
+        Path(manifest_path or os.environ.get("SYNRXN_MANIFEST", "manifest.json"))
+        .expanduser()
+        .resolve()
+    )
     catalog = catalog or DatasetCatalog()
     engine = QueryEngine(parquet_root, catalog)
     missing = [
@@ -95,7 +102,9 @@ def create_app(  # noqa: C901
     indexed_release = (engine.index or {}).get("release")
     if indexed_release and release:
         if indexed_release.get("manifest_sha256") != sha256_path(manifest_file):
-            readiness_errors.append("parquet release was built from a different manifest")
+            readiness_errors.append(
+                "parquet release was built from a different manifest"
+            )
         if indexed_release.get("version") != release.get("dataset", {}).get("version"):
             readiness_errors.append("parquet and canonical release versions differ")
     expected_ids = {f"{item.task.value}/{item.name}" for item in catalog.list()}
@@ -109,7 +118,7 @@ def create_app(  # noqa: C901
 
     app = FastAPI(
         title="SynRXN read-only API",
-        version="1.0.0",
+        version="1.1.1",
         description="Bounded catalog and record queries over immutable SynRXN releases.",
     )
     app.state.catalog = catalog
@@ -126,11 +135,13 @@ def create_app(  # noqa: C901
             response = await call_next(request)
         except Exception:
             app.state.metrics["errors"] += 1
-            LOGGER.exception("request failed id=%s path=%s", request_id, request.url.path)
+            LOGGER.exception(
+                "request failed id=%s path=%s", request_id, request.url.path
+            )
             raise
         elapsed = time.perf_counter() - started
         response.headers["X-Request-ID"] = request_id
-        response.headers["Server-Timing"] = f'app;dur={elapsed * 1000:.2f}'
+        response.headers["Server-Timing"] = f"app;dur={elapsed * 1000:.2f}"
         LOGGER.info(
             "request id=%s method=%s path=%s status=%s elapsed=%.4f",
             request_id,
@@ -161,7 +172,9 @@ def create_app(  # noqa: C901
     def artifact_path(dataset) -> Path:
         return parquet_root / dataset.task.value / f"{dataset.name}.parquet"
 
-    def cache_headers(response: Response, path: Path, checksum: Optional[str] = None) -> None:
+    def cache_headers(
+        response: Response, path: Path, checksum: Optional[str] = None
+    ) -> None:
         response.headers["ETag"] = f'"{checksum or sha256_path(path)}"'
         response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
 
@@ -205,7 +218,10 @@ def create_app(  # noqa: C901
                     ]
                 ).lower()
             ]
-        return {"count": len(records), "items": [asdict(item) for item in records[:limit]]}
+        return {
+            "count": len(records),
+            "items": [asdict(item) for item in records[:limit]],
+        }
 
     @app.get(
         "/v1/datasets/{task}/{name}",
@@ -216,7 +232,9 @@ def create_app(  # noqa: C901
         dataset = dataset_or_404(task, name)
         path = artifact_path(dataset)
         if not path.is_file():
-            raise HTTPException(status_code=503, detail="derived artifact is unavailable")
+            raise HTTPException(
+                status_code=503, detail="derived artifact is unavailable"
+            )
         checksum = engine.artifact_checksum(dataset.task, dataset.name)
         cache_headers(response, path, checksum)
         return {
@@ -252,11 +270,15 @@ def create_app(  # noqa: C901
         dataset = dataset_or_404(task, name)
         path = artifact_path(dataset)
         if not path.is_file():
-            raise HTTPException(status_code=503, detail="derived artifact is unavailable")
+            raise HTTPException(
+                status_code=503, detail="derived artifact is unavailable"
+            )
         filters = {}
         for raw in request.query_params.getlist("filter"):
             if "=" not in raw:
-                raise HTTPException(status_code=422, detail="filter must be column=value")
+                raise HTTPException(
+                    status_code=422, detail="filter must be column=value"
+                )
             column, value = raw.split("=", 1)
             filters.setdefault(column, []).append(value)
         normalized_filters = {
@@ -307,7 +329,9 @@ def create_app(  # noqa: C901
         dataset = dataset_or_404(task, name)
         path = artifact_path(dataset)
         if not path.is_file():
-            raise HTTPException(status_code=503, detail="derived artifact is unavailable")
+            raise HTTPException(
+                status_code=503, detail="derived artifact is unavailable"
+            )
         cache_headers(
             response, path, engine.artifact_checksum(dataset.task, dataset.name)
         )
@@ -322,9 +346,7 @@ def create_app(  # noqa: C901
                 status_code=503, detail="statistics could not be completed"
             ) from exc
 
-    @app.get(
-        "/v1/releases/{version}", tags=["releases"], response_model=ReleasePayload
-    )
+    @app.get("/v1/releases/{version}", tags=["releases"], response_model=ReleasePayload)
     async def release_info(version: str, response: Response):
         if release is None or release.get("dataset", {}).get("version") != version:
             raise HTTPException(status_code=404, detail="release not found")
@@ -345,7 +367,9 @@ def main() -> None:
     try:
         import uvicorn
     except ImportError as exc:  # pragma: no cover
-        raise RuntimeError("HTTP service requires: pip install synrxn[service]") from exc
+        raise RuntimeError(
+            "HTTP service requires: pip install synrxn[service]"
+        ) from exc
     app = create_app()
     if app.state.readiness_errors:
         joined = "; ".join(app.state.readiness_errors)

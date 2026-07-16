@@ -49,7 +49,7 @@ def test_build_manifest_declares_schema_version(tmp_path):
     (data / "sample.csv").write_text("r_id,rxn\n1,A>>B\n", encoding="utf8")
     manifest = build_manifest(
         tmp_path / "Data",
-        meta={"name": "synrxn", "title": "SynRXN", "version": "1.0.0"},
+        meta={"name": "synrxn", "title": "SynRXN", "version": "1.1.1"},
         include_code_manifest=False,
     )
     assert manifest["schema_version"] == "1.0"

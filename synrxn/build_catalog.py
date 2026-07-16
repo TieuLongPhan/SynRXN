@@ -60,7 +60,9 @@ def _target_summary(values: list[str]) -> dict[str, Any]:
         "kind": "categorical",
         "count": len(present),
         "unique": len(counts),
-        "top": [{"value": value, "count": count} for value, count in counts.most_common(8)],
+        "top": [
+            {"value": value, "count": count} for value, count in counts.most_common(8)
+        ],
     }
 
 
@@ -146,7 +148,8 @@ def build_catalog(
         artifact = manifest_index[key]
         summary = summarize_csv(data_dir / key, description.get("targets") or [])
         reaction_column = next(
-            (column for column in REACTION_COLUMNS if column in summary["columns"]), None
+            (column for column in REACTION_COLUMNS if column in summary["columns"]),
+            None,
         )
         depiction = None
         reaction_text = None
@@ -176,9 +179,9 @@ def build_catalog(
                             else "string"
                         ),
                         "nullable": summary["null_counts"].get(column, 0) > 0,
-                        "unit": metadata["column_definitions"].get(column, {}).get(
-                            "unit"
-                        ),
+                        "unit": metadata["column_definitions"]
+                        .get(column, {})
+                        .get("unit"),
                     }
                     for column in summary["columns"]
                 },

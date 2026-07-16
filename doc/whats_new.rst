@@ -10,12 +10,12 @@ what changed, which datasets moved, and which archive should be cited.
    <div class="synrxn-callout-card">
      <span class="synrxn-callout-icon"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></span>
      <div>
-       <strong>Next planned release: SynRXN 1.1.0.</strong>
+       <strong>Next planned release: SynRXN 1.1.1.</strong>
        <p>This release prepares SynRXN as a verified benchmark workspace with a static dataset catalog, efficient local queries, a read-only service, and SynKit 1.5 compatibility.</p>
      </div>
    </div>
 
-v1.1.0 — verified benchmark workspace (pending release)
+v1.1.1 — verified benchmark workspace (pending release)
 -------------------------------------------------------
 
 Added
@@ -70,8 +70,8 @@ Fixed
 Release and citation notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- This entry describes pending v1.1.0 work.  The package metadata and Zenodo
-  archive remain at v1.0.0 until a v1.1.0 release is tagged and deposited.
+- This entry describes pending v1.1.1 work.  The package metadata and Zenodo
+  archive remain at v1.0.0 until a v1.1.1 release is tagged and deposited.
 - At publication, update the package version, manifest release metadata, and
   exact Zenodo version DOI together; benchmark users should cite that exact
   archive alongside the primary paper.

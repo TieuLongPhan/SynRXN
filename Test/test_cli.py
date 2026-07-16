@@ -5,7 +5,10 @@ def test_cli_exposes_public_maintenance_commands():
     assert parse_args(["verify-manifest"]).command == "verify-manifest"
     assert parse_args(["validate", "--quick"]).quick is True
     assert parse_args(["datasets", "list", "--task", "property"]).task == "property"
-    assert parse_args(["parquet", "build", "--output-dir", "Parquet"]).parquet_command == "build"
+    assert (
+        parse_args(["parquet", "build", "--output-dir", "Parquet"]).parquet_command
+        == "build"
+    )
     assert parse_args(["catalog-assets"]).command == "catalog-assets"
 
 

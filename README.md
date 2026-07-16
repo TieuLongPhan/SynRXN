@@ -60,7 +60,7 @@ from synrxn.data import DataLoader
 dl = DataLoader(
     task="classification",
     source="zenodo",
-    version="1.0.0",
+    version="1.1.1",
     cache_dir=Path("~/.cache/synrxn").expanduser(),
 )
 
@@ -131,7 +131,7 @@ from synrxn.split.repeated_kfold import RepeatedKFoldsSplitter
 dl = DataLoader(
     task="property",
     source="zenodo",
-    version="1.0.0",
+    version="1.1.1",
     cache_dir=Path("~/.cache/synrxn").expanduser(),
 )
 df = dl.load("b97xd3")

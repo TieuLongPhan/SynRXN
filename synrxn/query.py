@@ -24,7 +24,9 @@ def _require_pyarrow():
         import pyarrow.csv as pacsv
         import pyarrow.parquet as pq
     except ImportError as exc:  # pragma: no cover - clean optional-dependency check
-        raise RuntimeError("Parquet support requires: pip install synrxn[query]") from exc
+        raise RuntimeError(
+            "Parquet support requires: pip install synrxn[query]"
+        ) from exc
     return pa, pacsv, pq
 
 
@@ -32,7 +34,9 @@ def _require_duckdb():
     try:
         import duckdb
     except ImportError as exc:  # pragma: no cover
-        raise RuntimeError("DuckDB support requires: pip install synrxn[query]") from exc
+        raise RuntimeError(
+            "DuckDB support requires: pip install synrxn[query]"
+        ) from exc
     return duckdb
 
 
@@ -164,7 +168,9 @@ def convert_release(
         ],
     }
     output_dir.mkdir(parents=True, exist_ok=True)
-    (output_dir / "index.json").write_text(json.dumps(index, indent=2) + "\n", encoding="utf8")
+    (output_dir / "index.json").write_text(
+        json.dumps(index, indent=2) + "\n", encoding="utf8"
+    )
     return artifacts
 
 
@@ -186,7 +192,9 @@ def validate_parquet_release(
         metadata = pq.read_metadata(parquet)
         embedded = metadata.metadata or {}
         if embedded.get(b"synrxn.source_sha256", b"").decode() != sha256_path(source):
-            errors.append(f"source checksum mismatch: {dataset.task.value}/{dataset.name}")
+            errors.append(
+                f"source checksum mismatch: {dataset.task.value}/{dataset.name}"
+            )
         csv_rows = pacsv.read_csv(source).num_rows
         if metadata.num_rows != csv_rows:
             errors.append(
@@ -255,7 +263,9 @@ class QueryEngine:
     def close(self) -> None:
         self.connection.close()
 
-    def _resolve(self, task: str | Task, name: str) -> tuple[DatasetMetadata, Path, list[str]]:
+    def _resolve(
+        self, task: str | Task, name: str
+    ) -> tuple[DatasetMetadata, Path, list[str]]:
         dataset = self.catalog.get(task, name)
         path = self.parquet_dir / dataset.task.value / f"{dataset.name}.parquet"
         if not path.is_file():
@@ -289,8 +299,14 @@ class QueryEngine:
         unknown = set(selected) - set(available)
         if unknown:
             raise KeyError(f"unknown projected columns: {sorted(unknown)}")
-        reader = "read_parquet(?, file_row_number=true)" if source_order else "read_parquet(?)"
-        sql = f"SELECT {', '.join(_quote_identifier(x) for x in selected)} FROM {reader}"
+        reader = (
+            "read_parquet(?, file_row_number=true)"
+            if source_order
+            else "read_parquet(?)"
+        )
+        sql = (
+            f"SELECT {', '.join(_quote_identifier(x) for x in selected)} FROM {reader}"
+        )
         params: list[object] = [str(path)]
         clauses = []
         for column, expected in (filters or {}).items():
@@ -476,7 +492,9 @@ def main(argv: Optional[Iterable[str]] = None) -> int:
         )
         print(f"Parquet release: {len(artifacts)} artifacts -> {args.output_dir}")
         return 0
-    errors = validate_parquet_release(args.data_dir.resolve(), args.parquet_dir.resolve())
+    errors = validate_parquet_release(
+        args.data_dir.resolve(), args.parquet_dir.resolve()
+    )
     for error in errors:
         print(f"ERROR: {error}")
     print(f"Parquet validation: errors={len(errors)}")

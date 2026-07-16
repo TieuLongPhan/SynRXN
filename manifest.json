@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-16T09:02:37Z",
+  "generated_at": "2026-07-16T10:59:56Z",
   "dataset": {
     "title": "synrxn: A Benchmarking Framework and Open Data Repository for Computer-Aided Synthesis Planning",
-    "version": "1.0.0",
+    "version": "1.1.1",
     "description": "Reaction Database for benchmarking",
     "doi": "10.5281/zenodo.17297258",
     "authors": [
@@ -31,17 +31,17 @@
           "rdt",
           "original_id"
         ],
-        "benchmark_role": "Compare mapper outputs with curated biochemical reference mappings.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Biochemical atom-mapping benchmark derived from E. coli reactions.",
         "title": "E. coli atom mapping",
-        "row_identifier": "r_id",
-        "targets": [
-          "ground_truth"
-        ],
         "citations": [
           "beier2026computing"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Compare mapper outputs with curated biochemical reference mappings.",
+        "description": "Biochemical atom-mapping benchmark derived from E. coli reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ground_truth"
         ]
       },
       {
@@ -58,17 +58,17 @@
           "rxn",
           "original_id"
         ],
-        "benchmark_role": "Evaluate atom mapping at scale on enzymatic reactions.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Enzymatic atom-mapping benchmark from the EnzymeMap reaction collection.",
         "title": "EnzymeMap atom mapping",
-        "row_identifier": "r_id",
-        "targets": [
-          "ground_truth"
-        ],
         "citations": [
           "heid2023enzymemap"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Evaluate atom mapping at scale on enzymatic reactions.",
+        "description": "Enzymatic atom-mapping benchmark from the EnzymeMap reaction collection.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ground_truth"
         ]
       },
       {
@@ -89,18 +89,18 @@
           "rdt",
           "original_id"
         ],
-        "benchmark_role": "Compare mapper outputs with a curated synthetic reference set.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Curated synthetic-chemistry atom-mapping benchmark.",
         "title": "Golden atom-mapping set",
-        "row_identifier": "r_id",
-        "targets": [
-          "ground_truth"
-        ],
         "citations": [
           "chen2024precise",
           "lin2022atom"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Compare mapper outputs with a curated synthetic reference set.",
+        "description": "Curated synthetic-chemistry atom-mapping benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ground_truth"
         ]
       },
       {
@@ -121,17 +121,17 @@
           "rdt",
           "original_id"
         ],
-        "benchmark_role": "Compare mapping methods on literature-derived reactions.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Literature-derived reference atom-mapping set.",
         "title": "Nature Communications atom mapping",
-        "row_identifier": "r_id",
-        "targets": [
-          "ground_truth"
-        ],
         "citations": [
           "jaworski2019automatic"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Compare mapping methods on literature-derived reactions.",
+        "description": "Literature-derived reference atom-mapping set.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ground_truth"
         ]
       },
       {
@@ -152,17 +152,17 @@
           "rdt",
           "original_id"
         ],
-        "benchmark_role": "Compare atom mappers on metabolic reactions.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Biochemical atom-mapping benchmark derived from Recon3D reactions.",
         "title": "Recon3D atom mapping",
-        "row_identifier": "r_id",
-        "targets": [
-          "ground_truth"
-        ],
         "citations": [
           "litsa2018machine"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Compare atom mappers on metabolic reactions.",
+        "description": "Biochemical atom-mapping benchmark derived from Recon3D reactions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ground_truth"
         ]
       },
       {
@@ -183,17 +183,17 @@
           "rdt",
           "original_id"
         ],
-        "benchmark_role": "Compare mapper accuracy on a compact patent-reaction set.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "USPTO-derived synthetic-chemistry atom-mapping benchmark.",
         "title": "USPTO 3K atom mapping",
-        "row_identifier": "r_id",
-        "targets": [
-          "ground_truth"
-        ],
         "citations": [
           "chen2024precise"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Compare mapper accuracy on a compact patent-reaction set.",
+        "description": "USPTO-derived synthetic-chemistry atom-mapping benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ground_truth"
         ]
       },
       {
@@ -213,23 +213,23 @@
           "split",
           "orig_index"
         ],
-        "benchmark_role": "Predict hierarchical enzyme classes from reactions.",
-        "row_identifier_unique": false,
-        "license": "CC BY 4.0",
-        "description": "Enzyme Commission hierarchy classification benchmark.",
         "title": "ECReact classification",
-        "row_identifier": "r_id",
-        "targets": [
-          "ec1",
-          "ec2",
-          "ec3"
-        ],
         "citations": [
           "zeng2025claire"
         ],
         "split_values": [
           "train",
           "test"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict hierarchical enzyme classes from reactions.",
+        "description": "Enzyme Commission hierarchy classification benchmark.",
+        "row_identifier_unique": false,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ec1",
+          "ec2",
+          "ec3"
         ]
       },
       {
@@ -246,15 +246,7 @@
           "label",
           "split"
         ],
-        "benchmark_role": "Predict reaction class from balanced reactions.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Balanced Schneider reaction-class benchmark.",
         "title": "Schneider balanced classification",
-        "row_identifier": "r_id",
-        "targets": [
-          "label"
-        ],
         "citations": [
           "schneider2015development",
           "vannguyen2025syncat"
@@ -262,6 +254,14 @@
         "split_values": [
           "train",
           "test"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict reaction class from balanced reactions.",
+        "description": "Balanced Schneider reaction-class benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "label"
         ]
       },
       {
@@ -278,21 +278,21 @@
           "label",
           "split"
         ],
-        "benchmark_role": "Predict reaction class from unbalanced reactions.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Unbalanced and product-focused Schneider reaction-class benchmark.",
         "title": "Schneider unbalanced classification",
-        "row_identifier": "r_id",
-        "targets": [
-          "label"
-        ],
         "citations": [
           "schneider2015development"
         ],
         "split_values": [
           "train",
           "test"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict reaction class from unbalanced reactions.",
+        "description": "Unbalanced and product-focused Schneider reaction-class benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "label"
         ]
       },
       {
@@ -311,20 +311,20 @@
           "label_1",
           "label_2"
         ],
+        "title": "SynTemp hierarchical classification",
+        "citations": [
+          "phan2025syntemp",
+          "liu2017retrosynthetic"
+        ],
+        "row_identifier": "r_id",
         "benchmark_role": "Predict hierarchical reaction-template labels.",
+        "description": "Reaction-template benchmark with three hierarchical label levels.",
         "row_identifier_unique": true,
         "license": "CC BY 4.0",
-        "description": "Reaction-template benchmark with three hierarchical label levels.",
-        "title": "SynTemp hierarchical classification",
-        "row_identifier": "r_id",
         "targets": [
           "label_0",
           "label_1",
           "label_2"
-        ],
-        "citations": [
-          "phan2025syntemp",
-          "liu2017retrosynthetic"
         ]
       },
       {
@@ -341,15 +341,7 @@
           "label",
           "split"
         ],
-        "benchmark_role": "Predict template labels from balanced reactions.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Large balanced reaction-template classification benchmark.",
         "title": "Balanced template classification",
-        "row_identifier": "r_id",
-        "targets": [
-          "label"
-        ],
         "citations": [
           "vannguyen2025syncat",
           "schwaller2021mapping"
@@ -357,6 +349,14 @@
         "split_values": [
           "train",
           "test"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict template labels from balanced reactions.",
+        "description": "Large balanced reaction-template classification benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "label"
         ]
       },
       {
@@ -373,21 +373,21 @@
           "label",
           "split"
         ],
-        "benchmark_role": "Predict template labels from unbalanced reactions.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Large unbalanced and product-focused template classification benchmark.",
         "title": "Unbalanced template classification",
-        "row_identifier": "r_id",
-        "targets": [
-          "label"
-        ],
         "citations": [
           "schwaller2021mapping"
         ],
         "split_values": [
           "train",
           "test"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict template labels from unbalanced reactions.",
+        "description": "Large unbalanced and product-focused template classification benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "label"
         ]
       },
       {
@@ -404,15 +404,7 @@
           "label",
           "split"
         ],
-        "benchmark_role": "Predict reaction classes from balanced patent reactions.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Balanced USPTO-50K reaction-class benchmark.",
         "title": "USPTO-50K balanced classification",
-        "row_identifier": "r_id",
-        "targets": [
-          "label"
-        ],
         "citations": [
           "vannguyen2025syncat",
           "liu2017retrosynthetic"
@@ -420,6 +412,14 @@
         "split_values": [
           "train",
           "test"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict reaction classes from balanced patent reactions.",
+        "description": "Balanced USPTO-50K reaction-class benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "label"
         ]
       },
       {
@@ -436,21 +436,21 @@
           "label",
           "split"
         ],
-        "benchmark_role": "Predict reaction classes from unbalanced patent reactions.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Unbalanced and product-focused USPTO-50K classification benchmark.",
         "title": "USPTO-50K unbalanced classification",
-        "row_identifier": "r_id",
-        "targets": [
-          "label"
-        ],
         "citations": [
           "liu2017retrosynthetic"
         ],
         "split_values": [
           "train",
           "test"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict reaction classes from unbalanced patent reactions.",
+        "description": "Unbalanced and product-focused USPTO-50K classification benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "label"
         ]
       },
       {
@@ -474,19 +474,19 @@
           "ea",
           "dh"
         ],
-        "benchmark_role": "Predict activation energy and reaction enthalpy.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Quantum-chemistry reaction-property prediction benchmark.",
         "title": "B97-D3 reaction properties",
-        "row_identifier": "r_id",
-        "targets": [
-          "ea",
-          "dh"
-        ],
         "citations": [
           "grambow2020scientificdata",
           "grambow2020zenodo"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict activation energy and reaction enthalpy.",
+        "description": "Quantum-chemistry reaction-property prediction benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ea",
+          "dh"
         ]
       },
       {
@@ -504,16 +504,7 @@
           "G_r",
           "split"
         ],
-        "benchmark_role": "Predict activation and reaction free energies.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Cycloaddition activation and reaction free-energy benchmark.",
         "title": "Cycloaddition free energies",
-        "row_identifier": "r_id",
-        "targets": [
-          "G_act",
-          "G_r"
-        ],
         "citations": [
           "heid2023benchmark_chemprop"
         ],
@@ -521,6 +512,15 @@
           "train",
           "val",
           "test"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict activation and reaction free energies.",
+        "description": "Cycloaddition activation and reaction free-energy benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "G_act",
+          "G_r"
         ]
       },
       {
@@ -537,15 +537,7 @@
           "ea",
           "split"
         ],
-        "benchmark_role": "Predict activation energies for E2 reactions.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "E2 reaction activation-energy benchmark.",
         "title": "E2 activation energies",
-        "row_identifier": "r_id",
-        "targets": [
-          "ea"
-        ],
         "citations": [
           "heid2023benchmark_chemprop"
         ],
@@ -553,6 +545,14 @@
           "train",
           "val",
           "test"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict activation energies for E2 reactions.",
+        "description": "E2 reaction activation-energy benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ea"
         ]
       },
       {
@@ -568,18 +568,18 @@
           "aam",
           "ea"
         ],
-        "benchmark_role": "Predict activation energies across E2 and SN2 mechanisms.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Combined E2 and SN2 activation-energy benchmark.",
         "title": "E2/SN2 activation energies",
-        "row_identifier": "r_id",
-        "targets": [
-          "ea"
-        ],
         "citations": [
           "heid2022machine",
           "vonrudorff2020thousands"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict activation energies across E2 and SN2 mechanisms.",
+        "description": "Combined E2 and SN2 activation-energy benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ea"
         ]
       },
       {
@@ -595,18 +595,18 @@
           "aam",
           "lograte"
         ],
-        "benchmark_role": "Predict log reaction rates.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Logarithmic reaction-rate prediction benchmark.",
         "title": "Reaction log rates",
-        "row_identifier": "r_id",
-        "targets": [
-          "lograte"
-        ],
         "citations": [
           "heid2022machine",
           "bhoorasingh2017automated"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict log reaction rates.",
+        "description": "Logarithmic reaction-rate prediction benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "lograte"
         ]
       },
       {
@@ -623,18 +623,18 @@
           "Conversion",
           "onehot"
         ],
-        "benchmark_role": "Predict phosphatase conversion.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Phosphatase reaction-conversion prediction benchmark.",
         "title": "Phosphatase conversion",
-        "row_identifier": "r_id",
-        "targets": [
-          "Conversion"
-        ],
         "citations": [
           "heid2022machine",
           "huang2015panoramic"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict phosphatase conversion.",
+        "description": "Phosphatase reaction-conversion prediction benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "Conversion"
         ]
       },
       {
@@ -650,18 +650,18 @@
           "aam",
           "dh"
         ],
-        "benchmark_role": "Predict reaction enthalpy.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Reaction-enthalpy prediction benchmark.",
         "title": "RAD-6 reaction enthalpies",
-        "row_identifier": "r_id",
-        "targets": [
-          "dh"
-        ],
         "citations": [
           "heid2022machine",
           "stocker2020machine"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict reaction enthalpy.",
+        "description": "Reaction-enthalpy prediction benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "dh"
         ]
       },
       {
@@ -678,15 +678,7 @@
           "ea",
           "split"
         ],
-        "benchmark_role": "Predict reaction activation energy.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Activation-energy benchmark with published partitions.",
         "title": "RDB7 activation energies",
-        "row_identifier": "r_id",
-        "targets": [
-          "ea"
-        ],
         "citations": [
           "heid2023benchmark_chemprop"
         ],
@@ -694,6 +686,14 @@
           "train",
           "val",
           "test"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict reaction activation energy.",
+        "description": "Activation-energy benchmark with published partitions.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ea"
         ]
       },
       {
@@ -710,15 +710,7 @@
           "ea",
           "split"
         ],
-        "benchmark_role": "Predict activation energy at reaction-dataset scale.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Large-scale reaction activation-energy benchmark.",
         "title": "RGD1 activation energies",
-        "row_identifier": "r_id",
-        "targets": [
-          "ea"
-        ],
         "citations": [
           "heid2023benchmark_chemprop"
         ],
@@ -726,6 +718,14 @@
           "train",
           "val",
           "test"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict activation energy at reaction-dataset scale.",
+        "description": "Large-scale reaction activation-energy benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ea"
         ]
       },
       {
@@ -742,15 +742,7 @@
           "ea",
           "split"
         ],
-        "benchmark_role": "Predict activation energies for SN2 reactions.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "SN2 reaction activation-energy benchmark.",
         "title": "SN2 activation energies",
-        "row_identifier": "r_id",
-        "targets": [
-          "ea"
-        ],
         "citations": [
           "heid2023benchmark_chemprop"
         ],
@@ -758,6 +750,14 @@
           "train",
           "val",
           "test"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict activation energies for SN2 reactions.",
+        "description": "SN2 reaction activation-energy benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ea"
         ]
       },
       {
@@ -773,17 +773,17 @@
           "rxn",
           "ea"
         ],
-        "benchmark_role": "Predict activation energies for SNAr reactions.",
-        "row_identifier_unique": true,
-        "license": "CC BY 3.0",
-        "description": "Nucleophilic aromatic substitution activation-energy benchmark.",
         "title": "SNAr activation energies",
-        "row_identifier": "r_id",
-        "targets": [
-          "ea"
-        ],
         "citations": [
           "jorner2021machine"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict activation energies for SNAr reactions.",
+        "description": "Nucleophilic aromatic substitution activation-energy benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 3.0",
+        "targets": [
+          "ea"
         ]
       },
       {
@@ -799,18 +799,18 @@
           "rxn",
           "ground_truth"
         ],
-        "benchmark_role": "Recover balanced reactions for complex transformations and rearrangements.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Manually validated complex-transformation rebalancing benchmark.",
         "title": "Complex reaction rebalancing",
-        "row_identifier": "r_id",
-        "targets": [
-          "ground_truth"
-        ],
         "citations": [
           "jaworski2019automatic",
           "lin2022atom"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Recover balanced reactions for complex transformations and rearrangements.",
+        "description": "Manually validated complex-transformation rebalancing benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ground_truth"
         ]
       },
       {
@@ -826,17 +826,17 @@
           "rxn",
           "ground_truth"
         ],
-        "benchmark_role": "Recover omitted species on both sides of a reaction.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Reaction-rebalancing benchmark with species missing from both sides.",
         "title": "Missing both sides rebalancing",
-        "row_identifier": "r_id",
-        "targets": [
-          "ground_truth"
-        ],
         "citations": [
           "liu2017retrosynthetic"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Recover omitted species on both sides of a reaction.",
+        "description": "Reaction-rebalancing benchmark with species missing from both sides.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ground_truth"
         ]
       },
       {
@@ -852,17 +852,17 @@
           "rxn",
           "ground_truth"
         ],
-        "benchmark_role": "Recover omitted non-carbon species.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Reaction-rebalancing benchmark with missing non-carbon species.",
         "title": "Missing non-carbon rebalancing",
-        "row_identifier": "r_id",
-        "targets": [
-          "ground_truth"
-        ],
         "citations": [
           "liu2017retrosynthetic"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Recover omitted non-carbon species.",
+        "description": "Reaction-rebalancing benchmark with missing non-carbon species.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ground_truth"
         ]
       },
       {
@@ -878,17 +878,17 @@
           "rxn",
           "ground_truth"
         ],
-        "benchmark_role": "Recover omitted species on one side of a reaction.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Reaction-rebalancing benchmark with species missing from one side.",
         "title": "Missing one side rebalancing",
-        "row_identifier": "r_id",
-        "targets": [
-          "ground_truth"
-        ],
         "citations": [
           "liu2017retrosynthetic"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Recover omitted species on one side of a reaction.",
+        "description": "Reaction-rebalancing benchmark with species missing from one side.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "ground_truth"
         ]
       },
       {
@@ -906,18 +906,18 @@
           "r_id",
           "rsmi"
         ],
+        "title": "Diels–Alder synthesis",
+        "citations": [
+          "lam2024every"
+        ],
+        "row_identifier": "r_id",
         "benchmark_role": "Evaluate synthesis prediction for Diels–Alder reactions.",
+        "description": "Class-specific Diels–Alder synthesis benchmark.",
         "row_identifier_unique": true,
         "license": "CC BY 3.0",
-        "description": "Class-specific Diels–Alder synthesis benchmark.",
-        "title": "Diels–Alder synthesis",
-        "row_identifier": "r_id",
         "targets": [
           "reaction",
           "rsmi"
-        ],
-        "citations": [
-          "lam2024every"
         ]
       },
       {
@@ -934,15 +934,7 @@
           "reagent",
           "split"
         ],
-        "benchmark_role": "Predict reagents and catalysts from patent reactions.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Reagent and catalyst inference benchmark.",
         "title": "USPTO-500 reagent prediction",
-        "row_identifier": "r_id",
-        "targets": [
-          "reagent"
-        ],
         "citations": [
           "lu2022unified"
         ],
@@ -950,6 +942,14 @@
           "train",
           "val",
           "test"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Predict reagents and catalysts from patent reactions.",
+        "description": "Reagent and catalyst inference benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "reagent"
         ]
       },
       {
@@ -966,12 +966,7 @@
           "split",
           "source"
         ],
-        "benchmark_role": "Evaluate single-step synthesis and retrosynthesis methods.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "USPTO-50K synthesis and retrosynthesis benchmark.",
         "title": "USPTO-50K synthesis",
-        "row_identifier": "r_id",
         "citations": [
           "chen2024precise",
           "liu2017retrosynthetic"
@@ -980,7 +975,12 @@
           "train",
           "valid",
           "test"
-        ]
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Evaluate single-step synthesis and retrosynthesis methods.",
+        "description": "USPTO-50K synthesis and retrosynthesis benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0"
       },
       {
         "key": "synthesis/uspto_mit.csv.gz",
@@ -996,15 +996,7 @@
           "split",
           "rc"
         ],
-        "benchmark_role": "Evaluate synthesis and reaction-center prediction at scale.",
-        "row_identifier_unique": true,
-        "license": "CC BY 4.0",
-        "description": "Large-scale USPTO-MIT synthesis-prediction benchmark.",
         "title": "USPTO-MIT synthesis",
-        "row_identifier": "r_id",
-        "targets": [
-          "rc"
-        ],
         "citations": [
           "jin2017predicting_outcomes"
         ],
@@ -1012,6 +1004,14 @@
           "train",
           "valid",
           "test"
+        ],
+        "row_identifier": "r_id",
+        "benchmark_role": "Evaluate synthesis and reaction-center prediction at scale.",
+        "description": "Large-scale USPTO-MIT synthesis-prediction benchmark.",
+        "row_identifier_unique": true,
+        "license": "CC BY 4.0",
+        "targets": [
+          "rc"
         ]
       }
     ],
@@ -1048,7 +1048,7 @@
   },
   "provenance": {
     "git_root": "/home/lolo/Documents/TACsy/SynEco/SynRXN",
-    "commit": "c74187e840c53aa86d3be9218ab70116f8649f7a",
+    "commit": "fe757ee1f4beb9f2ddec9675a56c8e865daed396",
     "branch": "main",
     "remotes": "origin\tgit@github.com:TieuLongPhan/SynRXN.git (fetch)\norigin\tgit@github.com:TieuLongPhan/SynRXN.git (push)"
   },
@@ -1058,7 +1058,7 @@
   },
   "code": {
     "manifest": {
-      "generated_at": "2026-07-16T09:02:47Z",
+      "generated_at": "2026-07-16T11:00:06Z",
       "repo_root": "/home/lolo/Documents/TACsy/SynEco/SynRXN",
       "subdirs": [
         "synrxn"
@@ -1144,9 +1144,9 @@
         },
         {
           "key": "synrxn/build_catalog.py",
-          "size": 8732,
-          "sha256": "58dce28079d27ac12ffc6741cd97e118552643718131648b9066a43f2328b95d",
-          "mtime": "2026-07-16T08:37:59Z"
+          "size": 9269,
+          "sha256": "6473cc09a6111464fd79519feedf8ea05366573efbf8dbe51198ce9d038acfc7",
+          "mtime": "2026-07-16T09:48:26Z"
         },
         {
           "key": "synrxn/build_manifest.py",
@@ -1205,8 +1205,8 @@
         {
           "key": "synrxn/data/data_loader.py",
           "size": 41648,
-          "sha256": "b4b50a86b207a920ce7681d848088233dae1d2fbf102c71153b172f9cca7aab5",
-          "mtime": "2026-07-16T08:28:51Z"
+          "sha256": "4328ae3e031cdf4d5af849c343eee628eeb479cca27adf0ee0a58a8edd352dc1",
+          "mtime": "2026-07-16T10:58:02Z"
         },
         {
           "key": "synrxn/data/github_client.py",
@@ -1271,8 +1271,8 @@
         {
           "key": "synrxn/service.py",
           "size": 13445,
-          "sha256": "ed7ee162e264a9e1f38409ec1bce45be35f16c68ce05872619ddf37a77c5f7b0",
-          "mtime": "2026-07-16T08:49:39Z"
+          "sha256": "48c153fe9784418e1558832978df43a7a9d3a1b5777203e0ebc4c93f510907fd",
+          "mtime": "2026-07-16T10:57:57Z"
         },
         {
           "key": "synrxn/split/__init__.py",
