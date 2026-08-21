@@ -15,7 +15,7 @@
 
 SynRXN collects curated reaction datasets, canonical task folders, versioned data releases, and lightweight loading utilities for benchmarking atom-atom mapping, reaction classification, property prediction, reaction balancing, and synthesis/retrosynthesis workflows.
 
-![SynRXN Workflow](https://raw.githubusercontent.com/TieuLongPhan/SynRXN/main/doc/figure/synrxn.png)
+![SynRXN Workflow](https://raw.githubusercontent.com/TieuLongPhan/SynRXN/main/doc/figure/synrxn.svg)
 
 ## Highlights
 

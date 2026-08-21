@@ -36,8 +36,61 @@ column_definitions:
   reagent: {role: target, description: Reagent or catalyst target.}
   source: {role: provenance, description: Upstream source or subset marker.}
   rc: {role: target, description: Reaction-center annotation.}
+  reaction_r_id: {role: identifier, description: Identifier of the corresponding reaction-level record.}
+  system: {role: partition, description: EHreact enzyme or reaction system.}
+  input: {role: feature, description: Upstream query substrate or product representation.}
+  input_type: {role: provenance, description: Whether the upstream query represents a substrate or product.}
+  assay_labels: {role: target, description: JSON object containing all binary assay labels for a reaction.}
+  n_assays: {role: summary, description: Number of assay labels associated with the reaction.}
+  n_active: {role: summary, description: Number of positive assay labels associated with the reaction.}
+  mapping_curated: {role: provenance, description: Dataset-level indicator that the atom mapping underwent upstream manual curation.}
+  validated: {role: provenance, description: Row-level independent-validation status when provided by the upstream source.}
+  assay: {role: target, description: Upstream assay or enzyme label.}
+  activity: {role: target, description: Binary reaction-assay activity label.}
+  pubmed_ids: {role: provenance, description: JSON array of PubMed identifiers linked by the upstream source.}
+  n_steps: {role: summary, description: Minimum number of elementary transitions connecting the composite reaction states.}
 
 datasets:
+  aam/brenda.csv.gz:
+    title: BRENDA balanced atom mappings
+    description: IUBMB-marked, structure-complete, atom- and charge-balanced BRENDA reactions mapped with SynKit.
+    benchmark_role: Evaluate mapping methods on a conservative biochemical reaction subset with computational mapping quality control.
+    license: CC BY 4.0
+    citations: [hauenstein2026brenda]
+    targets: [ground_truth]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  aam/flower_e.csv.gz:
+    title: FlowER elementary atom mappings
+    description: Unique elementary test-set mappings retaining only reacting explicit hydrogens; inputs are canonical unmapped SMILES with removable hydrogens made implicit.
+    benchmark_role: Evaluate atom mapping on conserved mechanistic elementary steps from the corrected May-2026 FlowER test split.
+    license: MIT
+    citations: [joung2025electron, fong2026flower_data]
+    targets: [ground_truth]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  aam/flower_c.csv.gz:
+    title: FlowER composite atom mappings
+    description: Unique multi-step test-set mappings retaining only reacting explicit hydrogens; inputs are canonical unmapped SMILES with removable hydrogens made implicit.
+    benchmark_role: Evaluate atom mapping on overall transformations spanning at least two elementary transitions.
+    license: MIT
+    citations: [joung2025electron, fong2026flower_data]
+    targets: [ground_truth]
+    row_identifier: r_id
+    row_identifier_unique: true
+
+  aam/ehreact.csv.gz:
+    title: EHreact atom mappings
+    description: Manually corrected atom-mapped reactions from the EHreact manuscript assay collection.
+    benchmark_role: Evaluate atom mapping and reaction-template methods across nine enzymatic and synthetic systems.
+    license: BSD-3-Clause
+    citations: [heid2021ehreact]
+    targets: [ground_truth]
+    row_identifier: r_id
+    row_identifier_unique: true
+
   aam/ecoli.csv.gz:
     title: E. coli atom mapping
     description: Biochemical atom-mapping benchmark derived from E. coli reactions.
@@ -108,6 +161,16 @@ datasets:
     split_values: [train, test]
     row_identifier: r_id
     row_identifier_unique: false
+
+  classification/ehreact_activity.csv.gz:
+    title: EHreact reaction activity
+    description: Long-form binary reaction-assay activity labels from nine EHreact manuscript systems.
+    benchmark_role: Predict whether a mapped reaction is active for an assay or enzyme label.
+    license: BSD-3-Clause
+    citations: [heid2021ehreact]
+    targets: [activity]
+    row_identifier: r_id
+    row_identifier_unique: true
 
   classification/schneider_b.csv.gz:
     title: Schneider balanced classification

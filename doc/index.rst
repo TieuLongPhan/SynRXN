@@ -65,7 +65,7 @@ utilities.
 Framework overview
 ------------------
 
-.. figure:: figure/synrxn.png
+.. figure:: figure/synrxn.svg
    :alt: SynRXN framework overview
    :align: center
    :class: synrxn-hero-figure

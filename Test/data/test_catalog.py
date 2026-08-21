@@ -8,7 +8,7 @@ from synrxn.data import CacheManager, DataLoader, DatasetCatalog, LocalSource, T
 
 def test_packaged_catalog_covers_current_inventory():
     catalog = DatasetCatalog()
-    assert len(catalog.list()) == 33
+    assert len(catalog.list()) == 38
     assert catalog.get("prop", "rgd1").targets == ("ea",)
     assert catalog.get(Task.CLASSIFICATION, "ecreact").row_identifier_unique is False
     assert "schneider_b" in catalog.available_names("classification")

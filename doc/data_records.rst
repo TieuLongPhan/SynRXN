@@ -106,18 +106,42 @@ See :doc:`Reference <reference>` for source publications and mapper references.
      - Principal columns
      - Source
      - License
+   * - ``brenda``
+     - 3,138
+     - IUBMB-marked, exactly balanced biochemical reactions with SynKit-generated mappings and bijection QC.
+     - ``r_id``, mapped ``ground_truth``, balanced ``rxn``, ``original_id``, ``pubmed_ids``
+     - :cite:p:`hauenstein2026brenda`
+     - ``CC BY 4.0``
    * - ``ecoli``
      - 273
      - Biochemical mapping benchmark from E. coli reactions.
      - ``r_id``, ``ground_truth``, mapper outputs, ``rxn``, ``original_id``
      - :cite:p:`beier2026computing`
      - ``CC BY 4.0``
+   * - ``ehreact``
+     - 939
+     - Manually corrected mappings from nine EHreact manuscript systems.
+     - ``r_id``, ``ground_truth``, ``rxn``, ``system``, ``mapping_curated``, ``validated``
+     - :cite:p:`heid2021ehreact`
+     - ``BSD-3-Clause``
    * - ``enzyme_map``
      - 47,974
      - Enzymatic atom-mapping benchmark from the EnzymeMap reaction collection.
      - ``r_id``, ``ground_truth``, ``rxn``, ``original_id``
      - :cite:p:`heid2023enzymemap`
      - ``CC BY 4.0``
+   * - ``flower_e``
+     - 179,345
+     - Unique standardized elementary steps from the corrected May-2026 FlowER test split.
+     - ``r_id``, mapped ``ground_truth``, unmapped ``rxn``, ``original_id``
+     - :cite:p:`joung2025electron,fong2026flower_data`
+     - ``MIT``
+   * - ``flower_c``
+     - 38,745
+     - Unique standardized multi-step root-to-terminal transformations reconstructed from FlowER elementary pathways.
+     - ``r_id``, mapped ``ground_truth``, unmapped ``rxn``, ``original_id``, ``n_steps``
+     - :cite:p:`joung2025electron,fong2026flower_data`
+     - ``MIT``
    * - ``golden``
      - 1,758
      - Curated synthetic chemistry mapping benchmark.
@@ -142,6 +166,34 @@ See :doc:`Reference <reference>` for source publications and mapper references.
      - ``r_id``, ``ground_truth``, mapper outputs, ``rxn``, ``original_id``
      - :cite:p:`chen2024precise`
      - ``CC BY 4.0``
+
+The BRENDA subset requires the upstream ``isIubmbReaction`` marker, complete
+participant structures, exact atom balance including hydrogen, and formal-charge
+balance. Its atom mappings are generated computationally with SynKit and pass a
+complete bijective explicit-atom map check. BRENDA does not expose a separate
+row-level experimental-validation field for these records. These constant
+selection and QC facts are enforced by the builder rather than repeated in
+every row. A JSON provenance report can be requested as a downstream build
+artifact.
+
+The two FlowER tables use only ``flower_new_dataset/test.txt`` from the
+corrected May-2026 public archive. In the source, the suffix after ``|`` groups
+elementary state transitions belonging to an overall reaction. The elementary
+table excludes exact no-change termination steps and exact duplicate mappings.
+For the composite table, all records sharing a numeric suffix are reconstructed
+as a directed mapped-state graph and every root is joined to each reachable
+terminal indicated by a no-change marker (or a graph leaf when no marker is
+present). Only composites spanning at least two elementary transitions are
+retained; ``RC``, ``PC``, ``PM``, and ``RS`` groups remain elementary-only.
+Both tables require complete bijective atom maps. The multi-gigabyte training
+and validation splits and the request-only NameRxn-derived OOD sets are not
+distributed. SynKit identifies the reaction center and converts non-reacting
+explicit hydrogens in ``ground_truth`` to implicit hydrogen counts while
+preserving reacting mapped hydrogens. The ``rxn`` field is regenerated as
+canonical unmapped SMILES with removable hydrogens made implicit. Standalone
+reacting hydrogen species such as hydride or molecular hydrogen remain explicit
+because SMILES has no implicit representation for them. Standardization
+collapses equivalent explicit-hydrogen encodings before final deduplication.
 
 
 Reaction Classification
@@ -171,6 +223,12 @@ benchmark citations.
      - ``r_id``, ``rxn``, ``ec1``, ``ec2``, ``ec3``, ``split``, ``orig_index``
      - :cite:p:`zeng2025claire`
      - ``CC BY 4.0``
+   * - ``ehreact_activity``
+     - 1,943
+     - Binary reaction--assay activity prediction across nine systems.
+     - ``r_id``, ``reaction_r_id``, ``ground_truth``, ``system``, ``assay``, ``activity``
+     - :cite:p:`heid2021ehreact`
+     - ``BSD-3-Clause``
    * - ``schneider_b``
      - 50,000
      - Balanced Schneider reaction-class benchmark.

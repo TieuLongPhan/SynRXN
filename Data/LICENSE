@@ -35,11 +35,14 @@ data providers should still be cited as documented in `doc/data_records.rst` and
 Task family              Dataset(s)                                      License
 -----------              ----------                                      -------
 rbl                      complex, mbs, mnc, mos                          CC BY 4.0
-aam                      ecoli, enzyme_map, golden, natcomm,             CC BY 4.0
-                         recon3d, uspto_3k
+aam                      brenda, ecoli, enzyme_map, golden,              CC BY 4.0
+                         natcomm, recon3d, uspto_3k
+aam                      ehreact                                         BSD-3-Clause
+aam                      flower_c, flower_e                              MIT
 classification           ecreact, schneider_b, schneider_u,              CC BY 4.0
                          syntemp, tpl_b, tpl_u,
                          uspto_50k_b, uspto_50k_u
+classification           ehreact_activity                                BSD-3-Clause
 property                 b97xd3, cycloadd, e2, e2sn2,                    CC BY 4.0
                          lograte, phosphatase, rad6re,
                          rdb7, rgd1, sn2
@@ -51,6 +54,74 @@ CC BY 3.0 license URL:
 https://creativecommons.org/licenses/by/3.0/
 CC BY 3.0 legal code:
 https://creativecommons.org/licenses/by/3.0/legalcode
+
+EHreact BSD-3-Clause notice
+---------------------------
+
+The ``aam/ehreact.csv.gz`` and ``classification/ehreact_activity.csv.gz``
+tables are derived from the EHreact manuscript data repository and remain
+under its BSD 3-Clause license:
+
+Copyright 2021 Esther Heid
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+3. Neither the name of the copyright holder nor the names of its contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Upstream license:
+https://github.com/hesther/ehreact/blob/main/LICENSE
+
+FlowER MIT notice
+-----------------
+
+The ``aam/flower_e.csv.gz`` and ``aam/flower_c.csv.gz`` tables are derived
+solely from the public corrected FlowER May-2026 Figshare test dataset and
+remain under its MIT license. The NameRxn-derived OOD sets available only on
+request are not included.
+
+MIT License
+
+Copyright (c) 2025 FongMunHong
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Upstream dataset: https://doi.org/10.6084/m9.figshare.32513667.v1
+Upstream license: https://github.com/FongMunHong/FlowER/blob/master/LICENSE
 
 
 Covered data artifacts
@@ -114,4 +185,4 @@ No additional restrictions
 --------------------------
 
 You may not apply legal terms or technological measures that legally restrict
-others from doing anything permitted by the applicable Creative Commons license.
+others from doing anything permitted by the applicable dataset license.

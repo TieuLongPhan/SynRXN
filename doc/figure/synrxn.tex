@@ -1,0 +1,391 @@
+\documentclass[tikz,border=2mm]{standalone}
+
+% Editable vector source for the SynRXN workflow figure.
+% Build with:
+%   latexmk -pdf -interaction=nonstopmode -halt-on-error synrxn.tex
+%   pdf2svg synrxn.pdf synrxn.svg
+%
+% Structure:
+%   * palette and styles              -- colours, cards, chips, pills
+%   * icon library (\ico...)          -- hand drawn, unit box [-0.5,0.5]^2
+%   * layout macros                   -- \headerband, \stagecard, \taskcard, \srcitem
+%   * picture                         -- edit the macro calls, not the geometry
+
+\usepackage[T1]{fontenc}
+\usepackage[default]{sourcesanspro}
+\usepackage{fontawesome5}
+
+% Never hyphenate inside the figure.
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+\usetikzlibrary{
+  arrows.meta,
+  calc,
+  positioning,
+  shadows.blur
+}
+
+% ---------------------------------------------------------------------
+% Palette
+% ---------------------------------------------------------------------
+\definecolor{SynNavy}{HTML}{082B5C}
+\definecolor{SynTeal}{HTML}{007C7A}
+\definecolor{SynTealDark}{HTML}{005E5D}
+\definecolor{SynInk}{HTML}{10233F}
+\definecolor{SynMuted}{HTML}{52647A}
+\definecolor{SynLine}{HTML}{C9D7E3}
+\definecolor{SynPale}{HTML}{F3F7FA}
+\definecolor{SynTealPale}{HTML}{EAF8F7}
+\definecolor{SynBluePale}{HTML}{EDF3FA}
+\definecolor{SynReject}{HTML}{D14D57}
+
+% ---------------------------------------------------------------------
+% Shared styles
+% ---------------------------------------------------------------------
+\tikzset{
+  font=\sffamily,
+  soft/.style={
+    blur shadow={shadow blur steps=6,shadow xshift=0.4pt,
+                 shadow yshift=-0.9pt,shadow opacity=22,shadow blur radius=2.2pt}
+  },
+  panel/.style={draw=SynLine,line width=0.8pt,rounded corners=8pt,fill=white,soft},
+  hero/.style={draw=SynNavy,line width=1pt,rounded corners=9pt,fill=SynPale,soft},
+  vault/.style={draw=SynTeal,line width=1pt,rounded corners=9pt,fill=SynTealPale,soft},
+  card/.style={draw=SynLine,line width=0.6pt,rounded corners=6pt,fill=white},
+  taskcard/.style={draw=SynTeal!45,line width=0.6pt,rounded corners=6pt,fill=white},
+  chip/.style={rounded corners=3pt,fill=SynTealPale,draw=SynTeal!30,line width=0.5pt},
+  badge/.style={circle,fill=SynNavy,text=white,inner sep=0pt,minimum size=6.6mm,
+                font=\bfseries\fontsize{10}{10}\selectfont},
+  pill/.style={rounded corners=2pt,fill=SynTealPale,draw=SynTeal!35,line width=0.4pt,
+               text=SynTealDark,font=\fontsize{5.8}{6.5}\selectfont,
+               inner xsep=3.5pt,inner ysep=2pt},
+  banner/.style={font=\bfseries\fontsize{9}{11}\selectfont,align=center},
+  flow/.style={-{Stealth[length=3.4mm,width=2.6mm]},line width=3.2pt,draw=SynTeal},
+  rule/.style={draw=SynLine,line width=0.6pt},
+  atom/.style={fill=SynNavy},
+  bond/.style={draw=SynNavy!70,line width=0.85pt,line cap=round,line join=round},
+  tinybond/.style={draw=SynTeal!80,line width=0.85pt,line cap=round,line join=round},
+  tinyarrow/.style={-{Stealth[length=1.6mm,width=1.3mm]},line width=0.9pt},
+  stroke/.style={line width=0.95pt,line cap=round,line join=round}
+}
+
+% ---------------------------------------------------------------------
+% Icon library -- every icon is drawn inside the unit box [-0.5,0.5]^2
+% and placed by \iconbox, so icons can be swapped without touching layout.
+% ---------------------------------------------------------------------
+% 1. schema validation: document with code marks and a validated badge
+\newcommand{\icoSchema}{%
+  \draw[SynNavy,stroke,rounded corners=0.8pt]
+    (-0.30,-0.44) -- (-0.30,0.44) -- (0.10,0.44) -- (0.30,0.24) -- (0.30,-0.44) -- cycle;
+  \draw[SynNavy,line width=0.8pt] (0.10,0.44) -- (0.10,0.24) -- (0.30,0.24);
+  \draw[SynTeal,stroke] (-0.13,0.14) -- (-0.21,0.03) -- (-0.13,-0.08);
+  \draw[SynTeal,stroke] (0.11,0.14) -- (0.19,0.03) -- (0.11,-0.08);
+  \draw[SynTeal,stroke] (0.02,0.18) -- (-0.04,-0.12);
+  \fill[SynTeal] (0.25,-0.31) circle (0.17);
+  \draw[white,line width=1.1pt,line cap=round,line join=round]
+    (0.17,-0.31) -- (0.22,-0.38) -- (0.33,-0.24);
+}
+
+% 2. chemical sanity: molecule guarded by a shield
+\newcommand{\icoSanity}{%
+  \draw[bond] (-0.44,0.20) -- (-0.20,0.38) -- (0.02,0.24)
+              (-0.20,0.38) -- (-0.18,-0.02) (-0.44,0.20) -- (-0.46,-0.18) -- (-0.18,-0.02);
+  \foreach \p in {(-0.44,0.20),(-0.20,0.38),(0.02,0.24),(-0.18,-0.02),(-0.46,-0.18)}
+    \fill[atom] \p circle (0.062);
+  \fill[SynTeal] (0.06,0.18) -- (0.46,0.18) -- (0.46,-0.06)
+    .. controls (0.46,-0.24) and (0.38,-0.34) .. (0.26,-0.42)
+    .. controls (0.14,-0.34) and (0.06,-0.24) .. (0.06,-0.06) -- cycle;
+  \draw[white,line width=1.2pt,line cap=round,line join=round]
+    (0.14,-0.03) -- (0.22,-0.13) -- (0.38,0.07);
+}
+
+% 3. standardization: arbitrary graph mapped to a canonical one
+\newcommand{\icoCanon}{%
+  \draw[bond] (-0.46,0.24) -- (-0.30,0.02) -- (-0.44,-0.20) (-0.30,0.02) -- (-0.10,0.16);
+  \foreach \p in {(-0.46,0.24),(-0.30,0.02),(-0.44,-0.20),(-0.10,0.16)}
+    \fill[atom] \p circle (0.062);
+  \draw[tinyarrow,SynTeal] (-0.02,-0.02) -- (0.16,-0.02);
+  \draw[tinybond] (0.26,0.22) -- (0.40,0.02) -- (0.26,-0.18) (0.40,0.02) -- (0.50,0.20);
+  \foreach \p in {(0.26,0.22),(0.40,0.02),(0.26,-0.18),(0.50,0.20)}
+    \fill[SynTeal] \p circle (0.062);
+}
+
+% helper: flat-top hexagon
+\newcommand{\hexring}[3]{%
+  \draw[#3,line width=1pt,line join=round]
+    ({#1+0.20},#2) -- ({#1+0.10},{#2+0.175}) -- ({#1-0.10},{#2+0.175})
+    -- ({#1-0.20},#2) -- ({#1-0.10},{#2-0.175}) -- ({#1+0.10},{#2-0.175}) -- cycle;
+}
+
+% 4. deduplication: two structures proven identical
+\newcommand{\icoDedup}{%
+  \hexring{-0.28}{0}{SynNavy}
+  \hexring{0.28}{0}{SynTeal}
+  \draw[SynTeal,line width=1.2pt,line cap=round]
+    (-0.06,0.075) -- (0.06,0.075) (-0.06,-0.075) -- (0.06,-0.075);
+}
+
+% 5. task curation: rule sheet plus label mix
+\newcommand{\icoCurate}{%
+  \draw[SynNavy,stroke,rounded corners=1pt] (-0.46,-0.34) rectangle (-0.02,0.38);
+  \fill[SynNavy,rounded corners=0.5pt] (-0.32,0.33) rectangle (-0.16,0.45);
+  \foreach \y in {0.18,0.02,-0.14} {
+    \draw[SynTeal,line width=0.85pt,line cap=round,line join=round]
+      (-0.39,\y) -- (-0.34,{\y-0.05}) -- (-0.26,{\y+0.05});
+    \draw[SynMuted,line width=0.55pt,line cap=round] (-0.21,\y) -- (-0.08,\y);
+  }
+  \fill[SynTeal] (0.22,-0.12) circle (0.23);
+  \fill[SynNavy] (0.22,-0.12) -- ++(0.23,0) arc (0:108:0.23) -- cycle;
+}
+
+% rbl: balance scale
+\newcommand{\icoBalance}{%
+  \draw[SynNavy,line width=1.05pt,line cap=round] (0,0.30) -- (0,-0.28);
+  \draw[SynNavy,line width=1.05pt,line cap=round,line join=round]
+    (-0.13,-0.38) -- (0,-0.28) -- (0.13,-0.38);
+  \draw[SynNavy,line width=1.05pt,line cap=round] (-0.22,-0.40) -- (0.22,-0.40);
+  \draw[SynNavy,line width=1.05pt,line cap=round] (-0.32,0.30) -- (0.32,0.30);
+  \fill[SynNavy] (0,0.35) circle (0.065);
+  \foreach \s in {-1,1} {
+    \draw[SynTeal,line width=0.75pt] ({\s*0.32},0.30) -- ({\s*0.32},0.16);
+    \draw[SynTeal,line width=1pt,fill=SynTealPale,line join=round]
+      ({\s*0.32-0.16},0.16) arc (180:360:0.16 and 0.15) -- cycle;
+  }
+}
+
+% aam: ring with atom-to-atom correspondences
+\newcommand{\icoMap}{%
+  \begin{scope}[shift={(0,-0.02)}]
+    \draw[bond,line width=0.7pt]
+      (90:0.32) -- (150:0.32) -- (210:0.32) -- (270:0.32) -- (330:0.32) -- (30:0.32) -- cycle;
+    \foreach \a in {90,150,210,270,330,30} \fill[atom] (\a:0.32) circle (0.065);
+    \draw[tinyarrow,SynTeal] (168:0.24) to[bend left=28] (72:0.24);
+    \draw[tinyarrow,SynTeal] (348:0.24) to[bend left=28] (252:0.24);
+  \end{scope}
+}
+
+% class: label hierarchy
+\newcommand{\icoTree}{%
+  \fill[SynNavy,rounded corners=1.2pt] (-0.13,0.18) rectangle (0.13,0.44);
+  \draw[SynNavy!60,line width=0.8pt]
+    (0,0.18) -- (0,0.04) (-0.32,0.04) -- (0.32,0.04)
+    (-0.32,0.04) -- (-0.32,-0.08) (0,0.04) -- (0,-0.08) (0.32,0.04) -- (0.32,-0.08);
+  \foreach \x in {-0.32,0,0.32}
+    \fill[SynTeal,rounded corners=1.2pt] ({\x-0.13},-0.34) rectangle ({\x+0.13},-0.08);
+}
+
+% prop: regression scatter
+\newcommand{\icoScatter}{%
+  \draw[SynNavy,stroke,-{Stealth[length=1.5mm,width=1.2mm]}] (-0.40,-0.36) -- (-0.40,0.38);
+  \draw[SynNavy,stroke,-{Stealth[length=1.5mm,width=1.2mm]}] (-0.42,-0.34) -- (0.42,-0.34);
+  \draw[SynTeal!60,line width=0.9pt,dash pattern=on 1.6pt off 1.3pt]
+    (-0.32,-0.24) -- (0.34,0.28);
+  \foreach \p in {(-0.26,-0.22),(-0.12,-0.16),(-0.02,0.00),(0.10,0.04),(0.22,0.16),(0.32,0.28)}
+    \fill[SynTeal] \p circle (0.062);
+}
+
+% synthesis: single-step disconnection
+\newcommand{\icoRetro}{%
+  \draw[SynTealDark,line width=1.1pt] (0,0.30) circle (0.13);
+  \fill[SynTeal] (0,0.30) circle (0.065);
+  \draw[tinyarrow,SynNavy!70] (-0.07,0.20) -- (-0.26,-0.02);
+  \draw[tinyarrow,SynNavy!70] (0,0.16) -- (0,-0.04);
+  \draw[tinyarrow,SynNavy!70] (0.07,0.20) -- (0.26,-0.02);
+  \foreach \p in {(-0.32,-0.20),(0,-0.22),(0.32,-0.20)}
+    \draw[SynNavy,line width=1.05pt] \p circle (0.11);
+}
+
+% excluded records: discard bin
+\newcommand{\icoDiscard}{%
+  \draw[SynReject,stroke] (-0.30,0.26) -- (0.30,0.26)
+    (-0.10,0.26) -- (-0.10,0.38) -- (0.10,0.38) -- (0.10,0.26);
+  \draw[SynReject,stroke,rounded corners=1.2pt]
+    (-0.24,0.20) -- (-0.17,-0.36) -- (0.17,-0.36) -- (0.24,0.20);
+  \draw[SynReject!65,line width=0.6pt,line cap=round]
+    (-0.09,0.10) -- (-0.11,-0.22) (0.09,0.10) -- (0.11,-0.22) (0,0.10) -- (0,-0.22);
+}
+
+% release: versioned, locked data store
+\newcommand{\dbdisc}[1]{%
+  \fill[SynTealDark] (-0.42,#1) rectangle (0.42,{#1+0.22});
+  \fill[SynTealDark] (0,#1) ellipse (0.42 and 0.13);
+  \fill[SynTeal] (0,{#1+0.22}) ellipse (0.42 and 0.13);
+  \draw[white,line width=0.7pt] (0,{#1+0.22}) ellipse (0.42 and 0.13);
+}
+\newcommand{\icoRelease}{%
+  \dbdisc{-0.46}\dbdisc{-0.18}\dbdisc{0.10}
+  \fill[white] (0.38,-0.34) circle (0.21);
+  \draw[SynTeal,line width=0.6pt] (0.38,-0.34) circle (0.21);
+  \draw[SynTealDark,line width=0.8pt] (0.31,-0.30) arc (180:0:0.07);
+  \fill[SynTealDark,rounded corners=0.5pt] (0.28,-0.44) rectangle (0.48,-0.29);
+}
+
+% corpora: reaction as a graph transformation
+\newcommand{\icoCorpora}{%
+  \draw[bond] (-1.16,0.24) -- (-0.86,0.02) -- (-1.16,-0.20) (-0.86,0.02) -- (-0.50,0.02);
+  \foreach \p in {(-1.16,0.24),(-0.86,0.02),(-1.16,-0.20),(-0.50,0.02)}
+    \fill[atom] \p circle (0.065);
+  \draw[-{Stealth[length=2.1mm,width=1.7mm]},SynTeal,line width=1.1pt]
+    (-0.28,0.02) -- (0.30,0.02);
+  \draw[tinybond] (0.50,0.02) -- (0.86,0.24) -- (1.16,0.02) (0.50,0.02) -- (0.86,-0.20);
+  \foreach \p in {(0.50,0.02),(0.86,0.24),(0.86,-0.20),(1.16,0.02)}
+    \fill[SynTeal] \p circle (0.065);
+}
+
+% ---------------------------------------------------------------------
+% Layout macros
+%
+% Column geometry is derived from measured text widths; every text run
+% keeps at least 0.25 cm of clear space to its container edge.
+%   corpora  0.18 .. 3.48      curation 4.00 .. 11.10
+%   release 11.62 .. 13.92     evaluation 14.44 .. 18.42
+% ---------------------------------------------------------------------
+% #1 band bottom, #2 left x, #3 right x, #4 top y, #5 band fill, #6 title, #7 text colour
+\newcommand{\headerband}[7]{{%
+  \fill[#5,rounded corners=9pt] (#2,#1) rectangle (#3,#4);
+  \fill[#5] (#2,#1) rectangle (#3,{#1+0.25});
+  \node[banner,text=#7] at ({(#2+#3)/2},{(#1+#4)/2}) {#6};
+}}
+
+% #1 x, #2 y, #3 half size, #4 icon scale, #5 icon
+\newcommand{\iconbox}[5]{{%
+  \path[chip] ({#1-#3},{#2-#3}) rectangle ({#1+#3},{#2+#3});
+  \begin{scope}[shift={(#1,#2)},scale=#4]#5\end{scope}
+}}
+
+% #1 centre y, #2 number, #3 icon, #4 title, #5 caption
+% card 4.10 .. 11.00 | badge 4.49 | chip 4.92 .. 5.72 | text 5.84 .. 10.55
+\newcommand{\stagecard}[5]{{%
+  \path[card] (4.10,{#1-0.525}) rectangle (11.00,{#1+0.525});
+  \node[badge] at (4.49,#1) {#2};
+  \iconbox{5.32}{#1}{0.40}{0.74}{#3}
+  \node[anchor=west,text=SynNavy,font=\bfseries\fontsize{8.1}{9}\selectfont]
+    at (5.84,{#1+0.17}) {#4};
+  \node[anchor=west,text=SynMuted,font=\fontsize{6.4}{7}\selectfont]
+    at (5.84,{#1-0.19}) {#5};
+}}
+
+% #1 centre y, #2 icon, #3 task key, #4 description, #5 metric pill
+% card 14.52 .. 18.34 | chip 14.60 .. 15.50 | text 15.62 .. 17.97
+\newcommand{\taskcard}[5]{{%
+  \path[taskcard] (14.52,{#1-0.64}) rectangle (18.34,{#1+0.64});
+  \iconbox{15.05}{#1}{0.45}{0.86}{#2}
+  \node[anchor=west,text=SynNavy,font=\bfseries\fontsize{11}{11}\selectfont]
+    at (15.62,{#1+0.38}) {#3};
+  \node[anchor=west,text=SynInk,font=\fontsize{6.8}{8}\selectfont]
+    at (15.62,{#1+0.02}) {#4};
+  \node[pill,anchor=west] at (15.62,{#1-0.36}) {#5};
+}}
+
+% #1 baseline y, #2 label
+\newcommand{\srcitem}[2]{{%
+  \fill[SynTeal,rounded corners=0.6pt] (0.54,{#1-0.055}) rectangle (0.65,{#1+0.055});
+  \node[anchor=west,text=SynInk,font=\fontsize{7.4}{8}\selectfont] at (0.78,#1) {#2};
+}}
+
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \path[use as bounding box] (0,0) rectangle (18.6,10.1);
+  \fill[white] (0,0) rectangle (18.6,10.1);
+
+  % Stage-to-stage arrows, behind the panels.
+  \draw[flow,draw=SynNavy] (3.42,5.6) -- (4.00,5.6);
+  \draw[flow] (11.04,5.6) -- (11.62,5.6);
+  \draw[flow] (13.86,5.6) -- (14.44,5.6);
+
+  % ==================================================================
+  % 1. Input corpora
+  % ==================================================================
+  \path[panel] (0.18,2.95) rectangle (3.48,8.32);
+  \headerband{7.45}{0.18}{3.48}{8.32}{SynBluePale}{Public reaction\\corpora}{SynNavy}
+
+  \begin{scope}[shift={(1.83,6.80)}]\icoCorpora\end{scope}
+
+  \draw[rule] (0.54,6.30) -- (3.12,6.30);
+  \srcitem{6.00}{Patent reactions}
+  \srcitem{5.55}{Literature reactions}
+  \srcitem{5.10}{Curated mappings}
+  \srcitem{4.65}{Biochemical reactions}
+  \srcitem{4.20}{Property datasets}
+  \srcitem{3.75}{Synthesis benchmarks}
+
+  \node[align=center,text=SynMuted,font=\fontsize{6.2}{7.4}\selectfont]
+    at (1.83,3.25) {heterogeneous formats,\\schemas and conventions};
+
+  % ==================================================================
+  % 2. Deterministic curation
+  % ==================================================================
+  \path[hero] (4.00,1.72) rectangle (11.10,9.58);
+  \headerband{8.70}{4.00}{11.10}{9.58}{SynNavy}
+    {Deterministic curation and harmonization}{white}
+
+  % Sequence rail behind the stage cards.
+  \draw[SynNavy!25,line width=1.6pt] (4.49,2.66) -- (4.49,7.97);
+
+  \stagecard{7.975}{1}{\icoSchema}
+    {Schema validation and parsing}
+    {reaction fields, SMILES/AAM syntax, identifiers}
+  \stagecard{6.645}{2}{\icoSanity}
+    {Chemical sanity filtering}
+    {valence, charge, atom consistency, parseability}
+  \stagecard{5.315}{3}{\icoCanon}
+    {Standardization and canonicalization}
+    {normalized molecular forms, canonical SMILES}
+  \stagecard{3.985}{4}{\icoDedup}
+    {Structural identity and deduplication}
+    {canonical identity, graph and isomorphism checks}
+  \stagecard{2.655}{5}{\icoCurate}
+    {Task-specific curation}
+    {rules for balancing, mapping, labels and splits}
+
+  % Rejection trace.
+  \draw[-{Stealth[length=2.2mm]},draw=SynMuted,dashed,line width=0.8pt]
+    (7.55,2.13) -- (7.55,1.58);
+  \path[draw=SynReject!70,line width=0.7pt,dashed,rounded corners=5pt,
+        fill=SynReject!4] (5.10,0.66) rectangle (10.00,1.52);
+  \begin{scope}[shift={(5.60,1.09)},scale=0.78]\icoDiscard\end{scope}
+  \node[anchor=west,text=SynNavy,font=\bfseries\fontsize{8.5}{9}\selectfont]
+    at (6.02,1.26) {Excluded records};
+  \node[anchor=west,text=SynMuted,font=\fontsize{6.4}{7}\selectfont]
+    at (6.02,0.90) {auditable rejection trace};
+
+  % ==================================================================
+  % 3. Release
+  % ==================================================================
+  \path[vault] (11.62,3.05) rectangle (13.92,8.20);
+  \begin{scope}[shift={(12.77,7.20)},scale=1.35]\icoRelease\end{scope}
+  \node[draw=SynTeal,fill=white,rounded corners=3pt,text=SynTealDark,
+        font=\bfseries\fontsize{8}{8}\selectfont,inner xsep=5pt,inner ysep=2.5pt]
+    at (12.77,6.35) {vX.Y.Z};
+  \node[align=center,text=SynTealDark,font=\bfseries\fontsize{9}{10.5}\selectfont]
+    at (12.77,5.45) {SynRXN\\benchmark\\release};
+  \draw[SynTeal!45,line width=0.6pt] (11.97,4.62) -- (13.57,4.62);
+  \node[align=center,text=SynInk,font=\fontsize{6.2}{7.6}\selectfont]
+    at (12.77,3.80)
+    {task directories\\manifest + hashes\\license matrix\\fixed data splits};
+
+  % ==================================================================
+  % 4. Evaluation
+  % ==================================================================
+  \path[vault] (14.44,0.85) rectangle (18.42,9.58);
+  \headerband{8.70}{14.44}{18.42}{9.58}{SynTealDark}{Task-specific evaluation}{white}
+
+  \taskcard{7.86}{\icoBalance}{rbl}{Reaction rebalancing}{exact correction}
+  \taskcard{6.32}{\icoMap}{aam}{Atom-to-atom mapping}{exact map $\cdot$ ITS iso.}
+  \taskcard{4.78}{\icoTree}{class}{Reaction classification}{weighted F1 $\cdot$ MCC}
+  \taskcard{3.23}{\icoScatter}{prop}{Property prediction}{MAE $\cdot$ MSE}
+  \taskcard{1.69}{\icoRetro}{synthesis}{Single-step prediction}{top-$k$ $\cdot$ similarity}
+
+  % ==================================================================
+  % Footer
+  % ==================================================================
+  \draw[rule,line width=0.75pt] (0.18,0.24) -- (4.90,0.24);
+  \node[text=SynNavy,font=\fontsize{15}{15}\selectfont] at (5.35,0.24) {\faGithub};
+  \node[text=SynTealDark,font=\fontsize{15}{15}\selectfont] at (5.90,0.24) {\faArchive};
+  \node[text=SynNavy,font=\fontsize{15}{15}\selectfont] at (6.45,0.24) {\faLink};
+  \node[anchor=west,text=SynInk,font=\fontsize{7}{8}\selectfont] at (6.85,0.24)
+    {Reproducible datasets and comparable baseline evaluations};
+  \draw[rule,line width=0.75pt] (13.45,0.24) -- (18.42,0.24);
+\end{tikzpicture}
+\end{document}

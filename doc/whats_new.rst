@@ -10,13 +10,47 @@ what changed, which datasets moved, and which archive should be cited.
    <div class="synrxn-callout-card">
      <span class="synrxn-callout-icon"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></span>
      <div>
-       <strong>Next planned release: SynRXN 1.1.1.</strong>
-       <p>This release prepares SynRXN as a verified benchmark workspace with a static dataset catalog, efficient local queries, a read-only service, and SynKit 1.5 compatibility.</p>
+       <strong>Next planned release: SynRXN 1.2.0.</strong>
+       <p>This release expands curated reaction sources and strengthens source provenance.</p>
      </div>
    </div>
 
-v1.1.1 — verified benchmark workspace (pending release)
--------------------------------------------------------
+v1.2.0 — expanded curated reaction sources
+-------------------------------------------
+
+Added
+~~~~~
+
+- Added EHreact manuscript datasets with 939 mapped reaction records and 1,943
+  long-form binary reaction--assay labels across nine systems, including
+  pinned source hashes and dataset-level mapping-curation metadata. These tables
+  retain the upstream ``BSD-3-Clause`` license and copyright notice.
+- Added 3,138 unique BRENDA biochemical reactions selected from records marked
+  as IUBMB reactions, with complete participant structures, exact atom and
+  formal-charge balance, SynKit-generated mappings, and bijective atom-map QC.
+  The source data retain BRENDA's ``CC BY 4.0`` license.  Selection and mapping
+  QC facts are enforced by the builder instead of repeated in every reaction
+  row; an optional downstream provenance report can be generated when needed.
+- Added two FlowER atom-mapping benchmarks from the corrected May-2026 test
+  split: 179,345 unique elementary steps in ``aam/flower_e`` and 38,745 unique
+  composite reactions in ``aam/flower_c``. Non-reacting explicit hydrogens are
+  converted to implicit counts in ``ground_truth`` while reacting mapped
+  hydrogens are preserved; ``rxn`` contains canonical unmapped SMILES with
+  removable hydrogens made implicit. Standalone reacting H species remain
+  explicit. Composite reactions are reconstructed from numeric
+  overall-reaction groups, span at least two elementary transitions, and
+  include ``n_steps``.
+  The benchmarks exclude the training and validation corpora and the
+  request-only NameRxn-derived OOD sets, and retain the upstream ``MIT``
+  license notice.
+
+Changed
+~~~~~~~
+
+- Relaxed the SynKit requirement to ``>=1.5.0`` without an upper bound.
+
+v1.1.1 — verified benchmark workspace
+--------------------------------------
 
 Added
 ~~~~~
