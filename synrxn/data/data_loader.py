@@ -53,8 +53,8 @@ class DataLoader:
     :param version:
         Source-dependent version identifier:
 
-        - If ``source=='zenodo'``: Zenodo version string (e.g. ``"1.1.1"``) or ``None`` for the latest record.
-        - If ``source=='github'``: GitHub release tag (e.g. ``"v1.1.1"`` or ``"1.1.1"``). ``'latest'`` can be used
+        - If ``source=='zenodo'``: Zenodo version string (e.g. ``"1.2.1"``) or ``None`` for the latest record.
+        - If ``source=='github'``: GitHub release tag (e.g. ``"v1.2.1"`` or ``"1.2.1"``). ``'latest'`` can be used
           and will resolve to the latest release tag (when available) and otherwise fall back to a branch ref.
         - If ``source=='commit'``: commit SHA (40-char) or the string ``'latest'`` to resolve the tip SHA of a branch.
     :type version: Optional[str]
@@ -113,7 +113,7 @@ class DataLoader:
         dl = DataLoader(
             task="classification",
             source="zenodo",
-            version="1.1.1",
+            version="1.2.1",
             cache_dir=Path("~/.cache/synrxn").expanduser(),
         )
         print(dl.available_names())
@@ -130,7 +130,7 @@ class DataLoader:
         dl = DataLoader(
             task="classification",
             source="github",
-            version="v1.1.1",
+            version="v1.2.1",
             gh_enable=True,
             cache_dir=Path("~/.cache/synrxn").expanduser(),
         )

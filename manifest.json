@@ -3,7 +3,7 @@
   "generated_at": "2026-08-21T11:22:38Z",
   "dataset": {
     "title": "synrxn: A Benchmarking Framework and Open Data Repository for Computer-Aided Synthesis Planning",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Reaction Database for benchmarking",
     "doi": "10.5281/zenodo.17297258",
     "authors": [

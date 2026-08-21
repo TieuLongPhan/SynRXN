@@ -42,7 +42,7 @@ def test_catalog_asset_is_bounded_and_derived_from_manifest(tmp_path):
         "schema_version": "1.0",
         "generated_at": "2026-07-16T00:00:00Z",
         "dataset": {
-            "version": "1.1.1",
+            "version": "1.2.1",
             "doi": "10.0000/fixture",
             "files": [
                 {

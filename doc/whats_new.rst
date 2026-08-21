@@ -10,12 +10,12 @@ what changed, which datasets moved, and which archive should be cited.
    <div class="synrxn-callout-card">
      <span class="synrxn-callout-icon"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></span>
      <div>
-       <strong>Next planned release: SynRXN 1.2.0.</strong>
+       <strong>Next planned release: SynRXN 1.2.1.</strong>
        <p>This release expands curated reaction sources and strengthens source provenance.</p>
      </div>
    </div>
 
-v1.2.0 — expanded curated reaction sources
+v1.2.1 — expanded curated reaction sources
 -------------------------------------------
 
 Added

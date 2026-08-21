@@ -118,7 +118,7 @@ def create_app(  # noqa: C901
 
     app = FastAPI(
         title="SynRXN read-only API",
-        version="1.1.1",
+        version="1.2.1",
         description="Bounded catalog and record queries over immutable SynRXN releases.",
     )
     app.state.catalog = catalog

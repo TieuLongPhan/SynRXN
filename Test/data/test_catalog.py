@@ -70,7 +70,7 @@ def test_local_loader_nrows_and_errors(tmp_path):
 
 def test_cache_manager_namespaces_and_writes_atomically(tmp_path):
     cache = CacheManager(tmp_path)
-    first = cache.artifact_path("github", "v1.1.1", "aam", "sample")
+    first = cache.artifact_path("github", "v1.2.1", "aam", "sample")
     second = cache.artifact_path("github", "v2.0.0", "aam", "sample")
     assert first != second
     cache.write_atomic(first, b"payload")
