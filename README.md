@@ -6,26 +6,25 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/synrxn.svg)](https://pypi.org/project/synrxn/)
 [![Release](https://img.shields.io/github/v/release/tieulongphan/synrxn.svg)](https://github.com/tieulongphan/synrxn/releases)
-[![Last Commit](https://img.shields.io/github/last-commit/tieulongphan/synrxn.svg)](https://github.com/tieulongphan/synrxn/commits)
-[![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.17297258.svg)](https://doi.org/10.5281/zenodo.17297258)
+[![Software archive](https://img.shields.io/badge/Zenodo-software%20archive-blue)](https://doi.org/10.5281/zenodo.17297258)
 [![CI](https://github.com/tieulongphan/synrxn/actions/workflows/test-and-lint.yml/badge.svg?branch=main)](https://github.com/tieulongphan/synrxn/actions/workflows/test-and-lint.yml)
 [![Stars](https://img.shields.io/github/stars/tieulongphan/synrxn.svg?style=social&label=Star)](https://github.com/tieulongphan/synrxn/stargazers)
 
-**SynRXN is an open reaction benchmark repository for reproducible reaction-informatics evaluation.**
+SynRXN connects reaction datasets to evaluation tasks, split protocols, and source-specific reuse terms.
 
-SynRXN collects curated reaction datasets, canonical task folders, versioned data releases, and lightweight loading utilities for benchmarking atom-atom mapping, reaction classification, property prediction, reaction balancing, and synthesis/retrosynthesis workflows.
+The **1.5.0 data snapshot** covers **40 tasks across 12 families**. Its **102 source tables** contain **5,485,077 stored rows**.
 
-![SynRXN Workflow](https://raw.githubusercontent.com/TieuLongPhan/SynRXN/main/doc/figure/synrxn.svg)
+[![SynRXN workflow from reaction data sources and curation through the 1.5.0 snapshot to evaluation across 12 families](doc/figure/synrxn-workflow-1.5.0.png)](doc/figure/synrxn-workflow-1.5.0.png)
 
-## Highlights
+The snapshot has **95 primary tables** and seven companion views. The [evaluation atlas](doc/figure/evaluation-atlas-1.5.0.png) lists the tasks and their table counts. The [TikZ source](doc/figure/synrxn-workflow-1.5.0.tex) rebuilds the workflow figure.
 
-- **Five task families:** `aam`, `classification`, `property`, `rbl`, and `synthesis`.
-- **Consistent tabular format:** each dataset is a compressed CSV under `Data/<task>/<name>.csv.gz`.
-- **Stable identifiers:** most curated rows use `r_id`; task-specific columns store reactions, labels, targets, splits, mappings, or references.
-- **Version-aware access:** load data from Zenodo releases, GitHub tags, or exact Git commits.
-- **Reproducible benchmarking:** use published splits when present, or generate deterministic repeated k-fold splits through `synrxn.split`.
+## Get the 1.5.0 data
+
+[Browse and download the prepared tables](Data/releases/1.5.0/) or use the [machine-readable catalog](Data/releases/1.5.0/tables.json) to find a table by task, format, or license. The download guide includes checksums, source terms, and a DuckDB example for the Zstandard-compressed tables.
 
 ## Installation
+
+The software instructions and examples below use the published 1.2.1 interface. The 1.5.0 table downloads use the data guide above.
 
 SynRXN requires Python 3.11 or later.
 
@@ -223,7 +222,8 @@ python script/compare_aam_validators.py --methods RC ITS --n-jobs -1
 ## Documentation
 
 - Documentation: https://synrxn.readthedocs.io/en/latest/
-- Data release: https://doi.org/10.5281/zenodo.17297258
+- Software archive: https://doi.org/10.5281/zenodo.17297258
+- SynRXN 1.5.0 prepared tables: [Download guide](Data/releases/1.5.0/)
 - Source code: https://github.com/TieuLongPhan/SynRXN
 - Issues: https://github.com/TieuLongPhan/SynRXN/issues
 
