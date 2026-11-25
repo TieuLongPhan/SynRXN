@@ -1,0 +1,5 @@
+Native adaptive borylation substrate-scope campaigns
+https://doi.org/10.5281/zenodo.20773622
+Data license: CC-BY-4.0
+Changes: Reuse measured source campaigns with explicit dates/rounds as retrospective substrate-scope discovery; no new experiments or chemical novelty labels.
+Official data-record CC BY4.0 grant applies to the native measured campaign CSVs.

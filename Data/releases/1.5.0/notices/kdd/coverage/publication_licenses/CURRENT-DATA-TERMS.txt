@@ -1,0 +1,1225 @@
+CURRENT SYNRXN DATA REDISTRIBUTION TERMS
+
+Each table retains the source grants below. This compilation has no blanket license that removes upstream conditions.
+CC BY-NC tables may be shared and adapted for noncommercial purposes with attribution and change notices. No commercial-use grant is asserted for them.
+LicenseRef-PNAS-NC-Educational is a custom publisher permission for the reviewed factual table extraction, limited to noncommercial educational use with the full source reference. It is not a Creative Commons license.
+GPL/LGPL, ODbL and CC BY-SA conditions remain attached to their respective data or source components. Other tables do not inherit an NC condition merely by appearing in this collection.
+Original source tables and prior release metadata are retained unchanged for provenance. This notice corrects the current publication labels; it does not manufacture a new upstream license.
+
+TABLES
+
+canonical:aam/brenda
+Path: Data/aam/brenda.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://www.brenda-enzymes.info/
+Attribute: {BRENDA} in 2026: a Global Core Biodata Resource for Functional Enzyme and Metabolic Data within the {DSMZ} Digital Diversity DOI: 10.1093/nar/gkaf1113
+
+canonical:aam/ecoli
+Path: Data/aam/ecoli.csv.gz
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Documented dataset-bearing SynTemp repository project grant; no nested data exclusion or conflicting notice found. Article points explicitly to repository/Data for supporting datasets.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE
+Evidence/source: https://api.github.com/repos/TieuLongPhan/SynTemp/git/trees/fb9f7948abb0090f8d530287517591f8407f2c89?recursive=1
+Evidence/source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11938280/fullTextXML
+Evidence/source: https://api.github.com/repos/TieuLongPhan/SynTemp/commits/fb9f7948abb0090f8d530287517591f8407f2c89
+Attribute: Computing Double-Pushout Graph Transformation Rules and Atom-to-Atom Maps from KEGG RCLASS Data DOI: 10.1186/s13015-025-00294-6
+
+canonical:aam/ehreact
+Path: Data/aam/ehreact.csv.gz
+License expression: BSD-3-Clause
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Actual nine manuscript assay CSVs captured from the same pinned author repository as its root BSD3 redistribution notice. No separate contradictory data terms were found; preserve the original copyright, conditions and disclaimer for these derived tables.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/LICENSE
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/README.md
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/alcoholdehydrogenase.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/amidinotransferase.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/aminedehydrogenase.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/carboxylmethyltransferase.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/csp2_csp3_coupling.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/dehalogenase.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/nitrilase.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/transaminase.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/tryptophan_synthase.csv
+Attribute: {EHreact}: Extended Hasse Diagrams for the Extraction and Scoring of Enzymatic Reaction Templates DOI: 10.1021/acs.jcim.1c00921
+
+canonical:aam/enzyme_map
+Path: Data/aam/enzyme_map.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/8254726
+Attribute: EnzymeMap: Curation, Validation and Data-Driven Prediction of Enzymatic Reactions DOI: 10.1039/D3SC02048G
+
+canonical:aam/flower_c
+Path: Data/aam/flower_c.csv.gz
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://api.figshare.com/v2/articles/32513667/versions/1
+Attribute: Electron Flow Matching for Generative Reaction Mechanism Prediction Obeying Conservation Laws DOI: 10.1038/s41586-025-09426-9
+Attribute: {FlowER} - Mechanistic Datasets and Model Checkpoint (May 29 2026) DOI: 10.6084/m9.figshare.32513667.v1
+
+canonical:aam/flower_e
+Path: Data/aam/flower_e.csv.gz
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://api.figshare.com/v2/articles/32513667/versions/1
+Attribute: Electron Flow Matching for Generative Reaction Mechanism Prediction Obeying Conservation Laws DOI: 10.1038/s41586-025-09426-9
+Attribute: {FlowER} - Mechanistic Datasets and Model Checkpoint (May 29 2026) DOI: 10.6084/m9.figshare.32513667.v1
+
+canonical:aam/golden
+Path: Data/aam/golden.csv.gz
+License expression: GPL-3.0-only AND LGPL-2.1-only AND MIT
+Partition: copyleft
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it.
+Source/curation: Exact1758reaction and reference-label rows match historical LocalMapper comparison under GPL3; original Golden author repository explicitly distributes hand-curated data under repository LGPL2.1.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE
+Evidence/source: https://api.github.com/repos/TieuLongPhan/SynTemp/git/trees/fb9f7948abb0090f8d530287517591f8407f2c89?recursive=1
+Evidence/source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11938280/fullTextXML
+Evidence/source: https://api.github.com/repos/TieuLongPhan/SynTemp/commits/fb9f7948abb0090f8d530287517591f8407f2c89
+Evidence/source: https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/LICENSE
+Evidence/source: https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/README.md
+Evidence/source: https://api.github.com/repos/snu-micc/LocalMapper/git/trees/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495?recursive=1
+Evidence/source: https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/comparison/Golden_mappings.csv
+Evidence/source: https://raw.githubusercontent.com/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/793475e54d8b2c7f714165a61e4eb439435d7d92/LICENSE
+Evidence/source: https://raw.githubusercontent.com/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/793475e54d8b2c7f714165a61e4eb439435d7d92/README.md
+Evidence/source: https://raw.githubusercontent.com/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/793475e54d8b2c7f714165a61e4eb439435d7d92/data/golden_dataset.zip
+Evidence/source: https://api.github.com/repos/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/git/trees/master?recursive=1
+Attribute: Precise Atom-to-Atom Mapping for Organic Reactions via Human-in-the-Loop Machine Learning DOI: 10.1038/s41467-024-46364-y
+Attribute: Atom-to-Atom Mapping: A Benchmarking Study of Popular Mapping Algorithms and Consensus Strategies DOI: 10.1002/minf.202100138
+
+canonical:aam/natcomm
+Path: Data/aam/natcomm.csv.gz
+License expression: CC-BY-4.0 AND GPL-3.0-only AND MIT
+Partition: copyleft
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it.
+Source/curation: Original Jaworski article and included source supplement are CC BY4; exact491reaction/reference rows also match historical GPL3 LocalMapper comparison.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE
+Evidence/source: https://api.github.com/repos/TieuLongPhan/SynTemp/git/trees/fb9f7948abb0090f8d530287517591f8407f2c89?recursive=1
+Evidence/source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11938280/fullTextXML
+Evidence/source: https://api.github.com/repos/TieuLongPhan/SynTemp/commits/fb9f7948abb0090f8d530287517591f8407f2c89
+Evidence/source: https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/LICENSE
+Evidence/source: https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/README.md
+Evidence/source: https://api.github.com/repos/snu-micc/LocalMapper/git/trees/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495?recursive=1
+Evidence/source: https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/comparison/NatComm_mappings.csv
+Evidence/source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6441094/fullTextXML
+Attribute: Automatic Mapping of Atoms across Both Simple and Complex Chemical Reactions DOI: 10.1038/s41467-019-09440-2
+
+canonical:aam/recon3d
+Path: Data/aam/recon3d.csv.gz
+License expression: CC-BY-NC-4.0 AND MIT
+Partition: noncommercial
+Commercial use allowed by these grants: False
+Retain source attribution, applicable license notices and descriptions of changes.
+Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted.
+Source/curation: Original author ACS Figshare dataset record7469537 declares CC BY-NC4 and native ZIP contains all382local source identifiers.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE
+Evidence/source: https://api.github.com/repos/TieuLongPhan/SynTemp/git/trees/fb9f7948abb0090f8d530287517591f8407f2c89?recursive=1
+Evidence/source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11938280/fullTextXML
+Evidence/source: https://api.github.com/repos/TieuLongPhan/SynTemp/commits/fb9f7948abb0090f8d530287517591f8407f2c89
+Evidence/source: https://api.figshare.com/v2/articles/7469537
+Evidence/source: https://ndownloader.figshare.com/files/13834547
+Evidence/source: https://api.figshare.com/v2/articles/7469531
+Attribute: Machine Learning Guided Atom Mapping of Metabolic Reactions DOI: 10.1021/acs.jcim.8b00434
+
+canonical:aam/uspto_3k
+Path: Data/aam/uspto_3k.csv.gz
+License expression: GPL-3.0-only AND CC-BY-SA-4.0 AND MIT
+Partition: copyleft
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Comply with the applicable ShareAlike requirements for adapted material.
+Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it.
+Source/curation: Exact3000sample identifiers/order and historical comparison predictions available in pre2026 LocalMapper GPL3 commit; underlying USPTO collection has Lowe CC BY-SA4 grant. SynTemp supplies the final corrected benchmark payload.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE
+Evidence/source: https://api.github.com/repos/TieuLongPhan/SynTemp/git/trees/fb9f7948abb0090f8d530287517591f8407f2c89?recursive=1
+Evidence/source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11938280/fullTextXML
+Evidence/source: https://api.github.com/repos/TieuLongPhan/SynTemp/commits/fb9f7948abb0090f8d530287517591f8407f2c89
+Evidence/source: https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/LICENSE
+Evidence/source: https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/README.md
+Evidence/source: https://api.github.com/repos/snu-micc/LocalMapper/git/trees/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495?recursive=1
+Evidence/source: https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/comparison/USPTO_sampled.csv
+Evidence/source: https://figshare.com/articles/dataset/Chemical_reactions_from_US_patents_1976-Sep2016_/5104873
+Attribute: Precise Atom-to-Atom Mapping for Organic Reactions via Human-in-the-Loop Machine Learning DOI: 10.1038/s41467-024-46364-y
+
+canonical:classification/ecreact
+Path: Data/classification/ecreact.csv.gz
+License expression: CC-BY-4.0 AND MIT AND ODbL-1.0
+Partition: database_sharealike
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Retain the Open Database License notices and comply with database ShareAlike/source-access conditions where applicable; do not treat database rights as unrestricted CC BY rights.
+Source/curation: The original CLAIRE authors explicitly publish the data as CC BY 4.0 on Zenodo14635841 and link that deposit from their pinned README. Its166918 training and 18,816 test augmented rows exactly match the 185,734-row SynCat source on reaction SMILES, EC3 and native split; the canonical curator reproduces every published field. Retain SynCat/ECREACT MIT notices and the original PathBank 1.0 ODbL database notice instead of claiming a uniform standalone CC BY 4.0 grant.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/14635841
+Evidence/source: https://raw.githubusercontent.com/zishuozeng/CLAIRE/1379140a8edd75ac457824ff271802c2195ebb03/README.md
+Evidence/source: https://zenodo.org/api/records/14635841/files/data.zip/content
+Evidence/source: https://zenodo.org/api/records/14635841/files/data.zip/content
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/LICENSE
+Evidence/source: https://raw.githubusercontent.com/rxn4chemistry/biocatalysis-model/7a5add1c0bbafcf658a296d835f357f19936a1b5/LICENSE
+Evidence/source: https://raw.githubusercontent.com/rxn4chemistry/biocatalysis-model/7a5add1c0bbafcf658a296d835f357f19936a1b5/README.md
+Evidence/source: https://raw.githubusercontent.com/rxn4chemistry/biocatalysis-model/7a5add1c0bbafcf658a296d835f357f19936a1b5/data/ecreact-1.0.csv
+Evidence/source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6943071/fullTextXML
+Evidence/source: https://pathbank.org/about
+Evidence/source: https://www.metanetx.org/mnxdoc/mnxref.html
+Evidence/source: https://www.brenda-enzymes.org/download.php
+Evidence/source: https://www.rhea-db.org/help/license-disclaimer
+Evidence/source: local:verified-data-lineage-report
+Attribute: CLAIRE: A Contrastive Learning-Based Predictor for EC Number of Chemical Reactions DOI: 10.1186/s13321-024-00944-8
+
+canonical:classification/ehreact_activity
+Path: Data/classification/ehreact_activity.csv.gz
+License expression: BSD-3-Clause
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Actual nine manuscript assay CSVs captured from the same pinned author repository as its root BSD3 redistribution notice. No separate contradictory data terms were found; preserve the original copyright, conditions and disclaimer for these derived tables.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/LICENSE
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/README.md
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/alcoholdehydrogenase.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/amidinotransferase.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/aminedehydrogenase.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/carboxylmethyltransferase.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/csp2_csp3_coupling.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/dehalogenase.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/nitrilase.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/transaminase.csv
+Evidence/source: https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/tryptophan_synthase.csv
+Attribute: {EHreact}: Extended Hasse Diagrams for the Extraction and Scoring of Enzymatic Reaction Templates DOI: 10.1021/acs.jcim.1c00921
+
+canonical:classification/schneider_b
+Path: Data/classification/schneider_b.csv.gz
+License expression: CC-BY-4.0 AND MIT AND CC-BY-NC-4.0
+Partition: noncommercial
+Commercial use allowed by these grants: False
+Retain source attribution, applicable license notices and descriptions of changes.
+Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted.
+Source/curation: The original Schneider 2015 data supplement currently has an explicit CC BY-NC 4.0 publisher grant. The same 50,000 reaction/class/source/split records occur in the pinned MIT RXNFP repository, then in SynCat; both SynCat balanced/unbalanced curators reproduce all canonical fields. Include for noncommercial research while preserving the original data grant and MIT notices.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://api.figshare.com/v2/articles/5104873/versions/1
+Evidence/source: https://api.figshare.com/v2/articles/2213215
+Evidence/source: https://ndownloader.figshare.com/files/3848755
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/LICENSE
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/README.md
+Evidence/source: https://raw.githubusercontent.com/Hanjun-Dai/GLN/b5bd7b181a61a8289cc1d1a33825b2c417bed0ef/LICENSE
+Evidence/source: https://raw.githubusercontent.com/Hanjun-Dai/GLN/b5bd7b181a61a8289cc1d1a33825b2c417bed0ef/README.md
+Evidence/source: local:verified-data-lineage-report
+Evidence/source: https://raw.githubusercontent.com/rxn4chemistry/rxnfp/6fd48f4927c2178555cc5d71dbfb225fb178f43c/LICENSE
+Evidence/source: https://raw.githubusercontent.com/rxn4chemistry/rxnfp/6fd48f4927c2178555cc5d71dbfb225fb178f43c/data/schneider50k.tsv
+Attribute: Development of a Novel Fingerprint for Chemical Reactions and Its Application to Large-Scale Reaction Classification and Similarity DOI: 10.1021/ci5006614
+Attribute: SynCat: Molecule-Level Attention Graph Neural Network for Precise Reaction Classification DOI: 10.1039/D5DD00367A
+
+canonical:classification/schneider_u
+Path: Data/classification/schneider_u.csv.gz
+License expression: CC-BY-4.0 AND MIT AND CC-BY-NC-4.0
+Partition: noncommercial
+Commercial use allowed by these grants: False
+Retain source attribution, applicable license notices and descriptions of changes.
+Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted.
+Source/curation: The original Schneider 2015 data supplement currently has an explicit CC BY-NC 4.0 publisher grant. The same 50,000 reaction/class/source/split records occur in the pinned MIT RXNFP repository, then in SynCat; both SynCat balanced/unbalanced curators reproduce all canonical fields. Include for noncommercial research while preserving the original data grant and MIT notices.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://api.figshare.com/v2/articles/5104873/versions/1
+Evidence/source: https://api.figshare.com/v2/articles/2213215
+Evidence/source: https://ndownloader.figshare.com/files/3848755
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/LICENSE
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/README.md
+Evidence/source: https://raw.githubusercontent.com/Hanjun-Dai/GLN/b5bd7b181a61a8289cc1d1a33825b2c417bed0ef/LICENSE
+Evidence/source: https://raw.githubusercontent.com/Hanjun-Dai/GLN/b5bd7b181a61a8289cc1d1a33825b2c417bed0ef/README.md
+Evidence/source: local:verified-data-lineage-report
+Evidence/source: https://raw.githubusercontent.com/rxn4chemistry/rxnfp/6fd48f4927c2178555cc5d71dbfb225fb178f43c/LICENSE
+Evidence/source: https://raw.githubusercontent.com/rxn4chemistry/rxnfp/6fd48f4927c2178555cc5d71dbfb225fb178f43c/data/schneider50k.tsv
+Attribute: Development of a Novel Fingerprint for Chemical Reactions and Its Application to Large-Scale Reaction Classification and Similarity DOI: 10.1021/ci5006614
+
+canonical:classification/syntemp
+Path: Data/classification/syntemp.csv.gz
+License expression: CC-BY-4.0 AND CC0-1.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Official Lowe patent-reaction base grants CC0. This exact curated SynRXN product is byte-identical to its published archive member and the independently retrieved dataset-specific CC-BY4 notice matches the lock's recorded noticeSHA256. Permission is scoped to the curated product; no claim that a code license or CC0 covers other authors' separate annotation databases.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/22045145
+Evidence/source: https://api.figshare.com/v2/articles/5104873/versions/1
+Attribute: SynTemp: Efficient Extraction of Graph-Based Reaction Rules from Large-Scale Reaction Databases DOI: 10.1021/acs.jcim.4c01795
+Attribute: Retrosynthetic Reaction Prediction Using Neural Sequence-to-Sequence Models DOI: 10.1021/acscentsci.7b00303
+
+canonical:classification/tpl_b
+Path: Data/classification/tpl_b.csv.gz
+License expression: CC-BY-4.0 AND MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: The complete native dataset is redistributed in the pinned SynCat author repository under its MIT notice and all curated output fields reproduce exactly. The original RXNFP author README describes USPTO 1k TPL as its newly generated labels on the Lowe USPTO corpus, explicitly CC0 at the primary Figshare release. Preserve the native MIT notice with the SynRXN CC BY 4.0 curation attribution.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://api.figshare.com/v2/articles/5104873/versions/1
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/LICENSE
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/README.md
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/Data/raw/USPTO_TPL_balanced.csv.gz
+Evidence/source: https://raw.githubusercontent.com/rxn4chemistry/rxnfp/6fd48f4927c2178555cc5d71dbfb225fb178f43c/LICENSE
+Evidence/source: https://raw.githubusercontent.com/rxn4chemistry/rxnfp/6fd48f4927c2178555cc5d71dbfb225fb178f43c/README.md
+Evidence/source: https://raw.githubusercontent.com/rxn4chemistry/rxnfp/6fd48f4927c2178555cc5d71dbfb225fb178f43c/data/uspto_1k_TPL/README.md
+Evidence/source: https://api.figshare.com/v2/articles/5104873
+Evidence/source: local:verified-data-lineage-report
+Attribute: SynCat: Molecule-Level Attention Graph Neural Network for Precise Reaction Classification DOI: 10.1039/D5DD00367A
+Attribute: Mapping the Space of Chemical Reactions Using Attention-Based Neural Networks DOI: 10.1038/s42256-020-00284-w
+
+canonical:classification/tpl_u
+Path: Data/classification/tpl_u.csv.gz
+License expression: CC-BY-4.0 AND MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: The complete native dataset is redistributed in the pinned SynCat author repository under its MIT notice and all curated output fields reproduce exactly. The original RXNFP author README describes USPTO 1k TPL as its newly generated labels on the Lowe USPTO corpus, explicitly CC0 at the primary Figshare release. Preserve the native MIT notice with the SynRXN CC BY 4.0 curation attribution.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://api.figshare.com/v2/articles/5104873/versions/1
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/LICENSE
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/README.md
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/Data/raw/USPTO_TPL_unbalanced.csv.gz
+Evidence/source: https://raw.githubusercontent.com/rxn4chemistry/rxnfp/6fd48f4927c2178555cc5d71dbfb225fb178f43c/LICENSE
+Evidence/source: https://raw.githubusercontent.com/rxn4chemistry/rxnfp/6fd48f4927c2178555cc5d71dbfb225fb178f43c/README.md
+Evidence/source: https://raw.githubusercontent.com/rxn4chemistry/rxnfp/6fd48f4927c2178555cc5d71dbfb225fb178f43c/data/uspto_1k_TPL/README.md
+Evidence/source: https://api.figshare.com/v2/articles/5104873
+Evidence/source: local:verified-data-lineage-report
+Attribute: Mapping the Space of Chemical Reactions Using Attention-Based Neural Networks DOI: 10.1038/s42256-020-00284-w
+
+canonical:classification/uspto_50k_b
+Path: Data/classification/uspto_50k_b.csv.gz
+License expression: CC-BY-4.0 AND MIT AND CC-BY-NC-4.0
+Partition: noncommercial
+Commercial use allowed by these grants: False
+Retain source attribution, applicable license notices and descriptions of changes.
+Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted.
+Source/curation: The source chain goes through the Schneider 2016 USPTO-50K data release, whose actual dataset ZIP currently has an explicit CC BY-NC 4.0 publisher grant. The proximate SynCat and GLN repositories are MIT; preserve those notices without treating their code license as blanket relicensing of imported original annotations. Include the derived view in the noncommercial partition.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://api.figshare.com/v2/articles/5104873/versions/1
+Evidence/source: https://api.figshare.com/v2/articles/4295660
+Evidence/source: https://ndownloader.figshare.com/files/7005749
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/LICENSE
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/README.md
+Evidence/source: https://raw.githubusercontent.com/Hanjun-Dai/GLN/b5bd7b181a61a8289cc1d1a33825b2c417bed0ef/LICENSE
+Evidence/source: https://raw.githubusercontent.com/Hanjun-Dai/GLN/b5bd7b181a61a8289cc1d1a33825b2c417bed0ef/README.md
+Evidence/source: local:verified-data-lineage-report
+Evidence/source: https://api.figshare.com/v2/articles/25046471
+Evidence/source: https://api.figshare.com/v2/articles/25459573
+Evidence/source: local:verified-data-lineage-report
+Attribute: SynCat: Molecule-Level Attention Graph Neural Network for Precise Reaction Classification DOI: 10.1039/D5DD00367A
+Attribute: Retrosynthetic Reaction Prediction Using Neural Sequence-to-Sequence Models DOI: 10.1021/acscentsci.7b00303
+
+canonical:classification/uspto_50k_u
+Path: Data/classification/uspto_50k_u.csv.gz
+License expression: CC-BY-4.0 AND MIT AND CC-BY-NC-4.0
+Partition: noncommercial
+Commercial use allowed by these grants: False
+Retain source attribution, applicable license notices and descriptions of changes.
+Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted.
+Source/curation: The source chain goes through the Schneider 2016 USPTO-50K data release, whose actual dataset ZIP currently has an explicit CC BY-NC 4.0 publisher grant. The proximate SynCat and GLN repositories are MIT; preserve those notices without treating their code license as blanket relicensing of imported original annotations. Include the derived view in the noncommercial partition.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://api.figshare.com/v2/articles/5104873/versions/1
+Evidence/source: https://api.figshare.com/v2/articles/4295660
+Evidence/source: https://ndownloader.figshare.com/files/7005749
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/LICENSE
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/README.md
+Evidence/source: https://raw.githubusercontent.com/Hanjun-Dai/GLN/b5bd7b181a61a8289cc1d1a33825b2c417bed0ef/LICENSE
+Evidence/source: https://raw.githubusercontent.com/Hanjun-Dai/GLN/b5bd7b181a61a8289cc1d1a33825b2c417bed0ef/README.md
+Evidence/source: local:verified-data-lineage-report
+Evidence/source: https://api.figshare.com/v2/articles/25046471
+Evidence/source: https://api.figshare.com/v2/articles/25459573
+Evidence/source: local:verified-data-lineage-report
+Attribute: Retrosynthetic Reaction Prediction Using Neural Sequence-to-Sequence Models DOI: 10.1021/acscentsci.7b00303
+
+canonical:condition/orderly_condition
+Path: Data/condition/orderly_condition.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://api.figshare.com/v2/articles/23298467/versions/4
+
+canonical:condition_sharealike/openexp
+Path: Data/condition_sharealike/openexp.csv.gz
+License expression: CC-BY-SA-4.0
+Partition: sharealike
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Comply with the applicable ShareAlike requirements for adapted material.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://aclanthology.org/2024.findings-acl.318.pdf
+
+canonical:condition_sharealike/ord_hte_condition
+Path: Data/condition_sharealike/ord_hte_condition.csv.gz
+License expression: CC-BY-SA-4.0
+Partition: sharealike
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Comply with the applicable ShareAlike requirements for adapted material.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/open-reaction-database/ord-data/05fe1a62cb36d6bc3c07592ac1bd4ff1a4d8e43c/README.md
+Evidence/source: https://raw.githubusercontent.com/open-reaction-database/ord-data/05fe1a62cb36d6bc3c07592ac1bd4ff1a4d8e43c/LICENSE
+
+canonical:feasibility/frea_corpus
+Path: Data/feasibility/frea_corpus.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://huggingface.co/datasets/FREA-benchmark/FREA-corpus/resolve/e20326e8804ab6d5c7d42184e2da84051cd6a89e/README.md
+
+canonical:feasibility/frea_expert
+Path: Data/feasibility/frea_expert.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://huggingface.co/datasets/FREA-benchmark/FREA-benchmark/resolve/526c8c99e1b3fff809984a337eaea2d156b861c3/README.md
+
+canonical:mechanism/synepd_polar
+Path: Data/mechanism/synepd_polar.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynEPD/879c590f0473c99120bdd75bbb5bbf58c17481eb/data/release-manifest.json
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynEPD/879c590f0473c99120bdd75bbb5bbf58c17481eb/README.md
+
+canonical:property/b97xd3
+Path: Data/property/b97xd3.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/3715478
+Attribute: Reactants, Products, and Transition States of Elementary Chemical Reactions Based on Quantum Chemistry DOI: 10.1038/s41597-020-0460-4
+Attribute: Reactants, Products, and Transition States of Elementary Chemical Reactions Based on Quantum Chemistry DOI: 10.5281/zenodo.3715478
+
+canonical:property/cycloadd
+Path: Data/property/cycloadd.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/10078142
+Attribute: Benchmark Data for Chemprop DOI: 10.5281/zenodo.10078142
+
+canonical:property/e2
+Path: Data/property/e2.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/10078142
+Attribute: Benchmark Data for Chemprop DOI: 10.5281/zenodo.10078142
+
+canonical:property/e2sn2
+Path: Data/property/e2sn2.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: All 3,625 atom-mapped reaction strings and activation energies are an exact multiset union of the already-cleared 1,264-row E2 and 2,361-row SN2 author benchmarks. The actual Chemprop benchmark dataset deposit explicitly grants CC BY 4.0. Original IOP publisher-deposited Crossref metadata also identifies CC BY 4.0; the older Materials Cloud record itself uses a custom non-exclusive deposit license, which is not misreported as CC BY.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/10078142
+Evidence/source: https://api.crossref.org/works/10.1088%2F2632-2153%2Faba822
+Evidence/source: https://archive.materialscloud.org/api/records/gkqvy-3vp74
+Attribute: Machine Learning of Reaction Properties via Learned Representations of the Condensed Graph of Reaction DOI: 10.1021/acs.jcim.1c00975
+Attribute: Thousands of Reactants and Transition States for Competing E2 and S$_\mathrm{N}$2 Reactions DOI: 10.1088/2632-2153/aba822
+
+canonical:property/lograte
+Path: Data/property/lograte.csv.gz
+License expression: CC-BY-NC-4.0
+Partition: noncommercial
+Commercial use allowed by these grants: False
+Retain source attribution, applicable license notices and descriptions of changes.
+Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted.
+Source/curation: Original AutoTST supporting-data record5398342 explicitly grants CC-BY-NC4.0. The user accepts noncommercial redistribution, so publish this table in a separately labeled noncommercial partition with source attribution and change notice. Correct the current release metadata; no new commercial-use permission is asserted.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/hesther/reactiondatabase/74094e26f42538ea7b7139e4db20abf80e5f0b38/README.md
+Evidence/source: https://api.figshare.com/v2/articles/5398342
+Attribute: Machine Learning of Reaction Properties via Learned Representations of the Condensed Graph of Reaction DOI: 10.1021/acs.jcim.1c00975
+Attribute: Automated Transition State Theory Calculations for High-Throughput Kinetics DOI: 10.1021/acs.jpca.7b07361
+
+canonical:property/phosphatase
+Path: Data/property/phosphatase.csv.gz
+License expression: CC-BY-4.0 AND LicenseRef-PNAS-NC-Educational
+Partition: noncommercial_educational
+Commercial use allowed by these grants: False
+Retain source attribution, applicable license notices and descriptions of changes.
+Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted.
+The PNAS permission covers original figures/tables for noncommercial and educational use with the full journal reference. This compilation applies it only to the cited factual table extraction; it does not assert a Creative Commons grant for PNAS material or permission to redistribute the article or entire supplement.
+Source/curation: PNAS expressly permits original figures/tables under its exclusive License to Publish to be used without requesting permission for noncommercial educational purposes with the full journal reference. Its Standard PNAS License Terms explicitly cover volumes106–118(2009–2021), including Huang et al.2015, volume112. The actual publisher License to Publish independently grants third-party noncommercial use of original author figures/tables and includes supporting-information rights on a nonexclusive basis. The curated CSV contains factual reaction/assay records, not article prose, figures, publisher layout or the complete paper. Every local reaction/target matches the exact pinned Heid author CSV; all33354 assay targets reconstruct from the original-named DatasetS2 spreadsheet mirror, as32918 direct numerical cells plus436 maximum-of-two-cell reconstructions. Admit this table only as a noncommercial educational benchmark under the explicit custom PNAS table-use conditions, retaining the SynRXN CC BY4 curation notice without claiming that either PNAS or Heid granted a new unrestricted CC BY4 license to the original observations.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/hesther/reactiondatabase/74094e26f42538ea7b7139e4db20abf80e5f0b38/README.md
+Evidence/source: https://pmc.ncbi.nlm.nih.gov/articles/PMC4413258/
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/hesther/reactiondatabase/74094e26f42538ea7b7139e4db20abf80e5f0b38/README.md
+Evidence/source: https://pmc.ncbi.nlm.nih.gov/articles/PMC4413258/
+Evidence/source: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:25848029&format=json&resultType=core
+Evidence/source: https://www.pnas.org/author-center/publication-charges/standard-pnas-license-terms
+Evidence/source: https://www.pnas.org/pb-assets/authors/authorlicense-1633461587717.pdf
+Evidence/source: https://www.pnas.org/pb-assets/authors/authorlicense-1633461587717.pdf
+Evidence/source: https://api.figshare.com/v2/articles/16930168
+Evidence/source: https://raw.githubusercontent.com/samgoldman97/enzyme-datasets/627556e265e2a52d39753e684c05b550d53a9be4/data/raw/phosphatase/pnas.1423570112.sd01.xlsx
+Evidence/source: https://raw.githubusercontent.com/samgoldman97/enzyme-datasets/627556e265e2a52d39753e684c05b550d53a9be4/data/raw/phosphatase/pnas.1423570112.sd02.xlsx
+Evidence/source: https://raw.githubusercontent.com/samgoldman97/enzyme-datasets/627556e265e2a52d39753e684c05b550d53a9be4/bin/reformat_phosphatase.py
+Evidence/source: https://raw.githubusercontent.com/samgoldman97/enzyme-datasets/627556e265e2a52d39753e684c05b550d53a9be4/README.md
+Evidence/source: https://raw.githubusercontent.com/hesther/reactiondatabase/74094e26f42538ea7b7139e4db20abf80e5f0b38/data/phosphatase.csv
+Evidence/source: https://pmc.ncbi.nlm.nih.gov/articles/PMC4413258/
+Evidence/source: https://raw.githubusercontent.com/samgoldman97/enzyme-datasets/627556e265e2a52d39753e684c05b550d53a9be4/data/raw/phosphatase/pnas.1423570112.sd02.xlsx
+Attribute: Machine Learning of Reaction Properties via Learned Representations of the Condensed Graph of Reaction DOI: 10.1021/acs.jcim.1c00975
+Attribute: Panoramic View of a Superfamily of Phosphatases through Substrate Profiling DOI: 10.1073/pnas.1423570112
+
+canonical:property/rad6re
+Path: Data/property/rad6re.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: The original author-generated Rad-6-RE data are explicitly supplied as Supplementary Data 1 with the original Nature Communications article under CC BY 4.0. The native supplement was captured and opened as a complete ZIP; it contains Rad-6-RE_network.txt and Rad-6_databases.xyz. Existing native lineage audit matches all 31,923 curated reaction/enthalpy pairs to the reactiondatabase author CSV. No separate restrictive notice was found in the supplement.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/hesther/reactiondatabase/74094e26f42538ea7b7139e4db20abf80e5f0b38/README.md
+Evidence/source: https://www.nature.com/articles/s41467-020-19267-x
+Evidence/source: https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-020-19267-x/MediaObjects/41467_2020_19267_MOESM3_ESM.zip
+Attribute: Machine Learning of Reaction Properties via Learned Representations of the Condensed Graph of Reaction DOI: 10.1021/acs.jcim.1c00975
+Attribute: Machine Learning in Chemical Reaction Space DOI: 10.1038/s41467-020-19267-x
+
+canonical:property/rdb7
+Path: Data/property/rdb7.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/10078142
+Attribute: Benchmark Data for Chemprop DOI: 10.5281/zenodo.10078142
+
+canonical:property/rgd1
+Path: Data/property/rgd1.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/10078142
+Attribute: Benchmark Data for Chemprop DOI: 10.5281/zenodo.10078142
+
+canonical:property/sn2
+Path: Data/property/sn2.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/10078142
+Attribute: Benchmark Data for Chemprop DOI: 10.5281/zenodo.10078142
+
+canonical:property/snar
+Path: Data/property/snar.csv.gz
+License expression: CC-BY-3.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: The original RSC publisher landing page expressly licenses the article CC BY 3.0; publisher-deposited Crossref metadata independently confirms that same license. The actual publisher supplementary CSV has already been joined to all 503 curated reaction/free-energy observations, with 15 of 518 native entries excluded for missing fields. This source-specific primary supplement route clears the former permission-verification hold.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://api.crossref.org/works/10.1039/D0SC04896H
+Evidence/source: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9528810/fullTextXML
+Attribute: Machine Learning Meets Mechanistic Modelling for Accurate Prediction of Experimental Activation Energies DOI: 10.1039/D0SC04896H
+
+canonical:rbl/complex
+Path: Data/rbl/complex.csv.gz
+License expression: CC-BY-4.0 AND MIT AND LGPL-2.1-only
+Partition: lgpl
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it.
+Source/curation: All 1,748 curated reaction/ground-truth pairs join the actual author SynRBL validation CSV (1,282 Golden and 466 Jaworski records). Preserve the pinned SynRBL MIT author repository notice and original Golden author data repository LGPL-2.1-only notice. The latter is a supplied hand-curated dataset, not merely an atom-mapping executable. The SynRXN compilation retains CC BY 4.0. The SynRBL paper CC0 data waiver is recorded for author contributions but does not remove borrowed Golden obligations.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://api.figshare.com/v2/articles/5104873/versions/1
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRBL/fad0e1a07346497b056dd0f42b13b35682750fc1/LICENSE
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRBL/fad0e1a07346497b056dd0f42b13b35682750fc1/README.md
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRBL/fad0e1a07346497b056dd0f42b13b35682750fc1/Data/Validation_set/validation_set.csv
+Evidence/source: https://pmc.ncbi.nlm.nih.gov/articles/PMC11264917/
+Evidence/source: https://api.github.com/repos/TieuLongPhan/SynRBL/commits/main
+Evidence/source: https://raw.githubusercontent.com/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/793475e54d8b2c7f714165a61e4eb439435d7d92/LICENSE
+Evidence/source: https://raw.githubusercontent.com/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/793475e54d8b2c7f714165a61e4eb439435d7d92/README.md
+Evidence/source: https://raw.githubusercontent.com/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/793475e54d8b2c7f714165a61e4eb439435d7d92/data/golden_dataset.zip
+Attribute: Automatic Mapping of Atoms across Both Simple and Complex Chemical Reactions DOI: 10.1038/s41467-019-09440-2
+Attribute: Atom-to-Atom Mapping: A Benchmarking Study of Popular Mapping Algorithms and Consensus Strategies DOI: 10.1002/minf.202100138
+
+canonical:rbl/mbs
+Path: Data/rbl/mbs.csv.gz
+License expression: CC-BY-4.0 AND CC0-1.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Official Lowe patent-reaction base grants CC0. This exact curated SynRXN product is byte-identical to its published archive member and the independently retrieved dataset-specific CC-BY4 notice matches the lock's recorded noticeSHA256. Permission is scoped to the curated product; no claim that a code license or CC0 covers other authors' separate annotation databases.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/22045145
+Evidence/source: https://api.figshare.com/v2/articles/5104873/versions/1
+Attribute: Retrosynthetic Reaction Prediction Using Neural Sequence-to-Sequence Models DOI: 10.1021/acscentsci.7b00303
+
+canonical:rbl/mnc
+Path: Data/rbl/mnc.csv.gz
+License expression: CC-BY-4.0 AND CC0-1.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Official Lowe patent-reaction base grants CC0. This exact curated SynRXN product is byte-identical to its published archive member and the independently retrieved dataset-specific CC-BY4 notice matches the lock's recorded noticeSHA256. Permission is scoped to the curated product; no claim that a code license or CC0 covers other authors' separate annotation databases.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/22045145
+Evidence/source: https://api.figshare.com/v2/articles/5104873/versions/1
+Attribute: Retrosynthetic Reaction Prediction Using Neural Sequence-to-Sequence Models DOI: 10.1021/acscentsci.7b00303
+
+canonical:rbl/mos
+Path: Data/rbl/mos.csv.gz
+License expression: CC-BY-4.0 AND CC0-1.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Official Lowe patent-reaction base grants CC0. This exact curated SynRXN product is byte-identical to its published archive member and the independently retrieved dataset-specific CC-BY4 notice matches the lock's recorded noticeSHA256. Permission is scoped to the curated product; no claim that a code license or CC0 covers other authors' separate annotation databases.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/22045145
+Evidence/source: https://api.figshare.com/v2/articles/5104873/versions/1
+Attribute: Retrosynthetic Reaction Prediction Using Neural Sequence-to-Sequence Models DOI: 10.1021/acscentsci.7b00303
+
+canonical:selectivity/hitea_chiral_resolution
+Path: Data/selectivity/hitea_chiral_resolution.csv.gz
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/emmaking-smith/HiTEA/ccc8cce274e70429498be829dd3bc57754f62265/LICENSE
+Evidence/source: https://raw.githubusercontent.com/emmaking-smith/HiTEA/ccc8cce274e70429498be829dd3bc57754f62265/README.md
+
+canonical:selectivity/regiosqm_eas
+Path: Data/selectivity/regiosqm_eas.csv.gz
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/jensengroup/db-regioselectivity/f734ce480c61608c636c5d4c0e9866f6bcbbb9a9/LICENSE
+Evidence/source: https://raw.githubusercontent.com/jensengroup/db-regioselectivity/f734ce480c61608c636c5d4c0e9866f6bcbbb9a9/README.md
+
+canonical:synthesis/uspto_500
+Path: Data/synthesis/uspto_500.csv.gz
+License expression: CC-BY-4.0 AND CC0-1.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Official Lowe patent-reaction base grants CC0. This exact curated SynRXN product is byte-identical to its published archive member and the independently retrieved dataset-specific CC-BY4 notice matches the lock's recorded noticeSHA256. Permission is scoped to the curated product; no claim that a code license or CC0 covers other authors' separate annotation databases.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/22045145
+Evidence/source: https://api.figshare.com/v2/articles/5104873/versions/1
+Attribute: Unified Deep Learning Model for Multitask Reaction Predictions with Explanation DOI: 10.1021/acs.jcim.1c01467
+
+canonical:synthesis/uspto_50k
+Path: Data/synthesis/uspto_50k.csv.gz
+License expression: CC-BY-4.0 AND MIT AND CC-BY-NC-4.0
+Partition: noncommercial
+Commercial use allowed by these grants: False
+Retain source attribution, applicable license notices and descriptions of changes.
+Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted.
+Source/curation: The source chain goes through the Schneider 2016 USPTO-50K data release, whose actual dataset ZIP currently has an explicit CC BY-NC 4.0 publisher grant. The proximate SynCat and GLN repositories are MIT; preserve those notices without treating their code license as blanket relicensing of imported original annotations. Include the derived view in the noncommercial partition.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://api.figshare.com/v2/articles/5104873/versions/1
+Evidence/source: https://api.figshare.com/v2/articles/4295660
+Evidence/source: https://ndownloader.figshare.com/files/7005749
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/LICENSE
+Evidence/source: https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/README.md
+Evidence/source: https://raw.githubusercontent.com/Hanjun-Dai/GLN/b5bd7b181a61a8289cc1d1a33825b2c417bed0ef/LICENSE
+Evidence/source: https://raw.githubusercontent.com/Hanjun-Dai/GLN/b5bd7b181a61a8289cc1d1a33825b2c417bed0ef/README.md
+Evidence/source: local:verified-data-lineage-report
+Evidence/source: https://api.figshare.com/v2/articles/25046471
+Evidence/source: https://api.figshare.com/v2/articles/25459573
+Evidence/source: local:verified-data-lineage-report
+Attribute: Precise Atom-to-Atom Mapping for Organic Reactions via Human-in-the-Loop Machine Learning DOI: 10.1038/s41467-024-46364-y
+Attribute: Retrosynthetic Reaction Prediction Using Neural Sequence-to-Sequence Models DOI: 10.1021/acscentsci.7b00303
+
+canonical:synthesis/uspto_mit
+Path: Data/synthesis/uspto_mit.csv.gz
+License expression: CC-BY-4.0 AND CC0-1.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Official Lowe patent-reaction base grants CC0. This exact curated SynRXN product is byte-identical to its published archive member and the independently retrieved dataset-specific CC-BY4 notice matches the lock's recorded noticeSHA256. Permission is scoped to the curated product; no claim that a code license or CC0 covers other authors' separate annotation databases.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/22045145
+Evidence/source: https://api.figshare.com/v2/articles/5104873/versions/1
+Attribute: Predicting Organic Reaction Outcomes with Weisfeiler--Lehman Networks DOI: 
+
+canonical:yield/buchwald_hartwig_ood
+Path: Data/yield/buchwald_hartwig_ood.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://zenodo.org/api/records/19636649
+Evidence/source: https://raw.githubusercontent.com/schwallergroup/bh-hte-ood/a2770413fce269b49a35fb4b2e6471f25632d2ef/LICENSE.txt
+Evidence/source: https://raw.githubusercontent.com/schwallergroup/bh-hte-ood/a2770413fce269b49a35fb4b2e6471f25632d2ef/README.md
+
+canonical:yield/hitea
+Path: Data/yield/hitea.csv.gz
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://raw.githubusercontent.com/emmaking-smith/HiTEA/ccc8cce274e70429498be829dd3bc57754f62265/LICENSE
+Evidence/source: https://raw.githubusercontent.com/emmaking-smith/HiTEA/ccc8cce274e70429498be829dd3bc57754f62265/README.md
+
+canonical:yield/uspto_yield
+Path: Data/yield/uspto_yield.csv.gz
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://api.figshare.com/v2/articles/14414039/versions/1
+
+coverage:bio/brenda_record_kcat
+Path: Data/coverage_expansion/bio/brenda_record_kcat.parquet
+License expression: MIT AND CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/kcat-random_trainvaltest.csv
+
+coverage:bio/brenda_record_ki
+Path: Data/coverage_expansion/bio/brenda_record_ki.parquet
+License expression: MIT AND CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/ki-random_trainvaltest.csv
+
+coverage:bio/brenda_record_km
+Path: Data/coverage_expansion/bio/brenda_record_km.parquet
+License expression: MIT AND CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/km-random_trainvaltest.csv
+
+coverage:bio/enzeng_inverse_biocatalyst_design
+Path: Data/coverage_expansion/bio/enzeng_inverse_biocatalyst_design.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://zenodo.org/api/records/17310823/files/Data.zip/content
+
+coverage:bio/enzeng_mutation_effects
+Path: Data/coverage_expansion/bio/enzeng_mutation_effects.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://zenodo.org/api/records/17310823/files/Data.zip/content
+
+coverage:bio/mcsa_reference_active_sites
+Path: Data/coverage_expansion/bio/mcsa_reference_active_sites.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://www.ebi.ac.uk/thornton-srv/m-csa/api/entries/?format=json
+
+coverage:bio/reactzyme_retrieval
+Path: Data/coverage_expansion/bio/reactzyme_retrieval.parquet
+License expression: MIT AND CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://zenodo.org/api/records/13635807/files/enzyme_smi_split.zip/content
+
+coverage:impurity/pba_benzaldehyde_side_product
+Path: Data/coverage_expansion/impurity/pba_benzaldehyde_side_product.jsonl.gz
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.1038/s41586-025-09490-1
+
+coverage:impurity/solid_state_reported_impurity_phases
+Path: Data/coverage_expansion/impurity/solid_state_reported_impurity_phases.jsonl.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.1038/s41597-025-06222-y
+
+coverage:knowledge/CatDRX_ORD2025/inverse_components
+Path: Data/coverage_expansion/knowledge/inverse_components.parquet
+License expression: CC-BY-SA-4.0
+Partition: sharealike
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Comply with the applicable ShareAlike requirements for adapted material.
+Source: https://github.com/ohuelab/CatDRX/tree/f8952497761b0bf44cde4b48f8df3a8d40098f91
+
+coverage:knowledge/EnzChemRED2024/curation
+Path: Data/coverage_expansion/knowledge/curation.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.5281/zenodo.11067998
+
+coverage:knowledge/EnzChemRED2024/documents
+Path: Data/coverage_expansion/knowledge/documents.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.5281/zenodo.11067998
+
+coverage:knowledge/EnzChemRED2024/retrieval
+Path: Data/coverage_expansion/knowledge/retrieval.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.5281/zenodo.11067998
+
+coverage:knowledge/MinotScope2026/scope_campaigns
+Path: Data/coverage_expansion/knowledge/scope_campaigns.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.5281/zenodo.20773622
+
+coverage:mechanisms/mcsa_continuous_chains
+Path: Data/coverage_expansion/mechanisms/mcsa_continuous_chains.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://www.ebi.ac.uk/thornton-srv/m-csa/
+
+coverage:mechanisms/mcsa_elementary_steps
+Path: Data/coverage_expansion/mechanisms/mcsa_elementary_steps.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://www.ebi.ac.uk/thornton-srv/m-csa/
+
+coverage:mechanisms/mcsa_full_mechanisms
+Path: Data/coverage_expansion/mechanisms/mcsa_full_mechanisms.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://www.ebi.ac.uk/thornton-srv/m-csa/
+
+coverage:mechanisms/mcsa_observed_mechanisms
+Path: Data/coverage_expansion/mechanisms/mcsa_observed_mechanisms.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://www.ebi.ac.uk/thornton-srv/m-csa/
+
+coverage:physics/chemsindy_reference_trajectories
+Path: Data/coverage_expansion/physics/chemsindy_reference_trajectories.csv
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://github.com/nla-group/ChemSINDy/tree/9aa3f8adb997348bd1e85c1b61fa8a835a91c759
+
+coverage:physics/orgreact_ts_geometry
+Path: Data/coverage_expansion/physics/orgreact_ts_geometry.csv
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.6084/m9.figshare.31668682.v3
+
+coverage:physics/transition1x_final_ts_geometry
+Path: Data/coverage_expansion/physics/transition1x_final_ts_geometry.csv
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.6084/m9.figshare.19614657.v4
+
+coverage:physics/transition1x_reactive_trajectories
+Path: Data/coverage_expansion/physics/transition1x_reactive_trajectories.csv
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.6084/m9.figshare.19614657.v4
+
+coverage:physics_rates/quantumpioneer_hAT_kinetics
+Path: Data/coverage_expansion/physics_rates/quantumpioneer_kinetics.csv
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.5281/zenodo.20060606
+
+coverage:process/cstr_control_transitions
+Path: Data/coverage_expansion/process/cstr_control_transitions.jsonl.gz
+License expression: LGPL-3.0-or-later
+Partition: lgpl
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it.
+Source: https://github.com/do-mpc/do-mpc/tree/9d5a8df0e4d6acac899bf0a65ffd4c30a6e2e4cc/examples/CSTR
+
+coverage:process/fcc_lab_source_full
+Path: Data/coverage_expansion/process/fcc_lab_source_full.jsonl.gz
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.1038/s41467-025-63982-2
+
+coverage:process/fcc_pilot_test
+Path: Data/coverage_expansion/process/fcc_pilot_test.jsonl.gz
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.1038/s41467-025-63982-2
+
+coverage:process/fcc_pilot_train
+Path: Data/coverage_expansion/process/fcc_pilot_train.jsonl.gz
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.1038/s41467-025-63982-2
+
+coverage:process/fcc_pilot_validation
+Path: Data/coverage_expansion/process/fcc_pilot_validation.jsonl.gz
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.1038/s41467-025-63982-2
+
+coverage:process/lowfield_nmr_yield_progress
+Path: Data/coverage_expansion/process/lowfield_nmr_yield_progress.jsonl.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.26434/chemrxiv.15005188/v1
+
+coverage:process/nmr_pmg_284_progress
+Path: Data/coverage_expansion/process/nmr_pmg_284_progress.jsonl.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.1021/acs.analchem.5c00800
+
+coverage:process/nmr_pmg_284_snapshots
+Path: Data/coverage_expansion/process/nmr_pmg_284_snapshots.jsonl.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.1021/acs.analchem.5c00800
+
+coverage:process/nmr_pmg_287_progress
+Path: Data/coverage_expansion/process/nmr_pmg_287_progress.jsonl.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.1021/acs.analchem.5c00800
+
+coverage:process/nmr_pmg_287_snapshots
+Path: Data/coverage_expansion/process/nmr_pmg_287_snapshots.jsonl.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.1021/acs.analchem.5c00800
+
+coverage:process/nmr_saccharose_hydrolysis_progress
+Path: Data/coverage_expansion/process/nmr_saccharose_hydrolysis_progress.jsonl.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.1021/acs.analchem.5c00800
+
+coverage:process/nmr_saccharose_hydrolysis_snapshots
+Path: Data/coverage_expansion/process/nmr_saccharose_hydrolysis_snapshots.jsonl.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.1021/acs.analchem.5c00800
+
+coverage:process/reac_discovery_cs1
+Path: Data/coverage_expansion/process/reac_discovery_cs1.jsonl.gz
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.1038/s41467-025-64127-1
+
+coverage:process/reac_discovery_cs2
+Path: Data/coverage_expansion/process/reac_discovery_cs2.jsonl.gz
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.1038/s41467-025-64127-1
+
+coverage:solution_barriers/lipred_solution_activation_gibbs
+Path: Data/coverage_expansion/solution_barriers/lipred_solution_activation_gibbs.csv
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.5281/zenodo.16358189
+
+coverage:solution_context/cycloadd_solution_context
+Path: Data/coverage_expansion/solution_context/cycloadd_solution_context.csv
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.6084/m9.figshare.21707888.v5
+
+coverage:solution_context/snar_solution_context
+Path: Data/coverage_expansion/solution_context/snar_solution_context.csv
+License expression: CC-BY-3.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source: https://doi.org/10.1039/D0SC04896H
+
+expansion:C02/minot_al1_data
+Path: Data/expansion/main/C02/minot_al1_data.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://zenodo.org/api/records/20773622
+
+expansion:C02/minot_al2_data
+Path: Data/expansion/main/C02/minot_al2_data.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://zenodo.org/api/records/20773622
+
+expansion:C02/minot_al3_data
+Path: Data/expansion/main/C02/minot_al3_data.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://zenodo.org/api/records/20773622
+
+expansion:C02/minot_preal_data
+Path: Data/expansion/main/C02/minot_preal_data.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://zenodo.org/api/records/20773622
+
+expansion:C02/regio
+Path: Data/expansion/main/C02/regio.parquet
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://zenodo.org/api/records/20773622
+
+expansion:C03/cn_screen
+Path: Data/expansion/sharealike/C03/cn_screen.parquet
+License expression: CC-BY-SA-4.0
+Partition: sharealike
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Comply with the applicable ShareAlike requirements for adapted material.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://raw.githubusercontent.com/open-reaction-database/ord-data/704870642e5c93a141e6666436bc14a9b5f880ed/README.md
+Evidence/source: https://raw.githubusercontent.com/open-reaction-database/ord-data/704870642e5c93a141e6666436bc14a9b5f880ed/LICENSE
+
+expansion:C06/catechol
+Path: Data/expansion/main/C06/catechol.parquet
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://raw.githubusercontent.com/jpfolch/catechol_solvent_selection/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727/kaggle_data/catechol-benchmark-metadata.json
+Evidence/source: https://raw.githubusercontent.com/jpfolch/catechol_solvent_selection/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727/LICENSE
+
+expansion:C06/claisen
+Path: Data/expansion/main/C06/claisen.parquet
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://raw.githubusercontent.com/jpfolch/catechol_solvent_selection/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727/kaggle_data/catechol-benchmark-metadata.json
+Evidence/source: https://raw.githubusercontent.com/jpfolch/catechol_solvent_selection/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727/LICENSE
+
+expansion:C06/single_solvent
+Path: Data/expansion/main/C06/single_solvent.parquet
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://raw.githubusercontent.com/jpfolch/catechol_solvent_selection/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727/kaggle_data/catechol-benchmark-metadata.json
+Evidence/source: https://raw.githubusercontent.com/jpfolch/catechol_solvent_selection/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727/LICENSE
+
+expansion:C16/aldol_reaction_dataset
+Path: Data/expansion/main/C16/aldol_reaction_dataset.parquet
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/README.md
+Evidence/source: https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/LICENSE
+
+expansion:C16/michael_addition_dataset
+Path: Data/expansion/main/C16/michael_addition_dataset.parquet
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/README.md
+Evidence/source: https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/LICENSE
+
+expansion:C16/validation_in_house_acetone
+Path: Data/expansion/main/C16/validation_in_house_acetone.parquet
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/README.md
+Evidence/source: https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/LICENSE
+
+expansion:C16/validation_in_house_hydroxyacetone
+Path: Data/expansion/main/C16/validation_in_house_hydroxyacetone.parquet
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/README.md
+Evidence/source: https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/LICENSE
+
+expansion:C16/validation_new_literature_aldol
+Path: Data/expansion/main/C16/validation_new_literature_aldol.parquet
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/README.md
+Evidence/source: https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/LICENSE
+
+expansion:C16/validation_new_literature_michael
+Path: Data/expansion/main/C16/validation_new_literature_michael.parquet
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/README.md
+Evidence/source: https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/LICENSE
+
+expansion:C16/validation_virtual_chemist
+Path: Data/expansion/main/C16/validation_virtual_chemist.parquet
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.
+Evidence/source: https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/README.md
+Evidence/source: https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/LICENSE

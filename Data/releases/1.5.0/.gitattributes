@@ -1,0 +1,4 @@
+# Preserve the exact published input bytes, including CSV line endings.
+tables/** binary
+tables-zstd/*.csv.zst binary
+notices/** -text

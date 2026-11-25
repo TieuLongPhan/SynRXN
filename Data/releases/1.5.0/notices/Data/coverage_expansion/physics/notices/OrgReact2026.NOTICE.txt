@@ -1,0 +1,8 @@
+OrgReact native endpoint and transition-state structures
+Source: https://doi.org/10.6084/m9.figshare.31668682.v3
+Creators: zhaojia dong
+License: CC-BY-4.0
+Source license declaration: https://api.figshare.com/v2/articles/31668682/versions/3
+License terms: https://creativecommons.org/licenses/by/4.0/
+Changes in this distribution: Parsed XYZ endpoint/TS structures and joined source energetic/bond-change tables; native files remain unchanged. Added row IDs, explicit missing charge/spin status, task contracts and provenance.
+No endorsement by the original authors is implied.

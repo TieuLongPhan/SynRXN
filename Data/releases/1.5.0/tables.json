@@ -1,0 +1,3124 @@
+{
+  "version": "1.5.0",
+  "scope": "main snapshot table files",
+  "table_count": 102,
+  "stored_rows": 5485077,
+  "tables": [
+    {
+      "namespace": "canonical",
+      "key": "aam/brenda",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 3138,
+      "files": [
+        {
+          "path": "tables/main/canonical/aam/brenda/data.csv.gz",
+          "bytes": 385458,
+          "sha256": "dad050fba14ab6160480e6802cf81fc82ea3a70e1ccb1af9d251796cd7374580"
+        }
+      ],
+      "source_file": {
+        "path": "Data/aam/brenda.csv.gz",
+        "format": "csv.gz",
+        "sha256": "dad050fba14ab6160480e6802cf81fc82ea3a70e1ccb1af9d251796cd7374580"
+      },
+      "task_ids": [
+        "atom_mapping"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "aam/ecoli",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 273,
+      "files": [
+        {
+          "path": "tables/main/canonical/aam/ecoli/data.csv.gz",
+          "bytes": 95991,
+          "sha256": "d38436457c5f5d82149981005a2c39d289d56467fb45ffdeb294f0c62b631866"
+        }
+      ],
+      "source_file": {
+        "path": "Data/aam/ecoli.csv.gz",
+        "format": "csv.gz",
+        "sha256": "d38436457c5f5d82149981005a2c39d289d56467fb45ffdeb294f0c62b631866"
+      },
+      "task_ids": [
+        "atom_mapping"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "aam/ehreact",
+      "partition": "main",
+      "license_expression": "BSD-3-Clause",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 939,
+      "files": [
+        {
+          "path": "tables/main/canonical/aam/ehreact/data.csv.gz",
+          "bytes": 73805,
+          "sha256": "e085217180f396ad519eeaadf7602d39c7c374e5591b95bde85c0d8b57402124"
+        }
+      ],
+      "source_file": {
+        "path": "Data/aam/ehreact.csv.gz",
+        "format": "csv.gz",
+        "sha256": "e085217180f396ad519eeaadf7602d39c7c374e5591b95bde85c0d8b57402124"
+      },
+      "task_ids": [
+        "atom_mapping"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "aam/enzyme_map",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 47974,
+      "files": [
+        {
+          "path": "tables/main/canonical/aam/enzyme_map/data.csv.gz",
+          "bytes": 3818594,
+          "sha256": "303e6638819a008f1442291443459795e9bb40b3cdea9e9da01732d05f20b807"
+        }
+      ],
+      "source_file": {
+        "path": "Data/aam/enzyme_map.csv.gz",
+        "format": "csv.gz",
+        "sha256": "303e6638819a008f1442291443459795e9bb40b3cdea9e9da01732d05f20b807"
+      },
+      "task_ids": [
+        "atom_mapping"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "aam/flower_c",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 38745,
+      "files": [
+        {
+          "path": "tables/main/canonical/aam/flower_c/data.csv.gz",
+          "bytes": 6116189,
+          "sha256": "75f34235813ce9accff59134536f6e1f0f6af5c9a16a381e7a75e96b0f52d203"
+        }
+      ],
+      "source_file": {
+        "path": "Data/aam/flower_c.csv.gz",
+        "format": "csv.gz",
+        "sha256": "75f34235813ce9accff59134536f6e1f0f6af5c9a16a381e7a75e96b0f52d203"
+      },
+      "task_ids": [
+        "atom_mapping"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "aam/flower_e",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 179345,
+      "files": [
+        {
+          "path": "tables/main/canonical/aam/flower_e/data.csv.gz",
+          "bytes": 12842463,
+          "sha256": "696f0a08fa7872309918c0bc1de7cfe3a32ba862e4d732775e12844894159d8d"
+        }
+      ],
+      "source_file": {
+        "path": "Data/aam/flower_e.csv.gz",
+        "format": "csv.gz",
+        "sha256": "696f0a08fa7872309918c0bc1de7cfe3a32ba862e4d732775e12844894159d8d"
+      },
+      "task_ids": [
+        "atom_mapping"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "aam/golden",
+      "partition": "copyleft",
+      "license_expression": "GPL-3.0-only AND LGPL-2.1-only AND MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it."
+      ],
+      "format": "csv.gz",
+      "rows": 1758,
+      "files": [
+        {
+          "path": "tables/copyleft/canonical/aam/golden/data.csv.gz",
+          "bytes": 528456,
+          "sha256": "ccce1ab8a18a45559cdbf87bcd3ecd838fc6e1cd1e3ad8d5815e39af5ddd49d9"
+        }
+      ],
+      "source_file": {
+        "path": "Data/aam/golden.csv.gz",
+        "format": "csv.gz",
+        "sha256": "ccce1ab8a18a45559cdbf87bcd3ecd838fc6e1cd1e3ad8d5815e39af5ddd49d9"
+      },
+      "task_ids": [
+        "atom_mapping"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "aam/natcomm",
+      "partition": "copyleft",
+      "license_expression": "CC-BY-4.0 AND GPL-3.0-only AND MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it."
+      ],
+      "format": "csv.gz",
+      "rows": 491,
+      "files": [
+        {
+          "path": "tables/copyleft/canonical/aam/natcomm/data.csv.gz",
+          "bytes": 132874,
+          "sha256": "c62f4084990533d36bd9ba706cd78a80de0bad14ee139cdf1fb3c00422da2343"
+        }
+      ],
+      "source_file": {
+        "path": "Data/aam/natcomm.csv.gz",
+        "format": "csv.gz",
+        "sha256": "c62f4084990533d36bd9ba706cd78a80de0bad14ee139cdf1fb3c00422da2343"
+      },
+      "task_ids": [
+        "atom_mapping"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "aam/recon3d",
+      "partition": "noncommercial",
+      "license_expression": "CC-BY-NC-4.0 AND MIT",
+      "commercial_use_allowed": false,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted."
+      ],
+      "format": "csv.gz",
+      "rows": 382,
+      "files": [
+        {
+          "path": "tables/noncommercial/canonical/aam/recon3d/data.csv.gz",
+          "bytes": 230314,
+          "sha256": "a5dc370de65eb8efde9ecd703ef1f2a021d5713b850944530092798628dea45e"
+        }
+      ],
+      "source_file": {
+        "path": "Data/aam/recon3d.csv.gz",
+        "format": "csv.gz",
+        "sha256": "a5dc370de65eb8efde9ecd703ef1f2a021d5713b850944530092798628dea45e"
+      },
+      "task_ids": [
+        "atom_mapping"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "aam/uspto_3k",
+      "partition": "copyleft",
+      "license_expression": "GPL-3.0-only AND CC-BY-SA-4.0 AND MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Comply with the applicable ShareAlike requirements for adapted material.",
+        "Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it."
+      ],
+      "format": "csv.gz",
+      "rows": 3000,
+      "files": [
+        {
+          "path": "tables/copyleft/canonical/aam/uspto_3k/data.csv.gz",
+          "bytes": 1039902,
+          "sha256": "7d46de323ec918550fd742ea5e839fc976cd451058eca061b1e2023354698145"
+        }
+      ],
+      "source_file": {
+        "path": "Data/aam/uspto_3k.csv.gz",
+        "format": "csv.gz",
+        "sha256": "7d46de323ec918550fd742ea5e839fc976cd451058eca061b1e2023354698145"
+      },
+      "task_ids": [
+        "atom_mapping"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "classification/ecreact",
+      "partition": "database_sharealike",
+      "license_expression": "CC-BY-4.0 AND MIT AND ODbL-1.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Retain the Open Database License notices and comply with database ShareAlike/source-access conditions where applicable; do not treat database rights as unrestricted CC BY rights."
+      ],
+      "format": "csv.gz",
+      "rows": 185734,
+      "files": [
+        {
+          "path": "tables/database_sharealike/canonical/classification/ecreact/data.csv.gz",
+          "bytes": 2874798,
+          "sha256": "c730e5bd196dc69b5ebc421cce37010162f7e129f149b28196f0069ee242bdcd"
+        }
+      ],
+      "source_file": {
+        "path": "Data/classification/ecreact.csv.gz",
+        "format": "csv.gz",
+        "sha256": "c730e5bd196dc69b5ebc421cce37010162f7e129f149b28196f0069ee242bdcd"
+      },
+      "task_ids": [
+        "reaction_classification",
+        "reaction_clustering"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "classification/ehreact_activity",
+      "partition": "main",
+      "license_expression": "BSD-3-Clause",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 1943,
+      "files": [
+        {
+          "path": "tables/main/canonical/classification/ehreact_activity/data.csv.gz",
+          "bytes": 86714,
+          "sha256": "eb38c0a10358fff35a616c6ae4255efd2a6bb00b8f02cc6e2dde00943fba8192"
+        }
+      ],
+      "source_file": {
+        "path": "Data/classification/ehreact_activity.csv.gz",
+        "format": "csv.gz",
+        "sha256": "eb38c0a10358fff35a616c6ae4255efd2a6bb00b8f02cc6e2dde00943fba8192"
+      },
+      "task_ids": [
+        "enzyme_activity"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "classification/schneider_b",
+      "partition": "noncommercial",
+      "license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+      "commercial_use_allowed": false,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted."
+      ],
+      "format": "csv.gz",
+      "rows": 50000,
+      "files": [
+        {
+          "path": "tables/noncommercial/canonical/classification/schneider_b/data.csv.gz",
+          "bytes": 1737472,
+          "sha256": "72c6560f458c3777f1e0f1e73c3a35ac7974cc4a49e3ae6441421d4e91bf86b2"
+        }
+      ],
+      "source_file": {
+        "path": "Data/classification/schneider_b.csv.gz",
+        "format": "csv.gz",
+        "sha256": "72c6560f458c3777f1e0f1e73c3a35ac7974cc4a49e3ae6441421d4e91bf86b2"
+      },
+      "task_ids": [
+        "reaction_classification",
+        "reaction_clustering"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "classification/schneider_u",
+      "partition": "noncommercial",
+      "license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+      "commercial_use_allowed": false,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted."
+      ],
+      "format": "csv.gz",
+      "rows": 50000,
+      "files": [
+        {
+          "path": "tables/noncommercial/canonical/classification/schneider_u/data.csv.gz",
+          "bytes": 1517500,
+          "sha256": "fbd6e409459354ade4a6d15aeaf2206694f7df335a315384ca7dbcf06d2ee5b4"
+        }
+      ],
+      "source_file": {
+        "path": "Data/classification/schneider_u.csv.gz",
+        "format": "csv.gz",
+        "sha256": "fbd6e409459354ade4a6d15aeaf2206694f7df335a315384ca7dbcf06d2ee5b4"
+      },
+      "task_ids": [
+        "reaction_classification",
+        "reaction_clustering"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "classification/syntemp",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0 AND CC0-1.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 43441,
+      "files": [
+        {
+          "path": "tables/main/canonical/classification/syntemp/data.csv.gz",
+          "bytes": 1478384,
+          "sha256": "5ace42ff5d956a4c5180ca854bbbd441bdbac5b71903a6bcd4684bb77320c1ed"
+        }
+      ],
+      "source_file": {
+        "path": "Data/classification/syntemp.csv.gz",
+        "format": "csv.gz",
+        "sha256": "5ace42ff5d956a4c5180ca854bbbd441bdbac5b71903a6bcd4684bb77320c1ed"
+      },
+      "task_ids": [
+        "reaction_classification",
+        "reaction_clustering"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "classification/tpl_b",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0 AND MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 445115,
+      "files": [
+        {
+          "path": "tables/main/canonical/classification/tpl_b/data.csv.gz",
+          "bytes": 17266004,
+          "sha256": "106cec5db1b37757483d7d99f2d9dde34e89315af54fdb9aa2e3cf0770fb4dbc"
+        }
+      ],
+      "source_file": {
+        "path": "Data/classification/tpl_b.csv.gz",
+        "format": "csv.gz",
+        "sha256": "106cec5db1b37757483d7d99f2d9dde34e89315af54fdb9aa2e3cf0770fb4dbc"
+      },
+      "task_ids": [
+        "reaction_classification",
+        "reaction_clustering"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "classification/tpl_u",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0 AND MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 445115,
+      "files": [
+        {
+          "path": "tables/main/canonical/classification/tpl_u/data.csv.gz",
+          "bytes": 15207379,
+          "sha256": "6b6a649e1cc13f17418a4ce3a8b63663a7f66c1777abfc66c16bce8e0efa2912"
+        }
+      ],
+      "source_file": {
+        "path": "Data/classification/tpl_u.csv.gz",
+        "format": "csv.gz",
+        "sha256": "6b6a649e1cc13f17418a4ce3a8b63663a7f66c1777abfc66c16bce8e0efa2912"
+      },
+      "task_ids": [
+        "reaction_classification",
+        "reaction_clustering"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "classification/uspto_50k_b",
+      "partition": "noncommercial",
+      "license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+      "commercial_use_allowed": false,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted."
+      ],
+      "format": "csv.gz",
+      "rows": 50016,
+      "files": [
+        {
+          "path": "tables/noncommercial/canonical/classification/uspto_50k_b/data.csv.gz",
+          "bytes": 1474615,
+          "sha256": "098f85a386e25742791e5b87b8be8a7a090e920b6eca5f2b85452aa913ddba51"
+        }
+      ],
+      "source_file": {
+        "path": "Data/classification/uspto_50k_b.csv.gz",
+        "format": "csv.gz",
+        "sha256": "098f85a386e25742791e5b87b8be8a7a090e920b6eca5f2b85452aa913ddba51"
+      },
+      "task_ids": [
+        "reaction_classification",
+        "reaction_clustering"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "classification/uspto_50k_u",
+      "partition": "noncommercial",
+      "license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+      "commercial_use_allowed": false,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted."
+      ],
+      "format": "csv.gz",
+      "rows": 50016,
+      "files": [
+        {
+          "path": "tables/noncommercial/canonical/classification/uspto_50k_u/data.csv.gz",
+          "bytes": 1398804,
+          "sha256": "355d38f0ef86b6546bfd24bbee97ebfe09d16c9ffed8b13282dc336734421fdb"
+        }
+      ],
+      "source_file": {
+        "path": "Data/classification/uspto_50k_u.csv.gz",
+        "format": "csv.gz",
+        "sha256": "355d38f0ef86b6546bfd24bbee97ebfe09d16c9ffed8b13282dc336734421fdb"
+      },
+      "task_ids": [
+        "reaction_classification",
+        "reaction_clustering"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "condition/orderly_condition",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.zst",
+      "rows": 691105,
+      "files": [
+        {
+          "path": "tables-zstd/orderly_condition-01.csv.zst",
+          "bytes": 91656861,
+          "sha256": "52fe456e86107b8d97471eee8a6690c191e07e22c4625dc88c5b568c0ef183e3"
+        },
+        {
+          "path": "tables-zstd/orderly_condition-02.csv.zst",
+          "bytes": 91634193,
+          "sha256": "a67e89389286fdbf579b2fcfc7ee66b018e0c8025417ab5fde3c1d10c82f7a75"
+        },
+        {
+          "path": "tables-zstd/orderly_condition-03.csv.zst",
+          "bytes": 90942145,
+          "sha256": "a97fb1b3f835aee433ec358bd570c071664212a2ccde4c8c8e03b18a235ed2e9"
+        }
+      ],
+      "source_file": {
+        "path": "Data/condition/orderly_condition.csv.gz",
+        "format": "csv.gz",
+        "sha256": "789e1c41f6dcc00cff2600aa21d034db327428b2df29427721f2ba103ca91e57"
+      },
+      "task_ids": [
+        "condition_recovery"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "condition_sharealike/openexp",
+      "partition": "sharealike",
+      "license_expression": "CC-BY-SA-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Comply with the applicable ShareAlike requirements for adapted material."
+      ],
+      "format": "csv.zst",
+      "rows": 274439,
+      "files": [
+        {
+          "path": "tables-zstd/openexp.csv.zst",
+          "bytes": 101600102,
+          "sha256": "e95001e56bc60b4fa9d7747113b1ca88434eb1b1c46bd8db3370b54420a246d1"
+        }
+      ],
+      "source_file": {
+        "path": "Data/condition_sharealike/openexp.csv.gz",
+        "format": "csv.gz",
+        "sha256": "f38c6bf858aa6d6d983c15199fc90f28e999ba6ea670229ab0307e70e919edc2"
+      },
+      "task_ids": [
+        "procedure_generation"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "condition_sharealike/ord_hte_condition",
+      "partition": "sharealike",
+      "license_expression": "CC-BY-SA-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Comply with the applicable ShareAlike requirements for adapted material."
+      ],
+      "format": "csv.gz",
+      "rows": 123720,
+      "files": [
+        {
+          "path": "tables/sharealike/canonical/condition_sharealike/ord_hte_condition/data.csv.gz",
+          "bytes": 24004331,
+          "sha256": "9d77cb0ef9233dd7922e4a65ea89e046051581c9200dd3eb7c85d3ae06514c5c"
+        }
+      ],
+      "source_file": {
+        "path": "Data/condition_sharealike/ord_hte_condition.csv.gz",
+        "format": "csv.gz",
+        "sha256": "9d77cb0ef9233dd7922e4a65ea89e046051581c9200dd3eb7c85d3ae06514c5c"
+      },
+      "task_ids": [
+        "condition_recovery"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "mechanism/synepd_polar",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 1926,
+      "files": [
+        {
+          "path": "tables/main/canonical/mechanism/synepd_polar/data.csv.gz",
+          "bytes": 530952,
+          "sha256": "bc31c8764b13cde89540c763d94691f64c1b460458a759ea6a757a9d0967a7ba"
+        }
+      ],
+      "source_file": {
+        "path": "Data/mechanism/synepd_polar.csv.gz",
+        "format": "csv.gz",
+        "sha256": "bc31c8764b13cde89540c763d94691f64c1b460458a759ea6a757a9d0967a7ba"
+      },
+      "task_ids": [
+        "mechanistic_prediction"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "property/b97xd3",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 16365,
+      "files": [
+        {
+          "path": "tables/main/canonical/property/b97xd3/data.csv.gz",
+          "bytes": 641403,
+          "sha256": "33f881612842378a6cff97b2db0c99b1c4877a7e81a318129a26dd58e9702d73"
+        }
+      ],
+      "source_file": {
+        "path": "Data/property/b97xd3.csv.gz",
+        "format": "csv.gz",
+        "sha256": "33f881612842378a6cff97b2db0c99b1c4877a7e81a318129a26dd58e9702d73"
+      },
+      "task_ids": [
+        "activation_barrier",
+        "reaction_energetics"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "property/cycloadd",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 5269,
+      "files": [
+        {
+          "path": "tables/main/canonical/property/cycloadd/data.csv.gz",
+          "bytes": 381702,
+          "sha256": "afd03a88ef6268350f2c176b70a67396ff1902b85e6742bb2ac3ef0d9ca84004"
+        }
+      ],
+      "source_file": {
+        "path": "Data/property/cycloadd.csv.gz",
+        "format": "csv.gz",
+        "sha256": "afd03a88ef6268350f2c176b70a67396ff1902b85e6742bb2ac3ef0d9ca84004"
+      },
+      "task_ids": [
+        "activation_barrier",
+        "reaction_energetics"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "property/e2",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 1264,
+      "files": [
+        {
+          "path": "tables/main/canonical/property/e2/data.csv.gz",
+          "bytes": 31804,
+          "sha256": "2b2177235aeddf06b9fa29abe9836e6a3c520ccdbd1530b9757f8e8c4c23d99e"
+        }
+      ],
+      "source_file": {
+        "path": "Data/property/e2.csv.gz",
+        "format": "csv.gz",
+        "sha256": "2b2177235aeddf06b9fa29abe9836e6a3c520ccdbd1530b9757f8e8c4c23d99e"
+      },
+      "task_ids": [
+        "activation_barrier"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "property/e2sn2",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 3625,
+      "files": [
+        {
+          "path": "tables/main/canonical/property/e2sn2/data.csv.gz",
+          "bytes": 79331,
+          "sha256": "d3b27039841da7ea9bb18e511271fbaddfcb61d826ec1c5e31b50f71c1d3e044"
+        }
+      ],
+      "source_file": {
+        "path": "Data/property/e2sn2.csv.gz",
+        "format": "csv.gz",
+        "sha256": "d3b27039841da7ea9bb18e511271fbaddfcb61d826ec1c5e31b50f71c1d3e044"
+      },
+      "task_ids": [
+        "activation_barrier"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "property/lograte",
+      "partition": "noncommercial",
+      "license_expression": "CC-BY-NC-4.0",
+      "commercial_use_allowed": false,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted."
+      ],
+      "format": "csv.gz",
+      "rows": 778,
+      "files": [
+        {
+          "path": "tables/noncommercial/canonical/property/lograte/data.csv.gz",
+          "bytes": 20166,
+          "sha256": "ca79d7de36fde44961dd093a53c999356ac9aacf3aee524eb18bf90219f120f0"
+        }
+      ],
+      "source_file": {
+        "path": "Data/property/lograte.csv.gz",
+        "format": "csv.gz",
+        "sha256": "ca79d7de36fde44961dd093a53c999356ac9aacf3aee524eb18bf90219f120f0"
+      },
+      "task_ids": [
+        "reaction_rates"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "property/phosphatase",
+      "partition": "noncommercial_educational",
+      "license_expression": "CC-BY-4.0 AND LicenseRef-PNAS-NC-Educational",
+      "commercial_use_allowed": false,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted.",
+        "The PNAS permission covers original figures/tables for noncommercial and educational use with the full journal reference. This compilation applies it only to the cited factual table extraction; it does not assert a Creative Commons grant for PNAS material or permission to redistribute the article or entire supplement."
+      ],
+      "format": "csv.gz",
+      "rows": 33354,
+      "files": [
+        {
+          "path": "tables/noncommercial_educational/canonical/property/phosphatase/data.csv.gz",
+          "bytes": 1137562,
+          "sha256": "aca656158cb5b96cfa3378234641796e5becdf6647d7af0ae9f91b9e53639917"
+        }
+      ],
+      "source_file": {
+        "path": "Data/property/phosphatase.csv.gz",
+        "format": "csv.gz",
+        "sha256": "aca656158cb5b96cfa3378234641796e5becdf6647d7af0ae9f91b9e53639917"
+      },
+      "task_ids": [
+        "yield_conversion"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "property/rad6re",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 31923,
+      "files": [
+        {
+          "path": "tables/main/canonical/property/rad6re/data.csv.gz",
+          "bytes": 866920,
+          "sha256": "fd78145b61bf50e0267f61ae5e45681020a7de7d3fe552da26feabc3096db1d5"
+        }
+      ],
+      "source_file": {
+        "path": "Data/property/rad6re.csv.gz",
+        "format": "csv.gz",
+        "sha256": "fd78145b61bf50e0267f61ae5e45681020a7de7d3fe552da26feabc3096db1d5"
+      },
+      "task_ids": [
+        "reaction_energetics"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "property/rdb7",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 23852,
+      "files": [
+        {
+          "path": "tables/main/canonical/property/rdb7/data.csv.gz",
+          "bytes": 640317,
+          "sha256": "5980529ee8cf8ab0922df24048c69ba131d2f7ad623f5cdf9d7fb67b6466849e"
+        }
+      ],
+      "source_file": {
+        "path": "Data/property/rdb7.csv.gz",
+        "format": "csv.gz",
+        "sha256": "5980529ee8cf8ab0922df24048c69ba131d2f7ad623f5cdf9d7fb67b6466849e"
+      },
+      "task_ids": [
+        "activation_barrier"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "property/rgd1",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 353984,
+      "files": [
+        {
+          "path": "tables/main/canonical/property/rgd1/data.csv.gz",
+          "bytes": 13199958,
+          "sha256": "74c5fbfd38b24409c17ddf2d8dc105ad728479df8a17b2bcf65c51a3ed8bed30"
+        }
+      ],
+      "source_file": {
+        "path": "Data/property/rgd1.csv.gz",
+        "format": "csv.gz",
+        "sha256": "74c5fbfd38b24409c17ddf2d8dc105ad728479df8a17b2bcf65c51a3ed8bed30"
+      },
+      "task_ids": [
+        "activation_barrier"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "property/sn2",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 2361,
+      "files": [
+        {
+          "path": "tables/main/canonical/property/sn2/data.csv.gz",
+          "bytes": 58133,
+          "sha256": "2e3c58220e44dbf7597088861d642378abead0048f1a6c12f99771a0719db2ac"
+        }
+      ],
+      "source_file": {
+        "path": "Data/property/sn2.csv.gz",
+        "format": "csv.gz",
+        "sha256": "2e3c58220e44dbf7597088861d642378abead0048f1a6c12f99771a0719db2ac"
+      },
+      "task_ids": [
+        "activation_barrier"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "property/snar",
+      "partition": "main",
+      "license_expression": "CC-BY-3.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 503,
+      "files": [
+        {
+          "path": "tables/main/canonical/property/snar/data.csv.gz",
+          "bytes": 5965,
+          "sha256": "df8df5b8bc8b74910c7fe9960a8dd200182c5ef1bf91de906286cb71bfe60bcd"
+        }
+      ],
+      "source_file": {
+        "path": "Data/property/snar.csv.gz",
+        "format": "csv.gz",
+        "sha256": "df8df5b8bc8b74910c7fe9960a8dd200182c5ef1bf91de906286cb71bfe60bcd"
+      },
+      "task_ids": [
+        "activation_barrier"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "rbl/complex",
+      "partition": "lgpl",
+      "license_expression": "CC-BY-4.0 AND MIT AND LGPL-2.1-only",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it."
+      ],
+      "format": "csv.gz",
+      "rows": 1748,
+      "files": [
+        {
+          "path": "tables/lgpl/canonical/rbl/complex/data.csv.gz",
+          "bytes": 54517,
+          "sha256": "a2a2d887a65806fbd27596147f6209213cb3eedfbafd428370ec68586827db4c"
+        }
+      ],
+      "source_file": {
+        "path": "Data/rbl/complex.csv.gz",
+        "format": "csv.gz",
+        "sha256": "a2a2d887a65806fbd27596147f6209213cb3eedfbafd428370ec68586827db4c"
+      },
+      "task_ids": [
+        "reaction_balancing"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "rbl/mbs",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0 AND CC0-1.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 491,
+      "files": [
+        {
+          "path": "tables/main/canonical/rbl/mbs/data.csv.gz",
+          "bytes": 14727,
+          "sha256": "d7cb14f9604328dcc86bd0ab10503d7649ff50a3d823a45cb02fb874bca1bd1d"
+        }
+      ],
+      "source_file": {
+        "path": "Data/rbl/mbs.csv.gz",
+        "format": "csv.gz",
+        "sha256": "d7cb14f9604328dcc86bd0ab10503d7649ff50a3d823a45cb02fb874bca1bd1d"
+      },
+      "task_ids": [
+        "reaction_balancing"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "rbl/mnc",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0 AND CC0-1.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 33147,
+      "files": [
+        {
+          "path": "tables/main/canonical/rbl/mnc/data.csv.gz",
+          "bytes": 1090524,
+          "sha256": "ed66cd15303b63fd9e0e6ea0f0ad396bada423a36d5f290dec5ee7cdf447c6cf"
+        }
+      ],
+      "source_file": {
+        "path": "Data/rbl/mnc.csv.gz",
+        "format": "csv.gz",
+        "sha256": "ed66cd15303b63fd9e0e6ea0f0ad396bada423a36d5f290dec5ee7cdf447c6cf"
+      },
+      "task_ids": [
+        "reaction_balancing"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "rbl/mos",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0 AND CC0-1.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 12781,
+      "files": [
+        {
+          "path": "tables/main/canonical/rbl/mos/data.csv.gz",
+          "bytes": 452394,
+          "sha256": "d8c6d663ad21cafba9dc64259ba435924926305af2b87a785795c289da39fc31"
+        }
+      ],
+      "source_file": {
+        "path": "Data/rbl/mos.csv.gz",
+        "format": "csv.gz",
+        "sha256": "d8c6d663ad21cafba9dc64259ba435924926305af2b87a785795c289da39fc31"
+      },
+      "task_ids": [
+        "reaction_balancing"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "selectivity/hitea_chiral_resolution",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 50,
+      "files": [
+        {
+          "path": "tables/main/canonical/selectivity/hitea_chiral_resolution/data.csv.gz",
+          "bytes": 5842,
+          "sha256": "deffeb88f4a3d9e1f1ea98ece7cdcda2f42ba8edaae899771df2aab5f1ddd8b7"
+        }
+      ],
+      "source_file": {
+        "path": "Data/selectivity/hitea_chiral_resolution.csv.gz",
+        "format": "csv.gz",
+        "sha256": "deffeb88f4a3d9e1f1ea98ece7cdcda2f42ba8edaae899771df2aab5f1ddd8b7"
+      },
+      "task_ids": [
+        "enantioselectivity"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "selectivity/regiosqm_eas",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 535,
+      "files": [
+        {
+          "path": "tables/main/canonical/selectivity/regiosqm_eas/data.csv.gz",
+          "bytes": 75109,
+          "sha256": "c156301e943612c5b04db9216e5fa0c173539c966933bcd489e87d7691acd9ae"
+        }
+      ],
+      "source_file": {
+        "path": "Data/selectivity/regiosqm_eas.csv.gz",
+        "format": "csv.gz",
+        "sha256": "c156301e943612c5b04db9216e5fa0c173539c966933bcd489e87d7691acd9ae"
+      },
+      "task_ids": [
+        "regioselectivity"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "synthesis/uspto_500",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0 AND CC0-1.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 143535,
+      "files": [
+        {
+          "path": "tables/main/canonical/synthesis/uspto_500/data.csv.gz",
+          "bytes": 4485501,
+          "sha256": "fad362c125f8fc6195d49748bbd9f381ca4c9d3f03935d82f457b350ab46bef1"
+        }
+      ],
+      "source_file": {
+        "path": "Data/synthesis/uspto_500.csv.gz",
+        "format": "csv.gz",
+        "sha256": "fad362c125f8fc6195d49748bbd9f381ca4c9d3f03935d82f457b350ab46bef1"
+      },
+      "task_ids": [
+        "condition_recovery"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "synthesis/uspto_50k",
+      "partition": "noncommercial",
+      "license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+      "commercial_use_allowed": false,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted."
+      ],
+      "format": "csv.gz",
+      "rows": 50016,
+      "files": [
+        {
+          "path": "tables/noncommercial/canonical/synthesis/uspto_50k/data.csv.gz",
+          "bytes": 4411638,
+          "sha256": "a23d355405f037cc4ecc751cf094003f3b64c115dd212f20d99015bc9ba05ac4"
+        }
+      ],
+      "source_file": {
+        "path": "Data/synthesis/uspto_50k.csv.gz",
+        "format": "csv.gz",
+        "sha256": "a23d355405f037cc4ecc751cf094003f3b64c115dd212f20d99015bc9ba05ac4"
+      },
+      "task_ids": [
+        "forward_prediction",
+        "retrosynthesis"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "synthesis/uspto_mit",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0 AND CC0-1.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 479035,
+      "files": [
+        {
+          "path": "tables/main/canonical/synthesis/uspto_mit/data.csv.gz",
+          "bytes": 57264696,
+          "sha256": "74dffc5bb8e5fdfb41c11676deb5fedb9bb63d28325bdfc719ea68d8b8d9f33b"
+        }
+      ],
+      "source_file": {
+        "path": "Data/synthesis/uspto_mit.csv.gz",
+        "format": "csv.gz",
+        "sha256": "74dffc5bb8e5fdfb41c11676deb5fedb9bb63d28325bdfc719ea68d8b8d9f33b"
+      },
+      "task_ids": [
+        "forward_prediction",
+        "reaction_center",
+        "retrosynthesis"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "yield/buchwald_hartwig_ood",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 27438,
+      "files": [
+        {
+          "path": "tables/main/canonical/yield/buchwald_hartwig_ood/data.csv.gz",
+          "bytes": 3109259,
+          "sha256": "1cae5ff9010813e242f6de2dc6bd3e33342f759be79c5d88ac4f3f46dc4ec409"
+        }
+      ],
+      "source_file": {
+        "path": "Data/yield/buchwald_hartwig_ood.csv.gz",
+        "format": "csv.gz",
+        "sha256": "1cae5ff9010813e242f6de2dc6bd3e33342f759be79c5d88ac4f3f46dc4ec409"
+      },
+      "task_ids": [
+        "condition_ranking",
+        "reaction_success",
+        "yield_conversion"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "yield/hitea",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.gz",
+      "rows": 39546,
+      "files": [
+        {
+          "path": "tables/main/canonical/yield/hitea/data.csv.gz",
+          "bytes": 2929498,
+          "sha256": "f0e0d0db9f37643bcebb5c9b6a29a9a6a950f7e92c05fc4541a07d9ca3d1d0e9"
+        }
+      ],
+      "source_file": {
+        "path": "Data/yield/hitea.csv.gz",
+        "format": "csv.gz",
+        "sha256": "f0e0d0db9f37643bcebb5c9b6a29a9a6a950f7e92c05fc4541a07d9ca3d1d0e9"
+      },
+      "task_ids": [
+        "condition_ranking",
+        "yield_conversion"
+      ]
+    },
+    {
+      "namespace": "canonical",
+      "key": "yield/uspto_yield",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv.zst",
+      "rows": 526468,
+      "files": [
+        {
+          "path": "tables-zstd/uspto_yield.csv.zst",
+          "bytes": 98889937,
+          "sha256": "a6bf3adddd12752d3c5af3aa730a6a636ac6c68c6526a2bacbf3825591ef924f"
+        }
+      ],
+      "source_file": {
+        "path": "Data/yield/uspto_yield.csv.gz",
+        "format": "csv.gz",
+        "sha256": "a95706078ebba47315a91f853f27a3a3494e344b8ce782d53df0a5e5d5aa6f5b"
+      },
+      "task_ids": [
+        "yield_conversion"
+      ]
+    },
+    {
+      "namespace": "coverage",
+      "key": "bio/brenda_record_kcat",
+      "partition": "main",
+      "license_expression": "MIT AND CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 11775,
+      "files": [
+        {
+          "path": "tables/main/coverage/bio/brenda_record_kcat/data.parquet",
+          "bytes": 5575834,
+          "sha256": "83583d5eee84fc0c0469375743c2c6088c6f0e01ce8531e21c684a042be4d33f"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/bio/brenda_record_kcat.parquet",
+        "format": "parquet",
+        "sha256": "83583d5eee84fc0c0469375743c2c6088c6f0e01ce8531e21c684a042be4d33f"
+      },
+      "task_ids": [
+        "enzyme_kinetic_parameters"
+      ],
+      "source_url": "https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/kcat-random_trainvaltest.csv",
+      "counting_unit": "source-derived qualified task row"
+    },
+    {
+      "namespace": "coverage",
+      "key": "bio/brenda_record_ki",
+      "partition": "main",
+      "license_expression": "MIT AND CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 5517,
+      "files": [
+        {
+          "path": "tables/main/coverage/bio/brenda_record_ki/data.parquet",
+          "bytes": 1526619,
+          "sha256": "6c0d260b601df0ac8bca895a759ed0c8dc8b9eac5048deffe34c9071186ef704"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/bio/brenda_record_ki.parquet",
+        "format": "parquet",
+        "sha256": "6c0d260b601df0ac8bca895a759ed0c8dc8b9eac5048deffe34c9071186ef704"
+      },
+      "task_ids": [
+        "enzyme_kinetic_parameters"
+      ],
+      "source_url": "https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/ki-random_trainvaltest.csv",
+      "counting_unit": "source-derived qualified task row"
+    },
+    {
+      "namespace": "coverage",
+      "key": "bio/brenda_record_km",
+      "partition": "main",
+      "license_expression": "MIT AND CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 19676,
+      "files": [
+        {
+          "path": "tables/main/coverage/bio/brenda_record_km/data.parquet",
+          "bytes": 9800390,
+          "sha256": "254de537b9178e0dde95a650bfe7775767a18c864fbd5973af938751ee8f8af5"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/bio/brenda_record_km.parquet",
+        "format": "parquet",
+        "sha256": "254de537b9178e0dde95a650bfe7775767a18c864fbd5973af938751ee8f8af5"
+      },
+      "task_ids": [
+        "enzyme_kinetic_parameters"
+      ],
+      "source_url": "https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/km-random_trainvaltest.csv",
+      "counting_unit": "source-derived qualified task row"
+    },
+    {
+      "namespace": "coverage",
+      "key": "bio/enzeng_inverse_biocatalyst_design",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 488,
+      "files": [
+        {
+          "path": "tables/main/coverage/bio/enzeng_inverse_biocatalyst_design/data.parquet",
+          "bytes": 47071,
+          "sha256": "b7c1872fbd663be05ba2c887894ed1afaf0a993e596aae2a3c1a151573dd74ad"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/bio/enzeng_inverse_biocatalyst_design.parquet",
+        "format": "parquet",
+        "sha256": "b7c1872fbd663be05ba2c887894ed1afaf0a993e596aae2a3c1a151573dd74ad"
+      },
+      "task_ids": [
+        "reaction_component_design"
+      ],
+      "source_url": "https://zenodo.org/api/records/17310823/files/Data.zip/content",
+      "counting_unit": "source-derived qualified task row"
+    },
+    {
+      "namespace": "coverage",
+      "key": "bio/enzeng_mutation_effects",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 409877,
+      "files": [
+        {
+          "path": "tables/main/coverage/bio/enzeng_mutation_effects/data.parquet",
+          "bytes": 10214801,
+          "sha256": "607b451c674aabbc80e1f35aa8d6ded8c16e9881a7e3edac6892d929ab21e52c"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/bio/enzeng_mutation_effects.parquet",
+        "format": "parquet",
+        "sha256": "607b451c674aabbc80e1f35aa8d6ded8c16e9881a7e3edac6892d929ab21e52c"
+      },
+      "task_ids": [
+        "mutation_effects"
+      ],
+      "source_url": "https://zenodo.org/api/records/17310823/files/Data.zip/content",
+      "counting_unit": "source-derived qualified task row"
+    },
+    {
+      "namespace": "coverage",
+      "key": "bio/mcsa_reference_active_sites",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 969,
+      "files": [
+        {
+          "path": "tables/main/coverage/bio/mcsa_reference_active_sites/data.parquet",
+          "bytes": 563126,
+          "sha256": "c9ee5321b3a876f5b8f755d4e15ac50ab5aaf6004889adbddde00a54d3892511"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/bio/mcsa_reference_active_sites.parquet",
+        "format": "parquet",
+        "sha256": "c9ee5321b3a876f5b8f755d4e15ac50ab5aaf6004889adbddde00a54d3892511"
+      },
+      "task_ids": [
+        "active_sites"
+      ],
+      "source_url": "https://www.ebi.ac.uk/thornton-srv/m-csa/api/entries/?format=json",
+      "counting_unit": "source-derived qualified task row"
+    },
+    {
+      "namespace": "coverage",
+      "key": "bio/reactzyme_retrieval",
+      "partition": "main",
+      "license_expression": "MIT AND CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 178463,
+      "files": [
+        {
+          "path": "tables/main/coverage/bio/reactzyme_retrieval/data.parquet",
+          "bytes": 47891936,
+          "sha256": "14ed9679a1974a95c2b02098a08bcabe3c38c3834ef5ab2bd30634e61f48ba8d"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/bio/reactzyme_retrieval.parquet",
+        "format": "parquet",
+        "sha256": "14ed9679a1974a95c2b02098a08bcabe3c38c3834ef5ab2bd30634e61f48ba8d"
+      },
+      "task_ids": [
+        "enzyme_retrieval"
+      ],
+      "source_url": "https://zenodo.org/api/records/13635807/files/enzyme_smi_split.zip/content",
+      "counting_unit": "source-derived qualified task row"
+    },
+    {
+      "namespace": "coverage",
+      "key": "impurity/pba_benzaldehyde_side_product",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "jsonl.gz",
+      "rows": 756,
+      "files": [
+        {
+          "path": "tables/main/coverage/impurity/pba_benzaldehyde_side_product/data.jsonl.gz",
+          "bytes": 18123,
+          "sha256": "b73a356906112988e8d1782f298d52ae73e45dd63054224ee84d0be30815ae35"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/impurity/pba_benzaldehyde_side_product.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "b73a356906112988e8d1782f298d52ae73e45dd63054224ee84d0be30815ae35"
+      },
+      "task_ids": [
+        "impurity_prediction"
+      ],
+      "source_url": "https://doi.org/10.1038/s41586-025-09490-1",
+      "counting_unit": "experimental reaction condition"
+    },
+    {
+      "namespace": "coverage",
+      "key": "impurity/solid_state_reported_impurity_phases",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "jsonl.gz",
+      "rows": 7261,
+      "files": [
+        {
+          "path": "tables/main/coverage/impurity/solid_state_reported_impurity_phases/data.jsonl.gz",
+          "bytes": 851020,
+          "sha256": "8e0de53371c07b2197e827cd4e43f6020179e8d502371348d7173aaefcbdf510"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/impurity/solid_state_reported_impurity_phases.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "8e0de53371c07b2197e827cd4e43f6020179e8d502371348d7173aaefcbdf510"
+      },
+      "task_ids": [
+        "impurity_prediction"
+      ],
+      "source_url": "https://doi.org/10.1038/s41597-025-06222-y",
+      "counting_unit": "literature-extracted synthesis recipe with explicit impurity phase identity"
+    },
+    {
+      "namespace": "coverage",
+      "key": "knowledge/CatDRX_ORD2025/inverse_components",
+      "partition": "sharealike",
+      "license_expression": "CC-BY-SA-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Comply with the applicable ShareAlike requirements for adapted material."
+      ],
+      "format": "parquet",
+      "rows": 49876,
+      "files": [
+        {
+          "path": "tables/sharealike/coverage/knowledge/CatDRX_ORD2025/inverse_components/data.parquet",
+          "bytes": 5599673,
+          "sha256": "430f23c5527312d8cdf84a036f5d60d49f20010db9f96be658d12dbc2bd887a7"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/knowledge/inverse_components.parquet",
+        "format": "parquet",
+        "sha256": "430f23c5527312d8cdf84a036f5d60d49f20010db9f96be658d12dbc2bd887a7"
+      },
+      "task_ids": [
+        "reaction_component_design"
+      ],
+      "source_url": "https://github.com/ohuelab/CatDRX/tree/f8952497761b0bf44cde4b48f8df3a8d40098f91",
+      "counting_unit": "recorded component-performance reference"
+    },
+    {
+      "namespace": "coverage",
+      "key": "knowledge/EnzChemRED2024/curation",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 2267,
+      "files": [
+        {
+          "path": "tables/main/coverage/knowledge/EnzChemRED2024/curation/data.parquet",
+          "bytes": 2124518,
+          "sha256": "55373a6d80a8e2c76f2472100936ce6209c463df76571c34e905be67a3fe5506"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/knowledge/curation.parquet",
+        "format": "parquet",
+        "sha256": "55373a6d80a8e2c76f2472100936ce6209c463df76571c34e905be67a3fe5506"
+      },
+      "task_ids": [
+        "reaction_record_curation"
+      ],
+      "source_url": "https://doi.org/10.5281/zenodo.11067998",
+      "counting_unit": "controlled record-curation case"
+    },
+    {
+      "namespace": "coverage",
+      "key": "knowledge/EnzChemRED2024/documents",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 1210,
+      "files": [
+        {
+          "path": "tables/main/coverage/knowledge/EnzChemRED2024/documents/data.parquet",
+          "bytes": 1343931,
+          "sha256": "1aeb1adbe4b50434acf2dcc0756894f4b22be0a9757d5a59b0d9692243a1b9d4"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/knowledge/documents.parquet",
+        "format": "parquet",
+        "sha256": "1aeb1adbe4b50434acf2dcc0756894f4b22be0a9757d5a59b0d9692243a1b9d4"
+      },
+      "task_ids": [
+        "literature_extraction"
+      ],
+      "source_url": "https://doi.org/10.5281/zenodo.11067998",
+      "counting_unit": "expert-annotated source document"
+    },
+    {
+      "namespace": "coverage",
+      "key": "knowledge/EnzChemRED2024/retrieval",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 2419,
+      "files": [
+        {
+          "path": "tables/main/coverage/knowledge/EnzChemRED2024/retrieval/data.parquet",
+          "bytes": 222082,
+          "sha256": "92a65a8155800d2ab88eef695530051a81a2b82fa55f1bea790b8db0304fa6a5"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/knowledge/retrieval.parquet",
+        "format": "parquet",
+        "sha256": "92a65a8155800d2ab88eef695530051a81a2b82fa55f1bea790b8db0304fa6a5"
+      },
+      "task_ids": [
+        "reaction_retrieval"
+      ],
+      "source_url": "https://doi.org/10.5281/zenodo.11067998",
+      "counting_unit": "annotated chemical-conversion precedent query"
+    },
+    {
+      "namespace": "coverage",
+      "key": "knowledge/MinotScope2026/scope_campaigns",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 6865,
+      "files": [
+        {
+          "path": "tables/main/coverage/knowledge/MinotScope2026/scope_campaigns/data.parquet",
+          "bytes": 381078,
+          "sha256": "a7b517e03bc29b8bc789d86d3d7ca72318014938ba9e3637d7de2b7b9e6486ac"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/knowledge/scope_campaigns.parquet",
+        "format": "parquet",
+        "sha256": "a7b517e03bc29b8bc789d86d3d7ca72318014938ba9e3637d7de2b7b9e6486ac"
+      },
+      "task_ids": [
+        "new_reactivity_discovery"
+      ],
+      "source_url": "https://doi.org/10.5281/zenodo.20773622",
+      "counting_unit": "attempted substrate-scope experiment"
+    },
+    {
+      "namespace": "coverage",
+      "key": "mechanisms/mcsa_continuous_chains",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 934,
+      "files": [
+        {
+          "path": "tables/main/coverage/mechanisms/mcsa_continuous_chains/data.parquet",
+          "bytes": 4438954,
+          "sha256": "633eb4d7a20fe81ce8a98c05e4e476a4569490878117c069a4bd2fe8393e75c2"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/mechanisms/mcsa_continuous_chains.parquet",
+        "format": "parquet",
+        "sha256": "633eb4d7a20fe81ce8a98c05e4e476a4569490878117c069a4bd2fe8393e75c2"
+      },
+      "task_ids": [
+        "mechanistic_prediction"
+      ],
+      "source_url": "https://www.ebi.ac.uk/thornton-srv/m-csa/",
+      "counting_unit": "continuous complete or partial native mechanism chain"
+    },
+    {
+      "namespace": "coverage",
+      "key": "mechanisms/mcsa_elementary_steps",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 2393,
+      "files": [
+        {
+          "path": "tables/main/coverage/mechanisms/mcsa_elementary_steps/data.parquet",
+          "bytes": 4614891,
+          "sha256": "f8f9b70c4db8015325f4420306b6a586f76d19dc8a6772a6f356d5f5cd0c5826"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/mechanisms/mcsa_elementary_steps.parquet",
+        "format": "parquet",
+        "sha256": "f8f9b70c4db8015325f4420306b6a586f76d19dc8a6772a6f356d5f5cd0c5826"
+      },
+      "task_ids": [
+        "mechanistic_prediction"
+      ],
+      "source_url": "https://www.ebi.ac.uk/thornton-srv/m-csa/",
+      "counting_unit": "accepted native drawing transition"
+    },
+    {
+      "namespace": "coverage",
+      "key": "mechanisms/mcsa_full_mechanisms",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 479,
+      "files": [
+        {
+          "path": "tables/main/coverage/mechanisms/mcsa_full_mechanisms/data.parquet",
+          "bytes": 2668048,
+          "sha256": "dfdb96211e35ea5ce6660f875173e2827f34a8961e5f10db146b52fbfc32acd3"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/mechanisms/mcsa_full_mechanisms.parquet",
+        "format": "parquet",
+        "sha256": "dfdb96211e35ea5ce6660f875173e2827f34a8961e5f10db146b52fbfc32acd3"
+      },
+      "task_ids": [
+        "mechanistic_prediction"
+      ],
+      "source_url": "https://www.ebi.ac.uk/thornton-srv/m-csa/",
+      "counting_unit": "complete mechanism proposal"
+    },
+    {
+      "namespace": "coverage",
+      "key": "mechanisms/mcsa_observed_mechanisms",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 278,
+      "files": [
+        {
+          "path": "tables/main/coverage/mechanisms/mcsa_observed_mechanisms/data.parquet",
+          "bytes": 1332781,
+          "sha256": "76b81eb7054d6df673178e9bc11779d609d52da66f0fefac85936998534cde9f"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/mechanisms/mcsa_observed_mechanisms.parquet",
+        "format": "parquet",
+        "sha256": "76b81eb7054d6df673178e9bc11779d609d52da66f0fefac85936998534cde9f"
+      },
+      "task_ids": [
+        "mechanistic_prediction"
+      ],
+      "source_url": "https://www.ebi.ac.uk/thornton-srv/m-csa/",
+      "counting_unit": "complete mechanism proposal with native initial participants"
+    },
+    {
+      "namespace": "coverage",
+      "key": "physics/chemsindy_reference_trajectories",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv",
+      "rows": 14,
+      "files": [
+        {
+          "path": "tables/main/coverage/physics/chemsindy_reference_trajectories/data.csv",
+          "bytes": 82769,
+          "sha256": "322bf8b9d3792d0a75ec1c1775cfff76cb1c9532f1fcb8644aa1f0eb4da7db52"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/physics/chemsindy_reference_trajectories.csv",
+        "format": "csv",
+        "sha256": "322bf8b9d3792d0a75ec1c1775cfff76cb1c9532f1fcb8644aa1f0eb4da7db52"
+      },
+      "task_ids": [
+        "kinetic_parameter_inference",
+        "reaction_network_modeling"
+      ],
+      "source_url": "https://github.com/nla-group/ChemSINDy/tree/9aa3f8adb997348bd1e85c1b61fa8a835a91c759",
+      "counting_unit": "complete derived simulated trajectory with known native-example parameters"
+    },
+    {
+      "namespace": "coverage",
+      "key": "physics/orgreact_ts_geometry",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv",
+      "rows": 9649,
+      "files": [
+        {
+          "path": "tables/main/coverage/physics/orgreact_ts_geometry/data.csv",
+          "bytes": 16026823,
+          "sha256": "154424ff6277b1e8f199022a67758ff438083cedd02974ab690b2f7b89938059"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/physics/orgreact_ts_geometry.csv",
+        "format": "csv",
+        "sha256": "154424ff6277b1e8f199022a67758ff438083cedd02974ab690b2f7b89938059"
+      },
+      "task_ids": [
+        "ts_geometry"
+      ],
+      "source_url": "https://doi.org/10.6084/m9.figshare.31668682.v3",
+      "counting_unit": "reaction endpoint/transition-state triplet"
+    },
+    {
+      "namespace": "coverage",
+      "key": "physics/transition1x_final_ts_geometry",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv",
+      "rows": 10073,
+      "files": [
+        {
+          "path": "tables/main/coverage/physics/transition1x_final_ts_geometry/data.csv",
+          "bytes": 28191292,
+          "sha256": "6c7512bb38663731d30e49bb9037d5b73ded283c1ffa8301b3d21ab5d437db82"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/physics/transition1x_final_ts_geometry.csv",
+        "format": "csv",
+        "sha256": "6c7512bb38663731d30e49bb9037d5b73ded283c1ffa8301b3d21ab5d437db82"
+      },
+      "task_ids": [
+        "ts_geometry"
+      ],
+      "source_url": "https://doi.org/10.6084/m9.figshare.19614657.v4",
+      "counting_unit": "native reaction endpoint/transition-state triplet"
+    },
+    {
+      "namespace": "coverage",
+      "key": "physics/transition1x_reactive_trajectories",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv",
+      "rows": 10073,
+      "files": [
+        {
+          "path": "tables/main/coverage/physics/transition1x_reactive_trajectories/data.csv",
+          "bytes": 3729627,
+          "sha256": "b809b5dc199bfd49624995119b8a65b1d598d3ede438f4cee1f16b504ea461f9"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/physics/transition1x_reactive_trajectories.csv",
+        "format": "csv",
+        "sha256": "b809b5dc199bfd49624995119b8a65b1d598d3ede438f4cee1f16b504ea461f9"
+      },
+      "task_ids": [
+        "reactive_potential"
+      ],
+      "source_url": "https://doi.org/10.6084/m9.figshare.19614657.v4",
+      "counting_unit": "complete native reaction trajectory; configuration_count gives individual atomic configurations"
+    },
+    {
+      "namespace": "coverage",
+      "key": "physics_rates/quantumpioneer_hAT_kinetics",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv",
+      "rows": 166158,
+      "files": [
+        {
+          "path": "tables/main/coverage/physics_rates/quantumpioneer_hAT_kinetics/data.csv",
+          "bytes": 86670797,
+          "sha256": "e81aa5f9158564e64356a524c046469e2a13e471469ff641713ded3c37ff1520"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/physics_rates/quantumpioneer_kinetics.csv",
+        "format": "csv",
+        "sha256": "e81aa5f9158564e64356a524c046469e2a13e471469ff641713ded3c37ff1520"
+      },
+      "task_ids": [
+        "activation_barrier",
+        "reaction_energetics",
+        "reaction_rates"
+      ],
+      "source_url": "https://doi.org/10.5281/zenodo.20060606",
+      "counting_unit": "native computed HAT reaction with k298 and thermo-kinetic references"
+    },
+    {
+      "namespace": "coverage",
+      "key": "process/cstr_control_transitions",
+      "partition": "lgpl",
+      "license_expression": "LGPL-3.0-or-later",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it."
+      ],
+      "format": "jsonl.gz",
+      "rows": 600,
+      "files": [
+        {
+          "path": "tables/lgpl/coverage/process/cstr_control_transitions/data.jsonl.gz",
+          "bytes": 53876,
+          "sha256": "f027ddcfd313234ca9fb3b448d2767f7f190807732f441fc6e522b86fe3b511a"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/process/cstr_control_transitions.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "f027ddcfd313234ca9fb3b448d2767f7f190807732f441fc6e522b86fe3b511a"
+      },
+      "task_ids": [
+        "process_control"
+      ],
+      "source_url": "https://github.com/do-mpc/do-mpc/tree/9d5a8df0e4d6acac899bf0a65ffd4c30a6e2e4cc/examples/CSTR",
+      "counting_unit": "reference record; task views can overlap native experiments"
+    },
+    {
+      "namespace": "coverage",
+      "key": "process/fcc_lab_source_full",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "jsonl.gz",
+      "rows": 10000,
+      "files": [
+        {
+          "path": "tables/main/coverage/process/fcc_lab_source_full/data.jsonl.gz",
+          "bytes": 11269943,
+          "sha256": "7dee3a628dd58bb80250ef6752a290063edc2097788fcd879cbd2ff3ecd58a38"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/process/fcc_lab_source_full.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "7dee3a628dd58bb80250ef6752a290063edc2097788fcd879cbd2ff3ecd58a38"
+      },
+      "task_ids": [
+        "reactor_scale_modeling"
+      ],
+      "source_url": "https://doi.org/10.1038/s41467-025-63982-2",
+      "counting_unit": "reference record; task views can overlap native experiments"
+    },
+    {
+      "namespace": "coverage",
+      "key": "process/fcc_pilot_test",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "jsonl.gz",
+      "rows": 15,
+      "files": [
+        {
+          "path": "tables/main/coverage/process/fcc_pilot_test/data.jsonl.gz",
+          "bytes": 1294,
+          "sha256": "764e6e23504c46e4c1c4ba93eaa09f50767006827c7a8ed6cfa8ee60c6a0049c"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/process/fcc_pilot_test.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "764e6e23504c46e4c1c4ba93eaa09f50767006827c7a8ed6cfa8ee60c6a0049c"
+      },
+      "task_ids": [
+        "process_impact_assessment",
+        "reactor_scale_modeling"
+      ],
+      "source_url": "https://doi.org/10.1038/s41467-025-63982-2",
+      "counting_unit": "reference record; task views can overlap native experiments"
+    },
+    {
+      "namespace": "coverage",
+      "key": "process/fcc_pilot_train",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "jsonl.gz",
+      "rows": 48,
+      "files": [
+        {
+          "path": "tables/main/coverage/process/fcc_pilot_train/data.jsonl.gz",
+          "bytes": 5667,
+          "sha256": "9e753460982c68355cf602c92f9ecb5a3464ee0ac9dc987eb3860a7fc35fbd47"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/process/fcc_pilot_train.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "9e753460982c68355cf602c92f9ecb5a3464ee0ac9dc987eb3860a7fc35fbd47"
+      },
+      "task_ids": [
+        "process_impact_assessment",
+        "reactor_scale_modeling"
+      ],
+      "source_url": "https://doi.org/10.1038/s41467-025-63982-2",
+      "counting_unit": "reference record; task views can overlap native experiments"
+    },
+    {
+      "namespace": "coverage",
+      "key": "process/fcc_pilot_validation",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "jsonl.gz",
+      "rows": 12,
+      "files": [
+        {
+          "path": "tables/main/coverage/process/fcc_pilot_validation/data.jsonl.gz",
+          "bytes": 1910,
+          "sha256": "dc9257e64b3ce06c3c219db87d21f27cde21768f6e5a02784988fab0cc8c1c6c"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/process/fcc_pilot_validation.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "dc9257e64b3ce06c3c219db87d21f27cde21768f6e5a02784988fab0cc8c1c6c"
+      },
+      "task_ids": [
+        "process_impact_assessment",
+        "reactor_scale_modeling"
+      ],
+      "source_url": "https://doi.org/10.1038/s41467-025-63982-2",
+      "counting_unit": "reference record; task views can overlap native experiments"
+    },
+    {
+      "namespace": "coverage",
+      "key": "process/lowfield_nmr_yield_progress",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "jsonl.gz",
+      "rows": 236,
+      "files": [
+        {
+          "path": "tables/main/coverage/process/lowfield_nmr_yield_progress/data.jsonl.gz",
+          "bytes": 3428,
+          "sha256": "ed0bb5e7f6d10dff29786a927e5c64fe5f9ddc10370a1a03a072927c81ba8fa1"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/process/lowfield_nmr_yield_progress.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "ed0bb5e7f6d10dff29786a927e5c64fe5f9ddc10370a1a03a072927c81ba8fa1"
+      },
+      "task_ids": [
+        "reaction_progress_monitoring"
+      ],
+      "source_url": "https://doi.org/10.26434/chemrxiv.15005188/v1",
+      "counting_unit": "reference record; task views can overlap native experiments"
+    },
+    {
+      "namespace": "coverage",
+      "key": "process/nmr_pmg_284_progress",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "jsonl.gz",
+      "rows": 998,
+      "files": [
+        {
+          "path": "tables/main/coverage/process/nmr_pmg_284_progress/data.jsonl.gz",
+          "bytes": 46649,
+          "sha256": "f36765c40bdeb20a2d14e80c98cacae4b74b66f9b10c3e05f5e22ca3306c8a56"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/process/nmr_pmg_284_progress.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "f36765c40bdeb20a2d14e80c98cacae4b74b66f9b10c3e05f5e22ca3306c8a56"
+      },
+      "task_ids": [
+        "reaction_progress_monitoring"
+      ],
+      "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+      "counting_unit": "reference record; task views can overlap native experiments"
+    },
+    {
+      "namespace": "coverage",
+      "key": "process/nmr_pmg_284_snapshots",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "jsonl.gz",
+      "rows": 999,
+      "files": [
+        {
+          "path": "tables/main/coverage/process/nmr_pmg_284_snapshots/data.jsonl.gz",
+          "bytes": 73639,
+          "sha256": "e46212c9a1e38d19ca26a234ca2c01b81e5d0ddca06f4a2cbf6a7f5e6f49e4c6"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/process/nmr_pmg_284_snapshots.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "e46212c9a1e38d19ca26a234ca2c01b81e5d0ddca06f4a2cbf6a7f5e6f49e4c6"
+      },
+      "task_ids": [
+        "analytical_interpretation"
+      ],
+      "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+      "counting_unit": "reference record; task views can overlap native experiments"
+    },
+    {
+      "namespace": "coverage",
+      "key": "process/nmr_pmg_287_progress",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "jsonl.gz",
+      "rows": 999,
+      "files": [
+        {
+          "path": "tables/main/coverage/process/nmr_pmg_287_progress/data.jsonl.gz",
+          "bytes": 48502,
+          "sha256": "dd6da290d3921bd80bb2d3a38ddf579ab070a3814ea8d049646acbf851d21850"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/process/nmr_pmg_287_progress.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "dd6da290d3921bd80bb2d3a38ddf579ab070a3814ea8d049646acbf851d21850"
+      },
+      "task_ids": [
+        "reaction_progress_monitoring"
+      ],
+      "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+      "counting_unit": "reference record; task views can overlap native experiments"
+    },
+    {
+      "namespace": "coverage",
+      "key": "process/nmr_pmg_287_snapshots",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "jsonl.gz",
+      "rows": 1000,
+      "files": [
+        {
+          "path": "tables/main/coverage/process/nmr_pmg_287_snapshots/data.jsonl.gz",
+          "bytes": 77442,
+          "sha256": "9f7c39f16588728a5592f5dc7ed7ad49e339d283ba7cb6c9238f77d3c6f1909b"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/process/nmr_pmg_287_snapshots.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "9f7c39f16588728a5592f5dc7ed7ad49e339d283ba7cb6c9238f77d3c6f1909b"
+      },
+      "task_ids": [
+        "analytical_interpretation"
+      ],
+      "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+      "counting_unit": "reference record; task views can overlap native experiments"
+    },
+    {
+      "namespace": "coverage",
+      "key": "process/nmr_saccharose_hydrolysis_progress",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "jsonl.gz",
+      "rows": 1022,
+      "files": [
+        {
+          "path": "tables/main/coverage/process/nmr_saccharose_hydrolysis_progress/data.jsonl.gz",
+          "bytes": 62164,
+          "sha256": "631acde06a722bb3b01418ab35594af0dc4614de6d893b7890ed9b73d0d84477"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/process/nmr_saccharose_hydrolysis_progress.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "631acde06a722bb3b01418ab35594af0dc4614de6d893b7890ed9b73d0d84477"
+      },
+      "task_ids": [
+        "reaction_progress_monitoring"
+      ],
+      "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+      "counting_unit": "reference record; task views can overlap native experiments"
+    },
+    {
+      "namespace": "coverage",
+      "key": "process/nmr_saccharose_hydrolysis_snapshots",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "jsonl.gz",
+      "rows": 1023,
+      "files": [
+        {
+          "path": "tables/main/coverage/process/nmr_saccharose_hydrolysis_snapshots/data.jsonl.gz",
+          "bytes": 103536,
+          "sha256": "18f370c5b06f1203a934ad6845e175109da47670968cfc1519aa1aaecbc2ddda"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/process/nmr_saccharose_hydrolysis_snapshots.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "18f370c5b06f1203a934ad6845e175109da47670968cfc1519aa1aaecbc2ddda"
+      },
+      "task_ids": [
+        "analytical_interpretation"
+      ],
+      "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+      "counting_unit": "reference record; task views can overlap native experiments"
+    },
+    {
+      "namespace": "coverage",
+      "key": "process/reac_discovery_cs1",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "jsonl.gz",
+      "rows": 55,
+      "files": [
+        {
+          "path": "tables/main/coverage/process/reac_discovery_cs1/data.jsonl.gz",
+          "bytes": 2639,
+          "sha256": "c347354b19579663e6da260621491a9a714e01d7813fe5ae0f043c7e0c8cfadc"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/process/reac_discovery_cs1.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "c347354b19579663e6da260621491a9a714e01d7813fe5ae0f043c7e0c8cfadc"
+      },
+      "task_ids": [
+        "reactor_scale_modeling"
+      ],
+      "source_url": "https://doi.org/10.1038/s41467-025-64127-1",
+      "counting_unit": "reference record; task views can overlap native experiments"
+    },
+    {
+      "namespace": "coverage",
+      "key": "process/reac_discovery_cs2",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "jsonl.gz",
+      "rows": 58,
+      "files": [
+        {
+          "path": "tables/main/coverage/process/reac_discovery_cs2/data.jsonl.gz",
+          "bytes": 2441,
+          "sha256": "49764a1137e6e8622c635373da75f4f440eca08ebd86fef2457393f05747469d"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/process/reac_discovery_cs2.jsonl.gz",
+        "format": "jsonl.gz",
+        "sha256": "49764a1137e6e8622c635373da75f4f440eca08ebd86fef2457393f05747469d"
+      },
+      "task_ids": [
+        "reactor_scale_modeling"
+      ],
+      "source_url": "https://doi.org/10.1038/s41467-025-64127-1",
+      "counting_unit": "reference record; task views can overlap native experiments"
+    },
+    {
+      "namespace": "coverage",
+      "key": "solution_barriers/lipred_solution_activation_gibbs",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv",
+      "rows": 4514,
+      "files": [
+        {
+          "path": "tables/main/coverage/solution_barriers/lipred_solution_activation_gibbs/data.csv",
+          "bytes": 1704490,
+          "sha256": "d028ede06408041185f2d3a583ae203bbd965b61d64fb5e4357b2315947b0cf9"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/solution_barriers/lipred_solution_activation_gibbs.csv",
+        "format": "csv",
+        "sha256": "d028ede06408041185f2d3a583ae203bbd965b61d64fb5e4357b2315947b0cf9"
+      },
+      "task_ids": [
+        "activation_barrier"
+      ],
+      "source_url": "https://doi.org/10.5281/zenodo.16358189",
+      "counting_unit": "computed method-specific solution activation Gibbs reference"
+    },
+    {
+      "namespace": "coverage",
+      "key": "solution_context/cycloadd_solution_context",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv",
+      "rows": 5269,
+      "files": [
+        {
+          "path": "tables/main/coverage/solution_context/cycloadd_solution_context/data.csv",
+          "bytes": 3337817,
+          "sha256": "7e140a55f4c94d0250a9b742b3dbaed1901d4d061b370f5cee145505cf1a4bba"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/solution_context/cycloadd_solution_context.csv",
+        "format": "csv",
+        "sha256": "7e140a55f4c94d0250a9b742b3dbaed1901d4d061b370f5cee145505cf1a4bba"
+      },
+      "task_ids": [
+        "activation_barrier",
+        "reaction_energetics"
+      ],
+      "source_url": "https://doi.org/10.6084/m9.figshare.21707888.v5",
+      "counting_unit": "existing canonical reaction-condition observation"
+    },
+    {
+      "namespace": "coverage",
+      "key": "solution_context/snar_solution_context",
+      "partition": "main",
+      "license_expression": "CC-BY-3.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "csv",
+      "rows": 503,
+      "files": [
+        {
+          "path": "tables/main/coverage/solution_context/snar_solution_context/data.csv",
+          "bytes": 228312,
+          "sha256": "00133eda15cf7f07ba3bd13f4b51c4fb95f2c44f915af104a21d9d608186777d"
+        }
+      ],
+      "source_file": {
+        "path": "Data/coverage_expansion/solution_context/snar_solution_context.csv",
+        "format": "csv",
+        "sha256": "00133eda15cf7f07ba3bd13f4b51c4fb95f2c44f915af104a21d9d608186777d"
+      },
+      "task_ids": [
+        "activation_barrier"
+      ],
+      "source_url": "https://doi.org/10.1039/D0SC04896H",
+      "counting_unit": "existing canonical reaction-condition observation"
+    },
+    {
+      "namespace": "expansion",
+      "key": "C02/minot_al1_data",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 2907,
+      "files": [
+        {
+          "path": "tables/main/expansion/C02/minot_al1_data/data.parquet",
+          "bytes": 105563,
+          "sha256": "1a4593001f6dbf52487f50ff6efcbfef6b52cd0488dc5f0b001de04117faf780"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/main/C02/minot_al1_data.parquet",
+        "format": "parquet",
+        "sha256": "1a4593001f6dbf52487f50ff6efcbfef6b52cd0488dc5f0b001de04117faf780"
+      },
+      "task_ids": [
+        "condition_ranking",
+        "reaction_success",
+        "sequential_optimization",
+        "yield_conversion"
+      ]
+    },
+    {
+      "namespace": "expansion",
+      "key": "C02/minot_al2_data",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 954,
+      "files": [
+        {
+          "path": "tables/main/expansion/C02/minot_al2_data/data.parquet",
+          "bytes": 41317,
+          "sha256": "8b26a87c9577d85d2e913a1a9c0d5096777e41ad765b0fc4b7f9bb80c0db751c"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/main/C02/minot_al2_data.parquet",
+        "format": "parquet",
+        "sha256": "8b26a87c9577d85d2e913a1a9c0d5096777e41ad765b0fc4b7f9bb80c0db751c"
+      },
+      "task_ids": [
+        "condition_ranking",
+        "reaction_success",
+        "sequential_optimization",
+        "yield_conversion"
+      ]
+    },
+    {
+      "namespace": "expansion",
+      "key": "C02/minot_al3_data",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 960,
+      "files": [
+        {
+          "path": "tables/main/expansion/C02/minot_al3_data/data.parquet",
+          "bytes": 42764,
+          "sha256": "08f73be1d8027531abfdda1f26007fee8f2411221de95fcf1093e957f7364715"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/main/C02/minot_al3_data.parquet",
+        "format": "parquet",
+        "sha256": "08f73be1d8027531abfdda1f26007fee8f2411221de95fcf1093e957f7364715"
+      },
+      "task_ids": [
+        "condition_ranking",
+        "reaction_success",
+        "sequential_optimization",
+        "yield_conversion"
+      ]
+    },
+    {
+      "namespace": "expansion",
+      "key": "C02/minot_preal_data",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 2044,
+      "files": [
+        {
+          "path": "tables/main/expansion/C02/minot_preal_data/data.parquet",
+          "bytes": 115911,
+          "sha256": "d46814951744663fc94cade06f30cd4e3f13e52bc5d13c5a0bcf43bf51793092"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/main/C02/minot_preal_data.parquet",
+        "format": "parquet",
+        "sha256": "d46814951744663fc94cade06f30cd4e3f13e52bc5d13c5a0bcf43bf51793092"
+      },
+      "task_ids": [
+        "condition_ranking",
+        "reaction_success",
+        "sequential_optimization",
+        "yield_conversion"
+      ]
+    },
+    {
+      "namespace": "expansion",
+      "key": "C02/regio",
+      "partition": "main",
+      "license_expression": "CC-BY-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 1030,
+      "files": [
+        {
+          "path": "tables/main/expansion/C02/regio/data.parquet",
+          "bytes": 62343,
+          "sha256": "2c672296e347ecef0af88921a10c8849e9fd8a2892538b79b82acf8ecb97e485"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/main/C02/regio.parquet",
+        "format": "parquet",
+        "sha256": "2c672296e347ecef0af88921a10c8849e9fd8a2892538b79b82acf8ecb97e485"
+      },
+      "task_ids": [
+        "regioselectivity"
+      ]
+    },
+    {
+      "namespace": "expansion",
+      "key": "C03/cn_screen",
+      "partition": "sharealike",
+      "license_expression": "CC-BY-SA-4.0",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes.",
+        "Comply with the applicable ShareAlike requirements for adapted material."
+      ],
+      "format": "parquet",
+      "rows": 50688,
+      "files": [
+        {
+          "path": "tables/sharealike/expansion/C03/cn_screen/data.parquet",
+          "bytes": 7165935,
+          "sha256": "534d2d7bc8cbed7f694694c0db65e9b34fd4cfe471878e0a37395767415bc5a0"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/sharealike/C03/cn_screen.parquet",
+        "format": "parquet",
+        "sha256": "534d2d7bc8cbed7f694694c0db65e9b34fd4cfe471878e0a37395767415bc5a0"
+      },
+      "task_ids": [
+        "condition_ranking",
+        "sequential_optimization",
+        "yield_conversion"
+      ]
+    },
+    {
+      "namespace": "expansion",
+      "key": "C06/catechol",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 1227,
+      "files": [
+        {
+          "path": "tables/main/expansion/C06/catechol/data.parquet",
+          "bytes": 114709,
+          "sha256": "579b186784c74a5164718c79d8abbf7fa13e26015bece574ab99164e1b50cec6"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/main/C06/catechol.parquet",
+        "format": "parquet",
+        "sha256": "579b186784c74a5164718c79d8abbf7fa13e26015bece574ab99164e1b50cec6"
+      },
+      "task_ids": [
+        "product_distribution",
+        "sequential_optimization"
+      ]
+    },
+    {
+      "namespace": "expansion",
+      "key": "C06/claisen",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 283,
+      "files": [
+        {
+          "path": "tables/main/expansion/C06/claisen/data.parquet",
+          "bytes": 21249,
+          "sha256": "6890901862e080d0c2f59b0bc2127ddfc638babf3eb23f7c07ca86490593c4af"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/main/C06/claisen.parquet",
+        "format": "parquet",
+        "sha256": "6890901862e080d0c2f59b0bc2127ddfc638babf3eb23f7c07ca86490593c4af"
+      },
+      "task_ids": [
+        "product_distribution",
+        "sequential_optimization"
+      ]
+    },
+    {
+      "namespace": "expansion",
+      "key": "C06/single_solvent",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 656,
+      "files": [
+        {
+          "path": "tables/main/expansion/C06/single_solvent/data.parquet",
+          "bytes": 57554,
+          "sha256": "9567764950291fd19115fc4fe05d44ef1975207b23c06c7a04b021b405455964"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/main/C06/single_solvent.parquet",
+        "format": "parquet",
+        "sha256": "9567764950291fd19115fc4fe05d44ef1975207b23c06c7a04b021b405455964"
+      },
+      "task_ids": [
+        "product_distribution",
+        "sequential_optimization"
+      ]
+    },
+    {
+      "namespace": "expansion",
+      "key": "C16/aldol_reaction_dataset",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 13360,
+      "files": [
+        {
+          "path": "tables/main/expansion/C16/aldol_reaction_dataset/data.parquet",
+          "bytes": 615549,
+          "sha256": "727fecc820664a12bcf5656784e246872f9cae9eedc14129487032c05d167848"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/main/C16/aldol_reaction_dataset.parquet",
+        "format": "parquet",
+        "sha256": "727fecc820664a12bcf5656784e246872f9cae9eedc14129487032c05d167848"
+      },
+      "task_ids": [
+        "enantioselectivity"
+      ]
+    },
+    {
+      "namespace": "expansion",
+      "key": "C16/michael_addition_dataset",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 9194,
+      "files": [
+        {
+          "path": "tables/main/expansion/C16/michael_addition_dataset/data.parquet",
+          "bytes": 448457,
+          "sha256": "3ebcd00fcf67e6fe004d94e1ea4e9a0c6a68e174001bbddfcfb99ef8a8ec035c"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/main/C16/michael_addition_dataset.parquet",
+        "format": "parquet",
+        "sha256": "3ebcd00fcf67e6fe004d94e1ea4e9a0c6a68e174001bbddfcfb99ef8a8ec035c"
+      },
+      "task_ids": [
+        "enantioselectivity"
+      ]
+    },
+    {
+      "namespace": "expansion",
+      "key": "C16/validation_in_house_acetone",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 24,
+      "files": [
+        {
+          "path": "tables/main/expansion/C16/validation_in_house_acetone/data.parquet",
+          "bytes": 9572,
+          "sha256": "a78c786545763bc1a4af9b67258c85c99a249c13022fa4e88c6aa9f360139e44"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/main/C16/validation_in_house_acetone.parquet",
+        "format": "parquet",
+        "sha256": "a78c786545763bc1a4af9b67258c85c99a249c13022fa4e88c6aa9f360139e44"
+      },
+      "task_ids": [
+        "enantioselectivity"
+      ]
+    },
+    {
+      "namespace": "expansion",
+      "key": "C16/validation_in_house_hydroxyacetone",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 17,
+      "files": [
+        {
+          "path": "tables/main/expansion/C16/validation_in_house_hydroxyacetone/data.parquet",
+          "bytes": 9693,
+          "sha256": "c5902553914c1d3718ccb551fba622475381e36ec6282c53e1e70b57dfb9cc4d"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/main/C16/validation_in_house_hydroxyacetone.parquet",
+        "format": "parquet",
+        "sha256": "c5902553914c1d3718ccb551fba622475381e36ec6282c53e1e70b57dfb9cc4d"
+      },
+      "task_ids": [
+        "enantioselectivity"
+      ]
+    },
+    {
+      "namespace": "expansion",
+      "key": "C16/validation_new_literature_aldol",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 81,
+      "files": [
+        {
+          "path": "tables/main/expansion/C16/validation_new_literature_aldol/data.parquet",
+          "bytes": 11926,
+          "sha256": "538b7824377d0a526ea8a6ff7d3837d26fbb22cda611bfa9f8fefb9ec8d2e87d"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/main/C16/validation_new_literature_aldol.parquet",
+        "format": "parquet",
+        "sha256": "538b7824377d0a526ea8a6ff7d3837d26fbb22cda611bfa9f8fefb9ec8d2e87d"
+      },
+      "task_ids": [
+        "enantioselectivity"
+      ]
+    },
+    {
+      "namespace": "expansion",
+      "key": "C16/validation_new_literature_michael",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 109,
+      "files": [
+        {
+          "path": "tables/main/expansion/C16/validation_new_literature_michael/data.parquet",
+          "bytes": 14679,
+          "sha256": "41639b6a17b7b092b38a0f1ef59c53256d2f40c7ed27357c189fec55a6d00441"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/main/C16/validation_new_literature_michael.parquet",
+        "format": "parquet",
+        "sha256": "41639b6a17b7b092b38a0f1ef59c53256d2f40c7ed27357c189fec55a6d00441"
+      },
+      "task_ids": [
+        "enantioselectivity"
+      ]
+    },
+    {
+      "namespace": "expansion",
+      "key": "C16/validation_virtual_chemist",
+      "partition": "main",
+      "license_expression": "MIT",
+      "commercial_use_allowed": true,
+      "license_obligations": [
+        "Retain source attribution, applicable license notices and descriptions of changes."
+      ],
+      "format": "parquet",
+      "rows": 39,
+      "files": [
+        {
+          "path": "tables/main/expansion/C16/validation_virtual_chemist/data.parquet",
+          "bytes": 10666,
+          "sha256": "30c9b286d0668cddbc0ee4203eafb0f8b83b269c6d5620433d8d6e880a0eb50c"
+        }
+      ],
+      "source_file": {
+        "path": "Data/expansion/main/C16/validation_virtual_chemist.parquet",
+        "format": "parquet",
+        "sha256": "30c9b286d0668cddbc0ee4203eafb0f8b83b269c6d5620433d8d6e880a0eb50c"
+      },
+      "task_ids": [
+        "enantioselectivity"
+      ]
+    }
+  ],
+  "notices": [
+    {
+      "path": "notices/Data/coverage_expansion/bio/ATTRIBUTION.txt",
+      "bytes": 2569,
+      "sha256": "f1a38dfecd70ccc4b4cccbd41e3602f62e0b6166c0e5639e466b5712a37d0727"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/impurity/ATTRIBUTION.txt",
+      "bytes": 3160,
+      "sha256": "6a14039ac525078cc0edbac01618f3b9e203943dd26793d33bda8c478ed757ab"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/knowledge/CatDRX_ORD2025-NOTICE.txt",
+      "bytes": 555,
+      "sha256": "91a03d91251bc3e1d22371a83b00a714f8bf164f0a9370da6f5feffd891fbc05"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/knowledge/EnzChemRED2024-NOTICE.txt",
+      "bytes": 373,
+      "sha256": "4bfa6f55c4ed250dbd0033f0827679b2a376db2dc7221dc56b7e30e7a3b16684"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/knowledge/MinotScope2026-NOTICE.txt",
+      "bytes": 358,
+      "sha256": "074013710326131b332978d175fdc2a88a77110ce67faf878b7ca13a24a9ea32"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/mechanisms/MCSA.NOTICE.txt",
+      "bytes": 1044,
+      "sha256": "a69aac2c0a05e53443a1c1a8fdcc97fd6a188e32bed8184f7a011fe62eb4d9ef"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/physics/notices/ChemSINDy2026.LICENSE",
+      "bytes": 1066,
+      "sha256": "81e3b6b345a00a81e369bfcb707fa33d3b7bf51244c33497e6460eb6e7c453ab"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/physics/notices/ChemSINDy2026.NOTICE.txt",
+      "bytes": 836,
+      "sha256": "afbd0bf0d421132fe6c7b8f1a97bfa9ac248930c9937c19b9b4f569241e8f12b"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/physics/notices/OrgReact2026.LICENSE.txt",
+      "bytes": 18657,
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/physics/notices/OrgReact2026.NOTICE.txt",
+      "bytes": 577,
+      "sha256": "3151aedc315cbee94185e9c3c665c1af67c8776c1b8a291bcfd63a98a1aff2e4"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/physics/notices/Transition1x2022.LICENSE.html",
+      "bytes": 193627,
+      "sha256": "28e816e5f47884062f1db40978ff63d060500d6cf53b90360cdd4ee8863c0535"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/physics/notices/Transition1x2022.NOTICE.txt",
+      "bytes": 549,
+      "sha256": "3a51ff2faa07d5c4c15975d098b8d4697a38124b5c0754bae78fe4482e31b063"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/physics_rates/QuantumPioneer2026.NOTICE.txt",
+      "bytes": 918,
+      "sha256": "0bef62a4914db23b9c18c2deb2cd99a3b652963f01e451cf4f37f9bcc14f6cb9"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/process/ATTRIBUTION.txt",
+      "bytes": 14117,
+      "sha256": "da1040fa2d40dd38cfec8c8e287192eeccd357630fe4a5e7e06a47cbcac17506"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/solution_barriers/LiPRED2026.NOTICE.txt",
+      "bytes": 802,
+      "sha256": "5a617949cbb32e679afa608c208f327f25b711ab9da90a5da93a56aa695d5644"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/solution_context/CycloaddSolution2023.NOTICE.txt",
+      "bytes": 543,
+      "sha256": "26c62fc97eb222057864263a416679faaa69cf075e20ec29c967ee63a1ccfba7"
+    },
+    {
+      "path": "notices/Data/coverage_expansion/solution_context/SNArSolution2021.NOTICE.txt",
+      "bytes": 564,
+      "sha256": "6cd70b1c5a85f8f9926bb473703153ec645ce5c8532eccb90d62117e562520f0"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/historical-curation-notice.txt",
+      "bytes": 17826,
+      "sha256": "60c358bbcced0bd9dc07df5a0e82f841698eb6c3129acf04faaa91c494ea8c9c"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/CURRENT-DATA-TERMS.txt",
+      "bytes": 88661,
+      "sha256": "aec64cc4c7e51c45d66e702e3377d4f94a931d5d078e06ba087a61e6d9f5f60b"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/PNAS-NC-Educational.txt",
+      "bytes": 1319,
+      "sha256": "226c2044b3dfa6272fa1f709506421b1fff55bd8f210b88b9b68dc9d258efcde"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/dd7aec928183-bh_repository_license.txt",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/c00bfeea118d-catechol_license.txt",
+      "bytes": 1073,
+      "sha256": "841488468d1a4aa4fc495eeceaeba3d92fb56779e7bae1578e8423fde808e045"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/65d17e6022d1-ehreact_license.txt",
+      "bytes": 1457,
+      "sha256": "e38c9bd72184818fd139130ba4e2b4210fbf3cf6729506a5c2b2092287e205e6"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/df40c8717bd9-hitea_license.txt",
+      "bytes": 1072,
+      "sha256": "a68d79994916b2bc7f2c898f1cb7890b0030e875402d509ebb5e402984e798d6"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/87aeddee597e-ord_data_license.txt",
+      "bytes": 20137,
+      "sha256": "5e436ff8ffbb77d8607220e9bce20c8915d860010feeb6c1ebef5a85688e9b39"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/9047f2b27b6b-ord_expansion_license.txt",
+      "bytes": 20137,
+      "sha256": "5e436ff8ffbb77d8607220e9bce20c8915d860010feeb6c1ebef5a85688e9b39"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/3938750a4a21-orgaicat_license.txt",
+      "bytes": 1077,
+      "sha256": "8014248fcb5ad6383a96a1c9dfc8be231c96e14b767e2f5efd90610ca2842446"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/9ef63bcd0af2-LICENSE",
+      "bytes": 1070,
+      "sha256": "a5cbcb1b657239a289f23e31c756301d195b46dd3ad60c79ac54b5b714f48c7b"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/a1e49525fcb6-LICENSE",
+      "bytes": 1111,
+      "sha256": "003c281d83ce8c3b187820fd22d048e42e22e2cf43c1e1af00c4bbc06d75e78c"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/94726b342369-rhea-terms.html",
+      "bytes": 9232,
+      "sha256": "dfbf6fec28cda9f260b5d08172acb7e313081ef678f5b8ea2205bf2fe4efac39"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/bb71de841346-LICENSE",
+      "bytes": 1078,
+      "sha256": "4cd19ee3f984c4cf21234b36d941f80fe7cbac61b4a104a558813cd3948857ce"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/c3abc3a3cef8-LICENSE",
+      "bytes": 1070,
+      "sha256": "261990e16fed521db9d2319035d1303f278fd7df36375f9742a3fb77f5c0e126"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/dd80cf46de5c-golden_native_license.txt",
+      "bytes": 26526,
+      "sha256": "20c17d8b8c48a600800dfd14f95d5cb9ff47066a9641ddeab48dc54aec96e331"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/3043054c08ca-localmapper_2024_license.txt",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/e7b0dccb5950-syntemp_native_license.txt",
+      "bytes": 1071,
+      "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/faba21aa7416-golden_native_license.txt",
+      "bytes": 26526,
+      "sha256": "20c17d8b8c48a600800dfd14f95d5cb9ff47066a9641ddeab48dc54aec96e331"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/2bb7b9f389ad-synrbl_pinned_license.txt",
+      "bytes": 1071,
+      "sha256": "aa1c87b8ab0374975ff70a6b665969975cab295a9533ea3cda2e71c103e2a5b2"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/2b3831647741-synrxn_product_notice.txt",
+      "bytes": 8007,
+      "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/c08a3e1cc37e-regiosqm_license.txt",
+      "bytes": 1069,
+      "sha256": "a32b3b4831fde7a00bb9b48616f1a6b644d1ae55cbe93764f2f20eded467430e"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/add7174d70fd-synrxn_product_notice.txt",
+      "bytes": 8007,
+      "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/071dc834bb8d-syntemp_license.txt",
+      "bytes": 1071,
+      "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46"
+    },
+    {
+      "path": "notices/kdd/coverage/publication_licenses/CC-BY-NC-4.0.txt",
+      "bytes": 19347,
+      "sha256": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0"
+    }
+  ]
+}
