@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "dataset_key": "condition/orderly_condition.csv.gz",
+  "source_url": "https://figshare.com/ndownloader/files/44413052",
+  "source_doi": "10.6084/m9.figshare.23298467.v4",
+  "source_commit_or_version": "4",
+  "source_file": "orderly_condition_train.parquet",
+  "source_file_id": 44413052,
+  "source_rows": 625697,
+  "source_bytes": 356912241,
+  "source_md5": "bbe9ab181ef8ff2bbe5bf31d4b2d6190",
+  "source_sha256": "ac77033d91faa606d6cbe53d520d718b39d90ad4d708e7fab131bf656c520a25",
+  "source_partition": "train",
+  "upstream_license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "required_attribution": [
+    "10.1021/acs.jcim.4c00292",
+    "10.6084/m9.figshare.23298467.v4"
+  ],
+  "redistribution_partition": "main",
+  "retrieved_at": "2026-08-21"
+}
