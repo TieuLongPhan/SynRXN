@@ -12,11 +12,11 @@
 
 SynRXN connects reaction datasets to evaluation tasks, split protocols, and source-specific reuse terms.
 
-The **1.5.0 data snapshot** covers **40 tasks across 12 families**. Its **102 source tables** contain **5,485,077 stored rows**.
+The **1.5.0 data release** covers **40 tasks across 12 families**. Its **102 source tables** contain **5,485,077 stored rows**.
 
-[![SynRXN workflow from reaction data sources and curation through the 1.5.0 snapshot to evaluation across 12 families](doc/figure/synrxn-workflow-1.5.0.png)](doc/figure/synrxn-workflow-1.5.0.png)
+[![SynRXN workflow from source records through data preparation to evaluation](doc/figure/synrxn-workflow-1.5.0.png)](doc/figure/synrxn-workflow-1.5.0.png)
 
-The snapshot has **95 primary tables** and seven companion views. The [evaluation atlas](doc/figure/evaluation-atlas-1.5.0.png) lists the tasks and their table counts. The [TikZ source](doc/figure/synrxn-workflow-1.5.0.tex) rebuilds the workflow figure.
+The [evaluation atlas](doc/figure/evaluation-atlas-1.5.0.png) counts **95 primary tables**. Seven companion views cover named subsets and related source formats. Rebuild the workflow figure from its [TikZ source](doc/figure/synrxn-workflow-1.5.0.tex).
 
 ## Get the 1.5.0 data
 
@@ -70,7 +70,7 @@ print(df.columns.tolist())
 ```
 
 Browse the interactive [Dataset Catalog](https://synrxn.readthedocs.io/en/latest/catalog.html)
-to compare task, split, target, provenance, and reaction previews. It opens with
+to compare tasks, splits, targets, source records, and reaction previews. It opens with
 the split-bearing `classification/schneider_b` benchmark as a concrete example.
 The same metadata is available in Python, including when working from a local
 checkout without a network request:
@@ -90,7 +90,7 @@ sample = local.load(
 )
 ```
 
-Use an exact commit for development snapshots you want to reproduce later:
+A commit hash selects a fixed development version.
 
 ```python
 from pathlib import Path

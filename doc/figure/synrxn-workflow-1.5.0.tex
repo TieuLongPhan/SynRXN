@@ -1,5 +1,5 @@
 % Compile with pdflatex synrxn-workflow-1.5.0.tex.
-% Family labels and counts describe the admitted SynRXN 1.5.0 data snapshot.
+% Family labels and task count follow the SynRXN 1.5.0 catalog.
 \documentclass[tikz,border=3pt]{standalone}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -23,10 +23,8 @@
 \tikzset{
   panel title/.style={font=\bfseries\fontsize{10.4}{12}\selectfont,
     text=white, align=center, inner sep=0pt},
-  step title/.style={font=\bfseries\fontsize{9.6}{11}\selectfont,
+  step title/.style={font=\bfseries\fontsize{10.1}{11.5}\selectfont,
     text=Ink, anchor=west, inner sep=0pt},
-  step detail/.style={font=\fontsize{8}{9.4}\selectfont, text=Muted,
-    anchor=west, inner sep=0pt},
   small text/.style={font=\fontsize{8.4}{10}\selectfont,
     text=Muted, inner sep=0pt, align=center},
   flow arrow/.style={-{Stealth[length=3.0mm,width=2.4mm]},
@@ -46,8 +44,8 @@
   \end{scope}%
 }
 
-% Top edge, step number, icon, heading, detail
-\newcommand{\curationstep}[5]{%
+% Top edge, step number, icon, heading
+\newcommand{\curationstep}[4]{%
   \begin{scope}[shift={(4.18,#1)}]
     \filldraw[fill=white,draw=BlueEdge,rounded corners=1.4mm]
       (0,0) rectangle (5.74,-1.18);
@@ -56,8 +54,7 @@
     \node[rounded corners=1.15mm,fill=BlueWash,text=Blue,
       font=\fontsize{11}{11}\selectfont,minimum width=6mm,minimum height=6mm]
       at (1.03,-0.59) {\faIcon{#3}};
-    \node[step title] at (1.52,-0.43) {#4};
-    \node[step detail] at (1.52,-0.80) {#5};
+    \node[step title] at (1.52,-0.59) {#4};
   \end{scope}%
 }
 
@@ -78,10 +75,10 @@
 \begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round]
   \fill[white] (0,0) rectangle (22.5,-10.2);
 
-  \workflowpanel{0.23}{-1.66}{3.20}{6.10}{Blue}{BlueWash}{Reaction data\\sources}
-  \workflowpanel{3.95}{-0.42}{6.20}{8.25}{Navy}{BlueWash}{Curation and preparation}
-  \workflowpanel{10.73}{-2.05}{3.14}{5.47}{Teal}{TealWash}{SynRXN 1.5.0}
-  \workflowpanel{14.46}{-0.42}{7.77}{8.25}{Teal}{TealWash}{Task-specific evaluation}
+  \workflowpanel{0.23}{-1.66}{3.20}{5.68}{Blue}{BlueWash}{Reaction data\\sources}
+  \workflowpanel{3.95}{-0.42}{6.20}{8.25}{Navy}{BlueWash}{Data preparation}
+  \workflowpanel{10.73}{-2.42}{3.14}{4.31}{Teal}{TealWash}{SynRXN 1.5.0}
+  \workflowpanel{14.46}{-0.42}{7.77}{8.25}{Teal}{TealWash}{Evaluation}
 
   \draw[flow arrow,draw=Navy] (3.44,-4.65) -- (3.94,-4.65);
   \draw[flow arrow] (10.16,-4.65) -- (10.72,-4.65);
@@ -102,52 +99,46 @@
   \end{scope}
   \draw[BlueEdge] (0.54,-3.68) -- (3.12,-3.68);
   \foreach \y/\entry in {
-    -4.05/{Patents and\\literature},
-    -4.64/{Reaction\\databases},
-    -5.23/{Reaction screens},
-    -5.82/{Curated\\mechanisms},
-    -6.41/{Computed data},
-    -7.08/{Enzyme and\\process data}} {
+    -4.12/{Patents \&\\literature},
+    -4.78/{Databases},
+    -5.40/{Experiments},
+    -6.03/{Curated\\references},
+    -6.73/{Simulations}} {
     \fill[Blue,rounded corners=0.2mm] (0.55,{\y+0.046}) rectangle (0.64,{\y-0.046});
     \node[anchor=west,font=\fontsize{8.2}{9.3}\selectfont,text=Ink,inner sep=0pt,
       align=left,text width=2.43cm] at (0.79,\y) {\entry};
   }
 
-  \curationstep{-1.56}{1}{link}{Pin source inputs}{Versions, hashes, and licenses}
-  \curationstep{-2.94}{2}{check-circle}{Validate records}{Schemas, IDs, and task fields}
-  \curationstep{-4.32}{3}{table}{Prepare source tables}{Normalize fields and link sources}
-  \curationstep{-5.70}{4}{project-diagram}{Group related records}{Overlap checks and split groups}
-  \curationstep{-7.08}{5}{tasks}{Specify evaluation}{Inputs, targets, and metrics}
+  \curationstep{-1.56}{1}{link}{Pin source versions}
+  \curationstep{-2.94}{2}{check-circle}{Validate records}
+  \curationstep{-4.32}{3}{table}{Prepare tables}
+  \curationstep{-5.70}{4}{project-diagram}{Group related records}
+  \curationstep{-7.08}{5}{tasks}{Set targets and metrics}
 
   \draw[-{Stealth[length=2mm]},Hold,dashed,line width=0.8pt]
     (7.05,-8.68) -- (7.05,-9.00);
   \filldraw[fill=HoldWash,draw=Hold,dashed,rounded corners=1.2mm]
     (4.39,-9.02) rectangle (9.71,-9.94);
   \node[text=Hold,font=\fontsize{10}{10}\selectfont] at (4.80,-9.48) {\faIcon{clipboard-list}};
-  \node[step title,text=Hold] at (5.17,-9.31) {Held or excluded records};
-  \node[step detail] at (5.17,-9.68) {Reasons in the source audit};
+  \node[step title,text=Hold] at (5.17,-9.48) {Held or excluded records};
 
-  \node[text=Teal,font=\fontsize{32}{32}\selectfont] at (12.30,-3.72) {\faIcon{database}};
+  \node[text=Teal,font=\fontsize{34}{34}\selectfont] at (12.30,-4.45) {\faIcon{database}};
   \node[font=\bfseries\fontsize{9.0}{10.4}\selectfont,text=TealInk]
-    at (12.30,-4.57) {102 admitted tables};
-  \node[small text] at (12.30,-5.23) {95 primary tables\\7 companion views};
-  \draw[TealEdge] (11.10,-5.83) -- (13.50,-5.83);
-  \node[small text,text=TealInk] at (12.30,-6.61)
-    {Hashes, licenses,\\and split records};
+    at (12.30,-5.73) {Data release};
 
   \node[small text,text=TealInk,font=\bfseries\fontsize{8.8}{10.5}\selectfont]
-    at (18.345,-1.65) {12 scientific families \textperiodcentered{} 40 tasks};
-  \familycard{14.70}{-2.03}{share-alt}{Mechanisms and\\networks}
-  \familycard{18.47}{-2.03}{wave-square}{Physics and\\kinetics}
+    at (18.345,-1.65) {12 families \textperiodcentered{} 40 tasks};
+  \familycard{14.70}{-2.03}{share-alt}{Mechanisms\\\& networks}
+  \familycard{18.47}{-2.03}{wave-square}{Physics \& kinetics}
   \familycard{14.70}{-3.10}{exchange-alt}{Single-step\\transformations}
-  \familycard{18.47}{-3.10}{search}{Representation\\and search}
-  \familycard{14.70}{-4.17}{vials}{Selectivity and\\mixtures}
-  \familycard{18.47}{-4.17}{chart-line}{Outcomes and\\feasibility}
-  \familycard{14.70}{-5.24}{sliders-h}{Conditions and\\procedures}
-  \familycard{18.47}{-5.24}{chart-bar}{Analysis and\\monitoring}
-  \familycard{14.70}{-6.31}{file-alt}{Data acquisition\\and curation}
-  \familycard{18.47}{-6.31}{draw-polygon}{Components and\\new reactivity}
-  \familycard{14.70}{-7.38}{industry}{Process\\engineering}
-  \familycard{18.47}{-7.38}{dna}{Biocatalysis and\\enzyme function}
+  \familycard{18.47}{-3.10}{search}{Representation\\\& search}
+  \familycard{14.70}{-4.17}{vials}{Selectivity\\\& mixtures}
+  \familycard{18.47}{-4.17}{chart-line}{Outcomes\\\& feasibility}
+  \familycard{14.70}{-5.24}{sliders-h}{Conditions\\\& procedures}
+  \familycard{18.47}{-5.24}{chart-bar}{Analysis\\\& monitoring}
+  \familycard{14.70}{-6.31}{file-alt}{Data acquisition\\\& curation}
+  \familycard{18.47}{-6.31}{draw-polygon}{Components\\\& reactivity}
+  \familycard{14.70}{-7.38}{industry}{Process engineering}
+  \familycard{18.47}{-7.38}{dna}{Biocatalysis\\\& enzyme function}
 \end{tikzpicture}
 \end{document}
