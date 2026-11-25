@@ -1,0 +1,27 @@
+{
+  "dataset_key": "condition_sharealike/openexp.csv.gz",
+  "license_evidence": "Appendix A.1 of 10.18653/v1/2024.findings-acl.318 states that OpenExp will be released under CC-BY-SA and that distribution and sharing require the same license.",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "output_bytes": 128234586,
+  "output_sha256": "f38c6bf858aa6d6d983c15199fc90f28e999ba6ea670229ab0307e70e919edc2",
+  "redistribution_partition": "sharealike",
+  "required_attribution": [
+    "10.18653/v1/2024.findings-acl.318",
+    "https://github.com/syr-cn/ReactXT",
+    "https://osf.io/3dv4k"
+  ],
+  "retrieved_at": "2026-08-22",
+  "schema_version": "1.0",
+  "source_bytes": 558801920,
+  "source_file": "OpenExp.tar",
+  "source_file_id": "3dv4k",
+  "source_md5": "8deb6ba93be3bba3b600265317efe80b",
+  "source_modified_at": "2024-06-03T02:58:53.168961Z",
+  "source_project": "https://osf.io/e68v4/",
+  "source_rows": 274439,
+  "source_sha256": "00eee069440638130d8341175a2ce65e284b8d1cb43261e1e7e543ff94f3fe1c",
+  "source_url": "https://osf.io/download/3dv4k/",
+  "source_version": 1,
+  "split_note": "OpenExp.tar contains the unsplit 274,439-record list. The paper describes a random 8:1:1 split, but the released processing code calls random.shuffle without a fixed seed. SynRXN therefore provides a clearly labeled deterministic transformation-group split.",
+  "upstream_license": "CC-BY-SA-4.0"
+}
