@@ -1,0 +1,40 @@
+SynRXN impurity coverage: original attribution and changes
+
+[ROBOWSKI_IMPURITY2025] Robot-assisted mapping of chemical reaction hyperspaces and networks
+Original creators: Jia, Yankai; Frydrych, Rafał; Sobolev, Yaroslav I.; Wong, Wai-Shing; Prajapati, Bibek; Matuszczyk, Daniel; Bilgi, Yasemin; Gadina, Louis; Ahumada, Juan Carlos; Moldagulov, Galymzhan; Kim, Namhun; Larsen, Eric S.; Deschamps, Maxence; Jiang, Yanqiu; Grzybowski, Bartosz
+Publication: https://doi.org/10.1038/s41586-025-09490-1
+Data: https://doi.org/10.5281/zenodo.14880579
+Licence: MIT — https://opensource.org/license/mit
+Licence grant evidence: Data/raw/coverage/impurity/14880579_metadata.json (SHA-256 3657467118d87c974215662a3c5e9b2370cbc923289d79c0d9caf27776450c81)
+Changes: selected756 native PBA assays; preserved source benzaldehyde side-product yield estimates; supplied stated chemical identities and fixed protocol context; excluded desired-product outcome columns from model inputs. This is a closed-candidate profile task, not generated impurity truth.
+Preserved original MIT notice:
+MIT License
+
+Copyright (c) 2025 Yaroslav I. Sobolev
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+[SOLIDSTATE_IMPURITY2025] Text-mined dataset of solid-state syntheses with impurity phases using Large Language Model
+Original creators: Sanghoon Lee; Kevin Cruse; Viktoriia Baibakova; Gerbrand Ceder; Anubhav Jain
+Publication: https://doi.org/10.1038/s41597-025-06222-y
+Data: https://doi.org/10.6084/m9.figshare.30423274.v1
+Licence: CC-BY-4.0 — https://creativecommons.org/licenses/by/4.0/
+Licence grant evidence: Data/raw/coverage/impurity/30423274_metadata.json (SHA-256 1f194f14ac4d2fd9f9aae835f4f4c969e085fc6b67452ede3746fcd88218efd4)
+Changes: selected7261 native records with explicit concrete impurity identities, balanced target reactions and resolved precursors/targets; excluded unknown/no-report identities as negatives; retained original experimental publication DOIs and partial-label flags; exposed only whitelisted numerical operation context; omitted Materials Project assignments and free-text results. Labels remain source literature extractions, not new independently validated measurements.
+

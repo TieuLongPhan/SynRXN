@@ -1,0 +1,111 @@
+{
+  "counting_unit": "reference record; task views can overlap native experiments",
+  "data_link": "data.jsonl.gz",
+  "family_id": "analysis",
+  "format": "jsonl.gz",
+  "key": "process/lowfield_nmr_yield_progress",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/process/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "reference record; task views can overlap native experiments",
+    "coverage_branch": "process",
+    "key": "process/lowfield_nmr_yield_progress",
+    "license": "CC-BY-4.0",
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/process/lowfield_nmr_yield_progress.jsonl.gz",
+    "qualification": "Four measured yield profiles,60 observations per reaction,236 adjacent forecast pairs. Measurements from the same reaction remain one group. Processed yield observations, not raw-FID-to-yield calibration. Native MATLAB plotting script labels x-axis Time[min] and y-axis Yield[%]. Raw FIDs76GB are indexed upstream but were not downloaded because no verified trajectory-specific rawFID association was required for this narrower view.",
+    "reference_evidence": "Source workbookReactions:A3:E62 and authorYield_calculations.m. Overview worksheet separately provides terminal lowfield/1H-Bruker/13C-Bruker comparisons for four reactions.",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 236,
+    "sha256": "ed0bb5e7f6d10dff29786a927e5c64fe5f9ddc10370a1a03a072927c81ba8fa1",
+    "source_id": "LOWFIELDNMR2026",
+    "source_sha256": "705fed264e598ca40037c9c17eeee4fc8cc4c76801f699d3306da39b2f1ec369",
+    "source_url": "https://doi.org/10.26434/chemrxiv.15005188/v1",
+    "task_fields": {
+      "reaction_progress_monitoring": {
+        "group_fields": [
+          "trajectory_id"
+        ],
+        "inputs": [
+          "trajectory_id",
+          "elapsed_minutes",
+          "observed_yield_percent",
+          "target_elapsed_minutes"
+        ],
+        "metrics": [
+          "next-step MAE yield percentage points",
+          "MAE versus persistence"
+        ],
+        "targets": [
+          "next_yield_percent"
+        ],
+        "temporal_policy": "Only the current measured yield and earlier measurements are allowed. This view does not require raw FIDs or claim raw-spectrum interpretation."
+      }
+    },
+    "task_ids": [
+      "reaction_progress_monitoring"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "reference record; task views can overlap native experiments",
+    "expected_bytes": null,
+    "expected_rows": 236,
+    "expected_sha256": "ed0bb5e7f6d10dff29786a927e5c64fe5f9ddc10370a1a03a072927c81ba8fa1",
+    "format": "jsonl.gz",
+    "key": "process/lowfield_nmr_yield_progress",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/process/lowfield_nmr_yield_progress.jsonl.gz",
+    "qualification": "Four measured yield profiles,60 observations per reaction,236 adjacent forecast pairs. Measurements from the same reaction remain one group. Processed yield observations, not raw-FID-to-yield calibration. Native MATLAB plotting script labels x-axis Time[min] and y-axis Yield[%]. Raw FIDs76GB are indexed upstream but were not downloaded because no verified trajectory-specific rawFID association was required for this narrower view.",
+    "reasons": [],
+    "reference_evidence": "Source workbookReactions:A3:E62 and authorYield_calculations.m. Overview worksheet separately provides terminal lowfield/1H-Bruker/13C-Bruker comparisons for four reactions.",
+    "release_eligible": true,
+    "source_id": "LOWFIELDNMR2026",
+    "source_url": "https://doi.org/10.26434/chemrxiv.15005188/v1",
+    "task_ids": [
+      "reaction_progress_monitoring"
+    ]
+  },
+  "role": "primary",
+  "rows": 236,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/process/lowfield_nmr_yield_progress.jsonl.gz",
+    "sha256": "ed0bb5e7f6d10dff29786a927e5c64fe5f9ddc10370a1a03a072927c81ba8fa1",
+    "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+    "source_id": "LOWFIELDNMR2026",
+    "source_urls": [
+      "https://doi.org/10.26434/chemrxiv.15005188/v1"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "reference record; task views can overlap native experiments",
+    "key": "process/lowfield_nmr_yield_progress",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/process/lowfield_nmr_yield_progress.jsonl.gz",
+    "qualification": "Four measured yield profiles,60 observations per reaction,236 adjacent forecast pairs. Measurements from the same reaction remain one group. Processed yield observations, not raw-FID-to-yield calibration. Native MATLAB plotting script labels x-axis Time[min] and y-axis Yield[%]. Raw FIDs76GB are indexed upstream but were not downloaded because no verified trajectory-specific rawFID association was required for this narrower view.",
+    "role": "primary",
+    "rows": 236,
+    "sha256": "ed0bb5e7f6d10dff29786a927e5c64fe5f9ddc10370a1a03a072927c81ba8fa1",
+    "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+    "source_id": "LOWFIELDNMR2026",
+    "source_urls": [
+      "https://doi.org/10.26434/chemrxiv.15005188/v1"
+    ],
+    "title": "Low-field NMR yield progress"
+  },
+  "stored_path": "Data/families/analysis/reaction_progress_monitoring/coverage/process/lowfield_nmr_yield_progress/data.jsonl.gz",
+  "task_id": "reaction_progress_monitoring",
+  "title": "Low-field NMR yield progress"
+}

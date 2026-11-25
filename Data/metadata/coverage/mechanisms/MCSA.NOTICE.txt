@@ -1,0 +1,8 @@
+M-CSA enzyme mechanism reference views
+Native data: M-CSA, EMBL-EBI, Thornton Group. CC BY 4.0.
+https://www.ebi.ac.uk/thornton-srv/m-csa/
+https://creativecommons.org/licenses/by/4.0/
+Ribeiro AJM et al. Mechanism and Catalytic Site Atlas (M-CSA): a database of enzyme reaction mechanisms and active sites. Nucleic Acids Research46(D1), D618-D623 (2018). https://doi.org/10.1093/nar/gkx1012
+Changes: frozen SynDART v5 conversion and SynRXN native-identity joins, grouped typed references, replay-tier qualification; coverage adapter adds grouping and explicit unassigned split/eligibility fields.
+Converter code retains Apache-2.0 terms and adapted SynKit MIT notices in the frozen source kit. Native data are CC BY4.0; code terms do not replace the data grant.
+Four views overlap. Preferred observed-start full mechanisms:278stored/192EXACT references. Other full mechanisms479, continuous chains934 and transitions2393 are supporting/diagnostic views. No independent held-out cohort or predictive result is established. No endorsement implied.

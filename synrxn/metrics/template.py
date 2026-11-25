@@ -40,8 +40,7 @@ def acc_rbl(
     pred: Sequence[Union[str, Sequence[str]]],
     std: bool = False,
 ) -> float:
-    """
-    Compute exact-match accuracy for RBL-style ground truths and predictions.
+    """Compute exact-match accuracy for RBL-style ground truths and predictions.
 
     Each item in `ground_truth` and `pred` may be:
       - a string, or
@@ -53,7 +52,7 @@ def acc_rbl(
     :param pred: sequence of prediction items (str or sequence of str)
     :param std: if True, standardize every candidate via
                 synkit.Chem.Reaction.standardize.Standardize().fit(...) before comparison.
-    :returns: accuracy (float between 0.0 and 1.0)
+    :return: accuracy (float between 0.0 and 1.0)
     :raises ValueError: if `ground_truth` and `pred` lengths differ.
     """
     if len(ground_truth) != len(pred):
@@ -117,13 +116,12 @@ def _first_nonempty_from_sequence(x: Any) -> Optional[str]:
 
 
 def _normalize_cell_to_string(x: Any, choose_first: bool = True) -> Optional[str]:
-    """
-    Normalize a single cell value into a single string (or None).
-    - If x is None -> None
-    - If x is str -> stripped string or None if empty
-    - If x is sequence-like -> return first non-empty candidate (if choose_first True)
-      otherwise stringify the whole sequence (not recommended)
-    - If x is other scalar -> str(x).strip() or None
+    """Normalize one cell to a string or None.
+
+    Missing values and empty strings return None. Strings are stripped.
+    For sequences, return the first nonempty candidate when ``choose_first``
+    is True; otherwise stringify the sequence. Other scalars are converted
+    to stripped strings.
     """
     if x is None:
         return None
@@ -171,8 +169,7 @@ def acc_aam(
     validator: Optional[Any] = None,
     choose_first: bool = True,
 ) -> float:
-    """
-    Compute AAM-based accuracy using SynKit 1.5's AAMValidator.
+    """Compute AAM-based accuracy using SynKit 1.5's AAMValidator.
 
     Top-level inputs may be:
       - a pandas Series / numpy array / list of items (batch),
@@ -187,7 +184,7 @@ def acc_aam(
     :param mapper_name: column name for predictions in the DataFrame passed to the validator
     :param validator: optional pre-created AAMValidator instance to reuse
     :param choose_first: whether to pick the first non-empty candidate from sequence-like items
-    :returns: percentage accuracy as returned by AAMValidator (0.0 to 100.0)
+    :return: percentage accuracy as returned by AAMValidator (0.0 to 100.0)
     :raises ValueError: if top-level lengths differ (when both are sequences after normalization)
     :raises ImportError: if AAMValidator cannot be imported/instantiated and no validator provided
     """

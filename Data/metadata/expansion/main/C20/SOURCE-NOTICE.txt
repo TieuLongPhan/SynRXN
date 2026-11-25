@@ -1,0 +1,7 @@
+C20: OC20NEB
+Data license: CC-BY-4.0
+Official OC20NEB dataset page states CC BY 4.0. Preserve slab/cell/periodicity context.
+
+Primary source and attribution:
+https://doi.org/10.1021/acscatal.4c04272
+https://facebookresearch.github.io/fairchem/oc20neb/

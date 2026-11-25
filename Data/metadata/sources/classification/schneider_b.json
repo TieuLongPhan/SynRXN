@@ -1,0 +1,52 @@
+{
+  "citations": [
+    {
+      "citation_key": "schneider2015development",
+      "doi": "10.1021/ci5006614",
+      "entry_type": "article",
+      "title": "Development of a Novel Fingerprint for Chemical Reactions and Its Application to Large-Scale Reaction Classification and Similarity",
+      "url": ""
+    },
+    {
+      "citation_key": "vannguyen2025syncat",
+      "doi": "10.1039/D5DD00367A",
+      "entry_type": "article",
+      "title": "SynCat: Molecule-Level Attention Graph Neural Network for Precise Reaction Classification",
+      "url": ""
+    }
+  ],
+  "dataset_key": "classification/schneider_b.csv.gz",
+  "license_spdx": "CC-BY-4.0",
+  "license_url": "https://github.com/TieuLongPhan/SynRXN/blob/v1.2.1/Data/LICENSE",
+  "lock_status": "pinned_published_synrxn_product",
+  "outstanding_fields": [
+    "ultimate_original_observation_lineage"
+  ],
+  "published_release_origin": {
+    "archive_member": "Data/classification/schneider_b.csv.gz",
+    "archive_sha256": "32a9036318da1a5ef27fc417027fc1c6ca561a9e12896ed636f21f17d956bdbe",
+    "bytes_identical_to_published_release": true,
+    "data_license_sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+    "data_terms": "CC BY 4.0",
+    "doi": "10.5281/zenodo.22045145",
+    "license_evidence": "ncs/baselines/v1.2.1/Data/LICENSE",
+    "member_sha256": "72c6560f458c3777f1e0f1e73c3a35ac7974cc4a49e3ae6441421d4e91bf86b2",
+    "version": "v1.2.1"
+  },
+  "qualification": "This pins the exact previously published curated SynRXN product and its explicit dataset-specific redistribution declaration. It does not recover original experimental document accessions or certify ultimate source lineage.",
+  "redistribution_partition": "main",
+  "release_checksum_recorded_in": "manifest.json",
+  "required_attribution": [
+    "10.1021/ci5006614",
+    "10.1039/D5DD00367A"
+  ],
+  "retrieved_at": "2026-10-14",
+  "retrofit_note": "Retrofitted for a task family released before source locks were required. License, partition, and attribution are verified against the catalog and bibliography. The listed outstanding fields must be filled by a human upstream audit before this dataset is cited as reproducibly pinned. Release-side size, checksum, and row count are in manifest.json.",
+  "schema_version": "1.0",
+  "source_commit_or_version": "v1.2.1",
+  "source_doi": "10.5281/zenodo.22045145",
+  "source_file": "Data/classification/schneider_b.csv.gz",
+  "source_sha256": "72c6560f458c3777f1e0f1e73c3a35ac7974cc4a49e3ae6441421d4e91bf86b2",
+  "source_url": "https://zenodo.org/records/22045145",
+  "upstream_license": "CC BY 4.0"
+}

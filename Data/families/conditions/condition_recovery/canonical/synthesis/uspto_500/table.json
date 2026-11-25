@@ -1,0 +1,78 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "conditions",
+  "format": "csv.gz",
+  "key": "synthesis/uspto_500",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "synthesis/uspto_500",
+    "legacy_field_eligible_rows": {
+      "reagent_set": 143535
+    },
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0 AND CC0-1.0",
+    "rights_status": "verified_curated_product_grant_with_open_base",
+    "role": "primary",
+    "rows": 143535
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "synrxn_archive_record",
+      "lowe_original_data_grant"
+    ],
+    "expected_bytes": 4485501,
+    "expected_rows": 143535,
+    "expected_sha256": "fad362c125f8fc6195d49748bbd9f381ca4c9d3f03935d82f457b350ab46bef1",
+    "format": "csv.gz",
+    "key": "synthesis/uspto_500",
+    "license_expression": "CC-BY-4.0 AND CC0-1.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/synthesis/uspto_500.csv.gz",
+    "qualification": "Official Lowe patent-reaction base grants CC0. This exact curated SynRXN product is byte-identical to its published archive member and the independently retrieved dataset-specific CC-BY4 notice matches the lock's recorded noticeSHA256. Permission is scoped to the curated product; no claim that a code license or CC0 covers other authors' separate annotation databases.",
+    "rights_status": "verified_curated_product_grant_with_open_base",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 143535,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "lu2022unified"
+    ],
+    "path": "Data/synthesis/uspto_500.csv.gz",
+    "sha256": "fad362c125f8fc6195d49748bbd9f381ca4c9d3f03935d82f457b350ab46bef1",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "lu2022unified"
+    ],
+    "counting_unit": "source-table row",
+    "key": "synthesis/uspto_500",
+    "legacy_field_eligible_rows": {
+      "reagent_set": 143535
+    },
+    "namespace": "canonical",
+    "path": "Data/synthesis/uspto_500.csv.gz",
+    "role": "primary",
+    "rows": 143535,
+    "sha256": "fad362c125f8fc6195d49748bbd9f381ca4c9d3f03935d82f457b350ab46bef1",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "USPTO-500 reagent prediction"
+  },
+  "stored_path": "Data/families/conditions/condition_recovery/canonical/synthesis/uspto_500/data.csv.gz",
+  "task_id": "condition_recovery",
+  "title": "USPTO-500 reagent prediction"
+}

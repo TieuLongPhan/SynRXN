@@ -1,0 +1,79 @@
+{
+  "counting_unit": "literature or validation observation",
+  "data_link": "data.parquet",
+  "family_id": "selectivity",
+  "format": "parquet",
+  "key": "C16/michael_addition_dataset",
+  "namespace": "expansion",
+  "registry_binding": {
+    "adapter_ids": [
+      "enantioselectivity"
+    ],
+    "commercial_use_allowed": true,
+    "counting_unit": "literature or validation observation",
+    "key": "C16/michael_addition_dataset",
+    "namespace": "expansion",
+    "partition": "main",
+    "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 9194
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "orgaicat_readme",
+      "orgaicat_license"
+    ],
+    "expected_bytes": 448457,
+    "expected_rows": 9194,
+    "expected_sha256": "3ebcd00fcf67e6fe004d94e1ea4e9a0c6a68e174001bbddfcfb99ef8a8ec035c",
+    "format": "parquet",
+    "key": "C16/michael_addition_dataset",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "expansion",
+    "partition": "main",
+    "path": "Data/expansion/main/C16/michael_addition_dataset.parquet",
+    "qualification": "Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 9194,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/expansion/main/C16/michael_addition_dataset.parquet",
+    "sha256": "3ebcd00fcf67e6fe004d94e1ea4e9a0c6a68e174001bbddfcfb99ef8a8ec035c",
+    "source_catalogue": "Data/expansion/catalog.json",
+    "source_id": "C16",
+    "source_urls": [
+      "https://github.com/DeepSynthesis/orgaicat/tree/main/data",
+      "https://github.com/DeepSynthesis/orgaicat"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "literature or validation observation",
+    "key": "C16/michael_addition_dataset",
+    "namespace": "expansion",
+    "path": "Data/expansion/main/C16/michael_addition_dataset.parquet",
+    "role": "primary",
+    "rows": 9194,
+    "sha256": "3ebcd00fcf67e6fe004d94e1ea4e9a0c6a68e174001bbddfcfb99ef8a8ec035c",
+    "source_catalogue": "Data/expansion/catalog.json",
+    "source_id": "C16",
+    "source_urls": [
+      "https://github.com/DeepSynthesis/orgaicat/tree/main/data",
+      "https://github.com/DeepSynthesis/orgaicat"
+    ],
+    "title": "OrgAIcat Michael additions"
+  },
+  "stored_path": "Data/families/selectivity/enantioselectivity/expansion/C16/michael_addition_dataset/data.parquet",
+  "task_id": "enantioselectivity",
+  "title": "OrgAIcat Michael additions"
+}

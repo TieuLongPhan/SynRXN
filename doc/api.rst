@@ -7,6 +7,11 @@ This section documents the public Python API exposed by SynRXN. For practical
 usage examples, start with :doc:`Getting Started <getting_started>` and
 :ref:`tutorials-and-examples`.
 
+The portable ``synrxn.duckdb`` snapshot is queried through DuckDB's Python or SQL
+interface; see :doc:`Database access <query_and_service>`. ``DataLoader`` and
+``synrxn.access.query`` below read the canonical CSV/Parquet files. They do not
+open the portable snapshot.
+
 .. raw:: html
 
    <div class="synrxn-card-grid">
@@ -27,8 +32,8 @@ usage examples, start with :doc:`Getting Started <getting_started>` and
 Data access: :mod:`synrxn.data`
 -------------------------------
 
-The :mod:`synrxn.data` module is the main entry point for accessing curated
-datasets and their manifests.
+The :mod:`synrxn.data` module provides access to canonical CSV/Parquet datasets
+and their manifests, including earlier published releases.
 
 Typical responsibilities of :class:`synrxn.data.DataLoader` include:
 
@@ -42,24 +47,6 @@ Typical responsibilities of :class:`synrxn.data.DataLoader` include:
    :members:
    :undoc-members:
    :show-inheritance:
-
-Minimal usage
-~~~~~~~~~~~~~
-
-.. code-block:: python
-
-   from pathlib import Path
-   from synrxn.data import DataLoader
-
-   loader = DataLoader(
-       task="classification",
-       source="zenodo",
-       version="1.0.0",
-       cache_dir=Path("~/.cache/synrxn").expanduser(),
-   )
-
-   print(loader.available_names())
-   df = loader.load("schneider_b")
 
 Catalog and local projected access
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -125,47 +112,54 @@ invoking SynRXN as a module.
 .. code-block:: bash
 
    python -m synrxn --help
-   python -m synrxn build --help
+   python -m synrxn.reconstruction families --help
    python -m synrxn verify-manifest --help
    python -m synrxn validate --help
    python -m synrxn datasets list --task property --has-split
 
-The ``build`` subcommand is repository-only and intended for maintainers who
-need to rebuild datasets from original sources. ``verify-manifest`` verifies
-artifact sizes and checksums, while ``validate`` checks the metadata catalog,
-schemas, identifiers, split values, and manifest record counts.
+Use the family entry points in :doc:`data_concept` for table reconstruction.
+``verify-manifest`` checks artifact sizes and checksums. ``validate`` checks the
+metadata catalogue, schemas, identifiers, split values and manifest counts.
 
 .. automodule:: synrxn.__main__
    :members:
    :undoc-members:
    :show-inheritance:
 
-Query layer: :mod:`synrxn.query`
---------------------------------
+Query layer: :mod:`synrxn.access.query`
+---------------------------------------
 
-.. automodule:: synrxn.query
+.. automodule:: synrxn.access.query
    :members:
    :undoc-members:
    :show-inheritance:
 
-Read-only service: :mod:`synrxn.service`
-----------------------------------------
+Read-only service: :mod:`synrxn.access.service`
+-----------------------------------------------
 
-The optional FastAPI application is created with
-:func:`synrxn.service.create_app`. See :ref:`query-and-service` for its bounded
-HTTP contract and deployment guidance.
+The optional FastAPI application serves verified Parquet exports of the
+canonical tables. To prepare a local export and start the service::
 
-.. automodule:: synrxn.service
+    python -m pip install -e ".[query,service]"
+    synrxn parquet build --data-dir Data --output-dir Parquet --manifest manifest.json
+    SYNRXN_PARQUET_DIR=Parquet SYNRXN_MANIFEST=manifest.json synrxn-service
+
+The service publishes its OpenAPI schema at ``/docs``. Use
+:func:`synrxn.access.service.create_app` to configure the application in Python.
+
+.. automodule:: synrxn.access.service
    :members:
    :undoc-members:
    :show-inheritance:
 
-API usage guidance
-------------------
+Task evaluation and dummy controls
+----------------------------------
 
-- Use :class:`synrxn.data.DataLoader` for all dataset access instead of hardcoding
-  local paths.
-- Prefer ``source="zenodo"`` for published experiments.
-- Prefer exact commit SHAs for development snapshots.
-- Export split indices whenever generated splits are part of a benchmark.
-- Keep package version, data version, and split settings in experiment logs.
+See :doc:`task_evaluation` for task-specific metrics, weak controls and split
+requirements. Discovery does not load datasets or train models.
+
+.. automodule:: synrxn.baseline.dummy
+   :members: DummyProtocol, DummyPredictor, get_dummy_protocol, list_dummy_protocols
+
+.. automodule:: synrxn.benchmarks.sanity
+   :members: run_metric_sanity

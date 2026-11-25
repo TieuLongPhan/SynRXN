@@ -1,0 +1,64 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "family": {
+    "counting_units": [
+      "HTE experiment",
+      "HTE observation",
+      "flow-condition observation",
+      "source-table row"
+    ],
+    "data_counting_policy": "Deduplicated by namespace/source-table key within this family only; row units can differ, source views can overlap and rows are not unique reactions. Inspect each binding's counting_unit and physical configuration counts.",
+    "data_status": "local task references present; qualification varies",
+    "future_task_ids": [],
+    "gaps": "Source-qualified panels, utility and failure policies are required. Offline selection does not prove prospective performance, and action-sequence agreement does not prove successful execution. Dynamic physical execution is assigned to process control.",
+    "id": "conditions",
+    "overlapping_view_count": 1,
+    "primary_source_rows": 1358846,
+    "primary_table_count": 13,
+    "release_eligible_table_count": 13,
+    "scope": "Recover recorded recipes; rank measured settings; select informative experiments; generate procedures and laboratory actions within one reaction system.",
+    "task_ids": [
+      "condition_recovery",
+      "condition_ranking",
+      "sequential_optimization",
+      "procedure_generation"
+    ],
+    "title": "Conditions, procedures and experimental design"
+  },
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 14,
+    "data_links": 19,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 1,
+    "primary_table_views": 13,
+    "stored_rows_across_unique_views": 1359502,
+    "task_table_bindings": 19,
+    "tasks": 4,
+    "unique_table_views": 14
+  },
+  "tasks": [
+    {
+      "id": "condition_recovery",
+      "metadata": "condition_recovery/task.json",
+      "title": "Recorded reagent and condition recovery"
+    },
+    {
+      "id": "condition_ranking",
+      "metadata": "condition_ranking/task.json",
+      "title": "Ranking measured conditions"
+    },
+    {
+      "id": "sequential_optimization",
+      "metadata": "sequential_optimization/task.json",
+      "title": "Sequential experiment selection"
+    },
+    {
+      "id": "procedure_generation",
+      "metadata": "procedure_generation/task.json",
+      "title": "Experimental procedure generation"
+    }
+  ]
+}

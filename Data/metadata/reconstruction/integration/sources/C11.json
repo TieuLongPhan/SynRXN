@@ -1,0 +1,128 @@
+{
+  "id": "C11",
+  "name": "QuantumPioneer HAT database",
+  "priority": "2 Targeted expansion",
+  "survey_license_note": "CC BY 4.0 on the Zenodo data record.",
+  "paper_urls": [
+    "https://doi.org/10.1021/jacs.6c10371"
+  ],
+  "data_urls": [
+    "https://zenodo.org/records/20060606"
+  ],
+  "project_urls": [
+    "https://github.com/QuantumPioneer/database"
+  ],
+  "license_urls": [
+    "https://zenodo.org/api/records/20060606"
+  ],
+  "license_verified": true,
+  "files": [
+    {
+      "name": "quantumpioneer_thermo_dataset_open_shell_species.csv",
+      "bytes": 41519078,
+      "checksum": "md5:52ad6cfb7494e6c2edfec15738f110e8",
+      "url": "https://zenodo.org/api/records/20060606/files/quantumpioneer_thermo_dataset_open_shell_species.csv/content"
+    },
+    {
+      "name": "quantumpioneer_kinetics_dataset.csv",
+      "bytes": 39105280,
+      "checksum": "md5:a9f4df281b82ab8ee9980bad0b8012e2",
+      "url": "https://zenodo.org/api/records/20060606/files/quantumpioneer_kinetics_dataset.csv/content"
+    },
+    {
+      "name": "quantumpioneer_thermo_dataset_transition_states.csv",
+      "bytes": 14106776,
+      "checksum": "md5:3f95efee1fa1eeb29136008df1f0b4f6",
+      "url": "https://zenodo.org/api/records/20060606/files/quantumpioneer_thermo_dataset_transition_states.csv/content"
+    },
+    {
+      "name": "quantumpioneer_thermo_dataset_closed_shell_species.csv",
+      "bytes": 31839216,
+      "checksum": "md5:cc2e8d46fa2ae2ff3623a29b9b5de676",
+      "url": "https://zenodo.org/api/records/20060606/files/quantumpioneer_thermo_dataset_closed_shell_species.csv/content"
+    },
+    {
+      "name": "quantumpioneer_solvation_dataset_open_shell_species.zip",
+      "bytes": 994865593,
+      "checksum": "md5:ea0cbdc53c6dd2a0f48e2123d3c4f527",
+      "url": "https://zenodo.org/api/records/20060606/files/quantumpioneer_solvation_dataset_open_shell_species.zip/content"
+    },
+    {
+      "name": "quantumpioneer_solvation_dataset_reactions.zip",
+      "bytes": 1648010235,
+      "checksum": "md5:7c9a78ef88fe1bd60c539d8759ca2a20",
+      "url": "https://zenodo.org/api/records/20060606/files/quantumpioneer_solvation_dataset_reactions.zip/content"
+    },
+    {
+      "name": "species_dlpno_results.parquet",
+      "bytes": 193289691,
+      "checksum": "md5:9d107c77158f05358cd0dbdb7ece1556",
+      "url": "https://zenodo.org/api/records/20060606/files/species_dlpno_results.parquet/content"
+    },
+    {
+      "name": "transition_state_semiempirical_results.parquet",
+      "bytes": 1368433179,
+      "checksum": "md5:c5cae5c2cb080e54f340e7b08d0f4f7f",
+      "url": "https://zenodo.org/api/records/20060606/files/transition_state_semiempirical_results.parquet/content"
+    },
+    {
+      "name": "SCHEMA.md",
+      "bytes": 12318,
+      "checksum": "md5:d0e7f364ac456c5fadf062636d6bbbcb",
+      "url": "https://zenodo.org/api/records/20060606/files/SCHEMA.md/content"
+    },
+    {
+      "name": "transition_state_dft_results.parquet",
+      "bytes": 1413629163,
+      "checksum": "md5:1c69b958d4c6bef228db85a472824b20",
+      "url": "https://zenodo.org/api/records/20060606/files/transition_state_dft_results.parquet/content"
+    },
+    {
+      "name": "quantumpioneer_solvation_dataset_closed_shell_species.zip",
+      "bytes": 759540465,
+      "checksum": "md5:e20581ec17f6613ddd33b1a996d5773b",
+      "url": "https://zenodo.org/api/records/20060606/files/quantumpioneer_solvation_dataset_closed_shell_species.zip/content"
+    },
+    {
+      "name": "quantumpioneer_solvation_dataset_transition_states.zip",
+      "bytes": 1140266811,
+      "checksum": "md5:95d19eae7843e14e557f15a44ec8ce2b",
+      "url": "https://zenodo.org/api/records/20060606/files/quantumpioneer_solvation_dataset_transition_states.zip/content"
+    },
+    {
+      "name": "species_semiempirical_results.parquet",
+      "bytes": 2078739818,
+      "checksum": "md5:6752889928326dca34a2c13cab8184f4",
+      "url": "https://zenodo.org/api/records/20060606/files/species_semiempirical_results.parquet/content"
+    },
+    {
+      "name": "transition_state_dlpno_results.parquet",
+      "bytes": 116592577,
+      "checksum": "md5:c2b022f65b95724804f9ca012faccc36",
+      "url": "https://zenodo.org/api/records/20060606/files/transition_state_dlpno_results.parquet/content"
+    },
+    {
+      "name": "species_dft_results.parquet",
+      "bytes": 2301782347,
+      "checksum": "md5:7be7c32db96bc1ec61e5e7f7a51cf7fb",
+      "url": "https://zenodo.org/api/records/20060606/files/species_dft_results.parquet/content"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://zenodo.org/api/records/20060606",
+      "status": 200,
+      "sha256": "487768caf089c8602d289043d30f51897f711bd8515419c1de0ca3512fd61bdf",
+      "bytes": 9714,
+      "retrieved_at": "2026-10-20T15:34:41.963510+00:00"
+    }
+  ],
+  "record_id": "20060606",
+  "doi": "10.5281/zenodo.20060606",
+  "title": "QuantumPioneer Dataset",
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "publication_date": "2026-05-15",
+  "description": "<p>Datasets associated with the work \"QuantumPioneer: Scalable generation of quantum chemical data for solution-phase hydrogen transfer reactions\"</p>\n<p>Publication: <a href=\"https://doi.org/10.1021/jacs.6c10371\" rel=\"noopener\">https://doi.org/10.1021/jacs.6c10371</a></p>\n<p>GitHub:&nbsp;<a href=\"https://github.com/QuantumPioneer\" rel=\"noopener\">https://github.com/QuantumPioneer</a></p>\n<p>Refer to the SCHEMA.md file for details of the different datasets released here.</p>"
+}

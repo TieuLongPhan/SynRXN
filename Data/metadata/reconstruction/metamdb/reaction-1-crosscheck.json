@@ -1,0 +1,14 @@
+{
+  "checked_on": "2026-10-27",
+  "source_url": "https://metamdb.tu-bs.de/api/reactions/1",
+  "id": 1,
+  "updated": false,
+  "balanced": true,
+  "formula": "vinylacetyl-CoA = crotonyl-CoA",
+  "rxn_file_sha256": "3ecb1d4fa3393a4a32b8e4e55aa1568a4f053ae14853fc80cb19616ac5af03ce",
+  "archive_rxn_sha256": "3ecb1d4fa3393a4a32b8e4e55aa1568a4f053ae14853fc80cb19616ac5af03ce",
+  "api_payload_matches_archive": true,
+  "present_in_brmapper_csv": true,
+  "brmapper_mapping_matches_archive_normalization": true,
+  "qualification": "Single-record counterexample to interpreting the full released BRMapper CSV as the manually reviewed subset. It does not determine the total current curated count."
+}

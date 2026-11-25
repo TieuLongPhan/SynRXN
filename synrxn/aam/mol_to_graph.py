@@ -17,24 +17,22 @@ class MolToGraph:
 
     @staticmethod
     def add_partial_charges(mol: Chem.Mol) -> None:
-        """
-        Computes and assigns Gasteiger partial charges to each atom in the given molecule.
+        """Computes and assigns Gasteiger partial charges to each atom in the given molecule.
 
-        Parameters:
-        - mol (Chem.Mol): An RDKit molecule object.
+        :param mol: An RDKit molecule object.
+        :type mol: Chem.Mol
         """
         AllChem.ComputeGasteigerCharges(mol)
 
     @staticmethod
     def get_stereochemistry(atom: Chem.Atom) -> str:
-        """
-        Determines the stereochemistry (R/S configuration) of a given atom.
+        """Determines the stereochemistry (R/S configuration) of a given atom.
 
-        Parameters:
-        - atom (Chem.Atom): An RDKit atom object.
+        :param atom: An RDKit atom object.
+        :type atom: Chem.Atom
 
-        Returns:
-        - str: The stereochemistry ('R', 'S', or 'N' for non-chiral).
+        :return: The stereochemistry ('R', 'S', or 'N' for non-chiral).
+        :rtype: str
         """
         chiral_tag = atom.GetChiralTag()
         if chiral_tag == Chem.ChiralType.CHI_TETRAHEDRAL_CCW:
@@ -45,15 +43,14 @@ class MolToGraph:
 
     @staticmethod
     def get_bond_stereochemistry(bond: Chem.Bond) -> str:
-        """
-        Determines the stereochemistry (E/Z configuration) of a given bond.
+        """Determines the stereochemistry (E/Z configuration) of a given bond.
 
-        Parameters:
-        - bond (Chem.Bond): An RDKit bond object.
+        :param bond: An RDKit bond object.
+        :type bond: Chem.Bond
 
-        Returns:
-        - str: The stereochemistry ('E', 'Z', or 'N' for non-stereospecific
-        or non-double bonds).
+        :return: The stereochemistry ('E', 'Z', or 'N' for non-stereospecific
+                  or non-double bonds).
+        :rtype: str
         """
         if bond.GetBondType() != Chem.BondType.DOUBLE:
             return "N"
@@ -66,17 +63,16 @@ class MolToGraph:
 
     @staticmethod
     def has_atom_mapping(mol: Chem.Mol) -> bool:
-        """
-        Check if the given molecule has any atom mapping numbers.
+        """Check if the given molecule has any atom mapping numbers.
 
         Atom mapping numbers are used in chemical reactions to track the correspondence
         between atoms in reactants and products.
 
-        Parameters:
-        - mol (Chem.Mol): An RDKit molecule object.
+        :param mol: An RDKit molecule object.
+        :type mol: Chem.Mol
 
-        Returns:
-        - bool: True if any atom in the molecule has a mapping number, False otherwise.
+        :return: True if any atom in the molecule has a mapping number, False otherwise.
+        :rtype: bool
         """
         for atom in mol.GetAtoms():
             if atom.HasProp("molAtomMapNumber"):
@@ -85,17 +81,16 @@ class MolToGraph:
 
     @staticmethod
     def random_atom_mapping(mol: Chem.Mol) -> Chem.Mol:
-        """
-        Assigns a random atom mapping number to each atom in the given molecule.
+        """Assigns a random atom mapping number to each atom in the given molecule.
 
         This method iterates over all atoms in the molecule and assigns a random
         mapping number between 1 and the total number of atoms to each atom.
 
-        Parameters:
-        - mol (Chem.Mol): An RDKit molecule object.
+        :param mol: An RDKit molecule object.
+        :type mol: Chem.Mol
 
-        Returns:
-        - Chem.Mol: The RDKit molecule object with random atom mapping numbers assigned.
+        :return: The RDKit molecule object with random atom mapping numbers assigned.
+        :rtype: Chem.Mol
         """
         atom_indices = list(range(1, mol.GetNumAtoms() + 1))
         random.shuffle(atom_indices)
@@ -105,18 +100,18 @@ class MolToGraph:
 
     @classmethod
     def mol_to_graph(cls, mol: Chem.Mol, drop_non_aam: bool = False) -> nx.Graph:
-        """
-        Converts an RDKit molecule object to a NetworkX graph with specified atom and bond
+        """Converts an RDKit molecule object to a NetworkX graph with specified atom and bond
         attributes.
         Optionally excludes atoms without atom mapping numbers if drop_non_aam is True.
 
-        Parameters:
-        - mol (Chem.Mol): An RDKit molecule object.
-        - drop_non_aam (bool, optional): If True, nodes without atom mapping numbers will
-        be dropped.
+        :param mol: An RDKit molecule object.
+        :type mol: Chem.Mol
+        :param drop_non_aam: If True, nodes without atom mapping numbers will
+                             be dropped.
+        :type drop_non_aam: bool, optional
 
-        Returns:
-        - nx.Graph: A NetworkX graph representing the molecule.
+        :return: A NetworkX graph representing the molecule.
+        :rtype: nx.Graph
         """
         cls.add_partial_charges(mol)
         graph = nx.Graph()

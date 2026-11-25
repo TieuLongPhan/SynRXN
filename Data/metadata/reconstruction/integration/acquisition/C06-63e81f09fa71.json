@@ -1,0 +1,11 @@
+{
+  "source_id": "C06",
+  "name": "data/featurization_look_ups/smiles_lookup.csv",
+  "bytes": 854,
+  "url": "https://raw.githubusercontent.com/jpfolch/catechol_solvent_selection/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727/data/featurization_look_ups/smiles_lookup.csv",
+  "path": "Data/raw/synrxn2/C06/data/featurization_look_ups/smiles_lookup.csv",
+  "bytes_observed": 854,
+  "sha256": "7967ddf3fee5e560b162ef95719fe74c942ca692836d765a37a985efbc4c67ed",
+  "md5": "bc8a4e7d48a04128c2518aa617f9e558",
+  "status": "verified"
+}

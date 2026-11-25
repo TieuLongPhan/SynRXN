@@ -1,0 +1,121 @@
+{
+  "counting_unit": "literature-extracted synthesis recipe with explicit impurity phase identity",
+  "data_link": "data.jsonl.gz",
+  "family_id": "selectivity",
+  "format": "jsonl.gz",
+  "key": "impurity/solid_state_reported_impurity_phases",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/impurity/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "literature-extracted synthesis recipe with explicit impurity phase identity",
+    "coverage_branch": "impurity",
+    "key": "impurity/solid_state_reported_impurity_phases",
+    "license": "CC-BY-4.0",
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/impurity/solid_state_reported_impurity_phases.jsonl.gz",
+    "qualification": "Selects source records with an explicitly identified impurity phase, balanced target reaction, concrete precursor and target compositions and original DOI. Native unknown/variable identities are excluded; partial known subsets are flagged. The61937 no-impurity-report cohort is never used as negative evidence. Source labels are extracted literature observations, not computationally generated candidate phases. Materials Project most-stable-entry assignments/energies are omitted from all features and references. Native synthesis operations are DOI-level context and may not map uniquely to a particular recipe, so exact condition-specific causal claims are unsupported. Original publication and reaction identity must be grouped in eventual benchmark splits.",
+    "reference_evidence": "Source Data Records explicitly distinguish intended target from impurity_phase entities and retain original publication DOI. Primary Technical Validation describes source extraction, balancing and thermodynamic validation. Figsharev1 grantsCC-BY4.0 for the native80806-record structured data file.",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 7261,
+    "sha256": "8e0de53371c07b2197e827cd4e43f6020179e8d502371348d7173aaefcbdf510",
+    "source_id": "SOLIDSTATE_IMPURITY2025",
+    "source_sha256": "96dc02bc154ff89eff2d738281fca3ab40387e72aff303930e73506b88f2c57e",
+    "source_url": "https://doi.org/10.1038/s41597-025-06222-y",
+    "task_fields": {
+      "impurity_prediction": {
+        "forbidden_inputs": [
+          "impurity_phase",
+          "impurity_reaction",
+          "reported_impurity_formulas",
+          "mp_id",
+          "mp_eabovehull",
+          "free-text result subjects"
+        ],
+        "group_fields": [
+          "source_publication_doi",
+          "reaction_identity_group"
+        ],
+        "inputs": [
+          "precursor_formulas",
+          "intended_target_formulas",
+          "synthesis_condition_context"
+        ],
+        "metrics": [
+          "recall@k of reported concrete impurity formulas",
+          "multilabel recall over observed identities",
+          "exact reported-set match for complete-native-identity subset"
+        ],
+        "scope": "Positive reported-phase identities; no unreported impurity is treated as absent. Formula labels do not establish measured polymorph/crystal structure or organic impurity identity.",
+        "targets": [
+          "reported_impurity_formulas"
+        ],
+        "variant": "literature-extracted inorganic impurity-phase identity prediction"
+      }
+    },
+    "task_ids": [
+      "impurity_prediction"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "literature-extracted synthesis recipe with explicit impurity phase identity",
+    "expected_bytes": null,
+    "expected_rows": 7261,
+    "expected_sha256": "8e0de53371c07b2197e827cd4e43f6020179e8d502371348d7173aaefcbdf510",
+    "format": "jsonl.gz",
+    "key": "impurity/solid_state_reported_impurity_phases",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/impurity/solid_state_reported_impurity_phases.jsonl.gz",
+    "qualification": "Selects source records with an explicitly identified impurity phase, balanced target reaction, concrete precursor and target compositions and original DOI. Native unknown/variable identities are excluded; partial known subsets are flagged. The61937 no-impurity-report cohort is never used as negative evidence. Source labels are extracted literature observations, not computationally generated candidate phases. Materials Project most-stable-entry assignments/energies are omitted from all features and references. Native synthesis operations are DOI-level context and may not map uniquely to a particular recipe, so exact condition-specific causal claims are unsupported. Original publication and reaction identity must be grouped in eventual benchmark splits.",
+    "reasons": [],
+    "reference_evidence": "Source Data Records explicitly distinguish intended target from impurity_phase entities and retain original publication DOI. Primary Technical Validation describes source extraction, balancing and thermodynamic validation. Figsharev1 grantsCC-BY4.0 for the native80806-record structured data file.",
+    "release_eligible": true,
+    "source_id": "SOLIDSTATE_IMPURITY2025",
+    "source_url": "https://doi.org/10.1038/s41597-025-06222-y",
+    "task_ids": [
+      "impurity_prediction"
+    ]
+  },
+  "role": "primary",
+  "rows": 7261,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/impurity/solid_state_reported_impurity_phases.jsonl.gz",
+    "sha256": "8e0de53371c07b2197e827cd4e43f6020179e8d502371348d7173aaefcbdf510",
+    "source_catalogue": "Data/coverage_expansion/impurity/catalog.json",
+    "source_id": "SOLIDSTATE_IMPURITY2025",
+    "source_urls": [
+      "https://doi.org/10.1038/s41597-025-06222-y"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "literature-extracted synthesis recipe with explicit impurity phase identity",
+    "key": "impurity/solid_state_reported_impurity_phases",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/impurity/solid_state_reported_impurity_phases.jsonl.gz",
+    "qualification": "Selects source records with an explicitly identified impurity phase, balanced target reaction, concrete precursor and target compositions and original DOI. Native unknown/variable identities are excluded; partial known subsets are flagged. The61937 no-impurity-report cohort is never used as negative evidence. Source labels are extracted literature observations, not computationally generated candidate phases. Materials Project most-stable-entry assignments/energies are omitted from all features and references. Native synthesis operations are DOI-level context and may not map uniquely to a particular recipe, so exact condition-specific causal claims are unsupported. Original publication and reaction identity must be grouped in eventual benchmark splits.",
+    "role": "primary",
+    "rows": 7261,
+    "sha256": "8e0de53371c07b2197e827cd4e43f6020179e8d502371348d7173aaefcbdf510",
+    "source_catalogue": "Data/coverage_expansion/impurity/catalog.json",
+    "source_id": "SOLIDSTATE_IMPURITY2025",
+    "source_urls": [
+      "https://doi.org/10.1038/s41597-025-06222-y"
+    ],
+    "title": "Solid-state reported impurity phases"
+  },
+  "stored_path": "Data/families/selectivity/impurity_prediction/coverage/impurity/solid_state_reported_impurity_phases/data.jsonl.gz",
+  "task_id": "impurity_prediction",
+  "title": "Solid-state reported impurity phases"
+}

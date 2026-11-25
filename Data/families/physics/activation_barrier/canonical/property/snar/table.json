@@ -1,0 +1,81 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "physics",
+  "format": "csv.gz",
+  "key": "property/snar",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counted_under": "coverage:solution_context/snar_solution_context",
+    "counting_unit": "source-table row",
+    "key": "property/snar",
+    "legacy_field_eligible_rows": {
+      "energy_barrier": 503
+    },
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-3.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "overlapping_view",
+    "rows": 503
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "recheck_property_synrxn_product_notice",
+      "recheck_property_property_recheck_snar_crossref",
+      "recheck_property_property_recheck_snar_pmc_xml"
+    ],
+    "expected_bytes": 5965,
+    "expected_rows": 503,
+    "expected_sha256": "df8df5b8bc8b74910c7fe9960a8dd200182c5ef1bf91de906286cb71bfe60bcd",
+    "format": "csv.gz",
+    "key": "property/snar",
+    "license_expression": "CC-BY-3.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/property/snar.csv.gz",
+    "qualification": "The original RSC publisher landing page expressly licenses the article CC BY 3.0; publisher-deposited Crossref metadata independently confirms that same license. The actual publisher supplementary CSV has already been joined to all 503 curated reaction/free-energy observations, with 15 of 518 native entries excluded for missing fields. This source-specific primary supplement route clears the former permission-verification hold.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "overlapping_view",
+  "rows": 503,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "jorner2021machine"
+    ],
+    "path": "Data/property/snar.csv.gz",
+    "sha256": "df8df5b8bc8b74910c7fe9960a8dd200182c5ef1bf91de906286cb71bfe60bcd",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "jorner2021machine"
+    ],
+    "counted_under": "coverage:solution_context/snar_solution_context",
+    "counting_unit": "source-table row",
+    "key": "property/snar",
+    "legacy_field_eligible_rows": {
+      "energy_barrier": 503
+    },
+    "namespace": "canonical",
+    "path": "Data/property/snar.csv.gz",
+    "role": "overlapping_view",
+    "rows": 503,
+    "sha256": "df8df5b8bc8b74910c7fe9960a8dd200182c5ef1bf91de906286cb71bfe60bcd",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "SNAr original source format"
+  },
+  "stored_path": "Data/families/physics/activation_barrier/canonical/property/snar/data.csv.gz",
+  "task_id": "activation_barrier",
+  "title": "SNAr original source format"
+}

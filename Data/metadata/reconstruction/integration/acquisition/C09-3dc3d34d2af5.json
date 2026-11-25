@@ -1,0 +1,13 @@
+{
+  "source_id": "C09",
+  "name": "ref_routes_n5.json",
+  "bytes": 82120928,
+  "checksum": "md5:1da36cbada13175668c66546db6fd952",
+  "url": "https://zenodo.org/api/records/7341155/files/ref_routes_n5.json/content",
+  "path": "Data/raw/synrxn2/C09/ref_routes_n5.json",
+  "bytes_observed": 1503188,
+  "sha256": "965641ab4c275d6dd8475f92e68ec342b33d2273b98c6fcb7ac0aacf9b4f5cb6",
+  "md5": "0a13e329021b9799addb8cd18d9bef99",
+  "status": "unavailable",
+  "error": "source byte size differs from the pinned release"
+}

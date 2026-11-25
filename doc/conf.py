@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 import sys
 import tomllib
@@ -19,13 +20,14 @@ author = "Tieu-Long Phan"
 copyright = "2026, Tieu-Long Phan and SynRXN contributors"
 
 try:
-    release = get_version("synrxn")
-except PackageNotFoundError:
+    with (ROOT / "pyproject.toml").open("rb") as fh:
+        release = tomllib.load(fh)["project"]["version"]
+except (FileNotFoundError, KeyError):
     try:
-        with (ROOT / "pyproject.toml").open("rb") as fh:
-            release = tomllib.load(fh)["project"]["version"]
-    except Exception:
-        release = os.environ.get("SYNRXN_DOC_VERSION", "1.2.1")
+        release = get_version("synrxn")
+    except PackageNotFoundError:
+        release = "1.5.0"
+release = os.environ.get("SYNRXN_DOC_VERSION", release)
 
 version = ".".join(release.split(".")[:2])
 
@@ -36,10 +38,10 @@ extensions = [
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.githubpages",
     "sphinx.ext.intersphinx",
-    "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
     "sphinxcontrib.bibtex",
     "sphinx_copybutton",
+    "synrxn.reconstruction.presentation.documentation",
 ]
 
 autosummary_generate = True
@@ -64,10 +66,6 @@ autodoc_default_options = {
 autodoc_typehints = "description"
 autodoc_member_order = "bysource"
 
-napoleon_google_docstring = True
-napoleon_numpy_docstring = True
-napoleon_include_init_with_doc = True
-
 # -- Intersphinx -------------------------------------------------------------
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
@@ -76,12 +74,13 @@ intersphinx_mapping = {
 
 # -- Options for HTML output -------------------------------------------------
 html_theme = "pydata_sphinx_theme"
-html_title = f"SynRXN {release} documentation"
+html_title = "SynRXN — reaction informatics data"
 html_short_title = "SynRXN"
 html_logo = "_static/synrxn-logo.svg"
+html_favicon = "_static/synrxn-icon.svg"
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
-html_js_files = ["catalog.js"]
+html_js_files = ["reaction-viewer.js", "catalog.js"]
 
 html_theme_options = {
     "show_toc_level": 2,
@@ -126,6 +125,7 @@ html_context = {
 
 
 html_sidebars = {
+    "families": [],
     "**": [
         # "search-field.html",
         "synrxn-sidebar-section.html",
@@ -135,3 +135,69 @@ html_sidebars = {
 # -- Pygments ----------------------------------------------------------------
 pygments_style = "sphinx"
 pygments_dark_style = "monokai"
+
+
+def _catalogue_labels(app, docname, source):
+    """Use plain wording in the generated family catalogue."""
+    if docname == "families":
+        for before, after in (
+            (">Methods and provenance<", ">Methods and sources<"),
+            (">Dataset and provenance<", ">Table<"),
+            ("repair reaction records with provenance", "repair reaction records and retain source references"),
+            ("Reaxys provenance alone", "a Reaxys source alone"),
+            ("retained only in native provenance", "retained only in the original source files"),
+        ):
+            source[0] = source[0].replace(before, after)
+
+
+def _task_definitions(app, docname, source):
+    """Generate the task guide from the main release catalogue."""
+    if docname != "task_definitions":
+        return
+    from synrxn.reconstruction.presentation.documentation import HIERARCHY, REGISTRY, RELEASE, release_report
+
+    for path in (ROOT / HIERARCHY, ROOT / REGISTRY, ROOT / RELEASE, Path(__file__)):
+        app.env.note_dependency(str(path))
+    registry = json.loads((ROOT / REGISTRY).read_text(encoding="utf-8"))
+    definitions = {task["id"]: task["question"] for task in registry["tasks"]}
+    release = json.loads((ROOT / RELEASE).read_text(encoding="utf-8"))
+    admitted = {(table["namespace"], table["key"]) for table in release["release_tables"]}
+    lines = []
+    for family in release_report(ROOT)["families"]:
+        title = family["title"]
+        lines.extend([title, "-" * len(title), "", ".. list-table::", "   :header-rows: 1",
+                      "   :widths: 27 29 31 13", "   :class: synrxn-task-counts", "",
+                      "   * - Task", "     - Input", "     - Expected result", "     - Stored records"])
+        for task in family["tasks"]:
+            inputs, targets = definitions[task["id"]].split(" -> ", 1)
+            link = f'`{task["title"]} <families.html#task-{task["id"]}>`_'
+            records = sum(
+                table["rows"] for table in task["tables"]
+                if table["role"] == "primary" and (table["namespace"], table["key"]) in admitted
+            )
+            lines.extend([f"   * - {link}", f"     - {inputs}", f"     - {targets}", f"     - {records:,}"])
+        lines.append("")
+    source[0] = source[0].replace(".. synrxn-task-definitions", "\n".join(lines))
+
+
+def _write_data_records(app, exception):
+    """Combine the two reviewed source catalogues for the record browser."""
+    if exception is not None or app.builder.format != "html":
+        return
+    static = Path(app.outdir) / "_static"
+    main, sharealike = (
+        json.loads((static / f"{name}.json").read_text(encoding="utf-8"))
+        for name in ("catalog-data", "catalog-sharealike-data")
+    )
+    records = sorted(main["datasets"] + sharealike["datasets"], key=lambda item: item["id"])
+    release = {**main["release"], "dataset_count": len(records)}
+    release.pop("partition", None)
+    payload = json.dumps({"release": release, "datasets": records}, ensure_ascii=False)
+    (static / "data-records.js").write_text("window.SYNRXN_CATALOG = " + payload + ";\n", encoding="utf-8")
+
+
+def setup(app):
+    """Prepare the catalogue and task documentation."""
+    app.connect("source-read", _catalogue_labels, priority=600)
+    app.connect("source-read", _task_definitions)
+    app.connect("build-finished", _write_data_records, priority=600)

@@ -1,0 +1,1712 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "directories": [
+    "analysis",
+    "analysis/analytical_interpretation",
+    "analysis/analytical_interpretation/coverage",
+    "analysis/analytical_interpretation/coverage/process",
+    "analysis/analytical_interpretation/coverage/process/nmr_pmg_284_spectra",
+    "analysis/analytical_interpretation/coverage/process/nmr_pmg_287_spectra",
+    "analysis/analytical_interpretation/coverage/process/nmr_saccharose_hydrolysis_spectra",
+    "analysis/reaction_progress_monitoring",
+    "analysis/reaction_progress_monitoring/coverage",
+    "analysis/reaction_progress_monitoring/coverage/process",
+    "analysis/reaction_progress_monitoring/coverage/process/lowfield_nmr_yield_progress",
+    "analysis/reaction_progress_monitoring/coverage/process/nmr_pmg_284_progress",
+    "analysis/reaction_progress_monitoring/coverage/process/nmr_pmg_287_progress",
+    "analysis/reaction_progress_monitoring/coverage/process/nmr_saccharose_hydrolysis_progress",
+    "biocatalysis",
+    "biocatalysis/active_sites",
+    "biocatalysis/active_sites/coverage",
+    "biocatalysis/active_sites/coverage/bio",
+    "biocatalysis/active_sites/coverage/bio/mcsa_reference_active_sites",
+    "biocatalysis/enzyme_activity",
+    "biocatalysis/enzyme_activity/canonical",
+    "biocatalysis/enzyme_activity/canonical/classification",
+    "biocatalysis/enzyme_activity/canonical/classification/ehreact_activity",
+    "biocatalysis/enzyme_kinetic_parameters",
+    "biocatalysis/enzyme_kinetic_parameters/coverage",
+    "biocatalysis/enzyme_kinetic_parameters/coverage/bio",
+    "biocatalysis/enzyme_kinetic_parameters/coverage/bio/brenda_record_kcat",
+    "biocatalysis/enzyme_kinetic_parameters/coverage/bio/brenda_record_ki",
+    "biocatalysis/enzyme_kinetic_parameters/coverage/bio/brenda_record_km",
+    "biocatalysis/enzyme_retrieval",
+    "biocatalysis/enzyme_retrieval/coverage",
+    "biocatalysis/enzyme_retrieval/coverage/bio",
+    "biocatalysis/enzyme_retrieval/coverage/bio/reactzyme_retrieval",
+    "biocatalysis/mutation_effects",
+    "biocatalysis/mutation_effects/coverage",
+    "biocatalysis/mutation_effects/coverage/bio",
+    "biocatalysis/mutation_effects/coverage/bio/enzeng_mutation_effects",
+    "conditions",
+    "conditions/condition_ranking",
+    "conditions/condition_ranking/canonical",
+    "conditions/condition_ranking/canonical/yield",
+    "conditions/condition_ranking/canonical/yield/buchwald_hartwig_ood",
+    "conditions/condition_ranking/canonical/yield/hitea",
+    "conditions/condition_ranking/expansion",
+    "conditions/condition_ranking/expansion/C02",
+    "conditions/condition_ranking/expansion/C02/minot_al1_data",
+    "conditions/condition_ranking/expansion/C02/minot_al2_data",
+    "conditions/condition_ranking/expansion/C02/minot_al3_data",
+    "conditions/condition_ranking/expansion/C02/minot_preal_data",
+    "conditions/condition_ranking/expansion/C03",
+    "conditions/condition_ranking/expansion/C03/cn_screen",
+    "conditions/condition_recovery",
+    "conditions/condition_recovery/canonical",
+    "conditions/condition_recovery/canonical/condition",
+    "conditions/condition_recovery/canonical/condition/orderly_condition",
+    "conditions/condition_recovery/canonical/condition_sharealike",
+    "conditions/condition_recovery/canonical/condition_sharealike/ord_hte_condition",
+    "conditions/condition_recovery/canonical/synthesis",
+    "conditions/condition_recovery/canonical/synthesis/uspto_500",
+    "conditions/procedure_generation",
+    "conditions/procedure_generation/canonical",
+    "conditions/procedure_generation/canonical/condition_sharealike",
+    "conditions/procedure_generation/canonical/condition_sharealike/openexp",
+    "conditions/sequential_optimization",
+    "conditions/sequential_optimization/expansion",
+    "conditions/sequential_optimization/expansion/C02",
+    "conditions/sequential_optimization/expansion/C02/minot_al1_data",
+    "conditions/sequential_optimization/expansion/C02/minot_al2_data",
+    "conditions/sequential_optimization/expansion/C02/minot_al3_data",
+    "conditions/sequential_optimization/expansion/C02/minot_preal_data",
+    "conditions/sequential_optimization/expansion/C03",
+    "conditions/sequential_optimization/expansion/C03/cn_screen",
+    "conditions/sequential_optimization/expansion/C06",
+    "conditions/sequential_optimization/expansion/C06/catechol",
+    "conditions/sequential_optimization/expansion/C06/claisen",
+    "conditions/sequential_optimization/expansion/C06/single_solvent",
+    "data",
+    "data/literature_extraction",
+    "data/literature_extraction/coverage",
+    "data/literature_extraction/coverage/knowledge",
+    "data/literature_extraction/coverage/knowledge/EnzChemRED2024",
+    "data/literature_extraction/coverage/knowledge/EnzChemRED2024/documents",
+    "data/reaction_record_curation",
+    "data/reaction_record_curation/coverage",
+    "data/reaction_record_curation/coverage/knowledge",
+    "data/reaction_record_curation/coverage/knowledge/EnzChemRED2024",
+    "data/reaction_record_curation/coverage/knowledge/EnzChemRED2024/curation",
+    "design",
+    "design/new_reactivity_discovery",
+    "design/new_reactivity_discovery/coverage",
+    "design/new_reactivity_discovery/coverage/knowledge",
+    "design/new_reactivity_discovery/coverage/knowledge/MinotScope2026",
+    "design/new_reactivity_discovery/coverage/knowledge/MinotScope2026/scope_campaigns",
+    "design/reaction_component_design",
+    "design/reaction_component_design/coverage",
+    "design/reaction_component_design/coverage/bio",
+    "design/reaction_component_design/coverage/bio/enzeng_inverse_biocatalyst_design",
+    "design/reaction_component_design/coverage/knowledge",
+    "design/reaction_component_design/coverage/knowledge/CatDRX_ORD2025",
+    "design/reaction_component_design/coverage/knowledge/CatDRX_ORD2025/inverse_components",
+    "mechanisms",
+    "mechanisms/mechanistic_prediction",
+    "mechanisms/mechanistic_prediction/canonical",
+    "mechanisms/mechanistic_prediction/canonical/mechanism",
+    "mechanisms/mechanistic_prediction/canonical/mechanism/synepd_polar",
+    "mechanisms/mechanistic_prediction/coverage",
+    "mechanisms/mechanistic_prediction/coverage/mechanisms",
+    "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_continuous_chains",
+    "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_elementary_steps",
+    "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_full_mechanisms",
+    "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_observed_mechanisms",
+    "mechanisms/reaction_network_modeling",
+    "mechanisms/reaction_network_modeling/coverage",
+    "mechanisms/reaction_network_modeling/coverage/physics",
+    "mechanisms/reaction_network_modeling/coverage/physics/chemsindy_reference_trajectories",
+    "mechanisms/ts_geometry",
+    "mechanisms/ts_geometry/coverage",
+    "mechanisms/ts_geometry/coverage/physics",
+    "mechanisms/ts_geometry/coverage/physics/orgreact_ts_geometry",
+    "mechanisms/ts_geometry/coverage/physics/transition1x_final_ts_geometry",
+    "outcomes",
+    "outcomes/reaction_feasibility",
+    "outcomes/reaction_feasibility/canonical",
+    "outcomes/reaction_feasibility/canonical/feasibility",
+    "outcomes/reaction_feasibility/canonical/feasibility/frea_corpus",
+    "outcomes/reaction_feasibility/canonical/feasibility/frea_expert",
+    "outcomes/reaction_success",
+    "outcomes/reaction_success/canonical",
+    "outcomes/reaction_success/canonical/yield",
+    "outcomes/reaction_success/canonical/yield/buchwald_hartwig_ood",
+    "outcomes/reaction_success/expansion",
+    "outcomes/reaction_success/expansion/C02",
+    "outcomes/reaction_success/expansion/C02/minot_al1_data",
+    "outcomes/reaction_success/expansion/C02/minot_al2_data",
+    "outcomes/reaction_success/expansion/C02/minot_al3_data",
+    "outcomes/reaction_success/expansion/C02/minot_preal_data",
+    "outcomes/yield_conversion",
+    "outcomes/yield_conversion/canonical",
+    "outcomes/yield_conversion/canonical/property",
+    "outcomes/yield_conversion/canonical/property/phosphatase",
+    "outcomes/yield_conversion/canonical/yield",
+    "outcomes/yield_conversion/canonical/yield/buchwald_hartwig_ood",
+    "outcomes/yield_conversion/canonical/yield/hitea",
+    "outcomes/yield_conversion/canonical/yield/uspto_yield",
+    "outcomes/yield_conversion/expansion",
+    "outcomes/yield_conversion/expansion/C02",
+    "outcomes/yield_conversion/expansion/C02/minot_al1_data",
+    "outcomes/yield_conversion/expansion/C02/minot_al2_data",
+    "outcomes/yield_conversion/expansion/C02/minot_al3_data",
+    "outcomes/yield_conversion/expansion/C02/minot_preal_data",
+    "outcomes/yield_conversion/expansion/C03",
+    "outcomes/yield_conversion/expansion/C03/cn_screen",
+    "physics",
+    "physics/activation_barrier",
+    "physics/activation_barrier/canonical",
+    "physics/activation_barrier/canonical/property",
+    "physics/activation_barrier/canonical/property/b97xd3",
+    "physics/activation_barrier/canonical/property/cycloadd",
+    "physics/activation_barrier/canonical/property/e2",
+    "physics/activation_barrier/canonical/property/e2sn2",
+    "physics/activation_barrier/canonical/property/rdb7",
+    "physics/activation_barrier/canonical/property/rgd1",
+    "physics/activation_barrier/canonical/property/sn2",
+    "physics/activation_barrier/canonical/property/snar",
+    "physics/activation_barrier/coverage",
+    "physics/activation_barrier/coverage/physics_rates",
+    "physics/activation_barrier/coverage/physics_rates/quantumpioneer_hAT_kinetics",
+    "physics/activation_barrier/coverage/solution_barriers",
+    "physics/activation_barrier/coverage/solution_barriers/lipred_solution_activation_gibbs",
+    "physics/activation_barrier/coverage/solution_context",
+    "physics/activation_barrier/coverage/solution_context/cycloadd_solution_context",
+    "physics/activation_barrier/coverage/solution_context/snar_solution_context",
+    "physics/kinetic_parameter_inference",
+    "physics/kinetic_parameter_inference/coverage",
+    "physics/kinetic_parameter_inference/coverage/physics",
+    "physics/kinetic_parameter_inference/coverage/physics/chemsindy_reference_trajectories",
+    "physics/reaction_energetics",
+    "physics/reaction_energetics/canonical",
+    "physics/reaction_energetics/canonical/property",
+    "physics/reaction_energetics/canonical/property/b97xd3",
+    "physics/reaction_energetics/canonical/property/cycloadd",
+    "physics/reaction_energetics/canonical/property/rad6re",
+    "physics/reaction_energetics/coverage",
+    "physics/reaction_energetics/coverage/physics_rates",
+    "physics/reaction_energetics/coverage/physics_rates/quantumpioneer_hAT_kinetics",
+    "physics/reaction_energetics/coverage/solution_context",
+    "physics/reaction_energetics/coverage/solution_context/cycloadd_solution_context",
+    "physics/reaction_rates",
+    "physics/reaction_rates/canonical",
+    "physics/reaction_rates/canonical/property",
+    "physics/reaction_rates/canonical/property/lograte",
+    "physics/reaction_rates/coverage",
+    "physics/reaction_rates/coverage/physics_rates",
+    "physics/reaction_rates/coverage/physics_rates/quantumpioneer_hAT_kinetics",
+    "physics/reactive_potential",
+    "physics/reactive_potential/coverage",
+    "physics/reactive_potential/coverage/physics",
+    "physics/reactive_potential/coverage/physics/transition1x_reactive_trajectories",
+    "process",
+    "process/process_control",
+    "process/process_control/coverage",
+    "process/process_control/coverage/process",
+    "process/process_control/coverage/process/cstr_control_transitions",
+    "process/process_impact_assessment",
+    "process/process_impact_assessment/coverage",
+    "process/process_impact_assessment/coverage/process",
+    "process/process_impact_assessment/coverage/process/fcc_pilot_test",
+    "process/process_impact_assessment/coverage/process/fcc_pilot_train",
+    "process/process_impact_assessment/coverage/process/fcc_pilot_validation",
+    "process/reactor_scale_modeling",
+    "process/reactor_scale_modeling/coverage",
+    "process/reactor_scale_modeling/coverage/process",
+    "process/reactor_scale_modeling/coverage/process/fcc_lab_source_full",
+    "process/reactor_scale_modeling/coverage/process/fcc_pilot_test",
+    "process/reactor_scale_modeling/coverage/process/fcc_pilot_train",
+    "process/reactor_scale_modeling/coverage/process/fcc_pilot_validation",
+    "process/reactor_scale_modeling/coverage/process/reac_discovery_cs1",
+    "process/reactor_scale_modeling/coverage/process/reac_discovery_cs2",
+    "representation",
+    "representation/atom_mapping",
+    "representation/atom_mapping/canonical",
+    "representation/atom_mapping/canonical/aam",
+    "representation/atom_mapping/canonical/aam/brenda",
+    "representation/atom_mapping/canonical/aam/ecoli",
+    "representation/atom_mapping/canonical/aam/ehreact",
+    "representation/atom_mapping/canonical/aam/enzyme_map",
+    "representation/atom_mapping/canonical/aam/flower_c",
+    "representation/atom_mapping/canonical/aam/flower_e",
+    "representation/atom_mapping/canonical/aam/golden",
+    "representation/atom_mapping/canonical/aam/natcomm",
+    "representation/atom_mapping/canonical/aam/recon3d",
+    "representation/atom_mapping/canonical/aam/uspto_3k",
+    "representation/reaction_balancing",
+    "representation/reaction_balancing/canonical",
+    "representation/reaction_balancing/canonical/rbl",
+    "representation/reaction_balancing/canonical/rbl/complex",
+    "representation/reaction_balancing/canonical/rbl/mbs",
+    "representation/reaction_balancing/canonical/rbl/mnc",
+    "representation/reaction_balancing/canonical/rbl/mos",
+    "representation/reaction_classification",
+    "representation/reaction_classification/canonical",
+    "representation/reaction_classification/canonical/classification",
+    "representation/reaction_classification/canonical/classification/ecreact",
+    "representation/reaction_classification/canonical/classification/schneider_b",
+    "representation/reaction_classification/canonical/classification/schneider_u",
+    "representation/reaction_classification/canonical/classification/syntemp",
+    "representation/reaction_classification/canonical/classification/tpl_b",
+    "representation/reaction_classification/canonical/classification/tpl_u",
+    "representation/reaction_classification/canonical/classification/uspto_50k_b",
+    "representation/reaction_classification/canonical/classification/uspto_50k_u",
+    "representation/reaction_clustering",
+    "representation/reaction_clustering/canonical",
+    "representation/reaction_clustering/canonical/classification",
+    "representation/reaction_clustering/canonical/classification/ecreact",
+    "representation/reaction_clustering/canonical/classification/schneider_b",
+    "representation/reaction_clustering/canonical/classification/schneider_u",
+    "representation/reaction_clustering/canonical/classification/syntemp",
+    "representation/reaction_clustering/canonical/classification/tpl_b",
+    "representation/reaction_clustering/canonical/classification/tpl_u",
+    "representation/reaction_clustering/canonical/classification/uspto_50k_b",
+    "representation/reaction_clustering/canonical/classification/uspto_50k_u",
+    "representation/reaction_retrieval",
+    "representation/reaction_retrieval/coverage",
+    "representation/reaction_retrieval/coverage/knowledge",
+    "representation/reaction_retrieval/coverage/knowledge/EnzChemRED2024",
+    "representation/reaction_retrieval/coverage/knowledge/EnzChemRED2024/retrieval",
+    "selectivity",
+    "selectivity/enantioselectivity",
+    "selectivity/enantioselectivity/canonical",
+    "selectivity/enantioselectivity/canonical/selectivity",
+    "selectivity/enantioselectivity/canonical/selectivity/hitea_chiral_resolution",
+    "selectivity/enantioselectivity/expansion",
+    "selectivity/enantioselectivity/expansion/C16",
+    "selectivity/enantioselectivity/expansion/C16/aldol_reaction_dataset",
+    "selectivity/enantioselectivity/expansion/C16/michael_addition_dataset",
+    "selectivity/enantioselectivity/expansion/C16/validation_in_house_acetone",
+    "selectivity/enantioselectivity/expansion/C16/validation_in_house_hydroxyacetone",
+    "selectivity/enantioselectivity/expansion/C16/validation_new_literature_aldol",
+    "selectivity/enantioselectivity/expansion/C16/validation_new_literature_michael",
+    "selectivity/enantioselectivity/expansion/C16/validation_virtual_chemist",
+    "selectivity/impurity_prediction",
+    "selectivity/impurity_prediction/coverage",
+    "selectivity/impurity_prediction/coverage/impurity",
+    "selectivity/impurity_prediction/coverage/impurity/pba_benzaldehyde_side_product",
+    "selectivity/impurity_prediction/coverage/impurity/solid_state_reported_impurity_phases",
+    "selectivity/product_distribution",
+    "selectivity/product_distribution/expansion",
+    "selectivity/product_distribution/expansion/C06",
+    "selectivity/product_distribution/expansion/C06/catechol",
+    "selectivity/product_distribution/expansion/C06/claisen",
+    "selectivity/product_distribution/expansion/C06/single_solvent",
+    "selectivity/regioselectivity",
+    "selectivity/regioselectivity/canonical",
+    "selectivity/regioselectivity/canonical/selectivity",
+    "selectivity/regioselectivity/canonical/selectivity/regiosqm_eas",
+    "selectivity/regioselectivity/expansion",
+    "selectivity/regioselectivity/expansion/C02",
+    "selectivity/regioselectivity/expansion/C02/regio",
+    "transformations",
+    "transformations/forward_prediction",
+    "transformations/forward_prediction/canonical",
+    "transformations/forward_prediction/canonical/synthesis",
+    "transformations/forward_prediction/canonical/synthesis/da",
+    "transformations/forward_prediction/canonical/synthesis/uspto_50k",
+    "transformations/forward_prediction/canonical/synthesis/uspto_mit",
+    "transformations/reaction_center",
+    "transformations/reaction_center/canonical",
+    "transformations/reaction_center/canonical/synthesis",
+    "transformations/reaction_center/canonical/synthesis/uspto_mit",
+    "transformations/retrosynthesis",
+    "transformations/retrosynthesis/canonical",
+    "transformations/retrosynthesis/canonical/synthesis",
+    "transformations/retrosynthesis/canonical/synthesis/da",
+    "transformations/retrosynthesis/canonical/synthesis/uspto_50k",
+    "transformations/retrosynthesis/canonical/synthesis/uspto_mit"
+  ],
+  "files": {
+    "analysis/analytical_interpretation/coverage/process/nmr_pmg_284_spectra/table.json": {
+      "bytes": 7522,
+      "sha256": "cd8e25acbb98d9f034a2f8f2d97ac73b0cb9620cea063f496f725367f74c7b45"
+    },
+    "analysis/analytical_interpretation/coverage/process/nmr_pmg_287_spectra/table.json": {
+      "bytes": 7526,
+      "sha256": "70e9d22661535187345fd8e2aa83f10fa393be46b0c6c9865090364f13a4709e"
+    },
+    "analysis/analytical_interpretation/coverage/process/nmr_saccharose_hydrolysis_spectra/table.json": {
+      "bytes": 7688,
+      "sha256": "1ea927519e32cd5ed8ab703cfa51e8235e8e56c9584f71889afc42f6a94cbb0f"
+    },
+    "analysis/analytical_interpretation/task.json": {
+      "bytes": 12564,
+      "sha256": "3884707ee67eb93cc1c23d9cc33dc1a66cf8ec0ed038b379975109f5dddb58e2"
+    },
+    "analysis/family.json": {
+      "bytes": 2206,
+      "sha256": "02c8b7e6500a2ec9b6cdbd0b49bf95c596b5273015d7dfc063b7100eaec00bf5"
+    },
+    "analysis/reaction_progress_monitoring/coverage/process/lowfield_nmr_yield_progress/table.json": {
+      "bytes": 5867,
+      "sha256": "daa0aa106a448c08228fbe34909a799c904b0e9e8008613be353835128be1b73"
+    },
+    "analysis/reaction_progress_monitoring/coverage/process/nmr_pmg_284_progress/table.json": {
+      "bytes": 5406,
+      "sha256": "410eab7fcafa91ba5ef6a04cac6e8851ca0c645e0e1a92a649d0649d5a2ec18f"
+    },
+    "analysis/reaction_progress_monitoring/coverage/process/nmr_pmg_287_progress/table.json": {
+      "bytes": 5406,
+      "sha256": "54f9d8fcb43945d18f7d138b0c6cde32495b969b5fa736239adfe17bff73728b"
+    },
+    "analysis/reaction_progress_monitoring/coverage/process/nmr_saccharose_hydrolysis_progress/table.json": {
+      "bytes": 5564,
+      "sha256": "5a71689a8ffbd82b85fd69e1b5d77292efedab323c73505946558d30f5760f1b"
+    },
+    "analysis/reaction_progress_monitoring/task.json": {
+      "bytes": 12928,
+      "sha256": "c4005acd129f6ddbbf149569526ab313cd35756d846f6bffaa3177b31b9efbbb"
+    },
+    "biocatalysis/active_sites/coverage/bio/mcsa_reference_active_sites/table.json": {
+      "bytes": 6099,
+      "sha256": "60ed34289475bb03cf18ae87933f30ac16b18a5d4f2ff7156c1d2ad6d5497af6"
+    },
+    "biocatalysis/active_sites/task.json": {
+      "bytes": 4923,
+      "sha256": "6cb86e54549f2fb7aa545f3183f5a964b7167541f6ddb5c2d565b085d1921fd3"
+    },
+    "biocatalysis/enzyme_activity/canonical/classification/ehreact_activity/table.json": {
+      "bytes": 3097,
+      "sha256": "da7b8cde8f21d12ec2971d8b8faa5d59ee3fd49390afcc2034caf88e4414bb7c"
+    },
+    "biocatalysis/enzyme_activity/task.json": {
+      "bytes": 2393,
+      "sha256": "8f0fd262383810ea6f751d4cfc010e48e8d68fc498a629793af4eee8e1de7976"
+    },
+    "biocatalysis/enzyme_kinetic_parameters/coverage/bio/brenda_record_kcat/table.json": {
+      "bytes": 6534,
+      "sha256": "7e6b3bed94c05f25155f373373f67ed74d406eae6cf91e68cdaf01a6b29a1dcc"
+    },
+    "biocatalysis/enzyme_kinetic_parameters/coverage/bio/brenda_record_ki/table.json": {
+      "bytes": 6500,
+      "sha256": "5174cc9c18a83448eb57e22300544ca51b090bf4dfda72544754e22136b52c4a"
+    },
+    "biocatalysis/enzyme_kinetic_parameters/coverage/bio/brenda_record_km/table.json": {
+      "bytes": 6504,
+      "sha256": "d383778e668c78ca6c210a0475e10ab3c1f256e59e1331e92e3018218d058277"
+    },
+    "biocatalysis/enzyme_kinetic_parameters/task.json": {
+      "bytes": 10892,
+      "sha256": "6d982b52b4d95e7a9cf1c0dd5a7a2805f8cfedb28af8c82ebdda30e082a52bc1"
+    },
+    "biocatalysis/enzyme_retrieval/coverage/bio/reactzyme_retrieval/table.json": {
+      "bytes": 5128,
+      "sha256": "876c9db980cffea9e7f62e1a5b4cee76697361b5b6b8db79de57218ee17e41d7"
+    },
+    "biocatalysis/enzyme_retrieval/task.json": {
+      "bytes": 4602,
+      "sha256": "71cde8a3bd8d3b8764218773256a3cb638ea45e1e8693ba1d3b2d813c72d9649"
+    },
+    "biocatalysis/family.json": {
+      "bytes": 2727,
+      "sha256": "94c9e71d9d970f121e6508aacbd0c315b7338a2523d05b48596ee3fecb294206"
+    },
+    "biocatalysis/mutation_effects/coverage/bio/enzeng_mutation_effects/table.json": {
+      "bytes": 6978,
+      "sha256": "b777c9ab188ec00c194a715eee07f4092690b79fb1cb569d891cc59eb6b8fc72"
+    },
+    "biocatalysis/mutation_effects/task.json": {
+      "bytes": 5392,
+      "sha256": "767b93c1c1bf9efdab0ad5e82b03f200dd4b076998541cb339f6d58a2190c3ae"
+    },
+    "conditions/condition_ranking/canonical/yield/buchwald_hartwig_ood/table.json": {
+      "bytes": 2612,
+      "sha256": "f68cdf219d41a7af51462738c62f339bb0323df21edc96de9695fd7dba9d8df8"
+    },
+    "conditions/condition_ranking/canonical/yield/hitea/table.json": {
+      "bytes": 2427,
+      "sha256": "be030ec1c63953fbef39f2d3eeda5691de84ed90c88cf7857431c86784d22b77"
+    },
+    "conditions/condition_ranking/expansion/C02/minot_al1_data/table.json": {
+      "bytes": 2779,
+      "sha256": "3d2426935faaaa0ad6e0e3c63736c7c8771f5d1049777a13d9ce8632df72e1e3"
+    },
+    "conditions/condition_ranking/expansion/C02/minot_al2_data/table.json": {
+      "bytes": 2774,
+      "sha256": "b123996904933433beea5d666ceae4a64e5a5de9833a3fb0b43dd284a0109bbd"
+    },
+    "conditions/condition_ranking/expansion/C02/minot_al3_data/table.json": {
+      "bytes": 2774,
+      "sha256": "e5c1b8d6156f2e5e139b2cef9c52983a31d35ece4aa031ca8cf92e38c0ec7e09"
+    },
+    "conditions/condition_ranking/expansion/C02/minot_preal_data/table.json": {
+      "bytes": 2801,
+      "sha256": "4dfc968ad9ec51b92d5cd0a5f502705b154c04ecccc02bb1047097b7fb48b5eb"
+    },
+    "conditions/condition_ranking/expansion/C03/cn_screen/table.json": {
+      "bytes": 3007,
+      "sha256": "7dbe207574d756eb7554b20c281575cee691cbeb5e04bd0eae95f168708bd02a"
+    },
+    "conditions/condition_ranking/task.json": {
+      "bytes": 7184,
+      "sha256": "25f46c23badb2a7b80993ce9e4667b0d100a1a5710e27b428aae447e078aef5a"
+    },
+    "conditions/condition_recovery/canonical/condition/orderly_condition/table.json": {
+      "bytes": 2583,
+      "sha256": "7bae7e0f6a6ba9b54e51914dcc57d7bf3f39f255799b85c4fb12858f82fbaec7"
+    },
+    "conditions/condition_recovery/canonical/condition_sharealike/ord_hte_condition/table.json": {
+      "bytes": 2899,
+      "sha256": "f3164e74cbd7da0a46c1270fe7d22f0bc5b009fe1b7010a04361dfcbe6eb4cfd"
+    },
+    "conditions/condition_recovery/canonical/synthesis/uspto_500/table.json": {
+      "bytes": 2877,
+      "sha256": "1284f8aa118ac1c2f7f28319895fc18be0aa63f2bf35d83132ffc29cd14683fb"
+    },
+    "conditions/condition_recovery/task.json": {
+      "bytes": 4068,
+      "sha256": "239efdfb2fb0340b8dfed602f86f595e5b338f1ed142724c9198a04884f14209"
+    },
+    "conditions/family.json": {
+      "bytes": 2555,
+      "sha256": "b4c8f95fd302056395894919ca255b9a7f11d57de310df0e1e3e114d845de374"
+    },
+    "conditions/procedure_generation/canonical/condition_sharealike/openexp/table.json": {
+      "bytes": 2714,
+      "sha256": "61872ea7c3a5acd5a45474cdba138cd2b8c0f7b0f59b4d37b90c9d76fbf8587c"
+    },
+    "conditions/procedure_generation/task.json": {
+      "bytes": 2428,
+      "sha256": "51c5233b08fe6edd34c92f08af4272acc6370ee70cbfeac80fb5343bf85fb7ac"
+    },
+    "conditions/sequential_optimization/expansion/C02/minot_al1_data/table.json": {
+      "bytes": 2791,
+      "sha256": "8332a58642e1fa6495b08a11f492467f0ac948beb211b0b3e40dda59e334d8a4"
+    },
+    "conditions/sequential_optimization/expansion/C02/minot_al2_data/table.json": {
+      "bytes": 2786,
+      "sha256": "41b97e67f5a9ff4ead8db713419745dac69fa4a3d3e7627e0f45d7feb7758eaf"
+    },
+    "conditions/sequential_optimization/expansion/C02/minot_al3_data/table.json": {
+      "bytes": 2786,
+      "sha256": "fc54029844663c2901ff4b4959ae82a0995482b8864648d736092a2bd3e04b06"
+    },
+    "conditions/sequential_optimization/expansion/C02/minot_preal_data/table.json": {
+      "bytes": 2813,
+      "sha256": "b5425dab73d1ae838f9004a1260b7624ba5c8d0cfb881d7bb941c7129ffe3a74"
+    },
+    "conditions/sequential_optimization/expansion/C03/cn_screen/table.json": {
+      "bytes": 3019,
+      "sha256": "6f1ddfafd96c081eb36c993062dafde015edd3ff9b89c146602aa719c6311fc6"
+    },
+    "conditions/sequential_optimization/expansion/C06/catechol/table.json": {
+      "bytes": 3039,
+      "sha256": "f6157de8b3bd3cf93b28ae2f9bac64a8633e27a07a7b5f0877628ad0c2259268"
+    },
+    "conditions/sequential_optimization/expansion/C06/claisen/table.json": {
+      "bytes": 3024,
+      "sha256": "4f2f5fee698684059687f6c1863e408c60b8af27ab6db20685e08a5507366134"
+    },
+    "conditions/sequential_optimization/expansion/C06/single_solvent/table.json": {
+      "bytes": 3244,
+      "sha256": "b241fc32241b9d3c5c34ffd1edfa4c2aad8f970fea9f842ac541c5fd587eb1e5"
+    },
+    "conditions/sequential_optimization/task.json": {
+      "bytes": 8447,
+      "sha256": "a787e17d3b3a760c1729da10baa82359b56b6bedd6d1de070af86f24b0b24b7c"
+    },
+    "data/family.json": {
+      "bytes": 2140,
+      "sha256": "f78f5f72fc1b3c4fc340b7c5c2299b81b2b4dc02e2c9b5432cb6c995a0c064a5"
+    },
+    "data/literature_extraction/coverage/knowledge/EnzChemRED2024/documents/table.json": {
+      "bytes": 4451,
+      "sha256": "50c452ad59a956b8f1024d404cdce6ccbcc27ca71e28270853ed9f8ce1a78328"
+    },
+    "data/literature_extraction/task.json": {
+      "bytes": 4533,
+      "sha256": "aba3b9811fbb98a8e79e2e38e4f5b602b82a3fe5687273500e9e8a734964a7a5"
+    },
+    "data/reaction_record_curation/coverage/knowledge/EnzChemRED2024/curation/table.json": {
+      "bytes": 4798,
+      "sha256": "c4d84e9bb4ae9514b045c0208a8913495f9fb75566a326fc2f679356347a8df6"
+    },
+    "data/reaction_record_curation/task.json": {
+      "bytes": 4524,
+      "sha256": "eca5291d6920ef62b8145dc2aa857cd9bf6831f36066285b24e82ab44dcc5d77"
+    },
+    "design/family.json": {
+      "bytes": 2262,
+      "sha256": "551f41b73d85a4ccc2b644d72be4d8fe2c66628758f46362aa38a5fdb86b8753"
+    },
+    "design/new_reactivity_discovery/coverage/knowledge/MinotScope2026/scope_campaigns/table.json": {
+      "bytes": 5953,
+      "sha256": "59426adc1968ad677524348af5e19ea46824325e246757f35a68a24e208b9bcd"
+    },
+    "design/new_reactivity_discovery/task.json": {
+      "bytes": 5542,
+      "sha256": "cfcf9d1c8b725342ff83bbfe8289509e26ba024cb6b07cc07a53ffad273b96bc"
+    },
+    "design/reaction_component_design/coverage/bio/enzeng_inverse_biocatalyst_design/table.json": {
+      "bytes": 6821,
+      "sha256": "cbda13ffb57571119d64da7ca85f293838ac32669afcda04e85d3223472dc4bf"
+    },
+    "design/reaction_component_design/coverage/knowledge/CatDRX_ORD2025/inverse_components/table.json": {
+      "bytes": 5691,
+      "sha256": "885e9159fb2312008911a68c18ef6446ef29e3b1f40f0d5767548d8ce7c571a1"
+    },
+    "design/reaction_component_design/task.json": {
+      "bytes": 8456,
+      "sha256": "f63e06680396e0d08c4419b515e6a62c98cee3dee26b28f6d1b753da4fc72831"
+    },
+    "index.json": {
+      "bytes": 66015,
+      "sha256": "2155790a550046e6906ed2d85b69c32e186b2735bcfad1eeccc0653eb66e874a"
+    },
+    "mechanisms/family.json": {
+      "bytes": 2562,
+      "sha256": "69ccfef5ec211522761502f39eba619bec8571964ed0ae0b15eebb285d7afd33"
+    },
+    "mechanisms/mechanistic_prediction/canonical/mechanism/synepd_polar/table.json": {
+      "bytes": 2628,
+      "sha256": "f2ebcd7ff687e9b5a387985a4623743873cf577f4aa8b2d6bf07d1476c7471f8"
+    },
+    "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_continuous_chains/table.json": {
+      "bytes": 9078,
+      "sha256": "e276d9020af15d6c455bb515d3f5398ad3bbec57dadcdc0f559d6bda313aff84"
+    },
+    "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_elementary_steps/table.json": {
+      "bytes": 9005,
+      "sha256": "7876ebac30389c886ce9798c2a5838778ad1bdb42da2a5c2d0616bc47698d7cd"
+    },
+    "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_full_mechanisms/table.json": {
+      "bytes": 8952,
+      "sha256": "8dd3af978b2922eb2a026cf5cb3e00c63e9ae1dd0a7cb934c4cc63da97feba02"
+    },
+    "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_observed_mechanisms/table.json": {
+      "bytes": 9151,
+      "sha256": "5f647043220b0602cd9c4975072c77658d2ccc7b9abd391716f2e5bf05778242"
+    },
+    "mechanisms/mechanistic_prediction/task.json": {
+      "bytes": 23410,
+      "sha256": "05f7cab5083d0a84a9ba97aa4de7dd216e4a248bfa74cd2d5a0572d6c02b0041"
+    },
+    "mechanisms/reaction_network_modeling/coverage/physics/chemsindy_reference_trajectories/table.json": {
+      "bytes": 6054,
+      "sha256": "7d06adf06f4318ce00dfadd64e7a33817a8f6965f720d092305e50e343deb4b2"
+    },
+    "mechanisms/reaction_network_modeling/task.json": {
+      "bytes": 5132,
+      "sha256": "9c7d78bea9523e0c686ef15fe8c4332b006093a4a15cdcc51deb42540f4d4704"
+    },
+    "mechanisms/ts_geometry/coverage/physics/orgreact_ts_geometry/table.json": {
+      "bytes": 4822,
+      "sha256": "be8e2ae8c40e9d399f8ec45d55afbfb090d300dad574680474a2fc407bbdb7c5"
+    },
+    "mechanisms/ts_geometry/coverage/physics/transition1x_final_ts_geometry/table.json": {
+      "bytes": 4900,
+      "sha256": "0e01d84b3163d49f5075d23c6b2cbe2e1bfd2ac8a9b3a00d98963cb826de2d4a"
+    },
+    "mechanisms/ts_geometry/task.json": {
+      "bytes": 6837,
+      "sha256": "9d05a8629fe735f82eb4eb7f39714af39ec9a304c76b1c40c97d6b3c00af7cb4"
+    },
+    "outcomes/family.json": {
+      "bytes": 3173,
+      "sha256": "19bbcfad67ee8558fc873ce10143cf03ea80d34c8a070ec934632ccd088a1701"
+    },
+    "outcomes/reaction_feasibility/canonical/feasibility/frea_corpus/table.json": {
+      "bytes": 2608,
+      "sha256": "847336fe9effc68fc5ba75cd1fb090eef572dd1cbf5193760d771e2c486fe29c"
+    },
+    "outcomes/reaction_feasibility/canonical/feasibility/frea_expert/table.json": {
+      "bytes": 2575,
+      "sha256": "28b824ff2573f9559d9895e7880f15bc32752583a62883af1a7434ac037d383b"
+    },
+    "outcomes/reaction_feasibility/task.json": {
+      "bytes": 3172,
+      "sha256": "752336063bfa82ad85ce2ab61cdba2e898024f415158e81ac9217e73bae8abf0"
+    },
+    "outcomes/reaction_success/canonical/yield/buchwald_hartwig_ood/table.json": {
+      "bytes": 4330,
+      "sha256": "1a812e31651c01d3a41f700ac6cc7c95e39cfbd82fe2c6f9d5e137424ee832cb"
+    },
+    "outcomes/reaction_success/expansion/C02/minot_al1_data/table.json": {
+      "bytes": 2775,
+      "sha256": "33248db4db85354237f7254d387308574b599c4f65c50a46d89e4ae1dc186f61"
+    },
+    "outcomes/reaction_success/expansion/C02/minot_al2_data/table.json": {
+      "bytes": 2770,
+      "sha256": "13d6c1d6fd2ec74bced4b7fdc5c94c52dfc2d540f018557c9023e625032aadc0"
+    },
+    "outcomes/reaction_success/expansion/C02/minot_al3_data/table.json": {
+      "bytes": 2770,
+      "sha256": "51312b360c8117fc5a487ba4d697f3f163f5f96d868fa9c2154455fa63a304a7"
+    },
+    "outcomes/reaction_success/expansion/C02/minot_preal_data/table.json": {
+      "bytes": 2797,
+      "sha256": "e4e3ff254075cabfa7408dff8c1c367950501fcf9c6e45a8c753827da8a0b3ff"
+    },
+    "outcomes/reaction_success/task.json": {
+      "bytes": 7643,
+      "sha256": "56b9ddc5681e4479e64ee44b9f32c3595239ad703ff1f5b1eaf05d976fb07c49"
+    },
+    "outcomes/yield_conversion/canonical/property/phosphatase/table.json": {
+      "bytes": 5220,
+      "sha256": "1317a75cf608d56ecee542b5e552b026fc23b992ef72f94632ff8a827497252e"
+    },
+    "outcomes/yield_conversion/canonical/yield/buchwald_hartwig_ood/table.json": {
+      "bytes": 2661,
+      "sha256": "3cb9cf17db77a49baba5b34c858b65823318f68b1bb2a676c4ff8101f671f93b"
+    },
+    "outcomes/yield_conversion/canonical/yield/hitea/table.json": {
+      "bytes": 2476,
+      "sha256": "3679ca29ea39a21e90b2e03e68d41a98ef4689ea84975d5d6dc72233c76150ed"
+    },
+    "outcomes/yield_conversion/canonical/yield/uspto_yield/table.json": {
+      "bytes": 2581,
+      "sha256": "2713b51912cf17d6de12fd88f4ba6d646f8e153e58869c152e70a9f687c4316b"
+    },
+    "outcomes/yield_conversion/expansion/C02/minot_al1_data/table.json": {
+      "bytes": 2775,
+      "sha256": "7e9e19545928abeb707cf929ce1b0c195eb28f788e6196f8de956a9084e8afd1"
+    },
+    "outcomes/yield_conversion/expansion/C02/minot_al2_data/table.json": {
+      "bytes": 2770,
+      "sha256": "d90b9d0ad56c8feb105d473b289dc70ee232ed066340453341235752f22e9f87"
+    },
+    "outcomes/yield_conversion/expansion/C02/minot_al3_data/table.json": {
+      "bytes": 2770,
+      "sha256": "85c5b4dd0e00553dff46730b249618dc134c528d48afd6399e007394abad9158"
+    },
+    "outcomes/yield_conversion/expansion/C02/minot_preal_data/table.json": {
+      "bytes": 2797,
+      "sha256": "588e7c02aa8af009577e49f8deb49ed96c011dd923cab356849fb066068d3dab"
+    },
+    "outcomes/yield_conversion/expansion/C03/cn_screen/table.json": {
+      "bytes": 3003,
+      "sha256": "50233c0710576e9999a12c144a5d44aa4cab0794787d8b7084a5c7be77eb87c4"
+    },
+    "outcomes/yield_conversion/task.json": {
+      "bytes": 8628,
+      "sha256": "f1f27e0db79d80ba1b69e7e483586f74a3f82e6321264ea2a3766cd4316d7399"
+    },
+    "physics/activation_barrier/canonical/property/b97xd3/table.json": {
+      "bytes": 2659,
+      "sha256": "06e16119b959f8954672617793f7af0eaea59e7ed6cf8f4e7bddf29ec459b31e"
+    },
+    "physics/activation_barrier/canonical/property/cycloadd/table.json": {
+      "bytes": 2761,
+      "sha256": "8eb3a9651edc035da71f0a06767536e06672ea1831495eec263de6cdf3174567"
+    },
+    "physics/activation_barrier/canonical/property/e2/table.json": {
+      "bytes": 2505,
+      "sha256": "19b1701e07380e4b43edcd21ef07085c4a826bab19ca7bf52f7dd837156964bf"
+    },
+    "physics/activation_barrier/canonical/property/e2sn2/table.json": {
+      "bytes": 3058,
+      "sha256": "328b2e2ce55cae9336ef3df7da79ce85975d1c589b5c6a7a0bf73546f28b0d4c"
+    },
+    "physics/activation_barrier/canonical/property/rdb7/table.json": {
+      "bytes": 2532,
+      "sha256": "5b8bc4bc5a767df33302b1dd535eaa69378dc6eb4b75fba2d7d74bacf76178b7"
+    },
+    "physics/activation_barrier/canonical/property/rgd1/table.json": {
+      "bytes": 2540,
+      "sha256": "24a50197e697a982d540733d8c7225111363a6ac9a8354e2d700797f0e008d7d"
+    },
+    "physics/activation_barrier/canonical/property/sn2/table.json": {
+      "bytes": 2515,
+      "sha256": "23db046323ade597288892419c756f0286411812fb80e2a50e8845dedecd89f8"
+    },
+    "physics/activation_barrier/canonical/property/snar/table.json": {
+      "bytes": 3075,
+      "sha256": "5889d245612de46cfd3fcc4331384535212f4e60a93e746b7e220446f6076f6d"
+    },
+    "physics/activation_barrier/coverage/physics_rates/quantumpioneer_hAT_kinetics/table.json": {
+      "bytes": 6412,
+      "sha256": "00dca8ed919165e1331e27733b2651f166e41e9035477bd9776aa443c7362cf7"
+    },
+    "physics/activation_barrier/coverage/solution_barriers/lipred_solution_activation_gibbs/table.json": {
+      "bytes": 8059,
+      "sha256": "9b43916e9e39bb088c2ba75f8db5cbfb6d575a7ab0569d714510413bf5f38cb4"
+    },
+    "physics/activation_barrier/coverage/solution_context/cycloadd_solution_context/table.json": {
+      "bytes": 6177,
+      "sha256": "6bc1bec34fc4a1e5601de801d5ebbce29f1dd6fec9cfb284f7efdac5a9c56e12"
+    },
+    "physics/activation_barrier/coverage/solution_context/snar_solution_context/table.json": {
+      "bytes": 6196,
+      "sha256": "cd76aa6080b490c4928c1fd2386de7d4a3bce341967432cf621769f0da133aa7"
+    },
+    "physics/activation_barrier/task.json": {
+      "bytes": 20753,
+      "sha256": "749cc7f57dbe64f45ff4f6b06aa5a96c509826605dbd242532158aa8ee92548d"
+    },
+    "physics/family.json": {
+      "bytes": 3024,
+      "sha256": "58b60b3f82a98d7502ed2548a7c81390edc3296ad5d6d92c93914d86332b7f91"
+    },
+    "physics/kinetic_parameter_inference/coverage/physics/chemsindy_reference_trajectories/table.json": {
+      "bytes": 6047,
+      "sha256": "eea3cd949f95614921cb22e99e14b917450c067bd466eee25422a18d4163d0db"
+    },
+    "physics/kinetic_parameter_inference/task.json": {
+      "bytes": 5106,
+      "sha256": "6bd9429f0bdc823d74048dbde67a18ed37a3b4980939a24346c4e50c3d63b075"
+    },
+    "physics/reaction_energetics/canonical/property/b97xd3/table.json": {
+      "bytes": 2590,
+      "sha256": "643a849cab707686e9d6aa068655d0248a3a4e1b2a8a8444d5e47a9526e7632c"
+    },
+    "physics/reaction_energetics/canonical/property/cycloadd/table.json": {
+      "bytes": 2694,
+      "sha256": "1b9c4a77b27df67f9495459ed83382f6bfc1a35fda97c862af3ae5ef439885c6"
+    },
+    "physics/reaction_energetics/canonical/property/rad6re/table.json": {
+      "bytes": 3002,
+      "sha256": "802d36bb664ed3d249efdbc8cb3f0a1df5c3e626b3feb014c68202b23fca7832"
+    },
+    "physics/reaction_energetics/coverage/physics_rates/quantumpioneer_hAT_kinetics/table.json": {
+      "bytes": 6557,
+      "sha256": "210f61c44719e6cea5b1b25f6efec0cac48d4937b92c5e0a88c69426df9bb379"
+    },
+    "physics/reaction_energetics/coverage/solution_context/cycloadd_solution_context/table.json": {
+      "bytes": 6184,
+      "sha256": "b93e26c288da309343fc2293e1d1d9c1272acf47e49384fa530c457724fee5b0"
+    },
+    "physics/reaction_energetics/task.json": {
+      "bytes": 10338,
+      "sha256": "f592a511bd3a8d0d6689071839dc08605ba7d9778de6f81a41b65fabb40b6d54"
+    },
+    "physics/reaction_rates/canonical/property/lograte/table.json": {
+      "bytes": 2853,
+      "sha256": "72ea2a16c86e79c2e9fe580ef9d4989dad176bbc78306b071018294da62d6856"
+    },
+    "physics/reaction_rates/coverage/physics_rates/quantumpioneer_hAT_kinetics/table.json": {
+      "bytes": 6541,
+      "sha256": "ccb9ebac057d19dda25d26d502ac4b569f29e0f454aa4c0da5be19322498798d"
+    },
+    "physics/reaction_rates/task.json": {
+      "bytes": 6005,
+      "sha256": "de23743307d307b947a8686e9046b66e33fdd4ad12bab5378f47792fed7a49a2"
+    },
+    "physics/reactive_potential/coverage/physics/transition1x_reactive_trajectories/table.json": {
+      "bytes": 5485,
+      "sha256": "47fef138d8e8574b7de7ab75d303f97ee9748f5b2b960fb1ddd42cdc2055f4cb"
+    },
+    "physics/reactive_potential/task.json": {
+      "bytes": 4944,
+      "sha256": "a34ee324bb4b6d297135473f12234a9c151fc0137a523f87af8bd938f0de2029"
+    },
+    "process/family.json": {
+      "bytes": 2398,
+      "sha256": "0eab756684fe830ca0bad1a540a05b14905ecb478dbf6745f97a50fc648c427d"
+    },
+    "process/process_control/coverage/process/cstr_control_transitions/table.json": {
+      "bytes": 6753,
+      "sha256": "fea6f51763625e544fedce607f617a14ca852b3360d4de95f60c1157e2cf6830"
+    },
+    "process/process_control/task.json": {
+      "bytes": 5747,
+      "sha256": "3c80a4b8ff496fa751c0bb3b57cbd60cd5d6828002161434b1412985f3f76e26"
+    },
+    "process/process_impact_assessment/coverage/process/fcc_pilot_test/table.json": {
+      "bytes": 6273,
+      "sha256": "3e230dfbf7433493897fa470ecff50fe0f3c698887791e4ea9f30b2c6c82d8cd"
+    },
+    "process/process_impact_assessment/coverage/process/fcc_pilot_train/table.json": {
+      "bytes": 6338,
+      "sha256": "ba7d95965af6344f5e7009457c1278893a4a74d22cf743f93bdf6b5bf453379f"
+    },
+    "process/process_impact_assessment/coverage/process/fcc_pilot_validation/table.json": {
+      "bytes": 6387,
+      "sha256": "fe12060608ac1ec77f2a832942b6cdeea762dd40644a7fad5fc9775339b8318c"
+    },
+    "process/process_impact_assessment/task.json": {
+      "bytes": 11030,
+      "sha256": "6596124502323f984de86d25df9bf7027370253231ca2dc650bc803024f9e527"
+    },
+    "process/reactor_scale_modeling/coverage/process/fcc_lab_source_full/table.json": {
+      "bytes": 6292,
+      "sha256": "beec9d21943750180c56826307bf4f4def2ffa08dd680ecb4aed5df0ad3f76b7"
+    },
+    "process/reactor_scale_modeling/coverage/process/fcc_pilot_test/table.json": {
+      "bytes": 6273,
+      "sha256": "e011941717dcf1fbc226877b076a6512fe6b745239cb664ca0f12336358909db"
+    },
+    "process/reactor_scale_modeling/coverage/process/fcc_pilot_train/table.json": {
+      "bytes": 6338,
+      "sha256": "a2fde1847c43c652213753505744b545c54fd7f38bcd607f279e35fae0842fc1"
+    },
+    "process/reactor_scale_modeling/coverage/process/fcc_pilot_validation/table.json": {
+      "bytes": 6387,
+      "sha256": "91defbc7b8acf826a0a9d08453409dcfd00f38ebbcfe85edcf2f8428d3483368"
+    },
+    "process/reactor_scale_modeling/coverage/process/reac_discovery_cs1/table.json": {
+      "bytes": 5400,
+      "sha256": "3cf1cf03989ed17a198f0bd93fde24617d04a5423c933e92321413e5f35684c0"
+    },
+    "process/reactor_scale_modeling/coverage/process/reac_discovery_cs2/table.json": {
+      "bytes": 5400,
+      "sha256": "0ce537902696db989e7b98781f48828b3c4118a4e204cb2defe58de081e0fa21"
+    },
+    "process/reactor_scale_modeling/task.json": {
+      "bytes": 18837,
+      "sha256": "7ad636145e99328259e6003066693015fcdfc5df5b0d6951f38917472a2e4699"
+    },
+    "representation/atom_mapping/canonical/aam/brenda/table.json": {
+      "bytes": 2423,
+      "sha256": "a2d9bd3cd190e185abb9255a39670e69f9eb3098986b70d44f9c0b06d3935f0b"
+    },
+    "representation/atom_mapping/canonical/aam/ecoli/table.json": {
+      "bytes": 2629,
+      "sha256": "c152e63bd224c335c832b04fca8f4709582c46cfb5db35a2bb2fc5db44e51228"
+    },
+    "representation/atom_mapping/canonical/aam/ehreact/table.json": {
+      "bytes": 2923,
+      "sha256": "cd6880e241a4eda63936c81c957b818d246b0e9a783d43c90a7a93b4d8bfdb31"
+    },
+    "representation/atom_mapping/canonical/aam/enzyme_map/table.json": {
+      "bytes": 2443,
+      "sha256": "024636e8b1c43a7f966fc02069138e6e1bc2800834dcb117531852db51e4512b"
+    },
+    "representation/atom_mapping/canonical/aam/flower_c/table.json": {
+      "bytes": 2486,
+      "sha256": "d54679afb807025bd0d5e9737e99b06f6b9f04dd52f8711351fc22d6c2e85170"
+    },
+    "representation/atom_mapping/canonical/aam/flower_e/table.json": {
+      "bytes": 2493,
+      "sha256": "62ce9b65bf6f439cf64cc1d0e5e4218b29fbb4f3c69596198b2d2e14da44d52c"
+    },
+    "representation/atom_mapping/canonical/aam/golden/table.json": {
+      "bytes": 3343,
+      "sha256": "de2083dcc8c14a7073b4c7c20802006a5e73e11d35ced359a821cd7cd66f06ef"
+    },
+    "representation/atom_mapping/canonical/aam/natcomm/table.json": {
+      "bytes": 3219,
+      "sha256": "f10805368f089b14db39082d9faa8557e1a8856a2ad9aa567133ce95c61b9490"
+    },
+    "representation/atom_mapping/canonical/aam/recon3d/table.json": {
+      "bytes": 2904,
+      "sha256": "7d5bfda49db254d8ff72d8f139faf2140ca48673a52ae123ce788f08a0360aa5"
+    },
+    "representation/atom_mapping/canonical/aam/uspto_3k/table.json": {
+      "bytes": 3272,
+      "sha256": "a75dbe48c4ab93adbbf3e6abf1e3ac4b155f9e12942c9ac6635f85ebd68c6fff"
+    },
+    "representation/atom_mapping/task.json": {
+      "bytes": 8076,
+      "sha256": "eaa85e8bd3054a107211ef0ff9489b464e8b9b2acb434ff44fdd022e5c8e6359"
+    },
+    "representation/family.json": {
+      "bytes": 2587,
+      "sha256": "433d26ee42af1fff1053ad6227b9897afd8fe17a883c0f20060ec064447b0c5c"
+    },
+    "representation/reaction_balancing/canonical/rbl/complex/table.json": {
+      "bytes": 3561,
+      "sha256": "d5fa8d7549386508e5e40df91178d974ae1acdf0ed4ccad1b5c2d03a6d309035"
+    },
+    "representation/reaction_balancing/canonical/rbl/mbs/table.json": {
+      "bytes": 2729,
+      "sha256": "9406e7c6b30974055d43fe37d63f2c0acd1a11a292a829da87829e6b941fb3d7"
+    },
+    "representation/reaction_balancing/canonical/rbl/mnc/table.json": {
+      "bytes": 2739,
+      "sha256": "59d4cd4ead5dff6b459a534b0a2560884ff3001440daf9ba4bd35ecf4da45f55"
+    },
+    "representation/reaction_balancing/canonical/rbl/mos/table.json": {
+      "bytes": 2734,
+      "sha256": "b2730194f3d3c4434e3c875fdbbed33d01aee03f5f4620a487f70e73af178c31"
+    },
+    "representation/reaction_balancing/task.json": {
+      "bytes": 4274,
+      "sha256": "f2b5c50003892a9d5cf12102f65aab39f1b7c7b7fc0a9c8246c0f6c13bf01583"
+    },
+    "representation/reaction_classification/canonical/classification/ecreact/table.json": {
+      "bytes": 4239,
+      "sha256": "fc04ce53d654832794ca30c61978805b934b58b08439883b127b3837beccf4fc"
+    },
+    "representation/reaction_classification/canonical/classification/schneider_b/table.json": {
+      "bytes": 3824,
+      "sha256": "e5ddf23759d2e21461868443c2acc70b39af1602f3220821babeab2f6ecb100e"
+    },
+    "representation/reaction_classification/canonical/classification/schneider_u/table.json": {
+      "bytes": 3770,
+      "sha256": "1775b8509de283ec738b4a6d85a9183572c2bd97731a044ae4db084137431a17"
+    },
+    "representation/reaction_classification/canonical/classification/syntemp/table.json": {
+      "bytes": 2999,
+      "sha256": "f8349ff587762c3aa7094f39f88a40004ab2be4a2bd4cfa453d31b247d478af3"
+    },
+    "representation/reaction_classification/canonical/classification/tpl_b/table.json": {
+      "bytes": 3578,
+      "sha256": "3eabb1bcdc41bfd6b39bc8d0113234bd99f3057f45a6216a1e03c3bdb386621c"
+    },
+    "representation/reaction_classification/canonical/classification/tpl_u/table.json": {
+      "bytes": 3526,
+      "sha256": "3cbd16c8838b8319ee4f7989d10162b09c7e804bd14a38423dc36b82ebcc79fe"
+    },
+    "representation/reaction_classification/canonical/classification/uspto_50k_b/table.json": {
+      "bytes": 3907,
+      "sha256": "5b8901126df23ab6cfc2b70911665ef664d015c678b747c958a7997b58c78ccd"
+    },
+    "representation/reaction_classification/canonical/classification/uspto_50k_u/table.json": {
+      "bytes": 3853,
+      "sha256": "3bd664be2134a75149f608e28b7920f644076bdcead251eca1c5ebd475628da4"
+    },
+    "representation/reaction_classification/task.json": {
+      "bytes": 7797,
+      "sha256": "b81a07198371b6784bca01c81153462f1794f8ff59cf10496db8995e298e70c6"
+    },
+    "representation/reaction_clustering/canonical/classification/ecreact/table.json": {
+      "bytes": 4227,
+      "sha256": "c47ae98b76891e7b13a3b2de421dd3228453084e1259ee4bd6adebf2548c5ded"
+    },
+    "representation/reaction_clustering/canonical/classification/schneider_b/table.json": {
+      "bytes": 3812,
+      "sha256": "ce9701bc510adccd819f90e8f4cd838d7dc90f42fef68157fc1f8e1a3a39887b"
+    },
+    "representation/reaction_clustering/canonical/classification/schneider_u/table.json": {
+      "bytes": 3758,
+      "sha256": "01d4db23b1048706937846aa0cbcec99d72ad544c5f50992e1c3c2fa2828d71d"
+    },
+    "representation/reaction_clustering/canonical/classification/syntemp/table.json": {
+      "bytes": 2987,
+      "sha256": "3a8c9101d9309f0fb63eafbc16db7bc2cd6dd9f84fa52d26993d3323e0087942"
+    },
+    "representation/reaction_clustering/canonical/classification/tpl_b/table.json": {
+      "bytes": 3566,
+      "sha256": "7daa29b4127c75968d8d4f36af3ee5fccc2d3627a8c50237870936879921fd37"
+    },
+    "representation/reaction_clustering/canonical/classification/tpl_u/table.json": {
+      "bytes": 3514,
+      "sha256": "1b3729ca8547d84d84d437d172ab6914455a46ad86c0509067ec8771790cf2e2"
+    },
+    "representation/reaction_clustering/canonical/classification/uspto_50k_b/table.json": {
+      "bytes": 3895,
+      "sha256": "24334f82ff6c7e0a344638cdd85a7bc81b31a6263395d9e29e0f84cbe170a0a6"
+    },
+    "representation/reaction_clustering/canonical/classification/uspto_50k_u/table.json": {
+      "bytes": 3841,
+      "sha256": "863a382a21c5f8ac8cf318d1dbc9526173b08a75ffa36b74211264ae8195fb85"
+    },
+    "representation/reaction_clustering/task.json": {
+      "bytes": 7753,
+      "sha256": "1739a2778fb2c45e1acd81dcada299a08e8ebdbb049c8f8c81747aa49c1463af"
+    },
+    "representation/reaction_retrieval/coverage/knowledge/EnzChemRED2024/retrieval/table.json": {
+      "bytes": 5153,
+      "sha256": "2d750d0c46e1a7a7dd739688a1f5b58c1cb33eda0b7bd01a58a6fc0fde590666"
+    },
+    "representation/reaction_retrieval/task.json": {
+      "bytes": 4597,
+      "sha256": "1b01260300068acd60715775a52eab00125b6dff2680e1149015f761ee0a702c"
+    },
+    "selectivity/enantioselectivity/canonical/selectivity/hitea_chiral_resolution/table.json": {
+      "bytes": 2655,
+      "sha256": "80750d5ea762bfe4a30b4ed24fe3bd0c2ddd78adb0a2816fe6798e804ea8b9b8"
+    },
+    "selectivity/enantioselectivity/expansion/C16/aldol_reaction_dataset/table.json": {
+      "bytes": 3010,
+      "sha256": "59c7fe9771b24f22741f3e4d11178280b1071076a6e0cdcdf38bb6f89a0d96bd"
+    },
+    "selectivity/enantioselectivity/expansion/C16/michael_addition_dataset/table.json": {
+      "bytes": 3026,
+      "sha256": "372bc883b3b2000f8444ac6aec91ec086932fd144d064953f1c545c000faf4b1"
+    },
+    "selectivity/enantioselectivity/expansion/C16/validation_in_house_acetone/table.json": {
+      "bytes": 3060,
+      "sha256": "0c2228e41671f2f803577502f6423de55ff6344ed4677a704e2b5ea2a1286da8"
+    },
+    "selectivity/enantioselectivity/expansion/C16/validation_in_house_hydroxyacetone/table.json": {
+      "bytes": 3130,
+      "sha256": "ac862a4eb7a96f12ff3fdb34413769a90be96ab13eedde8a9260c9f04a81f18e"
+    },
+    "selectivity/enantioselectivity/expansion/C16/validation_new_literature_aldol/table.json": {
+      "bytes": 3093,
+      "sha256": "0dc4a54541e6a0d9e416bd0b6f3af592f50b992e38e3378912d38906e12363f2"
+    },
+    "selectivity/enantioselectivity/expansion/C16/validation_new_literature_michael/table.json": {
+      "bytes": 3117,
+      "sha256": "c43296166219e02ec8efd2ced295e7381895244fe793fc9defb3edffaa7c309b"
+    },
+    "selectivity/enantioselectivity/expansion/C16/validation_virtual_chemist/table.json": {
+      "bytes": 3051,
+      "sha256": "d15c2bb6455ad713a5147b1ab1c6924718c117a272b23e515d4e882cbead957b"
+    },
+    "selectivity/enantioselectivity/task.json": {
+      "bytes": 9026,
+      "sha256": "640c01610677bda4e7a8068d8eb47f7a14f28947409aa6aca2dd4ef18b03a3d0"
+    },
+    "selectivity/family.json": {
+      "bytes": 2626,
+      "sha256": "f2659c02fbf7fdd6ffc2ab1de209f831b4a0e374c6e8e81995a3338b262c84a2"
+    },
+    "selectivity/impurity_prediction/coverage/impurity/pba_benzaldehyde_side_product/table.json": {
+      "bytes": 6743,
+      "sha256": "905c5b06e21c46fbd64197a993573144b79bf0cd7c25e2a9675965406b87525f"
+    },
+    "selectivity/impurity_prediction/coverage/impurity/solid_state_reported_impurity_phases/table.json": {
+      "bytes": 7737,
+      "sha256": "a9237cde8b60cec8dda3a9206dc83c178af9d18907971f11ce4d9d703b91e576"
+    },
+    "selectivity/impurity_prediction/task.json": {
+      "bytes": 9386,
+      "sha256": "fd9b851749d9969ae7e3badc305e96716d37baf0adae72a6d733e1eee24dba62"
+    },
+    "selectivity/product_distribution/expansion/C06/catechol/table.json": {
+      "bytes": 3034,
+      "sha256": "d422d653d68843529baebebdd4607e12354eed3051ea5d1bed1f1ef495b0f9e4"
+    },
+    "selectivity/product_distribution/expansion/C06/claisen/table.json": {
+      "bytes": 3019,
+      "sha256": "5f8ddac3e271a2fa645e4c05f39868ab94f462aa15b6c59f8171b791d882a51a"
+    },
+    "selectivity/product_distribution/expansion/C06/single_solvent/table.json": {
+      "bytes": 3239,
+      "sha256": "96279f49b2f20f65cc7c11b9595d2dc62c1449101d2ca4be1e9bf897f83ec4c3"
+    },
+    "selectivity/product_distribution/task.json": {
+      "bytes": 4269,
+      "sha256": "faf819f44b7fdfd1abb7f4ed901e9e520e02764821f17cb05e7f6d953ff0e96c"
+    },
+    "selectivity/regioselectivity/canonical/selectivity/regiosqm_eas/table.json": {
+      "bytes": 2546,
+      "sha256": "43b1927d5a5588a9ac26ee3bbf55c8b65041b60ffc29d9af8c041c9c45f128b0"
+    },
+    "selectivity/regioselectivity/expansion/C02/regio/table.json": {
+      "bytes": 2746,
+      "sha256": "470050d3fdb8f12a6e9383587f7a96ebd10cdad93e1864d94f82bb5a57a1c3fd"
+    },
+    "selectivity/regioselectivity/task.json": {
+      "bytes": 3303,
+      "sha256": "ed884c94e1bd88a719166e451db6c338f90b1e5d319b489c2cb259342c32ceaf"
+    },
+    "transformations/family.json": {
+      "bytes": 2172,
+      "sha256": "45e4982683d6bf91f0d5e89a642b42072632b10bc1bffbcb7f829c129f329daf"
+    },
+    "transformations/forward_prediction/canonical/synthesis/da/table.json": {
+      "bytes": 8826,
+      "sha256": "a0c70e7bdaad91e976b76df6689be5787d02927e3036c4e14fa887a594ad6674"
+    },
+    "transformations/forward_prediction/canonical/synthesis/uspto_50k/table.json": {
+      "bytes": 3737,
+      "sha256": "036b1782a76b12fd27c95d3074b8f6a53204378677e01a12d6fdad72aa9d5b6a"
+    },
+    "transformations/forward_prediction/canonical/synthesis/uspto_mit/table.json": {
+      "bytes": 2830,
+      "sha256": "d0507063bf86c8d40dbbb42e65fa4c965fba37dc7fbdc7cb69ff970af44c73e7"
+    },
+    "transformations/forward_prediction/task.json": {
+      "bytes": 3710,
+      "sha256": "911eaf0113cd181f0d1ab4be92254b7e09d47bd8ea19171c6e93cd17f52bbe3d"
+    },
+    "transformations/reaction_center/canonical/synthesis/uspto_mit/table.json": {
+      "bytes": 2827,
+      "sha256": "0e98265e4029f62b3e152e09803044514b21bce6eb91b6dec04621747361afdc"
+    },
+    "transformations/reaction_center/task.json": {
+      "bytes": 2397,
+      "sha256": "1f418b0be8e47c100f500ef4c9207391dca97463020478877343ca192a6559c9"
+    },
+    "transformations/retrosynthesis/canonical/synthesis/da/table.json": {
+      "bytes": 8822,
+      "sha256": "c3c6b8f637abc4f8287ba6a07ff5281ed04651fec6a740d427c4c37f5cec39c8"
+    },
+    "transformations/retrosynthesis/canonical/synthesis/uspto_50k/table.json": {
+      "bytes": 3733,
+      "sha256": "63b88e0cb32b147a89e3adfdd2179a97dbef37fb1a530c9716a574b434419dcb"
+    },
+    "transformations/retrosynthesis/canonical/synthesis/uspto_mit/table.json": {
+      "bytes": 2826,
+      "sha256": "c399c4102f3c3449daad33150b8fbb1bb06a5b54214fc671eec63933c5e2dfaa"
+    },
+    "transformations/retrosynthesis/task.json": {
+      "bytes": 3708,
+      "sha256": "f35cee507670ed49e105e53f9ad7472e180ede8b39c86c46a572c3350bf09d88"
+    }
+  },
+  "generator": {
+    "naming_sha256": "fe580f3ea892fc014b6472a2dd945320ed8c0033e6ec399cf1dfd36bfc176a18",
+    "path": "synrxn/reconstruction/catalogue/layout.py",
+    "sha256": "d8c04497fcacce6763fe7b77b8aaea2de6f4bf7b1818abb2f9e773e940b21973"
+  },
+  "input_sha256": {
+    "kdd/coverage/release_manifest.json": "aa4559d20e9e310ddc71436118505602da1398dbcd0d7157f26764f995639a6b",
+    "kdd/hierarchy/hierarchy.json": "cd73397548fdd01d438e65793a3eba5c39214ee1f02f2efa281750111a58366f",
+    "kdd/task_registry.json": "e31269aeb229f985cb67714b334942029f66088fcc3b51dfe3cd912cf31d6762"
+  },
+  "managed_by": "synrxn.reconstruction.catalogue.layout",
+  "payloads": {
+    "analysis/analytical_interpretation/coverage/process/nmr_pmg_284_spectra/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "e46212c9a1e38d19ca26a234ca2c01b81e5d0ddca06f4a2cbf6a7f5e6f49e4c6",
+      "source_path": "Data/coverage_expansion/process/nmr_pmg_284_snapshots.jsonl.gz"
+    },
+    "analysis/analytical_interpretation/coverage/process/nmr_pmg_287_spectra/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "9f7c39f16588728a5592f5dc7ed7ad49e339d283ba7cb6c9238f77d3c6f1909b",
+      "source_path": "Data/coverage_expansion/process/nmr_pmg_287_snapshots.jsonl.gz"
+    },
+    "analysis/analytical_interpretation/coverage/process/nmr_saccharose_hydrolysis_spectra/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "18f370c5b06f1203a934ad6845e175109da47670968cfc1519aa1aaecbc2ddda",
+      "source_path": "Data/coverage_expansion/process/nmr_saccharose_hydrolysis_snapshots.jsonl.gz"
+    },
+    "analysis/reaction_progress_monitoring/coverage/process/lowfield_nmr_yield_progress/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "ed0bb5e7f6d10dff29786a927e5c64fe5f9ddc10370a1a03a072927c81ba8fa1",
+      "source_path": "Data/coverage_expansion/process/lowfield_nmr_yield_progress.jsonl.gz"
+    },
+    "analysis/reaction_progress_monitoring/coverage/process/nmr_pmg_284_progress/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "f36765c40bdeb20a2d14e80c98cacae4b74b66f9b10c3e05f5e22ca3306c8a56",
+      "source_path": "Data/coverage_expansion/process/nmr_pmg_284_progress.jsonl.gz"
+    },
+    "analysis/reaction_progress_monitoring/coverage/process/nmr_pmg_287_progress/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "dd6da290d3921bd80bb2d3a38ddf579ab070a3814ea8d049646acbf851d21850",
+      "source_path": "Data/coverage_expansion/process/nmr_pmg_287_progress.jsonl.gz"
+    },
+    "analysis/reaction_progress_monitoring/coverage/process/nmr_saccharose_hydrolysis_progress/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "631acde06a722bb3b01418ab35594af0dc4614de6d893b7890ed9b73d0d84477",
+      "source_path": "Data/coverage_expansion/process/nmr_saccharose_hydrolysis_progress.jsonl.gz"
+    },
+    "biocatalysis/active_sites/coverage/bio/mcsa_reference_active_sites/data.parquet": {
+      "bytes": null,
+      "sha256": "c9ee5321b3a876f5b8f755d4e15ac50ab5aaf6004889adbddde00a54d3892511",
+      "source_path": "Data/coverage_expansion/bio/mcsa_reference_active_sites.parquet"
+    },
+    "biocatalysis/enzyme_activity/canonical/classification/ehreact_activity/data.csv.gz": {
+      "bytes": 86714,
+      "sha256": "eb38c0a10358fff35a616c6ae4255efd2a6bb00b8f02cc6e2dde00943fba8192",
+      "source_path": "Data/classification/ehreact_activity.csv.gz"
+    },
+    "biocatalysis/enzyme_kinetic_parameters/coverage/bio/brenda_record_kcat/data.parquet": {
+      "bytes": null,
+      "sha256": "83583d5eee84fc0c0469375743c2c6088c6f0e01ce8531e21c684a042be4d33f",
+      "source_path": "Data/coverage_expansion/bio/brenda_record_kcat.parquet"
+    },
+    "biocatalysis/enzyme_kinetic_parameters/coverage/bio/brenda_record_ki/data.parquet": {
+      "bytes": null,
+      "sha256": "6c0d260b601df0ac8bca895a759ed0c8dc8b9eac5048deffe34c9071186ef704",
+      "source_path": "Data/coverage_expansion/bio/brenda_record_ki.parquet"
+    },
+    "biocatalysis/enzyme_kinetic_parameters/coverage/bio/brenda_record_km/data.parquet": {
+      "bytes": null,
+      "sha256": "254de537b9178e0dde95a650bfe7775767a18c864fbd5973af938751ee8f8af5",
+      "source_path": "Data/coverage_expansion/bio/brenda_record_km.parquet"
+    },
+    "biocatalysis/enzyme_retrieval/coverage/bio/reactzyme_retrieval/data.parquet": {
+      "bytes": null,
+      "sha256": "14ed9679a1974a95c2b02098a08bcabe3c38c3834ef5ab2bd30634e61f48ba8d",
+      "source_path": "Data/coverage_expansion/bio/reactzyme_retrieval.parquet"
+    },
+    "biocatalysis/mutation_effects/coverage/bio/enzeng_mutation_effects/data.parquet": {
+      "bytes": null,
+      "sha256": "607b451c674aabbc80e1f35aa8d6ded8c16e9881a7e3edac6892d929ab21e52c",
+      "source_path": "Data/coverage_expansion/bio/enzeng_mutation_effects.parquet"
+    },
+    "conditions/condition_recovery/canonical/condition/orderly_condition/data.csv.gz": {
+      "bytes": 398940745,
+      "sha256": "789e1c41f6dcc00cff2600aa21d034db327428b2df29427721f2ba103ca91e57",
+      "source_path": "Data/condition/orderly_condition.csv.gz"
+    },
+    "conditions/condition_recovery/canonical/condition_sharealike/ord_hte_condition/data.csv.gz": {
+      "bytes": 24004331,
+      "sha256": "9d77cb0ef9233dd7922e4a65ea89e046051581c9200dd3eb7c85d3ae06514c5c",
+      "source_path": "Data/condition_sharealike/ord_hte_condition.csv.gz"
+    },
+    "conditions/condition_recovery/canonical/synthesis/uspto_500/data.csv.gz": {
+      "bytes": 4485501,
+      "sha256": "fad362c125f8fc6195d49748bbd9f381ca4c9d3f03935d82f457b350ab46bef1",
+      "source_path": "Data/synthesis/uspto_500.csv.gz"
+    },
+    "conditions/procedure_generation/canonical/condition_sharealike/openexp/data.csv.gz": {
+      "bytes": 128234586,
+      "sha256": "f38c6bf858aa6d6d983c15199fc90f28e999ba6ea670229ab0307e70e919edc2",
+      "source_path": "Data/condition_sharealike/openexp.csv.gz"
+    },
+    "data/literature_extraction/coverage/knowledge/EnzChemRED2024/documents/data.parquet": {
+      "bytes": 1343931,
+      "sha256": "1aeb1adbe4b50434acf2dcc0756894f4b22be0a9757d5a59b0d9692243a1b9d4",
+      "source_path": "Data/coverage_expansion/knowledge/documents.parquet"
+    },
+    "data/reaction_record_curation/coverage/knowledge/EnzChemRED2024/curation/data.parquet": {
+      "bytes": 2124518,
+      "sha256": "55373a6d80a8e2c76f2472100936ce6209c463df76571c34e905be67a3fe5506",
+      "source_path": "Data/coverage_expansion/knowledge/curation.parquet"
+    },
+    "design/new_reactivity_discovery/coverage/knowledge/MinotScope2026/scope_campaigns/data.parquet": {
+      "bytes": 381078,
+      "sha256": "a7b517e03bc29b8bc789d86d3d7ca72318014938ba9e3637d7de2b7b9e6486ac",
+      "source_path": "Data/coverage_expansion/knowledge/scope_campaigns.parquet"
+    },
+    "design/reaction_component_design/coverage/bio/enzeng_inverse_biocatalyst_design/data.parquet": {
+      "bytes": null,
+      "sha256": "b7c1872fbd663be05ba2c887894ed1afaf0a993e596aae2a3c1a151573dd74ad",
+      "source_path": "Data/coverage_expansion/bio/enzeng_inverse_biocatalyst_design.parquet"
+    },
+    "design/reaction_component_design/coverage/knowledge/CatDRX_ORD2025/inverse_components/data.parquet": {
+      "bytes": 5599673,
+      "sha256": "430f23c5527312d8cdf84a036f5d60d49f20010db9f96be658d12dbc2bd887a7",
+      "source_path": "Data/coverage_expansion/knowledge/inverse_components.parquet"
+    },
+    "mechanisms/mechanistic_prediction/canonical/mechanism/synepd_polar/data.csv.gz": {
+      "bytes": 530952,
+      "sha256": "bc31c8764b13cde89540c763d94691f64c1b460458a759ea6a757a9d0967a7ba",
+      "source_path": "Data/mechanism/synepd_polar.csv.gz"
+    },
+    "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_continuous_chains/data.parquet": {
+      "bytes": 4438954,
+      "sha256": "633eb4d7a20fe81ce8a98c05e4e476a4569490878117c069a4bd2fe8393e75c2",
+      "source_path": "Data/coverage_expansion/mechanisms/mcsa_continuous_chains.parquet"
+    },
+    "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_elementary_steps/data.parquet": {
+      "bytes": 4614891,
+      "sha256": "f8f9b70c4db8015325f4420306b6a586f76d19dc8a6772a6f356d5f5cd0c5826",
+      "source_path": "Data/coverage_expansion/mechanisms/mcsa_elementary_steps.parquet"
+    },
+    "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_full_mechanisms/data.parquet": {
+      "bytes": 2668048,
+      "sha256": "dfdb96211e35ea5ce6660f875173e2827f34a8961e5f10db146b52fbfc32acd3",
+      "source_path": "Data/coverage_expansion/mechanisms/mcsa_full_mechanisms.parquet"
+    },
+    "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_observed_mechanisms/data.parquet": {
+      "bytes": 1332781,
+      "sha256": "76b81eb7054d6df673178e9bc11779d609d52da66f0fefac85936998534cde9f",
+      "source_path": "Data/coverage_expansion/mechanisms/mcsa_observed_mechanisms.parquet"
+    },
+    "mechanisms/ts_geometry/coverage/physics/orgreact_ts_geometry/data.csv": {
+      "bytes": null,
+      "sha256": "154424ff6277b1e8f199022a67758ff438083cedd02974ab690b2f7b89938059",
+      "source_path": "Data/coverage_expansion/physics/orgreact_ts_geometry.csv"
+    },
+    "mechanisms/ts_geometry/coverage/physics/transition1x_final_ts_geometry/data.csv": {
+      "bytes": null,
+      "sha256": "6c7512bb38663731d30e49bb9037d5b73ded283c1ffa8301b3d21ab5d437db82",
+      "source_path": "Data/coverage_expansion/physics/transition1x_final_ts_geometry.csv"
+    },
+    "outcomes/reaction_feasibility/canonical/feasibility/frea_corpus/data.csv.gz": {
+      "bytes": 1294268197,
+      "sha256": "b7128dd8911c51f55b6740504710e621f736997a1b9c8a42594d7540ca25d8d3",
+      "source_path": "Data/feasibility/frea_corpus.csv.gz"
+    },
+    "outcomes/reaction_feasibility/canonical/feasibility/frea_expert/data.csv.gz": {
+      "bytes": 83907,
+      "sha256": "e9495a288e404d1ef6ff188f28809e9946e153d1ba6d67175ca13763d107507f",
+      "source_path": "Data/feasibility/frea_expert.csv.gz"
+    },
+    "outcomes/yield_conversion/canonical/property/phosphatase/data.csv.gz": {
+      "bytes": 1137562,
+      "sha256": "aca656158cb5b96cfa3378234641796e5becdf6647d7af0ae9f91b9e53639917",
+      "source_path": "Data/property/phosphatase.csv.gz"
+    },
+    "outcomes/yield_conversion/canonical/yield/buchwald_hartwig_ood/data.csv.gz": {
+      "bytes": 3109259,
+      "sha256": "1cae5ff9010813e242f6de2dc6bd3e33342f759be79c5d88ac4f3f46dc4ec409",
+      "source_path": "Data/yield/buchwald_hartwig_ood.csv.gz"
+    },
+    "outcomes/yield_conversion/canonical/yield/hitea/data.csv.gz": {
+      "bytes": 2929498,
+      "sha256": "f0e0d0db9f37643bcebb5c9b6a29a9a6a950f7e92c05fc4541a07d9ca3d1d0e9",
+      "source_path": "Data/yield/hitea.csv.gz"
+    },
+    "outcomes/yield_conversion/canonical/yield/uspto_yield/data.csv.gz": {
+      "bytes": 114345878,
+      "sha256": "a95706078ebba47315a91f853f27a3a3494e344b8ce782d53df0a5e5d5aa6f5b",
+      "source_path": "Data/yield/uspto_yield.csv.gz"
+    },
+    "outcomes/yield_conversion/expansion/C02/minot_al1_data/data.parquet": {
+      "bytes": 105563,
+      "sha256": "1a4593001f6dbf52487f50ff6efcbfef6b52cd0488dc5f0b001de04117faf780",
+      "source_path": "Data/expansion/main/C02/minot_al1_data.parquet"
+    },
+    "outcomes/yield_conversion/expansion/C02/minot_al2_data/data.parquet": {
+      "bytes": 41317,
+      "sha256": "8b26a87c9577d85d2e913a1a9c0d5096777e41ad765b0fc4b7f9bb80c0db751c",
+      "source_path": "Data/expansion/main/C02/minot_al2_data.parquet"
+    },
+    "outcomes/yield_conversion/expansion/C02/minot_al3_data/data.parquet": {
+      "bytes": 42764,
+      "sha256": "08f73be1d8027531abfdda1f26007fee8f2411221de95fcf1093e957f7364715",
+      "source_path": "Data/expansion/main/C02/minot_al3_data.parquet"
+    },
+    "outcomes/yield_conversion/expansion/C02/minot_preal_data/data.parquet": {
+      "bytes": 115911,
+      "sha256": "d46814951744663fc94cade06f30cd4e3f13e52bc5d13c5a0bcf43bf51793092",
+      "source_path": "Data/expansion/main/C02/minot_preal_data.parquet"
+    },
+    "outcomes/yield_conversion/expansion/C03/cn_screen/data.parquet": {
+      "bytes": 7165935,
+      "sha256": "534d2d7bc8cbed7f694694c0db65e9b34fd4cfe471878e0a37395767415bc5a0",
+      "source_path": "Data/expansion/sharealike/C03/cn_screen.parquet"
+    },
+    "physics/activation_barrier/canonical/property/b97xd3/data.csv.gz": {
+      "bytes": 641403,
+      "sha256": "33f881612842378a6cff97b2db0c99b1c4877a7e81a318129a26dd58e9702d73",
+      "source_path": "Data/property/b97xd3.csv.gz"
+    },
+    "physics/activation_barrier/canonical/property/cycloadd/data.csv.gz": {
+      "bytes": 381702,
+      "sha256": "afd03a88ef6268350f2c176b70a67396ff1902b85e6742bb2ac3ef0d9ca84004",
+      "source_path": "Data/property/cycloadd.csv.gz"
+    },
+    "physics/activation_barrier/canonical/property/e2/data.csv.gz": {
+      "bytes": 31804,
+      "sha256": "2b2177235aeddf06b9fa29abe9836e6a3c520ccdbd1530b9757f8e8c4c23d99e",
+      "source_path": "Data/property/e2.csv.gz"
+    },
+    "physics/activation_barrier/canonical/property/e2sn2/data.csv.gz": {
+      "bytes": 79331,
+      "sha256": "d3b27039841da7ea9bb18e511271fbaddfcb61d826ec1c5e31b50f71c1d3e044",
+      "source_path": "Data/property/e2sn2.csv.gz"
+    },
+    "physics/activation_barrier/canonical/property/rdb7/data.csv.gz": {
+      "bytes": 640317,
+      "sha256": "5980529ee8cf8ab0922df24048c69ba131d2f7ad623f5cdf9d7fb67b6466849e",
+      "source_path": "Data/property/rdb7.csv.gz"
+    },
+    "physics/activation_barrier/canonical/property/rgd1/data.csv.gz": {
+      "bytes": 13199958,
+      "sha256": "74c5fbfd38b24409c17ddf2d8dc105ad728479df8a17b2bcf65c51a3ed8bed30",
+      "source_path": "Data/property/rgd1.csv.gz"
+    },
+    "physics/activation_barrier/canonical/property/sn2/data.csv.gz": {
+      "bytes": 58133,
+      "sha256": "2e3c58220e44dbf7597088861d642378abead0048f1a6c12f99771a0719db2ac",
+      "source_path": "Data/property/sn2.csv.gz"
+    },
+    "physics/activation_barrier/canonical/property/snar/data.csv.gz": {
+      "bytes": 5965,
+      "sha256": "df8df5b8bc8b74910c7fe9960a8dd200182c5ef1bf91de906286cb71bfe60bcd",
+      "source_path": "Data/property/snar.csv.gz"
+    },
+    "physics/activation_barrier/coverage/physics_rates/quantumpioneer_hAT_kinetics/data.csv": {
+      "bytes": null,
+      "sha256": "e81aa5f9158564e64356a524c046469e2a13e471469ff641713ded3c37ff1520",
+      "source_path": "Data/coverage_expansion/physics_rates/quantumpioneer_kinetics.csv"
+    },
+    "physics/activation_barrier/coverage/solution_barriers/lipred_solution_activation_gibbs/data.csv": {
+      "bytes": null,
+      "sha256": "d028ede06408041185f2d3a583ae203bbd965b61d64fb5e4357b2315947b0cf9",
+      "source_path": "Data/coverage_expansion/solution_barriers/lipred_solution_activation_gibbs.csv"
+    },
+    "physics/activation_barrier/coverage/solution_context/cycloadd_solution_context/data.csv": {
+      "bytes": null,
+      "sha256": "7e140a55f4c94d0250a9b742b3dbaed1901d4d061b370f5cee145505cf1a4bba",
+      "source_path": "Data/coverage_expansion/solution_context/cycloadd_solution_context.csv"
+    },
+    "physics/activation_barrier/coverage/solution_context/snar_solution_context/data.csv": {
+      "bytes": null,
+      "sha256": "00133eda15cf7f07ba3bd13f4b51c4fb95f2c44f915af104a21d9d608186777d",
+      "source_path": "Data/coverage_expansion/solution_context/snar_solution_context.csv"
+    },
+    "physics/kinetic_parameter_inference/coverage/physics/chemsindy_reference_trajectories/data.csv": {
+      "bytes": null,
+      "sha256": "322bf8b9d3792d0a75ec1c1775cfff76cb1c9532f1fcb8644aa1f0eb4da7db52",
+      "source_path": "Data/coverage_expansion/physics/chemsindy_reference_trajectories.csv"
+    },
+    "physics/reaction_energetics/canonical/property/rad6re/data.csv.gz": {
+      "bytes": 866920,
+      "sha256": "fd78145b61bf50e0267f61ae5e45681020a7de7d3fe552da26feabc3096db1d5",
+      "source_path": "Data/property/rad6re.csv.gz"
+    },
+    "physics/reaction_rates/canonical/property/lograte/data.csv.gz": {
+      "bytes": 20166,
+      "sha256": "ca79d7de36fde44961dd093a53c999356ac9aacf3aee524eb18bf90219f120f0",
+      "source_path": "Data/property/lograte.csv.gz"
+    },
+    "physics/reactive_potential/coverage/physics/transition1x_reactive_trajectories/data.csv": {
+      "bytes": null,
+      "sha256": "b809b5dc199bfd49624995119b8a65b1d598d3ede438f4cee1f16b504ea461f9",
+      "source_path": "Data/coverage_expansion/physics/transition1x_reactive_trajectories.csv"
+    },
+    "process/process_control/coverage/process/cstr_control_transitions/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "f027ddcfd313234ca9fb3b448d2767f7f190807732f441fc6e522b86fe3b511a",
+      "source_path": "Data/coverage_expansion/process/cstr_control_transitions.jsonl.gz"
+    },
+    "process/reactor_scale_modeling/coverage/process/fcc_lab_source_full/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "7dee3a628dd58bb80250ef6752a290063edc2097788fcd879cbd2ff3ecd58a38",
+      "source_path": "Data/coverage_expansion/process/fcc_lab_source_full.jsonl.gz"
+    },
+    "process/reactor_scale_modeling/coverage/process/fcc_pilot_test/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "764e6e23504c46e4c1c4ba93eaa09f50767006827c7a8ed6cfa8ee60c6a0049c",
+      "source_path": "Data/coverage_expansion/process/fcc_pilot_test.jsonl.gz"
+    },
+    "process/reactor_scale_modeling/coverage/process/fcc_pilot_train/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "9e753460982c68355cf602c92f9ecb5a3464ee0ac9dc987eb3860a7fc35fbd47",
+      "source_path": "Data/coverage_expansion/process/fcc_pilot_train.jsonl.gz"
+    },
+    "process/reactor_scale_modeling/coverage/process/fcc_pilot_validation/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "dc9257e64b3ce06c3c219db87d21f27cde21768f6e5a02784988fab0cc8c1c6c",
+      "source_path": "Data/coverage_expansion/process/fcc_pilot_validation.jsonl.gz"
+    },
+    "process/reactor_scale_modeling/coverage/process/reac_discovery_cs1/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "c347354b19579663e6da260621491a9a714e01d7813fe5ae0f043c7e0c8cfadc",
+      "source_path": "Data/coverage_expansion/process/reac_discovery_cs1.jsonl.gz"
+    },
+    "process/reactor_scale_modeling/coverage/process/reac_discovery_cs2/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "49764a1137e6e8622c635373da75f4f440eca08ebd86fef2457393f05747469d",
+      "source_path": "Data/coverage_expansion/process/reac_discovery_cs2.jsonl.gz"
+    },
+    "representation/atom_mapping/canonical/aam/brenda/data.csv.gz": {
+      "bytes": 385458,
+      "sha256": "dad050fba14ab6160480e6802cf81fc82ea3a70e1ccb1af9d251796cd7374580",
+      "source_path": "Data/aam/brenda.csv.gz"
+    },
+    "representation/atom_mapping/canonical/aam/ecoli/data.csv.gz": {
+      "bytes": 95991,
+      "sha256": "d38436457c5f5d82149981005a2c39d289d56467fb45ffdeb294f0c62b631866",
+      "source_path": "Data/aam/ecoli.csv.gz"
+    },
+    "representation/atom_mapping/canonical/aam/ehreact/data.csv.gz": {
+      "bytes": 73805,
+      "sha256": "e085217180f396ad519eeaadf7602d39c7c374e5591b95bde85c0d8b57402124",
+      "source_path": "Data/aam/ehreact.csv.gz"
+    },
+    "representation/atom_mapping/canonical/aam/enzyme_map/data.csv.gz": {
+      "bytes": 3818594,
+      "sha256": "303e6638819a008f1442291443459795e9bb40b3cdea9e9da01732d05f20b807",
+      "source_path": "Data/aam/enzyme_map.csv.gz"
+    },
+    "representation/atom_mapping/canonical/aam/flower_c/data.csv.gz": {
+      "bytes": 6116189,
+      "sha256": "75f34235813ce9accff59134536f6e1f0f6af5c9a16a381e7a75e96b0f52d203",
+      "source_path": "Data/aam/flower_c.csv.gz"
+    },
+    "representation/atom_mapping/canonical/aam/flower_e/data.csv.gz": {
+      "bytes": 12842463,
+      "sha256": "696f0a08fa7872309918c0bc1de7cfe3a32ba862e4d732775e12844894159d8d",
+      "source_path": "Data/aam/flower_e.csv.gz"
+    },
+    "representation/atom_mapping/canonical/aam/golden/data.csv.gz": {
+      "bytes": 528456,
+      "sha256": "ccce1ab8a18a45559cdbf87bcd3ecd838fc6e1cd1e3ad8d5815e39af5ddd49d9",
+      "source_path": "Data/aam/golden.csv.gz"
+    },
+    "representation/atom_mapping/canonical/aam/natcomm/data.csv.gz": {
+      "bytes": 132874,
+      "sha256": "c62f4084990533d36bd9ba706cd78a80de0bad14ee139cdf1fb3c00422da2343",
+      "source_path": "Data/aam/natcomm.csv.gz"
+    },
+    "representation/atom_mapping/canonical/aam/recon3d/data.csv.gz": {
+      "bytes": 230314,
+      "sha256": "a5dc370de65eb8efde9ecd703ef1f2a021d5713b850944530092798628dea45e",
+      "source_path": "Data/aam/recon3d.csv.gz"
+    },
+    "representation/atom_mapping/canonical/aam/uspto_3k/data.csv.gz": {
+      "bytes": 1039902,
+      "sha256": "7d46de323ec918550fd742ea5e839fc976cd451058eca061b1e2023354698145",
+      "source_path": "Data/aam/uspto_3k.csv.gz"
+    },
+    "representation/reaction_balancing/canonical/rbl/complex/data.csv.gz": {
+      "bytes": 54517,
+      "sha256": "a2a2d887a65806fbd27596147f6209213cb3eedfbafd428370ec68586827db4c",
+      "source_path": "Data/rbl/complex.csv.gz"
+    },
+    "representation/reaction_balancing/canonical/rbl/mbs/data.csv.gz": {
+      "bytes": 14727,
+      "sha256": "d7cb14f9604328dcc86bd0ab10503d7649ff50a3d823a45cb02fb874bca1bd1d",
+      "source_path": "Data/rbl/mbs.csv.gz"
+    },
+    "representation/reaction_balancing/canonical/rbl/mnc/data.csv.gz": {
+      "bytes": 1090524,
+      "sha256": "ed66cd15303b63fd9e0e6ea0f0ad396bada423a36d5f290dec5ee7cdf447c6cf",
+      "source_path": "Data/rbl/mnc.csv.gz"
+    },
+    "representation/reaction_balancing/canonical/rbl/mos/data.csv.gz": {
+      "bytes": 452394,
+      "sha256": "d8c6d663ad21cafba9dc64259ba435924926305af2b87a785795c289da39fc31",
+      "source_path": "Data/rbl/mos.csv.gz"
+    },
+    "representation/reaction_classification/canonical/classification/ecreact/data.csv.gz": {
+      "bytes": 2874798,
+      "sha256": "c730e5bd196dc69b5ebc421cce37010162f7e129f149b28196f0069ee242bdcd",
+      "source_path": "Data/classification/ecreact.csv.gz"
+    },
+    "representation/reaction_classification/canonical/classification/schneider_b/data.csv.gz": {
+      "bytes": 1737472,
+      "sha256": "72c6560f458c3777f1e0f1e73c3a35ac7974cc4a49e3ae6441421d4e91bf86b2",
+      "source_path": "Data/classification/schneider_b.csv.gz"
+    },
+    "representation/reaction_classification/canonical/classification/schneider_u/data.csv.gz": {
+      "bytes": 1517500,
+      "sha256": "fbd6e409459354ade4a6d15aeaf2206694f7df335a315384ca7dbcf06d2ee5b4",
+      "source_path": "Data/classification/schneider_u.csv.gz"
+    },
+    "representation/reaction_classification/canonical/classification/syntemp/data.csv.gz": {
+      "bytes": 1478384,
+      "sha256": "5ace42ff5d956a4c5180ca854bbbd441bdbac5b71903a6bcd4684bb77320c1ed",
+      "source_path": "Data/classification/syntemp.csv.gz"
+    },
+    "representation/reaction_classification/canonical/classification/tpl_b/data.csv.gz": {
+      "bytes": 17266004,
+      "sha256": "106cec5db1b37757483d7d99f2d9dde34e89315af54fdb9aa2e3cf0770fb4dbc",
+      "source_path": "Data/classification/tpl_b.csv.gz"
+    },
+    "representation/reaction_classification/canonical/classification/tpl_u/data.csv.gz": {
+      "bytes": 15207379,
+      "sha256": "6b6a649e1cc13f17418a4ce3a8b63663a7f66c1777abfc66c16bce8e0efa2912",
+      "source_path": "Data/classification/tpl_u.csv.gz"
+    },
+    "representation/reaction_classification/canonical/classification/uspto_50k_b/data.csv.gz": {
+      "bytes": 1474615,
+      "sha256": "098f85a386e25742791e5b87b8be8a7a090e920b6eca5f2b85452aa913ddba51",
+      "source_path": "Data/classification/uspto_50k_b.csv.gz"
+    },
+    "representation/reaction_classification/canonical/classification/uspto_50k_u/data.csv.gz": {
+      "bytes": 1398804,
+      "sha256": "355d38f0ef86b6546bfd24bbee97ebfe09d16c9ffed8b13282dc336734421fdb",
+      "source_path": "Data/classification/uspto_50k_u.csv.gz"
+    },
+    "representation/reaction_retrieval/coverage/knowledge/EnzChemRED2024/retrieval/data.parquet": {
+      "bytes": 222082,
+      "sha256": "92a65a8155800d2ab88eef695530051a81a2b82fa55f1bea790b8db0304fa6a5",
+      "source_path": "Data/coverage_expansion/knowledge/retrieval.parquet"
+    },
+    "selectivity/enantioselectivity/canonical/selectivity/hitea_chiral_resolution/data.csv.gz": {
+      "bytes": 5842,
+      "sha256": "deffeb88f4a3d9e1f1ea98ece7cdcda2f42ba8edaae899771df2aab5f1ddd8b7",
+      "source_path": "Data/selectivity/hitea_chiral_resolution.csv.gz"
+    },
+    "selectivity/enantioselectivity/expansion/C16/aldol_reaction_dataset/data.parquet": {
+      "bytes": 615549,
+      "sha256": "727fecc820664a12bcf5656784e246872f9cae9eedc14129487032c05d167848",
+      "source_path": "Data/expansion/main/C16/aldol_reaction_dataset.parquet"
+    },
+    "selectivity/enantioselectivity/expansion/C16/michael_addition_dataset/data.parquet": {
+      "bytes": 448457,
+      "sha256": "3ebcd00fcf67e6fe004d94e1ea4e9a0c6a68e174001bbddfcfb99ef8a8ec035c",
+      "source_path": "Data/expansion/main/C16/michael_addition_dataset.parquet"
+    },
+    "selectivity/enantioselectivity/expansion/C16/validation_in_house_acetone/data.parquet": {
+      "bytes": 9572,
+      "sha256": "a78c786545763bc1a4af9b67258c85c99a249c13022fa4e88c6aa9f360139e44",
+      "source_path": "Data/expansion/main/C16/validation_in_house_acetone.parquet"
+    },
+    "selectivity/enantioselectivity/expansion/C16/validation_in_house_hydroxyacetone/data.parquet": {
+      "bytes": 9693,
+      "sha256": "c5902553914c1d3718ccb551fba622475381e36ec6282c53e1e70b57dfb9cc4d",
+      "source_path": "Data/expansion/main/C16/validation_in_house_hydroxyacetone.parquet"
+    },
+    "selectivity/enantioselectivity/expansion/C16/validation_new_literature_aldol/data.parquet": {
+      "bytes": 11926,
+      "sha256": "538b7824377d0a526ea8a6ff7d3837d26fbb22cda611bfa9f8fefb9ec8d2e87d",
+      "source_path": "Data/expansion/main/C16/validation_new_literature_aldol.parquet"
+    },
+    "selectivity/enantioselectivity/expansion/C16/validation_new_literature_michael/data.parquet": {
+      "bytes": 14679,
+      "sha256": "41639b6a17b7b092b38a0f1ef59c53256d2f40c7ed27357c189fec55a6d00441",
+      "source_path": "Data/expansion/main/C16/validation_new_literature_michael.parquet"
+    },
+    "selectivity/enantioselectivity/expansion/C16/validation_virtual_chemist/data.parquet": {
+      "bytes": 10666,
+      "sha256": "30c9b286d0668cddbc0ee4203eafb0f8b83b269c6d5620433d8d6e880a0eb50c",
+      "source_path": "Data/expansion/main/C16/validation_virtual_chemist.parquet"
+    },
+    "selectivity/impurity_prediction/coverage/impurity/pba_benzaldehyde_side_product/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "b73a356906112988e8d1782f298d52ae73e45dd63054224ee84d0be30815ae35",
+      "source_path": "Data/coverage_expansion/impurity/pba_benzaldehyde_side_product.jsonl.gz"
+    },
+    "selectivity/impurity_prediction/coverage/impurity/solid_state_reported_impurity_phases/data.jsonl.gz": {
+      "bytes": null,
+      "sha256": "8e0de53371c07b2197e827cd4e43f6020179e8d502371348d7173aaefcbdf510",
+      "source_path": "Data/coverage_expansion/impurity/solid_state_reported_impurity_phases.jsonl.gz"
+    },
+    "selectivity/product_distribution/expansion/C06/catechol/data.parquet": {
+      "bytes": 114709,
+      "sha256": "579b186784c74a5164718c79d8abbf7fa13e26015bece574ab99164e1b50cec6",
+      "source_path": "Data/expansion/main/C06/catechol.parquet"
+    },
+    "selectivity/product_distribution/expansion/C06/claisen/data.parquet": {
+      "bytes": 21249,
+      "sha256": "6890901862e080d0c2f59b0bc2127ddfc638babf3eb23f7c07ca86490593c4af",
+      "source_path": "Data/expansion/main/C06/claisen.parquet"
+    },
+    "selectivity/product_distribution/expansion/C06/single_solvent/data.parquet": {
+      "bytes": 57554,
+      "sha256": "9567764950291fd19115fc4fe05d44ef1975207b23c06c7a04b021b405455964",
+      "source_path": "Data/expansion/main/C06/single_solvent.parquet"
+    },
+    "selectivity/regioselectivity/canonical/selectivity/regiosqm_eas/data.csv.gz": {
+      "bytes": 75109,
+      "sha256": "c156301e943612c5b04db9216e5fa0c173539c966933bcd489e87d7691acd9ae",
+      "source_path": "Data/selectivity/regiosqm_eas.csv.gz"
+    },
+    "selectivity/regioselectivity/expansion/C02/regio/data.parquet": {
+      "bytes": 62343,
+      "sha256": "2c672296e347ecef0af88921a10c8849e9fd8a2892538b79b82acf8ecb97e485",
+      "source_path": "Data/expansion/main/C02/regio.parquet"
+    },
+    "transformations/forward_prediction/canonical/synthesis/uspto_50k/data.csv.gz": {
+      "bytes": 4411638,
+      "sha256": "a23d355405f037cc4ecc751cf094003f3b64c115dd212f20d99015bc9ba05ac4",
+      "source_path": "Data/synthesis/uspto_50k.csv.gz"
+    },
+    "transformations/forward_prediction/canonical/synthesis/uspto_mit/data.csv.gz": {
+      "bytes": 57264696,
+      "sha256": "74dffc5bb8e5fdfb41c11676deb5fedb9bb63d28325bdfc719ea68d8b8d9f33b",
+      "source_path": "Data/synthesis/uspto_mit.csv.gz"
+    }
+  },
+  "python_version": "3.12.12",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 104,
+    "data_links": 144,
+    "families": 12,
+    "held_bindings": 2,
+    "held_table_views": 1,
+    "overlapping_table_views": 7,
+    "primary_table_views": 98,
+    "stored_rows_across_unique_views": 19611896,
+    "task_table_bindings": 146,
+    "tasks": 41,
+    "unique_table_views": 105
+  },
+  "symlinks": {
+    "conditions/condition_ranking/canonical/yield/buchwald_hartwig_ood/data.csv.gz": "../../../../../outcomes/yield_conversion/canonical/yield/buchwald_hartwig_ood/data.csv.gz",
+    "conditions/condition_ranking/canonical/yield/hitea/data.csv.gz": "../../../../../outcomes/yield_conversion/canonical/yield/hitea/data.csv.gz",
+    "conditions/condition_ranking/expansion/C02/minot_al1_data/data.parquet": "../../../../../outcomes/yield_conversion/expansion/C02/minot_al1_data/data.parquet",
+    "conditions/condition_ranking/expansion/C02/minot_al2_data/data.parquet": "../../../../../outcomes/yield_conversion/expansion/C02/minot_al2_data/data.parquet",
+    "conditions/condition_ranking/expansion/C02/minot_al3_data/data.parquet": "../../../../../outcomes/yield_conversion/expansion/C02/minot_al3_data/data.parquet",
+    "conditions/condition_ranking/expansion/C02/minot_preal_data/data.parquet": "../../../../../outcomes/yield_conversion/expansion/C02/minot_preal_data/data.parquet",
+    "conditions/condition_ranking/expansion/C03/cn_screen/data.parquet": "../../../../../outcomes/yield_conversion/expansion/C03/cn_screen/data.parquet",
+    "conditions/sequential_optimization/expansion/C02/minot_al1_data/data.parquet": "../../../../../outcomes/yield_conversion/expansion/C02/minot_al1_data/data.parquet",
+    "conditions/sequential_optimization/expansion/C02/minot_al2_data/data.parquet": "../../../../../outcomes/yield_conversion/expansion/C02/minot_al2_data/data.parquet",
+    "conditions/sequential_optimization/expansion/C02/minot_al3_data/data.parquet": "../../../../../outcomes/yield_conversion/expansion/C02/minot_al3_data/data.parquet",
+    "conditions/sequential_optimization/expansion/C02/minot_preal_data/data.parquet": "../../../../../outcomes/yield_conversion/expansion/C02/minot_preal_data/data.parquet",
+    "conditions/sequential_optimization/expansion/C03/cn_screen/data.parquet": "../../../../../outcomes/yield_conversion/expansion/C03/cn_screen/data.parquet",
+    "conditions/sequential_optimization/expansion/C06/catechol/data.parquet": "../../../../../selectivity/product_distribution/expansion/C06/catechol/data.parquet",
+    "conditions/sequential_optimization/expansion/C06/claisen/data.parquet": "../../../../../selectivity/product_distribution/expansion/C06/claisen/data.parquet",
+    "conditions/sequential_optimization/expansion/C06/single_solvent/data.parquet": "../../../../../selectivity/product_distribution/expansion/C06/single_solvent/data.parquet",
+    "mechanisms/reaction_network_modeling/coverage/physics/chemsindy_reference_trajectories/data.csv": "../../../../../physics/kinetic_parameter_inference/coverage/physics/chemsindy_reference_trajectories/data.csv",
+    "outcomes/reaction_success/canonical/yield/buchwald_hartwig_ood/data.csv.gz": "../../../../yield_conversion/canonical/yield/buchwald_hartwig_ood/data.csv.gz",
+    "outcomes/reaction_success/expansion/C02/minot_al1_data/data.parquet": "../../../../yield_conversion/expansion/C02/minot_al1_data/data.parquet",
+    "outcomes/reaction_success/expansion/C02/minot_al2_data/data.parquet": "../../../../yield_conversion/expansion/C02/minot_al2_data/data.parquet",
+    "outcomes/reaction_success/expansion/C02/minot_al3_data/data.parquet": "../../../../yield_conversion/expansion/C02/minot_al3_data/data.parquet",
+    "outcomes/reaction_success/expansion/C02/minot_preal_data/data.parquet": "../../../../yield_conversion/expansion/C02/minot_preal_data/data.parquet",
+    "physics/reaction_energetics/canonical/property/b97xd3/data.csv.gz": "../../../../activation_barrier/canonical/property/b97xd3/data.csv.gz",
+    "physics/reaction_energetics/canonical/property/cycloadd/data.csv.gz": "../../../../activation_barrier/canonical/property/cycloadd/data.csv.gz",
+    "physics/reaction_energetics/coverage/physics_rates/quantumpioneer_hAT_kinetics/data.csv": "../../../../activation_barrier/coverage/physics_rates/quantumpioneer_hAT_kinetics/data.csv",
+    "physics/reaction_energetics/coverage/solution_context/cycloadd_solution_context/data.csv": "../../../../activation_barrier/coverage/solution_context/cycloadd_solution_context/data.csv",
+    "physics/reaction_rates/coverage/physics_rates/quantumpioneer_hAT_kinetics/data.csv": "../../../../activation_barrier/coverage/physics_rates/quantumpioneer_hAT_kinetics/data.csv",
+    "process/process_impact_assessment/coverage/process/fcc_pilot_test/data.jsonl.gz": "../../../../reactor_scale_modeling/coverage/process/fcc_pilot_test/data.jsonl.gz",
+    "process/process_impact_assessment/coverage/process/fcc_pilot_train/data.jsonl.gz": "../../../../reactor_scale_modeling/coverage/process/fcc_pilot_train/data.jsonl.gz",
+    "process/process_impact_assessment/coverage/process/fcc_pilot_validation/data.jsonl.gz": "../../../../reactor_scale_modeling/coverage/process/fcc_pilot_validation/data.jsonl.gz",
+    "representation/reaction_clustering/canonical/classification/ecreact/data.csv.gz": "../../../../reaction_classification/canonical/classification/ecreact/data.csv.gz",
+    "representation/reaction_clustering/canonical/classification/schneider_b/data.csv.gz": "../../../../reaction_classification/canonical/classification/schneider_b/data.csv.gz",
+    "representation/reaction_clustering/canonical/classification/schneider_u/data.csv.gz": "../../../../reaction_classification/canonical/classification/schneider_u/data.csv.gz",
+    "representation/reaction_clustering/canonical/classification/syntemp/data.csv.gz": "../../../../reaction_classification/canonical/classification/syntemp/data.csv.gz",
+    "representation/reaction_clustering/canonical/classification/tpl_b/data.csv.gz": "../../../../reaction_classification/canonical/classification/tpl_b/data.csv.gz",
+    "representation/reaction_clustering/canonical/classification/tpl_u/data.csv.gz": "../../../../reaction_classification/canonical/classification/tpl_u/data.csv.gz",
+    "representation/reaction_clustering/canonical/classification/uspto_50k_b/data.csv.gz": "../../../../reaction_classification/canonical/classification/uspto_50k_b/data.csv.gz",
+    "representation/reaction_clustering/canonical/classification/uspto_50k_u/data.csv.gz": "../../../../reaction_classification/canonical/classification/uspto_50k_u/data.csv.gz",
+    "transformations/reaction_center/canonical/synthesis/uspto_mit/data.csv.gz": "../../../../forward_prediction/canonical/synthesis/uspto_mit/data.csv.gz",
+    "transformations/retrosynthesis/canonical/synthesis/uspto_50k/data.csv.gz": "../../../../forward_prediction/canonical/synthesis/uspto_50k/data.csv.gz",
+    "transformations/retrosynthesis/canonical/synthesis/uspto_mit/data.csv.gz": "../../../../forward_prediction/canonical/synthesis/uspto_mit/data.csv.gz"
+  }
+}

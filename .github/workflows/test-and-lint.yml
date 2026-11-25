@@ -2,7 +2,7 @@ name: Test, lint, and package
 
 on:
   push:
-    branches: [dev, main, fps]
+    branches: [dev, dev-new, main, fps]
   pull_request:
     branches: [main]
 
@@ -32,15 +32,25 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e ".[all,dev]"
 
-      - name: Lint
-        run: ./lint.sh
+      - name: Check release metadata
+        run: python scripts/check_release.py
 
-      - name: Test
-        run: pytest -q
+      - name: Lint
+        run: scripts/lint.sh
+
+      # Full source/reconstruction tests require the matching external data assets.
+      - name: Test metrics, split protocols and evaluation
+        run: >-
+          scripts/pytest.sh -q Test/metrics/test_tasks.py Test/benchmarks/test_protocols.py
+          Test/metrics/test_reference.py Test/split Test/io Test/reconstruction/expansion
 
       - name: Build wheel and source distribution
         if: matrix.python-version == '3.11'
         run: python -m build
+
+      - name: Check distribution contents
+        if: matrix.python-version == '3.11'
+        run: python scripts/check_release.py --dist-dir dist
 
       - name: Inspect built distributions
         if: matrix.python-version == '3.11'
@@ -51,5 +61,6 @@ jobs:
         run: |
           python -m venv /tmp/synrxn-smoke
           /tmp/synrxn-smoke/bin/python -m pip install dist/*.whl
+          cd /tmp
           /tmp/synrxn-smoke/bin/python -c "import synrxn; print(synrxn.DataLoader)"
           /tmp/synrxn-smoke/bin/synrxn --help

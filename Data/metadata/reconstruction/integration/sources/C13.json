@@ -1,0 +1,56 @@
+{
+  "id": "C13",
+  "name": "EnzEngDB",
+  "priority": "2 Targeted expansion",
+  "survey_license_note": "CC BY 4.0 on the Zenodo data record. This verifies the data deposit; the repository code LICENSE is empty.",
+  "paper_urls": [
+    "https://doi.org/10.1093/nar/gkaf1142"
+  ],
+  "data_urls": [
+    "https://zenodo.org/records/17310823"
+  ],
+  "project_urls": [
+    "https://github.com/fhalab/EnzymeEngineeringDB"
+  ],
+  "license_urls": [
+    "https://zenodo.org/api/records/17310823"
+  ],
+  "license_verified": true,
+  "files": [
+    {
+      "name": "Data.zip",
+      "bytes": 30050527,
+      "checksum": "md5:c68ca58c1670ac57091bc5726b613510",
+      "url": "https://zenodo.org/api/records/17310823/files/Data.zip/content"
+    },
+    {
+      "name": "Code.zip",
+      "bytes": 52346931,
+      "checksum": "md5:46fa3dda5d6599c5c2f0e28f02674ea6",
+      "url": "https://zenodo.org/api/records/17310823/files/Code.zip/content"
+    },
+    {
+      "name": "bib.zip",
+      "bytes": 166104,
+      "checksum": "md5:248ed57a0a78f2cc1f079f6d98b72a7b",
+      "url": "https://zenodo.org/api/records/17310823/files/bib.zip/content"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://zenodo.org/api/records/17310823",
+      "status": 200,
+      "sha256": "650e29a4cd9d0819551263597d9b00328b01a4d68a384bdc011e25c5583c59d6",
+      "bytes": 5296,
+      "retrieved_at": "2026-10-20T15:34:55.916933+00:00"
+    }
+  ],
+  "record_id": "17310823",
+  "doi": "10.5281/zenodo.17310823",
+  "title": "Enzyme Engineering Database (EnzEngDB): A Platform for Sharing and Interpreting Sequence-Function Relationships across Protein Engineering Campaigns",
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "publication_date": "2026-01-15",
+  "description": "<p><span lang=\"EN-GB\">We developed the Enzyme Engineering Database (EnzEngDB) to provide a centralised resource and an online analysis tool to consolidate sequence-function data from enzyme engineering campaigns, thereby making three contributions: 1) a database into which researchers can deposit public data, 2) visualisation and analysis tools for protein engineers to analyse their own data or compare enzyme variants to other engineering campaigns, and 3) a gold-standard dataset for benchmarking automated extraction.&nbsp;</span></p>\n<p><span lang=\"EN-GB\">If you use this data, please cite the original research accordingly, each of the entries has a DOI, or if you use all the data, the complete reference list can be found in the bib file as a bibtex for easy upload to your citation manager. Thanks!</span></p>"
+}

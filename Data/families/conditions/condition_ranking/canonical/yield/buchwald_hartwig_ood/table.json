@@ -1,0 +1,75 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "conditions",
+  "format": "csv.gz",
+  "key": "yield/buchwald_hartwig_ood",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "yield/buchwald_hartwig_ood",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 27438
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "bh_data_grant",
+      "bh_repository_license",
+      "bh_repository_readme"
+    ],
+    "expected_bytes": 3109259,
+    "expected_rows": 27438,
+    "expected_sha256": "1cae5ff9010813e242f6de2dc6bd3e33342f759be79c5d88ac4f3f46dc4ec409",
+    "format": "csv.gz",
+    "key": "yield/buchwald_hartwig_ood",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/yield/buchwald_hartwig_ood.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 27438,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "neves2026bh"
+    ],
+    "path": "Data/yield/buchwald_hartwig_ood.csv.gz",
+    "sha256": "1cae5ff9010813e242f6de2dc6bd3e33342f759be79c5d88ac4f3f46dc4ec409",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "neves2026bh"
+    ],
+    "counting_unit": "source-table row",
+    "key": "yield/buchwald_hartwig_ood",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/yield/buchwald_hartwig_ood.csv.gz",
+    "role": "primary",
+    "rows": 27438,
+    "sha256": "1cae5ff9010813e242f6de2dc6bd3e33342f759be79c5d88ac4f3f46dc4ec409",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "NCS 2026 / BH-HTE-OOD yield collection"
+  },
+  "stored_path": "Data/families/outcomes/yield_conversion/canonical/yield/buchwald_hartwig_ood/data.csv.gz",
+  "task_id": "condition_ranking",
+  "title": "NCS 2026 / BH-HTE-OOD yield collection"
+}

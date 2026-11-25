@@ -1,0 +1,78 @@
+{
+  "counting_unit": "substrate-product annotation",
+  "data_link": "data.parquet",
+  "family_id": "selectivity",
+  "format": "parquet",
+  "key": "C02/regio",
+  "namespace": "expansion",
+  "registry_binding": {
+    "adapter_ids": [
+      "regioselectivity"
+    ],
+    "commercial_use_allowed": true,
+    "counting_unit": "substrate-product annotation",
+    "key": "C02/regio",
+    "namespace": "expansion",
+    "partition": "main",
+    "qualification": "Product annotations do not establish full product ratios or symmetry-aware reactive-site labels.",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 1030
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "minot_data_grant"
+    ],
+    "expected_bytes": 62343,
+    "expected_rows": 1030,
+    "expected_sha256": "2c672296e347ecef0af88921a10c8849e9fd8a2892538b79b82acf8ecb97e485",
+    "format": "parquet",
+    "key": "C02/regio",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "expansion",
+    "partition": "main",
+    "path": "Data/expansion/main/C02/regio.parquet",
+    "qualification": "Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 1030,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/expansion/main/C02/regio.parquet",
+    "sha256": "2c672296e347ecef0af88921a10c8849e9fd8a2892538b79b82acf8ecb97e485",
+    "source_catalogue": "Data/expansion/catalog.json",
+    "source_id": "C02",
+    "source_urls": [
+      "https://zenodo.org/records/20773622",
+      "https://www.nature.com/articles/s43588-026-01063-0"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "substrate-product annotation",
+    "key": "C02/regio",
+    "namespace": "expansion",
+    "path": "Data/expansion/main/C02/regio.parquet",
+    "role": "primary",
+    "rows": 1030,
+    "sha256": "2c672296e347ecef0af88921a10c8849e9fd8a2892538b79b82acf8ecb97e485",
+    "source_catalogue": "Data/expansion/catalog.json",
+    "source_id": "C02",
+    "source_urls": [
+      "https://zenodo.org/records/20773622",
+      "https://www.nature.com/articles/s43588-026-01063-0"
+    ],
+    "title": "Minot borylation regioselectivity"
+  },
+  "stored_path": "Data/families/selectivity/regioselectivity/expansion/C02/regio/data.parquet",
+  "task_id": "regioselectivity",
+  "title": "Minot borylation regioselectivity"
+}

@@ -1,0 +1,344 @@
+{
+  "schema": "synrxn.legacy-rights-recheck-followup.v1",
+  "date": "2026-10-20",
+  "scope": "Follow-up of synthesis/da only, including original article Data Availability, Reaxys publishing guidance from the same year, and independent native training membership. Original data and previous evidence remain immutable.",
+  "tables": [
+    {
+      "key": "synthesis/da",
+      "namespace": "canonical",
+      "rows": 11011,
+      "data_path": "Data/synthesis/da.csv.gz",
+      "data_sha256": "ddfb98a997ef53161ee43743dbd7431a31c5c674c172f5034e637eaad562afe0",
+      "declared_license_spdx": "CC-BY-3.0",
+      "release_eligible": false,
+      "status": "upstream_database_terms_unverified",
+      "release_license_expression": null,
+      "reason": "The 11,011 rows are an author-published, curated reaction-structure dataset, rather than a private or unavailable Reaxys dump. Goodman and Lam (2024) explicitly used the original Li/Tang (2022) training reactions, published the processed file, and described its filtering in the supporting information. The original 2022 paper explicitly publishes the training/validation repository in its Data Availability statement and carries a CC BY-NC 3.0 article notice. All 11,011 local rows exactly match the Goodman source. An independent structure join matches 11,009 original training records; two rows retain connectivity and product identity but differ in reactant stereochemical notation. Public availability and article licensing are therefore established. However, an explicit downstream grant for these external reaction files, or the applicable author/Elsevier agreement covering redistribution of the extracted reaction compilation, has not been located. The original repository MIT notice refers to software and documentation and retains another project copyright; the Goodman repository has no dataset-specific licence file. Reaxys publishing guidance from 2022 expressly permits some publications and unlimited substance identifiers/SMILES, so Reaxys provenance alone does not establish prohibition. It does not clearly cover republishing 11,011 paired reactant-product reaction records. The status remains an unresolved redistribution-grant scope under the project verified-grant gate; it is not a finding that authors or future reuse are prohibited.",
+      "evidence_ids": [
+        "property_recheck_da_crossref",
+        "property_recheck_da_publisher_pdf",
+        "property_recheck_twobond_readme",
+        "property_recheck_twobond_native_da",
+        "property_recheck_twobond_commits",
+        "property_recheck_twobond_tree",
+        "synrxn_product_notice",
+        "property_recheck_da_original_pmc",
+        "property_recheck_da_original_crossref",
+        "property_recheck_da_original_pinned_license",
+        "property_recheck_da_original_pinned_readme",
+        "property_recheck_da_original_tree",
+        "property_recheck_da_original_commit",
+        "property_followup_da_original_gan_train",
+        "property_followup_da_original_gan_validation",
+        "property_followup_da_original_article",
+        "property_followup_da_rsc_cc_by_nc_example_v8_2",
+        "property_followup_da_reaxys_publishing_guidelines_2022",
+        "property_followup_da_reaxys_data_faq_2025",
+        "property_followup_da_original_training_membership",
+        "property_followup_da_reproduce_membership"
+      ],
+      "remaining_qualification": [
+        "Article publication and public author deposit are verified and should be stated positively. Noncommercial publication is acceptable to this project; the CC BY-NC condition alone is not the reason for this hold.",
+        "The 2022 Reaxys guidance is guidance only, subject to change, and describes collaboration work products. The specific author agreement or an explicit permission exception was not available for review; no contrary inference about author compliance is made.",
+        "The unlimited Reaxys identifiers passage includes substance structures as SMILES. This is not an unambiguous grant for a large compilation of paired reaction transformations; individual facts or structures and compilation or database rights must not be conflated.",
+        "The current RSC CC BY-NC example agreement, version 8.2 clause 2.10, excludes raw research data from the article publishing agreement. It is current scope guidance, rather than proof of the signed 2022 author agreement or a retroactive change to an existing grant.",
+        "This decision concerns mirroring the complete 11,011-row payload in a release. It does not prohibit citing the original public deposits or preserving a reproducible source-download recipe.",
+        "No author or Elsevier contact has been made. No original dataset or previously pinned source was changed."
+      ],
+      "source_lock_path": "Data/sources/synthesis/da.json",
+      "source_lock_sha256": "297ceaa0ef8dc8f671c398f792b7ac0d0630c45ba9af7b4fab41112ea7900bdb",
+      "native_join_proof": {
+        "path": "kdd/coverage/rights_recheck/property/da_native_comparison.json",
+        "sha256": "c2cd125cc96be11c5110d1fc6f2443d2344ddf04e2b7f18bd1169948416bd5c1",
+        "reproduce": "python kdd/coverage/rights_recheck/property/reproduce_comparisons.py"
+      },
+      "observed_license_notices": {
+        "curated_goodman_paper": "CC-BY-3.0",
+        "original_li_paper": "CC-BY-NC-3.0",
+        "original_gan_code": "MIT",
+        "ultimate_source": "Reaxys; dataset-specific extraction/redistribution grant unverified"
+      },
+      "original_dataset_origin": {
+        "article_doi": "10.1039/D2RA06022A",
+        "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9693912/",
+        "origin_quote": "a dataset of Diels\u2013Alder reactions downloaded from the Reaxys database was created.",
+        "original_dataset_rows": 14092,
+        "repository_commit": "2f20aa524d03de56b1d31578a7d26043a49eca19",
+        "native_files": [
+          {
+            "path": "dataset/train.txt",
+            "git_blob_sha1": "e4e5ce62d7408bd856b998537b1b4fc79cd38374",
+            "bytes": 1253194,
+            "url": "https://raw.githubusercontent.com/hongliangduan/Generation-of-novel-Diels-Alder-reaction-using-a-GAN-/2f20aa524d03de56b1d31578a7d26043a49eca19/dataset/train.txt"
+          },
+          {
+            "path": "dataset/vaild.txt",
+            "git_blob_sha1": "1057b34b6da21b13bb244dcfb63851ea1e43fd68",
+            "bytes": 317057,
+            "url": "https://raw.githubusercontent.com/hongliangduan/Generation-of-novel-Diels-Alder-reaction-using-a-GAN-/2f20aa524d03de56b1d31578a7d26043a49eca19/dataset/vaild.txt"
+          }
+        ]
+      },
+      "supersedes_recheck_report": {
+        "path": "kdd/coverage/recheck_property.json",
+        "sha256": "acadd44953809bc9a576ffb9bb228aa2e5f8ea48a0269c32d8588d30a4e71fe5"
+      },
+      "followup_native_join_proof": {
+        "path": "kdd/coverage/rights_recheck/property_followup_da/original_training_membership.json",
+        "sha256": "81ed9a582114076c16431f58903ffa26575f98fe060d88b2d68f96a282b1d216",
+        "reproduce": "python kdd/coverage/rights_recheck/property_followup_da/reproduce_membership.py"
+      },
+      "source_publication_verified": true,
+      "article_noncommercial_reuse_verified": true,
+      "dataset_downstream_grant_verified": false,
+      "reaxys_provenance_is_automatic_prohibition": false,
+      "specific_original_author_agreement_seen": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "property_recheck_da_crossref",
+      "url": "https://api.crossref.org/works/10.1039/D4DD00092G",
+      "path": "kdd/coverage/rights_recheck/property/da_crossref.txt",
+      "sha256": "cfb61bb343a62584f0b7b877020be8ecf6fcd0acb7d8519a0acd61cf13bcb934",
+      "bytes": 11738,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_da_publisher_pdf",
+      "url": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/e839d2f2-3a7a-4ded-b622-da997622d01d/content",
+      "path": "kdd/coverage/rights_recheck/property/da_publisher_pdf.pdf",
+      "sha256": "1c077cade153255310ff17bb52b8808b5787f6bebb6d3aea680227f95a7bb998",
+      "bytes": 1129092,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_twobond_readme",
+      "url": "https://raw.githubusercontent.com/Goodman-lab/TwoBondChem/b2ac4269c51b1cbddb379ee4501b81f7988241b3/README.md",
+      "path": "kdd/coverage/rights_recheck/property/twobond_readme.txt",
+      "sha256": "c28190d5692d7284d1e4bffb6a8bcde94dd250baa9b40df4577eec171eab7694",
+      "bytes": 9537,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_twobond_native_da",
+      "url": "https://raw.githubusercontent.com/Goodman-lab/TwoBondChem/b2ac4269c51b1cbddb379ee4501b81f7988241b3/dataset/diels_alder_data_v7_19052024.csv",
+      "path": "kdd/coverage/rights_recheck/property/twobond_native_da.txt",
+      "sha256": "82f6dfac1b5781d547b0dfb4d091bf1bed6eddcf2150915bd892298319971806",
+      "bytes": 7554510,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_twobond_commits",
+      "url": "https://api.github.com/repos/Goodman-lab/TwoBondChem/commits/main",
+      "path": "kdd/coverage/rights_recheck/property/twobond_commits.txt",
+      "sha256": "0555ddb2456a3fef2a9af4c86719ec7e2354fd609863ffa62694e26254ea37df",
+      "bytes": 14996,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_twobond_tree",
+      "url": "https://api.github.com/repos/Goodman-lab/TwoBondChem/git/trees/b2ac4269c51b1cbddb379ee4501b81f7988241b3?recursive=1",
+      "path": "kdd/coverage/rights_recheck/property/twobond_tree.txt",
+      "sha256": "21712013e505bdd43d067eb39168b89cad76a700e75a87bf0d4a4a26ba830a80",
+      "bytes": 23689,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "synrxn_product_notice",
+      "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE",
+      "path": "kdd/coverage/rights_legacy/synrxn_product_notice.txt",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE",
+      "status": "captured",
+      "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+      "bytes": 8007
+    },
+    {
+      "id": "property_recheck_da_original_pmc",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9693912/",
+      "path": "kdd/coverage/rights_recheck/property/da_original_pmc.txt",
+      "sha256": "e7f36c0d9b1d558247be8cea92924893e6edf020bf8813a3662f4e302ea762ed",
+      "bytes": 157993,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_da_original_crossref",
+      "url": "https://api.crossref.org/works/10.1039%2FD2RA06022A",
+      "path": "kdd/coverage/rights_recheck/property/da_original_crossref.txt",
+      "sha256": "ade011bf52911c70dbddfdcc76fc5c521fd2a7597d56c4f5d2e1100cb6c41e02",
+      "bytes": 10496,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_da_original_pinned_license",
+      "url": "https://raw.githubusercontent.com/hongliangduan/Generation-of-novel-Diels-Alder-reaction-using-a-GAN-/2f20aa524d03de56b1d31578a7d26043a49eca19/LICENSE",
+      "path": "kdd/coverage/rights_recheck/property/da_original_pinned_license.txt",
+      "sha256": "8e5df5e7ce73a540f6b4f80c778a8f025392c3fc7ad9dabce7de42c29a42b943",
+      "bytes": 1065,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_da_original_pinned_readme",
+      "url": "https://raw.githubusercontent.com/hongliangduan/Generation-of-novel-Diels-Alder-reaction-using-a-GAN-/2f20aa524d03de56b1d31578a7d26043a49eca19/README.md",
+      "path": "kdd/coverage/rights_recheck/property/da_original_pinned_readme.txt",
+      "sha256": "8228ecdff305f061303d399d096479a934401a97a235b3132657ba61ff3d2999",
+      "bytes": 704,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_da_original_tree",
+      "url": "https://api.github.com/repos/hongliangduan/Generation-of-novel-Diels-Alder-reaction-using-a-GAN-/git/trees/2f20aa524d03de56b1d31578a7d26043a49eca19?recursive=1",
+      "path": "kdd/coverage/rights_recheck/property/da_original_tree.txt",
+      "sha256": "a01bb6b91a58b49917f14505d6f8ce422061934ead8b82685ffaa008f8cb7387",
+      "bytes": 22573,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_da_original_commit",
+      "url": "https://api.github.com/repos/hongliangduan/Generation-of-novel-Diels-Alder-reaction-using-a-GAN-/commits/main",
+      "path": "kdd/coverage/rights_recheck/property/da_original_commit.txt",
+      "sha256": "cdf4c3376cecfaff1371268665d5ecb4a35568443191fa246a757f509585b4be",
+      "bytes": 5389,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_followup_da_original_gan_train",
+      "url": "https://raw.githubusercontent.com/hongliangduan/Generation-of-novel-Diels-Alder-reaction-using-a-GAN-/2f20aa524d03de56b1d31578a7d26043a49eca19/dataset/train.txt",
+      "path": "kdd/coverage/rights_recheck/property_followup_da/original_gan_train.txt",
+      "sha256": "1fb71a81fedd4864c4b5492110562be39191a1eb14fe40b7b263b7a6a2419e6d",
+      "bytes": 1253194,
+      "http_status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "captured_utc": "2026-10-20",
+      "status": "captured"
+    },
+    {
+      "id": "property_followup_da_original_gan_validation",
+      "url": "https://raw.githubusercontent.com/hongliangduan/Generation-of-novel-Diels-Alder-reaction-using-a-GAN-/2f20aa524d03de56b1d31578a7d26043a49eca19/dataset/vaild.txt",
+      "path": "kdd/coverage/rights_recheck/property_followup_da/original_gan_validation.txt",
+      "sha256": "2eb17698ba6e3fbe5fa02ac423787d7590cd0fc270000f3a194ebc811f8abcb9",
+      "bytes": 317057,
+      "http_status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "captured_utc": "2026-10-20",
+      "status": "captured"
+    },
+    {
+      "id": "property_followup_da_original_article",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9693912/fullTextXML",
+      "path": "kdd/coverage/rights_recheck/property_followup_da/original_article.xml",
+      "sha256": "4d74dbcdcd343119177d72b27c2acc243bfcd25e99a896626ad18dd62f42e1bf",
+      "bytes": 76462,
+      "http_status": 200,
+      "content_type": "application/xml",
+      "captured_utc": "2026-10-20",
+      "status": "captured"
+    },
+    {
+      "id": "property_followup_da_rsc_cc_by_nc_example_v8_2",
+      "url": "https://www.rsc.org/getContentAsset/630c4224-2907-4da4-b482-3ba4b4d69552/f4c91d86-ac3e-4675-bdf3-f8325ded9710/rsc-licence-to-publish-cc-by-nc.pdf?language=en&v=638919054102174535",
+      "path": "kdd/coverage/rights_recheck/property_followup_da/rsc_cc_by_nc_example_v8_2.pdf",
+      "sha256": "eb7db744d25937a343a9f0f61a2020874a6904d20e4e8d45a807961f990f1ab0",
+      "bytes": 211802,
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "captured_utc": "2026-10-20",
+      "status": "captured"
+    },
+    {
+      "id": "property_followup_da_reaxys_publishing_guidelines_2022",
+      "url": "https://supportcontent.elsevier.com/RightNow%20Next%20Gen/Reaxys/Use%20of%20Reaxys%20Publishing%20Guidelines%202022.pdf",
+      "path": "kdd/coverage/rights_recheck/property_followup_da/reaxys_publishing_guidelines_2022.pdf",
+      "sha256": "601eadffe14f536e00d357d10e808aad490bc02c322061feb39e3ec5e332971e",
+      "bytes": 451887,
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "captured_utc": "2026-10-20",
+      "status": "captured"
+    },
+    {
+      "id": "property_followup_da_reaxys_data_faq_2025",
+      "url": "https://www.elsevier.support/dataasaservice/answer/overview-of-reaxys-data",
+      "path": "kdd/coverage/rights_recheck/property_followup_da/reaxys_data_faq_2025.html",
+      "sha256": "52ed6243a61d4a2d8b5e709d3f80a749cf33087425fa58a5049c3435e5bed5cc",
+      "bytes": 125909,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "captured_utc": "2026-10-20",
+      "status": "captured"
+    },
+    {
+      "id": "property_followup_da_original_training_membership",
+      "url": null,
+      "path": "kdd/coverage/rights_recheck/property_followup_da/original_training_membership.json",
+      "sha256": "81ed9a582114076c16431f58903ffa26575f98fe060d88b2d68f96a282b1d216",
+      "bytes": 2316,
+      "status": "generated_offline_provenance_comparison"
+    },
+    {
+      "id": "property_followup_da_reproduce_membership",
+      "url": null,
+      "path": "kdd/coverage/rights_recheck/property_followup_da/reproduce_membership.py",
+      "sha256": "6d8a58bc47226299148acc9619e75b774e5c1067f8df72e14f40b727c2aaaaee",
+      "bytes": 4808,
+      "status": "generated_offline_provenance_comparison"
+    }
+  ],
+  "paper_and_guidance_observations": [
+    {
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9693912/",
+      "sections": [
+        "Method/Dataset",
+        "Data availability"
+      ],
+      "finding": "A Reaxys search and filtering produced 14,092 reactions, split 80:20. Authors explicitly direct readers to public training and validation payloads and say source data accompany the article. The original article CC BY-NC 3.0 notice is verified by EuropePMC XML and Crossref."
+    },
+    {
+      "source_url": "https://www.rsc.org/suppdata/d4/dd/d4dd00092g/d4dd00092g1.pdf",
+      "section": "1.1 Data / Table S1 / pages 4\u20135",
+      "access_note": "Read through web-tool cached primary PDF; live HTTP capture returned404 and is not presented as a successful PDF evidence pin.",
+      "finding": "11,274 original training reactions; 263 filtered; 11,011 retained. Filter reasons: 7 hypervalent, 8 reindexing, 22 placeholder, and 226 with 3D structure errors."
+    },
+    {
+      "source_url": "https://supportcontent.elsevier.com/RightNow%20Next%20Gen/Reaxys/Use%20of%20Reaxys%20Publishing%20Guidelines%202022.pdf",
+      "sections": [
+        "page2/publication",
+        "page4/definitions"
+      ],
+      "date_on_document": "2022-07-27",
+      "finding": "Publication is permitted under conditions. Guidance allows demonstration entities/datapoints and unlimited Reaxys identifiers including substance SMILES; larger data should use Reaxys identifiers and publication is reviewed by its team. Explicitly guidance only and subject to change; individual collaboration permissions may differ."
+    },
+    {
+      "source_url": "https://www.elsevier.support/dataasaservice/answer/overview-of-reaxys-data",
+      "section": "FAQs/commercial use",
+      "page_updated": "2025-04-10",
+      "finding": "The commercial-data FAQ describes internal purposes, knowledge graphs and predictive models. Context only: it is not the 2022 author agreement and is not a basis for declaring the already published subset prohibited."
+    },
+    {
+      "source_url": "https://www.rsc.org/publishing/journals/processes-and-policies/licences-copyright-and-permissions",
+      "section": "CC BY-NC example form / clauses 2.9\u20132.10",
+      "template_version": "8.2",
+      "finding": "The linked current article agreement distinguishes external links and excludes raw research-data rights from its scope. This is not retroactively asserted to be the signed 2022 agreement."
+    }
+  ],
+  "summary": {
+    "reviewed_tables": 1,
+    "release_eligible": 0,
+    "unresolved_redistribution_grant_scope": 1,
+    "public_author_distribution_verified": 1
+  },
+  "method": "Primary sources and reproducible pinned-file structure comparison; distinguish explicit author publication from scope of downstream copyright/database grants. Never equate Reaxys provenance, an article CC notice, or noncommercial use alone with an automatic release prohibition or automatic dataset grant."
+}

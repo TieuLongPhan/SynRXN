@@ -1,0 +1,13 @@
+{
+  "source_id": "C07",
+  "name": "Splits.tar.bz2",
+  "bytes": 15523264,
+  "checksum": "md5:ea7f804859cecd88c508ec6677569ff9",
+  "url": "https://zenodo.org/api/records/11493786/files/Splits.tar.bz2/content",
+  "path": "Data/raw/synrxn2/C07/Splits.tar.bz2",
+  "bytes_observed": 1416112,
+  "sha256": "4225f2390438dbad83b23e96f440ab40a89b6a9ef21e933eddd96c9285e1e502",
+  "md5": "5ad9557d3d5a38fb8e857fd2a54a1161",
+  "status": "unavailable",
+  "error": "source byte size differs from the pinned release"
+}

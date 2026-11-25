@@ -10,67 +10,58 @@ from itertools import combinations_with_replacement
 
 
 def normalize_molecule(mol: Chem.Mol) -> Chem.Mol:
-    """
-    Normalize a molecule using RDKit's Normalizer.
+    """Normalize a molecule using RDKit's Normalizer.
 
-    Args:
-        mol (Chem.Mol): RDKit Mol object to be normalized.
+    :param mol: RDKit Mol object to be normalized.
+    :type mol: Chem.Mol
 
-    Returns:
-        Chem.Mol: Normalized RDKit Mol object.
+    :return: Normalized RDKit Mol object.
+    :rtype: Chem.Mol
     """
     return rdMolStandardize.Normalizer().normalize(mol)
 
 
 def canonicalize_tautomer(mol: Chem.Mol) -> Chem.Mol:
-    """
-    Canonicalize the tautomer of a molecule using RDKit's TautomerCanonicalizer.
+    """Canonicalize the tautomer of a molecule using RDKit's TautomerCanonicalizer.
 
-    Args:
-    - mol (Chem.Mol): RDKit Mol object.
+    :param mol: RDKit Mol object.
+    :type mol: Chem.Mol
 
-    Returns:
-    - Chem.Mol: Mol object with canonicalized tautomer.
+    :return: Mol object with canonicalized tautomer.
+    :rtype: Chem.Mol
     """
     return rdMolStandardize.TautomerEnumerator().Canonicalize(mol)
 
 
 def salts_remover(mol: Chem.Mol) -> Chem.Mol:
-    """
-    Remove salt fragments from a molecule using RDKit's SaltRemover.
+    """Remove salt fragments from a molecule using RDKit's SaltRemover.
 
-    Args:
-    - mol (Chem.Mol): RDKit Mol object.
+    :param mol: RDKit Mol object.
+    :type mol: Chem.Mol
 
-    Returns:
-    - Chem.Mol: Mol object with salts removed.
+    :return: Mol object with salts removed.
+    :rtype: Chem.Mol
     """
     remover = SaltRemover()
     return remover.StripMol(mol)
 
 
 def reionize_charges(mol: Chem.Mol) -> Chem.Mol:
-    """
-    Adjust molecule to its most likely ionic state using RDKit's Reionizer.
+    """Adjust molecule to its most likely ionic state using RDKit's Reionizer.
 
-    Args:
-    - mol: RDKit Mol object.
+    :param mol: RDKit Mol object.
 
-    Returns:
-    - Mol object with reionized charges.
+    :return: Mol object with reionized charges.
     """
     return rdMolStandardize.Reionizer().reionize(mol)
 
 
 def uncharge_molecule(mol: Chem.Mol) -> Chem.Mol:
-    """
-    Neutralize a molecule by removing counter-ions using RDKit's Uncharger.
+    """Neutralize a molecule by removing counter-ions using RDKit's Uncharger.
 
-    Args:
-        mol: RDKit Mol object.
+    :param mol: RDKit Mol object.
 
-    Returns:
-        Neutralized Mol object.
+    :return: Neutralized Mol object.
     """
     uncharger = rdMolStandardize.Uncharger()
     return uncharger.uncharge(mol)
@@ -79,46 +70,41 @@ def uncharge_molecule(mol: Chem.Mol) -> Chem.Mol:
 def assign_stereochemistry(
     mol: Chem.Mol, cleanIt: bool = True, force: bool = True
 ) -> None:
-    """
-    Assigns stereochemistry to a molecule using RDKit's AssignStereochemistry.
+    """Assigns stereochemistry to a molecule using RDKit's AssignStereochemistry.
 
-    Args:
-        mol: RDKit Mol object.
-        cleanIt: Flag indicating whether to clean the molecule.
-                Default is True.
-        force: Flag indicating
-            whether to force stereochemistry assignment.
-            Default is True.
+    :param mol: RDKit Mol object.
+    :param cleanIt: Flag indicating whether to clean the molecule.
+                    Default is True.
+    :param force: Flag indicating
+                  whether to force stereochemistry assignment.
+                  Default is True.
 
-    Returns:
-        None
+    :return: None
     """
     Chem.AssignStereochemistry(mol, cleanIt=cleanIt, force=force)
 
 
 def fragments_remover(mol: Chem.Mol) -> Chem.Mol:
-    """
-    Remove small fragments from a molecule, keeping only the largest one.
+    """Remove small fragments from a molecule, keeping only the largest one.
 
-    Args:
-        mol (Chem.Mol): RDKit Mol object.
+    :param mol: RDKit Mol object.
+    :type mol: Chem.Mol
 
-    Returns:
-        Chem.Mol: Mol object with small fragments removed.
+    :return: Mol object with small fragments removed.
+    :rtype: Chem.Mol
     """
     frags = Chem.GetMolFrags(mol, asMols=True, sanitizeFrags=True)
     return max(frags, default=None, key=lambda m: m.GetNumAtoms())
 
 
 def remove_hydrogens_and_sanitize(mol: Chem.Mol) -> Chem.Mol:
-    """
-    Remove explicit hydrogens and sanitize a molecule.
+    """Remove explicit hydrogens and sanitize a molecule.
 
-    Args:
-        mol (Chem.Mol): RDKit Mol object.
+    :param mol: RDKit Mol object.
+    :type mol: Chem.Mol
 
-    Returns:
-        Chem.Mol: Mol object with explicit hydrogens removed and sanitized.
+    :return: Mol object with explicit hydrogens removed and sanitized.
+    :rtype: Chem.Mol
     """
     mol = Chem.RemoveHs(mol)
     Chem.SanitizeMol(mol)
@@ -149,19 +135,17 @@ def remove_atom_mapping(reaction_smiles):
 
 
 def mol_from_smiles(smiles: str) -> Optional[Chem.Mol]:
-    """
-    Converts a SMILES string to an RDKit Mol object,
+    """Converts a SMILES string to an RDKit Mol object,
     with error handling for invalid strings.
 
-    Parameters:
-    - smiles (str): The SMILES string to be converted.
+    :param smiles: The SMILES string to be converted.
+    :type smiles: str
 
-    Returns:
-    - Chem.Mol: An RDKit Mol object created from the given SMILES string.
-                None if conversion fails.
+    :return: An RDKit Mol object created from the given SMILES string.
+              None if conversion fails.
+    :rtype: Chem.Mol
 
-    Raises:
-    - ValueError: If the SMILES string is invalid and cannot be converted to a Mol object.
+    :raises ValueError: If the SMILES string is invalid and cannot be converted to a Mol object.
     """
     mol = Chem.MolFromSmiles(smiles)
     if mol is None:
@@ -192,14 +176,13 @@ def process_component(component):
 
 
 def filter_valid_molecules(smiles_list: List[str]) -> List[Chem.Mol]:
-    """
-    Filters and returns valid RDKit molecule objects from a list of SMILES strings.
+    """Filters and returns valid RDKit molecule objects from a list of SMILES strings.
 
-    Parameters:
-    - smiles_list (List[str]): A list of SMILES strings.
+    :param smiles_list: A list of SMILES strings.
+    :type smiles_list: List[str]
 
-    Returns:
-    - List[Chem.Mol]: A list of valid RDKit molecule objects.
+    :return: A list of valid RDKit molecule objects.
+    :rtype: List[Chem.Mol]
     """
     valid_molecules = []
     for smiles in smiles_list:
@@ -214,19 +197,18 @@ def filter_valid_molecules(smiles_list: List[str]) -> List[Chem.Mol]:
 
 
 def standardize_rsmi(rsmi: str, stereo: bool = False) -> str:
-    """
-    Standardizes a reaction SMILES (rSMI) by ensuring that all reactants and products
+    """Standardizes a reaction SMILES (rSMI) by ensuring that all reactants and products
     are valid molecules with atoms and that the SMILES strings within the reactants
     and products are in ascending order. Optionally ignores stereochemistry.
 
-    Parameters:
-    - rsmi (str): The reaction SMILES string to be standardized.
-    - ignore_stereo (bool): If True, stereochemical information is
-                            ignored in the SMILES representation.
+    :param rsmi: The reaction SMILES string to be standardized.
+    :type rsmi: str
+    :param stereo: If True, retain stereochemistry in the SMILES representation.
+    :type stereo: bool
 
-    Returns:
-    - str: The standardized reaction SMILES string with valid,
-            non-empty, and sorted reactants and products.
+    :return: The standardized reaction SMILES string with valid,
+              non-empty, and sorted reactants and products.
+    :rtype: str
     """
     reactants, products = rsmi.split(">>")
     reactant_molecules = filter_valid_molecules(reactants.split("."))
@@ -253,21 +235,21 @@ def standardize_rsmi(rsmi: str, stereo: bool = False) -> str:
 def categorize_reactions(
     reactions: List[str], target_reaction: str
 ) -> Tuple[List[str], List[str]]:
-    """
-    Sorts a list of reaction SMILES strings into two groups based on
+    """Sorts a list of reaction SMILES strings into two groups based on
     their match with a specified target reaction. The categorization process
     distinguishes between reactions that align with the target reaction
     and those that do not.
 
-    Parameters:
-    - reactions (List[str]): The array of reaction SMILES strings to be categorized.
-    - target_reaction (str): The SMILES string of the target reaction
-                                used as the benchmark for categorization.
+    :param reactions: The array of reaction SMILES strings to be categorized.
+    :type reactions: List[str]
+    :param target_reaction: The SMILES string of the target reaction
+                            used as the benchmark for categorization.
+    :type target_reaction: str
 
-    Returns:
-    - Tuple[List[str], List[str]]: A pair of lists, where the first contains
-                                reactions matching the target and the second
-                                comprises non-matching reactions.
+    :return: A pair of lists, where the first contains
+              reactions matching the target and the second
+              comprises non-matching reactions.
+    :rtype: Tuple[List[str], List[str]]
     """
     match, not_match = [], []
     target_reaction = standardize_rsmi(target_reaction, stereo=False)
@@ -280,15 +262,14 @@ def categorize_reactions(
 
 
 def count_carbons(smiles_list: List[str]) -> int:
-    """
-    Counts the total number of carbon atoms across all molecules
+    """Counts the total number of carbon atoms across all molecules
     represented by a list of SMILES strings.
 
-    Args:
-        smiles_list (List[str]): A list of SMILES strings representing molecules.
+    :param smiles_list: A list of SMILES strings representing molecules.
+    :type smiles_list: List[str]
 
-    Returns:
-        int: The total number of carbon atoms across all valid SMILES strings in the list.
+    :return: The total number of carbon atoms across all valid SMILES strings in the list.
+    :rtype: int
     """
     total_carbon_count = 0
     for smiles in smiles_list:
@@ -301,14 +282,13 @@ def count_carbons(smiles_list: List[str]) -> int:
 
 
 def get_combined_molecular_formula(smiles: str) -> str:
-    """
-    Computes the molecular formula for a molecule represented by a SMILES string.
+    """Computes the molecular formula for a molecule represented by a SMILES string.
 
-    Parameters:
-    - smiles (str): The SMILES string of the molecule.
+    :param smiles: The SMILES string of the molecule.
+    :type smiles: str
 
-    Returns:
-    - str: The molecular formula, or an empty string if the molecule is invalid.
+    :return: The molecular formula, or an empty string if the molecule is invalid.
+    :rtype: str
     """
     mol = mol_from_smiles(smiles)
     if not mol:
@@ -320,20 +300,21 @@ def get_combined_molecular_formula(smiles: str) -> str:
 def generate_smiles_combinations(
     smiles_list: List[str], target_smiles: str, use_formula: bool = False
 ) -> List[List[str]]:
-    """
-    Generates all combinations of SMILES strings from the given list
+    """Generates all combinations of SMILES strings from the given list
     that match the target specified by a target SMILES string.
 
-    Args:
-        smiles_list (List[str]): A list of SMILES strings.
-        target_smiles (str): The SMILES string of the target molecule.
-        use_formula (bool): If True, uses the molecular formula for comparison.
-                            If False, uses the total number of carbon atoms.
+    :param smiles_list: A list of SMILES strings.
+    :type smiles_list: List[str]
+    :param target_smiles: The SMILES string of the target molecule.
+    :type target_smiles: str
+    :param use_formula: If True, uses the molecular formula for comparison.
+                        If False, uses the total number of carbon atoms.
+    :type use_formula: bool
 
-    Returns:
-        List[List[str]]: A list of combinations, where each combination is a list of
-        SMILES strings that together match the target specified by either the
-        total number of carbon atoms or the molecular formula.
+    :return: A list of combinations, where each combination is a list of
+              SMILES strings that together match the target specified by either the
+              total number of carbon atoms or the molecular formula.
+    :rtype: List[List[str]]
     """
     if use_formula:
         target_formula = get_combined_molecular_formula([target_smiles])
@@ -359,15 +340,14 @@ def generate_smiles_combinations(
 
 
 def remove_stereochemistry_from_reaction_smiles(reaction_smiles: str) -> str:
-    """
-    Removes stereochemical information from a reaction SMILES string.
+    """Removes stereochemical information from a reaction SMILES string.
 
-    Parameters:
-    - reaction_smiles (str): A reaction SMILES string possibly
-                    containing stereochemical information.
+    :param reaction_smiles: A reaction SMILES string possibly
+                            containing stereochemical information.
+    :type reaction_smiles: str
 
-    Returns:
-    - str: A reaction SMILES string with stereochemistry removal.
+    :return: A reaction SMILES string with stereochemistry removal.
+    :rtype: str
     """
     # Split the reaction SMILES into reactants, agents (optional), and products
     parts = reaction_smiles.split(">>")
@@ -390,26 +370,24 @@ def remove_stereochemistry_from_reaction_smiles(reaction_smiles: str) -> str:
 
 
 def enumerate_tautomers(reaction_smiles: str) -> Optional[List[str]]:
-    """
-    Enumerates possible tautomers for reactants while canonicalizing the products in a
+    """Enumerates possible tautomers for reactants while canonicalizing the products in a
     reaction SMILES string. This function first splits the reaction SMILES string into
     reactants and products. It then generates all possible tautomers for the reactants and
     canonicalizes the product molecule. The function returns a list of reaction SMILES
     strings for each tautomer of the reactants combined with the canonical product.
 
-    Parameters:
-    - reaction_smiles (str): A SMILES string of the reaction formatted as
-    'reactants>>products'.
+    :param reaction_smiles: A SMILES string of the reaction formatted as
+                            'reactants>>products'.
+    :type reaction_smiles: str
 
-    Returns:
-    - List[str] | None: A list of SMILES strings for the reaction, with each string
-    representing a different
-    - tautomer of the reactants combined with the canonicalized products. Returns None if
-    an error occurs or if invalid SMILES strings are provided.
+    :return: A list of SMILES strings for the reaction, with each string
+              representing a different
+              tautomer of the reactants combined with the canonicalized products. Returns None if
+              an error occurs or if invalid SMILES strings are provided.
+    :rtype: List[str] | None
 
-    Raises:
-    - ValueError: If the provided SMILES strings cannot be converted to molecule objects,
-    indicating invalid input.
+    :raises ValueError: If the provided SMILES strings cannot be converted to molecule objects,
+        indicating invalid input.
     """
     try:
         # Split the input reaction SMILES string into reactants and products
@@ -455,19 +433,17 @@ def enumerate_tautomers(reaction_smiles: str) -> Optional[List[str]]:
 
 
 def mapping_success_rate(list_mapping_data):
-    """
-    Calculate the success rate of entries containing atom mappings in a list of data
+    """Calculate the success rate of entries containing atom mappings in a list of data
     strings.
 
-    Parameters:
-    - list_mapping_in_data (list of str): List containing strings to be searched for atom
-    mappings.
+    :param list_mapping_data: List containing strings to be searched for atom
+                                 mappings.
+    :type list_mapping_data: list of str
 
-    Returns:
-    - float: The success rate of finding atom mappings in the list as a percentage.
+    :return: The success rate of finding atom mappings in the list as a percentage.
+    :rtype: float
 
-    Raises:
-    - ValueError: If the input list is empty.
+    :raises ValueError: If the input list is empty.
     """
     atom_map_pattern = re.compile(r":\d+")
     if not list_mapping_data:
@@ -484,24 +460,25 @@ def mapping_success_rate(list_mapping_data):
 def generate_reaction_smiles(
     temp_results: List[str], base_smiles: str, is_forward: bool = True
 ) -> List[str]:
-    """
-    Constructs reaction SMILES strings from intermediate results using a base SMILES
+    """Constructs reaction SMILES strings from intermediate results using a base SMILES
     string, indicating whether the process is a forward or backward reaction. This
     function iterates over a list of intermediate SMILES strings, combines them with the
     base SMILES, and formats them into complete reaction SMILES strings.
 
-    Parameters:
-    - temp_results (List[str]): Intermediate SMILES strings resulting from partial
-    reactions or combinations.
-    - base_smiles (str): The SMILES string representing the starting point of the
-    reaction, either as reactants or products, depending on the reaction direction.
-    - is_forward (bool, optional): Flag to determine the direction of the reaction; 'True'
-    for forward reactions where 'base_smiles' are reactants, and 'False' for backward
-    reactions where 'base_smiles' are products. Defaults to True.
+    :param temp_results: Intermediate SMILES strings resulting from partial
+                         reactions or combinations.
+    :type temp_results: List[str]
+    :param base_smiles: The SMILES string representing the starting point of the
+                        reaction, either as reactants or products, depending on the reaction direction.
+    :type base_smiles: str
+    :param is_forward: Flag to determine the direction of the reaction; 'True'
+                       for forward reactions where 'base_smiles' are reactants, and 'False' for backward
+                       reactions where 'base_smiles' are products. Defaults to True.
+    :type is_forward: bool, optional
 
-    Returns:
-    - List[str]: A list of complete reaction SMILES strings, formatted according to the
-    specified reaction direction.
+    :return: A list of complete reaction SMILES strings, formatted according to the
+              specified reaction direction.
+    :rtype: List[str]
     """
     results = []
     for comb in temp_results:

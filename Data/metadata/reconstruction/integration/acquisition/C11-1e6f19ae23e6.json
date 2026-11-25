@@ -1,0 +1,13 @@
+{
+  "source_id": "C11",
+  "name": "quantumpioneer_thermo_dataset_transition_states.csv",
+  "bytes": 14106776,
+  "checksum": "md5:3f95efee1fa1eeb29136008df1f0b4f6",
+  "url": "https://zenodo.org/api/records/20060606/files/quantumpioneer_thermo_dataset_transition_states.csv/content",
+  "path": "Data/raw/synrxn2/C11/quantumpioneer_thermo_dataset_transition_states.csv",
+  "bytes_observed": 4824996,
+  "sha256": "0c3e2bca5542d78223c6518a2005d783f65bdc342c8270f382db0074024fe986",
+  "md5": "836e96a491b9c4bdb66b09975a00a52e",
+  "status": "unavailable",
+  "error": "source byte size differs from the pinned release"
+}

@@ -1,0 +1,5 @@
+Reaction-conditioned inverse component references from CatDRX's ORD derivative
+https://github.com/ohuelab/CatDRX/tree/f8952497761b0bf44cde4b48f8df3a8d40098f91
+Data license: CC-BY-SA-4.0
+Changes: Generate target-isolated inverse component views; withhold catalyst structure, mass, identifiers and target-derived fields; retain source ORD IDs and measured responses.
+Retain upstream ORD data CC BY-SA4.0, distinct from CatDRX MIT software license. Only the ORD-derived CSV is admitted; other third-party task CSVs are excluded pending their dataset grants.

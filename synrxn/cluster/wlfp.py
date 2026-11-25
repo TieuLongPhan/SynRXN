@@ -31,8 +31,7 @@ def _norm_value(v: Any) -> Any:
 
 
 class WLFP:
-    """
-    Weisfeiler–Lehman Fingerprints (WLFP) for NetworkX graphs.
+    """Weisfeiler–Lehman Fingerprints (WLFP) for NetworkX graphs.
 
     This class computes WL-style node-label refinement and collects counts of the
     refined labels across iterations to form a fingerprint.
@@ -52,14 +51,14 @@ class WLFP:
                                   NetworkX node ordering differences.
     :raises ValueError: for invalid parameters.
 
-    :returns: See `fingerprint` return descriptions.
+    :return: See `fingerprint` return descriptions.
 
-    Example
-    -------
+    .. rubric:: Example
+
     .. code-block:: python
 
        import networkx as nx
-       from synrxn.fps.wlfp import WLFP
+       from synrxn.cluster.wlfp import WLFP
        G = nx.Graph()
        G.add_node(1, element='C')
        G.add_node(2, element='O')
@@ -78,7 +77,6 @@ class WLFP:
        dense, fmap = wl.fingerprint(G, return_feature_map=True)
        print("bits on:", int(vec.sum()))
        print("feature map sample:", list(fmap.items())[:5])
-
     """
 
     DEFAULT_NODE_ATTRS = ["element", "aromatic", "hcount", "charge"]
@@ -127,15 +125,14 @@ class WLFP:
         Tuple[np.ndarray, np.ndarray],
         Tuple[np.ndarray, Dict[int, Tuple[int, int]]],
     ]:
-        """
-        Compute WL fingerprint.
+        """Compute WL fingerprint.
 
         :param G: networkx.Graph or networkx.MultiGraph with node/edge attributes.
         :param return_sparse: If True returns (indices, values) where indices are bit positions (np.int32)
                               and values are counts (if use_counts) or 1s (if not).
         :param return_feature_map: If True returns (dense_vector, feature_map) where feature_map maps
                                    feature_hash -> (iteration_level, count).
-        :returns:
+        :return:
             - dense numpy vector (np.uint8 if use_counts=False else np.int32) when both flags False,
             - (indices, values) when return_sparse True,
             - (dense_vector, feature_map) when return_feature_map True.

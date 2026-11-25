@@ -1,0 +1,4 @@
+# Bulk datasets are distributed as versioned external artifacts.
+# Preserve PDF bytes and verbatim captured failure-trace whitespace.
+*.pdf binary
+archive/research/previous/audit/*failures.xml -whitespace

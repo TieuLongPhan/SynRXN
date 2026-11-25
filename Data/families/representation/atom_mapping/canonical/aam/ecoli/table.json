@@ -1,0 +1,78 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "representation",
+  "format": "csv.gz",
+  "key": "aam/ecoli",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "aam/ecoli",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "verified_redistributable",
+    "role": "primary",
+    "rows": 273
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "syntemp_license",
+      "syntemp_readme",
+      "recheck_mapping_mapping_syntemp_native_license",
+      "recheck_mapping_mapping_syntemp_tree",
+      "recheck_mapping_mapping_syntemp_paper_xml",
+      "recheck_mapping_mapping_syntemp_commit"
+    ],
+    "expected_bytes": 95991,
+    "expected_rows": 273,
+    "expected_sha256": "d38436457c5f5d82149981005a2c39d289d56467fb45ffdeb294f0c62b631866",
+    "format": "csv.gz",
+    "key": "aam/ecoli",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/aam/ecoli.csv.gz",
+    "qualification": "Documented dataset-bearing SynTemp repository project grant; no nested data exclusion or conflicting notice found. Article points explicitly to repository/Data for supporting datasets.",
+    "rights_status": "verified_redistributable",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 273,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "beier2026computing"
+    ],
+    "path": "Data/aam/ecoli.csv.gz",
+    "sha256": "d38436457c5f5d82149981005a2c39d289d56467fb45ffdeb294f0c62b631866",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "beier2026computing"
+    ],
+    "counting_unit": "source-table row",
+    "key": "aam/ecoli",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/aam/ecoli.csv.gz",
+    "role": "primary",
+    "rows": 273,
+    "sha256": "d38436457c5f5d82149981005a2c39d289d56467fb45ffdeb294f0c62b631866",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "E. coli atom mapping"
+  },
+  "stored_path": "Data/families/representation/atom_mapping/canonical/aam/ecoli/data.csv.gz",
+  "task_id": "atom_mapping",
+  "title": "E. coli atom mapping"
+}

@@ -1,0 +1,446 @@
+{
+  "schema": "synrxn.reaction-informatics-scope.v1",
+  "as_of": "2026-10-20",
+  "status": "Twelve-family scope policy; original22 definitions plus initial19 acquisition checklist; live promotion and rights status in task_registry.json",
+  "counting_policy": "Assign each scientific input/output task one primary family. Other chemical domains and modalities are tags. Do not count methods, individual output heads, evaluation axes or reused sources as independent tasks.",
+  "families": [
+    {
+      "id": "data",
+      "title": "Reaction data acquisition and curation",
+      "scope": "Extract records from text, tables and diagrams; resolve entities and roles; normalize, validate, deduplicate and repair reaction records with provenance.",
+      "current_task_ids": [],
+      "gaps": "Expert title/abstract entities and conversion relations plus controlled deletion references are acquired. Full-paper diagrams/tables, naturally observed database corrections and adjudicated entity-resolution cases remain gaps."
+    },
+    {
+      "id": "representation",
+      "title": "Reaction representation, organisation and search",
+      "scope": "Atom correspondence, stoichiometric completion and conservation, classification, clustering, reaction similarity and retrieval.",
+      "current_task_ids": [
+        "atom_mapping",
+        "reaction_balancing",
+        "reaction_classification",
+        "reaction_clustering"
+      ],
+      "gaps": "Expert-linked chemical-pair-to-document retrieval is acquired; unannotated gallery relevance remains unknown. Broader mechanistic similarity, homology and scalable deduplication evaluation require separate references."
+    },
+    {
+      "id": "transformations",
+      "title": "Single-step reaction transformation",
+      "scope": "Forward products, one-step precursor sets, reaction centers and bond edits; recorded or permissible alternatives require explicit reference semantics.",
+      "current_task_ids": [
+        "forward_prediction",
+        "retrosynthesis",
+        "reaction_center"
+      ],
+      "gaps": "Standardized endpoint-isolated contracts and source-index qualification are pending. One recorded precursor set is not exhaustive acceptable chemistry. Multi-step target-to-stock route search is excluded."
+    },
+    {
+      "id": "outcomes",
+      "title": "Reaction outcomes, feasibility and robustness",
+      "scope": "Yield, conversion and assay response; observed success/failure; proposal feasibility; sensitivity and transfer under declared perturbations.",
+      "current_task_ids": [
+        "yield_conversion",
+        "reaction_success",
+        "reaction_feasibility"
+      ],
+      "task_groups": [
+        {
+          "id": "continuous_outcomes",
+          "title": "Measured response",
+          "task_ids": ["yield_conversion"]
+        },
+        {
+          "id": "feasibility",
+          "title": "Reaction feasibility",
+          "task_ids": ["reaction_success", "reaction_feasibility"],
+          "reference_policy": "Observed condition-specific success and expert proposal plausibility are separate endpoints. Generated negatives remain an optional, separately reported reference tier.",
+          "evaluation_axes": ["discrimination", "probability calibration", "selective risk versus coverage", "source and chemistry transfer"]
+        }
+      ],
+      "molecular_accessibility_review": "feasibility_structure.md; optional adjacent endpoint, not admitted or counted in the 41-task registry",
+      "gaps": "Robustness needs linked perturbations or a qualified transfer population; current response and feasibility labels do not by themselves provide that evidence. Generated negatives, expert judgments and measured failures remain separate."
+    },
+    {
+      "id": "selectivity",
+      "title": "Selectivity, mixtures and side products",
+      "scope": "Regio-, chemo- and stereoselectivity, per-product compositions, competing pathways, side products and impurities.",
+      "current_task_ids": [
+        "regioselectivity",
+        "enantioselectivity",
+        "product_distribution"
+      ],
+      "gaps": "Identified benzaldehyde side-product profiles and explicitly reported solid-state impurity phases are acquired. Missing impurity reports are unknown. Organic open-world impurity identities and general chemo/diastereoselectivity remain gaps."
+    },
+    {
+      "id": "conditions",
+      "title": "Conditions, procedures and experimental design",
+      "scope": "Recover recorded recipes; rank measured settings; select informative experiments; generate procedures and laboratory actions within one reaction system.",
+      "current_task_ids": [
+        "condition_recovery",
+        "condition_ranking",
+        "sequential_optimization",
+        "procedure_generation"
+      ],
+      "gaps": "Source-qualified panels, utility and failure policies are required. Offline selection does not prove prospective performance, and action-sequence agreement does not prove successful execution. Dynamic physical execution is assigned to process control."
+    },
+    {
+      "id": "physics",
+      "title": "Reaction physics, energetics and kinetics",
+      "scope": "Activation and reaction energies, rates and rate laws, reactive energy/force fields and inference of kinetic parameters from observations.",
+      "current_task_ids": [
+        "activation_barrier",
+        "reaction_energetics",
+        "reaction_rates"
+      ],
+      "gaps": "Native reactive energy/force trajectories and scoped inverse-kinetics simulations are acquired; surface/periodic context, experimental rate-law identification and broader mechanism families remain gaps. Computed HAT rates are not experimental kinetic measurements."
+    },
+    {
+      "id": "mechanisms",
+      "title": "Mechanisms, reactive pathways and networks",
+      "scope": "Electron events and ordered mechanisms, transition-state structures, elementary reaction pathways, reaction-network discovery and microkinetic dynamics.",
+      "current_task_ids": [
+        "mechanistic_prediction"
+      ],
+      "gaps": "Native endpoint/TS geometries and two published simulated network examples are acquired. Geometry-only subsets lack full per-row charge/spin or independently rerun saddle validation. Experimental microkinetic identifiability and broad network families remain gaps."
+    },
+    {
+      "id": "analysis",
+      "title": "Analytical characterization and reaction monitoring",
+      "scope": "Infer identities and compositions from spectra, chromatograms or images; infer reaction progress, endpoints and anomalies from time-dependent signals.",
+      "current_task_ids": [],
+      "gaps": "Native NMR trajectories and low-field yield-time profiles are acquired. Integration targets are derived analytical areas, not independent absolute concentrations. Broad MS/IR/multimodal structures and prospective endpoints need further references."
+    },
+    {
+      "id": "design",
+      "title": "Catalyst/reagent design and new reactivity",
+      "scope": "Inverse design of catalysts, ligands, reagents or media; discover and verify new transformations or substrate scope under an explicit experiment budget.",
+      "current_task_ids": [],
+      "gaps": "Recorded ORD component-performance pairs and a catalytic enzyme-design subset provide finite measured lookup oracles; Minot provides bounded retrospective substrate-scope hits. Off-library performance and globally novel transformation discovery remain unmeasured."
+    },
+    {
+      "id": "process",
+      "title": "Reaction engineering and process assessment",
+      "scope": "Reactor and scale-dependent behaviour, mixing/transport, dynamic operation and control, materials/energy/cost/waste and operational hazard assessment for a reaction process.",
+      "current_task_ids": [],
+      "gaps": "Measured reactor geometry/response, pilot-scale observations, published CSTR simulations and coke-yield quantities are acquired. Some scale-up descendants are interpolations; process impact is a narrow coke quantity, without complete energy/cost/LCA/hazard coverage."
+    },
+    {
+      "id": "biocatalysis",
+      "title": "Biocatalysis and enzyme–reaction function",
+      "scope": "Assay activity, reaction-conditioned enzyme retrieval, sequence/structure function, mutation effects, catalytic sites and enzyme kinetic parameters; enzyme design can also carry the design tag.",
+      "current_task_ids": [
+        "enzyme_activity"
+      ],
+      "gaps": "Native enzyme/reaction associations, explicit assay mutation effects, direct M-CSA catalytic residues and BRENDA-record kinetic references are acquired. DMS proxies are separately tagged; native reaction retrieval still needs homology-aware evaluation and reaction-specific catalytic-site claims need qualification."
+    }
+  ],
+  "future_tasks": [
+    {
+      "id": "literature_extraction",
+      "family_id": "data",
+      "title": "Literature reaction extraction",
+      "extension_id": "literature_extraction",
+      "question": "Source document text, tables and diagrams -> reaction records linked to supporting evidence",
+      "required_data": "Document-disjoint corpus with linked entity, role, structure and reaction-record references; access and redistribution terms",
+      "evaluation": "Entity/record precision and recall, structure agreement, evidence linkage and document coverage; record extraction errors before downstream filtering"
+    },
+    {
+      "id": "reaction_record_curation",
+      "family_id": "data",
+      "title": "Reaction record validation and correction",
+      "question": "A noisy reaction record -> diagnosed issues and source-supported corrections or abstention",
+      "required_data": "Independently adjudicated original/error/corrected records with evidence, including ambiguous and unrepairable records",
+      "evaluation": "Error detection and correction accuracy, false-edit rate and coverage; conservation checks alone are not truth labels"
+    },
+    {
+      "id": "reaction_retrieval",
+      "family_id": "representation",
+      "title": "Reaction similarity and retrieval",
+      "question": "A reaction or partial-reaction query -> relevant analogues or precedents",
+      "required_data": "Query/gallery split, graded relevance judgments and parent/source deduplication; source class equality alone is an imperfect relevance proxy",
+      "evaluation": "Recall at k, nDCG and query coverage under declared relevance and near-duplicate policies"
+    },
+    {
+      "id": "impurity_prediction",
+      "family_id": "selectivity",
+      "title": "Side-product and impurity identification",
+      "question": "Reaction and operating context -> side-product structures and, when measured, abundances",
+      "required_data": "Identified minor products, detection limits, measured absences and context-linked analytical evidence",
+      "evaluation": "Structure-set recovery and detection-limited abundance error; unreported species are not automatically absent"
+    },
+    {
+      "id": "reactive_potential",
+      "family_id": "physics",
+      "title": "Reactive energies and forces",
+      "extension_id": "reactive_potential",
+      "question": "Atomic configuration and physical context -> energy and forces in reactive regions",
+      "required_data": "Reactive geometries, consistent energies/forces, theory and partitioned trajectories or reaction systems",
+      "evaluation": "Energy/force errors and declared reactive-trajectory diagnostics; adjacent trajectory frames must not cross splits"
+    },
+    {
+      "id": "kinetic_parameter_inference",
+      "family_id": "physics",
+      "title": "Kinetic parameter and rate-law inference",
+      "question": "Time-resolved concentration or signal observations and context -> identifiable kinetic parameters or rate law",
+      "required_data": "Calibrated trajectories and conditions, kinetic-model assumptions, identifiable reference parameters and uncertainty",
+      "evaluation": "Parameter error where identifiable, held-out trajectory agreement and uncertainty; trajectory fit alone does not identify a unique mechanism"
+    },
+    {
+      "id": "ts_geometry",
+      "family_id": "mechanisms",
+      "title": "Transition-state geometry",
+      "extension_id": "ts_geometry",
+      "question": "Reaction endpoints and physical context -> candidate transition-state structures",
+      "required_data": "Geometry references, charge/spin, theory, connectivity and transition-state qualification",
+      "evaluation": "Symmetry-aware structural error, qualified saddle-point recovery and coverage"
+    },
+    {
+      "id": "reaction_network_modeling",
+      "family_id": "mechanisms",
+      "title": "Elementary reaction networks and microkinetics",
+      "question": "Initial species, physical conditions and allowed evidence -> elementary network and/or its kinetic evolution",
+      "required_data": "Declared network boundary, species/reaction references, rates and held-out dynamical observations; completeness and missing pathways qualified",
+      "evaluation": "Qualified edge/path recovery and species-time agreement as separate variants; not target-to-stock synthesis route search"
+    },
+    {
+      "id": "analytical_interpretation",
+      "family_id": "analysis",
+      "title": "Reaction-mixture analytical interpretation",
+      "question": "Spectra, chromatograms or analytical images -> component identities or calibrated composition",
+      "required_data": "Raw signals linked to independently identified mixtures, concentrations, instrument settings and detection limits",
+      "evaluation": "Identification precision/recall, concentration error and coverage; mixture and instrument groups retained"
+    },
+    {
+      "id": "reaction_progress_monitoring",
+      "family_id": "analysis",
+      "title": "Reaction progress, endpoint and anomaly monitoring",
+      "question": "Observed signal history -> current progress, endpoint status or operational anomaly",
+      "required_data": "Time-stamped trajectories with independent progress/end-state/anomaly references and no future-signal input leakage",
+      "evaluation": "Progress error and endpoint/anomaly timing metrics as named variants; entire experiment trajectories kept together"
+    },
+    {
+      "id": "reaction_component_design",
+      "family_id": "design",
+      "title": "Reaction-conditioned component design",
+      "question": "Reaction and desired response -> novel catalyst, ligand, reagent, medium or biocatalyst candidates",
+      "required_data": "Structural design space, known-data exposure, independent performance oracle or experiments, feasibility constraints and evaluation budget",
+      "evaluation": "Verified performance, validity, novelty, diversity and failures under a common budget; different component roles are variants, not automatically separate task counts"
+    },
+    {
+      "id": "new_reactivity_discovery",
+      "family_id": "design",
+      "title": "New reactivity and substrate-scope discovery",
+      "question": "Allowed chemical space and prior observations -> novel experimentally verified transformations or scope expansion",
+      "required_data": "Time-resolved discovery campaigns, attempted failures, novelty definitions and independently verified products; an untested proposal is not a discovery",
+      "evaluation": "Verified novel hits and useful scope coverage versus experiment budget; distinguish from scoring a fixed feasibility label"
+    },
+    {
+      "id": "reactor_scale_modeling",
+      "family_id": "process",
+      "title": "Reactor and scale-dependent prediction",
+      "question": "Reaction, geometry, scale, transport and operating conditions -> reactor-scale response or fields",
+      "required_data": "Linked reactor/scale datasets with geometry, mixing/transport descriptors, boundary conditions and measured responses",
+      "evaluation": "Response/field errors on held-out reactors and scales; simple reaction-domain transfer does not establish scale-up"
+    },
+    {
+      "id": "process_control",
+      "family_id": "process",
+      "title": "Dynamic reaction-process operation and control",
+      "question": "Sensor history, process state and operating constraints -> physical control actions",
+      "required_data": "Action/observation trajectories and a validated simulator or experimental evaluation environment with operational constraints",
+      "evaluation": "Attained objective, constraint violations, failures and resources; differs from choosing one next experiment in a fixed offline pool"
+    },
+    {
+      "id": "process_impact_assessment",
+      "family_id": "process",
+      "title": "Reaction-process resource and impact assessment",
+      "question": "Reaction recipe, scale and declared process boundary -> material/energy use, cost, waste or operational hazard quantity",
+      "required_data": "Measured or audited target-specific process inventories, prices/factors and conditions; cost, footprint and hazard remain distinct reference-qualified variants",
+      "evaluation": "Source-specific quantity errors and decision agreement; no universal sustainability or safety score is assumed"
+    },
+    {
+      "id": "enzyme_retrieval",
+      "family_id": "biocatalysis",
+      "title": "Enzyme–reaction retrieval",
+      "extension_id": "enzyme_retrieval",
+      "question": "Reaction and available context -> active enzyme sequences or structures",
+      "required_data": "Sequence-linked positive/negative activity references, candidate universe and family-aware partitions",
+      "evaluation": "Retrieval recall/ranking, activity recovery and coverage; unlabeled candidates are not confirmed inactive"
+    },
+    {
+      "id": "mutation_effects",
+      "family_id": "biocatalysis",
+      "title": "Enzyme mutation effects",
+      "extension_id": "mutation_effects",
+      "question": "Enzyme sequence, mutation and reaction/assay context -> measured change in function",
+      "required_data": "Linked wild-type/mutant measurements with assay conditions, units and sequence-family groups",
+      "evaluation": "Native-quantity error and within-assay ordering; sequence or assay overlap disclosed"
+    },
+    {
+      "id": "active_sites",
+      "family_id": "biocatalysis",
+      "title": "Reaction-conditioned active sites",
+      "extension_id": "active_sites",
+      "question": "Reaction and enzyme sequence/structure -> catalytic residues or active-site annotation",
+      "required_data": "Reaction-linked residue references, index mapping, evidence tier and structure/sequence group separation",
+      "evaluation": "Residue precision/recall, localization and coverage; annotation agreement is not independent catalytic proof"
+    },
+    {
+      "id": "enzyme_kinetic_parameters",
+      "family_id": "biocatalysis",
+      "title": "Enzyme kinetic-parameter prediction",
+      "question": "Enzyme sequence, reaction/substrate and assay conditions -> source-defined kinetic parameter",
+      "required_data": "Sequence-linked kcat, Km or Ki measurements with units, temperature, pH and assay context",
+      "evaluation": "Parameter-specific log/native errors and sequence/substrate transfer; kcat, Km and Ki are distinct quantities and never pooled as rate constants"
+    }
+  ],
+  "excluded_tasks": [
+    {
+      "id": "multistep_planning",
+      "title": "Multi-step synthesis route planning",
+      "candidate_ids": [
+        "C09"
+      ],
+      "reason": "Explicit user scope decision: do not develop a competing target-to-stock route-search benchmark or seek to replace PaRoutes.",
+      "boundary": "Excludes multi-step synthetic route search, route ranking/diversity and route-level optimization. Keeps single-step precursor prediction, per-reaction experimental decisions and physical elementary reaction networks.",
+      "external_reference": "https://github.com/MolecularAI/PaRoutes"
+    }
+  ],
+  "cross_cutting_axes": {
+    "chemical_domains": [
+      "organic and medicinal",
+      "biochemical and enzymatic",
+      "homogeneous and heterogeneous catalysis",
+      "photochemical and electrochemical",
+      "radical and combustion",
+      "inorganic and organometallic",
+      "polymer and materials"
+    ],
+    "input_modalities": [
+      "SMILES and molecular/reaction graphs",
+      "atom correspondence and electron events",
+      "3D configurations and trajectories",
+      "enzyme sequence and structure",
+      "text, tables and chemical diagrams",
+      "spectra and chromatograms",
+      "reactor geometry, process variables and sensor histories"
+    ],
+    "reference_evidence": [
+      "measured observations",
+      "expert judgments",
+      "source annotations",
+      "computed electronic-structure quantities",
+      "generated supervision",
+      "simulated trajectories"
+    ],
+    "evaluation": [
+      "source/observation dependence and development exposure",
+      "out-of-distribution transfer and robustness",
+      "uncertainty, calibration and abstention",
+      "data quality, provenance, licenses and reproducibility",
+      "cost, coverage and failure accounting"
+    ],
+    "coverage_rule": "Each axis needs an evidence matrix. Listing a domain, modality or evaluation dimension does not establish data or results for it. General molecular-property prediction, unrelated biology and plant/supply-chain optimization are outside the reaction-centred boundary."
+  },
+  "evidence": [
+    {
+      "id": "openchemie",
+      "title": "OpenChemIE: An Information Extraction Toolkit For Chemistry Literature",
+      "year": 2024,
+      "status": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2404.01462",
+      "supports": [
+        "data"
+      ]
+    },
+    {
+      "id": "rxnfp",
+      "title": "Mapping the space of chemical reactions using attention-based neural networks",
+      "year": 2021,
+      "status": "published; older conceptual precedent outside the 2024–2026 collection",
+      "url": "https://research.ibm.com/publications/mapping-the-space-of-chemical-reactions-using-attention-based-neural-networks",
+      "supports": [
+        "representation"
+      ]
+    },
+    {
+      "id": "catdrx",
+      "title": "Reaction-conditioned generative model for catalyst design and optimization with CatDRX",
+      "year": 2025,
+      "status": "published 2025-10-23",
+      "url": "https://www.nature.com/articles/s42004-025-01732-7",
+      "supports": [
+        "design"
+      ]
+    },
+    {
+      "id": "dlrn",
+      "title": "Deep Learning Reaction Framework (DLRN) for kinetic modeling of time-resolved data",
+      "year": 2025,
+      "status": "published 2025-05-15",
+      "url": "https://www.nature.com/articles/s42004-025-01541-y",
+      "supports": [
+        "physics",
+        "analysis",
+        "mechanisms"
+      ]
+    },
+    {
+      "id": "yaks",
+      "title": "Chemical Reaction Networks from Scratch with Reaction Prediction and Kinetics-Guided Exploration",
+      "year": 2025,
+      "status": "published; DOI 10.1021/acs.jctc.4c01401",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39883589/",
+      "supports": [
+        "mechanisms"
+      ]
+    },
+    {
+      "id": "chemputation",
+      "title": "An integrated self-optimizing programmable chemical synthesis and reaction engine",
+      "year": 2024,
+      "status": "published",
+      "url": "https://www.nature.com/articles/s41467-024-45444-3",
+      "supports": [
+        "conditions",
+        "analysis",
+        "process"
+      ]
+    },
+    {
+      "id": "reactive_potentials",
+      "title": "General reactive element-based machine learning potentials for heterogeneous catalysis",
+      "year": 2025,
+      "status": "published",
+      "url": "https://www.nature.com/articles/s41929-025-01398-3",
+      "supports": [
+        "physics",
+        "heterogeneous catalysis domain"
+      ]
+    },
+    {
+      "id": "riff_diff",
+      "title": "Computational enzyme design by catalytic motif scaffolding",
+      "year": 2026,
+      "status": "Nature 649, 237–245 (2026); published online 2025-12-03",
+      "url": "https://doi.org/10.1038/s41586-025-09747-9",
+      "supports": [
+        "biocatalysis",
+        "design"
+      ]
+    },
+    {
+      "id": "paroutes",
+      "title": "PaRoutes: towards a framework for benchmarking retrosynthesis route predictions",
+      "year": 2022,
+      "status": "published; older scope-boundary reference outside the 2024–2026 collection",
+      "url": "https://pubs.rsc.org/en/content/articlehtml/2022/dd/d2dd00015f",
+      "supports": [
+        "multistep_planning exclusion",
+        "single-step versus route-search distinction"
+      ]
+    }
+  ],
+  "delivery_policy": "After acquisition, pilot and freeze each task variant, group allocation, model interface and measured resource budget. Source-backed coverage and redistribution clearance do not imply completed predictive benchmarks. The release manifest selects only explicit eligible paths and excludes contradictory or unresolved grants.",
+  "future_tasks_semantics": "Historical initial acquisition checklist, retained to reproduce the fixed41-definition universe. Presence here does not mean still unacquired: task_registry.json computes current future_tasks and promoted_roadmap_task_ids from qualified source catalogs."
+}

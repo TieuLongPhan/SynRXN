@@ -1,0 +1,78 @@
+{
+  "counting_unit": "HTE observation",
+  "data_link": "data.parquet",
+  "family_id": "outcomes",
+  "format": "parquet",
+  "key": "C02/minot_al3_data",
+  "namespace": "expansion",
+  "registry_binding": {
+    "adapter_ids": [
+      "reaction_success"
+    ],
+    "commercial_use_allowed": true,
+    "counting_unit": "HTE observation",
+    "key": "C02/minot_al3_data",
+    "namespace": "expansion",
+    "partition": "main",
+    "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 960
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "minot_data_grant"
+    ],
+    "expected_bytes": 42764,
+    "expected_rows": 960,
+    "expected_sha256": "08f73be1d8027531abfdda1f26007fee8f2411221de95fcf1093e957f7364715",
+    "format": "parquet",
+    "key": "C02/minot_al3_data",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "expansion",
+    "partition": "main",
+    "path": "Data/expansion/main/C02/minot_al3_data.parquet",
+    "qualification": "Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 960,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/expansion/main/C02/minot_al3_data.parquet",
+    "sha256": "08f73be1d8027531abfdda1f26007fee8f2411221de95fcf1093e957f7364715",
+    "source_catalogue": "Data/expansion/catalog.json",
+    "source_id": "C02",
+    "source_urls": [
+      "https://zenodo.org/records/20773622",
+      "https://www.nature.com/articles/s43588-026-01063-0"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "HTE observation",
+    "key": "C02/minot_al3_data",
+    "namespace": "expansion",
+    "path": "Data/expansion/main/C02/minot_al3_data.parquet",
+    "role": "primary",
+    "rows": 960,
+    "sha256": "08f73be1d8027531abfdda1f26007fee8f2411221de95fcf1093e957f7364715",
+    "source_catalogue": "Data/expansion/catalog.json",
+    "source_id": "C02",
+    "source_urls": [
+      "https://zenodo.org/records/20773622",
+      "https://www.nature.com/articles/s43588-026-01063-0"
+    ],
+    "title": "Minot borylation AL3"
+  },
+  "stored_path": "Data/families/outcomes/yield_conversion/expansion/C02/minot_al3_data/data.parquet",
+  "task_id": "reaction_success",
+  "title": "Minot borylation AL3"
+}

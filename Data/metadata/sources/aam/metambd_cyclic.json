@@ -1,0 +1,38 @@
+{
+  "citations": [
+    {
+      "doi": "10.3390/metabo12020122",
+      "title": "MetAMDB: Metabolic Atom Mapping Database"
+    },
+    {
+      "doi": "10.2139/ssrn.7404606",
+      "title": "Predicting the Best Reaction Mechanism: An Alternative Machine Learning Approach for Generating Atom-to-Atom Maps"
+    }
+  ],
+  "dataset_key": "aam/metambd_cyclic.csv.gz",
+  "license_spdx": "LicenseRef-Unknown",
+  "license_url": "",
+  "lock_status": "pinned_public_gt_and_preprocessing",
+  "mapping_scope": "heavy atoms; original mapped spectators removed; proton participants retained without H map labels",
+  "outstanding_fields": [
+    "independent_mapping_validation",
+    "exact_data_product_redistribution_terms"
+  ],
+  "paper_url": "https://ssrn.com/abstract=7404606",
+  "processing_script": "scripts/build_metamdb_aam.py",
+  "qualification": "Source reference mappings; independent human review is unverified. The paper-reported 10,579 validated subset is not reconstructed or claimed.",
+  "redistribution_partition": "excluded",
+  "reference_policy": "first reference only for every row and role; no row deduplication",
+  "retrieved_at": "2026-10-27",
+  "schema_version": "1.0",
+  "source_commit_or_version": "b1d428f3ed2d1ef5a1311150cc335ba1a916c06a",
+  "source_doi": "10.3390/metabo12020122",
+  "source_file": "Data/raw/metamdb/brmapper/code/02_data_preprocessing/input_data/ringreactions_gt.csv",
+  "source_product": "Data/raw/aam/metambd_cyclic/native-product/aam.csv.gz",
+  "source_rows": 177,
+  "source_sha256": "54d8f4d6f4598bee6acd93df54d2136d2f412b5cc551c50271069c8c9c2cd20f",
+  "source_url": "https://raw.githubusercontent.com/NoraBeier/BRMapper/b1d428f3ed2d1ef5a1311150cc335ba1a916c06a/code/02_data_preprocessing/input_data/ringreactions_gt.csv",
+  "upstream_license": "Data-specific redistribution terms unverified; repository MIT declaration is recorded without assuming a blanket grant for underlying source data.",
+  "upstream_repository": "https://github.com/NoraBeier/BRMapper/tree/b1d428f3ed2d1ef5a1311150cc335ba1a916c06a",
+  "validation_status": "human_review_unverified"
+}

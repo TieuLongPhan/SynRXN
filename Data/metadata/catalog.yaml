@@ -1,0 +1,1516 @@
+schema_version: '1.0'
+column_definitions:
+  r_id:
+    role: identifier
+    description: Stable row identifier supplied by SynRXN.
+  original_id:
+    role: source_identifier
+    description: Identifier in the upstream dataset.
+  center_cluster_id:
+    role: group
+    description: Global exact center class shared across source roles and step counts.
+  center_type:
+    role: provenance
+    description: RC for an elementary representative or MC for a multistep representative.
+  parent_r_id:
+    role: group
+    description: Parent reaction record identifier; all derived missing-component cases share its split.
+  case_type:
+    role: provenance
+    description: Missing heavy-component side in a derived balancing case, reactant, product or both.
+  orig_index:
+    role: source_identifier
+    description: Row index in the upstream dataset.
+  rxn:
+    role: reaction
+    description: Reaction SMILES string.
+  reactions:
+    role: reaction
+    description: Reaction SMILES string retained under the upstream plural field name.
+  aam:
+    role: reaction
+    description: Atom-mapped reaction SMILES.
+  ground_truth:
+    role: reference
+    description: Curated reference reaction or atom mapping.
+  gt_rxn:
+    role: reference
+    description: Complete reference reaction without atom maps; the target for reaction balancing.
+  gt_aam:
+    role: reference
+    description: Complete atom-mapped reference reaction, preserved from the parent mapping source.
+  base_r_id:
+    role: source_identifier
+    description: Exact case identifier in the base balancing dataset before context augmentation.
+  variant:
+    role: provenance
+    description: Dataset construction variant, such as a harder native-context balancing case.
+  has_context:
+    role: quality
+    description: Whether recovered native heavy-atom context was added to the hard input.
+  context_rxn:
+    role: provenance
+    description: Unmapped unchanged source-mixture components carried through both hard target sides.
+  context_aam:
+    role: provenance
+    description: Recovered source-mixture components with their original atom-map IDs.
+  input_context_rxn:
+    role: provenance
+    description: Heavy-atom context added only to the reactant side of the hard input.
+  ground_truth_variants:
+    role: reference
+    description: JSON source mapping candidates retained per dataset case; endpoint tautomer forms may differ.
+  rxn_mapper:
+    role: prediction
+    description: Mapping predicted by RXNMapper.
+  graphormer:
+    role: prediction
+    description: Mapping predicted by Graphormer.
+  local_mapper:
+    role: prediction
+    description: Mapping predicted by LocalMapper.
+  rdt:
+    role: prediction
+    description: Mapping predicted by RDT.
+  label:
+    role: target
+    description: Reaction class or template label.
+  label_0:
+    role: target
+    description: Top-level hierarchical template label.
+  label_1:
+    role: target
+    description: Second-level hierarchical template label.
+  label_2:
+    role: target
+    description: Third-level hierarchical template label.
+  ec1:
+    role: target
+    description: First Enzyme Commission hierarchy level.
+  ec2:
+    role: target
+    description: Second Enzyme Commission hierarchy level.
+  ec3:
+    role: target
+    description: Third Enzyme Commission hierarchy level.
+  ea:
+    role: target
+    description: Activation-energy target; consult the upstream record for units.
+  dh:
+    role: target
+    description: Reaction-enthalpy target; consult the upstream record for units.
+  G_act:
+    role: target
+    description: Activation free-energy target; consult the upstream record for units.
+  G_r:
+    role: target
+    description: Reaction free-energy target; consult the upstream record for units.
+  lograte:
+    role: target
+    description: Logarithmic reaction-rate target.
+  Conversion:
+    role: target
+    description: Reaction conversion target.
+  onehot:
+    role: feature
+    description: Upstream one-hot encoded reaction context.
+  split:
+    role: partition
+    description: Upstream training, validation, or test assignment.
+  code:
+    role: source_identifier
+    description: Upstream reaction code.
+  reaction_original:
+    role: reaction
+    description: Original upstream reaction representation.
+  reaction:
+    role: reaction
+    description: Processed reaction representation.
+  rsmi:
+    role: reaction
+    description: Reaction SMILES representation.
+  reagent:
+    role: target
+    description: Reagent or catalyst target.
+  source:
+    role: provenance
+    description: Upstream source or subset marker.
+  rc:
+    role: target
+    description: Reaction-center annotation.
+  reaction_r_id:
+    role: identifier
+    description: Identifier of the corresponding reaction-level record.
+  system:
+    role: partition
+    description: EHreact enzyme or reaction system.
+  input:
+    role: feature
+    description: Upstream query substrate or product representation.
+  input_type:
+    role: provenance
+    description: Whether the upstream query represents a substrate or product.
+  assay_labels:
+    role: target
+    description: JSON object containing all binary assay labels for a reaction.
+  n_assays:
+    role: summary
+    description: Number of assay labels associated with the reaction.
+  n_active:
+    role: summary
+    description: Number of positive assay labels associated with the reaction.
+  mapping_curated:
+    role: provenance
+    description: Dataset-level indicator that the atom mapping underwent upstream manual curation.
+  validated:
+    role: provenance
+    description: Row-level independent-validation status when provided by the upstream source.
+  assay:
+    role: target
+    description: Upstream assay or enzyme label.
+  activity:
+    role: target
+    description: Binary reaction-assay activity label.
+  pubmed_ids:
+    role: provenance
+    description: JSON array of PubMed identifiers linked by the upstream source.
+  n_steps:
+    role: summary
+    description: Minimum number of elementary transitions connecting the composite reaction
+      states.
+  sample_id:
+    role: identifier
+    description: Stable SynRXN identifier for a normalized record.
+  dataset:
+    role: provenance
+    description: Normalized SynRXN dataset name.
+  source_record_id:
+    role: source_identifier
+    description: Identifier retained from the upstream record.
+  source_index:
+    role: source_identifier
+    description: Zero-based position of the record in the upstream table.
+  raw_reaction_smiles:
+    role: provenance
+    description: Reaction SMILES exactly as supplied by the upstream source.
+  reaction_smiles:
+    role: reaction
+    description: Recorded or normalized reaction SMILES with reactants, optional middle-field
+      agents, and products.
+  canonical_reaction_smiles:
+    role: reaction
+    description: Canonicalized reaction SMILES used for chemical grouping when canonicalization
+      succeeds.
+  reactants:
+    role: reaction
+    description: Reactant side of the normalized reaction SMILES.
+  reagents:
+    role: target
+    description: Order-invariant dot-separated set of molecules explicitly annotated or conservatively
+      inferred as reagents.
+  products:
+    role: reaction
+    description: Product side of the normalized reaction SMILES.
+  yield_pct:
+    role: target
+    description: Reported reaction yield on a validated 0 to 100 percent scale.
+  yield_measurement_type:
+    role: provenance
+    description: Upstream yield type or normalized measurement category.
+  measurement_method:
+    role: provenance
+    description: Experimental or analytical method used to determine the yield.
+  temperature_c:
+    role: feature
+    description: Reaction temperature in degrees Celsius when reported.
+  time_hours:
+    role: feature
+    description: Reaction duration in hours when reported.
+  solvent:
+    role: feature
+    description: Solvent or solvent mixture reported for the reaction.
+  catalyst:
+    role: feature
+    description: Catalyst or catalyst system reported for the reaction.
+  base:
+    role: feature
+    description: Base reported for the reaction.
+  selectivity:
+    role: target
+    description: Numeric product-selectivity measurement when the upstream value is quantitative.
+  mass_ion_count:
+    role: feature
+    description: HiTEA mass-ion count retained from the upstream analytical record.
+  reaction_class:
+    role: provenance
+    description: Upstream reaction class or campaign label.
+  screen_id:
+    role: provenance
+    description: Identifier of the upstream high-throughput experiment screen.
+  notebook_id:
+    role: provenance
+    description: Identifier of the upstream experiment notebook.
+  upstream_split:
+    role: partition
+    description: Published upstream partition label retained without treating it as a universal
+      SynRXN split.
+  citation:
+    role: provenance
+    description: Upstream citation label embedded in the normalized record.
+  license_spdx:
+    role: provenance
+    description: SPDX identifier for the upstream dataset license.
+  license_url:
+    role: provenance
+    description: URL of the upstream dataset license.
+  provenance:
+    role: provenance
+    description: Human-readable description of the pinned upstream source snapshot.
+  duplicate_group:
+    role: partition
+    description: Stable hash grouping records with the same normalized experiment representation.
+  chemical_split_group:
+    role: partition
+    description: Stable hash grouping records by normalized chemical transformation independently
+      of yield.
+  conditions_json:
+    role: context
+    description: Compact JSON preserving structured operating conditions beyond the normalized
+      scalar columns.
+  source_metadata_json:
+    role: provenance
+    description: JSON object preserving additional upstream fields and unnormalized values.
+  agents:
+    role: target
+    description: Order-invariant dot-separated set of generic ORDerly agent molecules; no
+      catalyst or reagent subclass is inferred.
+  catalysts:
+    role: target
+    description: Order-invariant dot-separated set of explicitly annotated catalyst molecules.
+  ligands:
+    role: target
+    description: Order-invariant dot-separated set of explicitly annotated ligand molecules.
+  bases:
+    role: target
+    description: Order-invariant dot-separated set of explicitly annotated base molecules.
+  additives:
+    role: target
+    description: Order-invariant dot-separated set of explicitly annotated additive molecules.
+  agent_1:
+    role: target
+    description: First generic agent slot retained from ORDerly.
+  agent_2:
+    role: target
+    description: Second generic agent slot retained from ORDerly when present.
+  agent_3:
+    role: target
+    description: Third generic agent slot retained from ORDerly when present.
+  solvents:
+    role: target
+    description: Order-invariant dot-separated set of solvent molecules.
+  solvent_1:
+    role: target
+    description: First solvent slot retained from ORDerly.
+  solvent_2:
+    role: target
+    description: Second solvent slot retained from ORDerly when present.
+  temperature_plausible:
+    role: quality
+    description: Whether a reported temperature is within the documented pilot range of -196
+      to 500 degrees Celsius.
+  reported_yield:
+    role: context
+    description: Optional upstream yield retained as context without clipping or treating
+      it as the condition benchmark target.
+  yield_valid_0_100:
+    role: quality
+    description: Whether the optional upstream yield lies in the inclusive 0 to 100 range.
+  condition_completeness:
+    role: quality
+    description: Fraction of declared reagent, solvent, temperature, and time slots that are
+      populated.
+  condition_mask_json:
+    role: quality
+    description: JSON presence mask distinguishing populated from missing condition slots.
+  action_sequence:
+    role: target
+    description: Structured experimental action sequence for procedure prediction.
+  action_score:
+    role: quality
+    description: Upstream confidence score for a machine-extracted experimental action sequence.
+  pressure_bar:
+    role: target
+    description: Reported reaction pressure converted to bar when the source unit is supported.
+  atmosphere:
+    role: target
+    description: Reported reaction atmosphere.
+  stirring:
+    role: target
+    description: Reported stirring mode.
+  flow:
+    role: target
+    description: Reported flow-reactor mode.
+  photochemistry:
+    role: target
+    description: Reported illumination mode for photochemical reactions.
+  electrochemistry:
+    role: target
+    description: Indicator that structured electrochemical conditions were reported.
+  synrxn_split:
+    role: partition
+    description: Deterministic SynRXN split grouped by normalized chemical transformation;
+      distinct from any upstream split.
+  procedure_details:
+    role: provenance
+    description: Upstream reaction procedure text.
+  date_of_experiment:
+    role: provenance
+    description: Upstream experiment date when supplied.
+  grant_date:
+    role: partition
+    description: Patent grant date retained for temporal splitting.
+  source_dataset_id:
+    role: provenance
+    description: ORD dataset identifier from which the ORDerly row was extracted.
+  condition_group:
+    role: partition
+    description: Grouping key for reagent, solvent, temperature, and time contexts.
+  substrate_smiles:
+    role: feature
+    description: Upstream substrate representation; atom indices refer to this string when
+      site labels are supplied.
+  canonical_substrate_smiles:
+    role: feature
+    description: Canonical substrate for identity grouping; upstream site indices retain their
+      original namespace.
+  candidate_site_indices:
+    role: feature
+    description: Semicolon-separated zero-based candidate atom indices in the upstream substrate
+      SMILES.
+  observed_site_indices:
+    role: target
+    description: Semicolon-separated experimentally observed reactive atom indices in the
+      upstream substrate SMILES.
+  observed_site_count:
+    role: summary
+    description: Number of experimentally observed reactive sites in the record.
+  site_index_basis:
+    role: provenance
+    description: Explicit convention defining which molecular representation and index origin
+      the site labels use.
+  selectivity_value:
+    role: target
+    description: Quantitative selectivity measurement retained without changing its upstream
+      sign convention.
+  selectivity_type:
+    role: provenance
+    description: Selectivity target class such as enantiomeric excess or an observed regioselective
+      site set.
+  selectivity_unit:
+    role: provenance
+    description: Source target unit, including percent ee or an atom-site index.
+  selectivity_sign_convention:
+    role: provenance
+    description: Source sign convention, or not applicable for site labels.
+  stereochemistry_complete:
+    role: quality
+    description: Whether the structure and measurement identify the favored stereoisomer completely.
+  reported_yield_pct:
+    role: context
+    description: Optional experimental yield or recovery retained as context rather than as
+      the selectivity target.
+  reference:
+    role: provenance
+    description: Literature reference, patent identifier, or upstream accession.
+  feasible:
+    role: target
+    description: Binary source feasibility label; consult evidence_tier for its meaning.
+  evidence_tier:
+    role: provenance
+    description: Expert judgment, upstream-positive record, or generated-negative supervision.
+  exact_reaction_group:
+    role: group
+    description: SHA-256 group of exact recorded reaction text, without a chemical-independence
+      claim.
+  negative_method:
+    role: provenance
+    description: Upstream generation method; withheld from feasibility model inputs.
+  electron_path_json:
+    role: target
+    description: Original ordered paired-electron arrows serialized as JSON.
+  mechanism_record_json:
+    role: target
+    description: Typed supplied mechanism; ordering preserves the source convention.
+  verification_level:
+    role: quality
+    description: EXACT, NORMALIZED or diagnostic DELTA_CONSISTENT source replay tier.
+  label_method:
+    role: provenance
+    description: Upstream expert judgment, positive-record labeling or generated negative
+      method; withheld from predictive input.
+  additional_note:
+    role: provenance
+    description: Source expert note or rationale; retained verbatim and withheld from predictive
+      input.
+  failure_reasons:
+    role: provenance
+    description: Source failure-reason annotation; not a measured experimental outcome.
+  difficulty:
+    role: provenance
+    description: Source annotated difficulty; withheld from predictive input.
+  source_case_id:
+    role: identifier
+    description: Published SynEPD case identifier, joined by case ID and checked against endpoints
+      and arrows.
+  source_sqlite_id:
+    role: identifier
+    description: SynEPD SQLite primary key; distinct from the JSON source ID.
+  representation_json:
+    role: provenance
+    description: Source representation and verification policy serialized as JSON.
+  taxonomy_json:
+    role: provenance
+    description: Source reaction taxonomy serialized as JSON; withheld from mechanism inputs.
+  reaction_name:
+    role: provenance
+    description: Source reaction name; withheld from mechanism inputs.
+  overall_reaction_group:
+    role: group
+    description: Source canonical endpoint reaction hash; a grouping key rather than a physical-mechanism
+      identity.
+  rc_group:
+    role: group
+    description: Source reaction-center hash; retained outside model input.
+  mc_group:
+    role: group
+    description: Source mechanistic-center hash; retained outside model input.
+  reference_replay_status:
+    role: quality
+    description: Strict source-arrow replay status under the recorded representation policy;
+      not physical mechanism verification.
+  source_version:
+    role: provenance
+    description: Pinned upstream release version.
+datasets:
+  aam/metambd_cyclic.csv.gz:
+    title: MetaMBD cyclic reaction atom mappings
+    description: Combined native train and test cases from the local ringreactions archive.
+      Train selects the first mapping per source row; test retains full ITS representatives
+      within each source row. All original candidates are preserved in a provenance sidecar.
+    benchmark_role: Heavy-atom mapping on cyclic reactions using native training and test splits.
+    license: Not supplied in the local archive
+    license_spdx: LicenseRef-Unknown
+    license_url: ''
+    redistribution_partition: excluded
+    citations: []
+    targets:
+    - ground_truth
+    split_values:
+    - train
+    - test
+    split_column: split
+    split_status: source_provided_local_archive
+    row_identifier: r_id
+    row_identifier_unique: true
+    target_kinds:
+      ground_truth: heavy_atom_mapping
+  aam/brenda.csv.gz:
+    title: BRENDA balanced atom mappings
+    description: IUBMB-marked, structure-complete, atom- and charge-balanced BRENDA reactions
+      mapped with SynKit.
+    benchmark_role: Evaluate mapping methods on a conservative biochemical reaction subset
+      with computational mapping quality control.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - hauenstein2026brenda
+    targets:
+    - ground_truth
+    row_identifier: r_id
+    row_identifier_unique: true
+  aam/flower_e.csv.gz:
+    title: FlowER elementary atom mappings
+    description: Unique elementary test-set mappings retaining only reacting explicit hydrogens;
+      inputs are canonical unmapped SMILES with removable hydrogens made implicit.
+    benchmark_role: Evaluate atom mapping on conserved mechanistic elementary steps from the
+      corrected May-2026 FlowER test split.
+    license: MIT
+    license_spdx: MIT
+    license_url: https://spdx.org/licenses/MIT.html
+    redistribution_partition: main
+    citations:
+    - joung2025electron
+    - fong2026flower_data
+    targets:
+    - ground_truth
+    row_identifier: r_id
+    row_identifier_unique: true
+  aam/flower_c.csv.gz:
+    title: FlowER composite atom mappings
+    description: Unique multi-step test-set mappings retaining only reacting explicit hydrogens;
+      inputs are canonical unmapped SMILES with removable hydrogens made implicit.
+    benchmark_role: Evaluate atom mapping on overall transformations spanning at least two
+      elementary transitions.
+    license: MIT
+    license_spdx: MIT
+    license_url: https://spdx.org/licenses/MIT.html
+    redistribution_partition: main
+    citations:
+    - joung2025electron
+    - fong2026flower_data
+    targets:
+    - ground_truth
+    row_identifier: r_id
+    row_identifier_unique: true
+  aam/ehreact.csv.gz:
+    title: EHreact atom mappings
+    description: Manually corrected atom-mapped reactions from the EHreact manuscript assay
+      collection.
+    benchmark_role: Evaluate atom mapping and reaction-template methods across nine enzymatic
+      and synthetic systems.
+    license: BSD-3-Clause
+    license_spdx: BSD-3-Clause
+    license_url: https://spdx.org/licenses/BSD-3-Clause.html
+    redistribution_partition: main
+    citations:
+    - heid2021ehreact
+    targets:
+    - ground_truth
+    row_identifier: r_id
+    row_identifier_unique: true
+  aam/ecoli.csv.gz:
+    title: E. coli atom mapping
+    description: Biochemical atom-mapping benchmark derived from E. coli reactions.
+    benchmark_role: Compare mapper outputs with curated biochemical reference mappings.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - beier2026computing
+    targets:
+    - ground_truth
+    row_identifier: r_id
+    row_identifier_unique: true
+  aam/enzyme_map.csv.gz:
+    title: EnzymeMap atom mapping
+    description: Enzymatic atom-mapping benchmark from the EnzymeMap reaction collection.
+    benchmark_role: Evaluate atom mapping at scale on enzymatic reactions.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - heid2023enzymemap
+    targets:
+    - ground_truth
+    row_identifier: r_id
+    row_identifier_unique: true
+  aam/golden.csv.gz:
+    title: Golden atom-mapping set
+    description: Curated synthetic-chemistry atom-mapping benchmark.
+    benchmark_role: Compare mapper outputs with a curated synthetic reference set.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - chen2024precise
+    - lin2022atom
+    targets:
+    - ground_truth
+    row_identifier: r_id
+    row_identifier_unique: true
+  aam/natcomm.csv.gz:
+    title: Nature Communications atom mapping
+    description: Literature-derived reference atom-mapping set.
+    benchmark_role: Compare mapping methods on literature-derived reactions.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - jaworski2019automatic
+    targets:
+    - ground_truth
+    row_identifier: r_id
+    row_identifier_unique: true
+  aam/recon3d.csv.gz:
+    title: Recon3D atom mapping
+    description: Biochemical atom-mapping benchmark derived from Recon3D reactions.
+    benchmark_role: Compare atom mappers on metabolic reactions.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - litsa2018machine
+    targets:
+    - ground_truth
+    row_identifier: r_id
+    row_identifier_unique: true
+  aam/uspto_3k.csv.gz:
+    title: USPTO 3K atom mapping
+    description: USPTO-derived synthetic-chemistry atom-mapping benchmark.
+    benchmark_role: Compare mapper accuracy on a compact patent-reaction set.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - chen2024precise
+    targets:
+    - ground_truth
+    row_identifier: r_id
+    row_identifier_unique: true
+  classification/ecreact.csv.gz:
+    title: ECReact classification
+    description: Enzyme Commission hierarchy classification benchmark.
+    benchmark_role: Predict hierarchical enzyme classes from reactions.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - zeng2025claire
+    targets:
+    - ec1
+    - ec2
+    - ec3
+    split_values:
+    - train
+    - test
+    row_identifier: r_id
+    row_identifier_unique: false
+  classification/ehreact_activity.csv.gz:
+    title: EHreact reaction activity
+    description: Long-form binary reaction-assay activity labels from nine EHreact manuscript
+      systems.
+    benchmark_role: Predict whether a mapped reaction is active for an assay or enzyme label.
+    license: BSD-3-Clause
+    license_spdx: BSD-3-Clause
+    license_url: https://spdx.org/licenses/BSD-3-Clause.html
+    redistribution_partition: main
+    citations:
+    - heid2021ehreact
+    targets:
+    - activity
+    row_identifier: r_id
+    row_identifier_unique: true
+  classification/schneider_b.csv.gz:
+    title: Schneider balanced classification
+    description: Balanced Schneider reaction-class benchmark.
+    benchmark_role: Predict reaction class from balanced reactions.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - schneider2015development
+    - vannguyen2025syncat
+    targets:
+    - label
+    split_values:
+    - train
+    - test
+    row_identifier: r_id
+    row_identifier_unique: true
+  classification/schneider_u.csv.gz:
+    title: Schneider unbalanced classification
+    description: Unbalanced and product-focused Schneider reaction-class benchmark.
+    benchmark_role: Predict reaction class from unbalanced reactions.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - schneider2015development
+    targets:
+    - label
+    split_values:
+    - train
+    - test
+    row_identifier: r_id
+    row_identifier_unique: true
+  classification/syntemp.csv.gz:
+    title: SynTemp hierarchical classification
+    description: Reaction-template benchmark with three hierarchical label levels.
+    benchmark_role: Predict hierarchical reaction-template labels.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - phan2025syntemp
+    - liu2017retrosynthetic
+    targets:
+    - label_0
+    - label_1
+    - label_2
+    row_identifier: r_id
+    row_identifier_unique: true
+  classification/tpl_b.csv.gz:
+    title: Balanced template classification
+    description: Large balanced reaction-template classification benchmark.
+    benchmark_role: Predict template labels from balanced reactions.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - vannguyen2025syncat
+    - schwaller2021mapping
+    targets:
+    - label
+    split_values:
+    - train
+    - test
+    row_identifier: r_id
+    row_identifier_unique: true
+  classification/tpl_u.csv.gz:
+    title: Unbalanced template classification
+    description: Large unbalanced and product-focused template classification benchmark.
+    benchmark_role: Predict template labels from unbalanced reactions.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - schwaller2021mapping
+    targets:
+    - label
+    split_values:
+    - train
+    - test
+    row_identifier: r_id
+    row_identifier_unique: true
+  classification/uspto_50k_b.csv.gz:
+    title: USPTO-50K balanced classification
+    description: Balanced USPTO-50K reaction-class benchmark.
+    benchmark_role: Predict reaction classes from balanced patent reactions.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - vannguyen2025syncat
+    - liu2017retrosynthetic
+    targets:
+    - label
+    split_values:
+    - train
+    - test
+    row_identifier: r_id
+    row_identifier_unique: true
+  classification/uspto_50k_u.csv.gz:
+    title: USPTO-50K unbalanced classification
+    description: Unbalanced and product-focused USPTO-50K classification benchmark.
+    benchmark_role: Predict reaction classes from unbalanced patent reactions.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - liu2017retrosynthetic
+    targets:
+    - label
+    split_values:
+    - train
+    - test
+    row_identifier: r_id
+    row_identifier_unique: true
+  property/b97xd3.csv.gz:
+    title: B97-D3 activation and reaction energies (legacy b97xd3 key)
+    description: B97-D3/def2-mSVP activation energies and reaction enthalpies in kcal/mol,
+      matched to Grambow b97d3.csv. The legacy key is retained for byte compatibility; this
+      table is not the omega-B97X-D3 subset.
+    benchmark_role: Predict activation energy and reaction enthalpy.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - grambow2020scientificdata
+    - grambow2020zenodo
+    targets:
+    - ea
+    - dh
+    row_identifier: r_id
+    row_identifier_unique: true
+    target_kinds:
+      ea: activation_energy
+      dh: reaction_enthalpy
+    target_units:
+      ea: kcal/mol
+      dh: kcal/mol
+    unit_evidence:
+      primary_source: https://www.nature.com/articles/s41597-020-0460-4
+      location: Table 1
+      audit: ncs/audit/property-native-lineage.json
+      conversion_applied: false
+  property/cycloadd.csv.gz:
+    title: Cycloaddition free energies
+    description: Cycloaddition activation and reaction free-energy benchmark.
+    benchmark_role: Predict activation and reaction free energies.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - heid2023benchmark_chemprop
+    targets:
+    - G_act
+    - G_r
+    split_values:
+    - train
+    - val
+    - test
+    row_identifier: r_id
+    row_identifier_unique: true
+    target_kinds:
+      G_act: activation_free_energy
+      G_r: reaction_free_energy
+    target_units:
+      G_act: kcal/mol
+      G_r: kcal/mol
+    unit_evidence:
+      primary_source: https://www.nature.com/articles/s41597-023-01977-8
+      location: 'Data Records: activation and reaction energies in kcal/mol'
+      audit: ncs/audit/property-native-lineage.json
+      conversion_applied: false
+  property/e2.csv.gz:
+    title: E2 activation energies
+    description: E2 reaction activation-energy benchmark.
+    benchmark_role: Predict activation energies for E2 reactions.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - heid2023benchmark_chemprop
+    targets:
+    - ea
+    split_values:
+    - train
+    - val
+    - test
+    row_identifier: r_id
+    row_identifier_unique: true
+    target_kinds:
+      ea: activation_energy
+    target_units:
+      ea: kcal/mol
+    unit_evidence:
+      primary_source: https://pubs.acs.org/doi/10.1021/acs.jcim.3c01250
+      location: Supporting Information Table S10 and source dataset descriptions
+      audit: ncs/audit/property-native-lineage.json
+      conversion_applied: false
+  property/e2sn2.csv.gz:
+    title: E2/SN2 activation energies
+    description: Combined E2 and SN2 activation-energy benchmark.
+    benchmark_role: Predict activation energies across E2 and SN2 mechanisms.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - heid2022machine
+    - vonrudorff2020thousands
+    targets:
+    - ea
+    row_identifier: r_id
+    row_identifier_unique: true
+    target_kinds:
+      ea: activation_energy
+    target_units:
+      ea: kcal/mol
+    unit_evidence:
+      primary_source: https://pubs.acs.org/doi/10.1021/acs.jcim.1c00975
+      location: Table 1
+      audit: ncs/audit/property-native-lineage.json
+      conversion_applied: false
+  property/lograte.csv.gz:
+    title: Reaction log rates
+    description: Dimensionless log10(k/k_ref) at 1000 K. Source k_ref is 1 in s^-1 for unimolecular
+      or cm^3 mol^-1 s^-1 for bimolecular reactions; reaction order and reference units must
+      be retained.
+    benchmark_role: Predict log reaction rates.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - heid2022machine
+    - bhoorasingh2017automated
+    targets:
+    - lograte
+    row_identifier: r_id
+    row_identifier_unique: true
+    target_kinds:
+      lograte: log10_normalized_rate_constant
+    target_units:
+      lograte: dimensionless
+    unit_evidence:
+      primary_source: https://pubs.acs.org/doi/10.1021/acs.jcim.1c00975
+      location: Table 1
+      audit: ncs/audit/property-native-lineage.json
+      conversion_applied: false
+  property/phosphatase.csv.gz:
+    title: Phosphatase conversion
+    description: Source normalized phosphatase conversion as a dimensionless fraction, not
+      yield percent. Original values and enzyme encodings are preserved.
+    benchmark_role: Predict phosphatase conversion.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - heid2022machine
+    - huang2015panoramic
+    targets:
+    - Conversion
+    row_identifier: r_id
+    row_identifier_unique: true
+    target_kinds:
+      Conversion: normalized_conversion
+    target_units:
+      Conversion: dimensionless
+    unit_evidence:
+      primary_source: https://pubs.acs.org/doi/10.1021/acs.jcim.1c00975
+      location: Table 1
+      audit: ncs/audit/property-native-lineage.json
+      conversion_applied: false
+  property/rad6re.csv.gz:
+    title: RAD-6 reaction enthalpies
+    description: Forward reaction enthalpies in eV, matched to the native reactiondatabase
+      product; do not pool numerically with kcal/mol enthalpy tables.
+    benchmark_role: Predict reaction enthalpy.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - heid2022machine
+    - stocker2020machine
+    targets:
+    - dh
+    row_identifier: r_id
+    row_identifier_unique: true
+    target_kinds:
+      dh: reaction_enthalpy
+    target_units:
+      dh: eV
+    unit_evidence:
+      primary_source: https://pubs.acs.org/doi/10.1021/acs.jcim.1c00975
+      location: Table 1
+      audit: ncs/audit/property-native-lineage.json
+      conversion_applied: false
+  property/rdb7.csv.gz:
+    title: RDB7 activation energies
+    description: 23,852 source-derived directional barriers in kcal/mol from 11,926 CCSD(T)-F12/cc-pVDZ-F12
+      source records. Forward labels match dE0; reverse labels follow the published preprocessing
+      convention dE0 minus dHrxn298. These are directional rows, not 23,852 independent transition
+      states.
+    benchmark_role: Predict reaction activation energy.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - heid2023benchmark_chemprop
+    targets:
+    - ea
+    split_values:
+    - train
+    - val
+    - test
+    row_identifier: r_id
+    row_identifier_unique: true
+    target_kinds:
+      ea: source_derived_barrier
+    target_units:
+      ea: kcal/mol
+    unit_evidence:
+      primary_source: https://pubs.acs.org/doi/10.1021/acs.jcim.3c01250
+      location: Supporting Information Table S10 and source dataset descriptions
+      audit: ncs/audit/property-native-lineage.json
+      conversion_applied: false
+  property/rgd1.csv.gz:
+    title: RGD1 activation energies
+    description: Large-scale reaction activation-energy benchmark.
+    benchmark_role: Predict activation energy at reaction-dataset scale.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - heid2023benchmark_chemprop
+    targets:
+    - ea
+    split_values:
+    - train
+    - val
+    - test
+    row_identifier: r_id
+    row_identifier_unique: true
+    target_kinds:
+      ea: activation_energy
+    target_units:
+      ea: kcal/mol
+    unit_evidence:
+      primary_source: https://pubs.acs.org/doi/10.1021/acs.jcim.3c01250
+      location: Supporting Information Table S10 and source dataset descriptions
+      audit: ncs/audit/property-native-lineage.json
+      conversion_applied: false
+  property/sn2.csv.gz:
+    title: SN2 activation energies
+    description: SN2 reaction activation-energy benchmark.
+    benchmark_role: Predict activation energies for SN2 reactions.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - heid2023benchmark_chemprop
+    targets:
+    - ea
+    split_values:
+    - train
+    - val
+    - test
+    row_identifier: r_id
+    row_identifier_unique: true
+    target_kinds:
+      ea: activation_energy
+    target_units:
+      ea: kcal/mol
+    unit_evidence:
+      primary_source: https://pubs.acs.org/doi/10.1021/acs.jcim.3c01250
+      location: Supporting Information Table S10 and source dataset descriptions
+      audit: ncs/audit/property-native-lineage.json
+      conversion_applied: false
+  property/snar.csv.gz:
+    title: SNAr activation free energies
+    description: Source ea activation free-energy labels in kcal/mol inferred from experimental rate constants using
+      the Eyring equation at source reaction temperatures; retain this interpretation separately
+      from computed electronic or zero-point barriers.
+    benchmark_role: Predict source-reported SNAr activation free energies.
+    license: CC BY 3.0
+    license_spdx: CC-BY-3.0
+    license_url: https://creativecommons.org/licenses/by/3.0/
+    redistribution_partition: main
+    citations:
+    - jorner2021machine
+    targets:
+    - ea
+    row_identifier: r_id
+    row_identifier_unique: true
+    target_kinds:
+      ea: activation_free_energy
+    target_units:
+      ea: kcal/mol
+    unit_evidence:
+      primary_source: https://pubs.rsc.org/en/content/articlehtml/2021/sc/d0sc04896h
+      location: Reaction dataset section
+      audit: ncs/audit/property-native-lineage.json
+      conversion_applied: false
+  rbl/complex.csv.gz:
+    title: Complex reaction rebalancing
+    description: Manually validated complex-transformation rebalancing benchmark.
+    benchmark_role: Recover balanced reactions for complex transformations and rearrangements.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - jaworski2019automatic
+    - lin2022atom
+    targets:
+    - ground_truth
+    row_identifier: r_id
+    row_identifier_unique: true
+  rbl/mbs.csv.gz:
+    title: Missing both sides rebalancing
+    description: Reaction-rebalancing benchmark with species missing from both sides.
+    benchmark_role: Recover omitted species on both sides of a reaction.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - liu2017retrosynthetic
+    targets:
+    - ground_truth
+    row_identifier: r_id
+    row_identifier_unique: true
+  rbl/mnc.csv.gz:
+    title: Missing non-carbon rebalancing
+    description: Reaction-rebalancing benchmark with missing non-carbon species.
+    benchmark_role: Recover omitted non-carbon species.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - liu2017retrosynthetic
+    targets:
+    - ground_truth
+    row_identifier: r_id
+    row_identifier_unique: true
+  rbl/mos.csv.gz:
+    title: Missing one side rebalancing
+    description: Reaction-rebalancing benchmark with species missing from one side.
+    benchmark_role: Recover omitted species on one side of a reaction.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - liu2017retrosynthetic
+    targets:
+    - ground_truth
+    row_identifier: r_id
+    row_identifier_unique: true
+  synthesis/da.csv.gz:
+    title: Diels–Alder synthesis
+    description: Class-specific Diels–Alder synthesis benchmark.
+    benchmark_role: Evaluate synthesis prediction for Diels–Alder reactions.
+    license: Redistribution rights unresolved
+    license_spdx: LicenseRef-Unknown
+    redistribution_partition: excluded
+    catalogue_metadata:
+      rows: 11011
+      size: 2340912
+      sha256: ddfb98a997ef53161ee43743dbd7431a31c5c674c172f5034e637eaad562afe0
+      columns: [code, reaction_original, reaction, r_id, rsmi]
+    citations:
+    - lam2024every
+    targets:
+    - reaction
+    - rsmi
+    row_identifier: r_id
+    row_identifier_unique: true
+  synthesis/uspto_500.csv.gz:
+    title: USPTO-500 reagent prediction
+    description: Reagent and catalyst inference benchmark.
+    benchmark_role: Predict reagents and catalysts from patent reactions.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - lu2022unified
+    targets:
+    - reagent
+    split_values:
+    - train
+    - val
+    - test
+    row_identifier: r_id
+    row_identifier_unique: true
+  synthesis/uspto_50k.csv.gz:
+    title: USPTO-50K synthesis
+    description: USPTO-50K synthesis and retrosynthesis benchmark.
+    benchmark_role: Evaluate single-step synthesis and retrosynthesis methods.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - chen2024precise
+    - liu2017retrosynthetic
+    targets: []
+    split_values:
+    - train
+    - valid
+    - test
+    row_identifier: r_id
+    row_identifier_unique: true
+  synthesis/uspto_mit.csv.gz:
+    title: USPTO-MIT synthesis
+    description: Large-scale USPTO-MIT synthesis-prediction benchmark.
+    benchmark_role: Evaluate synthesis and reaction-center prediction at scale.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - jin2017predicting_outcomes
+    targets:
+    - rc
+    split_values:
+    - train
+    - valid
+    - test
+    row_identifier: r_id
+    row_identifier_unique: true
+  condition/orderly_condition.csv.gz:
+    split_column: upstream_split
+    split_status: published
+    split_values:
+    - train
+    - test
+    title: ORDerly condition-prediction benchmark
+    description: ORDerly-condition v4 train and test records normalized without reclassifying
+      the three generic agent slots.
+    benchmark_role: Predict solvent and generic-agent sets from reactants and desired products,
+      with optional temperature and time targets and retained upstream splits.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - wigh2024orderly
+    targets:
+    - agents
+    - solvents
+    - temperature_c
+    - time_hours
+    row_identifier: sample_id
+    row_identifier_unique: true
+  condition/uspto_500.csv.gz:
+    alias_of: synthesis/uspto_500.csv.gz
+    title: USPTO-500 reagent prediction (condition mirror)
+    description: Byte-identical temporary mirror of the USPTO-500 reagent and catalyst inference
+      benchmark retained under synthesis for compatibility.
+    benchmark_role: Predict reagent and catalyst molecules from patent-derived reactant-to-product
+      transformations.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - lu2022unified
+    targets:
+    - reagent
+    split_values:
+    - train
+    - val
+    - test
+    row_identifier: r_id
+    row_identifier_unique: true
+  condition_sharealike/ord_hte_condition.csv.gz:
+    split_column: synrxn_split
+    split_status: proposed
+    title: ORD high-throughput condition benchmark
+    description: Sixteen non-overlapping experimental ORD cohorts with role-aware inputs and
+      structured operating conditions; 92 incomplete NiCOlit records are quarantined.
+    benchmark_role: Evaluate condition-set prediction and condition-aware ranking across reaction
+      families, HTE platforms, and operating modes.
+    license: CC BY-SA 4.0
+    license_spdx: CC-BY-SA-4.0
+    license_url: https://creativecommons.org/licenses/by-sa/4.0/
+    redistribution_partition: sharealike
+    citations:
+    - kearnes2021ord
+    targets:
+    - reagents
+    - catalysts
+    - ligands
+    - bases
+    - additives
+    - solvents
+    - temperature_c
+    - time_hours
+    - pressure_bar
+    split_values:
+    - train
+    - validation
+    - test
+    row_identifier: sample_id
+    row_identifier_unique: true
+  condition_sharealike/openexp.csv.gz:
+    split_column: synrxn_split
+    split_status: proposed
+    title: OpenExp experimental procedure benchmark
+    description: OpenExp reaction-procedure pairs normalized from the exact 274,439-record
+      OSF archive with actions and original procedure text retained.
+    benchmark_role: Predict structured experimental action sequences from reactants, products,
+      catalysts, and solvents.
+    license: CC BY-SA 4.0
+    license_spdx: CC-BY-SA-4.0
+    license_url: https://creativecommons.org/licenses/by-sa/4.0/
+    redistribution_partition: sharealike
+    citations:
+    - liu2024reactxt
+    targets:
+    - action_sequence
+    split_values:
+    - train
+    - validation
+    - test
+    row_identifier: sample_id
+    row_identifier_unique: true
+  selectivity/hitea_chiral_resolution.csv.gz:
+    title: HiTEA chiral-resolution enantiomeric excess
+    description: Fifty chiral salt-resolution experiments with positive reported product yield
+      and signed product ee measured by chiral SFC-MS; zero-reported-yield rows are excluded
+      rather than labeled as racemic.
+    benchmark_role: Predict signed experimental product enantiomeric excess from substrate
+      and resolution conditions while preserving the unresolved favored-enantiomer convention.
+    license: MIT
+    license_spdx: MIT
+    license_url: https://spdx.org/licenses/MIT.html
+    redistribution_partition: main
+    citations:
+    - kingsmith2024reactome
+    targets:
+    - selectivity_value
+    row_identifier: sample_id
+    row_identifier_unique: true
+  selectivity/regiosqm_eas.csv.gz:
+    title: RegioSQM experimental EAS sites
+    description: Literature-curated electrophilic aromatic substitution substrates with 604
+      experimentally observed aromatic C-H reaction sites across 535 records.
+    benchmark_role: Predict the set of experimentally observed regioselective EAS atom sites
+      using the zero-based atom order of the upstream substrate SMILES.
+    license: MIT
+    license_spdx: MIT
+    license_url: https://spdx.org/licenses/MIT.html
+    redistribution_partition: main
+    citations:
+    - kromann2018regiosqm
+    targets:
+    - observed_site_indices
+    row_identifier: sample_id
+    row_identifier_unique: true
+  yield/buchwald_hartwig_ood.csv.gz:
+    title: Buchwald-Hartwig OOD yield benchmark
+    description: Curated multi-campaign Buchwald-Hartwig amination records normalized from
+      the BH-HTE-OOD source, with out-of-range yields quarantined.
+    benchmark_role: Evaluate continuous yield prediction and out-of-distribution generalization
+      across substrates, catalysts, conditions, and contributing campaigns.
+    license: Apache-2.0
+    license_spdx: Apache-2.0
+    license_url: https://www.apache.org/licenses/LICENSE-2.0
+    redistribution_partition: main
+    citations:
+    - neves2026bh
+    targets:
+    - yield_pct
+    row_identifier: sample_id
+    row_identifier_unique: true
+  yield/hitea.csv.gz:
+    title: HiTEA reaction yield benchmark
+    description: High-throughput experimentation records from the public HiTEA chemical reactome
+      table with atom maps removed and analytical metadata retained.
+    benchmark_role: Evaluate yield prediction on diverse high-throughput reaction classes
+      with structured experimental context and abundant zero-yield observations.
+    license: MIT
+    license_spdx: MIT
+    license_url: https://spdx.org/licenses/MIT.html
+    redistribution_partition: main
+    citations:
+    - kingsmith2024reactome
+    targets:
+    - yield_pct
+    row_identifier: sample_id
+    row_identifier_unique: true
+  yield/suzuki_miyaura.csv.gz:
+    title: Suzuki-Miyaura HTE yield benchmark (permission pending)
+    description: Normalized 5,760-record Perera et al. Suzuki-Miyaura screening table. Redistribution
+      permission has been requested and the license remains unresolved.
+    benchmark_role: Evaluate yield prediction across electrophiles, nucleophiles, ligands,
+      bases, and solvents; do not publish while permission is pending.
+    license: LicenseRef-Unknown
+    license_spdx: LicenseRef-Unknown
+    redistribution_partition: excluded
+    citations:
+    - perera2018flow
+    targets:
+    - yield_pct
+    row_identifier: sample_id
+    row_identifier_unique: true
+  yield/uspto_yield.csv.gz:
+    title: USPTO patent yield benchmark
+    description: Lowe USPTO patent reactions curated into numerical-yield train, validation,
+      and test partitions by Schwaller and co-workers.
+    benchmark_role: Train and evaluate large-scale continuous yield prediction while retaining
+      the published upstream partitions.
+    license: MIT
+    license_spdx: MIT
+    license_url: https://spdx.org/licenses/MIT.html
+    redistribution_partition: main
+    citations:
+    - minidis2021uspto_yield
+    - lowe2017uspto
+    targets:
+    - yield_pct
+    row_identifier: sample_id
+    row_identifier_unique: true
+  feasibility/frea_expert.csv.gz:
+    title: FREA expert feasibility judgments
+    description: 751 expert-labeled reaction proposals; feasibility is distinct from experimental
+      success or yield.
+    benchmark_role: 751 expert-labeled reaction proposals; feasibility is distinct from experimental
+      success or yield.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - frea2026
+    targets:
+    - feasible
+    row_identifier: sample_id
+    row_identifier_unique: true
+    split_column: upstream_split
+    split_values:
+    - test
+    split_status: published
+    evidence_tiers:
+    - expert_judgment
+    chemical_grouping: Exact reaction-text hash; canonical chemical/source independence is
+      unclaimed.
+  feasibility/frea_corpus.csv.gz:
+    title: FREA generated-label supervision
+    description: Complete upstream corpus with recorded-positive and generated-negative labels
+      in separate evidence tiers.
+    benchmark_role: Complete upstream corpus with recorded-positive and generated-negative
+      labels in separate evidence tiers.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - frea2026
+    targets:
+    - feasible
+    row_identifier: sample_id
+    row_identifier_unique: true
+    split_column: upstream_split
+    split_values:
+    - train
+    - test
+    split_status: published
+    evidence_tiers:
+    - upstream_positive
+    - generated_negative
+    chemical_grouping: Exact reaction-text hash; canonical chemical/source independence is
+      unclaimed.
+  mechanism/synepd_polar.csv.gz:
+    title: SynEPD polar mechanism annotations
+    description: Curated electron-pushing annotations preserving source order, exact and normalized
+      representations, and diagnostic-only delta-consistent cases.
+    benchmark_role: Curated electron-pushing annotations preserving source order, exact and
+      normalized representations, and diagnostic-only delta-consistent cases.
+    license: CC BY 4.0
+    license_spdx: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    redistribution_partition: main
+    citations:
+    - synepd2026
+    targets:
+    - electron_path_json
+    - mechanism_record_json
+    row_identifier: sample_id
+    row_identifier_unique: true
+    split_column: split
+    split_values: []
+    split_status: none
+    evidence_tiers:
+    - curated_reference_annotation
+    chemical_grouping: Source canonical overall reaction and stored RC/MC hashes; candidate
+      holdouts require task-view qualification.

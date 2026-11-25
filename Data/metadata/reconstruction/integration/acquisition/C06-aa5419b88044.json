@@ -1,0 +1,11 @@
+{
+  "source_id": "C06",
+  "name": "data/full_data/catechol_full_data_yields.csv",
+  "bytes": 520566,
+  "url": "https://raw.githubusercontent.com/jpfolch/catechol_solvent_selection/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727/data/full_data/catechol_full_data_yields.csv",
+  "path": "Data/raw/synrxn2/C06/data/full_data/catechol_full_data_yields.csv",
+  "bytes_observed": 520566,
+  "sha256": "62d2e25e6ef3de018210c0a2115988ebbbd2969ab6e2072ad610706b29c8f392",
+  "md5": "f80b116055df6ba3357d6b77b32b1b68",
+  "status": "verified"
+}

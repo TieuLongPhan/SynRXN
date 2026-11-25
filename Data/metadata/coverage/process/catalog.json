@@ -1,0 +1,1444 @@
+{
+  "schema": "synrxn.coverage-process.v1",
+  "adapter": "kdd/coverage/adapters/process.py",
+  "adapter_sha256": "28858170f928fc210ba98477c8f00d05cd9c420c4cc29919b400cefc49714c72",
+  "tables": [
+    {
+      "id": "reac_discovery_cs1",
+      "path": "Data/coverage_expansion/process/reac_discovery_cs1.jsonl.gz",
+      "task_ids": [
+        "reactor_scale_modeling"
+      ],
+      "rows": 55,
+      "counting_unit": "reference record; task views can overlap native experiments",
+      "source_id": "REACDISCOVERY2025",
+      "source_url": "https://doi.org/10.1038/s41467-025-64127-1",
+      "source_sha256": "f476f160b7890301af0f881902e67978ba113da80fde0427bfd5722ee36cc40b",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/process/reac_discovery/data/Training_Validation_data_model_M2_CS1.xlsx",
+          "sha256": "deeec376370a95aa0a3b56083184bc37339dfe0ab4c2563c5f12f2b0f7611281",
+          "bytes": 15176,
+          "url": "https://raw.githubusercontent.com/catm542-ai/Reac-Discovery/ce917a718c17bcf388a36744aad03b535a408949/data/Training_Validation_data_model_M2_CS1.xlsx",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/reac_discovery/LICENSE",
+          "sha256": "553e87423187c7c4bf98107f9d923602b8162a70d02daaf8c93fb29475388b2b",
+          "bytes": 1067,
+          "url": "https://raw.githubusercontent.com/catm542-ai/Reac-Discovery/ce917a718c17bcf388a36744aad03b535a408949/LICENSE",
+          "license": "MIT",
+          "redistribution_allowed": true
+        }
+      ],
+      "license": "MIT",
+      "columns": [
+        "C",
+        "FV",
+        "PP",
+        "Qg",
+        "Ql",
+        "SA",
+        "STY",
+        "T",
+        "Yield",
+        "native_excel_row",
+        "native_sheet",
+        "native_workbook",
+        "reaction_system",
+        "reactor_geometry_id",
+        "record_id",
+        "t"
+      ],
+      "task_fields": {
+        "reactor_scale_modeling": {
+          "inputs": [
+            "reaction_system",
+            "SA",
+            "PP",
+            "FV",
+            "t",
+            "Qg",
+            "Ql",
+            "C",
+            "T"
+          ],
+          "targets": [
+            "Yield",
+            "STY"
+          ],
+          "group_fields": [
+            "reaction_system",
+            "reactor_geometry_id"
+          ],
+          "metrics": [
+            "MAE per endpoint",
+            "held-out-geometry MAE"
+          ]
+        }
+      },
+      "qualification": "Experimental reactor geometry and operating conditions predict NMR-derived yield and reported space–time yield. These are fixed reactor-scale experiments, not matched laboratory/pilot scale-up pairs. M1 is an overlapping representation of the same campaign and is deliberately not counted again. Source geometry symbols/units retained; source methods required before cross-source unit conversion.",
+      "reference_evidence": "Author repository M2 workbook Hoja1; article Figures4–6 describe experimental yield/STY measurements and M1/M2 geometry views.",
+      "readiness": "source_backed_task_view",
+      "independent_groups": 8,
+      "sha256": "c347354b19579663e6da260621491a9a714e01d7813fe5ae0f043c7e0c8cfadc"
+    },
+    {
+      "id": "reac_discovery_cs2",
+      "path": "Data/coverage_expansion/process/reac_discovery_cs2.jsonl.gz",
+      "task_ids": [
+        "reactor_scale_modeling"
+      ],
+      "rows": 58,
+      "counting_unit": "reference record; task views can overlap native experiments",
+      "source_id": "REACDISCOVERY2025",
+      "source_url": "https://doi.org/10.1038/s41467-025-64127-1",
+      "source_sha256": "4a21f718eb924b4c1685e7069d384bf5197a0f47e1dbef181265e141dd682c63",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/process/reac_discovery/data/Training_Validation_data_model_M2_CS2.xlsx",
+          "sha256": "de3b65794403e586e7de2fb83c2e88f16da6a553f9283167ce66681ec7e8ee47",
+          "bytes": 15131,
+          "url": "https://raw.githubusercontent.com/catm542-ai/Reac-Discovery/ce917a718c17bcf388a36744aad03b535a408949/data/Training_Validation_data_model_M2_CS2.xlsx",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/reac_discovery/LICENSE",
+          "sha256": "553e87423187c7c4bf98107f9d923602b8162a70d02daaf8c93fb29475388b2b",
+          "bytes": 1067,
+          "url": "https://raw.githubusercontent.com/catm542-ai/Reac-Discovery/ce917a718c17bcf388a36744aad03b535a408949/LICENSE",
+          "license": "MIT",
+          "redistribution_allowed": true
+        }
+      ],
+      "license": "MIT",
+      "columns": [
+        "C",
+        "FV",
+        "PP",
+        "Qg",
+        "Ql",
+        "SA",
+        "STY",
+        "T",
+        "Yield",
+        "native_excel_row",
+        "native_sheet",
+        "native_workbook",
+        "reaction_system",
+        "reactor_geometry_id",
+        "record_id",
+        "t"
+      ],
+      "task_fields": {
+        "reactor_scale_modeling": {
+          "inputs": [
+            "reaction_system",
+            "SA",
+            "PP",
+            "FV",
+            "t",
+            "Qg",
+            "Ql",
+            "C",
+            "T"
+          ],
+          "targets": [
+            "Yield",
+            "STY"
+          ],
+          "group_fields": [
+            "reaction_system",
+            "reactor_geometry_id"
+          ],
+          "metrics": [
+            "MAE per endpoint",
+            "held-out-geometry MAE"
+          ]
+        }
+      },
+      "qualification": "Experimental reactor geometry and operating conditions predict NMR-derived yield and reported space–time yield. These are fixed reactor-scale experiments, not matched laboratory/pilot scale-up pairs. M1 is an overlapping representation of the same campaign and is deliberately not counted again. Source geometry symbols/units retained; source methods required before cross-source unit conversion.",
+      "reference_evidence": "Author repository M2 workbook Hoja1; article Figures4–6 describe experimental yield/STY measurements and M1/M2 geometry views.",
+      "readiness": "source_backed_task_view",
+      "independent_groups": 9,
+      "sha256": "49764a1137e6e8622c635373da75f4f440eca08ebd86fef2457393f05747469d"
+    },
+    {
+      "id": "fcc_lab_source_full",
+      "path": "Data/coverage_expansion/process/fcc_lab_source_full.jsonl.gz",
+      "task_ids": [
+        "reactor_scale_modeling"
+      ],
+      "rows": 10000,
+      "counting_unit": "reference record; task views can overlap native experiments",
+      "source_id": "FCCSCALEUP2025",
+      "source_url": "https://doi.org/10.1038/s41467-025-63982-2",
+      "source_sha256": "5821d16b7717e8fdfc0b7cd79c98a0ec4bbee2c5b54bb3a2483d962649a3f6df",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/process/scale_up/lab scale model/FeedMoleculeContent_lab.csv",
+          "sha256": "daf762081cca3b07f9510d57448353e9eabde1b1aa79c6e5682710f9bcb1ce29",
+          "bytes": 13325042,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/lab%20scale%20model/FeedMoleculeContent_lab.csv",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/lab scale model/ProductMoleculeContent_lab.csv",
+          "sha256": "4a5f526a6e085f8e4164a906d518f1f17bad1f1631312752cf4ebf946c950f15",
+          "bytes": 19500678,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/lab%20scale%20model/ProductMoleculeContent_lab.csv",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/LICENSE",
+          "sha256": "c5a9c2b8109169776c20f59d1ea01c7bb13a4b0c4b26dd58f707a52e374b3ba7",
+          "bytes": 1070,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/LICENSE",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/README.md",
+          "sha256": "ff5a3f846e37e95cffb8ef64e6b57b7d29e6bfccea43c608c9932a86f6b7ab0a",
+          "bytes": 7444,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/README.md",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/pilot scale model/Bulk_prop.py",
+          "sha256": "97099a2a13d23cab654717df3c85b68343858d1805e15b5e6be27627ea244686",
+          "bytes": 2312,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/pilot%20scale%20model/Bulk_prop.py",
+          "license": "MIT",
+          "redistribution_allowed": true
+        }
+      ],
+      "license": "MIT",
+      "columns": [
+        "WHSV_per_hour",
+        "catalyst_to_oil_ratio",
+        "feed_molecular_composition",
+        "feed_temperature_C",
+        "feedstock_family",
+        "native_row",
+        "native_split",
+        "product_molecular_composition",
+        "reaction_temperature_C",
+        "record_id",
+        "reference_kind",
+        "scale"
+      ],
+      "task_fields": {
+        "reactor_scale_modeling": {
+          "inputs": [
+            "scale",
+            "feed_temperature_C",
+            "reaction_temperature_C",
+            "WHSV_per_hour",
+            "catalyst_to_oil_ratio",
+            "feed_molecular_composition"
+          ],
+          "targets": [
+            "product_molecular_composition"
+          ],
+          "group_fields": [
+            "feedstock_family",
+            "scale"
+          ],
+          "metrics": [
+            "MAE per source endpoint"
+          ],
+          "split_policy": "Do not treat interpolation descendants of the same fifteen pilot experiments as independent held-out experimental evidence."
+        }
+      },
+      "qualification": "Reference kind is native_mechanistic_simulation. All native CSVs are headerless. Lab has10000 simulated compositions; pilot test has15 physical experiments, while train/validation have48/12 interpolated rows. Repeated pilot measurements underpin interpolation and cannot establish independence. Native source-full pilot files have1016/982 rows and are excluded from joining. Lab/pilot target spaces differ (129 molecular components versus10 bulk properties); no artificial matched cross-scale pairing.",
+      "reference_evidence": "Author README defines first4 process columns and129 feed components. Native Bulk_prop.py returns dry gas,LPG,gasoline,diesel,coke in that order, then5 gasoline PIONA endpoints. Article methods identify infrared carbon-sulfur analysis of coke; original15 pilot experiments reserved for testing and interpolation used for training/validation.",
+      "readiness": "source_backed_task_view",
+      "independent_groups": null,
+      "sha256": "7dee3a628dd58bb80250ef6752a290063edc2097788fcd879cbd2ff3ecd58a38"
+    },
+    {
+      "id": "fcc_pilot_train",
+      "path": "Data/coverage_expansion/process/fcc_pilot_train.jsonl.gz",
+      "task_ids": [
+        "reactor_scale_modeling",
+        "process_impact_assessment"
+      ],
+      "rows": 48,
+      "counting_unit": "reference record; task views can overlap native experiments",
+      "source_id": "FCCSCALEUP2025",
+      "source_url": "https://doi.org/10.1038/s41467-025-63982-2",
+      "source_sha256": "0917224db9bc7c92d8aba7cc1f6647839e377cd5142ec9569c27329080b8bebe",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/process/scale_up/pilot scale model/input_train_pilot.csv",
+          "sha256": "dddf07a189c15ca84a21d6e8466a0ccea8a033fd9287a08e382e48d18035d53a",
+          "bytes": 45717,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/pilot%20scale%20model/input_train_pilot.csv",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/pilot scale model/targets_train_pilot.csv",
+          "sha256": "f098d945a8e671a8e7dc0e7a1247ecf27930789a0d99ab3b780efb12afc25a58",
+          "bytes": 5754,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/pilot%20scale%20model/targets_train_pilot.csv",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/LICENSE",
+          "sha256": "c5a9c2b8109169776c20f59d1ea01c7bb13a4b0c4b26dd58f707a52e374b3ba7",
+          "bytes": 1070,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/LICENSE",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/README.md",
+          "sha256": "ff5a3f846e37e95cffb8ef64e6b57b7d29e6bfccea43c608c9932a86f6b7ab0a",
+          "bytes": 7444,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/README.md",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/pilot scale model/Bulk_prop.py",
+          "sha256": "97099a2a13d23cab654717df3c85b68343858d1805e15b5e6be27627ea244686",
+          "bytes": 2312,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/pilot%20scale%20model/Bulk_prop.py",
+          "license": "MIT",
+          "redistribution_allowed": true
+        }
+      ],
+      "license": "MIT",
+      "columns": [
+        "WHSV_per_hour",
+        "catalyst_to_oil_ratio",
+        "coke_mass_percent",
+        "feed_molecular_composition",
+        "feed_temperature_C",
+        "feedstock_family",
+        "native_row",
+        "native_split",
+        "product_bulk_properties",
+        "reaction_temperature_C",
+        "record_id",
+        "reference_kind",
+        "scale"
+      ],
+      "task_fields": {
+        "reactor_scale_modeling": {
+          "inputs": [
+            "scale",
+            "feed_temperature_C",
+            "reaction_temperature_C",
+            "WHSV_per_hour",
+            "catalyst_to_oil_ratio",
+            "feed_molecular_composition"
+          ],
+          "targets": [
+            "product_bulk_properties"
+          ],
+          "group_fields": [
+            "feedstock_family",
+            "scale"
+          ],
+          "metrics": [
+            "MAE per source endpoint"
+          ],
+          "split_policy": "Do not treat interpolation descendants of the same fifteen pilot experiments as independent held-out experimental evidence."
+        },
+        "process_impact_assessment": {
+          "inputs": [
+            "scale",
+            "feed_temperature_C",
+            "reaction_temperature_C",
+            "WHSV_per_hour",
+            "catalyst_to_oil_ratio",
+            "feed_molecular_composition"
+          ],
+          "targets": [
+            "coke_mass_percent"
+          ],
+          "group_fields": [
+            "feedstock_family",
+            "scale"
+          ],
+          "metrics": [
+            "MAE in coke mass percentage points"
+          ],
+          "scope": "Narrow process deposition/material-loss endpoint; not life-cycle impact, cost, energy consumption or hazard assessment."
+        }
+      },
+      "qualification": "Reference kind is native_interpolation_of_pilot_experiments. All native CSVs are headerless. Lab has10000 simulated compositions; pilot test has15 physical experiments, while train/validation have48/12 interpolated rows. Repeated pilot measurements underpin interpolation and cannot establish independence. Native source-full pilot files have1016/982 rows and are excluded from joining. Lab/pilot target spaces differ (129 molecular components versus10 bulk properties); no artificial matched cross-scale pairing.",
+      "reference_evidence": "Author README defines first4 process columns and129 feed components. Native Bulk_prop.py returns dry gas,LPG,gasoline,diesel,coke in that order, then5 gasoline PIONA endpoints. Article methods identify infrared carbon-sulfur analysis of coke; original15 pilot experiments reserved for testing and interpolation used for training/validation.",
+      "readiness": "source_backed_task_view",
+      "independent_groups": 15,
+      "sha256": "9e753460982c68355cf602c92f9ecb5a3464ee0ac9dc987eb3860a7fc35fbd47"
+    },
+    {
+      "id": "fcc_pilot_validation",
+      "path": "Data/coverage_expansion/process/fcc_pilot_validation.jsonl.gz",
+      "task_ids": [
+        "reactor_scale_modeling",
+        "process_impact_assessment"
+      ],
+      "rows": 12,
+      "counting_unit": "reference record; task views can overlap native experiments",
+      "source_id": "FCCSCALEUP2025",
+      "source_url": "https://doi.org/10.1038/s41467-025-63982-2",
+      "source_sha256": "389d908ca5a5636490aaf0c8d72aa34a99a895dd4ebfa60c361f1be7170d5688",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/process/scale_up/pilot scale model/input_validation_pilot.csv",
+          "sha256": "26d0e69bef305a28178f9e92ce8f71abc606ea5411368c7b154ee165d4132f84",
+          "bytes": 11419,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/pilot%20scale%20model/input_validation_pilot.csv",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/pilot scale model/targets_validation_pilot.csv",
+          "sha256": "4e10f74bd60d16b1c2e6a36494d53cff300fe8eff179df4a3c5eea888cc1f39b",
+          "bytes": 1444,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/pilot%20scale%20model/targets_validation_pilot.csv",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/LICENSE",
+          "sha256": "c5a9c2b8109169776c20f59d1ea01c7bb13a4b0c4b26dd58f707a52e374b3ba7",
+          "bytes": 1070,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/LICENSE",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/README.md",
+          "sha256": "ff5a3f846e37e95cffb8ef64e6b57b7d29e6bfccea43c608c9932a86f6b7ab0a",
+          "bytes": 7444,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/README.md",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/pilot scale model/Bulk_prop.py",
+          "sha256": "97099a2a13d23cab654717df3c85b68343858d1805e15b5e6be27627ea244686",
+          "bytes": 2312,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/pilot%20scale%20model/Bulk_prop.py",
+          "license": "MIT",
+          "redistribution_allowed": true
+        }
+      ],
+      "license": "MIT",
+      "columns": [
+        "WHSV_per_hour",
+        "catalyst_to_oil_ratio",
+        "coke_mass_percent",
+        "feed_molecular_composition",
+        "feed_temperature_C",
+        "feedstock_family",
+        "native_row",
+        "native_split",
+        "product_bulk_properties",
+        "reaction_temperature_C",
+        "record_id",
+        "reference_kind",
+        "scale"
+      ],
+      "task_fields": {
+        "reactor_scale_modeling": {
+          "inputs": [
+            "scale",
+            "feed_temperature_C",
+            "reaction_temperature_C",
+            "WHSV_per_hour",
+            "catalyst_to_oil_ratio",
+            "feed_molecular_composition"
+          ],
+          "targets": [
+            "product_bulk_properties"
+          ],
+          "group_fields": [
+            "feedstock_family",
+            "scale"
+          ],
+          "metrics": [
+            "MAE per source endpoint"
+          ],
+          "split_policy": "Do not treat interpolation descendants of the same fifteen pilot experiments as independent held-out experimental evidence."
+        },
+        "process_impact_assessment": {
+          "inputs": [
+            "scale",
+            "feed_temperature_C",
+            "reaction_temperature_C",
+            "WHSV_per_hour",
+            "catalyst_to_oil_ratio",
+            "feed_molecular_composition"
+          ],
+          "targets": [
+            "coke_mass_percent"
+          ],
+          "group_fields": [
+            "feedstock_family",
+            "scale"
+          ],
+          "metrics": [
+            "MAE in coke mass percentage points"
+          ],
+          "scope": "Narrow process deposition/material-loss endpoint; not life-cycle impact, cost, energy consumption or hazard assessment."
+        }
+      },
+      "qualification": "Reference kind is native_interpolation_of_pilot_experiments. All native CSVs are headerless. Lab has10000 simulated compositions; pilot test has15 physical experiments, while train/validation have48/12 interpolated rows. Repeated pilot measurements underpin interpolation and cannot establish independence. Native source-full pilot files have1016/982 rows and are excluded from joining. Lab/pilot target spaces differ (129 molecular components versus10 bulk properties); no artificial matched cross-scale pairing.",
+      "reference_evidence": "Author README defines first4 process columns and129 feed components. Native Bulk_prop.py returns dry gas,LPG,gasoline,diesel,coke in that order, then5 gasoline PIONA endpoints. Article methods identify infrared carbon-sulfur analysis of coke; original15 pilot experiments reserved for testing and interpolation used for training/validation.",
+      "readiness": "source_backed_task_view",
+      "independent_groups": 15,
+      "sha256": "dc9257e64b3ce06c3c219db87d21f27cde21768f6e5a02784988fab0cc8c1c6c"
+    },
+    {
+      "id": "fcc_pilot_test",
+      "path": "Data/coverage_expansion/process/fcc_pilot_test.jsonl.gz",
+      "task_ids": [
+        "reactor_scale_modeling",
+        "process_impact_assessment"
+      ],
+      "rows": 15,
+      "counting_unit": "reference record; task views can overlap native experiments",
+      "source_id": "FCCSCALEUP2025",
+      "source_url": "https://doi.org/10.1038/s41467-025-63982-2",
+      "source_sha256": "19c1305a3343847eabf3aec196af929c48ba8e9b926bfe627e6dfb5d9fd28dd2",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/process/scale_up/pilot scale model/input_test_pilot.csv",
+          "sha256": "501c7a68c47a7d1963f2a0bbddd26985bb528548ecb1ec8cba5a72a6922f7d2c",
+          "bytes": 14122,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/pilot%20scale%20model/input_test_pilot.csv",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/pilot scale model/targets_test_pilot.csv",
+          "sha256": "235f57baa8e254c6faddfd9d53676003b575f0f286b361ed1d149f8ca03dc682",
+          "bytes": 672,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/pilot%20scale%20model/targets_test_pilot.csv",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/LICENSE",
+          "sha256": "c5a9c2b8109169776c20f59d1ea01c7bb13a4b0c4b26dd58f707a52e374b3ba7",
+          "bytes": 1070,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/LICENSE",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/README.md",
+          "sha256": "ff5a3f846e37e95cffb8ef64e6b57b7d29e6bfccea43c608c9932a86f6b7ab0a",
+          "bytes": 7444,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/README.md",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/scale_up/pilot scale model/Bulk_prop.py",
+          "sha256": "97099a2a13d23cab654717df3c85b68343858d1805e15b5e6be27627ea244686",
+          "bytes": 2312,
+          "url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/pilot%20scale%20model/Bulk_prop.py",
+          "license": "MIT",
+          "redistribution_allowed": true
+        }
+      ],
+      "license": "MIT",
+      "columns": [
+        "WHSV_per_hour",
+        "catalyst_to_oil_ratio",
+        "coke_mass_percent",
+        "feed_molecular_composition",
+        "feed_temperature_C",
+        "feedstock_family",
+        "native_row",
+        "native_split",
+        "product_bulk_properties",
+        "reaction_temperature_C",
+        "record_id",
+        "reference_kind",
+        "scale"
+      ],
+      "task_fields": {
+        "reactor_scale_modeling": {
+          "inputs": [
+            "scale",
+            "feed_temperature_C",
+            "reaction_temperature_C",
+            "WHSV_per_hour",
+            "catalyst_to_oil_ratio",
+            "feed_molecular_composition"
+          ],
+          "targets": [
+            "product_bulk_properties"
+          ],
+          "group_fields": [
+            "feedstock_family",
+            "scale"
+          ],
+          "metrics": [
+            "MAE per source endpoint"
+          ],
+          "split_policy": "Do not treat interpolation descendants of the same fifteen pilot experiments as independent held-out experimental evidence."
+        },
+        "process_impact_assessment": {
+          "inputs": [
+            "scale",
+            "feed_temperature_C",
+            "reaction_temperature_C",
+            "WHSV_per_hour",
+            "catalyst_to_oil_ratio",
+            "feed_molecular_composition"
+          ],
+          "targets": [
+            "coke_mass_percent"
+          ],
+          "group_fields": [
+            "feedstock_family",
+            "scale"
+          ],
+          "metrics": [
+            "MAE in coke mass percentage points"
+          ],
+          "scope": "Narrow process deposition/material-loss endpoint; not life-cycle impact, cost, energy consumption or hazard assessment."
+        }
+      },
+      "qualification": "Reference kind is measured_pilot_experiment. All native CSVs are headerless. Lab has10000 simulated compositions; pilot test has15 physical experiments, while train/validation have48/12 interpolated rows. Repeated pilot measurements underpin interpolation and cannot establish independence. Native source-full pilot files have1016/982 rows and are excluded from joining. Lab/pilot target spaces differ (129 molecular components versus10 bulk properties); no artificial matched cross-scale pairing.",
+      "reference_evidence": "Author README defines first4 process columns and129 feed components. Native Bulk_prop.py returns dry gas,LPG,gasoline,diesel,coke in that order, then5 gasoline PIONA endpoints. Article methods identify infrared carbon-sulfur analysis of coke; original15 pilot experiments reserved for testing and interpolation used for training/validation.",
+      "readiness": "source_backed_task_view",
+      "independent_groups": 15,
+      "sha256": "764e6e23504c46e4c1c4ba93eaa09f50767006827c7a8ed6cfa8ee60c6a0049c"
+    },
+    {
+      "id": "nmr_saccharose_hydrolysis_snapshots",
+      "path": "Data/coverage_expansion/process/nmr_saccharose_hydrolysis_snapshots.jsonl.gz",
+      "task_ids": [
+        "analytical_interpretation"
+      ],
+      "rows": 1023,
+      "counting_unit": "reference record; task views can overlap native experiments",
+      "source_id": "MAGNETSTEIN2025",
+      "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+      "source_sha256": "34be04ef5ce91f35a5432c823b53bf7ecd0594104f0732227abf587dca88d889",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/process/magnetstein_reactions/data/saccharose_hydrolysis/preprocessed_mixture.csv",
+          "sha256": "b0d031013c3115127aa6f828cb89619940107aaf761da11150df6221f6717383",
+          "bytes": 39298081,
+          "url": "https://zenodo.org/api/records/14814657/files/data.zip/content#member=data/saccharose_hydrolysis/preprocessed_mixture.csv",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/magnetstein_reactions/zenodo_record.json",
+          "sha256": "0ff038f94a6990e43ec3c6f226e57f7165447f7b5388fd50e8bc9cbe0afbc682",
+          "bytes": 6398,
+          "url": "https://zenodo.org/api/records/14814657",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/magnetstein_reactions/data/saccharose_hydrolysis/time_axis_sucrose_hydrolysis.txt",
+          "sha256": "2e3af99547aff19539ae5a7818ff4d5e19bb64a5aba55c58a791611583d732ef",
+          "bytes": 25575,
+          "url": "https://zenodo.org/api/records/14814657/files/data.zip/content#member=data/saccharose_hydrolysis/time_axis_sucrose_hydrolysis.txt",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "columns": [
+        "component_names",
+        "elapsed_seconds",
+        "integration_windows_ppm",
+        "missing_signal_bins",
+        "native_spectrum_column",
+        "record_id",
+        "reference_area_fractions",
+        "reference_integrals",
+        "reference_kind",
+        "spectrum_column",
+        "spectrum_path",
+        "spectrum_sha256",
+        "trajectory_id"
+      ],
+      "task_fields": {
+        "analytical_interpretation": {
+          "inputs": [
+            "spectrum_path",
+            "spectrum_column",
+            "component_names",
+            "integration_windows_ppm"
+          ],
+          "targets": [
+            "reference_area_fractions"
+          ],
+          "group_fields": [
+            "trajectory_id"
+          ],
+          "metrics": [
+            "MAE relative area per component",
+            "compositional L1 error"
+          ],
+          "input_loader": "kdd.coverage.adapters.process.load_spectrum; only the specified current native column may be read",
+          "scope": "Known-component relative analytical signal quantification, not independent absolute concentration or open-world structure elucidation."
+        }
+      },
+      "qualification": "Measured NMR signal columns paired with independently computed trapezoidal component-window integrals. Targets are explicitly DERIVED analytical estimates from the same spectra, not independent concentration ground truth. Negative component integrals clipped only for derived area fractions; signed integrals preserved. NaNs are excluded within each integration window, never filled as measured zeros. Future-extracted component templates are forbidden inputs. SourcePMG284 contains999 native snapshots versus1000 nativeMnova rows, and noMnova labels are used. Three underlying measured trajectories; no random-snapshot independence claim. Numerical integration is the primary deterministic baseline; this task view is a reproducible analytical-processing contract, not evidence of a difficult concentration-estimation benchmark.",
+      "reference_evidence": "CC-BY4.0 Zenodo14814657 native cropped spectral matrices. Factual component/window calibration specifications are documented in official author config.json;5-second hydrosilylation sampling in src/utils.py and measured sucrose timestamps in the CC-BYtime-axis asset. Independently implemented numpy.trapezoid integration; no copied reference estimates or unpublished calibration.",
+      "readiness": "derived_analytical_reference_from_licensed_measurements",
+      "independent_groups": 1,
+      "sha256": "18f370c5b06f1203a934ad6845e175109da47670968cfc1519aa1aaecbc2ddda"
+    },
+    {
+      "id": "nmr_saccharose_hydrolysis_progress",
+      "path": "Data/coverage_expansion/process/nmr_saccharose_hydrolysis_progress.jsonl.gz",
+      "task_ids": [
+        "reaction_progress_monitoring"
+      ],
+      "rows": 1022,
+      "counting_unit": "reference record; task views can overlap native experiments",
+      "source_id": "MAGNETSTEIN2025",
+      "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+      "source_sha256": "34be04ef5ce91f35a5432c823b53bf7ecd0594104f0732227abf587dca88d889",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/process/magnetstein_reactions/data/saccharose_hydrolysis/preprocessed_mixture.csv",
+          "sha256": "b0d031013c3115127aa6f828cb89619940107aaf761da11150df6221f6717383",
+          "bytes": 39298081,
+          "url": "https://zenodo.org/api/records/14814657/files/data.zip/content#member=data/saccharose_hydrolysis/preprocessed_mixture.csv",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/magnetstein_reactions/zenodo_record.json",
+          "sha256": "0ff038f94a6990e43ec3c6f226e57f7165447f7b5388fd50e8bc9cbe0afbc682",
+          "bytes": 6398,
+          "url": "https://zenodo.org/api/records/14814657",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/magnetstein_reactions/data/saccharose_hydrolysis/time_axis_sucrose_hydrolysis.txt",
+          "sha256": "2e3af99547aff19539ae5a7818ff4d5e19bb64a5aba55c58a791611583d732ef",
+          "bytes": 25575,
+          "url": "https://zenodo.org/api/records/14814657/files/data.zip/content#member=data/saccharose_hydrolysis/time_axis_sucrose_hydrolysis.txt",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "columns": [
+        "component_names",
+        "elapsed_seconds",
+        "integration_windows_ppm",
+        "next_reference_area_fractions",
+        "record_id",
+        "spectrum_column",
+        "spectrum_path",
+        "target_elapsed_seconds",
+        "target_native_spectrum_column",
+        "trajectory_id"
+      ],
+      "task_fields": {
+        "reaction_progress_monitoring": {
+          "inputs": [
+            "spectrum_path",
+            "spectrum_column",
+            "elapsed_seconds",
+            "target_elapsed_seconds",
+            "component_names",
+            "integration_windows_ppm"
+          ],
+          "targets": [
+            "next_reference_area_fractions"
+          ],
+          "group_fields": [
+            "trajectory_id"
+          ],
+          "metrics": [
+            "next-step MAE relative area",
+            "error versus current-state persistence"
+          ],
+          "temporal_policy": "Input loader exposes only current spectrum. Target spectrum, next references, full trajectories and future-derived component templates are forbidden inputs."
+        }
+      },
+      "qualification": "Forecasting view of the same native measured trajectories; overlaps analytical snapshot records and is not an additional physical experiment. Native time ordering preserved. Target is next measured-spectrum DERIVED relative integrated area, not a new independent chemical label.",
+      "reference_evidence": "Current native spectrum-column index paired with subsequent independently derived spectral area reference; source mapping and time evidence identical to the snapshot table.",
+      "readiness": "derived_analytical_reference_from_licensed_measurements",
+      "independent_groups": 1,
+      "sha256": "631acde06a722bb3b01418ab35594af0dc4614de6d893b7890ed9b73d0d84477"
+    },
+    {
+      "id": "nmr_pmg_284_snapshots",
+      "path": "Data/coverage_expansion/process/nmr_pmg_284_snapshots.jsonl.gz",
+      "task_ids": [
+        "analytical_interpretation"
+      ],
+      "rows": 999,
+      "counting_unit": "reference record; task views can overlap native experiments",
+      "source_id": "MAGNETSTEIN2025",
+      "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+      "source_sha256": "59e09d3e8aff3da404e34c5e2cebeaf11ff5faffe0307503545982ef23c1d30c",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/process/magnetstein_reactions/data/PMG_284/preprocessed_mixture.csv",
+          "sha256": "6dc1d1ba2b734bf5e6cfd40670e7d8b11b24799f264b0e3cd2c3f45370ea6d70",
+          "bytes": 174321775,
+          "url": "https://zenodo.org/api/records/14814657/files/data.zip/content#member=data/PMG_284/preprocessed_mixture.csv",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/magnetstein_reactions/zenodo_record.json",
+          "sha256": "0ff038f94a6990e43ec3c6f226e57f7165447f7b5388fd50e8bc9cbe0afbc682",
+          "bytes": 6398,
+          "url": "https://zenodo.org/api/records/14814657",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "columns": [
+        "component_names",
+        "elapsed_seconds",
+        "integration_windows_ppm",
+        "missing_signal_bins",
+        "native_spectrum_column",
+        "record_id",
+        "reference_area_fractions",
+        "reference_integrals",
+        "reference_kind",
+        "spectrum_column",
+        "spectrum_path",
+        "spectrum_sha256",
+        "trajectory_id"
+      ],
+      "task_fields": {
+        "analytical_interpretation": {
+          "inputs": [
+            "spectrum_path",
+            "spectrum_column",
+            "component_names",
+            "integration_windows_ppm"
+          ],
+          "targets": [
+            "reference_area_fractions"
+          ],
+          "group_fields": [
+            "trajectory_id"
+          ],
+          "metrics": [
+            "MAE relative area per component",
+            "compositional L1 error"
+          ],
+          "input_loader": "kdd.coverage.adapters.process.load_spectrum; only the specified current native column may be read",
+          "scope": "Known-component relative analytical signal quantification, not independent absolute concentration or open-world structure elucidation."
+        }
+      },
+      "qualification": "Measured NMR signal columns paired with independently computed trapezoidal component-window integrals. Targets are explicitly DERIVED analytical estimates from the same spectra, not independent concentration ground truth. Negative component integrals clipped only for derived area fractions; signed integrals preserved. NaNs are excluded within each integration window, never filled as measured zeros. Future-extracted component templates are forbidden inputs. SourcePMG284 contains999 native snapshots versus1000 nativeMnova rows, and noMnova labels are used. Three underlying measured trajectories; no random-snapshot independence claim. Numerical integration is the primary deterministic baseline; this task view is a reproducible analytical-processing contract, not evidence of a difficult concentration-estimation benchmark.",
+      "reference_evidence": "CC-BY4.0 Zenodo14814657 native cropped spectral matrices. Factual component/window calibration specifications are documented in official author config.json;5-second hydrosilylation sampling in src/utils.py and measured sucrose timestamps in the CC-BYtime-axis asset. Independently implemented numpy.trapezoid integration; no copied reference estimates or unpublished calibration.",
+      "readiness": "derived_analytical_reference_from_licensed_measurements",
+      "independent_groups": 1,
+      "sha256": "e46212c9a1e38d19ca26a234ca2c01b81e5d0ddca06f4a2cbf6a7f5e6f49e4c6"
+    },
+    {
+      "id": "nmr_pmg_284_progress",
+      "path": "Data/coverage_expansion/process/nmr_pmg_284_progress.jsonl.gz",
+      "task_ids": [
+        "reaction_progress_monitoring"
+      ],
+      "rows": 998,
+      "counting_unit": "reference record; task views can overlap native experiments",
+      "source_id": "MAGNETSTEIN2025",
+      "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+      "source_sha256": "59e09d3e8aff3da404e34c5e2cebeaf11ff5faffe0307503545982ef23c1d30c",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/process/magnetstein_reactions/data/PMG_284/preprocessed_mixture.csv",
+          "sha256": "6dc1d1ba2b734bf5e6cfd40670e7d8b11b24799f264b0e3cd2c3f45370ea6d70",
+          "bytes": 174321775,
+          "url": "https://zenodo.org/api/records/14814657/files/data.zip/content#member=data/PMG_284/preprocessed_mixture.csv",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/magnetstein_reactions/zenodo_record.json",
+          "sha256": "0ff038f94a6990e43ec3c6f226e57f7165447f7b5388fd50e8bc9cbe0afbc682",
+          "bytes": 6398,
+          "url": "https://zenodo.org/api/records/14814657",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "columns": [
+        "component_names",
+        "elapsed_seconds",
+        "integration_windows_ppm",
+        "next_reference_area_fractions",
+        "record_id",
+        "spectrum_column",
+        "spectrum_path",
+        "target_elapsed_seconds",
+        "target_native_spectrum_column",
+        "trajectory_id"
+      ],
+      "task_fields": {
+        "reaction_progress_monitoring": {
+          "inputs": [
+            "spectrum_path",
+            "spectrum_column",
+            "elapsed_seconds",
+            "target_elapsed_seconds",
+            "component_names",
+            "integration_windows_ppm"
+          ],
+          "targets": [
+            "next_reference_area_fractions"
+          ],
+          "group_fields": [
+            "trajectory_id"
+          ],
+          "metrics": [
+            "next-step MAE relative area",
+            "error versus current-state persistence"
+          ],
+          "temporal_policy": "Input loader exposes only current spectrum. Target spectrum, next references, full trajectories and future-derived component templates are forbidden inputs."
+        }
+      },
+      "qualification": "Forecasting view of the same native measured trajectories; overlaps analytical snapshot records and is not an additional physical experiment. Native time ordering preserved. Target is next measured-spectrum DERIVED relative integrated area, not a new independent chemical label.",
+      "reference_evidence": "Current native spectrum-column index paired with subsequent independently derived spectral area reference; source mapping and time evidence identical to the snapshot table.",
+      "readiness": "derived_analytical_reference_from_licensed_measurements",
+      "independent_groups": 1,
+      "sha256": "f36765c40bdeb20a2d14e80c98cacae4b74b66f9b10c3e05f5e22ca3306c8a56"
+    },
+    {
+      "id": "nmr_pmg_287_snapshots",
+      "path": "Data/coverage_expansion/process/nmr_pmg_287_snapshots.jsonl.gz",
+      "task_ids": [
+        "analytical_interpretation"
+      ],
+      "rows": 1000,
+      "counting_unit": "reference record; task views can overlap native experiments",
+      "source_id": "MAGNETSTEIN2025",
+      "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+      "source_sha256": "6bf13a9ba17537664952424cfa82431d17e49a101fd504228fc3b0830991302b",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/process/magnetstein_reactions/data/PMG_287/preprocessed_mixture_cut_to_regions.csv",
+          "sha256": "aefdc3384cb82788d1fbb7ec642b802fa2db05b8abec4dab6ad0c5b9ea29f8c6",
+          "bytes": 265453011,
+          "url": "https://zenodo.org/api/records/14814657/files/data.zip/content#member=data/PMG_287/preprocessed_mixture_cut_to_regions.csv",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/magnetstein_reactions/zenodo_record.json",
+          "sha256": "0ff038f94a6990e43ec3c6f226e57f7165447f7b5388fd50e8bc9cbe0afbc682",
+          "bytes": 6398,
+          "url": "https://zenodo.org/api/records/14814657",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "columns": [
+        "component_names",
+        "elapsed_seconds",
+        "integration_windows_ppm",
+        "missing_signal_bins",
+        "native_spectrum_column",
+        "record_id",
+        "reference_area_fractions",
+        "reference_integrals",
+        "reference_kind",
+        "spectrum_column",
+        "spectrum_path",
+        "spectrum_sha256",
+        "trajectory_id"
+      ],
+      "task_fields": {
+        "analytical_interpretation": {
+          "inputs": [
+            "spectrum_path",
+            "spectrum_column",
+            "component_names",
+            "integration_windows_ppm"
+          ],
+          "targets": [
+            "reference_area_fractions"
+          ],
+          "group_fields": [
+            "trajectory_id"
+          ],
+          "metrics": [
+            "MAE relative area per component",
+            "compositional L1 error"
+          ],
+          "input_loader": "kdd.coverage.adapters.process.load_spectrum; only the specified current native column may be read",
+          "scope": "Known-component relative analytical signal quantification, not independent absolute concentration or open-world structure elucidation."
+        }
+      },
+      "qualification": "Measured NMR signal columns paired with independently computed trapezoidal component-window integrals. Targets are explicitly DERIVED analytical estimates from the same spectra, not independent concentration ground truth. Negative component integrals clipped only for derived area fractions; signed integrals preserved. NaNs are excluded within each integration window, never filled as measured zeros. Future-extracted component templates are forbidden inputs. SourcePMG284 contains999 native snapshots versus1000 nativeMnova rows, and noMnova labels are used. Three underlying measured trajectories; no random-snapshot independence claim. Numerical integration is the primary deterministic baseline; this task view is a reproducible analytical-processing contract, not evidence of a difficult concentration-estimation benchmark.",
+      "reference_evidence": "CC-BY4.0 Zenodo14814657 native cropped spectral matrices. Factual component/window calibration specifications are documented in official author config.json;5-second hydrosilylation sampling in src/utils.py and measured sucrose timestamps in the CC-BYtime-axis asset. Independently implemented numpy.trapezoid integration; no copied reference estimates or unpublished calibration.",
+      "readiness": "derived_analytical_reference_from_licensed_measurements",
+      "independent_groups": 1,
+      "sha256": "9f7c39f16588728a5592f5dc7ed7ad49e339d283ba7cb6c9238f77d3c6f1909b"
+    },
+    {
+      "id": "nmr_pmg_287_progress",
+      "path": "Data/coverage_expansion/process/nmr_pmg_287_progress.jsonl.gz",
+      "task_ids": [
+        "reaction_progress_monitoring"
+      ],
+      "rows": 999,
+      "counting_unit": "reference record; task views can overlap native experiments",
+      "source_id": "MAGNETSTEIN2025",
+      "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+      "source_sha256": "6bf13a9ba17537664952424cfa82431d17e49a101fd504228fc3b0830991302b",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/process/magnetstein_reactions/data/PMG_287/preprocessed_mixture_cut_to_regions.csv",
+          "sha256": "aefdc3384cb82788d1fbb7ec642b802fa2db05b8abec4dab6ad0c5b9ea29f8c6",
+          "bytes": 265453011,
+          "url": "https://zenodo.org/api/records/14814657/files/data.zip/content#member=data/PMG_287/preprocessed_mixture_cut_to_regions.csv",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/magnetstein_reactions/zenodo_record.json",
+          "sha256": "0ff038f94a6990e43ec3c6f226e57f7165447f7b5388fd50e8bc9cbe0afbc682",
+          "bytes": 6398,
+          "url": "https://zenodo.org/api/records/14814657",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "columns": [
+        "component_names",
+        "elapsed_seconds",
+        "integration_windows_ppm",
+        "next_reference_area_fractions",
+        "record_id",
+        "spectrum_column",
+        "spectrum_path",
+        "target_elapsed_seconds",
+        "target_native_spectrum_column",
+        "trajectory_id"
+      ],
+      "task_fields": {
+        "reaction_progress_monitoring": {
+          "inputs": [
+            "spectrum_path",
+            "spectrum_column",
+            "elapsed_seconds",
+            "target_elapsed_seconds",
+            "component_names",
+            "integration_windows_ppm"
+          ],
+          "targets": [
+            "next_reference_area_fractions"
+          ],
+          "group_fields": [
+            "trajectory_id"
+          ],
+          "metrics": [
+            "next-step MAE relative area",
+            "error versus current-state persistence"
+          ],
+          "temporal_policy": "Input loader exposes only current spectrum. Target spectrum, next references, full trajectories and future-derived component templates are forbidden inputs."
+        }
+      },
+      "qualification": "Forecasting view of the same native measured trajectories; overlaps analytical snapshot records and is not an additional physical experiment. Native time ordering preserved. Target is next measured-spectrum DERIVED relative integrated area, not a new independent chemical label.",
+      "reference_evidence": "Current native spectrum-column index paired with subsequent independently derived spectral area reference; source mapping and time evidence identical to the snapshot table.",
+      "readiness": "derived_analytical_reference_from_licensed_measurements",
+      "independent_groups": 1,
+      "sha256": "dd6da290d3921bd80bb2d3a38ddf579ab070a3814ea8d049646acbf851d21850"
+    },
+    {
+      "id": "lowfield_nmr_yield_progress",
+      "path": "Data/coverage_expansion/process/lowfield_nmr_yield_progress.jsonl.gz",
+      "task_ids": [
+        "reaction_progress_monitoring"
+      ],
+      "rows": 236,
+      "counting_unit": "reference record; task views can overlap native experiments",
+      "source_id": "LOWFIELDNMR2026",
+      "source_url": "https://doi.org/10.26434/chemrxiv.15005188/v1",
+      "source_sha256": "705fed264e598ca40037c9c17eeee4fc8cc4c76801f699d3306da39b2f1ec369",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/process/lowfield_nmr2026/Results_Reactions_1-4.xlsx",
+          "sha256": "01a201d75a23bd9743d4ed54922727c171fbc2dda3cc54d7ccc9b788d0f97322",
+          "bytes": 27856,
+          "url": "https://zenodo.org/api/records/20595287/files/Results_Reactions_1-4.xlsx/content",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/lowfield_nmr2026/Yield_calculations.m",
+          "sha256": "f39020fe02b86bdc91b13ed5e053792c4472cfd63f88379ead33d7ba0032bcb5",
+          "bytes": 799,
+          "url": "https://zenodo.org/api/records/20595287/files/Yield_calculations.m/content",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/lowfield_nmr2026/record.json",
+          "sha256": "c6dd4e062c67e1808e2cf0c08c54a8b37c932aec1e8a81215093808ffab358cd",
+          "bytes": 16743,
+          "url": "https://zenodo.org/api/records/20595287",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "columns": [
+        "elapsed_minutes",
+        "native_excel_row",
+        "native_sheet",
+        "next_yield_percent",
+        "observed_yield_percent",
+        "record_id",
+        "reference_kind",
+        "target_elapsed_minutes",
+        "trajectory_id"
+      ],
+      "task_fields": {
+        "reaction_progress_monitoring": {
+          "inputs": [
+            "trajectory_id",
+            "elapsed_minutes",
+            "observed_yield_percent",
+            "target_elapsed_minutes"
+          ],
+          "targets": [
+            "next_yield_percent"
+          ],
+          "group_fields": [
+            "trajectory_id"
+          ],
+          "metrics": [
+            "next-step MAE yield percentage points",
+            "MAE versus persistence"
+          ],
+          "temporal_policy": "Only the current measured yield and earlier measurements are allowed. This view does not require raw FIDs or claim raw-spectrum interpretation."
+        }
+      },
+      "qualification": "Four measured yield profiles,60 observations per reaction,236 adjacent forecast pairs. Measurements from the same reaction remain one group. Processed yield observations, not raw-FID-to-yield calibration. Native MATLAB plotting script labels x-axis Time[min] and y-axis Yield[%]. Raw FIDs76GB are indexed upstream but were not downloaded because no verified trajectory-specific rawFID association was required for this narrower view.",
+      "reference_evidence": "Source workbookReactions:A3:E62 and authorYield_calculations.m. Overview worksheet separately provides terminal lowfield/1H-Bruker/13C-Bruker comparisons for four reactions.",
+      "readiness": "source_backed_task_view",
+      "independent_groups": 4,
+      "sha256": "ed0bb5e7f6d10dff29786a927e5c64fe5f9ddc10370a1a03a072927c81ba8fa1"
+    },
+    {
+      "id": "cstr_control_transitions",
+      "path": "Data/coverage_expansion/process/cstr_control_transitions.jsonl.gz",
+      "task_ids": [
+        "process_control"
+      ],
+      "rows": 600,
+      "counting_unit": "reference record; task views can overlap native experiments",
+      "source_id": "DOMPCCSTR",
+      "source_url": "https://github.com/do-mpc/do-mpc/tree/9d5a8df0e4d6acac899bf0a65ffd4c30a6e2e4cc/examples/CSTR",
+      "source_sha256": "73367b9e1f009c6f153d6b959d4aea7098c20e79aa8479cb918fd041e5de73e9",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/process/do_mpc/examples/CSTR/template_model.py",
+          "sha256": "ebc2b5ab2e9c380b6613714ccfd196eb65e354c521835e5b3fd51f06e7756921",
+          "bytes": 4010,
+          "url": "https://raw.githubusercontent.com/do-mpc/do-mpc/9d5a8df0e4d6acac899bf0a65ffd4c30a6e2e4cc/examples/CSTR/template_model.py",
+          "license": "LGPL-3.0-or-later",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/do_mpc/examples/CSTR/template_mpc.py",
+          "sha256": "f36baeecb0adea74c2599a6b0b40e63b77c040eeb55f31c23c07a440a20a0712",
+          "bytes": 3510,
+          "url": "https://raw.githubusercontent.com/do-mpc/do-mpc/9d5a8df0e4d6acac899bf0a65ffd4c30a6e2e4cc/examples/CSTR/template_mpc.py",
+          "license": "LGPL-3.0-or-later",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/process/do_mpc/LICENSE.txt",
+          "sha256": "c011ab8ee407a146225305a9038baf0f3bd80883507fd3d34da2823c5dcb4e5a",
+          "bytes": 7361,
+          "url": "https://raw.githubusercontent.com/do-mpc/do-mpc/9d5a8df0e4d6acac899bf0a65ffd4c30a6e2e4cc/LICENSE.txt",
+          "license": "LGPL-3.0-or-later",
+          "redistribution_allowed": true
+        }
+      ],
+      "license": "LGPL-3.0-or-later",
+      "columns": [
+        "action",
+        "alpha",
+        "beta",
+        "duration_hours",
+        "next_state",
+        "reactor_temperature_excess_C",
+        "record_id",
+        "reference_kind",
+        "seed",
+        "setpoint_C_b_mol_per_L",
+        "state",
+        "step_index",
+        "time_hours",
+        "tracking_squared_error",
+        "trajectory_id"
+      ],
+      "task_fields": {
+        "process_control": {
+          "inputs": [
+            "state",
+            "duration_hours",
+            "alpha",
+            "beta",
+            "setpoint_C_b_mol_per_L"
+          ],
+          "targets": [
+            "action"
+          ],
+          "group_fields": [
+            "trajectory_id"
+          ],
+          "metrics": [
+            "closed-loop integrated squared C_b tracking error",
+            "temperature-bound violation",
+            "control effort and action-bound violations"
+          ],
+          "action_space": {
+            "F_per_hour": [
+              5,
+              100
+            ],
+            "Q_dot_kJ_per_hour": [
+              -8500,
+              0
+            ]
+          },
+          "evaluation_oracle": "kdd.coverage.adapters.process.cstr_step",
+          "policy": "A policy chooses action from current state; cstr_step produces next state. Recorded excitation action is not an optimal label; supervised action imitation MAE is not a valid control-performance score.",
+          "auxiliary_system_identification": {
+            "inputs": [
+              "state",
+              "action",
+              "duration_hours",
+              "alpha",
+              "beta"
+            ],
+            "targets": [
+              "next_state"
+            ]
+          }
+        }
+      },
+      "qualification": "Derived simulation:12 seeded excitation episodes,50 transitions each,not600 experimental reactor runs. Native model usesA→B→C plus competing2A→D. Source equations, kinetics, heat-transfer constants, action bounds,0.005h sampling andC_b=0.6 objective retained. Integrator changed to deterministicSciPyDOP853; dynamic control evaluates a proposed policy with the explicit transition oracle. No claim of matching native robustMPC or proving plant safety.",
+      "reference_evidence": "Pinned do-mpc examples/CSTR/template_model.py andtemplate_mpc.py; original LGPL notice retained. Script seed20261020, alpha/beta scenarios1/1,0.95/0.9,1.05/1.1.",
+      "readiness": "derived_simulator_task_contract",
+      "independent_groups": 12,
+      "sha256": "f027ddcfd313234ca9fb3b448d2767f7f190807732f441fc6e522b86fe3b511a"
+    }
+  ],
+  "sources": [
+    {
+      "id": "FCCSCALEUP2025",
+      "title": "Scale-up of complex molecular reaction system by hybrid mechanistic modeling and deep transfer learning",
+      "url": "https://doi.org/10.1038/s41467-025-63982-2",
+      "repository": "https://github.com/chenzhengyuAI/complex-reaction-system-scale-up",
+      "archive": "https://doi.org/10.5281/zenodo.16810762",
+      "license": "MIT",
+      "license_evidence": "Data/raw/coverage/process/scale_up/LICENSE",
+      "authors": [
+        "Zhengyu Chen",
+        "Yongqing Xie",
+        "Chunming Xu",
+        "Linzhou Zhang"
+      ],
+      "rights_note": "Use the separately MIT-licensed author repository; publisher article licence is CC-BY-NC-ND.",
+      "used_by_tables": [
+        "fcc_lab_source_full",
+        "fcc_pilot_train",
+        "fcc_pilot_validation",
+        "fcc_pilot_test"
+      ],
+      "commit": "0080d57a1650ecb349eea2c3dbd5afd89b61cde5",
+      "redistribution_allowed": true,
+      "license_evidence_sha256": "c5a9c2b8109169776c20f59d1ea01c7bb13a4b0c4b26dd58f707a52e374b3ba7",
+      "license_evidence_url": "https://raw.githubusercontent.com/chenzhengyuAI/complex-reaction-system-scale-up/0080d57a1650ecb349eea2c3dbd5afd89b61cde5/LICENSE",
+      "license_url": "https://opensource.org/license/mit"
+    },
+    {
+      "id": "REACDISCOVERY2025",
+      "title": "Reac-Discovery: an artificial intelligence–driven platform for continuous-flow catalytic reactor discovery and optimization",
+      "url": "https://doi.org/10.1038/s41467-025-64127-1",
+      "repository": "https://github.com/catm542-ai/Reac-Discovery",
+      "archive": "https://doi.org/10.5281/zenodo.16966777",
+      "license": "MIT",
+      "license_evidence": "Data/raw/coverage/process/reac_discovery/LICENSE",
+      "authors": [
+        "Cristopher Tinajero",
+        "Marcileia Zanatta",
+        "Julián E. Sánchez-Velandia",
+        "Eduardo García-Verdugo",
+        "Victor Sans"
+      ],
+      "rights_note": "Use the separately MIT-licensed author repository; publisher article licence is CC-BY-NC-ND.",
+      "used_by_tables": [
+        "reac_discovery_cs1",
+        "reac_discovery_cs2"
+      ],
+      "commit": "ce917a718c17bcf388a36744aad03b535a408949",
+      "redistribution_allowed": true,
+      "license_evidence_sha256": "553e87423187c7c4bf98107f9d923602b8162a70d02daaf8c93fb29475388b2b",
+      "license_evidence_url": "https://raw.githubusercontent.com/catm542-ai/Reac-Discovery/ce917a718c17bcf388a36744aad03b535a408949/LICENSE",
+      "license_url": "https://opensource.org/license/mit"
+    },
+    {
+      "id": "MAGNETSTEIN2025",
+      "title": "NMR Reaction Monitoring Robust to Spectral Distortions",
+      "url": "https://doi.org/10.1021/acs.analchem.5c00800",
+      "repository": "https://github.com/BDomzal/magnetstein_x_chemical_reactions",
+      "archive": "https://doi.org/10.5281/zenodo.14814657",
+      "license": "CC-BY-4.0",
+      "license_evidence": "Data/raw/coverage/process/magnetstein_reactions/zenodo_record.json",
+      "rights_note": "Released views use only CC-BY-4.0 Zenodo spectra and independently derived integration references. Unlicensed author-repository Mnova comparison CSVs are quarantined from released targets/assets; integration-window boundaries are cited factual calibration specifications.",
+      "used_by_tables": [
+        "nmr_saccharose_hydrolysis_snapshots",
+        "nmr_saccharose_hydrolysis_progress",
+        "nmr_pmg_284_snapshots",
+        "nmr_pmg_284_progress",
+        "nmr_pmg_287_snapshots",
+        "nmr_pmg_287_progress"
+      ],
+      "commit": "a764ab5f3050ec99d8141b8e83f74cf51728f60a",
+      "authors": [
+        "Kazimierczuk, Krzysztof",
+        "Grochowska-Tatarczak, Magdalena",
+        "Malinowski, Przemysław",
+        "Domżał, Barbara"
+      ],
+      "redistribution_allowed": true,
+      "license_evidence_sha256": "0ff038f94a6990e43ec3c6f226e57f7165447f7b5388fd50e8bc9cbe0afbc682",
+      "license_evidence_url": "https://zenodo.org/api/records/14814657",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "acquisition_receipt": "Data/raw/coverage/process/magnetstein_reactions/selected_archive_members.json",
+      "acquisition_receipt_sha256": "ef5aa4ba8d94535e6393270f7c2184e8779745e01a851de15822b5de1f2ef2bb"
+    },
+    {
+      "id": "LOWFIELDNMR2026",
+      "title": "Real-time chemical reaction monitoring with 25 MHz low-field NMR",
+      "url": "https://doi.org/10.26434/chemrxiv.15005188/v1",
+      "archive": "https://zenodo.org/records/20595287",
+      "license": "CC-BY-4.0",
+      "license_evidence": "Data/raw/coverage/process/lowfield_nmr2026/record.json",
+      "rights_note": "Preprint-associated June 2026 experimental data, not a claimed peer-reviewed result.",
+      "used_by_tables": [
+        "lowfield_nmr_yield_progress"
+      ],
+      "authors": [
+        "Berardi, Benedetto",
+        "Burov, Artemiy",
+        "Chevalier Kwon, Pierre",
+        "Pascal, Joris",
+        "Javerzac, Clément"
+      ],
+      "redistribution_allowed": true,
+      "license_evidence_sha256": "c6dd4e062c67e1808e2cf0c08c54a8b37c932aec1e8a81215093808ffab358cd",
+      "license_evidence_url": "https://zenodo.org/api/records/20595287",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "id": "DOMPCCSTR",
+      "title": "do-mpc nonlinear CSTR control example",
+      "url": "https://github.com/do-mpc/do-mpc/tree/9d5a8df0e4d6acac899bf0a65ffd4c30a6e2e4cc/examples/CSTR",
+      "repository": "https://github.com/do-mpc/do-mpc",
+      "license": "LGPL-3.0-or-later",
+      "license_evidence": "Data/raw/coverage/process/do_mpc/LICENSE.txt",
+      "authors": [
+        "Sergio Lucia",
+        "Alexandru Tatulea-Codrean",
+        "TU Dortmund",
+        "do-mpc contributors"
+      ],
+      "rights_note": "Source model and generated reference remain an explicit LGPL partition. Derived simulation, not experimental plant data or an optimal-controller demonstration.",
+      "used_by_tables": [
+        "cstr_control_transitions"
+      ],
+      "commit": "9d5a8df0e4d6acac899bf0a65ffd4c30a6e2e4cc",
+      "redistribution_allowed": true,
+      "license_evidence_sha256": "c011ab8ee407a146225305a9038baf0f3bd80883507fd3d34da2823c5dcb4e5a",
+      "license_evidence_url": "https://raw.githubusercontent.com/do-mpc/do-mpc/9d5a8df0e4d6acac899bf0a65ffd4c30a6e2e4cc/LICENSE.txt",
+      "license_url": "https://www.gnu.org/licenses/lgpl-3.0.html"
+    }
+  ],
+  "task_ids": [
+    "analytical_interpretation",
+    "process_control",
+    "process_impact_assessment",
+    "reaction_progress_monitoring",
+    "reactor_scale_modeling"
+  ],
+  "qualification_notes": [
+    "Task views do not establish independent benchmark splits or completed model results.",
+    "NMR snapshot/progress views overlap the same3 native measured trajectories; their labels are independently derived analytical integrals, not independent concentration ground truth.",
+    "Pilot interpolation descendants overlap the15 original experiments; cannot split them as independent experimental evidence.",
+    "Process impact currently covers measured coke deposition only; full energy,cost,life-cycle and safety coverage remains unfilled.",
+    "Control evidence is a published-model simulator and declared derived transitions; policy evaluation remains future model work."
+  ],
+  "excluded_assets": [
+    {
+      "source_id": "FCCSCALEUP2025",
+      "assets": [
+        "pilot scale model/FeedMoleculeContent_pilot.csv",
+        "pilot scale model/ProductBulkProperty_pilot_prop.csv"
+      ],
+      "reason": "Nativefullinput1016rows versus target982rows; noassumed positionaljoin."
+    },
+    {
+      "source_id": "REACDISCOVERY2025",
+      "assets": [
+        "M1workbooks"
+      ],
+      "reason": "Overlapping representations ofM2physicalcampaigns; not additionalindependentexperiments."
+    },
+    {
+      "source_id": "MAGNETSTEIN2025",
+      "assets": [
+        "future-extractedcomponenttemplates",
+        "full-spectrumduplicateviews"
+      ],
+      "reason": "Avoidfuture-template leakage and doublecounting."
+    },
+    {
+      "source_id": "MAGNETSTEIN2025",
+      "assets": [
+        "author-repositoryMnovaCSVreferences"
+      ],
+      "reason": "Reference redistribution grant unspecified; quarantine unlicensed native comparison estimates. Released task labels are independently derived from explicitlyCCBYspectra."
+    },
+    {
+      "source_id": "DLRN2025",
+      "assets": [
+        "Data/raw/coverage/process/dlrn"
+      ],
+      "reason": "Academic-only customlicence restricts redistribution; not used in any task table or released sourceasset."
+    }
+  ],
+  "attribution_path": "Data/coverage_expansion/process/ATTRIBUTION.txt",
+  "attribution_sha256": "da1040fa2d40dd38cfec8c8e287192eeccd357630fe4a5e7e06a47cbcac17506"
+}

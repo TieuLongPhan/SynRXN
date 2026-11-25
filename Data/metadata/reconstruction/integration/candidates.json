@@ -1,0 +1,422 @@
+{
+  "schema": "synrxn.expansion-candidates.v1",
+  "survey_sha256": "dc3b8329e48bda5ee53693c25d695f55cc51403339065f33edc8254254ba206c",
+  "candidates": [
+    {
+      "id": "C01",
+      "name": "BH-HTE-OOD",
+      "priority": "1 Integrate first",
+      "survey_license_note": "CC BY 4.0 on the Zenodo data record. Code Apache-2.0. Preserve original HTE provenance.",
+      "paper_urls": [
+        "https://www.nature.com/articles/s43588-026-01017-6"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/19636649"
+      ],
+      "project_urls": [
+        "https://github.com/schwallergroup/bh-hte-ood"
+      ],
+      "license_urls": [
+        "https://zenodo.org/api/records/19636649"
+      ]
+    },
+    {
+      "id": "C02",
+      "name": "Borylation HTE and regioselectivity",
+      "priority": "1 Integrate first",
+      "survey_license_note": "CC BY 4.0 on the Zenodo data record.",
+      "paper_urls": [
+        "https://www.nature.com/articles/s43588-026-01063-0"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/20773622"
+      ],
+      "project_urls": [],
+      "license_urls": [
+        "https://zenodo.org/api/records/20773622"
+      ]
+    },
+    {
+      "id": "C03",
+      "name": "Cernak C–N coupling screen",
+      "priority": "1 Integrate first",
+      "survey_license_note": "ORD data repository specifies CC BY-SA 4.0. Preserve attribution and source obligations.",
+      "paper_urls": [
+        "https://doi.org/10.1021/jacs.6c05959"
+      ],
+      "data_urls": [
+        "https://open-reaction-database.org/dataset/ord_dataset-805ad863feef48579d95d86a728035f4"
+      ],
+      "project_urls": [
+        "https://github.com/open-reaction-database/ord-data"
+      ],
+      "license_urls": []
+    },
+    {
+      "id": "C04",
+      "name": "ORDerly condition benchmarks",
+      "priority": "1 Integrate first",
+      "survey_license_note": "Paper states dataset CC BY 4.0. Retain upstream ORD provenance and applicable terms.",
+      "paper_urls": [
+        "https://doi.org/10.1021/acs.jcim.4c00292"
+      ],
+      "data_urls": [
+        "https://figshare.com/articles/dataset/ORDerly_chemical_reactions_condition_benchmarks/23298467"
+      ],
+      "project_urls": [
+        "https://github.com/sustainable-processes/ORDerly"
+      ],
+      "license_urls": []
+    },
+    {
+      "id": "C05",
+      "name": "Denmark CPA thiol addition",
+      "priority": "1 Integrate first",
+      "survey_license_note": "Published SI is accessible. Separate data reuse terms require verification.",
+      "paper_urls": [
+        "https://doi.org/10.1126/science.aau5631"
+      ],
+      "data_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6417887/"
+      ],
+      "project_urls": [],
+      "license_urls": []
+    },
+    {
+      "id": "C06",
+      "name": "Catechol solvent-selection benchmark",
+      "priority": "1 Integrate first",
+      "survey_license_note": "Repository MIT. Kaggle/deposit data terms require verification.",
+      "paper_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2025/file/ad61e68e2c4208d5d092b3ecd6064b46-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "data_urls": [
+        "https://github.com/jpfolch/catechol_solvent_selection"
+      ],
+      "project_urls": [
+        "https://github.com/jpfolch/catechol_solvent_selection"
+      ],
+      "license_urls": []
+    },
+    {
+      "id": "C07",
+      "name": "RDB19-Rad",
+      "priority": "1 Integrate first",
+      "survey_license_note": "CC BY 4.0 on the Zenodo data record.",
+      "paper_urls": [
+        "https://doi.org/10.1021/acs.jpca.4c04121"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/11493786"
+      ],
+      "project_urls": [],
+      "license_urls": [
+        "https://zenodo.org/api/records/11493786"
+      ]
+    },
+    {
+      "id": "C08",
+      "name": "Transition1x",
+      "priority": "1 Integrate first",
+      "survey_license_note": "MIT on the Figshare data record, including the HDF5 archive.",
+      "paper_urls": [
+        "https://www.nature.com/articles/s41597-022-01870-w"
+      ],
+      "data_urls": [
+        "https://figshare.com/articles/dataset/Transition1x/19614657"
+      ],
+      "project_urls": [],
+      "license_urls": [
+        "https://api.figshare.com/v2/articles/19614657"
+      ]
+    },
+    {
+      "id": "C09",
+      "name": "PaRoutes 2.0",
+      "priority": "1 Integrate first",
+      "survey_license_note": "CC BY 4.0 on the Zenodo data record. Software Apache-2.0.",
+      "paper_urls": [
+        "https://doi.org/10.1039/D2DD00015F"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/7341155"
+      ],
+      "project_urls": [
+        "https://github.com/MolecularAI/PaRoutes"
+      ],
+      "license_urls": [
+        "https://zenodo.org/api/records/7341155"
+      ]
+    },
+    {
+      "id": "C10",
+      "name": "RxnSolvKSE (Chung–Green)",
+      "priority": "2 Targeted expansion",
+      "survey_license_note": "CC BY 4.0 on the Zenodo data record.",
+      "paper_urls": [
+        "https://pubs.rsc.org/en/content/articlehtml/2024/sc/d3sc05353a"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/8423911"
+      ],
+      "project_urls": [],
+      "license_urls": [
+        "https://zenodo.org/api/records/8423911"
+      ]
+    },
+    {
+      "id": "C11",
+      "name": "QuantumPioneer HAT database",
+      "priority": "2 Targeted expansion",
+      "survey_license_note": "CC BY 4.0 on the Zenodo data record.",
+      "paper_urls": [
+        "https://doi.org/10.1021/jacs.6c10371"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/20060606"
+      ],
+      "project_urls": [
+        "https://github.com/QuantumPioneer/database"
+      ],
+      "license_urls": [
+        "https://zenodo.org/api/records/20060606"
+      ]
+    },
+    {
+      "id": "C12",
+      "name": "OrgReact",
+      "priority": "2 Targeted expansion",
+      "survey_license_note": "CC BY 4.0 on the Figshare data record.",
+      "paper_urls": [
+        "https://www.nature.com/articles/s41597-026-07771-6"
+      ],
+      "data_urls": [
+        "https://doi.org/10.6084/m9.figshare.31668682"
+      ],
+      "project_urls": [],
+      "license_urls": [
+        "https://api.figshare.com/v2/articles/31668682"
+      ]
+    },
+    {
+      "id": "C13",
+      "name": "EnzEngDB",
+      "priority": "2 Targeted expansion",
+      "survey_license_note": "CC BY 4.0 on the Zenodo data record. This verifies the data deposit; the repository code LICENSE is empty.",
+      "paper_urls": [
+        "https://doi.org/10.1093/nar/gkaf1142"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/17310823"
+      ],
+      "project_urls": [
+        "https://github.com/fhalab/EnzymeEngineeringDB"
+      ],
+      "license_urls": [
+        "https://zenodo.org/api/records/17310823"
+      ]
+    },
+    {
+      "id": "C14",
+      "name": "ReactZyme",
+      "priority": "2 Targeted expansion",
+      "survey_license_note": "Repository CC0-1.0. Preserve upstream Rhea/UniProt attribution and terms.",
+      "paper_urls": [
+        "https://arxiv.org/html/2408.13659v3"
+      ],
+      "data_urls": [
+        "https://github.com/WillHua127/ReactZyme/tree/main/data"
+      ],
+      "project_urls": [
+        "https://github.com/WillHua127/ReactZyme"
+      ],
+      "license_urls": []
+    },
+    {
+      "id": "C15",
+      "name": "CatPred-DB",
+      "priority": "2 Targeted expansion",
+      "survey_license_note": "MIT on the Zenodo dataset record. Preserve BRENDA/SABIO-RK provenance and verify applicable upstream terms.",
+      "paper_urls": [
+        "https://www.nature.com/articles/s41467-025-57215-9"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/14775076"
+      ],
+      "project_urls": [
+        "https://github.com/maranasgroup/CatPred-DB"
+      ],
+      "license_urls": [
+        "https://zenodo.org/api/records/14775076"
+      ]
+    },
+    {
+      "id": "C16",
+      "name": "OrgAIcat / iSynth",
+      "priority": "2 Targeted expansion",
+      "survey_license_note": "Official repository claims MIT. Confirm data provenance and source-specific terms.",
+      "paper_urls": [
+        "https://github.com/DeepSynthesis/orgaicat"
+      ],
+      "data_urls": [
+        "https://github.com/DeepSynthesis/orgaicat/tree/main/data"
+      ],
+      "project_urls": [
+        "https://github.com/DeepSynthesis/orgaicat"
+      ],
+      "license_urls": []
+    },
+    {
+      "id": "C17",
+      "name": "CHORISO",
+      "priority": "2 Targeted expansion",
+      "survey_license_note": "CC BY 4.0 on the Figshare data record.",
+      "paper_urls": [
+        "https://arxiv.org/abs/2312.09004"
+      ],
+      "data_urls": [
+        "https://figshare.com/articles/dataset/CHORISO_-_chemical_reaction_SMILES_from_academic_journals/22598230"
+      ],
+      "project_urls": [
+        "https://github.com/schwallergroup/choriso"
+      ],
+      "license_urls": [
+        "https://api.figshare.com/v2/articles/22598230"
+      ]
+    },
+    {
+      "id": "C18",
+      "name": "Perera Suzuki–Miyaura HTE",
+      "priority": "3 Optional",
+      "survey_license_note": "Original SI accessible. Separate data reuse license not verified.",
+      "paper_urls": [
+        "https://www.science.org/doi/10.1126/science.aap9112"
+      ],
+      "data_urls": [
+        "https://www.science.org/doi/10.1126/science.aap9112"
+      ],
+      "project_urls": [],
+      "license_urls": []
+    },
+    {
+      "id": "C19",
+      "name": "Parrot USPTO-Condition",
+      "priority": "3 Optional",
+      "survey_license_note": "Code MIT. Data-specific terms need verification.",
+      "paper_urls": [
+        "https://doi.org/10.34133/research.0231"
+      ],
+      "data_urls": [
+        "https://github.com/wangxr0526/Parrot"
+      ],
+      "project_urls": [
+        "https://github.com/wangxr0526/Parrot"
+      ],
+      "license_urls": []
+    },
+    {
+      "id": "C20",
+      "name": "OC20NEB",
+      "priority": "3 Optional",
+      "survey_license_note": "Project dataset specifies CC BY 4.0.",
+      "paper_urls": [
+        "https://doi.org/10.1021/acscatal.4c04272"
+      ],
+      "data_urls": [
+        "https://facebookresearch.github.io/fairchem/oc20neb/"
+      ],
+      "project_urls": [],
+      "license_urls": []
+    },
+    {
+      "id": "C21",
+      "name": "LiPRED",
+      "priority": "3 Optional",
+      "survey_license_note": "Paper states data CC BY. Verify exact deposited version and files.",
+      "paper_urls": [
+        "https://pubs.rsc.org/en/content/articlehtml/2026/cp/d6cp00088f"
+      ],
+      "data_urls": [
+        "https://doi.org/10.5281/zenodo.8396100"
+      ],
+      "project_urls": [],
+      "license_urls": []
+    },
+    {
+      "id": "C22",
+      "name": "RMG database",
+      "priority": "3 Optional",
+      "survey_license_note": "Open repository. Blanket data terms and each source library require verification.",
+      "paper_urls": [
+        "https://pubs.acs.org/jcisd8/article/62/20/4906/884055/RMG-Database-for-Chemical-Property-Prediction"
+      ],
+      "data_urls": [
+        "https://github.com/ReactionMechanismGenerator/RMG-database"
+      ],
+      "project_urls": [
+        "https://github.com/ReactionMechanismGenerator/RMG-database"
+      ],
+      "license_urls": []
+    },
+    {
+      "id": "C23",
+      "name": "EasIFA SwissProt E-RXN ASA",
+      "priority": "3 Optional",
+      "survey_license_note": "Code MIT. Preserve source data licenses and evidence levels.",
+      "paper_urls": [
+        "https://www.nature.com/articles/s41467-024-51511-6"
+      ],
+      "data_urls": [
+        "https://github.com/wangxr0526/EasIFA"
+      ],
+      "project_urls": [
+        "https://github.com/wangxr0526/EasIFA"
+      ],
+      "license_urls": []
+    },
+    {
+      "id": "C24",
+      "name": "EnzChemRED",
+      "priority": "3 Optional",
+      "survey_license_note": "Official SIB resource specifies CC BY 4.0.",
+      "paper_urls": [
+        "https://www.nature.com/articles/s41597-024-03835-7"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/11067998"
+      ],
+      "project_urls": [
+        "https://github.com/ncbi-nlp/EnzChemRED"
+      ],
+      "license_urls": []
+    },
+    {
+      "id": "C25",
+      "name": "CompleteRXN",
+      "priority": "3 Optional",
+      "survey_license_note": "MIT applies to benchmark code. Preserve original source-data licenses; no blanket MIT data grant assumed.",
+      "paper_urls": [
+        "https://arxiv.org/html/2605.00222v2"
+      ],
+      "data_urls": [
+        "https://huggingface.co/datasets/completeRXN-benchmark-26/completeRXN"
+      ],
+      "project_urls": [],
+      "license_urls": []
+    },
+    {
+      "id": "C26",
+      "name": "PMechDB / RMechDB",
+      "priority": "3 Hold for terms",
+      "survey_license_note": "CC BY-NC-ND terms reported by official pages. Hold modified redistribution pending permission/clarification.",
+      "paper_urls": [
+        "https://deeprxn.ics.uci.edu/pmechdb/download"
+      ],
+      "data_urls": [
+        "https://deeprxn.ics.uci.edu/rmechdb/howtouse"
+      ],
+      "project_urls": [],
+      "license_urls": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "source_id": "C24",
+  "name": "EnzChemRED.tar.gz",
+  "bytes": 1651363,
+  "checksum": "md5:d05097c7cc566d1a4d043862a608e38a",
+  "url": "https://zenodo.org/api/records/11067998/files/EnzChemRED.tar.gz/content",
+  "path": "Data/raw/synrxn2/C24/EnzChemRED.tar.gz",
+  "bytes_observed": 1651363,
+  "sha256": "046f6c00663d26cf172cb828b3fe68cab92a128de947545c01aff53060c06251",
+  "md5": "d05097c7cc566d1a4d043862a608e38a",
+  "status": "verified"
+}

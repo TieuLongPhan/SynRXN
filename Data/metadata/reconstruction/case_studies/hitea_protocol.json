@@ -1,0 +1,253 @@
+{
+  "schema": "synrxn.kdd-study-protocol.v1",
+  "version": "0.1.0",
+  "as_of": "2026-10-20",
+  "status": "complete preparation design; proposed experiment protocol; no fitted-model results",
+  "working_title": "SynRXN Context: Benchmarking Reaction Assay Prediction and Observed Condition Ranking",
+  "track_category": "Benchmarks and Benchmarking Tools",
+  "primary_source": "HiTEA pinned commit ccc8cce274e70429498be829dd3bc57754f62265",
+  "population": {
+    "canonical_dataset": "Data/yield/hitea.csv.gz",
+    "canonical_sha256": "f0e0d0db9f37643bcebb5c9b6a29a9a6a950f7e92c05fc4541a07d9ca3d1d0e9",
+    "upstream_sha256": "9d3b35b8606538df7fc8dd9104b6dd43188ddc8dc43e3d9d3972e10a621ef889",
+    "canonical_rows": 39546,
+    "eligible_rows": 39354,
+    "exclusion": "192 rows with missing canonical reactants; retain a complete exclusion ledger",
+    "eligible_screens": 354,
+    "dependence_components": 285,
+    "recorded_input_cells": 36606,
+    "all_panels": 669,
+    "ranking_panels": 429,
+    "minimum_ranking_candidates": 5,
+    "target": "Product_Yield_PCT_Area_UV",
+    "target_interpretation": "Recorded UV area assay response on the source percentage scale; not independently calibrated isolated yield",
+    "target_units": "percentage points for errors and observed regret",
+    "target_zero": "Keep as recorded; do not relabel as infeasible",
+    "repeated_cell_rows": "Multiple rows sharing recorded settings are not assumed to be independent technical replicates"
+  },
+  "questions": [
+    {
+      "id": "Q1",
+      "question": "How much do the three permitted context representations change assay prediction and ranking of recorded conditions on held-out dependence components?",
+      "comparison": "Same records, folds, endpoint access, feature-adapter rules, tuning budget, prediction denominator and model families; only the context policy changes",
+      "primary_contrast": "source_context versus flat_context",
+      "explanatory_contrast": "retained_context versus flat_context; source_context versus retained_context",
+      "outcome_direction": "Open; report improvements, no meaningful difference, and degradation"
+    },
+    {
+      "id": "Q2",
+      "question": "How does a row allocation change assay-error estimates and model comparisons relative to the declared relation closure?",
+      "comparison": "Full source context; out-of-fold predictions for the same eligible rows; disclose changed training exposure",
+      "scope": "Regression diagnostic only; no ranking from candidates scored by different row-fold models",
+      "causal_limit": "This changes the evaluation setting and information exposure; a score gap alone does not identify a universal causal leakage penalty"
+    }
+  ],
+  "input_contract": {
+    "endpoints": "Recorded unmapped reactants and products supplied to every predictive model; retrospective reaction-conditioned assay evaluation",
+    "prospective_limit": "Recorded product availability does not establish a prospective planned-product or forward-prediction task",
+    "flat_context": "Six explicit fields in synrxn/data/task_protocols.json yield.context_fields",
+    "retained_context": "The existing yield table conditions_json, with numeric formatting normalized and missing entries kept unknown",
+    "source_context": "The 21 pinned original preparation fields listed by prepare_cohort.RAW_CONTEXT; no other original columns",
+    "withheld": [
+      "yield_pct and all outcome columns",
+      "Product_Selectivity",
+      "Product_Yield_Mass_Ion_Count",
+      "yie_react",
+      "sample, reaction, compound, screen and notebook identifiers",
+      "reaction class and taxonomy",
+      "source labels, provenance strings and split assignments",
+      "raw file row numbers"
+    ],
+    "role_interpretation": "Keep original Catalyst_1/Catalyst_2 and reagent slot meanings; do not infer catalyst/base/ligand roles from missing fields",
+    "numeric_missingness": "Train-only median imputation plus explicit missing indicators; a recorded zero remains a value",
+    "categorical_missingness": "Missing and unseen-in-training get different indicators; vocabulary fit on training inputs only",
+    "name_canonicalization": "Keep exact source strings in primary analysis; any spelling/alias correction requires a versioned mapping audit",
+    "unsupported_chemistry": "Record structure parsing and feature failures; use the frozen training-median fallback, not silent row removal"
+  },
+  "memberships": {
+    "artifact": "preparation/cohort.jsonl.gz",
+    "relation_closure": [
+      "screen_id",
+      "notebook_id",
+      "chemical_split_group",
+      "duplicate_group",
+      "reactants"
+    ],
+    "closure_population": "All canonical source rows before eligibility exclusion; absent relation values never link cases",
+    "folds": 5,
+    "allocation_seed": 2027,
+    "allocation": "Sort components by descending eligible-row count and seeded identity hash; assign each to the least loaded fold without targets",
+    "outer_test": "fold f",
+    "validation": "fold (f+1) mod 5",
+    "training": "the remaining three folds",
+    "row_diagnostic": "Same size-balanced algorithm on opaque sample IDs; overlaps explicitly audited",
+    "pretraining": "Primary models fitted from scratch; any later pretrained model is a separate exposure-qualified analysis",
+    "test_policy": "Do not use outer-fold results to select features, hyperparameters or manuscript claims; archive deviations and every attempted configuration"
+  },
+  "training": {
+    "row_weight": "1 / number of rows in the same recorded input cell, renormalized over training rows only",
+    "weight_support": "Apply exactly for Ridge, random forest and MPNN losses; nearest-neighbor predictions average repeated training cells before retrieval; baseline median uses the same cell weights",
+    "target_scaling": "Training-only parameters; invert before scoring",
+    "validation_selection": "Component-macro MAE for grouped folds; row MAE for the row-allocation diagnostic; identical rule for all methods in each setting",
+    "trials_per_model_per_outer_fold_per_context": 8,
+    "tuning_seed": 17,
+    "stochastic_final_seeds": [
+      17,
+      29,
+      43
+    ],
+    "repeat_models": [
+      "random_forest",
+      "chemprop_mpnn"
+    ],
+    "seed_aggregation": "Average metrics across independently fitted seeds; no undeclared prediction ensemble",
+    "early_stopping": "Validation only; at most 100 epochs, patience 15 for the MPNN",
+    "test_failure_fallback": "Training weighted median fixed before test access; emit failure category and fallback flag",
+    "prediction_clipping": "None in primary scores; preserve finite values outside 0-100"
+  },
+  "models": [
+    {
+      "id": "training_median",
+      "role": "constant baseline; no search"
+    },
+    {
+      "id": "fingerprint_knn",
+      "role": "retrieval baseline",
+      "search": {
+        "neighbors": [
+          1,
+          3,
+          5,
+          10
+        ],
+        "context_weight": [
+          0.5,
+          1.0
+        ]
+      }
+    },
+    {
+      "id": "fingerprint_ridge",
+      "role": "linear chemical baseline",
+      "search": {
+        "alpha": [
+          0.1,
+          1.0,
+          10.0,
+          100.0
+        ],
+        "context_weight": [
+          0.5,
+          1.0
+        ]
+      }
+    },
+    {
+      "id": "random_forest",
+      "role": "nonlinear classical baseline",
+      "trees": 500,
+      "search": {
+        "min_samples_leaf": [
+          1,
+          3,
+          10,
+          30
+        ],
+        "max_features": [
+          0.3,
+          1.0
+        ]
+      }
+    },
+    {
+      "id": "chemprop_mpnn",
+      "role": "learned molecular baseline from scratch",
+      "version_target": "2.3.1; verify and pin the installed build during pilot",
+      "search": {
+        "depth": [
+          2,
+          3
+        ],
+        "message_hidden_dim": [
+          300,
+          600
+        ],
+        "dropout": [
+          0.0,
+          0.2
+        ]
+      },
+      "formulation": "Separate pooled reactant/product molecular graphs plus the same permitted context features; no requirement for new atom mapping"
+    }
+  ],
+  "feature_adapter": {
+    "classical_endpoints": "Two Morgan radius-2, 2048-bit blocks with chirality enabled for unmapped reactants and products, with fixed molecule-parse policy",
+    "context_molecules": "Parse whitelisted source SMILES slots into separate radius-2 2048-bit blocks with chirality enabled; remove atom-map identifiers from feature identities; keep the corresponding source text and parse/missing masks in all predictive models",
+    "context_text": "Train-only categorical vocabulary for each exact source slot; no external name-to-structure service",
+    "context_numbers": "Train-only imputation and scaling plus missing/invalid indicators",
+    "information_parity": "Every predictive family receives all fields allowed by its context contract; serialize adapter versions and input hashes"
+  },
+  "evaluation": {
+    "regression_primary": "Mean of component-specific row MAE across the 285 components, using each row's out-of-fold prediction",
+    "regression_secondary": [
+      "row-weighted MAE",
+      "RMSE",
+      "cell-balanced MAE",
+      "per-family descriptive MAE",
+      "valid-model prediction coverage and fallback fraction"
+    ],
+    "ranking_panel": "screen_id + chemical_split_group + measurement type + exact recorded UV wavelength; unknown wavelength is a distinct stratum",
+    "ranking_candidate": "One unique normalized 21-field source context within a panel",
+    "candidate_response": "Median recorded assay response among rows sharing that input cell; descriptive summary, not an inferred independent replicate mean",
+    "candidate_prediction": "Mean prediction across the same cell rows, all scored by the same held-out-component model",
+    "ranking_primary": "Panel-macro observed regret@1 = best recorded candidate-response median minus response median of the selected candidate",
+    "ranking_secondary": [
+      "observed regret@3",
+      "probability of selecting a candidate within 5 percentage points of the observed best",
+      "eligible-panel coverage",
+      "candidate-count strata"
+    ],
+    "tie_policy": "Average uniformly over score ties; exact mean response for top-1 ties, and exact combinatorial expectation at a top-k boundary; never break ties using outcomes",
+    "ranking_limit": "Only the observed candidate set is evaluated; unmeasured conditions are unknown, not negatives; no counterfactual, causal or wet-lab optimization claim",
+    "uncertainty": "2000 paired bootstrap draws of dependence components; recompute the relevant macro statistic and retain all panels within sampled components; report seed ranges separately",
+    "comparisons": "Primary family: source-versus-flat effects for four predictive families and two metrics, eight contrasts total; use component-bootstrap maximum standardized deviation for simultaneous 95% intervals. Other pointwise intervals are descriptive. Claimed pairwise model ordering also requires a separately declared simultaneous family; otherwise label ordering exploratory",
+    "engineering_reference_deltas": {
+      "mae_percentage_points": 2,
+      "regret_percentage_points": 5
+    },
+    "delta_interpretation": "Reporting reference values chosen for planning; not established chemical measurement tolerances or acceptance gates",
+    "ranking_claim": "Claim a model-order change only when the relevant paired comparison supports it; otherwise report uncertainty"
+  },
+  "secondary_scope": {
+    "bh_replication": "Supporting analysis only: remove all HiTEA-labeled BH rows and all shared declared transformation/reactant keys; retain original measurement qualifications; compare Ridge and random forest without inventing screening IDs",
+    "bh_remaining_rows": 24806,
+    "bh_main_source_targets": [
+      "JNJ HTE 2024",
+      "Merck 2025",
+      "Dreher Doyle 2018"
+    ],
+    "bh_split": "For each named target source, train on the other six available non-HiTEA sources; use grouped validation in training sources and remove target-overlapping declared keys before fitting",
+    "bh_search": "8 configurations per model per named target; no neural extension until the core study is reproduced",
+    "frea": "Evidence-semantics audit only; prior FREA already supplies expert labels and source-dependent evaluation",
+    "mechanisms": "Qualified structural-reference companion; predictive benchmark deferred beyond this submission's critical path",
+    "orderly": "Related work and possible later condition-reconstruction study; no new generic role-aware condition leaderboard in the core paper"
+  },
+  "compute_allocation": {
+    "core_search_fit_ceiling": 640,
+    "core_additional_seed_fit_ceiling": 80,
+    "core_fit_ceiling_excluding_constant": 720,
+    "secondary_bh_search_fit_ceiling": 48,
+    "cpu_hours_planning_ceiling": 400,
+    "gpu_hours_planning_ceiling": 160,
+    "storage_gb_planning_ceiling": 100,
+    "interpretation": "Capacity reservations, not measured runtime estimates; pilot measures peak RAM, wall time and extrapolated cost before the main grid",
+    "reduction_order": [
+      "omit BH replication",
+      "keep all 5 outer folds but reduce repeated stochastic fits from 3 to 1 and disclose",
+      "reduce the common per-family tuning budget before any outer test result is inspected"
+    ],
+    "core_requirement": "Retain the source/retained/flat context contrast, all five model families including a learned baseline, and all eligible records"
+  },
+  "scope_role": "Detailed optional HiTEA case study; superseded as the overall SynRXN scope",
+  "paths_relative_to": "kdd"
+}

@@ -1,0 +1,13 @@
+{
+  "source_id": "C15",
+  "name": "catpred-db.tar.gz",
+  "bytes": 1144517378,
+  "checksum": "md5:38149eb47e149a1cee67ec80834365e1",
+  "url": "https://zenodo.org/api/records/14775076/files/catpred-db.tar.gz/content",
+  "path": "Data/raw/synrxn2/C15/catpred-db.tar.gz",
+  "bytes_observed": 4231144,
+  "sha256": "b7c5e22b7bb5e62d265476727a24b7d9307fdd1e324c6c32797d0fa3a4de749e",
+  "md5": "ec1fae90312e71ab15644367d6472625",
+  "status": "unavailable",
+  "error": "source byte size differs from the pinned release"
+}

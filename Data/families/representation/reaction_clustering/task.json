@@ -1,0 +1,227 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 8,
+    "data_links": 8,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 8,
+    "stored_rows_across_unique_views": 1319437,
+    "task_table_bindings": 8,
+    "tasks": 1,
+    "unique_table_views": 8
+  },
+  "tables": [
+    {
+      "data_link": "canonical/classification/ecreact/data.csv.gz",
+      "key": "classification/ecreact",
+      "metadata": "canonical/classification/ecreact/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/classification/schneider_b/data.csv.gz",
+      "key": "classification/schneider_b",
+      "metadata": "canonical/classification/schneider_b/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/classification/schneider_u/data.csv.gz",
+      "key": "classification/schneider_u",
+      "metadata": "canonical/classification/schneider_u/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/classification/syntemp/data.csv.gz",
+      "key": "classification/syntemp",
+      "metadata": "canonical/classification/syntemp/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/classification/tpl_b/data.csv.gz",
+      "key": "classification/tpl_b",
+      "metadata": "canonical/classification/tpl_b/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/classification/tpl_u/data.csv.gz",
+      "key": "classification/tpl_u",
+      "metadata": "canonical/classification/tpl_u/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/classification/uspto_50k_b/data.csv.gz",
+      "key": "classification/uspto_50k_b",
+      "metadata": "canonical/classification/uspto_50k_b/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/classification/uspto_50k_u/data.csv.gz",
+      "key": "classification/uspto_50k_u",
+      "metadata": "canonical/classification/uspto_50k_u/table.json",
+      "namespace": "canonical"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "classification/ecreact",
+        "legacy_field_eligible_rows": {
+          "clustering": 185734
+        },
+        "namespace": "canonical",
+        "partition": "database_sharealike",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND MIT AND ODbL-1.0",
+        "rights_status": "verified_author_data_grant",
+        "role": "primary",
+        "rows": 185734
+      },
+      {
+        "commercial_use_allowed": false,
+        "counting_unit": "source-table row",
+        "key": "classification/schneider_b",
+        "legacy_field_eligible_rows": {
+          "clustering": 50000
+        },
+        "namespace": "canonical",
+        "partition": "noncommercial",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+        "rights_status": "verified_noncommercial_data_grant",
+        "role": "primary",
+        "rows": 50000
+      },
+      {
+        "commercial_use_allowed": false,
+        "counting_unit": "source-table row",
+        "key": "classification/schneider_u",
+        "legacy_field_eligible_rows": {
+          "clustering": 50000
+        },
+        "namespace": "canonical",
+        "partition": "noncommercial",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+        "rights_status": "verified_noncommercial_data_grant",
+        "role": "primary",
+        "rows": 50000
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "classification/syntemp",
+        "legacy_field_eligible_rows": {
+          "clustering": 43441
+        },
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND CC0-1.0",
+        "rights_status": "verified_curated_product_grant_with_open_base",
+        "role": "primary",
+        "rows": 43441
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "classification/tpl_b",
+        "legacy_field_eligible_rows": {
+          "clustering": 445113
+        },
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND MIT",
+        "rights_status": "verified_repository_dataset_grant",
+        "role": "primary",
+        "rows": 445115
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "classification/tpl_u",
+        "legacy_field_eligible_rows": {
+          "clustering": 445115
+        },
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND MIT",
+        "rights_status": "verified_repository_dataset_grant",
+        "role": "primary",
+        "rows": 445115
+      },
+      {
+        "commercial_use_allowed": false,
+        "counting_unit": "source-table row",
+        "key": "classification/uspto_50k_b",
+        "legacy_field_eligible_rows": {
+          "clustering": 50016
+        },
+        "namespace": "canonical",
+        "partition": "noncommercial",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+        "rights_status": "verified_noncommercial_data_grant",
+        "role": "primary",
+        "rows": 50016
+      },
+      {
+        "commercial_use_allowed": false,
+        "counting_unit": "source-table row",
+        "key": "classification/uspto_50k_u",
+        "legacy_field_eligible_rows": {
+          "clustering": 50016
+        },
+        "namespace": "canonical",
+        "partition": "noncommercial",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+        "rights_status": "verified_noncommercial_data_grant",
+        "role": "primary",
+        "rows": 50016
+      }
+    ],
+    "canonical_keys": [
+      "classification/ecreact",
+      "classification/schneider_b",
+      "classification/schneider_u",
+      "classification/syntemp",
+      "classification/tpl_b",
+      "classification/tpl_u",
+      "classification/uspto_50k_b",
+      "classification/uspto_50k_u"
+    ],
+    "counting_units": [
+      "source-table row"
+    ],
+    "extension_adapter_ids": [],
+    "family_id": "representation",
+    "id": "reaction_clustering",
+    "legacy_view_ids": [
+      "clustering"
+    ],
+    "metrics": [
+      "ARI",
+      "NMI",
+      "coverage",
+      "stability"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 1319437,
+    "primary_table_count": 8,
+    "qualification": "Withhold reference labels from fitting and selection; any label-informed k policy is a separately declared diagnostic.",
+    "question": "Recorded reactions -> unsupervised groups",
+    "readiness": "legacy_export_variants_available",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 8,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Reaction clustering"
+  }
+}

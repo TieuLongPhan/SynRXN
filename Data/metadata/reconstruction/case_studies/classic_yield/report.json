@@ -1,0 +1,366 @@
+{
+  "bh_classic": {
+    "fixed_components": {
+      "amine_smiles": "Cc1ccc(N)cc1",
+      "pd_precatalyst_author_literal": "O=S(=O)(O[Pd]1~[NH2]C2C=CC=CC=2C2C=CC=CC1=2)C(F)(F)F",
+      "source": "official_data.py:generate_buchwald_hartwig_rxns"
+    },
+    "outer_split_count": 14,
+    "rights": {
+      "admitted_to_catalogue": false,
+      "original_dataset_terms": "Not requalified by this acquisition",
+      "release_status": "local_reference_only",
+      "repository_license_evidence": "MIT; raw/LICENSE"
+    },
+    "rows": 3955,
+    "sheets_share_identical_observation_multiset": true,
+    "splits": [
+      {
+        "author_split_constant": 2768,
+        "formula": "source sheet positions < split-1 are train; remaining positions are test",
+        "outer_test": 1188,
+        "outer_train": 2767,
+        "regime": "bh_random",
+        "split": "FullCV_01"
+      },
+      {
+        "author_split_constant": 2768,
+        "formula": "source sheet positions < split-1 are train; remaining positions are test",
+        "outer_test": 1188,
+        "outer_train": 2767,
+        "regime": "bh_random",
+        "split": "FullCV_02"
+      },
+      {
+        "author_split_constant": 2768,
+        "formula": "source sheet positions < split-1 are train; remaining positions are test",
+        "outer_test": 1188,
+        "outer_train": 2767,
+        "regime": "bh_random",
+        "split": "FullCV_03"
+      },
+      {
+        "author_split_constant": 2768,
+        "formula": "source sheet positions < split-1 are train; remaining positions are test",
+        "outer_test": 1188,
+        "outer_train": 2767,
+        "regime": "bh_random",
+        "split": "FullCV_04"
+      },
+      {
+        "author_split_constant": 2768,
+        "formula": "source sheet positions < split-1 are train; remaining positions are test",
+        "outer_test": 1188,
+        "outer_train": 2767,
+        "regime": "bh_random",
+        "split": "FullCV_05"
+      },
+      {
+        "author_split_constant": 2768,
+        "formula": "source sheet positions < split-1 are train; remaining positions are test",
+        "outer_test": 1188,
+        "outer_train": 2767,
+        "regime": "bh_random",
+        "split": "FullCV_06"
+      },
+      {
+        "author_split_constant": 2768,
+        "formula": "source sheet positions < split-1 are train; remaining positions are test",
+        "outer_test": 1188,
+        "outer_train": 2767,
+        "regime": "bh_random",
+        "split": "FullCV_07"
+      },
+      {
+        "author_split_constant": 2768,
+        "formula": "source sheet positions < split-1 are train; remaining positions are test",
+        "outer_test": 1188,
+        "outer_train": 2767,
+        "regime": "bh_random",
+        "split": "FullCV_08"
+      },
+      {
+        "author_split_constant": 2768,
+        "formula": "source sheet positions < split-1 are train; remaining positions are test",
+        "outer_test": 1188,
+        "outer_train": 2767,
+        "regime": "bh_random",
+        "split": "FullCV_09"
+      },
+      {
+        "author_split_constant": 2768,
+        "formula": "source sheet positions < split-1 are train; remaining positions are test",
+        "outer_test": 1188,
+        "outer_train": 2767,
+        "regime": "bh_random",
+        "split": "FullCV_10"
+      },
+      {
+        "author_split_constant": 3058,
+        "formula": "source sheet positions < split-1 are train; remaining positions are test",
+        "outer_test": 898,
+        "outer_train": 3057,
+        "regime": "bh_published_ood",
+        "split": "Test1"
+      },
+      {
+        "author_split_constant": 3056,
+        "formula": "source sheet positions < split-1 are train; remaining positions are test",
+        "outer_test": 900,
+        "outer_train": 3055,
+        "regime": "bh_published_ood",
+        "split": "Test2"
+      },
+      {
+        "author_split_constant": 3059,
+        "formula": "source sheet positions < split-1 are train; remaining positions are test",
+        "outer_test": 897,
+        "outer_train": 3058,
+        "regime": "bh_published_ood",
+        "split": "Test3"
+      },
+      {
+        "author_split_constant": 3056,
+        "formula": "source sheet positions < split-1 are train; remaining positions are test",
+        "outer_test": 900,
+        "outer_train": 3055,
+        "regime": "bh_published_ood",
+        "split": "Test4"
+      }
+    ],
+    "standalone_reference_prepared": true,
+    "table_fields": "Native component SMILES and Output; no reaction/product reconstruction",
+    "unique_raw_input_and_target_keys": 3955,
+    "validation_splits_created": false
+  },
+  "builder_sha256": "164f56e60230da7dee675d313f07369fff595dee0b0b6ddcf2d0e5f4b8d77711",
+  "limitations": [
+    "Raw upstream terms are preserved, not cleared by repository MIT evidence alone.",
+    "BH classic overlaps the pooled NCS source; not an independent replication.",
+    "No historic SynRFP feature, checkpoint or inner-validation assignment is claimed recovered."
+  ],
+  "native_outer_splits_only": true,
+  "new_validation_splits_created": false,
+  "outputs": [
+    {
+      "bytes": 72376,
+      "file": "bh_classic.csv.gz",
+      "sha256": "ab5cea6673bb6c1e0dd13f200b25fabcecf8f13ad5471d09f3004f3712fea2f7"
+    },
+    {
+      "bytes": 291866,
+      "file": "bh_outer_assignments.csv.gz",
+      "sha256": "b049632f93749f78b616e0951cb6b727c3266b8715c4cfb0156ded16552161f2"
+    },
+    {
+      "bytes": 166290,
+      "file": "suzuki_native_reference.csv.gz",
+      "sha256": "c5a3354079455ad37462253861a76d04e724911b9fc23929f3b10f51ad3a29ce"
+    },
+    {
+      "bytes": 477120,
+      "file": "suzuki_outer_assignments.csv.gz",
+      "sha256": "c73269e51700ed3cfa5f025dcb61945e91c9acc3c38f1458ba3be1cc63daa983"
+    }
+  ],
+  "schema_version": "1.0",
+  "scope": "Local review references; no new catalogue/release admission or model training",
+  "source_commit": "d9e6b87ce1b881978490d68bfc00021e3b48127a",
+  "source_files": [
+    {
+      "bytes": 2134762,
+      "file": "bh.xlsx",
+      "sha256": "d7f318abfbb42eaadca482b1e9aa54540eeed60e0089b6a0eb4e75366c31ee2e",
+      "source_path": "data/Buchwald-Hartwig/Dreher_and_Doyle_input_data.xlsx",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/data/Buchwald-Hartwig/Dreher_and_Doyle_input_data.xlsx"
+    },
+    {
+      "bytes": 2121,
+      "file": "official_data.py",
+      "sha256": "4823e60518a1f7a9dca601ebf21b7f0e5efaf73c2f583151824c0e624fd26efb",
+      "source_path": "rxn_yields/data.py",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/rxn_yields/data.py"
+    },
+    {
+      "bytes": 5073,
+      "file": "bh_training.py",
+      "sha256": "f6d11e9f74e006251b5a1a022cb0a9d34dec3314378aa563d06a458ed4ba95e9",
+      "source_path": "training_scripts/launch_buchwald_hartwig_training.py",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/training_scripts/launch_buchwald_hartwig_training.py"
+    },
+    {
+      "bytes": 4800,
+      "file": "suzuki_training.py",
+      "sha256": "587c62569260e411b3b14f002e97aedd4e392b57aac481445ee42297fced2998",
+      "source_path": "training_scripts/launch_suzuki_miyaura_training.py",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/training_scripts/launch_suzuki_miyaura_training.py"
+    },
+    {
+      "bytes": 1078,
+      "file": "LICENSE",
+      "sha256": "4cd19ee3f984c4cf21234b36d941f80fe7cbac61b4a104a558813cd3948857ce",
+      "source_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/LICENSE"
+    },
+    {
+      "bytes": 628918,
+      "file": "suzuki_source.xlsx",
+      "sha256": "a869e020ba31bd5676c67a4791c3b7384711b5216de6af444b8cd0a24c284640",
+      "source_path": "data/Suzuki-Miyaura/aap9112_Data_File_S1.xlsx",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/data/Suzuki-Miyaura/aap9112_Data_File_S1.xlsx"
+    },
+    {
+      "bytes": 1269870,
+      "file": "suzuki_0.tsv",
+      "sha256": "d2acd54d3958a5369346177834e6c2b16388813bb28b105181a252a15c4a79a8",
+      "source_path": "data/Suzuki-Miyaura/random_splits/random_split_0.tsv",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/data/Suzuki-Miyaura/random_splits/random_split_0.tsv"
+    },
+    {
+      "bytes": 1269870,
+      "file": "suzuki_1.tsv",
+      "sha256": "f4d8ff77db48c5862134309cabc618735bf3dc16e13004c1cb4a02c1015c9b7a",
+      "source_path": "data/Suzuki-Miyaura/random_splits/random_split_1.tsv",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/data/Suzuki-Miyaura/random_splits/random_split_1.tsv"
+    },
+    {
+      "bytes": 1269870,
+      "file": "suzuki_2.tsv",
+      "sha256": "384733377961659f3ec7b0c33a64d92e31f1283c3d9aab552a7f20e01845a0d1",
+      "source_path": "data/Suzuki-Miyaura/random_splits/random_split_2.tsv",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/data/Suzuki-Miyaura/random_splits/random_split_2.tsv"
+    },
+    {
+      "bytes": 1269870,
+      "file": "suzuki_3.tsv",
+      "sha256": "0b939b662ad26ff96339b2d43c1db59e8fdf4775431168a590a5a251619539e7",
+      "source_path": "data/Suzuki-Miyaura/random_splits/random_split_3.tsv",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/data/Suzuki-Miyaura/random_splits/random_split_3.tsv"
+    },
+    {
+      "bytes": 1269870,
+      "file": "suzuki_4.tsv",
+      "sha256": "8cd6bb56a8a0db7d7e52f614dc83860ae1ecb3447b673bbbe7408a4a1c277861",
+      "source_path": "data/Suzuki-Miyaura/random_splits/random_split_4.tsv",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/data/Suzuki-Miyaura/random_splits/random_split_4.tsv"
+    },
+    {
+      "bytes": 1269870,
+      "file": "suzuki_5.tsv",
+      "sha256": "3c45c00c7e0b9a826c7885443d09601517f6f509c52bb62751eee5f7f71bbd5f",
+      "source_path": "data/Suzuki-Miyaura/random_splits/random_split_5.tsv",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/data/Suzuki-Miyaura/random_splits/random_split_5.tsv"
+    },
+    {
+      "bytes": 1269870,
+      "file": "suzuki_6.tsv",
+      "sha256": "4fc96fdd6995813822968145c0614b17af5e6eb7f844d1f0b569f9020e827acd",
+      "source_path": "data/Suzuki-Miyaura/random_splits/random_split_6.tsv",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/data/Suzuki-Miyaura/random_splits/random_split_6.tsv"
+    },
+    {
+      "bytes": 1269870,
+      "file": "suzuki_7.tsv",
+      "sha256": "1ebb816b2c66e1c2a4a96ac82e626ea60f5233ea4f7ccf71828876ab792e69b8",
+      "source_path": "data/Suzuki-Miyaura/random_splits/random_split_7.tsv",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/data/Suzuki-Miyaura/random_splits/random_split_7.tsv"
+    },
+    {
+      "bytes": 1269870,
+      "file": "suzuki_8.tsv",
+      "sha256": "795ed45e3dbb081dda21b5b1c08e21b0e8498bea3548f09ca37a6d82b0ca9ae8",
+      "source_path": "data/Suzuki-Miyaura/random_splits/random_split_8.tsv",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/data/Suzuki-Miyaura/random_splits/random_split_8.tsv"
+    },
+    {
+      "bytes": 1269870,
+      "file": "suzuki_9.tsv",
+      "sha256": "b29febdd4f23f04248c6651906093ca06090b08b76e859f5b2bd3910cd77a31b",
+      "source_path": "data/Suzuki-Miyaura/random_splits/random_split_9.tsv",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxn_yields/d9e6b87ce1b881978490d68bfc00021e3b48127a/data/Suzuki-Miyaura/random_splits/random_split_9.tsv"
+    }
+  ],
+  "source_repository": "https://github.com/rxn4chemistry/rxn_yields",
+  "status": "passed",
+  "suzuki": {
+    "all_ten_native_shuffles_share_identical_observations": true,
+    "is_isolated_yield": false,
+    "local_table_sha256": "638e83b7cb6af4ff8265ba577119a179a536205d78eca305e5642b4491422248",
+    "max_yield_percentage_point_difference": 4.999378688808065e-11,
+    "measurement_method": "Product_Yield_PCT_Area_UV",
+    "outer_split_count": 10,
+    "rights": {
+      "admitted_to_catalogue": false,
+      "existing_dataset_status": "excluded_pending_permission",
+      "release_status": "local_reference_only",
+      "repository_license_evidence": "MIT; raw/LICENSE",
+      "source_metadata": "Data/sources/yield/suzuki_miyaura.json"
+    },
+    "rows": 5760,
+    "source_index_join_matches": 5760,
+    "splits": [
+      {
+        "formula": "author TSV positions < split are train; remaining positions are test",
+        "outer_test": 1728,
+        "outer_train": 4032,
+        "split": "random_split_0"
+      },
+      {
+        "formula": "author TSV positions < split are train; remaining positions are test",
+        "outer_test": 1728,
+        "outer_train": 4032,
+        "split": "random_split_1"
+      },
+      {
+        "formula": "author TSV positions < split are train; remaining positions are test",
+        "outer_test": 1728,
+        "outer_train": 4032,
+        "split": "random_split_2"
+      },
+      {
+        "formula": "author TSV positions < split are train; remaining positions are test",
+        "outer_test": 1728,
+        "outer_train": 4032,
+        "split": "random_split_3"
+      },
+      {
+        "formula": "author TSV positions < split are train; remaining positions are test",
+        "outer_test": 1728,
+        "outer_train": 4032,
+        "split": "random_split_4"
+      },
+      {
+        "formula": "author TSV positions < split are train; remaining positions are test",
+        "outer_test": 1728,
+        "outer_train": 4032,
+        "split": "random_split_5"
+      },
+      {
+        "formula": "author TSV positions < split are train; remaining positions are test",
+        "outer_test": 1728,
+        "outer_train": 4032,
+        "split": "random_split_6"
+      },
+      {
+        "formula": "author TSV positions < split are train; remaining positions are test",
+        "outer_test": 1728,
+        "outer_train": 4032,
+        "split": "random_split_7"
+      },
+      {
+        "formula": "author TSV positions < split are train; remaining positions are test",
+        "outer_test": 1728,
+        "outer_train": 4032,
+        "split": "random_split_8"
+      },
+      {
+        "formula": "author TSV positions < split are train; remaining positions are test",
+        "outer_test": 1728,
+        "outer_train": 4032,
+        "split": "random_split_9"
+      }
+    ],
+    "target_tolerance_percentage_points": 1e-08,
+    "validation_splits_created": false
+  }
+}

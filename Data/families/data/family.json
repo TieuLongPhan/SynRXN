@@ -1,0 +1,50 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "family": {
+    "counting_units": [
+      "controlled record-curation case",
+      "expert-annotated source document"
+    ],
+    "data_counting_policy": "Deduplicated by namespace/source-table key within this family only; row units can differ, source views can overlap and rows are not unique reactions. Inspect each binding's counting_unit and physical configuration counts.",
+    "data_status": "local task references present; qualification varies",
+    "future_task_ids": [],
+    "gaps": "Expert title/abstract entities and conversion relations plus controlled deletion references are acquired. Full-paper diagrams/tables, naturally observed database corrections and adjudicated entity-resolution cases remain gaps.",
+    "id": "data",
+    "overlapping_view_count": 0,
+    "primary_source_rows": 3477,
+    "primary_table_count": 2,
+    "release_eligible_table_count": 2,
+    "scope": "Extract records from text, tables and diagrams; resolve entities and roles; normalize, validate, deduplicate and repair reaction records with provenance.",
+    "task_ids": [
+      "literature_extraction",
+      "reaction_record_curation"
+    ],
+    "title": "Reaction data acquisition and curation"
+  },
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 2,
+    "data_links": 2,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 2,
+    "stored_rows_across_unique_views": 3477,
+    "task_table_bindings": 2,
+    "tasks": 2,
+    "unique_table_views": 2
+  },
+  "tasks": [
+    {
+      "id": "literature_extraction",
+      "metadata": "literature_extraction/task.json",
+      "title": "Literature reaction extraction"
+    },
+    {
+      "id": "reaction_record_curation",
+      "metadata": "reaction_record_curation/task.json",
+      "title": "Reaction record validation and correction"
+    }
+  ]
+}

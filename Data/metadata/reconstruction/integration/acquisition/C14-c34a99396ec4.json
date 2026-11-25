@@ -1,0 +1,13 @@
+{
+  "source_id": "C14",
+  "name": "enzyme_smi_split.zip",
+  "bytes": 47503969,
+  "checksum": "md5:e351fdb85830968fc9abe933c39f9eda",
+  "url": "https://zenodo.org/api/records/11494913/files/enzyme_smi_split.zip/content",
+  "path": "Data/raw/synrxn2/C14/enzyme_smi_split.zip",
+  "bytes_observed": 1230816,
+  "sha256": "07810db66bc64310a47430f7fe5a02ef03d7572ff14980690f18cc4bd33dcaa2",
+  "md5": "f5acd507f46406b06713d10c476861b3",
+  "status": "unavailable",
+  "error": "source byte size differs from the pinned release"
+}

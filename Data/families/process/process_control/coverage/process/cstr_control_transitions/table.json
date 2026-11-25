@@ -1,0 +1,137 @@
+{
+  "counting_unit": "reference record; task views can overlap native experiments",
+  "data_link": "data.jsonl.gz",
+  "family_id": "process",
+  "format": "jsonl.gz",
+  "key": "process/cstr_control_transitions",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/process/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "reference record; task views can overlap native experiments",
+    "coverage_branch": "process",
+    "key": "process/cstr_control_transitions",
+    "license": "LGPL-3.0-or-later",
+    "namespace": "coverage",
+    "partition": "lgpl",
+    "path": "Data/coverage_expansion/process/cstr_control_transitions.jsonl.gz",
+    "qualification": "Derived simulation:12 seeded excitation episodes,50 transitions each,not600 experimental reactor runs. Native model usesA→B→C plus competing2A→D. Source equations, kinetics, heat-transfer constants, action bounds,0.005h sampling andC_b=0.6 objective retained. Integrator changed to deterministicSciPyDOP853; dynamic control evaluates a proposed policy with the explicit transition oracle. No claim of matching native robustMPC or proving plant safety.",
+    "reference_evidence": "Pinned do-mpc examples/CSTR/template_model.py andtemplate_mpc.py; original LGPL notice retained. Script seed20261020, alpha/beta scenarios1/1,0.95/0.9,1.05/1.1.",
+    "release_eligible": true,
+    "release_license_expression": "LGPL-3.0-or-later",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 600,
+    "sha256": "f027ddcfd313234ca9fb3b448d2767f7f190807732f441fc6e522b86fe3b511a",
+    "source_id": "DOMPCCSTR",
+    "source_sha256": "73367b9e1f009c6f153d6b959d4aea7098c20e79aa8479cb918fd041e5de73e9",
+    "source_url": "https://github.com/do-mpc/do-mpc/tree/9d5a8df0e4d6acac899bf0a65ffd4c30a6e2e4cc/examples/CSTR",
+    "task_fields": {
+      "process_control": {
+        "action_space": {
+          "F_per_hour": [
+            5,
+            100
+          ],
+          "Q_dot_kJ_per_hour": [
+            -8500,
+            0
+          ]
+        },
+        "auxiliary_system_identification": {
+          "inputs": [
+            "state",
+            "action",
+            "duration_hours",
+            "alpha",
+            "beta"
+          ],
+          "targets": [
+            "next_state"
+          ]
+        },
+        "evaluation_oracle": "kdd.coverage.adapters.process.cstr_step",
+        "group_fields": [
+          "trajectory_id"
+        ],
+        "inputs": [
+          "state",
+          "duration_hours",
+          "alpha",
+          "beta",
+          "setpoint_C_b_mol_per_L"
+        ],
+        "metrics": [
+          "closed-loop integrated squared C_b tracking error",
+          "temperature-bound violation",
+          "control effort and action-bound violations"
+        ],
+        "policy": "A policy chooses action from current state; cstr_step produces next state. Recorded excitation action is not an optimal label; supervised action imitation MAE is not a valid control-performance score.",
+        "targets": [
+          "action"
+        ]
+      }
+    },
+    "task_ids": [
+      "process_control"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "reference record; task views can overlap native experiments",
+    "expected_bytes": null,
+    "expected_rows": 600,
+    "expected_sha256": "f027ddcfd313234ca9fb3b448d2767f7f190807732f441fc6e522b86fe3b511a",
+    "format": "jsonl.gz",
+    "key": "process/cstr_control_transitions",
+    "license_expression": "LGPL-3.0-or-later",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes.",
+      "Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it."
+    ],
+    "namespace": "coverage",
+    "partition": "lgpl",
+    "path": "Data/coverage_expansion/process/cstr_control_transitions.jsonl.gz",
+    "qualification": "Derived simulation:12 seeded excitation episodes,50 transitions each,not600 experimental reactor runs. Native model usesA→B→C plus competing2A→D. Source equations, kinetics, heat-transfer constants, action bounds,0.005h sampling andC_b=0.6 objective retained. Integrator changed to deterministicSciPyDOP853; dynamic control evaluates a proposed policy with the explicit transition oracle. No claim of matching native robustMPC or proving plant safety.",
+    "reasons": [],
+    "reference_evidence": "Pinned do-mpc examples/CSTR/template_model.py andtemplate_mpc.py; original LGPL notice retained. Script seed20261020, alpha/beta scenarios1/1,0.95/0.9,1.05/1.1.",
+    "release_eligible": true,
+    "source_id": "DOMPCCSTR",
+    "source_url": "https://github.com/do-mpc/do-mpc/tree/9d5a8df0e4d6acac899bf0a65ffd4c30a6e2e4cc/examples/CSTR",
+    "task_ids": [
+      "process_control"
+    ]
+  },
+  "role": "primary",
+  "rows": 600,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/process/cstr_control_transitions.jsonl.gz",
+    "sha256": "f027ddcfd313234ca9fb3b448d2767f7f190807732f441fc6e522b86fe3b511a",
+    "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+    "source_id": "DOMPCCSTR",
+    "source_urls": [
+      "https://github.com/do-mpc/do-mpc/tree/9d5a8df0e4d6acac899bf0a65ffd4c30a6e2e4cc/examples/CSTR"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "reference record; task views can overlap native experiments",
+    "key": "process/cstr_control_transitions",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/process/cstr_control_transitions.jsonl.gz",
+    "qualification": "Derived simulation:12 seeded excitation episodes,50 transitions each,not600 experimental reactor runs. Native model usesA→B→C plus competing2A→D. Source equations, kinetics, heat-transfer constants, action bounds,0.005h sampling andC_b=0.6 objective retained. Integrator changed to deterministicSciPyDOP853; dynamic control evaluates a proposed policy with the explicit transition oracle. No claim of matching native robustMPC or proving plant safety.",
+    "role": "primary",
+    "rows": 600,
+    "sha256": "f027ddcfd313234ca9fb3b448d2767f7f190807732f441fc6e522b86fe3b511a",
+    "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+    "source_id": "DOMPCCSTR",
+    "source_urls": [
+      "https://github.com/do-mpc/do-mpc/tree/9d5a8df0e4d6acac899bf0a65ffd4c30a6e2e4cc/examples/CSTR"
+    ],
+    "title": "CSTR control transitions"
+  },
+  "stored_path": "Data/families/process/process_control/coverage/process/cstr_control_transitions/data.jsonl.gz",
+  "task_id": "process_control",
+  "title": "CSTR control transitions"
+}

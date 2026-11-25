@@ -1,0 +1,12 @@
+{
+  "source_id": "C09",
+  "name": "targets_n5.txt",
+  "bytes": 487792,
+  "checksum": "md5:9ef17bb2b615259f0a2899e300e88882",
+  "url": "https://zenodo.org/api/records/7341155/files/targets_n5.txt/content",
+  "path": "Data/raw/synrxn2/C09/targets_n5.txt",
+  "bytes_observed": 487792,
+  "sha256": "dd5d37e63ec05c3d72fee14607e4bd90d0ccc4eedf38129cd69dab3e5bdb0e56",
+  "md5": "9ef17bb2b615259f0a2899e300e88882",
+  "status": "verified"
+}

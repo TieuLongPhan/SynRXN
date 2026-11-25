@@ -1,0 +1,7 @@
+C03: Cernak C–N coupling screen
+Data license: CC-BY-SA-4.0
+ORD data license; Apache-2.0 applies separately to code.
+
+Primary source and attribution:
+https://doi.org/10.1021/jacs.6c05959
+https://open-reaction-database.org/dataset/ord_dataset-805ad863feef48579d95d86a728035f4

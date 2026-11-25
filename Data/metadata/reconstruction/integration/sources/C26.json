@@ -1,0 +1,17 @@
+{
+  "id": "C26",
+  "name": "PMechDB / RMechDB",
+  "priority": "3 Hold for terms",
+  "survey_license_note": "CC BY-NC-ND terms reported by official pages. Hold modified redistribution pending permission/clarification.",
+  "paper_urls": [
+    "https://deeprxn.ics.uci.edu/pmechdb/download"
+  ],
+  "data_urls": [
+    "https://deeprxn.ics.uci.edu/rmechdb/howtouse"
+  ],
+  "project_urls": [],
+  "license_urls": [],
+  "license_verified": false,
+  "files": [],
+  "requests": []
+}

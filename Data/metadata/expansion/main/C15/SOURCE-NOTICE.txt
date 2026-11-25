@@ -1,0 +1,7 @@
+C15: CatPred-DB
+Data license: MIT
+Zenodo data-record grant; retain original BRENDA/SABIO-RK attribution and measurement provenance.
+
+Primary source and attribution:
+https://www.nature.com/articles/s41467-025-57215-9
+https://zenodo.org/records/14775076

@@ -1,0 +1,227 @@
+{
+  "schema": "synrxn.coverage-physics-rates.v1",
+  "sources": [
+    {
+      "id": "QuantumPioneer2026",
+      "name": "QuantumPioneer native HAT kinetics",
+      "url": "https://doi.org/10.5281/zenodo.20060606",
+      "paper_url": "https://doi.org/10.1021/jacs.6c10371",
+      "creators": [
+        "Wu, Haoyang",
+        "Zheng, Jonathan W.",
+        "Pang, Hao-Wei",
+        "Kao, Yu-Chi",
+        "Zalte, Akshat Shirish",
+        "Abreu, Charlles R. A.",
+        "Al Ibrahim, Emad",
+        "Biswas, Sayandeep",
+        "Byun, Chansup",
+        "Burns, Jackson W.",
+        "Cao, Chuangchuang",
+        "Chung, Yunsie",
+        "Dong, Xiaorui",
+        "Doner, Anna",
+        "Kepner, Jeremy",
+        "Koo, Bonhyeok",
+        "Li, Shih-Cheng",
+        "Menon, Angiras",
+        "Milechin, Lauren",
+        "Morgan, Nathan",
+        "Moreno Sader, Kariana",
+        "Spiekermann, Kevin",
+        "Vermeire, Florence",
+        "Wang, Bryan",
+        "Kraft, Markus",
+        "Coley, Connor W.",
+        "Green, William H."
+      ],
+      "license": "CC-BY-4.0",
+      "data_license_spdx": "CC-BY-4.0",
+      "redistribution_allowed": true,
+      "release_status": "redistributable_with_attribution_and_source_notices",
+      "source_sha256": "1c1a836d371248cc47689450476c8cccfabd50bf9058cedad430e2a9a9ede213",
+      "files": [
+        {
+          "path": "Data/raw/coverage/physics/QuantumPioneer2026/quantumpioneer_kinetics_dataset.csv",
+          "sha256": "1c1a836d371248cc47689450476c8cccfabd50bf9058cedad430e2a9a9ede213",
+          "bytes": 39105280
+        },
+        {
+          "path": "Data/raw/coverage/physics/QuantumPioneer2026/SCHEMA.md",
+          "sha256": "992eb13db2db0c6fb5add0b36cf0c2d0179a527999e22f2016611d8df297df54",
+          "bytes": 12318
+        },
+        {
+          "path": "Data/raw/coverage/physics/QuantumPioneer2026/metadata.json",
+          "sha256": "31cb9e033e427f9a63a466bdcf733c5842992ad3807dce25c46fe50ae465ef68",
+          "bytes": 11842
+        }
+      ],
+      "reference_evidence": "Computed native transition-state-theory rate coefficients and source Arrhenius fits; DLPNO+scaledDFTZPE barrier and reaction thermo references. Not experimental measurements.",
+      "rights": {
+        "scope": "actual native Zenodo dataset assets",
+        "grant_url": "https://zenodo.org/api/records/20060606",
+        "grant_snapshot": {
+          "path": "Data/raw/coverage/physics/QuantumPioneer2026/metadata.json",
+          "sha256": "31cb9e033e427f9a63a466bdcf733c5842992ad3807dce25c46fe50ae465ef68"
+        },
+        "license_terms_url": "https://creativecommons.org/licenses/by/4.0/",
+        "license_snapshot": {
+          "path": "Data/coverage_expansion/physics_rates/CC-BY-4.0.txt",
+          "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+        },
+        "notice": {
+          "path": "Data/coverage_expansion/physics_rates/QuantumPioneer2026.NOTICE.txt",
+          "sha256": "0bef62a4914db23b9c18c2deb2cd99a3b652963f01e451cf4f37f9bcc14f6cb9"
+        }
+      },
+      "upstream_assets": [
+        {
+          "name": "quantumpioneer_kinetics_dataset.csv",
+          "bytes": 39105280,
+          "md5": "a9f4df281b82ab8ee9980bad0b8012e2",
+          "url": "https://zenodo.org/api/records/20060606/files/quantumpioneer_kinetics_dataset.csv/content"
+        },
+        {
+          "name": "SCHEMA.md",
+          "bytes": 12318,
+          "md5": "d0e7f364ac456c5fadf062636d6bbbcb",
+          "url": "https://zenodo.org/api/records/20060606/files/SCHEMA.md/content"
+        }
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "id": "quantumpioneer_hAT_kinetics",
+      "path": "Data/coverage_expansion/physics_rates/quantumpioneer_kinetics.csv",
+      "task_ids": [
+        "reaction_rates",
+        "activation_barrier",
+        "reaction_energetics"
+      ],
+      "rows": 166158,
+      "counting_unit": "native computed HAT reaction with k298 and thermo-kinetic references",
+      "source_id": "QuantumPioneer2026",
+      "source_url": "https://doi.org/10.5281/zenodo.20060606",
+      "source_sha256": "1c1a836d371248cc47689450476c8cccfabd50bf9058cedad430e2a9a9ede213",
+      "license": "CC-BY-4.0",
+      "columns": [
+        "source_record_id",
+        "source_row_index",
+        "reaction_smiles",
+        "reactant_pair_group",
+        "proposed_split",
+        "temperature_K",
+        "reference_kind",
+        "theory",
+        "rate_unit",
+        "energy_unit",
+        "k_298",
+        "log10_k_298",
+        "A_low",
+        "Ea_low",
+        "A_high",
+        "Ea_high",
+        "barrier",
+        "deltaHrxn",
+        "deltaHrxn298",
+        "deltaGrxn298",
+        "P2M"
+      ],
+      "sha256": "e81aa5f9158564e64356a524c046469e2a13e471469ff641713ded3c37ff1520",
+      "task_fields": {
+        "reaction_rates": {
+          "inputs": [
+            "reaction_smiles",
+            "temperature_K",
+            "theory"
+          ],
+          "targets": [
+            "k_298",
+            "log10_k_298"
+          ],
+          "group_fields": [
+            "reactant_pair_group",
+            "source_record_id",
+            "proposed_split"
+          ],
+          "metrics": [
+            "MAE_log10_k298",
+            "RMSE_log10_k298",
+            "coverage"
+          ],
+          "qualification": "Primary target is bimoleculark298; logarithm is the same target in transformedscale, not an independent label. ArrheniusA/Ea must never be input features for k298prediction."
+        },
+        "activation_barrier": {
+          "inputs": [
+            "reaction_smiles",
+            "theory"
+          ],
+          "targets": [
+            "barrier"
+          ],
+          "group_fields": [
+            "reactant_pair_group",
+            "source_record_id",
+            "proposed_split"
+          ],
+          "metrics": [
+            "MAE_kcal_per_mol",
+            "RMSE_kcal_per_mol"
+          ],
+          "qualification": "DLPNO+scaledDFTZPE forward potential-energy barrier; notEa_low/Ea_high and notGibbsactivationfreeenergy."
+        },
+        "reaction_energetics": {
+          "inputs": [
+            "reaction_smiles",
+            "temperature_K",
+            "theory"
+          ],
+          "targets": [
+            "deltaHrxn",
+            "deltaHrxn298",
+            "deltaGrxn298"
+          ],
+          "group_fields": [
+            "reactant_pair_group",
+            "source_record_id",
+            "proposed_split"
+          ],
+          "metrics": [
+            "separate_quantity_MAE_kcal_per_mol"
+          ],
+          "qualification": "Separate0Kreactionenthalpy,298Kenthalpy,298KGibbsreactionenergy variants; never collapse into a single scalarphysicalquantity. NativeCSVdeltaHrxn corresponds to SCHEMAHrxn naming."
+        }
+      },
+      "reference_evidence": "Computed native transition-state-theory rate coefficients and source Arrhenius fits; DLPNO+scaledDFTZPE barrier and reaction thermo references. Not experimental measurements.",
+      "release_status": "redistributable_with_attribution_and_source_notices",
+      "target_units": {
+        "k_298": "m^3/(mol*s)",
+        "log10_k_298": "log10 of rate expressed in m^3/(mol*s)",
+        "A_low": "m^3/(mol*s)",
+        "Ea_low": "kcal/mol;300-1000Kfit",
+        "A_high": "m^3/(mol*s)",
+        "Ea_high": "kcal/mol;1000-2000Kfit",
+        "barrier": "kcal/mol;DLPNO+scaledDFTZPE",
+        "deltaHrxn": "kcal/mol;DLPNO+scaledDFTZPE",
+        "deltaHrxn298": "kcal/mol;298K",
+        "deltaGrxn298": "kcal/mol;298K",
+        "P2M": "kcal/mol;sourcePetersson-to-Melius298K"
+      },
+      "parent_groups": 135993,
+      "proposed_split_counts": {
+        "train": 133299,
+        "test": 16329,
+        "validation": 16530
+      },
+      "qualification": "Full166158 native positive finitek298 references. Native rates/TST are computed; no conversion to lograte legacy sourceunits. Exactrecorded-reactant groups keep candidateH-abstractionsites of same source reactants together; proposed split is new and does not establish scaffold independence. KineticCSVhasgasreferenceTST/thermo; no per-solvent correction inferred from separate solvationassets. No independent physical recomputation."
+    }
+  ],
+  "adapter": {
+    "path": "kdd/coverage/adapters/quantumpioneer.py",
+    "sha256": "7360b44401e6bf8bb60c2cccb7107d6ac329bb79d0b660426507c133968c4057",
+    "offline_command": "python kdd/coverage/adapters/quantumpioneer.py",
+    "acquisition_command": "python kdd/coverage/adapters/quantumpioneer.py --fetch"
+  }
+}

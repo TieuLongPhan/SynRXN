@@ -1,0 +1,7 @@
+C09: PaRoutes 2.0
+Data license: CC-BY-4.0
+Zenodo data grant; software separately Apache-2.0.
+
+Primary source and attribution:
+https://doi.org/10.1039/D2DD00015F
+https://zenodo.org/records/7341155

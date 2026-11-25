@@ -1,0 +1,46 @@
+{
+  "id": "C21",
+  "name": "LiPRED",
+  "priority": "3 Optional",
+  "survey_license_note": "Paper states data CC BY. Verify exact deposited version and files.",
+  "paper_urls": [
+    "https://pubs.rsc.org/en/content/articlehtml/2026/cp/d6cp00088f"
+  ],
+  "data_urls": [
+    "https://doi.org/10.5281/zenodo.8396100"
+  ],
+  "project_urls": [],
+  "license_urls": [],
+  "license_verified": true,
+  "files": [
+    {
+      "name": "supplementary_material_v3.zip",
+      "bytes": 36346814,
+      "checksum": "md5:7934b25adb63b520ac504db615874bb3",
+      "url": "https://zenodo.org/api/records/16358189/files/supplementary_material_v3.zip/content"
+    },
+    {
+      "name": "README.md",
+      "bytes": 1619,
+      "checksum": "md5:863b9acd64d0e18a01281c61868d2b85",
+      "url": "https://zenodo.org/api/records/16358189/files/README.md/content"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://zenodo.org/api/records/8396100",
+      "status": 200,
+      "sha256": "83fda927a81e5e20da2fd072f81aaeb5404e606c458e1cf78605123fb8f52619",
+      "bytes": 4641,
+      "retrieved_at": "2026-10-20T15:35:18.482981+00:00"
+    }
+  ],
+  "record_id": "8396100",
+  "doi": "10.5281/zenodo.16358189",
+  "title": "Dataset for \"Solvent design assisted by mechanistic insights: methods and application to peptide synthesis\"",
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "publication_date": "2025-07-23",
+  "description": "<p>Dataset accompanying the PhD thesis \"Solvent design assisted by mechanistic insights: methods and application to peptide synthesis\"</p>\n<div>\n<div>The supplementary material in `chapter6` is also relevant for the paper \"On the Design of Optimal Computer Experiments to Model Solvent Effects on Reaction Kinetics\", submitted to the Journal of Molecular Systems Design &amp; Engineering.</div>\n</div>"
+}

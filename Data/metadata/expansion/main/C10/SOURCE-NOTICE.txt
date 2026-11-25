@@ -1,0 +1,7 @@
+C10: RxnSolvKSE (Chung–Green)
+Data license: CC-BY-4.0
+Zenodo grant and explicit data README; preserve source studies.
+
+Primary source and attribution:
+https://pubs.rsc.org/en/content/articlehtml/2024/sc/d3sc05353a
+https://zenodo.org/records/8423911

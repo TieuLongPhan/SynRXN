@@ -328,8 +328,7 @@ def run_parametric(
     left_xlim: float = -0.5,
     right_xlim: float = 0.5,
 ) -> Dict[str, Dict[str, str]]:
-    """
-    Parametric family:
+    """Parametric family:
       - RM-ANOVA per metric
       - Tukey HSD (RM) + MCS heatmap + CI plot
 
@@ -351,7 +350,7 @@ def run_parametric(
     :type left_xlim: float
     :param right_xlim: Right x-limit for CI plots.
     :type right_xlim: float
-    :returns: Mapping metric -> {"anova_dir":..., "tukey_dir":...}
+    :return: Mapping metric -> {"anova_dir":..., "tukey_dir":...}
     :rtype: Dict[str, Dict[str,str]]
     """
     df_long, metrics, methods = extract_scoring_dfs(

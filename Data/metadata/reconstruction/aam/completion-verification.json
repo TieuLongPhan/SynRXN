@@ -1,0 +1,36 @@
+{
+  "aam_regression_tests_before_timeout_guard_test": {
+    "command": "python -m pytest -q Test/aam Test/reconstruction/builders/test_aam.py",
+    "passed": 71,
+    "subtests_passed": 3
+  },
+  "archive": "Data/archives/aam_review/completion-experiment-2026-10-27",
+  "benchmark_changed": false,
+  "completion_manifest_sha256": "23c017dfd22b29ac59a008a74f40d1a3b8d525e6630db3ff36972dafd67f9e2e",
+  "completion_source_sha256": "afbf7c464bdbc420d9c599fcbc4015daf5d221625fa2cba51ee2c91f274957d2",
+  "completion_tests": {
+    "command": "python -m pytest -q Test/aam/test_aam_completion.py",
+    "passed": 8
+  },
+  "existing_unique_benchmark_verification_passed": true,
+  "inputs_with_labels_filled": 149,
+  "lint_passed": true,
+  "new_heavy_labels": 1521,
+  "outcomes": {
+    "completed": 1,
+    "no_certified_completion": 118,
+    "unbalanced_heavy_inventory": 4366
+  },
+  "partial_inputs": 4485,
+  "pool_manifest_sha256": "f48413a0e6f8f74efe5e692d6c6bdffec36e6dc07881468a363d2a7dddeb9dc1",
+  "selection_status": "historical_not_selected",
+  "source_pool_archive": "Data/archives/aam_review/before-raw-retention-policy-2026-10-27/aam_unique",
+  "source_pool_changed": false,
+  "sphinx_warnings_as_errors_passed": true,
+  "two_runs_identical_csv_gzip_sha256": {
+    "attempts.csv.gz": "5216d6090d9e41e2d58ad8be466e8b12a3ad343b126b2231dfa1ab982ad5e0ef",
+    "completed.csv.gz": "5bedfe5f821300bb777c56a307e3a04a56462e6c1f2be4a4181a4d91e48c6b8c",
+    "labelled.csv.gz": "f65bda750071c0f639be845c89109ba1d7b5adf6c86d0f5caf4e321717ccd51c"
+  },
+  "verified": true
+}

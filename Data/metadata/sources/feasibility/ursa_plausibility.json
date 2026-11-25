@@ -1,0 +1,14 @@
+{
+  "dataset": "ursa_plausibility",
+  "decision": "excluded_model_proposed_reactions_not_experimental",
+  "downloaded_file": "URSA-reaction-plausibility-bench-2026.csv",
+  "license_evidence": "The official Hugging Face dataset card declares license: apache-2.0 and states that the release is distributed under Apache License 2.0.",
+  "license_spdx": "Apache-2.0",
+  "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+  "release_status": "audit_only_excluded_from_synrxn_release",
+  "retrieved_at": "2026-08-22",
+  "source_file_size": 90374,
+  "source_revision": "6733b1149e99b0986f8b627c4d0c3df5efb16852",
+  "source_sha256": "052ca46969e3a17927b9e6ba148e318d700d67dc7eacde64011187fa3e95e652",
+  "source_url": "https://huggingface.co/datasets/insilicomedicine/URSA-benchmarking-sets/resolve/6733b1149e99b0986f8b627c4d0c3df5efb16852/URSA-reaction-plausibility-bench-2026.csv"
+}

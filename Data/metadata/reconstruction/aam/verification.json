@@ -1,0 +1,162 @@
+{
+  "all_eight_published_members_restored_without_existing_tables": true,
+  "checks": {
+    "all_selected_datasets_verified": "11 datasets, 101480 rows",
+    "cyclic_first_references_vs_original_archive": "177 exact normalized matches",
+    "docstring_style": "passed",
+    "dump_export_without_native_chemistry_imports": "passed",
+    "flake8": "passed",
+    "fresh_validation_rebuild_after_old_source_removal": "passed",
+    "full_archive_fallback_for_paper_subset": "disabled; explicit missing-source error tested",
+    "metamdb_flake8": "passed",
+    "metamdb_reference_preservation": "27451 exact target/input memberships retained",
+    "metamdb_targeted_pytest": "19 passed, 3 subtests passed",
+    "python_file_sizes": "passed",
+    "sphinx_warnings_as_errors": "passed",
+    "targeted_pytest": "31 passed",
+    "test_package_layout": "passed"
+  },
+  "dataset_table_sha256": {
+    "brenda": "a02d0e4cb2a88571502212b38801dc8ca93a489bfd7a04ea95a7d1a31d4c2c99",
+    "ecoli": "71f79d32b8e3764cad81b8abe4b324aa6325edee94aba3ab5c338f676e7f1b5d",
+    "ehreact": "57943c7f063d82d47b4df68a5d607be8280e679799608e6c9e3054bc8e5463d4",
+    "enzyme_map": "672f30dfd2cbafbfbcee5ff3a02d79471ff1854210424d4cae03d1dee76f43c4",
+    "flower": "7f39c66ac2d7aec0a5fa333bf6f6e9ebb0b15328dc698785c17991d2291d76d0",
+    "golden": "4eb1d06ae7a80d7b89dd2c574a51a7e834d26621324a585e37b2dc739383556a",
+    "metambd_cyclic": "f6a21d7d3e00575555696713945c9a99933a1a10361f17237711f2859dbbc5c7",
+    "natcomm": "d551531967bd6b83200375d7d9b41074742cd68b3351a61b9f444f6a624c679d",
+    "recon3d": "d7fcf7fc48808aa33790fdbe470a352d21a87a1f1bc1f263822278850f7cd364",
+    "sihumix": "a50cab432354906184432b2c890db4d2188abab5bcdbab19ce2e584a06d65d3b",
+    "uspto_3k": "61ae14ec957d7915d725b20b8c4634407431e20cc672e85f720e2cbf99eede15"
+  },
+  "datasets": 11,
+  "date": "2026-10-27",
+  "export_python": "3.12.12",
+  "flower_global_center_update": {
+    "all_eleven_dataset_verification_passed": true,
+    "annotation_pin": {
+      "definition": "Global exact center isomorphism; one-step two-state MC equals RC; existing source roles retained",
+      "path": "Data/metadata/reconstruction/flower/center_annotations.csv.gz",
+      "rebuild_command": [
+        "python",
+        "scripts/group_flower_centers.py"
+      ],
+      "sha256": "eccf1f2e36ad223692a9d04bd27aa0f026439fe8a4101d0e667abf08bb51a87b"
+    },
+    "enriched_export_repeat_byte_identical": true,
+    "frozen_source_fields_preserved": true,
+    "global_classes": 24410,
+    "historical_six_column_table_sha256": "e3510ca5fa8b12c2e622516ebcf0b940d0c8e4825a400f01ad587d4bd770bff6",
+    "native_roles_preserved": true,
+    "qualification": "The earlier fresh full-pool proof predates this grouping metadata; enriched Flower repetition verified separately.",
+    "report": "Data/metadata/reconstruction/flower/center_report.json",
+    "rows": 34815
+  },
+  "fresh_directory_all_dataset_payloads_byte_identical": null,
+  "fresh_directory_dataset_payloads_verified": [
+    "metambd_cyclic"
+  ],
+  "historical_before_metamdb_first_reference_update": {
+    "checks": {
+      "docstring_style": "passed",
+      "dump_export_without_native_chemistry_imports": "passed",
+      "flake8": "passed",
+      "fresh_validation_rebuild_after_old_source_removal": "passed",
+      "python_file_sizes": "passed",
+      "sphinx_warnings_as_errors": "passed",
+      "targeted_pytest": "31 passed",
+      "test_package_layout": "passed"
+    },
+    "datasets": 11,
+    "fresh_directory_all_dataset_payloads_byte_identical": true,
+    "metambd_cyclic_table_sha256": "bbf699562c9479a89793e71fd9ffe12b7c9a30e23a9a7ce17bc58c901ebc45df",
+    "rows": 101480
+  },
+  "historical_checks_before_flower_update": {
+    "docstring_style": "passed",
+    "flake8": "passed",
+    "python_file_sizes": "passed",
+    "sphinx_warnings_as_errors": "passed",
+    "synrxn_environment_aam_tests": "9 passed",
+    "targeted_pytest": "51 passed",
+    "test_package_layout": "passed"
+  },
+  "implementation_sha256": {
+    "Data/metadata/reconstruction/aam/registry.json": "94c3b5df3aa5126c80eb66b8f42a5a4784ead2f6129de26595c5a14ed0d1a6b4",
+    "Test/aam/test_metamdb_build.py": "7eaf216361f71b3919b26a4b3f351c6f046ba1384fb0cca9138e1417b026d854",
+    "Test/reconstruction/builders/test_aam.py": "c37a0ee190ccdac12d03b7a1017f1c1b1836276f207b82b4f69d8c9c968a2d00",
+    "scripts/audit_metamdb_aam.py": "c397bb307330bff871786dc15a583dc6795813c3aee91dc2a5117dfd3d64f4d3",
+    "scripts/build_aam.py": "9444e61a46cc9daed5dd787243fe836b0a0befd7fe7d2299d0dd0ac3cb6d54df",
+    "scripts/build_metamdb_aam.py": "44a54826792ca3e021ce0dcd31bb9aa24a88fcdafb3d7c5b5c3389b1fd3d9bbe",
+    "synrxn/reconstruction/builders/aam.py": "058fdaecb001af21e855654bc2460bb41a4bb7d65f0e2294f348266aa9d907c3",
+    "synrxn/reconstruction/builders/aam_benchmark.py": "648262c85483e7c5c4b23b2a4ba358020e8e4fac704a2524742e008a18ef1fce",
+    "synrxn/reconstruction/builders/aam_sources.py": "24fb6ecccce1a6ac66f495b560fa313488497f94bd535f21177f80924f167d9a"
+  },
+  "native_rebuilds": {
+    "flower": {
+      "fresh_validation_raw_rebuild_rows": 2735,
+      "fresh_validation_rebuild_after_old_source_removal": true,
+      "frozen_snapshot_export_byte_identical": true,
+      "full_multistep_train_prefixes_verified_before_packaging": 981069,
+      "legacy_processing_folders_required": false,
+      "rows": 34815,
+      "source": "Data/dumps/flower.dump.zip"
+    },
+    "metambd_cyclic": {
+      "by_role": {
+        "test": 36,
+        "train": 141
+      },
+      "deduplication": "none",
+      "first_reference_only": true,
+      "fresh_public_download_aam_byte_identical": true,
+      "legacy_downloads_required": false,
+      "rows": 177,
+      "source": {
+        "path": "Data/raw/metamdb/brmapper/code/02_data_preprocessing/input_data/ringreactions_gt.csv",
+        "sha256": "54d8f4d6f4598bee6acd93df54d2136d2f412b5cc551c50271069c8c9c2cd20f",
+        "url": "https://raw.githubusercontent.com/NoraBeier/BRMapper/b1d428f3ed2d1ef5a1311150cc335ba1a916c06a/code/02_data_preprocessing/input_data/ringreactions_gt.csv"
+      }
+    },
+    "sihumix": {
+      "processor": "conda environment synrxn",
+      "rows": 8533,
+      "source": "pinned upstream archive"
+    }
+  },
+  "output_root": "Data/tables/development/aam",
+  "pending_datasets": [
+    {
+      "active_export": null,
+      "finding": "The released CSV has 49,928 rows and no selection/validation flags. No 4,456-row subset or selected-ID list was found in the repository, its history, branches, releases or relevant local downloads.",
+      "name": "metamdb",
+      "paper_url": "https://ssrn.com/abstract=7404606",
+      "requested_rows": 4456,
+      "retired_full_archive_export": "Data/archives/metamdb/full-qc-27451-1375c16b/aam-export",
+      "status": "awaiting_exact_author_subset_or_id_list",
+      "upstream_repository": "https://github.com/NoraBeier/BRMapper/tree/b1d428f3ed2d1ef5a1311150cc335ba1a916c06a"
+    }
+  ],
+  "published_archive_download_sha256_verified": true,
+  "restored_published_rows": 57955,
+  "retired_native_rebuilds": {
+    "metamdb_full_archive_qc": {
+      "by_role": {
+        "unsplit": 27451
+      },
+      "deduplication": "none",
+      "first_reference_only": true,
+      "fresh_public_download_aam_byte_identical": true,
+      "legacy_downloads_required": false,
+      "rows": 27451,
+      "source": {
+        "path": "Data/raw/metamdb/atom_mappings.zip",
+        "sha256": "b460f3ec5f842f757e35ad9eb0df0e5edf3450c289c272b2bfdcfb88c3689616",
+        "url": "https://metamdb.tu-bs.de/img/atom_mappings.zip"
+      }
+    }
+  },
+  "rows": 101480,
+  "schema": "synrxn.aam-verification.v1",
+  "source_records_and_chemical_strings_preserved": true
+}

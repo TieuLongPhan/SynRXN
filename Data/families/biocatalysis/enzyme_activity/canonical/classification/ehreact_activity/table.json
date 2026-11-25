@@ -1,0 +1,83 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "biocatalysis",
+  "format": "csv.gz",
+  "key": "classification/ehreact_activity",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "classification/ehreact_activity",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "BSD-3-Clause",
+    "rights_status": "verified_repository_dataset_grant",
+    "role": "primary",
+    "rows": 1943
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "ehreact_license",
+      "ehreact_readme",
+      "ehreact_native_alcoholdehydrogenase",
+      "ehreact_native_amidinotransferase",
+      "ehreact_native_aminedehydrogenase",
+      "ehreact_native_carboxylmethyltransferase",
+      "ehreact_native_csp2_csp3_coupling",
+      "ehreact_native_dehalogenase",
+      "ehreact_native_nitrilase",
+      "ehreact_native_transaminase",
+      "ehreact_native_tryptophan_synthase"
+    ],
+    "expected_bytes": 86714,
+    "expected_rows": 1943,
+    "expected_sha256": "eb38c0a10358fff35a616c6ae4255efd2a6bb00b8f02cc6e2dde00943fba8192",
+    "format": "csv.gz",
+    "key": "classification/ehreact_activity",
+    "license_expression": "BSD-3-Clause",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/classification/ehreact_activity.csv.gz",
+    "qualification": "Actual nine manuscript assay CSVs captured from the same pinned author repository as its root BSD3 redistribution notice. No separate contradictory data terms were found; preserve the original copyright, conditions and disclaimer for these derived tables.",
+    "rights_status": "verified_repository_dataset_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 1943,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "heid2021ehreact"
+    ],
+    "path": "Data/classification/ehreact_activity.csv.gz",
+    "sha256": "eb38c0a10358fff35a616c6ae4255efd2a6bb00b8f02cc6e2dde00943fba8192",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "heid2021ehreact"
+    ],
+    "counting_unit": "source-table row",
+    "key": "classification/ehreact_activity",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/classification/ehreact_activity.csv.gz",
+    "role": "primary",
+    "rows": 1943,
+    "sha256": "eb38c0a10358fff35a616c6ae4255efd2a6bb00b8f02cc6e2dde00943fba8192",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "EHreact reaction activity"
+  },
+  "stored_path": "Data/families/biocatalysis/enzyme_activity/canonical/classification/ehreact_activity/data.csv.gz",
+  "task_id": "enzyme_activity",
+  "title": "EHreact reaction activity"
+}

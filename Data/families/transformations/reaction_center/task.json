@@ -1,0 +1,69 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 1,
+    "data_links": 1,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 1,
+    "stored_rows_across_unique_views": 479035,
+    "task_table_bindings": 1,
+    "tasks": 1,
+    "unique_table_views": 1
+  },
+  "tables": [
+    {
+      "data_link": "canonical/synthesis/uspto_mit/data.csv.gz",
+      "key": "synthesis/uspto_mit",
+      "metadata": "canonical/synthesis/uspto_mit/table.json",
+      "namespace": "canonical"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "synthesis/uspto_mit",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND CC0-1.0",
+        "rights_status": "verified_curated_product_grant_with_open_base",
+        "role": "primary",
+        "rows": 479035
+      }
+    ],
+    "canonical_keys": [
+      "synthesis/uspto_mit"
+    ],
+    "counting_units": [
+      "source-table row"
+    ],
+    "extension_adapter_ids": [],
+    "family_id": "transformations",
+    "id": "reaction_center",
+    "legacy_view_ids": [],
+    "metrics": [
+      "center_precision",
+      "center_recall",
+      "center_F1",
+      "coverage"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 479035,
+    "primary_table_count": 1,
+    "qualification": "The rc target exists, but its source index basis and label derivation must be qualified before a new benchmark view is advertised.",
+    "question": "Reactant structures -> source-annotated reactive atom/bond centers",
+    "readiness": "local_source_data; standardized_task_contract_needed",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 1,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Reaction-center prediction"
+  }
+}

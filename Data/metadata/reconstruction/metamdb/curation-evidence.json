@@ -1,0 +1,75 @@
+{
+  "checked_on": "2026-10-27",
+  "paper": {
+    "doi": "10.3390/metabo12020122",
+    "year": 2022,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8878866/",
+    "reported_manually_curated_reactions": "around 1000",
+    "qualification": "Historical publication figure, not a current live count or a ZIP-specific count."
+  },
+  "documentation": {
+    "url": "https://metamdb.github.io/docs/database-search/",
+    "statuses": [
+      "manually curated",
+      "automatically generated"
+    ]
+  },
+  "source_code": {
+    "repository": "https://github.com/metamdb/metamdb",
+    "commit": "af2e7c1b77a8eac34642d338c42e7feba41115a2",
+    "ui_field": "updated",
+    "ui_label": "Curated",
+    "ui_file": "client/src/components/database-query/DatabaseQuery.jsx",
+    "review_approval_file": "server/src/routes/review.py",
+    "review_update_method": "ReactionHistory.update_reaction in server/src/models/casm.py"
+  },
+  "live_api_sample": {
+    "url": "https://metamdb.tu-bs.de/api/reactions/1",
+    "id": 1,
+    "updated": false,
+    "balanced": true,
+    "qualification": "One observed record. Not a sample-based estimate of total curated reactions."
+  },
+  "complete_live_metadata_request": {
+    "url": "https://metamdb.tu-bs.de/api/query",
+    "method": "POST",
+    "operation": "read-only reaction search",
+    "form": {
+      "query": "",
+      "type": "name"
+    },
+    "result": "HTTP 504 Gateway Time-out",
+    "elapsed_seconds": 72.46
+  },
+  "archive_curation_labels_present": false,
+  "current_manually_curated_reaction_count": null,
+  "claim_10000_validated_reactions": "Supported as a reported claim by the newer BRMapper preprint: 10,579 validated reactions. The selected IDs and validation filter remain unreproduced from the available full release.",
+  "meaning_of_empty_curated_export": "No references established with matching reviewed source payloads; does not imply MetAMDB has zero manually curated reactions.",
+  "brmapper_preprint": {
+    "url": "https://ssrn.com/abstract=7404606",
+    "title": "Predicting the Best Reaction Mechanism: An Alternative Machine Learning Approach for Generating Atom-to-Atom Maps",
+    "section": "2.3 Datasets",
+    "pdf_page": 9,
+    "local_pdf": "b8c948cc-4650-4b21-a5d7-3e1f33c838b7-meca.pdf",
+    "pdf_sha256": "3a155ffb3624add20c8067815d39ed586a16056e74fd3b2dfafa07e1553a219d",
+    "reported_validated_reactions": 10579,
+    "reported_after_representation_complexity_filter": 4456,
+    "qualification": "Counts and the expert-inspection interpretation are reported by the paper, not independently verified curation membership for the ZIP."
+  },
+  "brmapper_release": {
+    "repository": "https://github.com/NoraBeier/BRMapper",
+    "commit": "b1d428f3ed2d1ef5a1311150cc335ba1a916c06a",
+    "full_table": "data/aam_metamdb.csv",
+    "rows": 49928,
+    "columns": [
+      "reaction_id",
+      "reaction_smiles"
+    ],
+    "curation_flags_present": false,
+    "native_id_set_equal_full_zip": true,
+    "ring_ground_truth_table": "code/02_data_preprocessing/input_data/ringreactions_gt.csv",
+    "ring_ground_truth_rows": 177,
+    "qualification": "Author-supplied reference mappings. The released full CSV does not isolate the claimed 10,579 manually reviewed reactions."
+  },
+  "crosscheck": "See reaction-1-crosscheck.json: CSV membership, matching mapping/RXN payload, but live updated=false and balanced=true."
+}

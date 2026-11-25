@@ -1,0 +1,12 @@
+{
+  "source_id": "C09",
+  "name": "targets_n1.txt",
+  "bytes": 459136,
+  "checksum": "md5:29425c56cd51cdb55047f9a65f088f89",
+  "url": "https://zenodo.org/api/records/7341155/files/targets_n1.txt/content",
+  "path": "Data/raw/synrxn2/C09/targets_n1.txt",
+  "bytes_observed": 459136,
+  "sha256": "14661af6052a8c2e6dad4c142b8d8693ed87692c5eee0d280110357a5af5e1ab",
+  "md5": "29425c56cd51cdb55047f9a65f088f89",
+  "status": "verified"
+}

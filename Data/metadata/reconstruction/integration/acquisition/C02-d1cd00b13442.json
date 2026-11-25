@@ -1,0 +1,12 @@
+{
+  "source_id": "C02",
+  "name": "Minot_AL1_Data.csv",
+  "bytes": 1140015,
+  "checksum": "md5:4f7d2d265ac5b5c7c1ffe46a27ec20e0",
+  "url": "https://zenodo.org/api/records/20773622/files/Minot_AL1_Data.csv/content",
+  "path": "Data/raw/synrxn2/C02/Minot_AL1_Data.csv",
+  "bytes_observed": 1140015,
+  "sha256": "56b5e6a470bef65f5d2d392fc458df0d2fc9c33360f6cc34673986074ba8f023",
+  "md5": "4f7d2d265ac5b5c7c1ffe46a27ec20e0",
+  "status": "verified"
+}

@@ -1,0 +1,906 @@
+{
+  "schema": "synrxn.source-lineage.v1",
+  "scope": "Metadata only; active implementations do not load archived bodies",
+  "entries": [
+    {
+      "historical_path": "kdd/build_hierarchy.py",
+      "archive_path": "archive/source-code/kdd/build_hierarchy.py",
+      "sha256": "e194a3fd78062b99fe54f40d735dd55487d26d26a20de655c76976a10c1ccf38",
+      "bytes": 25458
+    },
+    {
+      "historical_path": "kdd/coverage/__init__.py",
+      "archive_path": "archive/source-code/kdd/coverage/__init__.py",
+      "sha256": "53102793a5abd37dd68efcb7706a9bfc3b3bdf19249110d678da517d1cbfe98b",
+      "bytes": 82
+    },
+    {
+      "historical_path": "kdd/coverage/adapters/__init__.py",
+      "archive_path": "archive/source-code/kdd/coverage/adapters/__init__.py",
+      "sha256": "d45dfcfa57c70ec34999a83ced957185f0f77ae4649f3201f8d1166966e6fb28",
+      "bytes": 80
+    },
+    {
+      "historical_path": "kdd/coverage/adapters/bio.py",
+      "archive_path": "archive/source-code/kdd/coverage/adapters/bio.py",
+      "sha256": "8117dc682de2168c25fe1d1705c067d3afb4a1c5a870b89f1e3faae6778f8df0",
+      "bytes": 55396,
+      "module_path": "synrxn/reconstruction/families/biocatalysis/_source_tables.py",
+      "module_sha256": "e39ddc3ccfbbdfa608e13b463591d8d287849ef0713d5ce80dec5e497aeba6d9"
+    },
+    {
+      "historical_path": "kdd/coverage/adapters/impurity.py",
+      "archive_path": "archive/source-code/kdd/coverage/adapters/impurity.py",
+      "sha256": "f9ba4279479db5f47b62b68167ab3b143f04ada6a1298eb26dbbbdfc630acd28",
+      "bytes": 20765,
+      "module_path": "synrxn/reconstruction/families/selectivity/impurity_prediction/_source_tables.py",
+      "module_sha256": "68566a7e51ac75dba6503e877f7c5fa112e389eb06268b5f0d79519cae21d75f"
+    },
+    {
+      "historical_path": "kdd/coverage/adapters/knowledge.py",
+      "archive_path": "archive/source-code/kdd/coverage/adapters/knowledge.py",
+      "sha256": "85dbc4d94a087bc2a3f685f03e000e534c175ee3e66ea959ca78dce0bfa964c2",
+      "bytes": 21732,
+      "module_path": "synrxn/reconstruction/families/data/_source_tables.py",
+      "module_sha256": "d15bd96c29a0f9233b7f336bfba1eb2fad8c2104da886c670cd188a2da082654"
+    },
+    {
+      "historical_path": "kdd/coverage/adapters/mcsa.py",
+      "archive_path": "archive/source-code/kdd/coverage/adapters/mcsa.py",
+      "sha256": "518bd906cdb9dd5f56d1be7d8f3747600b8bead4ddc16377a421875d38f9c76f",
+      "bytes": 14074,
+      "module_path": "synrxn/reconstruction/families/mechanisms/mechanistic_prediction/_mcsa_views.py",
+      "module_sha256": "dabded498fd5c236de1713ca5c0422a25d5ab6cbdb3e1d0aab4aad72ba71ade2"
+    },
+    {
+      "historical_path": "kdd/coverage/adapters/physics.py",
+      "archive_path": "archive/source-code/kdd/coverage/adapters/physics.py",
+      "sha256": "3714f5544d00bf8eca04c990faf6f0f07bec3406abc9558f987ba781dfd7b272",
+      "bytes": 34102,
+      "module_path": "synrxn/reconstruction/families/physics/_source_tables.py",
+      "module_sha256": "01bdcfcf3b0ccfc783afb2f8a200e13614c6f316b3675c77551954771c0c2f71"
+    },
+    {
+      "historical_path": "kdd/coverage/adapters/process.py",
+      "archive_path": "archive/source-code/kdd/coverage/adapters/process.py",
+      "sha256": "28858170f928fc210ba98477c8f00d05cd9c420c4cc29919b400cefc49714c72",
+      "bytes": 41016,
+      "module_path": "synrxn/reconstruction/families/process/_source_tables.py",
+      "module_sha256": "3ad48fb0197390ba6dff7eb48d917b1447ae0870e458aacbe78da7c76d9a48d5"
+    },
+    {
+      "historical_path": "kdd/coverage/adapters/quantumpioneer.py",
+      "archive_path": "archive/source-code/kdd/coverage/adapters/quantumpioneer.py",
+      "sha256": "7360b44401e6bf8bb60c2cccb7107d6ac329bb79d0b660426507c133968c4057",
+      "bytes": 11938,
+      "module_path": "synrxn/reconstruction/families/physics/reaction_rates/_quantumpioneer.py",
+      "module_sha256": "72788924d908189f6af48b7038097b860eee7544845aaf62d2408b29bdf1ebda"
+    },
+    {
+      "historical_path": "kdd/coverage/adapters/solution_barriers.py",
+      "archive_path": "archive/source-code/kdd/coverage/adapters/solution_barriers.py",
+      "sha256": "c551fc6fd316ae6e7abecf865eac00b7244490faba8f757ddb598cec51ea2447",
+      "bytes": 16481,
+      "module_path": "synrxn/reconstruction/families/physics/activation_barrier/_solution_barriers.py",
+      "module_sha256": "54f743e3b8309d47234f51af0b97898bafa6ea581750a3d77d9df0e1a4528610"
+    },
+    {
+      "historical_path": "kdd/coverage/adapters/solution_context.py",
+      "archive_path": "archive/source-code/kdd/coverage/adapters/solution_context.py",
+      "sha256": "5362dfe5e784f93da9a5c318b559105bf19afc182b4c41dd1ea9b503ccefec75",
+      "bytes": 17917,
+      "module_path": "synrxn/reconstruction/families/physics/activation_barrier/_solution_context.py",
+      "module_sha256": "410984144e57b894bf38708bd928fcbca954eae74e53cd9861664e0266c19ea5"
+    },
+    {
+      "historical_path": "kdd/coverage/audit.py",
+      "archive_path": "archive/source-code/kdd/coverage/audit.py",
+      "sha256": "73db100cdeb78c248924c2ffb58f84c262d403d56cd9ad8da6efd2ee526e1efb",
+      "bytes": 16409,
+      "module_path": "synrxn/reconstruction/coverage/verify_release.py",
+      "module_sha256": "ed581031ec341f4d9614816ad517dfd05497cbb6600b077d4e575b4559496cdc"
+    },
+    {
+      "historical_path": "kdd/coverage/audit_legacy_rights.py",
+      "archive_path": "archive/source-code/kdd/coverage/audit_legacy_rights.py",
+      "sha256": "2b2465413eabfb6255502d43b979cbb4caf37e309f79ffb754a1e8d426114751",
+      "bytes": 29935
+    },
+    {
+      "historical_path": "kdd/coverage/common.py",
+      "archive_path": "archive/source-code/kdd/coverage/common.py",
+      "sha256": "901bd2e4453a47e7ab7bd34563c16ca4f15828d1e17ec1c558bec46f01f6427b",
+      "bytes": 4831,
+      "module_path": "synrxn/reconstruction/coverage/common.py",
+      "module_sha256": "3ff25821bdc08c7864f07601e0fd24d1b308e3a623f57a54c570ef4dbc144534"
+    },
+    {
+      "historical_path": "kdd/coverage/count_inventory.py",
+      "archive_path": "archive/source-code/kdd/coverage/count_inventory.py",
+      "sha256": "22ce3854e71754ba3ab3df3b6dfbac920035dca2d46017d7334be3c3a31b5518",
+      "bytes": 5735
+    },
+    {
+      "historical_path": "kdd/coverage/identifier_namespaces.py",
+      "archive_path": "archive/source-code/kdd/coverage/identifier_namespaces.py",
+      "sha256": "7de93bd07f749653fbe2eef794146223228add1ceae3e1d3bfebef9a8d72281c",
+      "bytes": 3425,
+      "module_path": "synrxn/reconstruction/coverage/identifier_namespaces.py",
+      "module_sha256": "2af24a151459419fb074bba07071fd9b38f6a0b430e10fc9c4c46276c3e2bcbd"
+    },
+    {
+      "historical_path": "kdd/coverage/license_policy.py",
+      "archive_path": "archive/source-code/kdd/coverage/license_policy.py",
+      "sha256": "62d2ffa5ae257fd01c240009edeed5fe93f7484447c226f80ae12748c520539f",
+      "bytes": 3245,
+      "module_path": "synrxn/reconstruction/coverage/license_policy.py",
+      "module_sha256": "e1e8180fe4bb3a0f20ebc7a2c5c104f25e848599d5cdf8149de4b14db68cc1ff"
+    },
+    {
+      "historical_path": "kdd/coverage/publication_notices.py",
+      "archive_path": "archive/source-code/kdd/coverage/publication_notices.py",
+      "sha256": "b8a99dde5149cdd19bf1a076818e44b3124c786c5f20f9e14af41db1e76c8f1d",
+      "bytes": 6614,
+      "module_path": "synrxn/reconstruction/coverage/publication_notices.py",
+      "module_sha256": "e8df841c950e59cfe06c9b2e704ece8331f5984a16cbffd884ace333d685f704"
+    },
+    {
+      "historical_path": "kdd/coverage/quality.py",
+      "archive_path": "archive/source-code/kdd/coverage/quality.py",
+      "sha256": "b00929811726b1c48933e61f2853bc9d6abc32f3672885e55c758a16f30a00b0",
+      "bytes": 17850,
+      "module_path": "synrxn/reconstruction/coverage/quality.py",
+      "module_sha256": "bd838bdda95ad2525ca0f29fe59a7e01711035ec08f2a4927f9d2fb69126e881"
+    },
+    {
+      "historical_path": "kdd/coverage/rebuild.py",
+      "archive_path": "archive/source-code/kdd/coverage/rebuild.py",
+      "sha256": "43aa734bfcddf58973546d430afaef53b559e0c7f745905ed138c3875a0094c8",
+      "bytes": 9302
+    },
+    {
+      "historical_path": "kdd/coverage/report.py",
+      "archive_path": "archive/source-code/kdd/coverage/report.py",
+      "sha256": "1d38ad2607d7539e44c6e81ea4583db70efcc7f652a3fcd487659c908002f9a6",
+      "bytes": 7379,
+      "module_path": "synrxn/reconstruction/coverage/report.py",
+      "module_sha256": "cfdaea6d0828616594944c6f1f6836fdaa6c218c4898cbe8fe59e881a16cd405"
+    },
+    {
+      "historical_path": "kdd/coverage/rights.py",
+      "archive_path": "archive/source-code/kdd/coverage/rights.py",
+      "sha256": "96f7342fd9c536f7c04263897f793b6f5c86938cbf5ba7295dc4d2cdb1211f06",
+      "bytes": 13109,
+      "module_path": "synrxn/reconstruction/coverage/rights.py",
+      "module_sha256": "5dfdcfc89089cdc31e22a2cef97e5b31773f949725275c74524ba1dd6811f4cc"
+    },
+    {
+      "historical_path": "kdd/coverage/rights_recheck/classification/capture_evidence.py",
+      "archive_path": "archive/source-code/kdd/coverage/rights_recheck/classification/capture_evidence.py",
+      "sha256": "8723b14f24ded1223b22fcc6ad0a66cf2823540824dd47a5e4ef992dafb11bc7",
+      "bytes": 5224
+    },
+    {
+      "historical_path": "kdd/coverage/rights_recheck/classification/verify_source_joins.py",
+      "archive_path": "archive/source-code/kdd/coverage/rights_recheck/classification/verify_source_joins.py",
+      "sha256": "8225e6c4696dbd8f0bb923f70856ca077ebb6ddfe2e7d1a89ec32c830b7b743f",
+      "bytes": 2787
+    },
+    {
+      "historical_path": "kdd/coverage/rights_recheck/property/reproduce_comparisons.py",
+      "archive_path": "archive/source-code/kdd/coverage/rights_recheck/property/reproduce_comparisons.py",
+      "sha256": "65db722c10f2fdd10051735e23f0e6b5208c6dbd87d0ab4d193127a278798281",
+      "bytes": 5198
+    },
+    {
+      "historical_path": "kdd/coverage/rights_recheck/property_followup_da/reproduce_membership.py",
+      "archive_path": "archive/source-code/kdd/coverage/rights_recheck/property_followup_da/reproduce_membership.py",
+      "sha256": "6d8a58bc47226299148acc9619e75b774e5c1067f8df72e14f40b727c2aaaaee",
+      "bytes": 4808
+    },
+    {
+      "historical_path": "kdd/coverage/rights_recheck/property_followup_phosphatase/reproduce_phosphatase.py",
+      "archive_path": "archive/source-code/kdd/coverage/rights_recheck/property_followup_phosphatase/reproduce_phosphatase.py",
+      "sha256": "ec21d4de8f608579c34fe2318f3e33e5f4a465a66959311a3620ed68f372663e",
+      "bytes": 7090
+    },
+    {
+      "historical_path": "kdd/coverage/sync_plan.py",
+      "archive_path": "archive/source-code/kdd/coverage/sync_plan.py",
+      "sha256": "3e7935de03a67e7182fc6c2c54e455766ea9c4e860b00f349ef46569b2ce9d84",
+      "bytes": 8817,
+      "module_path": "synrxn/reconstruction/coverage/sync_plan.py",
+      "module_sha256": "1ab6a55467103ab2f68347631302bc64ed229091bfd953b79028ed9cfdae1060"
+    },
+    {
+      "historical_path": "kdd/literature/build_index.py",
+      "archive_path": "archive/source-code/kdd/literature/build_index.py",
+      "sha256": "8baab6346a5de50cb71b1ddcdba96a70268e4022e9cade35d846ee7b96b1f9aa",
+      "bytes": 15054
+    },
+    {
+      "historical_path": "kdd/literature/collect.py",
+      "archive_path": "archive/source-code/kdd/literature/collect.py",
+      "sha256": "ee5e2db40c552f391990508e9949fef1f70cb102530de50b5e0175117662cd36",
+      "bytes": 16761
+    },
+    {
+      "historical_path": "kdd/literature/validate.py",
+      "archive_path": "archive/source-code/kdd/literature/validate.py",
+      "sha256": "b1b9df0d258faa848a71bf01d75e3d14971190bc943a758656662197049b1a53",
+      "bytes": 4542,
+      "module_path": "synrxn/reconstruction/provenance/literature.py",
+      "module_sha256": "c7b012419c3f18fa775af6fad45064084fa38e7d185e914da537e9f8cf4746d8"
+    },
+    {
+      "historical_path": "kdd/prepare_classic_yield_references.py",
+      "archive_path": "archive/source-code/kdd/prepare_classic_yield_references.py",
+      "sha256": "164f56e60230da7dee675d313f07369fff595dee0b0b6ddcf2d0e5f4b8d77711",
+      "bytes": 15721
+    },
+    {
+      "historical_path": "kdd/prepare_cohort.py",
+      "archive_path": "archive/source-code/kdd/prepare_cohort.py",
+      "sha256": "8e5133c7134e147c586627bb42f8b4e3ff0cd568fdb48e43e1bef694c5ccdeac",
+      "bytes": 18311,
+      "module_path": "synrxn/reconstruction/families/outcomes/yield_conversion/_hitea.py",
+      "module_sha256": "6689da0a2f09a65b11d3563dda198c08e7f857641a7ee6a0a3d5b4e6a5e5e0eb"
+    },
+    {
+      "historical_path": "kdd/prepare_ncs_yield_splits.py",
+      "archive_path": "archive/source-code/kdd/prepare_ncs_yield_splits.py",
+      "sha256": "2725ce92c18aaec2793b56821db5f58d963b426dd7f9e27b43dfb34a6139ad17",
+      "bytes": 19719,
+      "module_path": "synrxn/reconstruction/families/outcomes/reaction_success/_bh_hte_ood.py",
+      "module_sha256": "ed77a361d1f26c39a32cd6fd80738938561d83c875919a335d059821d5b8de7c"
+    },
+    {
+      "historical_path": "kdd/reproduce.py",
+      "archive_path": "archive/source-code/kdd/reproduce.py",
+      "sha256": "5c5dadde547364153294ad9a86f690fd5050d121ff43ee8f95dd3ee1391f03bb",
+      "bytes": 28324
+    },
+    {
+      "historical_path": "kdd/reproduce_scope.py",
+      "archive_path": "archive/source-code/kdd/reproduce_scope.py",
+      "sha256": "9d760f45e919c8331935ffd4a4d5a256153782c98bea92f068c24fd0e107b3ec",
+      "bytes": 22408
+    },
+    {
+      "historical_path": "kdd/validate_plan.py",
+      "archive_path": "archive/source-code/kdd/validate_plan.py",
+      "sha256": "783e7225233fb188dbe9c8a3abd270400591484ea03a8248e3daf3a04f4caed3",
+      "bytes": 12557,
+      "module_path": "synrxn/reconstruction/families/_validate_study.py",
+      "module_sha256": "db7d55e464b463ebb4a679f854f4b8d216424d85999834a63d242c2572c29b39"
+    },
+    {
+      "historical_path": "script/audit_directional_grouping.py",
+      "archive_path": "archive/source-code/script/audit_directional_grouping.py",
+      "sha256": "96b770670a41d295c2f56c800e14e387bb594d678a3f812b1ef285e2bbb94d99",
+      "bytes": 2554
+    },
+    {
+      "historical_path": "script/audit_expansion_sources.py",
+      "archive_path": "archive/source-code/script/audit_expansion_sources.py",
+      "sha256": "a69f2e7f4250d2f09edeaaf5fa75c3441724cdf9452bff23c29ba58542611ffa",
+      "bytes": 6368,
+      "module_path": "synrxn/reconstruction/expansion/audit_sources.py",
+      "module_sha256": "e6053e26053feaafa1877a203ca18c35663cf0021a284d93fc0d12a03e57467a"
+    },
+    {
+      "historical_path": "script/audit_feasibility_overlap.py",
+      "archive_path": "archive/source-code/script/audit_feasibility_overlap.py",
+      "sha256": "5d50d9ddda827c1b06afb777ca0abb2ac6a03681a410ae4c02221340e4e110ac",
+      "bytes": 2005
+    },
+    {
+      "historical_path": "script/audit_forward_inputs.py",
+      "archive_path": "archive/source-code/script/audit_forward_inputs.py",
+      "sha256": "556dca37ca09fcde961b1bdd4514cf43e47271c253d7978f51539f8be692d37c",
+      "bytes": 5111
+    },
+    {
+      "historical_path": "script/audit_mapping_sources.py",
+      "archive_path": "archive/source-code/script/audit_mapping_sources.py",
+      "sha256": "30b8d968339ffdb5c58819f5a46efbb4f53ec16f7b3fa93d91a560d5af51aed4",
+      "bytes": 8620
+    },
+    {
+      "historical_path": "script/audit_mechanism_alternatives.py",
+      "archive_path": "archive/source-code/script/audit_mechanism_alternatives.py",
+      "sha256": "27ff8c92b50c08ad655420ac3a56d562cb5b22a7ba84c994bbee9377fe293026",
+      "bytes": 2562
+    },
+    {
+      "historical_path": "script/audit_mechanism_source_relationships.py",
+      "archive_path": "archive/source-code/script/audit_mechanism_source_relationships.py",
+      "sha256": "feba70917d2e05308edde429dfd6673ac19f76726c314f32164eb4551d99bd89",
+      "bytes": 14595
+    },
+    {
+      "historical_path": "script/audit_ncs_baselines.py",
+      "archive_path": "archive/source-code/script/audit_ncs_baselines.py",
+      "sha256": "26f76c688600cfc04ebd55ff297bf7585eb12f02844f996891e801fbfe249345",
+      "bytes": 10652
+    },
+    {
+      "historical_path": "script/audit_property_provenance.py",
+      "archive_path": "archive/source-code/script/audit_property_provenance.py",
+      "sha256": "ca80432a8b3c88e5d545f366543c7cb59be31f6fda696d0a55f1e4bd02dbebfa",
+      "bytes": 14795
+    },
+    {
+      "historical_path": "script/audit_readiness_sources.py",
+      "archive_path": "archive/source-code/script/audit_readiness_sources.py",
+      "sha256": "19a4fd8bf842d75dc326c98d88d49b61c0779e58fe7eb7b54c55db6ffd2bfcc1",
+      "bytes": 7919
+    },
+    {
+      "historical_path": "script/audit_task_memberships.py",
+      "archive_path": "archive/source-code/script/audit_task_memberships.py",
+      "sha256": "0ecd339bd7583e46259396727cee8a80764980143c3d2a01db0508c9c9084859",
+      "bytes": 2723
+    },
+    {
+      "historical_path": "script/baseline.py",
+      "archive_path": "archive/source-code/script/baseline.py",
+      "sha256": "c6861fa4bcf06969b437874ea0dd1c513aa4d37bbfdd5a5e441c708a3e7aaa10",
+      "bytes": 18916
+    },
+    {
+      "historical_path": "script/benchmark_query_layer.py",
+      "archive_path": "archive/source-code/script/benchmark_query_layer.py",
+      "sha256": "257f3d375835e618017a2841ccaf6e110bbea1142c92a9d01e895e5f0c6ab25d",
+      "bytes": 314
+    },
+    {
+      "historical_path": "script/buid_da.py",
+      "archive_path": "archive/source-code/script/buid_da.py",
+      "sha256": "8921aa2c95c27d2af3955b126ae409d21dfda6cfb31cefb2fafff19c2890f915",
+      "bytes": 22607,
+      "module_path": "synrxn/reconstruction/families/transformations/forward_prediction/_diels_alder.py",
+      "module_sha256": "eadbcbe0e87a1b3fc18410529de3496762911402ace3f11332da46c18cf56355"
+    },
+    {
+      "historical_path": "script/build_aam_dataset.py",
+      "archive_path": "archive/source-code/script/build_aam_dataset.py",
+      "sha256": "0267c3203baa298dfc92bbb702f06f2df653558a60f5d37574bec66d794e696d",
+      "bytes": 16300,
+      "module_path": "synrxn/reconstruction/families/representation/atom_mapping/_sources/aam_benchmark.py",
+      "module_sha256": "874c8c44bf31736224e0d047e91646cf49a78bbe1f456d74d75ae97194761f36"
+    },
+    {
+      "historical_path": "script/build_author_review.py",
+      "archive_path": "archive/source-code/script/build_author_review.py",
+      "sha256": "2866c46e9331237a146458c6fd28608232950aa2b634d964f57f15c376f6d12e",
+      "bytes": 5958
+    },
+    {
+      "historical_path": "script/build_brenda_balanced.py",
+      "archive_path": "archive/source-code/script/build_brenda_balanced.py",
+      "sha256": "47bc5e517d7bbb6cb86e4113f07d53937b17ddbd0a5fb3e04797785d1d2be3e1",
+      "bytes": 21466,
+      "module_path": "synrxn/reconstruction/families/representation/atom_mapping/_sources/brenda_balanced.py",
+      "module_sha256": "3f6b50539f35b303d167d09c722ed80a7622c19f370c6bc0ffad9a7d510a0c68"
+    },
+    {
+      "historical_path": "script/build_candidate_readme.py",
+      "archive_path": "archive/source-code/script/build_candidate_readme.py",
+      "sha256": "bcd0543978d4f1826135dedfedad5356d628b793b86fe63558162d560038c25d",
+      "bytes": 8009
+    },
+    {
+      "historical_path": "script/build_classification_dataset.py",
+      "archive_path": "archive/source-code/script/build_classification_dataset.py",
+      "sha256": "0bafed7aa02c09d3cb9ad200251ec3ced668888d5271b35048a75366d53792a1",
+      "bytes": 36619,
+      "module_path": "synrxn/reconstruction/families/representation/reaction_classification/_classification.py",
+      "module_sha256": "21189ff66e061dab042757692f473d1a5041e5669a53a77b003a5298e8448764"
+    },
+    {
+      "historical_path": "script/build_condition_dataset.py",
+      "archive_path": "archive/source-code/script/build_condition_dataset.py",
+      "sha256": "ac0fe2cd829bdc43cd1f6b8d92b2e6888a86050604119d640e05fc581add4e37",
+      "bytes": 4452,
+      "module_path": "synrxn/reconstruction/families/conditions/condition_recovery/_condition.py",
+      "module_sha256": "7319a96078cc126e1b2c487299f04dc1068785e54874ea4acb26c441e98124c0"
+    },
+    {
+      "historical_path": "script/build_ehreact.py",
+      "archive_path": "archive/source-code/script/build_ehreact.py",
+      "sha256": "4c30111bab8487a18601e156e367f141109b7b069dbaddf99288cb65bc12818c",
+      "bytes": 12928,
+      "module_path": "synrxn/reconstruction/families/representation/atom_mapping/_sources/ehreact.py",
+      "module_sha256": "95e165312ea1d4810a671257485868d0c0ee25f0fd0ee495ba7178df63bd81ac"
+    },
+    {
+      "historical_path": "script/build_enzyme_map.py",
+      "archive_path": "archive/source-code/script/build_enzyme_map.py",
+      "sha256": "ab9eec0cee76d25d37d57e6179468ed0f9c3caf4737efb21fb5e19372a1c0714",
+      "bytes": 10456,
+      "module_path": "synrxn/reconstruction/families/representation/atom_mapping/_sources/enzyme_map.py",
+      "module_sha256": "2fd40a53c61cbaf3d95bddcacadc09f8e1123398b9fa12139739b3a227773e64"
+    },
+    {
+      "historical_path": "script/build_expansion_dataset.py",
+      "archive_path": "archive/source-code/script/build_expansion_dataset.py",
+      "sha256": "be78df3cd98ce19cefbcc1735ca4471fc76084772bf1abe485fdee899940290f",
+      "bytes": 308
+    },
+    {
+      "historical_path": "script/build_feasibility_dataset.py",
+      "archive_path": "archive/source-code/script/build_feasibility_dataset.py",
+      "sha256": "5fa6be85f243f7a7fc56a890046722b117f8248195c53257015f131bd8acdf06",
+      "bytes": 1448,
+      "module_path": "synrxn/reconstruction/families/outcomes/reaction_feasibility/_feasibility.py",
+      "module_sha256": "2ba878e1a7b4ea570116eb36b4ce9e7ce1b00d86aec708868bed0de30eb32b8a"
+    },
+    {
+      "historical_path": "script/build_flower_test.py",
+      "archive_path": "archive/source-code/script/build_flower_test.py",
+      "sha256": "5f41d9f694ba676608ebe5fa8e182e639b31ca305e509b26085113b318e27b8f",
+      "bytes": 24739,
+      "module_path": "synrxn/reconstruction/families/representation/atom_mapping/_sources/flower.py",
+      "module_sha256": "c93032568567aae12498fba15f1b3f6b924f2d46c3cabbac61e2e0b4e41c7110"
+    },
+    {
+      "historical_path": "script/build_impurity_dataset.py",
+      "archive_path": "archive/source-code/script/build_impurity_dataset.py",
+      "sha256": "5a10496faae2974bbfc0f66f66b46e281902c35d1cf45063cf9de5e9b1387250",
+      "bytes": 1563,
+      "module_path": "synrxn/reconstruction/families/selectivity/impurity_prediction/_impurity.py",
+      "module_sha256": "06f7c649100634bc4146a4e60334587e2adf1d215ae175c23fc826ca8e9950fd"
+    },
+    {
+      "historical_path": "script/build_ncs_latex.py",
+      "archive_path": "archive/source-code/script/build_ncs_latex.py",
+      "sha256": "d9a86223aa6db08fe02bcd087876144e2b791368e123c95dde2b71212457d37d",
+      "bytes": 47158
+    },
+    {
+      "historical_path": "script/build_overlap_report.py",
+      "archive_path": "archive/source-code/script/build_overlap_report.py",
+      "sha256": "2f66193f338bf1521df40dbca1a9c03d303200ea969947048f451ad690db0006",
+      "bytes": 9409,
+      "module_path": "synrxn/reconstruction/families/representation/reaction_retrieval/_overlap.py",
+      "module_sha256": "2cd4757bd1dc4f85585e089e7bdabac19084eb1fc2737407c02bad3b85c9f2d1"
+    },
+    {
+      "historical_path": "script/build_planning_dashboard.py",
+      "archive_path": "archive/source-code/script/build_planning_dashboard.py",
+      "sha256": "2cbd2f9289b14a549ee287fa93ad7fd70c8fecfc4e49cf0e1d1b48a416c6b072",
+      "bytes": 13824
+    },
+    {
+      "historical_path": "script/build_product_origin_challenges.py",
+      "archive_path": "archive/source-code/script/build_product_origin_challenges.py",
+      "sha256": "5ad1bc8dea0300fc91378564ca5d7d5bb928b1f8b702d091960f1d372cc25534",
+      "bytes": 11379
+    },
+    {
+      "historical_path": "script/build_property_dataset.py",
+      "archive_path": "archive/source-code/script/build_property_dataset.py",
+      "sha256": "e9ccba7febdad0ffb50a487a73fe2ecb491d3bc5999299daef9aa91822f1ab38",
+      "bytes": 41641,
+      "module_path": "synrxn/reconstruction/families/physics/_property.py",
+      "module_sha256": "18f6d752bc53f62774a939eedce34a987698c564dbccccc1f7687f32b9e38fd2"
+    },
+    {
+      "historical_path": "script/build_rbl_dataset.py",
+      "archive_path": "archive/source-code/script/build_rbl_dataset.py",
+      "sha256": "8734973fcdcbc1da52220a7f70933f364470e925aa0c105c00d2d4908a9c597c",
+      "bytes": 37336,
+      "module_path": "synrxn/reconstruction/families/representation/reaction_balancing/_sources/rbl.py",
+      "module_sha256": "a3db239b349ee1ddee7e1fe0d0c9a4adc2d464453349d86e8740b232dead2ada"
+    },
+    {
+      "historical_path": "script/build_reference_review.py",
+      "archive_path": "archive/source-code/script/build_reference_review.py",
+      "sha256": "437508062e7ef7831e4c51d8c269480d77b62e7bbb43a784d98134b78a10ff35",
+      "bytes": 15031
+    },
+    {
+      "historical_path": "script/build_resource_dossier.py",
+      "archive_path": "archive/source-code/script/build_resource_dossier.py",
+      "sha256": "8aee8ab31f8715154ba96f30a0042081ba023fdddefb977676dbbeceaf32e6ca",
+      "bytes": 56048
+    },
+    {
+      "historical_path": "script/build_resource_figures.py",
+      "archive_path": "archive/source-code/script/build_resource_figures.py",
+      "sha256": "9a795b46db1e71de9cb73654a071b22c804d28fdb5720f8b9f8d6c6d0fa66824",
+      "bytes": 4130
+    },
+    {
+      "historical_path": "script/build_scientific_self_review.py",
+      "archive_path": "archive/source-code/script/build_scientific_self_review.py",
+      "sha256": "86c3fb3b1048716effa5d65413ec9ce49c2e5aebd5a59779a896718d1c7533fc",
+      "bytes": 12360
+    },
+    {
+      "historical_path": "script/build_selectivity_dataset.py",
+      "archive_path": "archive/source-code/script/build_selectivity_dataset.py",
+      "sha256": "de28e1eadca691e25567a8f1b0239c862e1e67f9762aa4f0c6b3723992d7ee4f",
+      "bytes": 2804,
+      "module_path": "synrxn/reconstruction/families/selectivity/_experimental.py",
+      "module_sha256": "1f54c26b44fb1f0335fe8f104d4cc64dcb98b43c57ad052e345209f45defc6d6"
+    },
+    {
+      "historical_path": "script/build_seven_task_readiness.py",
+      "archive_path": "archive/source-code/script/build_seven_task_readiness.py",
+      "sha256": "da53d201ef1216c3d145478e247ae2b397dbfd9432933f40f2dc042b2f96caa7",
+      "bytes": 19904
+    },
+    {
+      "historical_path": "script/build_software_review.py",
+      "archive_path": "archive/source-code/script/build_software_review.py",
+      "sha256": "2c06aeafee20576ce66f3b525340bb9dee97be58d5f273372787762b0d971080",
+      "bytes": 21537
+    },
+    {
+      "historical_path": "script/build_source_locks.py",
+      "archive_path": "archive/source-code/script/build_source_locks.py",
+      "sha256": "30cdbb5f09435607d139d3befe852ccd9f436e17ff9a8501afbedb61d3c767e5",
+      "bytes": 10615,
+      "module_path": "synrxn/reconstruction/provenance/source_locks.py",
+      "module_sha256": "09b2e3c9356f86142200f98323d2ad8c5a89c43953694b5bfb11ab434c47a470"
+    },
+    {
+      "historical_path": "script/build_synthesis_dataset.py",
+      "archive_path": "archive/source-code/script/build_synthesis_dataset.py",
+      "sha256": "e92fb38f6af951f0970d84a7d5f2999618ba123f0a7e32f9c556e3093f2bdde1",
+      "bytes": 40687,
+      "module_path": "synrxn/reconstruction/families/transformations/_synthesis.py",
+      "module_sha256": "05647b414baf467b24ad2648850129f54b34fb4d6790b18e9308257629e6e695"
+    },
+    {
+      "historical_path": "script/build_task_views.py",
+      "archive_path": "archive/source-code/script/build_task_views.py",
+      "sha256": "63576373908dfe5e6e2d7f3569921c6a93f27b0272808a7fa0730ceb4ecb34b1",
+      "bytes": 2746,
+      "module_path": "synrxn/reconstruction/families/_task_views.py",
+      "module_sha256": "3c02d55a9899e0559e3f1aa8cb450945e20ff5e1c3f1197013e4f8477c934e7e"
+    },
+    {
+      "historical_path": "script/build_yield_dataset.py",
+      "archive_path": "archive/source-code/script/build_yield_dataset.py",
+      "sha256": "238e2cc90a5e3cb115678f6c4cd1224362a37f7704bb690b9981405ffb9a2d26",
+      "bytes": 3449,
+      "module_path": "synrxn/reconstruction/families/outcomes/yield_conversion/_yield.py",
+      "module_sha256": "59cb45510098174b36a025b035e874fd134c79d4ba4149f78ed40aee8d4300bc"
+    },
+    {
+      "historical_path": "script/check_ncs_reference_transport.py",
+      "archive_path": "archive/source-code/script/check_ncs_reference_transport.py",
+      "sha256": "7fa25b17124657cce6942ccb6e9b144eba49b015a544f009f9f2041e387d16de",
+      "bytes": 4481
+    },
+    {
+      "historical_path": "script/compare_aam_validators.py",
+      "archive_path": "archive/source-code/script/compare_aam_validators.py",
+      "sha256": "7cd8c4f3a85db92153f225b1a22c3cea1a2b55edc3ce15f8565d8573492f6760",
+      "bytes": 4272
+    },
+    {
+      "historical_path": "script/compare_release_inventory.py",
+      "archive_path": "archive/source-code/script/compare_release_inventory.py",
+      "sha256": "0bf1779ad6f985d2d50164cff6e8956ff83b6e1e56a58c22f6492d94b9dc1655",
+      "bytes": 8119
+    },
+    {
+      "historical_path": "script/compare_review_evaluators.py",
+      "archive_path": "archive/source-code/script/compare_review_evaluators.py",
+      "sha256": "14b4a5a8ac30d7e46c22ecf2238ca7f54291812dc2afe0600abd5bbae96e6633",
+      "bytes": 5118
+    },
+    {
+      "historical_path": "script/demonstrate_resource_reuse.py",
+      "archive_path": "archive/source-code/script/demonstrate_resource_reuse.py",
+      "sha256": "e780446e8a486329d61c7bcc2204307ba139645cb4a65088734e99841a931a5b",
+      "bytes": 5960
+    },
+    {
+      "historical_path": "script/fetch_expansion_data.py",
+      "archive_path": "archive/source-code/script/fetch_expansion_data.py",
+      "sha256": "e6d1fe58e2f6c19f2fb348129f09b1f719874c13b2551837fd43deedac45d502",
+      "bytes": 11666,
+      "module_path": "synrxn/reconstruction/expansion/fetch.py",
+      "module_sha256": "416db71716c868088ce372b5aaff9e5294a2ff490919b05bcb79e4e15efb0c0c"
+    },
+    {
+      "historical_path": "script/fill_software_checklist.py",
+      "archive_path": "archive/source-code/script/fill_software_checklist.py",
+      "sha256": "4308379e782a25005d73153151014c0cc9d694b1bec98e3fc0744cf032a9246c",
+      "bytes": 4364
+    },
+    {
+      "historical_path": "script/integrate_frea.py",
+      "archive_path": "archive/source-code/script/integrate_frea.py",
+      "sha256": "3a3a23fc56df78372b4a0348a3f7e9915076bc00808dc6c16e163858a13d9023",
+      "bytes": 3024,
+      "module_path": "synrxn/reconstruction/families/outcomes/reaction_feasibility/_frea.py",
+      "module_sha256": "f43baf5935a371d83ec3db69e1e0fb62030b108cc36b33cfbcb1d10c13b1679e"
+    },
+    {
+      "historical_path": "script/package_candidate_data.py",
+      "archive_path": "archive/source-code/script/package_candidate_data.py",
+      "sha256": "1d775a029f9e168a22cdfe9fa6e96111b0197172ac8aef2a117f6d39434aa106",
+      "bytes": 3303
+    },
+    {
+      "historical_path": "script/package_candidate_derivatives.py",
+      "archive_path": "archive/source-code/script/package_candidate_derivatives.py",
+      "sha256": "f2b6608c0873d106ba76aa9966aa7367d9823e4f30828add6095110399096869",
+      "bytes": 6720
+    },
+    {
+      "historical_path": "script/package_candidate_dossier.py",
+      "archive_path": "archive/source-code/script/package_candidate_dossier.py",
+      "sha256": "c79555c79b6fee915c00228de0a27c4a328d3ec7e1fee70940fb53940eee9c13",
+      "bytes": 8936
+    },
+    {
+      "historical_path": "script/package_mcsa_extension.py",
+      "archive_path": "archive/source-code/script/package_mcsa_extension.py",
+      "sha256": "e72ac2e79c425b7a2beccfdb4a12d2e1efca0a96807ecd994625ffbbd16c1428",
+      "bytes": 4160
+    },
+    {
+      "historical_path": "script/package_mechanism_backend.py",
+      "archive_path": "archive/source-code/script/package_mechanism_backend.py",
+      "sha256": "e1dcc8819117e7dbb03c259388ca77d6d717563deba0697ce46970d343833632",
+      "bytes": 2867
+    },
+    {
+      "historical_path": "script/package_ncs_latex.py",
+      "archive_path": "archive/source-code/script/package_ncs_latex.py",
+      "sha256": "7e56bb98e9b936e022b92258db4d27a5129d9481151fb053cdecc35b6157e656",
+      "bytes": 8913
+    },
+    {
+      "historical_path": "script/prepare_mcsa_access.py",
+      "archive_path": "archive/source-code/script/prepare_mcsa_access.py",
+      "sha256": "584621ba373f8d29fc3475aa477d584b5ee4be413bd1fb92b57c609bd3b2b0ff",
+      "bytes": 6361,
+      "module_path": "synrxn/reconstruction/families/mechanisms/mechanistic_prediction/_mcsa_access.py",
+      "module_sha256": "b58868f1b27a8559d9df5d656b3ca08330498d06735801ae5b1b6ea85ff101f3"
+    },
+    {
+      "historical_path": "script/prepare_mcsa_task.py",
+      "archive_path": "archive/source-code/script/prepare_mcsa_task.py",
+      "sha256": "d1d7543837d4de65187b1e5d0c081e0709e2e0b5dcc4319033953e7fcadd959a",
+      "bytes": 25358,
+      "module_path": "synrxn/reconstruction/families/mechanisms/mechanistic_prediction/_mcsa.py",
+      "module_sha256": "9da7c8032e722fdf04b3cf991311e03e9b5cf21fcceafeb08e3f5e28061c122a"
+    },
+    {
+      "historical_path": "script/prepare_source_demo.py",
+      "archive_path": "archive/source-code/script/prepare_source_demo.py",
+      "sha256": "1a11c49a389ead2e2e29dbc371547f266d222521ed2bcd6687b24427aabb78f6",
+      "bytes": 5815
+    },
+    {
+      "historical_path": "script/prepare_synepd_task.py",
+      "archive_path": "archive/source-code/script/prepare_synepd_task.py",
+      "sha256": "68a7a59469bae38b21fe0830aa9fab6b48afa50e9d97d1249c32c274506096c0",
+      "bytes": 14736,
+      "module_path": "synrxn/reconstruction/families/mechanisms/mechanistic_prediction/_synepd.py",
+      "module_sha256": "820285a5f0715e7944aa334256db4b3af162a9f24154371b40a0d550327462ab"
+    },
+    {
+      "historical_path": "script/process/__init__.py",
+      "archive_path": "archive/source-code/script/process/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "historical_path": "script/process/aam.py",
+      "archive_path": "archive/source-code/script/process/aam.py",
+      "sha256": "f5ec87ae272d5420425d2aa6854a71e2d283eaf927982ce2caad0aec6cc72bce",
+      "bytes": 3247,
+      "module_path": "synrxn/reconstruction/families/representation/atom_mapping/_sources/conversion.py",
+      "module_sha256": "8611d98d4cfcc7f8a836d35ec5af2cf5ed877360c83a10bd1c664c1ecf0553db"
+    },
+    {
+      "historical_path": "script/process/rbl.py",
+      "archive_path": "archive/source-code/script/process/rbl.py",
+      "sha256": "8552b4d64b887e7384dab56b901584a3d701bf5afe2aeebdd81690a3beef6969",
+      "bytes": 12116,
+      "module_path": "synrxn/reconstruction/families/representation/reaction_balancing/_sources/conversion.py",
+      "module_sha256": "160a7d2bb5a0f4950f8c0f32d3a4789f9d338b6b3a845cd4440ac1627e4bdd4e"
+    },
+    {
+      "historical_path": "script/rebuild_mcsa.py",
+      "archive_path": "archive/source-code/script/rebuild_mcsa.py",
+      "sha256": "f431b92494abeafedc325e9543701c1c16fa1f9f5b9c90c5c6c4833b84cb9ff2",
+      "bytes": 6274,
+      "module_path": "synrxn/reconstruction/families/mechanisms/mechanistic_prediction/_mcsa_native.py",
+      "module_sha256": "9261ad31a69303024c21f5eb866a70af3f280a1f15c2c6437b498818e4af3541"
+    },
+    {
+      "historical_path": "script/run_forward_capacity.py",
+      "archive_path": "archive/source-code/script/run_forward_capacity.py",
+      "sha256": "9e3fdf5a419ca8ccb3a3b3ee35ccfb115206cd44a70c4aceb712dd8c8f998478",
+      "bytes": 15449
+    },
+    {
+      "historical_path": "script/run_mapping_methods.py",
+      "archive_path": "archive/source-code/script/run_mapping_methods.py",
+      "sha256": "6a202253ed7eabaaa5d1ff259f03705b3cbdb7e198f6e8de95c1c10802e1938f",
+      "bytes": 8480
+    },
+    {
+      "historical_path": "script/run_ncs_pilot.py",
+      "archive_path": "archive/source-code/script/run_ncs_pilot.py",
+      "sha256": "9310ab3773c6c5de3e5dc22d07b9b56321095675831f1ebea12651e26a46ca99",
+      "bytes": 21660
+    },
+    {
+      "historical_path": "synrxn/condition_data.py",
+      "archive_path": "archive/source-code/synrxn/condition_data.py",
+      "sha256": "81197c73bc90ecf79a44f39f10ada3fd896ddd0f9ba22918411dad57270edaad",
+      "bytes": 42010,
+      "module_path": "synrxn/reconstruction/families/conditions/condition_recovery/_normalize.py",
+      "module_sha256": "17901b747b58e266383d74c0e212a412ef782ddcb6785e611e16fd772d1ab6ef"
+    },
+    {
+      "historical_path": "synrxn/feasibility_data.py",
+      "archive_path": "archive/source-code/synrxn/feasibility_data.py",
+      "sha256": "be4dcc39e2d7ef64737c7cd639acf1dfe421a8db55f346651663cc04d574627c",
+      "bytes": 8237,
+      "module_path": "synrxn/reconstruction/families/outcomes/reaction_feasibility/_normalize.py",
+      "module_sha256": "b5eec348226d545c44854a36e357dfbf3bd60fc3d560cd38e748b9e5d8ae80f7"
+    },
+    {
+      "historical_path": "synrxn/frea_data.py",
+      "archive_path": "archive/source-code/synrxn/frea_data.py",
+      "sha256": "2e86699e85532e231fc1d1b2b9fcad25ef396aeb9eded791e437c38103bb26ea",
+      "bytes": 6272,
+      "module_path": "synrxn/reconstruction/families/outcomes/reaction_feasibility/_frea_source.py",
+      "module_sha256": "2e86699e85532e231fc1d1b2b9fcad25ef396aeb9eded791e437c38103bb26ea"
+    },
+    {
+      "historical_path": "synrxn/impurity_data.py",
+      "archive_path": "archive/source-code/synrxn/impurity_data.py",
+      "sha256": "58c4f896b2d661da5a52ba02b21993b853c0ce50d27c9a5ff5bf4889b1c8349b",
+      "bytes": 9540,
+      "module_path": "synrxn/reconstruction/families/selectivity/impurity_prediction/_normalize.py",
+      "module_sha256": "a083bee8c0264815738a685aaf91b3a3326b6d197bc0573467080466882429ab"
+    },
+    {
+      "historical_path": "synrxn/selectivity_data.py",
+      "archive_path": "archive/source-code/synrxn/selectivity_data.py",
+      "sha256": "cb349972be392d88418c735966060ffcfbcdd61d6904366808197666b2f4dfc3",
+      "bytes": 21046,
+      "module_path": "synrxn/reconstruction/families/selectivity/_normalize.py",
+      "module_sha256": "cb349972be392d88418c735966060ffcfbcdd61d6904366808197666b2f4dfc3"
+    },
+    {
+      "historical_path": "synrxn/yield_data.py",
+      "archive_path": "archive/source-code/synrxn/yield_data.py",
+      "sha256": "d4c8f17f53d6b4ead5098e867c05d1e1946aebd13f86a56c84091c767ef3bcef",
+      "bytes": 36545,
+      "module_path": "synrxn/reconstruction/families/outcomes/yield_conversion/_normalize.py",
+      "module_sha256": "d4c8f17f53d6b4ead5098e867c05d1e1946aebd13f86a56c84091c767ef3bcef"
+    },
+    {
+      "historical_path": "synrxn/mapping_io.py",
+      "archive_path": "archive/source-code/synrxn/mapping_io.py",
+      "sha256": "a2ac7c8826457252626aac021c283e9f92ca7bab24c3a5c8a213f49fbda9bd8a",
+      "bytes": 4698,
+      "module_path": "synrxn/benchmarks/mapping_io.py",
+      "module_sha256": "291663855fca9a57cc72c04ee2283d11260d77ff1c686383507f1bcd04cd8a0d"
+    },
+    {
+      "historical_path": "synrxn/reference.py",
+      "archive_path": "archive/source-code/synrxn/reference.py",
+      "sha256": "81af593cd2db719fc267117af2b186288a730e1b3a1d1157adbf4a2f737fb68e",
+      "bytes": 9724,
+      "module_path": "synrxn/benchmarks/contracts.py",
+      "module_sha256": "81af593cd2db719fc267117af2b186288a730e1b3a1d1157adbf4a2f737fb68e"
+    },
+    {
+      "historical_path": "synrxn/reference_store.py",
+      "archive_path": "archive/source-code/synrxn/reference_store.py",
+      "sha256": "93897003af94b9c3e8d5a2941933dad131ac1d2dfb92026009d5886740e41a43",
+      "bytes": 5657,
+      "module_path": "synrxn/benchmarks/reference_store.py",
+      "module_sha256": "241fa0aca2d7725023bf3f3aadc9df3026de55a035298c82dc6bd8626ca08b07"
+    },
+    {
+      "historical_path": "synrxn/readiness.py",
+      "archive_path": "archive/source-code/synrxn/readiness.py",
+      "sha256": "812a418fa3dd688ffb4fcb24759e2d6c6e99560cbf782e9098a7518423fa4f6b",
+      "bytes": 12270,
+      "module_path": "synrxn/benchmarks/readiness.py",
+      "module_sha256": "2b2e0cd559edc658d7b82c523106aea8b413e62000b1847bd671fbb25c8777c6"
+    },
+    {
+      "historical_path": "synrxn/task_views.py",
+      "archive_path": "archive/source-code/synrxn/task_views.py",
+      "sha256": "19336f30d7a3e382acc4574e75d69ecf8796b1712163977a6dc242b05cf35a73",
+      "bytes": 10868,
+      "module_path": "synrxn/benchmarks/task_views.py",
+      "module_sha256": "e03e14927e1c2b8653b52a0999bb6201118df38c3d6cc899a17b6f782d577247"
+    },
+    {
+      "historical_path": "synrxn/query.py",
+      "archive_path": "archive/source-code/synrxn/query.py",
+      "sha256": "34dfaa0e909ba1b5b6ddadd8a5a4219f177737bf02515de32b5098ba983881f7",
+      "bytes": 25490,
+      "module_path": "synrxn/access/query.py",
+      "module_sha256": "6fb8a125dfb51e79ab6f5140099aea7274fa68d6fd901b60a14c48e5ae1d5d3e"
+    },
+    {
+      "historical_path": "synrxn/query_benchmark.py",
+      "archive_path": "archive/source-code/synrxn/query_benchmark.py",
+      "sha256": "60bef6856aa130f6f03c8362b72e6eaaffd05dc466755d55451a762230b09de3",
+      "bytes": 3543,
+      "module_path": "synrxn/access/benchmark.py",
+      "module_sha256": "e8127407d910994175a187a74b5dce47f1584eb632d7e52db7d16899abce4f0a"
+    },
+    {
+      "historical_path": "synrxn/service.py",
+      "archive_path": "archive/source-code/synrxn/service.py",
+      "sha256": "55335e843b4498af7c1ba1163bdfbea52d8777f90ac61d6b170b7dd754dcc1c4",
+      "bytes": 14276,
+      "module_path": "synrxn/access/service.py",
+      "module_sha256": "e787211209ea182cb77ea42e532806e7ccc96852d9f8519c5bc8dec62f35b87c"
+    },
+    {
+      "historical_path": "synrxn/build_catalog.py",
+      "archive_path": "archive/source-code/synrxn/build_catalog.py",
+      "sha256": "4075003f01560d7e28550734a1e6aa9a0e73e0e27921e4599fd012fb4ddb5d4d",
+      "bytes": 10326,
+      "module_path": "synrxn/data/build_catalog.py",
+      "module_sha256": "a0b7c1807bddaa52e650bb95a61b7a1688651848ef08feb548cfcab5f63c913e"
+    },
+    {
+      "historical_path": "synrxn/build_manifest.py",
+      "archive_path": "archive/source-code/synrxn/build_manifest.py",
+      "sha256": "82b390ae47f5493df979c259a3857e500902ed0375259388774162c4626a6a31",
+      "bytes": 41547,
+      "module_path": "synrxn/data/build_manifest.py",
+      "module_sha256": "d0f4e458c686f43b38ae9e179049b9b6b12fa643c52605124a5a9351806081f0"
+    },
+    {
+      "historical_path": "synrxn/validate_data.py",
+      "archive_path": "archive/source-code/synrxn/validate_data.py",
+      "sha256": "07dbbf81f317feb34525bf98ed3fb8faf4d7eeb4f43e8873a19bcaef4a81da20",
+      "bytes": 10434,
+      "module_path": "synrxn/data/validate.py",
+      "module_sha256": "922425676fefabb788885b5d3c1c1c8ca93085a3b865e253be7481bc2aeda5c0"
+    },
+    {
+      "historical_path": "synrxn/verify_manifest.py",
+      "archive_path": "archive/source-code/synrxn/verify_manifest.py",
+      "sha256": "cdf705c1645aa1c23d370411962cbd7ab2a05fd145a069ab06caf34cf35ed632",
+      "bytes": 9804,
+      "module_path": "synrxn/data/verify_manifest.py",
+      "module_sha256": "7b56fa19433b48aa7e3c5405c639ce4f4a29bb7a63dd40454ce2fd1fe99d0013"
+    },
+    {
+      "historical_path": "synrxn/planning.py",
+      "archive_path": "archive/source-code/synrxn/planning.py",
+      "sha256": "1320cd16c51a62fb19697da0d28a0b4d9d67cf6e8f4a5b37d01ae3db0cbe0f7e",
+      "bytes": 41076
+    },
+    {
+      "historical_path": "synrxn/evaluation.py",
+      "archive_path": "archive/source-code/synrxn/evaluation.py",
+      "sha256": "d47553904293dd23d73b660ce4984c15ee642c371b8ac82e30e92296a9e809b0",
+      "bytes": 14525,
+      "module_path": "synrxn/metrics/reference.py",
+      "module_sha256": "b19785fa02c7b4f91df85d9efac4788f131f129655248ceae9a6f0e55f8a8f60"
+    },
+    {
+      "historical_path": "synrxn/partitions.py",
+      "archive_path": "archive/source-code/synrxn/partitions.py",
+      "sha256": "b66fa2e8d458fac025583315113464b195f950cf2c28b942d74e7fb43b30a231",
+      "bytes": 6812,
+      "module_path": "synrxn/split/dependence.py",
+      "module_sha256": "193b5fe584bae45ee3e03f985ae5b3811c0b81cd5425724f346587d1ade59642"
+    }
+  ]
+}

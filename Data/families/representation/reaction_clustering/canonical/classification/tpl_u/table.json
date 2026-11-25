@@ -1,0 +1,85 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "representation",
+  "format": "csv.gz",
+  "key": "classification/tpl_u",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "classification/tpl_u",
+    "legacy_field_eligible_rows": {
+      "clustering": 445115
+    },
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0 AND MIT",
+    "rights_status": "verified_repository_dataset_grant",
+    "role": "primary",
+    "rows": 445115
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "lowe_original_data_grant",
+      "recheck_classification_recheck_classification:syncat/LICENSE",
+      "recheck_classification_recheck_classification:syncat/README.md",
+      "recheck_classification_recheck_classification:syncat/Data/raw/USPTO_TPL_unbalanced.csv.gz",
+      "recheck_classification_recheck_classification:rxnfp/LICENSE",
+      "recheck_classification_recheck_classification:rxnfp/README.md",
+      "recheck_classification_recheck_classification:rxnfp/data/uspto_1k_TPL/README.md",
+      "recheck_classification_recheck_classification:figshare-5104873.json",
+      "recheck_classification_recheck_classification:classification-source-joins"
+    ],
+    "expected_bytes": 15207379,
+    "expected_rows": 445115,
+    "expected_sha256": "6b6a649e1cc13f17418a4ce3a8b63663a7f66c1777abfc66c16bce8e0efa2912",
+    "format": "csv.gz",
+    "key": "classification/tpl_u",
+    "license_expression": "CC-BY-4.0 AND MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/classification/tpl_u.csv.gz",
+    "qualification": "The complete native dataset is redistributed in the pinned SynCat author repository under its MIT notice and all curated output fields reproduce exactly. The original RXNFP author README describes USPTO 1k TPL as its newly generated labels on the Lowe USPTO corpus, explicitly CC0 at the primary Figshare release. Preserve the native MIT notice with the SynRXN CC BY 4.0 curation attribution.",
+    "rights_status": "verified_repository_dataset_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 445115,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "schwaller2021mapping"
+    ],
+    "path": "Data/classification/tpl_u.csv.gz",
+    "sha256": "6b6a649e1cc13f17418a4ce3a8b63663a7f66c1777abfc66c16bce8e0efa2912",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "schwaller2021mapping"
+    ],
+    "counting_unit": "source-table row",
+    "key": "classification/tpl_u",
+    "legacy_field_eligible_rows": {
+      "clustering": 445115
+    },
+    "namespace": "canonical",
+    "path": "Data/classification/tpl_u.csv.gz",
+    "role": "primary",
+    "rows": 445115,
+    "sha256": "6b6a649e1cc13f17418a4ce3a8b63663a7f66c1777abfc66c16bce8e0efa2912",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "Unbalanced template classification"
+  },
+  "stored_path": "Data/families/representation/reaction_classification/canonical/classification/tpl_u/data.csv.gz",
+  "task_id": "reaction_clustering",
+  "title": "Unbalanced template classification"
+}

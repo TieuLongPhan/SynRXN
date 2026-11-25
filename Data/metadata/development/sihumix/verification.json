@@ -1,0 +1,35 @@
+{
+  "all_source_mappings_and_memberships_verified": true,
+  "compared_files": 8,
+  "dataset_key": "aam/sihumix",
+  "file_sha256": {
+    "LICENSE-CC-BY-4.0.txt": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+    "NOTICE.txt": "465a2a9324d089e92c233f31a8ca88b85e45548f9c23aea94d5b5d836dcc84b1",
+    "UPSTREAM_README.txt": "58de4768bad4c3f8438e59a5b55814a2a3dd60f8181fa7c579187b8c9ee39f2f",
+    "aam.csv.gz": "a50cab432354906184432b2c890db4d2188abab5bcdbab19ce2e584a06d65d3b",
+    "build_report.json": "7f387218c625696a3f776a11c6209b10518696838cce4f104889ef9732ccccc3",
+    "manifest.json": "318834ebc59ee3d8d151a04949d14ab228082e7d95c045c2105a2d358c39483b",
+    "source-data.tar.gz": "7321b6d8586c73bad650274e15be4a501816b6754b8ccca1dd8e0fd69bef6698",
+    "source.json": "03c8d516f8ba9170b40ee62922e788460312ade0d69dcf02b35253d73704caac"
+  },
+  "fresh_archive_sha256": "fd7db3d1ff81f777159b497d87051963324ad84dedf3f493fb9415253740ecc9",
+  "fresh_download_url": "https://codeload.github.com/NoraBeier/cAAMsGEMs_of_SIHUMIx/tar.gz/c2c225efd8cc4489632f5a4044d81754265598d6",
+  "fresh_github_rebuild_byte_identical": true,
+  "hydrogen_completion": false,
+  "public_builder_command": "conda run -n synrxn python -m synrxn.reconstruction.builders sihumix --fetch",
+  "records": 8533,
+  "schema": "synrxn.sihumix-verification.v3",
+  "selected_mapping_and_membership_set_preserved": true,
+  "source_commit": "c2c225efd8cc4489632f5a4044d81754265598d6",
+  "verified_files": 7,
+  "versions": {
+    "Pillow": "11.3.0",
+    "networkx": "3.5",
+    "numpy": "2.4.6",
+    "python": "3.11.0",
+    "python_implementation": "CPython",
+    "rdkit": "2026.3.4",
+    "zlib_compile": "1.2.13",
+    "zlib_runtime": "1.3.1"
+  }
+}

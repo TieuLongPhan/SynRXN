@@ -1,0 +1,1962 @@
+{
+  "schema": "synrxn.expansion.v1",
+  "built_at": "2026-10-20T16:00:09.120062+00:00",
+  "survey_sha256": "dc3b8329e48bda5ee53693c25d695f55cc51403339065f33edc8254254ba206c",
+  "source_audit_sha256": "0135e79bf7a24d4bdf3d63813a878123729062b0fa352fa0003771bbd9c6b4ea",
+  "legacy_manifest_sha256": "f1da75b01ee954d14aaef79139d634543cb4cb32f94d0fd79a5f47f0f73446bc",
+  "environment": {
+    "python": "3.11.11",
+    "pandas": "3.0.3",
+    "pyarrow": "25.0.0",
+    "rdkit": "2026.3.4",
+    "ord-schema": "0.8.0",
+    "openpyxl": "3.1.5",
+    "h5py": "not installed"
+  },
+  "sources": [
+    {
+      "id": "C01",
+      "name": "BH-HTE-OOD",
+      "paper_urls": [
+        "https://www.nature.com/articles/s43588-026-01017-6"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/19636649"
+      ],
+      "project_urls": [
+        "https://github.com/schwallergroup/bh-hte-ood"
+      ],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "existing",
+      "rights_evidence": "Already integrated as yield/buchwald_hartwig_ood; do not count twice.",
+      "revision": "10.5281/zenodo.19636649",
+      "existing_artifact": "yield/buchwald_hartwig_ood.csv.gz",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "existing",
+      "issues": []
+    },
+    {
+      "id": "C02",
+      "name": "Borylation HTE and regioselectivity",
+      "paper_urls": [
+        "https://www.nature.com/articles/s43588-026-01063-0"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/20773622"
+      ],
+      "project_urls": [],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo data-record grant.",
+      "revision": "10.5281/zenodo.20773622",
+      "acquisition": {
+        "verified_assets": 5,
+        "failed_assets": 0
+      },
+      "integration_status": "integrated",
+      "issues": []
+    },
+    {
+      "id": "C03",
+      "name": "Cernak C–N coupling screen",
+      "paper_urls": [
+        "https://doi.org/10.1021/jacs.6c05959"
+      ],
+      "data_urls": [
+        "https://open-reaction-database.org/dataset/ord_dataset-805ad863feef48579d95d86a728035f4"
+      ],
+      "project_urls": [
+        "https://github.com/open-reaction-database/ord-data"
+      ],
+      "license_spdx": "CC-BY-SA-4.0",
+      "partition": "sharealike",
+      "admission": "admitted",
+      "rights_evidence": "ORD data license; Apache-2.0 applies separately to code.",
+      "revision": "704870642e5c93a141e6666436bc14a9b5f880ed",
+      "acquisition": {
+        "verified_assets": 1,
+        "failed_assets": 0
+      },
+      "integration_status": "integrated",
+      "issues": []
+    },
+    {
+      "id": "C04",
+      "name": "ORDerly condition benchmarks",
+      "paper_urls": [
+        "https://doi.org/10.1021/acs.jcim.4c00292"
+      ],
+      "data_urls": [
+        "https://figshare.com/articles/dataset/ORDerly_chemical_reactions_condition_benchmarks/23298467"
+      ],
+      "project_urls": [
+        "https://github.com/sustainable-processes/ORDerly"
+      ],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "existing",
+      "rights_evidence": "Already integrated as condition/orderly; preserve upstream source attribution.",
+      "revision": "10.6084/m9.figshare.23298467.v4",
+      "existing_artifact": "condition/orderly.csv.gz",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "existing",
+      "issues": []
+    },
+    {
+      "id": "C05",
+      "name": "Denmark CPA thiol addition",
+      "paper_urls": [
+        "https://doi.org/10.1126/science.aau5631"
+      ],
+      "data_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6417887/"
+      ],
+      "project_urls": [],
+      "license_spdx": "UNVERIFIED",
+      "partition": "excluded",
+      "admission": "terms_unresolved",
+      "rights_evidence": "Accessible supplementary information alone does not establish a data redistribution grant.",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "terms_unresolved",
+      "issues": []
+    },
+    {
+      "id": "C06",
+      "name": "Catechol solvent-selection benchmark",
+      "paper_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2025/file/ad61e68e2c4208d5d092b3ecd6064b46-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "data_urls": [
+        "https://github.com/jpfolch/catechol_solvent_selection"
+      ],
+      "project_urls": [
+        "https://github.com/jpfolch/catechol_solvent_selection"
+      ],
+      "license_spdx": "MIT",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Author-provided Croissant dataset metadata explicitly declares MIT; README covers code and data.",
+      "revision": "0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727",
+      "acquisition": {
+        "verified_assets": 7,
+        "failed_assets": 0
+      },
+      "integration_status": "integrated",
+      "issues": []
+    },
+    {
+      "id": "C07",
+      "name": "RDB19-Rad",
+      "paper_urls": [
+        "https://doi.org/10.1021/acs.jpca.4c04121"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/11493786"
+      ],
+      "project_urls": [],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo data-record grant; preserve directions, solvents and resonance parent IDs.",
+      "revision": "10.5281/zenodo.11493786",
+      "acquisition": {
+        "verified_assets": 2,
+        "failed_assets": 2
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": []
+    },
+    {
+      "id": "C08",
+      "name": "Transition1x",
+      "paper_urls": [
+        "https://www.nature.com/articles/s41597-022-01870-w"
+      ],
+      "data_urls": [
+        "https://figshare.com/articles/dataset/Transition1x/19614657"
+      ],
+      "project_urls": [],
+      "license_spdx": "MIT",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Figshare grant covers the native HDF5 asset.",
+      "revision": "10.6084/m9.figshare.19614657.v4",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 1
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "name": "PaRoutes 2.0",
+      "paper_urls": [
+        "https://doi.org/10.1039/D2DD00015F"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/7341155"
+      ],
+      "project_urls": [
+        "https://github.com/MolecularAI/PaRoutes"
+      ],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo data grant; software separately Apache-2.0.",
+      "revision": "10.5281/zenodo.7341155",
+      "acquisition": {
+        "verified_assets": 4,
+        "failed_assets": 3
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": []
+    },
+    {
+      "id": "C10",
+      "name": "RxnSolvKSE (Chung–Green)",
+      "paper_urls": [
+        "https://pubs.rsc.org/en/content/articlehtml/2024/sc/d3sc05353a"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/8423911"
+      ],
+      "project_urls": [],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo grant and explicit data README; preserve source studies.",
+      "revision": "10.5281/zenodo.8423911",
+      "acquisition": {
+        "verified_assets": 1,
+        "failed_assets": 1
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C11",
+      "name": "QuantumPioneer HAT database",
+      "paper_urls": [
+        "https://doi.org/10.1021/jacs.6c10371"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/20060606"
+      ],
+      "project_urls": [
+        "https://github.com/QuantumPioneer/database"
+      ],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo data-record grant.",
+      "revision": "10.5281/zenodo.20060606",
+      "acquisition": {
+        "verified_assets": 1,
+        "failed_assets": 2
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": []
+    },
+    {
+      "id": "C12",
+      "name": "OrgReact",
+      "paper_urls": [
+        "https://www.nature.com/articles/s41597-026-07771-6"
+      ],
+      "data_urls": [
+        "https://doi.org/10.6084/m9.figshare.31668682"
+      ],
+      "project_urls": [],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Figshare data-record grant.",
+      "revision": "10.6084/m9.figshare.31668682.v3",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 2
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C13",
+      "name": "EnzEngDB",
+      "paper_urls": [
+        "https://doi.org/10.1093/nar/gkaf1142"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/17310823"
+      ],
+      "project_urls": [
+        "https://github.com/fhalab/EnzymeEngineeringDB"
+      ],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo compilation grant; retain source-paper and assay evidence.",
+      "revision": "10.5281/zenodo.17310823",
+      "acquisition": {
+        "verified_assets": 1,
+        "failed_assets": 1
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C14",
+      "name": "ReactZyme",
+      "paper_urls": [
+        "https://arxiv.org/html/2408.13659v3"
+      ],
+      "data_urls": [
+        "https://github.com/WillHua127/ReactZyme/tree/main/data"
+      ],
+      "project_urls": [
+        "https://github.com/WillHua127/ReactZyme"
+      ],
+      "license_spdx": "MIT",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Primary Zenodo dataset 11494913 explicitly declares MIT; GitHub code is CC0. Retain UniProt/Rhea attribution and original terms.",
+      "revision": "c4d1554640a01e5b8ae8e2de716b452ce93b1bc6",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C15",
+      "name": "CatPred-DB",
+      "paper_urls": [
+        "https://www.nature.com/articles/s41467-025-57215-9"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/14775076"
+      ],
+      "project_urls": [
+        "https://github.com/maranasgroup/CatPred-DB"
+      ],
+      "license_spdx": "MIT",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo data-record grant; retain original BRENDA/SABIO-RK attribution and measurement provenance.",
+      "revision": "10.5281/zenodo.14775076",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C16",
+      "name": "OrgAIcat / iSynth",
+      "paper_urls": [
+        "https://github.com/DeepSynthesis/orgaicat"
+      ],
+      "data_urls": [
+        "https://github.com/DeepSynthesis/orgaicat/tree/main/data"
+      ],
+      "project_urls": [
+        "https://github.com/DeepSynthesis/orgaicat"
+      ],
+      "license_spdx": "MIT",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Official repository explicitly supplies code and datasets under MIT. Retain per-paper DOIs and endpoint definitions.",
+      "revision": "9ba285de6e2c5dfe0373e2815b90cd8b7a166632",
+      "acquisition": {
+        "verified_assets": 11,
+        "failed_assets": 0
+      },
+      "integration_status": "integrated",
+      "issues": [
+        {
+          "asset": "data/mannich_reaction_Denmark.xlsx",
+          "reason": "native Output endpoint has no documented unit; retained as source, excluded from ee views"
+        }
+      ]
+    },
+    {
+      "id": "C17",
+      "name": "CHORISO",
+      "paper_urls": [
+        "https://arxiv.org/abs/2312.09004"
+      ],
+      "data_urls": [
+        "https://figshare.com/articles/dataset/CHORISO_-_chemical_reaction_SMILES_from_academic_journals/22598230"
+      ],
+      "project_urls": [
+        "https://github.com/schwallergroup/choriso"
+      ],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Figshare data-record grant; patent-derived reactions are not quantitative selectivity experiments.",
+      "revision": "10.6084/m9.figshare.22598230.v1",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 2
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C18",
+      "name": "Perera Suzuki–Miyaura HTE",
+      "paper_urls": [
+        "https://www.science.org/doi/10.1126/science.aap9112"
+      ],
+      "data_urls": [
+        "https://www.science.org/doi/10.1126/science.aap9112"
+      ],
+      "project_urls": [],
+      "license_spdx": "UNVERIFIED",
+      "partition": "excluded",
+      "admission": "terms_unresolved",
+      "rights_evidence": "Existing Perera source remains excluded until a dataset-specific grant is verified.",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "terms_unresolved",
+      "issues": []
+    },
+    {
+      "id": "C19",
+      "name": "Parrot USPTO-Condition",
+      "paper_urls": [
+        "https://doi.org/10.34133/research.0231"
+      ],
+      "data_urls": [
+        "https://github.com/wangxr0526/Parrot"
+      ],
+      "project_urls": [
+        "https://github.com/wangxr0526/Parrot"
+      ],
+      "license_spdx": "UNVERIFIED",
+      "partition": "excluded",
+      "admission": "terms_unresolved",
+      "rights_evidence": "Parrot code MIT does not resolve the underlying dataset redistribution terms.",
+      "revision": "0fb2325567e21011589641544e32427c8244e2a9",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "terms_unresolved",
+      "issues": []
+    },
+    {
+      "id": "C20",
+      "name": "OC20NEB",
+      "paper_urls": [
+        "https://doi.org/10.1021/acscatal.4c04272"
+      ],
+      "data_urls": [
+        "https://facebookresearch.github.io/fairchem/oc20neb/"
+      ],
+      "project_urls": [],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Official OC20NEB dataset page states CC BY 4.0. Preserve slab/cell/periodicity context.",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C21",
+      "name": "LiPRED",
+      "paper_urls": [
+        "https://pubs.rsc.org/en/content/articlehtml/2026/cp/d6cp00088f"
+      ],
+      "data_urls": [
+        "https://doi.org/10.5281/zenodo.8396100"
+      ],
+      "project_urls": [],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo data-record grant; preserve calculation methods and solvent groups.",
+      "revision": "10.5281/zenodo.16358189",
+      "acquisition": {
+        "verified_assets": 1,
+        "failed_assets": 1
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C22",
+      "name": "RMG database",
+      "paper_urls": [
+        "https://pubs.acs.org/jcisd8/article/62/20/4906/884055/RMG-Database-for-Chemical-Property-Prediction"
+      ],
+      "data_urls": [
+        "https://github.com/ReactionMechanismGenerator/RMG-database"
+      ],
+      "project_urls": [
+        "https://github.com/ReactionMechanismGenerator/RMG-database"
+      ],
+      "license_spdx": "UNVERIFIED",
+      "partition": "excluded",
+      "admission": "terms_unresolved",
+      "rights_evidence": "No blanket data license verified in the pinned repository archive; individual rate libraries need source review.",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "terms_unresolved",
+      "issues": []
+    },
+    {
+      "id": "C23",
+      "name": "EasIFA SwissProt E-RXN ASA",
+      "paper_urls": [
+        "https://www.nature.com/articles/s41467-024-51511-6"
+      ],
+      "data_urls": [
+        "https://github.com/wangxr0526/EasIFA"
+      ],
+      "project_urls": [
+        "https://github.com/wangxr0526/EasIFA"
+      ],
+      "license_spdx": "UNVERIFIED",
+      "partition": "excluded",
+      "admission": "terms_unresolved",
+      "rights_evidence": "MIT code does not establish all underlying active-site dataset terms. Preserve UniProt/M-CSA provenance and inferred reaction pairings.",
+      "revision": "fb65cfe083c8a247ceae0174a59c8e4811fc8c1b",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "terms_unresolved",
+      "issues": []
+    },
+    {
+      "id": "C24",
+      "name": "EnzChemRED",
+      "paper_urls": [
+        "https://www.nature.com/articles/s41597-024-03835-7"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/11067998"
+      ],
+      "project_urls": [
+        "https://github.com/ncbi-nlp/EnzChemRED"
+      ],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Official SIB/Zenodo data-record grant; manually annotated corpus is distinct from predicted text-mined expansion.",
+      "revision": "10.5281/zenodo.11067998",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 2
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C25",
+      "name": "CompleteRXN",
+      "paper_urls": [
+        "https://arxiv.org/html/2605.00222v2"
+      ],
+      "data_urls": [
+        "https://huggingface.co/datasets/completeRXN-benchmark-26/completeRXN"
+      ],
+      "project_urls": [],
+      "license_spdx": "UNVERIFIED",
+      "partition": "excluded",
+      "admission": "terms_unresolved",
+      "rights_evidence": "README limits MIT to benchmark code; underlying USPTO/FlowER data retain their original terms.",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "terms_unresolved",
+      "issues": []
+    },
+    {
+      "id": "C26",
+      "name": "PMechDB / RMechDB",
+      "paper_urls": [
+        "https://deeprxn.ics.uci.edu/pmechdb/download"
+      ],
+      "data_urls": [
+        "https://deeprxn.ics.uci.edu/rmechdb/howtouse"
+      ],
+      "project_urls": [],
+      "license_spdx": "CC-BY-NC-ND",
+      "partition": "excluded",
+      "admission": "modified_redistribution_hold",
+      "rights_evidence": "Official database pages specify NC/ND terms; no modified redistribution grant established.",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "modified_redistribution_hold",
+      "issues": []
+    }
+  ],
+  "tables": [
+    {
+      "key": "C02/minot_al1_data",
+      "source_id": "C02",
+      "path": "main/C02/minot_al1_data.parquet",
+      "rows": 2907,
+      "parent_groups": 30,
+      "counting_unit": "HTE observation",
+      "role": "primary",
+      "split_counts": {
+        "test": 480,
+        "train": 2139,
+        "validation": 288
+      },
+      "evidence_counts": {
+        "reported_measurement": 2907
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "yield_conversion",
+        "reaction_success",
+        "condition_ranking",
+        "sequential_optimization"
+      ],
+      "task_fields": {
+        "yield_conversion": {
+          "inputs": [
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "sum_mono_bo_conv"
+          ]
+        },
+        "reaction_success": {
+          "inputs": [
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "binary"
+          ]
+        },
+        "condition_ranking": {
+          "inputs": [
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "sum_mono_bo_conv"
+          ]
+        },
+        "sequential_optimization": {
+          "inputs": [
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "sum_mono_bo_conv"
+          ]
+        }
+      },
+      "target_units": {
+        "sum_mono_bo_conv": "fraction",
+        "binary": "source-defined binary label"
+      },
+      "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+      "source_assets": [
+        {
+          "name": "Minot_AL1_Data.csv",
+          "url": "https://zenodo.org/api/records/20773622/files/Minot_AL1_Data.csv/content",
+          "sha256": "56b5e6a470bef65f5d2d392fc458df0d2fc9c33360f6cc34673986074ba8f023",
+          "bytes_observed": 1140015
+        }
+      ],
+      "sha256": "1a4593001f6dbf52487f50ff6efcbfef6b52cd0488dc5f0b001de04117faf780",
+      "bytes": 105563
+    },
+    {
+      "key": "C02/minot_al2_data",
+      "source_id": "C02",
+      "path": "main/C02/minot_al2_data.parquet",
+      "rows": 954,
+      "parent_groups": 10,
+      "counting_unit": "HTE observation",
+      "role": "primary",
+      "split_counts": {
+        "train": 762,
+        "test": 96,
+        "validation": 96
+      },
+      "evidence_counts": {
+        "reported_measurement": 954
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "yield_conversion",
+        "reaction_success",
+        "condition_ranking",
+        "sequential_optimization"
+      ],
+      "task_fields": {
+        "yield_conversion": {
+          "inputs": [
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "sum_mono_bo_conv"
+          ]
+        },
+        "reaction_success": {
+          "inputs": [
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "binary"
+          ]
+        },
+        "condition_ranking": {
+          "inputs": [
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "sum_mono_bo_conv"
+          ]
+        },
+        "sequential_optimization": {
+          "inputs": [
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "sum_mono_bo_conv"
+          ]
+        }
+      },
+      "target_units": {
+        "sum_mono_bo_conv": "fraction",
+        "binary": "source-defined binary label"
+      },
+      "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+      "source_assets": [
+        {
+          "name": "Minot_AL2_Data.csv",
+          "url": "https://zenodo.org/api/records/20773622/files/Minot_AL2_Data.csv/content",
+          "sha256": "99a74890359de43f2b1ae8800b4204b8531a5e7f05a2e2708ccc5a390e59736f",
+          "bytes_observed": 370564
+        }
+      ],
+      "sha256": "8b26a87c9577d85d2e913a1a9c0d5096777e41ad765b0fc4b7f9bb80c0db751c",
+      "bytes": 41317
+    },
+    {
+      "key": "C02/minot_al3_data",
+      "source_id": "C02",
+      "path": "main/C02/minot_al3_data.parquet",
+      "rows": 960,
+      "parent_groups": 10,
+      "counting_unit": "HTE observation",
+      "role": "primary",
+      "split_counts": {
+        "train": 960
+      },
+      "evidence_counts": {
+        "reported_measurement": 960
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "yield_conversion",
+        "reaction_success",
+        "condition_ranking",
+        "sequential_optimization"
+      ],
+      "task_fields": {
+        "yield_conversion": {
+          "inputs": [
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "sum_mono_bo_conv"
+          ]
+        },
+        "reaction_success": {
+          "inputs": [
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "binary"
+          ]
+        },
+        "condition_ranking": {
+          "inputs": [
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "sum_mono_bo_conv"
+          ]
+        },
+        "sequential_optimization": {
+          "inputs": [
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "sum_mono_bo_conv"
+          ]
+        }
+      },
+      "target_units": {
+        "sum_mono_bo_conv": "fraction",
+        "binary": "source-defined binary label"
+      },
+      "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+      "source_assets": [
+        {
+          "name": "Minot_AL3_Data.csv",
+          "url": "https://zenodo.org/api/records/20773622/files/Minot_AL3_Data.csv/content",
+          "sha256": "cc12b4dc38927c0840d6cb5a11d5f2bdd2f504163c0afcb7d32c212d74e90195",
+          "bytes_observed": 382624
+        }
+      ],
+      "sha256": "08f73be1d8027531abfdda1f26007fee8f2411221de95fcf1093e957f7364715",
+      "bytes": 42764
+    },
+    {
+      "key": "C02/minot_preal_data",
+      "source_id": "C02",
+      "path": "main/C02/minot_preal_data.parquet",
+      "rows": 2044,
+      "parent_groups": 518,
+      "counting_unit": "HTE observation",
+      "role": "primary",
+      "split_counts": {
+        "train": 1662,
+        "validation": 242,
+        "test": 140
+      },
+      "evidence_counts": {
+        "reported_measurement": 2044
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "yield_conversion",
+        "reaction_success",
+        "condition_ranking",
+        "sequential_optimization"
+      ],
+      "task_fields": {
+        "yield_conversion": {
+          "inputs": [
+            "additive_1_eq",
+            "additive_1_smiles",
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "ligand_2_eq",
+            "ligand_2_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "reagent_2_eq",
+            "reagent_2_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "solvent_2_fraction",
+            "solvent_2_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "sum_mono_bo_conv"
+          ]
+        },
+        "reaction_success": {
+          "inputs": [
+            "additive_1_eq",
+            "additive_1_smiles",
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "ligand_2_eq",
+            "ligand_2_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "reagent_2_eq",
+            "reagent_2_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "solvent_2_fraction",
+            "solvent_2_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "binary"
+          ]
+        },
+        "condition_ranking": {
+          "inputs": [
+            "additive_1_eq",
+            "additive_1_smiles",
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "ligand_2_eq",
+            "ligand_2_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "reagent_2_eq",
+            "reagent_2_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "solvent_2_fraction",
+            "solvent_2_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "sum_mono_bo_conv"
+          ]
+        },
+        "sequential_optimization": {
+          "inputs": [
+            "additive_1_eq",
+            "additive_1_smiles",
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "ligand_2_eq",
+            "ligand_2_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "reagent_2_eq",
+            "reagent_2_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "solvent_2_fraction",
+            "solvent_2_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "targets": [
+            "sum_mono_bo_conv"
+          ]
+        }
+      },
+      "target_units": {
+        "sum_mono_bo_conv": "fraction",
+        "binary": "source-defined binary label"
+      },
+      "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+      "source_assets": [
+        {
+          "name": "Minot_preAL_Data.csv",
+          "url": "https://zenodo.org/api/records/20773622/files/Minot_preAL_Data.csv/content",
+          "sha256": "ee4c86f379ff01aedc973712cb9d47f66c996641611da7392d6c523bec84ebd4",
+          "bytes_observed": 824834
+        }
+      ],
+      "sha256": "d46814951744663fc94cade06f30cd4e3f13e52bc5d13c5a0bcf43bf51793092",
+      "bytes": 115911
+    },
+    {
+      "key": "C02/regio",
+      "source_id": "C02",
+      "path": "main/C02/regio.parquet",
+      "rows": 1030,
+      "parent_groups": 812,
+      "counting_unit": "substrate-product annotation",
+      "role": "primary",
+      "split_counts": {
+        "train": 815,
+        "validation": 102,
+        "test": 113
+      },
+      "evidence_counts": {
+        "reported_product_annotation": 1030
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "regioselectivity"
+      ],
+      "task_fields": {
+        "regioselectivity": {
+          "inputs": [
+            "substrate_smiles"
+          ],
+          "targets": [
+            "product_smiles"
+          ]
+        }
+      },
+      "target_units": {},
+      "qualification": "Product annotations do not establish full product ratios or symmetry-aware reactive-site labels.",
+      "source_assets": [
+        {
+          "name": "Regio_Data.csv",
+          "url": "https://zenodo.org/api/records/20773622/files/Regio_Data.csv/content",
+          "sha256": "85fd2e33bcbc6fede5a12aa62b999227b1cbd2555fa9d3a92d23bbed5e1f11cf",
+          "bytes_observed": 74184
+        }
+      ],
+      "sha256": "2c672296e347ecef0af88921a10c8849e9fd8a2892538b79b82acf8ecb97e485",
+      "bytes": 62343
+    },
+    {
+      "key": "C03/cn_screen",
+      "source_id": "C03",
+      "path": "sharealike/C03/cn_screen.parquet",
+      "rows": 50688,
+      "parent_groups": 4,
+      "counting_unit": "HTE experiment",
+      "role": "primary",
+      "split_counts": {
+        "test": 19968,
+        "train": 30720
+      },
+      "evidence_counts": {
+        "reported_measurement": 50688
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "yield_conversion",
+        "condition_ranking",
+        "sequential_optimization"
+      ],
+      "task_fields": {
+        "yield_conversion": {
+          "inputs": [
+            "reactants",
+            "desired_products",
+            "components",
+            "conditions",
+            "reaction_time"
+          ],
+          "targets": [
+            "assay_yield_pct"
+          ]
+        },
+        "condition_ranking": {
+          "inputs": [
+            "reactants",
+            "desired_products",
+            "components",
+            "conditions",
+            "reaction_time"
+          ],
+          "targets": [
+            "assay_yield_pct"
+          ]
+        },
+        "sequential_optimization": {
+          "inputs": [
+            "reactants",
+            "desired_products",
+            "components",
+            "conditions",
+            "reaction_time"
+          ],
+          "targets": [
+            "assay_yield_pct"
+          ]
+        }
+      },
+      "target_units": {
+        "assay_yield_pct": "percent (assay yield)"
+      },
+      "qualification": "UPLC assay yields are selected by ORD measurement type and desired-product flag. Area and internal-standard measurements remain native metadata.",
+      "source_assets": [
+        {
+          "name": "cernak_cn.parquet",
+          "url": "https://media.githubusercontent.com/media/open-reaction-database/ord-data/704870642e5c93a141e6666436bc14a9b5f880ed/data/80/ord_dataset-805ad863feef48579d95d86a728035f4.parquet",
+          "sha256": "31b7c4762145e5dad973050373cd967bdd85caf3a9858767c83a17fed6c4af36",
+          "bytes_observed": 5088296
+        }
+      ],
+      "sha256": "534d2d7bc8cbed7f694694c0db65e9b34fd4cfe471878e0a37395767415bc5a0",
+      "bytes": 7165935
+    },
+    {
+      "key": "C06/catechol",
+      "source_id": "C06",
+      "path": "main/C06/catechol.parquet",
+      "rows": 1227,
+      "parent_groups": 13,
+      "counting_unit": "flow-condition observation",
+      "role": "primary",
+      "split_counts": {
+        "train": 957,
+        "test": 234,
+        "validation": 36
+      },
+      "evidence_counts": {
+        "reported_measurement": 1227
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "product_distribution",
+        "sequential_optimization"
+      ],
+      "task_fields": {
+        "product_distribution": {
+          "inputs": [
+            "substrate_smiles",
+            "temperature_c",
+            "residence_time_min",
+            "SOLVENT A SMILES",
+            "SOLVENT B SMILES",
+            "SolventB%",
+            "SOLVENT SMILES"
+          ],
+          "targets": [
+            "SM",
+            "Product 2",
+            "Product 3"
+          ]
+        },
+        "sequential_optimization": {
+          "inputs": [
+            "substrate_smiles",
+            "temperature_c",
+            "residence_time_min",
+            "SOLVENT A SMILES",
+            "SOLVENT B SMILES",
+            "SolventB%",
+            "SOLVENT SMILES"
+          ],
+          "targets": [
+            "SM",
+            "Product 2",
+            "Product 3"
+          ]
+        }
+      },
+      "target_units": {
+        "SM": "fraction",
+        "Product 2": "fraction",
+        "Product 3": "fraction"
+      },
+      "qualification": "Single-solvent observations overlap the complete panel. Residence time is an input, not an observed time trajectory. Missing mass is not renormalized.",
+      "source_assets": [
+        {
+          "name": "data/full_data/catechol_full_data_yields.csv",
+          "url": "https://raw.githubusercontent.com/jpfolch/catechol_solvent_selection/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727/data/full_data/catechol_full_data_yields.csv",
+          "sha256": "62d2e25e6ef3de018210c0a2115988ebbbd2969ab6e2072ad610706b29c8f392",
+          "bytes_observed": 520566
+        }
+      ],
+      "sha256": "579b186784c74a5164718c79d8abbf7fa13e26015bece574ab99164e1b50cec6",
+      "bytes": 114709
+    },
+    {
+      "key": "C06/claisen",
+      "source_id": "C06",
+      "path": "main/C06/claisen.parquet",
+      "rows": 283,
+      "parent_groups": 9,
+      "counting_unit": "flow-condition observation",
+      "role": "primary",
+      "split_counts": {
+        "train": 283
+      },
+      "evidence_counts": {
+        "reported_measurement": 283
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "product_distribution",
+        "sequential_optimization"
+      ],
+      "task_fields": {
+        "product_distribution": {
+          "inputs": [
+            "substrate_smiles",
+            "temperature_c",
+            "residence_time_min",
+            "SOLVENT A SMILES",
+            "SOLVENT B SMILES",
+            "SolventB%",
+            "SOLVENT SMILES"
+          ],
+          "targets": [
+            "SM",
+            "Product"
+          ]
+        },
+        "sequential_optimization": {
+          "inputs": [
+            "substrate_smiles",
+            "temperature_c",
+            "residence_time_min",
+            "SOLVENT A SMILES",
+            "SOLVENT B SMILES",
+            "SolventB%",
+            "SOLVENT SMILES"
+          ],
+          "targets": [
+            "SM",
+            "Product"
+          ]
+        }
+      },
+      "target_units": {
+        "SM": "fraction",
+        "Product": "fraction"
+      },
+      "qualification": "Single-solvent observations overlap the complete panel. Residence time is an input, not an observed time trajectory. Missing mass is not renormalized.",
+      "source_assets": [
+        {
+          "name": "data/full_data/claisen_data_clean.csv",
+          "url": "https://raw.githubusercontent.com/jpfolch/catechol_solvent_selection/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727/data/full_data/claisen_data_clean.csv",
+          "sha256": "ffbb7c280f5a150331223587debe02aa26460047c28ec6c82d4711e318fe0660",
+          "bytes_observed": 63660
+        }
+      ],
+      "sha256": "6890901862e080d0c2f59b0bc2127ddfc638babf3eb23f7c07ca86490593c4af",
+      "bytes": 21249
+    },
+    {
+      "key": "C06/single_solvent",
+      "source_id": "C06",
+      "path": "main/C06/single_solvent.parquet",
+      "rows": 656,
+      "parent_groups": 24,
+      "counting_unit": "flow-condition observation",
+      "role": "overlapping_view",
+      "split_counts": {
+        "train": 484,
+        "test": 97,
+        "validation": 75
+      },
+      "evidence_counts": {
+        "reported_measurement": 656
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "product_distribution",
+        "sequential_optimization"
+      ],
+      "task_fields": {
+        "product_distribution": {
+          "inputs": [
+            "substrate_smiles",
+            "temperature_c",
+            "residence_time_min",
+            "SOLVENT A SMILES",
+            "SOLVENT B SMILES",
+            "SolventB%",
+            "SOLVENT SMILES"
+          ],
+          "targets": [
+            "SM",
+            "Product 2",
+            "Product 3"
+          ]
+        },
+        "sequential_optimization": {
+          "inputs": [
+            "substrate_smiles",
+            "temperature_c",
+            "residence_time_min",
+            "SOLVENT A SMILES",
+            "SOLVENT B SMILES",
+            "SolventB%",
+            "SOLVENT SMILES"
+          ],
+          "targets": [
+            "SM",
+            "Product 2",
+            "Product 3"
+          ]
+        }
+      },
+      "target_units": {
+        "SM": "fraction",
+        "Product 2": "fraction",
+        "Product 3": "fraction"
+      },
+      "qualification": "Single-solvent observations overlap the complete panel. Residence time is an input, not an observed time trajectory. Missing mass is not renormalized.",
+      "source_assets": [
+        {
+          "name": "data/single_solvent/catechol_single_solvent_yields.csv",
+          "url": "https://raw.githubusercontent.com/jpfolch/catechol_solvent_selection/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727/data/single_solvent/catechol_single_solvent_yields.csv",
+          "sha256": "8e1831b469541c3bce59a19a0842e7861c35aab8f58f5e524b973372dcdcedf2",
+          "bytes_observed": 186992
+        }
+      ],
+      "sha256": "9567764950291fd19115fc4fe05d44ef1975207b23c06c7a04b021b405455964",
+      "bytes": 57554
+    },
+    {
+      "key": "C16/aldol_reaction_dataset",
+      "source_id": "C16",
+      "path": "main/C16/aldol_reaction_dataset.parquet",
+      "rows": 13360,
+      "parent_groups": 479,
+      "counting_unit": "literature or validation observation",
+      "role": "primary",
+      "split_counts": {
+        "train": 10807,
+        "test": 1325,
+        "validation": 1228
+      },
+      "evidence_counts": {
+        "reported_measurement": 13360
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "enantioselectivity"
+      ],
+      "task_fields": {
+        "enantioselectivity": {
+          "inputs": [
+            "cat_1_canonical_smiles",
+            "reactant_1_canonical_smiles",
+            "reactant_2_canonical_smiles",
+            "product_1_canonical_smiles",
+            "temperature",
+            "solvent_1_smiles",
+            "solvent_2_smiles",
+            "additive_1_smiles",
+            "additive_2_smiles"
+          ],
+          "targets": [
+            "abs_ee"
+          ]
+        }
+      },
+      "target_units": {
+        "abs_ee": "percent"
+      },
+      "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+      "source_assets": [
+        {
+          "name": "data/aldol_reaction-dataset.xlsx",
+          "url": "https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/data/aldol_reaction-dataset.xlsx",
+          "sha256": "e9d206bdf08baa3e42080860b1d4e753c9994da3651b6c3b4e637635ca8920e7",
+          "bytes_observed": 684281
+        }
+      ],
+      "sha256": "727fecc820664a12bcf5656784e246872f9cae9eedc14129487032c05d167848",
+      "bytes": 615549
+    },
+    {
+      "key": "C16/michael_addition_dataset",
+      "source_id": "C16",
+      "path": "main/C16/michael_addition_dataset.parquet",
+      "rows": 9194,
+      "parent_groups": 366,
+      "counting_unit": "literature or validation observation",
+      "role": "primary",
+      "split_counts": {
+        "train": 7608,
+        "test": 1014,
+        "validation": 572
+      },
+      "evidence_counts": {
+        "reported_measurement": 9194
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "enantioselectivity"
+      ],
+      "task_fields": {
+        "enantioselectivity": {
+          "inputs": [
+            "cat_1_canonical_smiles",
+            "reactant_1_canonical_smiles",
+            "reactant_2_canonical_smiles",
+            "product_1_canonical_smiles",
+            "Solvent_1_canonical_SMILES",
+            "Solvent 2 SMILES",
+            "additive_1_canonical_SMILES",
+            "additive 2 SMILES",
+            "temperature"
+          ],
+          "targets": [
+            "p1_ee"
+          ]
+        }
+      },
+      "target_units": {
+        "p1_ee": "percent"
+      },
+      "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+      "source_assets": [
+        {
+          "name": "data/michael_addition-dataset.xlsx",
+          "url": "https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/data/michael_addition-dataset.xlsx",
+          "sha256": "9c8e9b6132bb746ca37ea6a6f65e95831fc9816a8e4e2dfb4ed2b95a76109134",
+          "bytes_observed": 502445
+        }
+      ],
+      "sha256": "3ebcd00fcf67e6fe004d94e1ea4e9a0c6a68e174001bbddfcfb99ef8a8ec035c",
+      "bytes": 448457
+    },
+    {
+      "key": "C16/validation_in_house_acetone",
+      "source_id": "C16",
+      "path": "main/C16/validation_in_house_acetone.parquet",
+      "rows": 24,
+      "parent_groups": 1,
+      "counting_unit": "literature or validation observation",
+      "role": "primary",
+      "split_counts": {
+        "train": 24
+      },
+      "evidence_counts": {
+        "reported_measurement": 24
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "enantioselectivity"
+      ],
+      "task_fields": {
+        "enantioselectivity": {
+          "inputs": [
+            "reactant_1_canonical_smiles",
+            "reactant_2_canonical_smiles",
+            "product_1_canonical_smiles",
+            "s12_a12_smiles",
+            "cat_1_canonical_smiles",
+            "temperature"
+          ],
+          "targets": [
+            "p1_ee",
+            "experimental_deltaG"
+          ]
+        }
+      },
+      "target_units": {
+        "p1_ee": "percent",
+        "experimental_deltaG": "kcal/mol (source-derived)"
+      },
+      "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+      "source_assets": [
+        {
+          "name": "data/validation_data/validation_in_house_acetone.xlsx",
+          "url": "https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/data/validation_data/validation_in_house_acetone.xlsx",
+          "sha256": "5e0aae7fa21c66bda00bb4170bec4413bb72a6ddf572fd4c2f4d04cf67341a7b",
+          "bytes_observed": 12339
+        }
+      ],
+      "sha256": "a78c786545763bc1a4af9b67258c85c99a249c13022fa4e88c6aa9f360139e44",
+      "bytes": 9572
+    },
+    {
+      "key": "C16/validation_in_house_hydroxyacetone",
+      "source_id": "C16",
+      "path": "main/C16/validation_in_house_hydroxyacetone.parquet",
+      "rows": 17,
+      "parent_groups": 1,
+      "counting_unit": "literature or validation observation",
+      "role": "primary",
+      "split_counts": {
+        "train": 17
+      },
+      "evidence_counts": {
+        "reported_measurement": 17
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "enantioselectivity"
+      ],
+      "task_fields": {
+        "enantioselectivity": {
+          "inputs": [
+            "reactant_1_canonical_smiles",
+            "reactant_2_canonical_smiles",
+            "product_1_canonical_smiles",
+            "s12_a12_smiles",
+            "cat_1_canonical_smiles",
+            "temperature"
+          ],
+          "targets": [
+            "p1_ee",
+            "experimental_deltaG"
+          ]
+        }
+      },
+      "target_units": {
+        "p1_ee": "percent",
+        "experimental_deltaG": "kcal/mol (source-derived)"
+      },
+      "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+      "source_assets": [
+        {
+          "name": "data/validation_data/validation_in_house_hydroxyacetone.xlsx",
+          "url": "https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/data/validation_data/validation_in_house_hydroxyacetone.xlsx",
+          "sha256": "0c083a804fe9c6e35663093bc977d3379b4f7d2e7648753055cbf15686520114",
+          "bytes_observed": 13389
+        }
+      ],
+      "sha256": "c5902553914c1d3718ccb551fba622475381e36ec6282c53e1e70b57dfb9cc4d",
+      "bytes": 9693
+    },
+    {
+      "key": "C16/validation_new_literature_aldol",
+      "source_id": "C16",
+      "path": "main/C16/validation_new_literature_aldol.parquet",
+      "rows": 81,
+      "parent_groups": 3,
+      "counting_unit": "literature or validation observation",
+      "role": "primary",
+      "split_counts": {
+        "train": 81
+      },
+      "evidence_counts": {
+        "reported_measurement": 81
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "enantioselectivity"
+      ],
+      "task_fields": {
+        "enantioselectivity": {
+          "inputs": [
+            "reactant_1_canonical_smiles",
+            "reactant_2_canonical_smiles",
+            "product_1_canonical_smiles",
+            "cat_1_canonical_smiles",
+            "s12_a12_smiles",
+            "temperature"
+          ],
+          "targets": [
+            "p1_ee"
+          ]
+        }
+      },
+      "target_units": {
+        "p1_ee": "percent"
+      },
+      "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+      "source_assets": [
+        {
+          "name": "data/validation_data/validation_new_literature_aldol.xlsx",
+          "url": "https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/data/validation_data/validation_new_literature_aldol.xlsx",
+          "sha256": "e831a61c37e2cc5a33dac16487bac47ad6dcfe20d266b2a123b8a4c75c41e62d",
+          "bytes_observed": 14262
+        }
+      ],
+      "sha256": "538b7824377d0a526ea8a6ff7d3837d26fbb22cda611bfa9f8fefb9ec8d2e87d",
+      "bytes": 11926
+    },
+    {
+      "key": "C16/validation_new_literature_michael",
+      "source_id": "C16",
+      "path": "main/C16/validation_new_literature_michael.parquet",
+      "rows": 109,
+      "parent_groups": 3,
+      "counting_unit": "literature or validation observation",
+      "role": "primary",
+      "split_counts": {
+        "train": 109
+      },
+      "evidence_counts": {
+        "reported_measurement": 109
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "enantioselectivity"
+      ],
+      "task_fields": {
+        "enantioselectivity": {
+          "inputs": [
+            "cat_1_canonical_smiles",
+            "reactant_1_canonical_smiles",
+            "reactant_2_canonical_smiles",
+            "product_1_canonical_smiles",
+            "temperature",
+            "solvent_1_smiles",
+            "solvent_2_smiles",
+            "additive_1_smiles",
+            "additive_2_smiles",
+            "s12_a12_smiles"
+          ],
+          "targets": [
+            "p1_ee"
+          ]
+        }
+      },
+      "target_units": {
+        "p1_ee": "percent"
+      },
+      "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+      "source_assets": [
+        {
+          "name": "data/validation_data/validation_new_literature_michael.xlsx",
+          "url": "https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/data/validation_data/validation_new_literature_michael.xlsx",
+          "sha256": "b593f1008e26bf22ee1416c982bc89c0d6c8ab554e906c8535a66f8647e008b6",
+          "bytes_observed": 18502
+        }
+      ],
+      "sha256": "41639b6a17b7b092b38a0f1ef59c53256d2f40c7ed27357c189fec55a6d00441",
+      "bytes": 14679
+    },
+    {
+      "key": "C16/validation_virtual_chemist",
+      "source_id": "C16",
+      "path": "main/C16/validation_virtual_chemist.parquet",
+      "rows": 39,
+      "parent_groups": 1,
+      "counting_unit": "literature or validation observation",
+      "role": "primary",
+      "split_counts": {
+        "train": 39
+      },
+      "evidence_counts": {
+        "reported_measurement": 39
+      },
+      "split_protocol": "sha256-parent-80-10-10-seed-2027",
+      "tasks": [
+        "enantioselectivity"
+      ],
+      "task_fields": {
+        "enantioselectivity": {
+          "inputs": [
+            "reactant_1_canonical_smiles",
+            "reactant_2_canonical_smiles",
+            "product_1_canonical_smiles",
+            "s12_a12_smiles",
+            "cat_1_canonical_smiles",
+            "temperature"
+          ],
+          "targets": [
+            "p1_ee",
+            "experimental_deltaG"
+          ]
+        }
+      },
+      "target_units": {
+        "p1_ee": "percent",
+        "experimental_deltaG": "kcal/mol (source-derived)"
+      },
+      "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+      "source_assets": [
+        {
+          "name": "data/validation_data/validation_virtual_chemist.xlsx",
+          "url": "https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/data/validation_data/validation_virtual_chemist.xlsx",
+          "sha256": "41bc736a26ca99e05dd263996d36a8c35aaa359b153beb5692ee8bd6b4e2b979",
+          "bytes_observed": 12032
+        }
+      ],
+      "sha256": "30c9b286d0668cddbc0ee4203eafb0f8b83b269c6d5620433d8d6e880a0eb50c",
+      "bytes": 10666
+    }
+  ],
+  "issues": [
+    {
+      "source_id": "C08",
+      "asset": "adapter",
+      "reason": "native adapter not yet available; source assets are not counted as usable tables"
+    },
+    {
+      "source_id": "C10",
+      "asset": "adapter",
+      "reason": "native adapter not yet available; source assets are not counted as usable tables"
+    },
+    {
+      "source_id": "C12",
+      "asset": "adapter",
+      "reason": "native adapter not yet available; source assets are not counted as usable tables"
+    },
+    {
+      "source_id": "C13",
+      "asset": "adapter",
+      "reason": "native adapter not yet available; source assets are not counted as usable tables"
+    },
+    {
+      "source_id": "C14",
+      "asset": "adapter",
+      "reason": "native adapter not yet available; source assets are not counted as usable tables"
+    },
+    {
+      "source_id": "C15",
+      "asset": "adapter",
+      "reason": "native adapter not yet available; source assets are not counted as usable tables"
+    },
+    {
+      "source_id": "C16",
+      "asset": "data/mannich_reaction_Denmark.xlsx",
+      "reason": "native Output endpoint has no documented unit; retained as source, excluded from ee views"
+    },
+    {
+      "source_id": "C17",
+      "asset": "adapter",
+      "reason": "native adapter not yet available; source assets are not counted as usable tables"
+    },
+    {
+      "source_id": "C20",
+      "asset": "adapter",
+      "reason": "native adapter not yet available; source assets are not counted as usable tables"
+    },
+    {
+      "source_id": "C21",
+      "asset": "adapter",
+      "reason": "native adapter not yet available; source assets are not counted as usable tables"
+    },
+    {
+      "source_id": "C24",
+      "asset": "adapter",
+      "reason": "native adapter not yet available; source assets are not counted as usable tables"
+    }
+  ],
+  "count_warning": "Physical records, trajectories, configurations, routes and derived variants must not be summed as independent reactions.",
+  "legacy_scope": "The frozen 49-table candidate and exact SynRXN 1.0.0 baseline are separate from this companion."
+}

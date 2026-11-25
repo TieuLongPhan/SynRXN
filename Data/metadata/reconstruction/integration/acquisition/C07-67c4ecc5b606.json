@@ -1,0 +1,12 @@
+{
+  "source_id": "C07",
+  "name": "Molecules.tar.bz2",
+  "bytes": 887339,
+  "checksum": "md5:a9e6f8238e7b4e115a42e74c9c392306",
+  "url": "https://zenodo.org/api/records/11493786/files/Molecules.tar.bz2/content",
+  "path": "Data/raw/synrxn2/C07/Molecules.tar.bz2",
+  "bytes_observed": 887339,
+  "sha256": "26aedef9c65fe702e4f48e752b260dafb4bde7728ca6b0af555a63e3e45f83f5",
+  "md5": "a9e6f8238e7b4e115a42e74c9c392306",
+  "status": "verified"
+}

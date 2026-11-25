@@ -1,0 +1,12 @@
+{
+  "source_id": "C02",
+  "name": "Regio_Data.csv",
+  "bytes": 74184,
+  "checksum": "md5:104aec4259da735026543317bafbae58",
+  "url": "https://zenodo.org/api/records/20773622/files/Regio_Data.csv/content",
+  "path": "Data/raw/synrxn2/C02/Regio_Data.csv",
+  "bytes_observed": 74184,
+  "sha256": "85fd2e33bcbc6fede5a12aa62b999227b1cbd2555fa9d3a92d23bbed5e1f11cf",
+  "md5": "104aec4259da735026543317bafbae58",
+  "status": "verified"
+}

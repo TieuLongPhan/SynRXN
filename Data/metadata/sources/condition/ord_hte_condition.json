@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "dataset_key": "condition_sharealike/ord_hte_condition.csv.gz",
+  "source_repository": "https://github.com/open-reaction-database/ord-data",
+  "source_mirror": "https://huggingface.co/datasets/open-reaction-database/ord-data",
+  "source_commit": "05fe1a62cb36d6bc3c07592ac1bd4ff1a4d8e43c",
+  "source_rows": 123812,
+  "accepted_rows": 123720,
+  "quarantined_rows": 92,
+  "output_sha256": "9d77cb0ef9233dd7922e4a65ea89e046051581c9200dd3eb7c85d3ae06514c5c",
+  "output_bytes": 24004331,
+  "upstream_license": "CC-BY-SA-4.0",
+  "license_scope": "The ord-data README and LICENSE explicitly apply CC-BY-SA-4.0 to datasets under data/ and repository metadata; code has a separate Apache-2.0 license.",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "required_attribution": [
+    "10.1021/jacs.1c09820",
+    "https://github.com/open-reaction-database/ord-data"
+  ],
+  "redistribution_partition": "sharealike",
+  "excluded_overlap_ids": {
+    "ord_dataset-d92976309c3a48a3a64a4cf5e7048086": "Pfizer 39k / HiTEA overlap",
+    "ord_dataset-68cb8b4b2b384e3d85b5b1efae58b203": "5,760 Suzuki-Miyaura yield dataset overlap",
+    "ord_dataset-46ff9a32d9e04016b9380b1b1ef949c3": "Ahneman / Buchwald-Hartwig OOD overlap",
+    "ord_dataset-00005539a1e04c809a9a78647bea649c": "AstraZeneca 750 / Buchwald-Hartwig OOD overlap"
+  },
+  "files": [
+    {"dataset_id":"ord_dataset-805ad863feef48579d95d86a728035f4","rows":50688,"sha256":"31b7c4762145e5dad973050373cd967bdd85caf3a9858767c83a17fed6c4af36"},
+    {"dataset_id":"ord_dataset-47eaacc46c3a4487bbdf99adb1a15e41","rows":47015,"sha256":"7e09c98aa540e15d44959f03028590278bf508650950778568fd264d3a7535c4"},
+    {"dataset_id":"ord_dataset-5c9a10329a8a48968d18879a48bb8ab2","rows":9632,"sha256":"a2ea1363cb895b590ae765e918f98f90d243d6caba763ed74543ae62e503b0b0"},
+    {"dataset_id":"ord_dataset-1ec2807f02fa4beda27d2a81b86eb843","rows":1227,"sha256":"b1fd81bb3034644117b7d07e0471ede7370597bb4bd2433dd4b5c20bf02fad99"},
+    {"dataset_id":"ord_dataset-2be11f57f3304e678ea8469baf6dd1bc","rows":1152,"sha256":"c7d17ab4af3551a4b2883c6e18c1f3a49b6c19d30d37fad762802aeeb275d948"},
+    {"dataset_id":"ord_dataset-3b8a2ef300e145468579027f206a3ac8","rows":1440,"sha256":"f8438f4490541ecd38d92208decc48ff33424d52772cc42701b7eb886fc14b8a"},
+    {"dataset_id":"ord_dataset-c5b00523487a4211a194160edf45e9ab","rows":1430,"sha256":"73c04ce2acaf6cf2b6b3ecda8c623d2a321435f1f5830aedb0a0f1afd562bdc4"},
+    {"dataset_id":"ord_dataset-ac78456835404910b3a4c840248b6ac9","rows":1728,"sha256":"52a9d0084abc051a792bfb71501af03ec13bdabc24a7db4e33b7223ddf8c884c"},
+    {"dataset_id":"ord_dataset-b440f8c90b6343189093770060fc4098","rows":1152,"sha256":"d289e2e9fbb77df61faadeb65cfadfbee0216b05a7d209b3ae3b3aca04a9993a"},
+    {"dataset_id":"ord_dataset-7acd6ad2bf4d4cff841cad008ab726d5","rows":960,"sha256":"b6dfe8e151a396c5332668c015bce764d23c667240e443495990205c66e4a1e5"},
+    {"dataset_id":"ord_dataset-675eddcaa6674ce3ae61e79bbc1e1c08","rows":1536,"sha256":"1ecc5469785e55997f244eb5f8d6dbc78029cbb233bd6a140b5f02d5d01860a1"},
+    {"dataset_id":"ord_dataset-7d8f5fd922d4497d91cb81489b052746","rows":1536,"sha256":"3d657d1eda5703b58b627565894890269b50b18e987709e70fd7968d83e59101"},
+    {"dataset_id":"ord_dataset-9b8aa9a7835143ef8ce3f70abfab7545","rows":1762,"sha256":"195765643b4aaad79d9ed82de6737a4855b9f2716e0bc0aa10cff950b7604d39"},
+    {"dataset_id":"ord_dataset-3b5db90e337942ea886b8f5bc5e3aa72","rows":450,"sha256":"fce2d70c28db7100b3ca5c3f298484daf4c4043c11a18da066db16ad2e36012c"},
+    {"dataset_id":"ord_dataset-eeba974d3c284aed86d1c1d442260a1e","rows":376,"sha256":"dbf6dae9521463c542fa8abccd2a078742c8052c0af11db842d200d94403fac6"},
+    {"dataset_id":"ord_dataset-d26118acda314269becc35db5c22dc59","rows":1728,"sha256":"0a600968a24eff0a440e30685b2cb7b62030693605574105eb57b7f07329700b"}
+  ],
+  "retrieved_at": "2026-08-22"
+}

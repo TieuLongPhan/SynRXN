@@ -1,0 +1,12 @@
+{
+  "source_id": "C09",
+  "name": "stock_n5.txt",
+  "bytes": 360970,
+  "checksum": "md5:741a804816fd0484a683b58846e142bb",
+  "url": "https://zenodo.org/api/records/7341155/files/stock_n5.txt/content",
+  "path": "Data/raw/synrxn2/C09/stock_n5.txt",
+  "bytes_observed": 360970,
+  "sha256": "199ec2d9fad0638c3ae53f2ea091dcd6bf9207a938b12ae1aa9429c37dd097af",
+  "md5": "741a804816fd0484a683b58846e142bb",
+  "status": "verified"
+}

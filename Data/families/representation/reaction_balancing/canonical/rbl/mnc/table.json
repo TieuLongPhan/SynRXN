@@ -1,0 +1,74 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "representation",
+  "format": "csv.gz",
+  "key": "rbl/mnc",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "rbl/mnc",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0 AND CC0-1.0",
+    "rights_status": "verified_curated_product_grant_with_open_base",
+    "role": "primary",
+    "rows": 33147
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "synrxn_archive_record",
+      "lowe_original_data_grant"
+    ],
+    "expected_bytes": 1090524,
+    "expected_rows": 33147,
+    "expected_sha256": "ed66cd15303b63fd9e0e6ea0f0ad396bada423a36d5f290dec5ee7cdf447c6cf",
+    "format": "csv.gz",
+    "key": "rbl/mnc",
+    "license_expression": "CC-BY-4.0 AND CC0-1.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/rbl/mnc.csv.gz",
+    "qualification": "Official Lowe patent-reaction base grants CC0. This exact curated SynRXN product is byte-identical to its published archive member and the independently retrieved dataset-specific CC-BY4 notice matches the lock's recorded noticeSHA256. Permission is scoped to the curated product; no claim that a code license or CC0 covers other authors' separate annotation databases.",
+    "rights_status": "verified_curated_product_grant_with_open_base",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 33147,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "liu2017retrosynthetic"
+    ],
+    "path": "Data/rbl/mnc.csv.gz",
+    "sha256": "ed66cd15303b63fd9e0e6ea0f0ad396bada423a36d5f290dec5ee7cdf447c6cf",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "liu2017retrosynthetic"
+    ],
+    "counting_unit": "source-table row",
+    "key": "rbl/mnc",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/rbl/mnc.csv.gz",
+    "role": "primary",
+    "rows": 33147,
+    "sha256": "ed66cd15303b63fd9e0e6ea0f0ad396bada423a36d5f290dec5ee7cdf447c6cf",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "Missing non-carbon rebalancing"
+  },
+  "stored_path": "Data/families/representation/reaction_balancing/canonical/rbl/mnc/data.csv.gz",
+  "task_id": "reaction_balancing",
+  "title": "Missing non-carbon rebalancing"
+}

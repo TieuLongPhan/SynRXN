@@ -1,0 +1,79 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "outcomes",
+  "format": "csv.gz",
+  "key": "yield/uspto_yield",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "yield/uspto_yield",
+    "legacy_field_eligible_rows": {
+      "yield": 526468
+    },
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 526468
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "uspto_yield_data_grant"
+    ],
+    "expected_bytes": 114345878,
+    "expected_rows": 526468,
+    "expected_sha256": "a95706078ebba47315a91f853f27a3a3494e344b8ce782d53df0a5e5d5aa6f5b",
+    "format": "csv.gz",
+    "key": "yield/uspto_yield",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/yield/uspto_yield.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 526468,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "minidis2021uspto_yield",
+      "lowe2017uspto"
+    ],
+    "path": "Data/yield/uspto_yield.csv.gz",
+    "sha256": "a95706078ebba47315a91f853f27a3a3494e344b8ce782d53df0a5e5d5aa6f5b",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "minidis2021uspto_yield",
+      "lowe2017uspto"
+    ],
+    "counting_unit": "source-table row",
+    "key": "yield/uspto_yield",
+    "legacy_field_eligible_rows": {
+      "yield": 526468
+    },
+    "namespace": "canonical",
+    "path": "Data/yield/uspto_yield.csv.gz",
+    "role": "primary",
+    "rows": 526468,
+    "sha256": "a95706078ebba47315a91f853f27a3a3494e344b8ce782d53df0a5e5d5aa6f5b",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "USPTO patent yield benchmark"
+  },
+  "stored_path": "Data/families/outcomes/yield_conversion/canonical/yield/uspto_yield/data.csv.gz",
+  "task_id": "yield_conversion",
+  "title": "USPTO patent yield benchmark"
+}

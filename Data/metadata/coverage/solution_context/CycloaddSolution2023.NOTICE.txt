@@ -1,0 +1,8 @@
+Dipolar cycloaddition computed aqueous reaction profiles
+Creators: Thijs Stuyver; Kjell Jorner; Connor Coley
+Paper: https://doi.org/10.6084/m9.figshare.21707888.v5
+License: CC-BY-4.0
+Terms: https://creativecommons.org/licenses/by/4.0/
+Changes: joined original solvent and temperature to unchanged SynRXN targets; added canonical parent references and reaction-group splits.
+These are overlapping views of existing canonical observations. No independent data or physical revalidation is claimed.
+No endorsement by original creators is implied.

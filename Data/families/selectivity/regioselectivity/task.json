@@ -1,0 +1,94 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 2,
+    "data_links": 2,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 2,
+    "stored_rows_across_unique_views": 1565,
+    "task_table_bindings": 2,
+    "tasks": 1,
+    "unique_table_views": 2
+  },
+  "tables": [
+    {
+      "data_link": "canonical/selectivity/regiosqm_eas/data.csv.gz",
+      "key": "selectivity/regiosqm_eas",
+      "metadata": "canonical/selectivity/regiosqm_eas/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "expansion/C02/regio/data.parquet",
+      "key": "C02/regio",
+      "metadata": "expansion/C02/regio/table.json",
+      "namespace": "expansion"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "selectivity/regiosqm_eas",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 535
+      },
+      {
+        "adapter_ids": [
+          "regioselectivity"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "substrate-product annotation",
+        "key": "C02/regio",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Product annotations do not establish full product ratios or symmetry-aware reactive-site labels.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 1030
+      }
+    ],
+    "canonical_keys": [
+      "selectivity/regiosqm_eas"
+    ],
+    "counting_units": [
+      "source-table row",
+      "substrate-product annotation"
+    ],
+    "extension_adapter_ids": [
+      "regioselectivity"
+    ],
+    "family_id": "selectivity",
+    "id": "regioselectivity",
+    "legacy_view_ids": [],
+    "metrics": [
+      "site_set_recovery",
+      "symmetry_aware_site_accuracy",
+      "product_annotation_recovery",
+      "coverage"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 1565,
+    "primary_table_count": 2,
+    "qualification": "Native atom sites and product-only annotations are separate variants. Minot has 1030 rows and 924 nonempty product annotations, not 1030 validated site labels.",
+    "question": "Substrate and permitted context -> observed reactive sites or regioselective product annotation",
+    "readiness": "extension_adapter_available; standardized_contract_and_qualification_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 2,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Regioselectivity"
+  }
+}

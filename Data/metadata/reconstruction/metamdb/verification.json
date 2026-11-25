@@ -1,0 +1,55 @@
+{
+  "all_27451_full_targets_and_inputs_match_original_assessment": true,
+  "broad_full_archive_in_active_pool": false,
+  "checks": {
+    "flake8": "passed",
+    "pytest": "19 passed, 3 subtests passed",
+    "sphinx_warnings_as_errors": "passed"
+  },
+  "cyclic_first_references_and_split_match_original_all_177": true,
+  "datasets": {
+    "metambd_cyclic": {
+      "by_role": {
+        "test": 36,
+        "train": 141
+      },
+      "columns": [
+        "r_id",
+        "ground_truth",
+        "rxn",
+        "original_id",
+        "role",
+        "source",
+        "reference_tier",
+        "validation_status",
+        "mapping_scope",
+        "hydrogen_map_mismatch",
+        "element_balanced",
+        "charge_balanced",
+        "spectator_pairs_removed"
+      ],
+      "dataset": "metambd_cyclic",
+      "license_expression": "LicenseRef-Unknown",
+      "redistribution_partition": "excluded",
+      "rows": 177,
+      "source_records_verified": true
+    }
+  },
+  "fresh_common_exports_byte_identical": true,
+  "pending_paper_subset": {
+    "active_export": null,
+    "finding": "The released CSV has 49,928 rows and no selection/validation flags. No 4,456-row subset or selected-ID list was found in the repository, its history, branches, releases or relevant local downloads.",
+    "name": "metamdb",
+    "paper_url": "https://ssrn.com/abstract=7404606",
+    "requested_rows": 4456,
+    "retired_full_archive_export": "Data/archives/metamdb/full-qc-27451-1375c16b/aam-export",
+    "status": "awaiting_exact_author_subset_or_id_list",
+    "upstream_repository": "https://github.com/NoraBeier/BRMapper/tree/b1d428f3ed2d1ef5a1311150cc335ba1a916c06a"
+  },
+  "public_fresh_downloads_reproduce_aam_bytes": true,
+  "row_deduplication": "none",
+  "schema": "synrxn.metamdb-verification.v1",
+  "table_sha256": {
+    "metambd_cyclic": "f6a21d7d3e00575555696713945c9a99933a1a10361f17237711f2859dbbc5c7"
+  }
+}

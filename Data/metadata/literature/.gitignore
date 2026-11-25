@@ -1,0 +1,9 @@
+raw/
+papers/
+text/
+__pycache__/
+reviews.json
+openreview_searches.json
+publisher_metadata.json
+author_repositories.json
+europepmc_sources.json

@@ -1,0 +1,103 @@
+{
+  "build_report": {
+    "chemical_parsing_performed": false,
+    "columns": [
+      "sample_id",
+      "dataset",
+      "reaction_smiles",
+      "reactants",
+      "products",
+      "feasible",
+      "evidence_tier",
+      "label_method",
+      "negative_method",
+      "upstream_split",
+      "source_record_id",
+      "source_index",
+      "exact_reaction_group",
+      "additional_note",
+      "failure_reasons",
+      "difficulty"
+    ],
+    "dataset": "frea_corpus",
+    "evidence_tiers": {
+      "generated_negative": 13237151,
+      "upstream_positive": 877906
+    },
+    "grouping": "SHA-256 of exact recorded reaction text; no claim of chemical/source independence",
+    "label_counts": {
+      "0": 13237151,
+      "1": 877906
+    },
+    "membership": "Complete upstream expert test or corpus train/test, without custom benchmark subsampling",
+    "quarantined_rows": 0,
+    "rows": 14115057,
+    "sha256": "b7128dd8911c51f55b6740504710e621f736997a1b9c8a42594d7540ca25d8d3",
+    "source_files": [
+      {
+        "rows": 12848433,
+        "sha256": "dfec130795f4afb5fc46c8b1c930cbd15ddef0c83e84b45972cd106a7e185824",
+        "source_file": "train.csv",
+        "upstream_split": "train"
+      },
+      {
+        "rows": 1266624,
+        "sha256": "0f9b6a74ba5ed5fcdc35212227ead8291d02f975383aba9f8065d9ebcd15fcb4",
+        "source_file": "test.csv",
+        "upstream_split": "test"
+      }
+    ],
+    "source_methods": {
+      "ET": 4502015,
+      "FT": 1947690,
+      "FT;ET": 15064,
+      "FT;NC": 3,
+      "NC": 1582500,
+      "RA": 1869156,
+      "RA;ET": 5,
+      "RA;NC": 12,
+      "RA;RR": 4,
+      "RR": 3313610,
+      "RR;ET": 7076,
+      "RR;FT": 16,
+      "no_method": 877906
+    },
+    "upstream_splits": {
+      "test": 1266624,
+      "train": 12848433
+    }
+  },
+  "dataset_key": "feasibility/frea_corpus.csv.gz",
+  "document_sha256": {
+    "README.md": "835f3f7d88a86e05a882c6a6b6333da6ab874776385f85473798769d767c2fca"
+  },
+  "license_url": "https://huggingface.co/datasets/FREA-benchmark/FREA-corpus/blob/e20326e8804ab6d5c7d42184e2da84051cd6a89e/README.md",
+  "limits": [
+    "Generated binary supervision is distinct from expert test labels. These full upstream splits do not recover the screenshot's custom 200,000/10,000/10,000 train/validation/calibration selection.",
+    "Generated labels and expert judgments are separate evidence tiers.",
+    "No declaration that these labels are experimental success/failure measurements."
+  ],
+  "normalized_input_file": "frea_corpus.csv.gz",
+  "normalized_input_sha256": "b7128dd8911c51f55b6740504710e621f736997a1b9c8a42594d7540ca25d8d3",
+  "recorded_at": "2026-10-14T11:13:59.537437+00:00",
+  "redistribution_partition": "main",
+  "required_attribution": [
+    "FREA benchmark authors",
+    "https://arxiv.org/abs/2610.06614"
+  ],
+  "retrieved_at": "2026-10-14",
+  "schema_version": "1.0",
+  "source_commit_or_version": "e20326e8804ab6d5c7d42184e2da84051cd6a89e",
+  "source_file": [
+    "train.csv",
+    "test.csv"
+  ],
+  "source_files": {
+    "test.csv": "0f9b6a74ba5ed5fcdc35212227ead8291d02f975383aba9f8065d9ebcd15fcb4",
+    "train.csv": "dfec130795f4afb5fc46c8b1c930cbd15ddef0c83e84b45972cd106a7e185824"
+  },
+  "source_sha256": null,
+  "source_url": "https://huggingface.co/datasets/FREA-benchmark/FREA-corpus",
+  "terms_evidence": "Dataset card explicitly declares CC-BY-4.0; generated-label corpus remains separate from expert judgments.",
+  "upstream_license": "CC-BY-4.0"
+}

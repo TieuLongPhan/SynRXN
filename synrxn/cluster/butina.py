@@ -4,8 +4,7 @@ import numpy as np
 
 
 class ButinaClusterer:
-    """
-    Butina (greedy) clustering for small-to-moderate datasets.
+    """Butina (greedy) clustering for small-to-moderate datasets.
 
     The algorithm:
       - build neighbor sets: for each item i, neighbors = { j | sim[i,j] >= cutoff }
@@ -26,8 +25,8 @@ class ButinaClusterer:
                    If sim matrix provided, metric is ignored.
     :type metric: str
 
-    Example
-    -------
+    .. rubric:: Example
+
     >>> import numpy as np
     >>> from synrxn.cluster.butina import ButinaClusterer
     >>> # simple toy - two tight groups
@@ -80,15 +79,14 @@ class ButinaClusterer:
         sim: Optional[np.ndarray] = None,
         features: Optional[Sequence[Sequence]] = None,
     ) -> "ButinaClusterer":
-        """
-        Fit the clusterer using either a precomputed similarity matrix `sim` (square numpy array)
+        """Fit the clusterer using either a precomputed similarity matrix `sim` (square numpy array)
         or `features` (list/array of vectors). If both provided, `sim` is used.
 
         :param sim: Precomputed full symmetric similarity matrix (n x n). Optional.
         :type sim: Optional[np.ndarray]
         :param features: Raw feature vectors. If provided and metric == 'tanimoto', input must be binary/integers.
         :type features: Optional[Sequence[Sequence]]
-        :returns: self
+        :return: self
         """
         if sim is None and features is None:
             raise ValueError("Provide either 'sim' or 'features'")
@@ -205,12 +203,11 @@ class ButinaClusterer:
 
     @staticmethod
     def _greedy_butina(neighbor_sets: List[set]) -> List[List[int]]:
-        """
-        Greedy cluster formation:
-          - remaining = set(all indices)
-          - choose best = argmax_i |neighbor_sets[i] & remaining|
-          - cluster = sorted(neighbor_sets[best] & remaining)
-          - remove them and repeat
+        """Form clusters by greedily selecting the largest remaining neighborhood.
+
+        Start with all indices unassigned. At each iteration, choose the index
+        maximizing ``len(neighbor_sets[i] & remaining)``, emit its sorted remaining
+        neighbors as a cluster, and remove those neighbors from consideration.
         """
         n = len(neighbor_sets)
         remaining = set(range(n))

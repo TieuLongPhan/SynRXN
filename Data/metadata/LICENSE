@@ -1,0 +1,351 @@
+SynRXN Data License and Attribution Notice
+==========================================
+
+This file describes the reuse terms for the curated dataset files and data
+artifacts distributed under the SynRXN `Data/` directory.
+
+This notice is not a license for SynRXN source code. Source code and software
+utilities are licensed separately; see the repository-level `LICENSE` file.
+
+
+Default data license
+--------------------
+
+Unless a dataset-specific entry below states otherwise, curated SynRXN data
+tables and released metadata artifacts are distributed under:
+
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+SPDX identifier: CC-BY-4.0
+License URL: https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Under CC BY 4.0, you may share and adapt the material for any purpose, including
+commercial use, provided that you give appropriate credit, provide a link to the
+license, and indicate if changes were made.
+
+
+Dataset-specific licenses
+-------------------------
+
+The table below records the license for each curated benchmark table as
+distributed by SynRXN. Upstream publications, source repositories, and original
+data providers should still be cited as documented in `doc/data_records.rst` and
+`doc/reference.rst`.
+
+Task family              Dataset(s)                                      License
+-----------              ----------                                      -------
+rbl                      complex, mbs, mnc, mos                          CC BY 4.0
+aam                      brenda, ecoli, enzyme_map, golden,              CC BY 4.0
+                         natcomm, recon3d, uspto_3k
+aam                      ehreact                                         BSD-3-Clause
+aam                      flower_c, flower_e                              MIT
+classification           ecreact, schneider_b, schneider_u,              CC BY 4.0
+                         syntemp, tpl_b, tpl_u,
+                         uspto_50k_b, uspto_50k_u
+classification           ehreact_activity                                BSD-3-Clause
+condition                orderly_condition, uspto_500                    CC BY 4.0
+condition_sharealike     openexp, ord_hte_condition                      CC BY-SA 4.0
+property                 b97xd3, cycloadd, e2, e2sn2,                    CC BY 4.0
+                         lograte, phosphatase, rad6re,
+                         rdb7, rgd1, sn2
+property                 snar                                            CC BY 3.0
+synthesis                uspto_500, uspto_50k, uspto_mit                 CC BY 4.0
+synthesis                da                                              CC BY 3.0
+yield                    buchwald_hartwig_ood                            Apache-2.0
+yield                    hitea, uspto_yield                              MIT
+yield                    suzuki_miyaura                                  LicenseRef-Unknown
+
+CC BY 3.0 license URL:
+https://creativecommons.org/licenses/by/3.0/
+CC BY 3.0 legal code:
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+EHreact BSD-3-Clause notice
+---------------------------
+
+The ``aam/ehreact.csv.gz`` and ``classification/ehreact_activity.csv.gz``
+tables are derived from the EHreact manuscript data repository and remain
+under its BSD 3-Clause license:
+
+Copyright 2021 Esther Heid
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+3. Neither the name of the copyright holder nor the names of its contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Upstream license:
+https://github.com/hesther/ehreact/blob/main/LICENSE
+
+FlowER MIT notice
+-----------------
+
+The ``aam/flower_e.csv.gz`` and ``aam/flower_c.csv.gz`` tables are derived
+solely from the public corrected FlowER May-2026 Figshare test dataset and
+remain under its MIT license. The NameRxn-derived OOD sets available only on
+request are not included.
+
+MIT License
+
+Copyright (c) 2025 FongMunHong
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Upstream dataset: https://doi.org/10.6084/m9.figshare.32513667.v1
+Upstream license: https://github.com/FongMunHong/FlowER/blob/master/LICENSE
+
+
+Condition dataset notice
+------------------------
+
+``condition/orderly_condition.csv.gz`` is a normalized derivative of the
+ORDerly-condition version 4 benchmark by Wigh et al. The source dataset and
+normalized table are under Creative Commons Attribution 4.0 International.
+Preserve attribution, the source DOI ``10.6084/m9.figshare.23298467.v4``, and
+the article DOI ``10.1021/acs.jcim.4c00292``. SynRXN retains ORDerly's generic
+agent roles and does not infer catalyst, ligand, base, or additive subclasses.
+
+``condition/uspto_500.csv.gz`` is currently a byte-identical compatibility
+mirror of ``synthesis/uspto_500.csv.gz``. It must not be counted as an
+additional independent dataset or additional reaction records. The condition
+path will become canonical in a later release phase.
+
+Source license: https://creativecommons.org/licenses/by/4.0/
+
+``condition_sharealike/ord_hte_condition.csv.gz`` is a modified aggregate of sixteen
+datasets from the Open Reaction Database. The ORD data repository explicitly
+licenses datasets under ``data/`` and their metadata under Creative Commons
+Attribution-ShareAlike 4.0 International. SynRXN excludes the Pfizer 39k,
+5,760-record Suzuki-Miyaura, Ahneman, and AstraZeneca 750 cohorts because those
+source experiments already occur in the yield collection. Preserve ORD and
+contributor attribution and distribute adaptations under CC BY-SA 4.0.
+
+``condition_sharealike/openexp.csv.gz`` is a modified table from the authors' exact
+274,439-record ``OpenExp.tar`` OSF snapshot. Appendix A.1 of the ReactXT paper
+states that OpenExp is released under CC BY-SA and requires the same license
+for distribution and sharing. SynRXN retains the original procedure and action
+sequence and adds a deterministic transformation-group split because the
+released code's random 8:1:1 split has no fixed seed.
+
+Both ShareAlike artifacts are distributed from the physically separate
+``condition_sharealike/`` partition, which carries its own license text,
+attribution notice, and manifest. They must never be redistributed inside an
+archive whose notice omits the ShareAlike obligation.
+
+ShareAlike source license: https://creativecommons.org/licenses/by-sa/4.0/
+Full text: ``condition_sharealike/LICENSE`` (also ``sources/condition/CC-BY-SA-4.0.txt``)
+
+
+Yield dataset notices
+---------------------
+
+``yield/suzuki_miyaura.csv.gz`` is present only on the local ``yield`` branch
+while written permission is pending. Its source is Perera et al., Science 2018,
+DOI ``10.1126/science.aap9112``. No redistribution license has been verified;
+``LicenseRef-Unknown`` grants no rights. Do not publish or include this file in
+a release until the rights holder supplies written terms. The normalized
+structure representations use mappings from ``rxn4chemistry/rxn_yields``.
+
+``yield/buchwald_hartwig_ood.csv.gz`` is a modified, normalized table derived
+from the BH-HTE-OOD repository snapshot identified in
+``Data/sources/yield/buchwald_hartwig_ood.json``. It remains under Apache License
+2.0. SynRXN removed 59 records whose reported yields exceeded the normalized
+0--100 percent range and changed the source schema. A copy of Apache License
+2.0 is distributed as ``Data/sources/yield/APACHE-2.0.txt``. Upstream source and
+license: https://github.com/schwallergroup/bh-hte-ood
+
+``yield/hitea.csv.gz`` is a modified, normalized table derived from the HiTEA
+repository snapshot identified in ``Data/sources/yield/hitea.json``. It remains
+under the following MIT terms:
+
+MIT License
+
+Copyright (c) 2022 Emma King-Smith
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Upstream source: https://github.com/emmaking-smith/HiTEA
+
+``yield/uspto_yield.csv.gz`` is a modified, normalized table derived from
+Alexander Minidis's yield-curated USPTO Figshare archive, itself based on
+Daniel Lowe's CC0 USPTO extraction. The redistributed curated table remains
+under the Figshare record's MIT license. Preserve this notice and cite both
+source records:
+
+- https://doi.org/10.6084/m9.figshare.14414039.v1 (MIT)
+- https://doi.org/10.6084/m9.figshare.5104873.v1 (CC0-1.0)
+
+Copyright (c) 2021 Alexander Minidis. The MIT permission grant and warranty
+disclaimer printed above apply to this MIT-licensed source as well.
+
+
+Selectivity dataset notices
+---------------------------
+
+``selectivity/hitea_chiral_resolution.csv.gz`` is derived from the same pinned
+HiTEA source and MIT terms printed above for ``yield/hitea.csv.gz``. Cite
+King-Smith et al., Nature Chemistry 2024, DOI
+``10.1038/s41557-023-01393-w``. The selectivity subset retains only chiral salt
+resolution rows with positive reported product yield and a product-ee measurement.
+
+``selectivity/regiosqm_eas.csv.gz`` is a modified table from the Jensen Group
+``db-regioselectivity`` database at commit
+``f734ce480c61608c636c5d4c0e9866f6bcbbb9a9``. The repository contains the
+database files and describes their experimental EAS centers; its root license
+declares MIT. Cite Kromann et al., Chemical Science 2018, DOI
+``10.1039/C7SC04156J``.
+
+MIT License
+
+Copyright (c) 2017 Jensen Group
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Upstream source: https://github.com/jensengroup/db-regioselectivity
+
+
+
+Covered data artifacts
+----------------------
+
+Covered files include curated `.csv.gz` tables and release metadata artifacts
+under `Data/`, including:
+
+- `Data/rbl/`
+- `Data/aam/`
+- `Data/classification/`
+- `Data/property/`
+- `Data/selectivity/`
+- `Data/synthesis/`
+- `Data/yield/`
+- `Data/sources/`
+- `Data/metadata.yaml`
+
+Generated benchmark summaries or result files under `Data/results_benchmark/`
+and `Data/Benchmark/` are included only when they are part of a released SynRXN
+data archive. If a generated artifact contains third-party results or model
+outputs, check the accompanying release notes for additional terms.
+
+
+Not covered
+-----------
+
+This data license does not cover:
+
+- SynRXN source code or scripts; see the repository-level `LICENSE`.
+- Third-party source material that is referenced but not redistributed.
+- Third-party material redistributed under different terms; such material
+  remains under its original license.
+- Model weights, external benchmark outputs, or user-generated experimental
+  results unless a release explicitly states otherwise.
+
+
+Attribution guidance
+--------------------
+
+When using SynRXN data, cite:
+
+1. The primary SynRXN paper:
+
+   Tieu-Long Phan, Nhu-Ngoc Nguyen Song, and Peter F. Stadler.
+   "SynRXN: An Open Benchmark and Curated Dataset for Computational Reaction
+   Modeling." Scientific Data 13, 625 (2026).
+   DOI: https://doi.org/10.1038/s41597-026-07260-w
+
+2. The exact SynRXN data archive or version used in your experiment
+   (for example, a Zenodo version DOI or Git commit SHA).
+
+3. The upstream dataset or method citations listed in `doc/data_records.rst` for
+   the specific benchmark tables you used.
+
+Recommended wording:
+
+   "We used SynRXN v<version> dataset <task>/<dataset>, distributed under
+   <license>, and cite the SynRXN Scientific Data descriptor plus the upstream
+   source references listed in the SynRXN documentation."
+
+
+No additional restrictions
+--------------------------
+
+You may not apply legal terms or technological measures that legally restrict
+others from doing anything permitted by the applicable dataset license.
+
+FREA and SynEPD additions — candidate 1.4.0.dev0
+------------------------------------------------
+
+FREA expert and corpus tables are redistributed under the CC BY 4.0 declarations in their pinned Hugging Face dataset cards. Expert judgments, upstream-positive corpus records and generated-negative supervision have distinct evidence_tier fields. They are not represented as measured experimental success/failure. Original source splits and generation metadata are retained. Cite the FREA authors and paper (https://arxiv.org/abs/2610.06614).
+
+SynEPD polar annotations are redistributed under CC BY 4.0 as stated in the pinned v0.4.1 release metadata. Original electron-pushing arrows, case identifiers and representation policies are retained. Curated annotations and representation replay do not establish uniquely proven physical mechanisms. Cite SynEPD (https://github.com/TieuLongPhan/SynEPD).
+
+The 38 legacy tables are byte-identical to published SynRXN v1.2.1; that release's explicit dataset license notice is frozen at ncs/baselines/v1.2.1/Data/LICENSE. Exact archive/member pins are recorded in the corresponding source records. This reuse origin does not assert recovered original experimental document accessions.
+
+SNAr source-context sidecar
+--------------------------
+sources/property/snar-context.csv carries the same CC BY 3.0 source attribution as property/snar.csv.gz: Jorner et al., Machine learning meets mechanistic modelling for accurate prediction of experimental activation energies, Chemical Science 12, 1163–1175 (2021), DOI 10.1039/D0SC04896H. Reported entry IDs, conditions, literature and duplicate links were selected from the original publisher supplement without changing canonical table values. Original measurements and physical labels have not been independently revalidated.

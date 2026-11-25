@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BRENDA Enzyme Database</title>
+    <meta charset="utf-8">
+<meta name="description" content="BRENDA - The Comprehensive Enzyme Information System">
+<meta name="keywords" content="enzyme, database, protein, biochemistry, pharmacy, biology, Inhibitor, Cofactor, Substrate, Product, brenda">
+<link rel="icon" type="image/svg+xml" href="/brenda-favicon.svg">
+<link rel="mask-icon" href="/mask-icon.svg" color="#000026">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="stylesheet" href="/css/styles.css?1791985236" type="text/css" id="stylesheet">
+<script type="text/javascript" src="javascripts/overlib/overlib.min.js"></script>
+<script type="text/javascript" src="javascripts/general.min.js?1772631141"></script>
+<!--script type="text/javascript" src="javascripts/general.js?1772631141"></script-->
+<script type="text/javascript" src="/javascripts/search_result.js"></script>
+<script src="/javascripts/livesearch.js?1768463663" type="text/javascript"></script>
+<link rel="stylesheet" href="/assets/fontawesome/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script type="text/javascript" src="/javascripts/feedback.js?1716290843"></script>
+<script type="text/javascript" language="JavaScript" src="./javascripts/lazy_loading.js"></script>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['setCustomDimension', 1, 'brenda-9.dmz.dsmz.de']);
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['setDownloadClasses', "download"]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://matomo.dsmz.de/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '23']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+</head>
+<body>
+<div id="wrapper" onClick="liveSearchHide();">
+    <!--script type="text/javascript" src="/javascripts/awstats_misc_tracker.js"></script>
+<noscript><p><img src="/javascripts/awstats_misc_tracker.js?nojs=y" alt="" height="0" width="0" style="display: none" /></p></noscript-->
+
+<div id="header">
+    <div class="header--banner">
+        <a href="https://www.dsmz.de" target="_blank" rel="noreferrer" rel="noopener">Leibniz Institute DSMZ</a>
+        <a href="https://www.dsmz.de/research/digital-diversity/" target="_blank" rel="noreferrer" rel="noopener" >DSMZ Digital Diversity</a>
+    </div>
+    <div class="header--login">
+                <a href="/login.php"><i class="fa fa-sign-in-alt"></i> Login</a>
+    
+    </div>
+    <div class="header--logo">
+        <a href="/index.php"><img src="/images/brenda_logo.svg" alt="BRENDA Enzyme Database"/></a>
+    </div>
+    <nav class="header--nav">
+        <form method="post" id="quick-search-from" action="./fulltext.php?overall=1">
+            <fieldset>
+                <input type="hidden" name="compl_db" value="off" />
+                <input type="hidden" name="mainpage" value="1" />
+                <select class="visually-hidden" name="categories[]">
+		            <option value="-2" selected>Enzyme, Ligand</option>
+                </select>
+                <select class="visually-hidden" name="stype">
+		            <option value="2" selected>contains</option>
+	            </select>
+                <legend class="visually-hidden">Search enzyme or ligand</legend>
+                <input type="text" id="quickSearch" name="Searchterm" placeholder="Search enzyme or ligand" onkeydown="liveSearchStart('Quick')" autocomplete="off">
+                <button class="button">Go</button>
+            </fieldset>
+            <div class="LSResult" id="LSResult_Quick">
+                <div class="LSShadow" id="LSShadow_Quick"></div>
+            </div>
+        </form>
+        <ul>
+            <li><a href="https://sparql.dsmz.de/brenda/" alt="sparql" title="sparql" target="_blank"><img style="vertical-align:middle;margin-right:5px;" width="20" height="22" src="/images/sparql-no-text.svg"><b>SPARQL</b></a></li>
+            <li><a href="/oldstart.php"><i class="fa fa-house-damage"></i> Classic view</a></li>
+            <li><a href="/all_enzymes.php" target="main"><i class="fa fa-list"></i> All enzymes</a></li>
+            <li><a href="/history.php"><i class="fa fa-hourglass"></i> Enzyme history</a></li>
+                            <li><a href="/support.php"><i class="fa fa-headset"></i> <strong>BRENDA support</strong></a></li>
+                    </ul>
+    </nav>
+</div>
+<div class="infobox-wrapper">
+</div>
+
+
+<div class="quick-feedback">
+  <div class="quick-feedback__header">
+      <span class="quick-feedback__text">Any feedback?</span> 
+      <i class="quick-feedback__icon fa-solid fa-message fa-2x"></i>
+  </div> 
+  <fieldset class="quick-feedback-form">
+      <form action="feedback.php" method="POST" id="quick-feedback-form">
+          <div class="quick-feedback__heading">Please rate this page</div>
+          <div class="quick-feedback__pagename">(index.php)</div>
+          <div class="quick-feedback-form__rating">
+              <input type="radio" value="+" name="rating" id="rating_positive" required><label for="rating_positive" title="Awesome!">😁</label>
+              <input type="radio" value="0" name="rating" id="rating_neutral" required><label for="rating_neutral" title="OK">😐</label>
+              <input type="radio" value="-" name="rating" id="rating_negative" required><label for="rating_negative" title="Crap!">😡</label>
+          </div>
+          <div>
+              <textarea name="comment" class="quick-feedback-form__comment" id="comment" placeholder="Feedback, problems, errors, inconsistencies,..." cols="15" rows="3" maxlength="150"></textarea>
+              <div class="quick-feedback__length">(<span class="quick-feedback__chars">0</span>/150)</div>
+          </div>
+          <input class="quick-feedback-form__email" type="email" name="email" id="email">
+          <input type="hidden" name="site" id="site" value="/index.php"><br>
+          <input type="hidden" name="args" id="args" value="">
+          <button type="submit" class="quick-feedback-form__submit">Send feedback</button>
+          <p class="small center"><a href="https://www.brenda-enzymes.org/support.php" targe="_BLANK"><i class="fas fa-headset"></i> BRENDA support</a></p>
+      </form>
+  </fieldset>
+</div>
+
+        <div id="content">
+        <!-- page content starts here! -->
+                <section class="search">
+            <form id="searchtermbox" action="./fulltext.php?overall=1" method="post" name="standardSearch" onsubmit="return liveSearchSubmit();">
+            <input type="hidden" name="compl_db" value="off" /> 
+            <input type="hidden" name="mainpage" value="1" />  
+            <div class="searchterm">
+                <input type="text" name="Searchterm" class="search__input" id="searchtermtext" placeholder="Search term" onkeydown="liveSearchStart('Start')" autocomplete="off"/>
+                <input type="submit" name="submit_button" class="search__button search__button--red" value="Search BRENDA" />
+                <div class="LSResult" id="LSResult_Start"><div class="LSShadow" id="LSShadow_Start"></div></div>
+            </div>
+            <div id="dynamicSearch">
+                <div id="dynamicSearch1" class="dynamicSearch">
+                <select class="search__select" id="categoryselect1" name="categories[]" onChange="offerLiveSearch(1)">
+		            <option value="-1">All Fields</option>
+		            <option value="-2" selected>Enzyme, Ligand</option>
+		            <option value="-3">Organism</option>
+                    <option value="1">Activating Compound</option><option value="32">Amino Acid Sequence</option><option value="2">Application</option><option value="3">CAS Registry Number</option><option value="4">Cloned(Commentary)</option><option value="48">Cofactor</option><option value="5">Crystallization (Commentary)</option><option value="6">Disease/ Diagnostics</option><option value="7">EC Number</option><option value="9">Enzyme Names (Synonyms)</option><option value="301">Expression</option><option value="302">General Information</option><option value="10">General Stability</option><option value="54">IC50 Value</option><option value="11">Inhibitors</option><option value="305">kcat/KM [mM/s]</option><option value="55">KENDA</option><option value="49">Ki Value [mM]</option><option value="12">KM Value [mM]</option><option value="13">Ligands</option><option value="14">Localization, Source Tissue</option><option value="15">Metals/Ions</option><option value="16">Molecular Weight [Da]</option><option value="51">Natural Product</option><option value="50">Natural Substrate</option><option value="17">Natural Substrates/ Products (Substrates)</option><option value="19">Organic Solvent Stability</option><option value="-3">Organism</option><option value="22">Oxidation Stability</option><option value="137">Pathway</option><option value="23">PDB ID</option><option value="45">pH Optimum</option><option value="46">pH Range</option><option value="47">pH Stability</option><option value="53">pI Value</option><option value="24">Posttranslational Modification</option><option value="25">Product</option><option value="8">Protein Variants</option><option value="26">Purification (Commentary)</option><option value="27">Reaction</option><option value="28">Reaction Type</option><option value="29">Recommended Name</option><option value="30">Reference (Title)</option><option value="31">Renatured (Commentary)</option><option value="34">Specific Activity [micromol/min/mg]</option><option value="35">Storage Stability</option><option value="36">Substrate</option><option value="37">Substrates and Products (Substrate)</option><option value="38">Subunits</option><option value="39">Synonyms</option><option value="40">Systematic Name</option><option value="41">Temperature Optimum [°C]</option><option value="42">Temperature Range [°C]</option><option value="43">Temperature Stability [°C]</option><option value="44">Turnover Number [1/s]</option><option value="100">UniProt Accession Code</option>	            </select>
+                <!-- this field must be changed dynamically, depending on whether it is numerical or not -->
+                <select id="searchtype1" class="search__select" name="stype">
+		            <option value="1">exact</option>
+		            <option value="2" selected>contains</option>
+		            <option value="3">begins with</option>
+		            <option value="4">ends with</option>
+		            <option value="5">use * or ? as wildcard</option>
+		            <option value="6">boolean</option>
+	            </select>
+                </div>
+            </div>
+            <div class="right">
+                <input id="addButton" class="search__button search__button--small" type="button" value="add search field" onClick="addSearchField(1);">
+                <input id="deleteButton" class="search__button search__button--small" type="button" value="delete search field" onClick="deleteSearchField(1);" disabled>
+            </div>
+            </form>
+        </section>
+
+    <h2><i class="fa-solid fa-screwdriver-wrench"></i> BRENDA features</h2>  
+    <section>
+        <div class="featurecontainer">
+            <section class="card feature-card">
+                <h3><i class="fa fa-file-text"></i> Text-based queries</h3>
+                <ul>
+                    <li><a href="fulltext.php"> Full-text Search</a>
+                    <li><a href="advanced.php"> Advanced Search</a>
+                    <li><a href="search_result.php?a=6">DRENDA</a>
+                    <li><a href="ontology.php?ontology_id=32&parent_ids_string=1,2,10024&id_go=MESH:C" rel="nofollow">MeSH Ontology</a>
+                    <li><a href="genes.php">Gene Search</a><sup class="badge badge--red" data-expire="2024-12-31">NEW!</sup>
+                </ul>
+            </section>
+            <section class="card feature-card">
+                <h3><i class="fa fa-dna"></i> Structure-based queries</h3>
+                <ul>
+                    <li><a href="structure_search.php">Ligand Structure Search</a>
+                    <li><a href="pathway_index.php">Metabolic Pathways</a>
+                    <li><a href="search_result.php?a=23">Enzyme Structures</a>
+                </ul>
+            </section>
+            <section class="card feature-card">
+                <h3><i class="fa fa-compass"></i> Explorer</h3>
+                <ul>
+                    <li><a href="ecexplorer.php?browser=1"> Enzyme Classification</a>
+                    <li><a href="taxonomy.php?browser=1" rel="nofollow"> TaxTree</a>
+                    <li>Protein folding: <a href="ontology.php?ontology_id=60" rel="nofollow"> CATH</a>, <a href="ontology.php?ontology_id=59" rel="nofollow"> SCOPe</a>
+                    <li><a href="ontology.php" rel="nofollow"> Ontologies</a>
+                </ul>
+            </section>
+
+            <section class="card feature-card">
+                <h3><i class="fa fa-chart-area"></i> Visualization</h3>
+                <ul>
+                    <li><a href="wordmap_index.php">Enzyme Word Maps</a>
+                    <li><a href="wordmap_index_organism.php">Organism Word Maps</a>
+                    <li><a href="genome.php" rel="nofollow"> Genomes</a>
+                    <li><a href="functional_parameter_statistics.php"> Functional Parameter Statistics</a>
+                    <li><a href="pathway_index.php">Metabolic Pathways</a>
+                </ul>
+            </section>
+            <section class="card feature-card">
+                <h3><i class="fa fa-lightbulb"></i> Prediction</h3>
+                <ul>
+                    <li><a href="sequences.php" rel="nofollow"> Membrane Helices</a>
+                    <li><a href="localpred.php" rel="nofollow"> Localization Prediction</a>
+                </ul>
+            </section>
+            <section class="card feature-card">
+                <h3><i class="fas fa-toolbox"></i> Supporting & External</h3>
+                <ul>
+                    <li><a href="ontology.php?ontology_id=3"> BRENDA Tissue Ontology</a>
+                </ul>
+            </section>
+        </div>
+   </section>   
+        
+    <h2><i class="fa fa-newspaper"></i> News</h2>
+    <section>
+    <div class="news-entries">
+            
+    <article class="news-card card" id="news-2026-09-14-strenda-meeting-22">
+        <header>
+            <ul class="news-card__tags"><li><i class="fa-solid fa-tag"></i></li><li class="news-card__tag tag-brenda">BRENDA</li><li class="news-card__tag tag-strenda">STRENDA</li></ul>
+            <h4 class="news-card__title"><a href="news.php?news_id=2026-09-14-strenda-meeting-22">22nd STRENDA Meeting</a></h4>
+            <div class="news-card__subtitle">Standardization of functional enzyme data</div>
+            <footer class="news-card__footer">
+                <time class="news-card__date" pubdate datetime="2026-09-14">
+                    <i class="far fa-calendar"></i> September 14, 2026
+                </time>
+                <address class="news-card__author"><i class="fa fa-user"></i> Antje Jäde</address>
+            </footer>
+        </header>
+        <div class="news-card__body"><p>This week, members of the BRENDA team will be attending the Beilstein <a href="https://www.beilstein-institut.de/en/projects/strenda/commission/">STRENDA Commission</a> Meeting in Rüdesheim, Germany. <a href="https://www.beilstein-strenda-db.org/strenda/index.xhtml">STRENDA – Standards for Reporting Enzymology Data</a> – brings together international experts in enzymology, biochemistry, enzyme nomenclature, bioinformatics and related fields to improve the quality and reproducibility of enzyme data reported in the scientific literature.</p> <div class="news-card__more">(<a href="news.php?news_id=2026-09-14-strenda-meeting-22">read more...</a>)</div></div>
+    </article>             
+    <article class="news-card card" id="news-2026-08-10-update-pipeline">
+        <header>
+            <ul class="news-card__tags"><li><i class="fa-solid fa-tag"></i></li><li class="news-card__tag tag-brenda">BRENDA</li><li class="news-card__tag tag-future">Future</li></ul>
+            <h4 class="news-card__title"><a href="news.php?news_id=2026-08-10-update-pipeline">New Database Pipeline</a></h4>
+            <div class="news-card__subtitle">Paving the way for the future of BRENDA</div>
+            <footer class="news-card__footer">
+                <time class="news-card__date" pubdate datetime="2026-08-10">
+                    <i class="far fa-calendar"></i> August 10, 2026
+                </time>
+                <address class="news-card__author"><i class="fa fa-user"></i> Mathias Krull</address>
+            </footer>
+        </header>
+        <div class="news-card__body"><p>We are thrilled to announce a complete overhaul of our database update pipeline, laying a robust foundation for the future of BRENDA. This next-generation architecture drastically improves deployment speed, reliability, and scalability for all upcoming data releases. It is a key milestone on the way of deploying a new BRENDA website and API.</p> </div>
+    </article>         </div>
+    </section>
+    
+    <h2><i class="fa fa-database"></i> Latest <b><i>BRENDA</i></b> release</h2>
+    <section>
+                <div class="card">
+            <h4>Release 2026.1 - March 4, 2026</h4>
+                
+            <div class="preview-line">Including 124 new and 750 updated enzyme classes.</div>
+        </div>
+    </section>
+        </div>
+    </div>
+    <!-- page content ends here -->
+    </div>
+
+    <div id="footer"><div class="small center">
+    <strong>Use of this online version of BRENDA is free under the CC BY 4.0 license. See <a href="copy.php">terms of use</a> for full details.</strong>
+</div>
+<div class="right">
+    <span class="bold">Release 2026.1  (March 2026)</span>
+</div>
+
+<div class="footer-columns">
+    <div class="footer-column">
+        <strong>About BRENDA</strong>
+        <ul>
+            <li><a href="introduction.php">Introduction</a>
+            <li><a href="/team.php">Team</a>
+            <li><a href="/committee.php">Expert committee</a>
+            <li><a href="/iubmb.php">ESAB & IUBMB</a>
+            <li><a href="/references.php">How to cite BRENDA</a>
+            <li><a href="/acknowledgements.php">Acknowledgements</a>
+            <li><a href="/statistics.php">Statistics</a>
+            <li><a href="/news.php">News</a>
+        </ul>
+        <strong>Social media</strong>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/BRENDAEnzymes" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+            <!--a href="https://bsky.app/profile/brenda-enzymes.bsky.social" target="_blank" rel="noopener"><i class="fab fa-bluesky"></i></a-->
+            <a href="https://www.instagram.com/brenda_enzymes/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@brenda_enzymes" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+    <div class="footer-column">
+        <strong>Help</strong>
+        <ul>
+            <li><a href="/support.php">Support</a>
+            <li><a href="/help.php">Howto</a>
+            <li><a href="/tutorial.php">Tutorial Videos</a>
+            <li><a href="/faq.php">FAQs</a>
+        </ul>
+
+        <strong>Survey</strong>
+        <ul>
+            <li><a href="/denbi_evaluation.php">DENBI evaluation</a>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <strong>Download</strong>
+        <ul>
+            <li><a href="https://sparql.dsmz.de/brenda/" alt="sparql" title="sparql" target="_blank">SPARQL</a></li>
+            <li><a href="search_result.php?a=200"> SBML Output</a>
+            <li><a href="/soap.php"> SOAP</a>
+            <li><a href="/download.php">BRENDA Download</a>
+        </ul>
+
+        <strong>Contribution</strong>
+        <ul>            
+            <li><a href="/authorinput.php">BRENDA input</a>
+            <li><a href="/paper_submission.php" target="_blank" rel="noopener">Submit your paper!</a>
+            <li><a href="https://www.enzyme-database.org/newform.php" target="_blank" rel="noopener">Propose new enzyme to ExplorEnz</a>
+        </ul>
+    </div>
+        
+    <div class="footer-column">
+        <strong>Legal</strong>
+        <ul>
+            <li><a href="/imprint.php">Imprint</a>
+            <li><a href="/privacy.php">Privacy Policy</a>
+            <li><a href="/license.php">License & disclaimer</a>
+        </ul>
+        <strong>Curated at</strong>
+        <ul>
+            <li><a href="http://www.dsmz.de/">
+            <img data-src="/images/logo_dsmz_en.svg" class="footer__image lazy" alt="BRENDA is curated at the Leibniz Institute DSMZ" />
+        </a>
+        </ul>
+    </div>
+    
+</div>
+<div class="footer-logos">
+    <strong>Member of</strong> <br>
+
+    <a href="https://hub.dsmz.de" target="_blank" rel="noopener"><img data-src="/images/D3-Logo.png" class="footer__image lazy" alt="DSMZ Digital Diversity" /></a>
+    <a href="https://globalbiodata.org/scientific-activities/global-core-biodata-resources" target="_blank" rel="noopener"><img data-src="/images/GCBR-Logo-RGB.png" class="footer__image lazy" alt="Global Core Biodata Resource" /></a>
+    <a href="https://www.elixir-europe.org/platforms/data/core-data-resources" target="_blank" rel="noopener"><img data-src="/images/core-data-resources-logo.png" class="footer__image lazy" alt="ELIXIR Core Data Resource" /></a>
+    <a href="https://www.denbi.de" target="_blank" rel="noopener"><img data-src="./images/deNBI_Logo_rgb.png" alt="German Network for Bioinformatics Infrastructure" class="footer__image lazy"/></a>
+</div>
+
+<aside role="region" aria-label="cookie banner" id="eu-cookie-banner">
+    <i class="fas fa-cookie-bite"></i>
+    <div>
+        <strong>We value your privacy!</strong>
+        <p>
+            BRENDA uses cookies to anonymously track site statistics, and to enhance the user expericence.
+            By clicking the "Accept" button, you consent to the use of cookies. For more information,
+            <a href="/privacy.php#how-we-use-cookies" target="_BLANK" rel="noopener">visit our Privacy Policy</a>.
+        </p>
+        <footer>
+            <button id="eu-cookie-accept"><i class="fas fa-check"></i> Accept</button>
+        </footer>
+</div>
+</aside>
+</div>
+</div>
+</body>
+</html>
+

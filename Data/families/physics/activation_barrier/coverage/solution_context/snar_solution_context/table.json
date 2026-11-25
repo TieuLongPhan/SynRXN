@@ -1,0 +1,120 @@
+{
+  "counting_unit": "existing canonical reaction-condition observation",
+  "data_link": "data.csv",
+  "family_id": "physics",
+  "format": "csv",
+  "key": "solution_context/snar_solution_context",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/solution_context/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "existing canonical reaction-condition observation",
+    "coverage_branch": "solution_context",
+    "derived_view_of": "property/snar",
+    "key": "solution_context/snar_solution_context",
+    "license": "CC-BY-3.0",
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/solution_context/snar_solution_context.csv",
+    "qualification": "503 unchanged observations;41 literal solvent strings (including mixtures/aliases) and13 temperatures. Exact normalized reaction endpoints remain grouped across conditions. Proposed splits are new group splits, not source evaluation splits or scaffold/solvent extrapolation guarantees. Parent canonical rows must never be used as independent train/test data. Preserve raw solvent labels;41 strings does not mean41 chemically distinct pure solvents.",
+    "reference_evidence": "All503 canonical reactions and activation free energies match source-ordered eligible entries of original518-entry supplement. Solvent/temperature/reference/duplicate fields checked independently against that table; no remeasurement.",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-3.0",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 503,
+    "sha256": "00133eda15cf7f07ba3bd13f4b51c4fb95f2c44f915af104a21d9d608186777d",
+    "source_id": "SNArSolution2021",
+    "source_sha256": "590153f74fd27a1414cf6d1cdae3758e68cc9e137da81bd58fa84cc5c9750107",
+    "source_url": "https://doi.org/10.1039/D0SC04896H",
+    "target_units": {
+      "activation_free_energy_kcal_mol": "kcal/mol"
+    },
+    "task_fields": {
+      "activation_barrier": {
+        "group_fields": [
+          "reaction_group",
+          "parent_dataset",
+          "parent_record_id",
+          "proposed_split"
+        ],
+        "inputs": [
+          "reaction_smiles",
+          "solvent",
+          "temperature_K",
+          "reference_kind"
+        ],
+        "metrics": [
+          "MAE_kcal_per_mol",
+          "RMSE_kcal_per_mol",
+          "coverage"
+        ],
+        "qualification": "Eyring-derived activation FREE energy at reported solvent and temperature; not Arrhenius Ea or gas-phase electronic barrier.",
+        "targets": [
+          "activation_free_energy_kcal_mol"
+        ]
+      }
+    },
+    "task_ids": [
+      "activation_barrier"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "existing canonical reaction-condition observation",
+    "expected_bytes": null,
+    "expected_rows": 503,
+    "expected_sha256": "00133eda15cf7f07ba3bd13f4b51c4fb95f2c44f915af104a21d9d608186777d",
+    "format": "csv",
+    "key": "solution_context/snar_solution_context",
+    "license_expression": "CC-BY-3.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/solution_context/snar_solution_context.csv",
+    "qualification": "503 unchanged observations;41 literal solvent strings (including mixtures/aliases) and13 temperatures. Exact normalized reaction endpoints remain grouped across conditions. Proposed splits are new group splits, not source evaluation splits or scaffold/solvent extrapolation guarantees. Parent canonical rows must never be used as independent train/test data. Preserve raw solvent labels;41 strings does not mean41 chemically distinct pure solvents.",
+    "reasons": [],
+    "reference_evidence": "All503 canonical reactions and activation free energies match source-ordered eligible entries of original518-entry supplement. Solvent/temperature/reference/duplicate fields checked independently against that table; no remeasurement.",
+    "release_eligible": true,
+    "source_id": "SNArSolution2021",
+    "source_url": "https://doi.org/10.1039/D0SC04896H",
+    "task_ids": [
+      "activation_barrier"
+    ]
+  },
+  "role": "primary",
+  "rows": 503,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/solution_context/snar_solution_context.csv",
+    "sha256": "00133eda15cf7f07ba3bd13f4b51c4fb95f2c44f915af104a21d9d608186777d",
+    "source_catalogue": "Data/coverage_expansion/solution_context/catalog.json",
+    "source_id": "SNArSolution2021",
+    "source_urls": [
+      "https://doi.org/10.1039/D0SC04896H"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "existing canonical reaction-condition observation",
+    "derived_view_of": "property/snar",
+    "key": "solution_context/snar_solution_context",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/solution_context/snar_solution_context.csv",
+    "qualification": "503 unchanged observations;41 literal solvent strings (including mixtures/aliases) and13 temperatures. Exact normalized reaction endpoints remain grouped across conditions. Proposed splits are new group splits, not source evaluation splits or scaffold/solvent extrapolation guarantees. Parent canonical rows must never be used as independent train/test data. Preserve raw solvent labels;41 strings does not mean41 chemically distinct pure solvents.",
+    "role": "primary",
+    "rows": 503,
+    "sha256": "00133eda15cf7f07ba3bd13f4b51c4fb95f2c44f915af104a21d9d608186777d",
+    "source_catalogue": "Data/coverage_expansion/solution_context/catalog.json",
+    "source_id": "SNArSolution2021",
+    "source_urls": [
+      "https://doi.org/10.1039/D0SC04896H"
+    ],
+    "title": "SNAr activation free energies with solvent and temperature"
+  },
+  "stored_path": "Data/families/physics/activation_barrier/coverage/solution_context/snar_solution_context/data.csv",
+  "task_id": "activation_barrier",
+  "title": "SNAr activation free energies with solvent and temperature"
+}

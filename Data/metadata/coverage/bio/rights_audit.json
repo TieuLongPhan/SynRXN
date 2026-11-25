@@ -1,0 +1,105 @@
+{
+  "schema": "synrxn.coverage-bio-rights-audit.v1",
+  "audit_date": "2026-10-20",
+  "policy": "Only attribution/permissive redistribution grants accepted; code license alone does not clear data; contradictory upstream restrictions override a broader compiler claim for the release set.",
+  "primary_rights_evidence": [
+    {
+      "path": "Data/raw/coverage/bio/brenda-rights.html",
+      "url": "https://www.brenda-enzymes.org/download.php",
+      "bytes": 14549,
+      "sha256": "ebfed097d59de3e21e9728d7b1d03d8ecefadf09997af06bebe6137f39a2aab9",
+      "rights_evidence": true,
+      "redistribution_allowed": false,
+      "raw_assets_redistribution_allowed": false,
+      "release_handling": "exclude_raw_asset_from_public_release; retain_citation_URL_size_SHA_metadata_only"
+    },
+    {
+      "path": "Data/raw/coverage/bio/mcsa-rights.html",
+      "url": "https://www.ebi.ac.uk/thornton-srv/m-csa/",
+      "bytes": 16487,
+      "sha256": "f0725ec7d25d89b616a5c05dbd972e6565e9eee635769da7e99796e7c3a00e12",
+      "rights_evidence": true,
+      "redistribution_allowed": false,
+      "raw_assets_redistribution_allowed": false,
+      "release_handling": "exclude_raw_asset_from_public_release; retain_citation_URL_size_SHA_metadata_only"
+    },
+    {
+      "path": "Data/raw/coverage/bio/uniprot-rights.json",
+      "url": "https://rest.uniprot.org/help/license",
+      "bytes": 914,
+      "sha256": "5960c22bf17f22286504b927dbb3ca41713c571ed91a10fe7a88ddd964b416ce",
+      "rights_evidence": true,
+      "redistribution_allowed": false,
+      "raw_assets_redistribution_allowed": false,
+      "release_handling": "exclude_raw_asset_from_public_release; retain_citation_URL_size_SHA_metadata_only"
+    },
+    {
+      "path": "Data/raw/coverage/bio/rhea-rights.html",
+      "url": "https://sparql.rhea-db.org/.well-known/void",
+      "bytes": 7644,
+      "sha256": "a4e8b3ec7885501b1c1edcba28d9f58225ab12f1430cc2d21c93b4f821d10c9b",
+      "rights_evidence": true,
+      "redistribution_allowed": false,
+      "raw_assets_redistribution_allowed": false,
+      "release_handling": "exclude_raw_asset_from_public_release; retain_citation_URL_size_SHA_metadata_only"
+    },
+    {
+      "path": "Data/raw/coverage/bio/sabio-current-app.js",
+      "url": "https://sabiork.h-its.org/assets/index-DAbqELB1.js",
+      "bytes": 377354,
+      "sha256": "8f80fe833fd5b8cc4e4e658d5d4688dafb7422c8592b8f2f5bd90d0df44ed9eb",
+      "rights_evidence": true,
+      "redistribution_allowed": false,
+      "raw_assets_redistribution_allowed": false,
+      "release_handling": "exclude_raw_asset_from_public_release; retain_citation_URL_size_SHA_metadata_only"
+    }
+  ],
+  "release_table_ids": [
+    "reactzyme_retrieval",
+    "mcsa_reference_active_sites",
+    "brenda_record_kcat",
+    "brenda_record_km",
+    "brenda_record_ki",
+    "enzeng_mutation_effects",
+    "enzeng_inverse_biocatalyst_design"
+  ],
+  "quarantined_table_ids": [
+    "easifa_rhea_active_sites",
+    "catpred_kcat",
+    "catpred_km",
+    "catpred_ki"
+  ],
+  "decisions": [
+    {
+      "source": "EnzEngDB",
+      "decision": "release_CC-BY-4.0",
+      "evidence": "https://zenodo.org/api/records/17310823"
+    },
+    {
+      "source": "ReactZyme",
+      "decision": "release_MIT_and_upstream_CC-BY-4.0",
+      "evidence": "https://zenodo.org/api/records/13635807"
+    },
+    {
+      "source": "CatPred pooled aggregate endpoints",
+      "decision": "quarantine_due_to_SABIO_internal_noncommercial_terms",
+      "evidence": "https://sabiork.h-its.org/layouts/content/termscondition.gsp",
+      "current_app_evidence": "Data/raw/coverage/bio/sabio-current-app.js"
+    },
+    {
+      "source": "CatPred retained BRENDA records",
+      "decision": "release_only_explicit_brenda_rows_and_nonaggregate_value; no_SABIO_or_ambiguous_origin_rows",
+      "evidence": "https://www.brenda-enzymes.org/download.php"
+    },
+    {
+      "source": "EasIFA annotations",
+      "decision": "quarantine_unresolved_data_grant; replace_with_direct_MCSA",
+      "evidence": "https://github.com/wangxr0526/EasIFA"
+    },
+    {
+      "source": "M-CSA catalytic references with UniProt sequences",
+      "decision": "release_CC-BY-4.0",
+      "evidence": "https://www.ebi.ac.uk/thornton-srv/m-csa/"
+    }
+  ]
+}

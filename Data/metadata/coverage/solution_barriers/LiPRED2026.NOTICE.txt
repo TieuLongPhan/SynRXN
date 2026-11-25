@@ -1,0 +1,5 @@
+LiPRED-associated chapter5 QM dataset from Lingfeng Gui's thesis supplementary material v3.
+Author: Lingfeng Gui. Dataset DOI: https://doi.org/10.5281/zenodo.16358189
+Paper: Gui L, Armstrong A, Adjiman CS, Sayyed FB, Galindo A. Generation and benchmarking of a diverse reaction database of quantum mechanical liquid-phase activation Gibbs free energies. PCCP 2026,28,13007-13020. https://doi.org/10.1039/D6CP00088F
+Dataset license: CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Changes: extracted seven named method columns into long CSV, added native cell identifiers, reaction grouping, hypothetical-solvent and duplicate-context flags. Native computed targets retained. See qualification.json for the difference between paper counts and this native workbook export. No endorsement implied.

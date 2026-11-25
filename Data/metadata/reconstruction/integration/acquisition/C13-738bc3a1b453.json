@@ -1,0 +1,12 @@
+{
+  "source_id": "C13",
+  "name": "bib.zip",
+  "bytes": 166104,
+  "checksum": "md5:248ed57a0a78f2cc1f079f6d98b72a7b",
+  "url": "https://zenodo.org/api/records/17310823/files/bib.zip/content",
+  "path": "Data/raw/synrxn2/C13/bib.zip",
+  "bytes_observed": 166104,
+  "sha256": "982ed187b9e6a5f9e41c0b8287e675ae710452cdbab14512252cb8d43c900488",
+  "md5": "248ed57a0a78f2cc1f079f6d98b72a7b",
+  "status": "verified"
+}

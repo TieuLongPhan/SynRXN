@@ -1,0 +1,7 @@
+C08: Transition1x
+Data license: MIT
+Figshare grant covers the native HDF5 asset.
+
+Primary source and attribution:
+https://www.nature.com/articles/s41597-022-01870-w
+https://figshare.com/articles/dataset/Transition1x/19614657

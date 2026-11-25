@@ -1,0 +1,155 @@
+{
+  "schema": "synrxn.synthesizability-literature-review.v1",
+  "reviewed_as_of": "2026-10-21",
+  "status": "Primary-source literature review; external candidate data are not admitted to the suite",
+  "document": "kdd/feasibility_structure.md",
+  "scope_decision": {
+    "scientific_families": 12,
+    "scientific_tasks": 41,
+    "feasibility_group_task_ids": ["reaction_success", "reaction_feasibility"],
+    "reliability_is_evaluation_axis": true,
+    "molecular_accessibility": "Distinct candidate endpoint, not counted; benchmark admission would require an explicit task definition and qualified source data",
+    "multistep_route_planning": "Excluded from active benchmark scope"
+  },
+  "external_count_policy": "Paper-reported sizes, with dataset versions retained; not locally verified acquisition counts. Sets overlap across papers and cannot be summed into independent samples.",
+  "works": [
+    {
+      "id": "sa_score_2009",
+      "paper": "https://doi.org/10.1186/1758-2946-1-8",
+      "reference_kind": "expert difficulty ratings for a heuristic score",
+      "evaluation_molecules": 40,
+      "expert_raters": 9,
+      "disposition": "Molecular baseline candidate, not reaction-success ground truth"
+    },
+    {
+      "id": "scscore_2018",
+      "paper": "https://doi.org/10.1021/acs.jcim.7b00622",
+      "code": "https://github.com/connorcoley/scscore",
+      "reference_kind": "Reaction-derived relative structural complexity",
+      "disposition": "Molecular baseline candidate; no independent success probability"
+    },
+    {
+      "id": "syba_2020",
+      "paper": "https://doi.org/10.1186/s13321-020-00439-2",
+      "reference_kind": "Source-origin and generated hard structures",
+      "independent_computational_test": {"total": 7162, "zinc_easy": 3581, "gdb17_hard": 3581},
+      "disposition": "Molecular baseline candidate; generated negatives retain their evidence tier"
+    },
+    {
+      "id": "rascore_2021",
+      "paper": "https://doi.org/10.1039/D0SC05401A",
+      "code": "https://github.com/reymond-group/RAscore",
+      "reference_kind": "AiZynthFinder route-found labels",
+      "label_generation_limits": {"minutes": 3, "maximum_steps": 7, "iterations": 200},
+      "exposure_qualification": "Original authors did not exclude targets present in the planner training data",
+      "disposition": "Molecular baseline candidate; planner and stock determine label meaning"
+    },
+    {
+      "id": "gasa_2022_deepsa_2023",
+      "papers": ["https://doi.org/10.1021/acs.jcim.2c00038", "https://doi.org/10.1186/s13321-023-00771-3"],
+      "evaluation_sets": [
+        {"id": "TS1", "rows": 7162, "reference_kind": "source-derived easy/hard labels"},
+        {"id": "TS2", "rows": 30348, "reference_kind": "planner-derived labels"},
+        {"id": "TS3", "rows": 1800, "reference_kind": "mixed-source molecules with planner-derived labels"}
+      ],
+      "disposition": "Candidate molecular evaluation sets; no local acquisition or redistribution admission claimed"
+    },
+    {
+      "id": "br_sascore_2024",
+      "paper": "https://doi.org/10.1186/s13321-024-00879-0",
+      "code": "https://github.com/snu-micc/BR-SAScore",
+      "reference_kind": "Resampled and Retro*-relabeled TS1-3",
+      "evaluation_sets": [{"id": "TS1_revised", "rows": 1800}, {"id": "TS2_revised", "rows": 1800}, {"id": "TS3_revised", "rows": 1800}],
+      "easy_label_criterion": "Retro* finds a route within ten steps",
+      "disposition": "Recent molecular baseline; original TS labels and revised labels are distinct versions"
+    },
+    {
+      "id": "fsscore_2024",
+      "paper": "https://doi.org/10.1002/cmtd.202400024",
+      "code": "https://github.com/schwallergroup/fsscore",
+      "reference_kind": "Reaction-ordering pretraining and expert or designed molecular preferences",
+      "disposition": "Candidate expert-ranking method; raw preference-set admission and counts not established here"
+    },
+    {
+      "id": "molprice_2025",
+      "paper": "https://doi.org/10.1186/s13321-025-01076-3",
+      "code": "https://github.com/OptiMaL-PSE-Lab/MolPrice",
+      "data_collection": "https://doi.org/10.6084/m9.figshare.c.7729217.v1",
+      "reference_kind": "Market price plus external TS1-3 evaluation",
+      "label_version_example": {"ts3_original_easy_relabeled_hard": 90, "br_sascore_reported_revised_auroc": 0.900, "br_sascore_original_label_auroc": 0.861},
+      "disposition": "Recent proxy baseline and direct evidence for label-version sensitivity"
+    },
+    {
+      "id": "sddbench_2024_revised_2025",
+      "paper": "https://arxiv.org/abs/2411.08306v2",
+      "current_title": "Evaluating Molecule Synthesizability via Retrosynthetic Planning and Reaction Prediction",
+      "first_preprint_year": 2024,
+      "version_reviewed": "v2, 2025-04-03",
+      "reference_kind": "Planner and forward-predictor round-trip consistency",
+      "disposition": "Relevant precedent; route-generation comparison outside current suite scope"
+    },
+    {
+      "id": "syncraft_2026",
+      "paper": "https://www.nature.com/articles/s42256-026-01304-x",
+      "publication_date": "2026-09-23",
+      "data": "https://doi.org/10.6084/m9.figshare.33201870",
+      "data_file": "https://ndownloader.figshare.com/files/67415496",
+      "data_license": "MIT",
+      "grant_evidence": "Figshare metadata and archive README/LICENSE; separately verified from article rights",
+      "code": "https://github.com/catalystforyou/SynCraft-Core/tree/557703e110b26a354afed2955ded5217837f6692",
+      "reference_kind": "Planner-based molecular accessibility/editing",
+      "planner": "SimpRetro",
+      "stock": "Enamine",
+      "cpu_timeout_minutes": 30,
+      "independently_counted_archive": {
+        "cliff_pairs": 3332,
+        "pocket2mol_test_molecules": 1715,
+        "resgen_test_molecules": 1025,
+        "ripk1_candidates": 42,
+        "shipped_manifest_failures": 0,
+        "count_audit": "kdd/literature/syncraft_archive_audit.json"
+      },
+      "reproduction_limit": "Released Gemini outputs use pass-k=1; headline Table 1 uses pass-k=5 and needs additional inference",
+      "disposition": "Candidate supplementary molecular accessibility/editing benchmark; cached for research, not added to the catalogue or release manifest",
+      "cached_primary_evidence": [
+        {"path": ".cache/synthesizability-primary-evidence/syncraft_data_release_v1.tar.gz", "bytes": 15523127, "sha256": "06d7790625e37d8730a3ffcc2d96a7504482ec197f56f89d3d889ba40a053d82"},
+        {"path": ".cache/synthesizability-primary-evidence/syncraft_figshare_33201870.json", "sha256": "8d32511fc27b737cf9fb9133275a76f95a7a1921ee1e414d094e05955728e08e"},
+        {"path": ".cache/synthesizability-primary-evidence/syncraft_nmi_article.html", "sha256": "9fde09d2287ce7d77110c371dc0bc63569b08538d679f9c788b113cacbda2953"}
+      ]
+    },
+    {
+      "id": "sync_iclr2026",
+      "title": "SYNC: Measuring and Advancing Synthesizability in Structure-Based Drug Design",
+      "paper": "https://proceedings.iclr.cc/paper_files/paper/2026/file/ffdb280e7c7b4c4af30e04daf5a84b98-Paper-Conference.pdf",
+      "forum": "https://openreview.net/forum?id=y1tPw4Uuzg",
+      "code": "https://github.com/XYxiyang/SYNC",
+      "inspected_commit": "ca314f8916cf6c046c7e8db249be99134e49ec75",
+      "count_location": "Appendix B, PDF pages 14-15; paper-reported, not locally file-counted",
+      "evaluation_sets": [
+        {"id": "TS1", "rows": 7162, "easy": 3581, "hard": 3581},
+        {"id": "TS2", "rows": 30348, "easy": 17348, "hard": 13000},
+        {"id": "TS3", "rows": 1800, "easy": 900, "hard": 900},
+        {"id": "Nonpher-Test", "rows": 160, "easy": 120, "hard": 40, "reference_kind": "expert assessed"},
+        {"id": "Enamine", "rows": 211220, "easy": 211220, "hard": 0, "reference_kind": "US stock, October 2023"}
+      ],
+      "deduplication_qualification": "Paper describes removing repetitions; absent native files prevent independent verification of final dataset membership and deduplicated counts",
+      "repository_findings": {"license_file_found": false, "native_evaluation_data_found": false},
+      "disposition": "Recent comparison precedent; no data or code redistribution admission established",
+      "cached_primary_evidence": [
+        {"path": ".cache/synthesizability-primary-evidence/sync_iclr2026.pdf", "sha256": "fec16036488b54c3a90c96bb83440ce345781126fe9cbcbd7a796d50ffbe1a1c"},
+        {"path": ".cache/synthesizability-primary-evidence/sync_repo_tree.json", "sha256": "90c9c7f2c36d547d480c09dd90a64da14e0a333b44d99eab98a7fbb3c2c78c3b"}
+      ]
+    }
+  ],
+  "new_experimental_task_binding": {
+    "task_id": "reaction_success",
+    "dataset_key": "yield/buchwald_hartwig_ood",
+    "rows": 27438,
+    "positive": 11906,
+    "negative": 15532,
+    "targets": "kdd/case_studies/ncs_yield/success_targets.csv",
+    "target_sha256": "919a0d9d374ce5d7372f7f53f768463cab4a4c831c885d49551f7e9c2ed43ce7",
+    "provenance_report": "kdd/case_studies/ncs_yield/report.json",
+    "new_independent_source_table": false
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 1,
+    "data_links": 1,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 1,
+    "stored_rows_across_unique_views": 600,
+    "task_table_bindings": 1,
+    "tasks": 1,
+    "unique_table_views": 1
+  },
+  "tables": [
+    {
+      "data_link": "coverage/process/cstr_control_transitions/data.jsonl.gz",
+      "key": "process/cstr_control_transitions",
+      "metadata": "coverage/process/cstr_control_transitions/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "catalog_path": "Data/coverage_expansion/process/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "reference record; task views can overlap native experiments",
+        "coverage_branch": "process",
+        "key": "process/cstr_control_transitions",
+        "license": "LGPL-3.0-or-later",
+        "namespace": "coverage",
+        "partition": "lgpl",
+        "path": "Data/coverage_expansion/process/cstr_control_transitions.jsonl.gz",
+        "qualification": "Derived simulation:12 seeded excitation episodes,50 transitions each,not600 experimental reactor runs. Native model usesA→B→C plus competing2A→D. Source equations, kinetics, heat-transfer constants, action bounds,0.005h sampling andC_b=0.6 objective retained. Integrator changed to deterministicSciPyDOP853; dynamic control evaluates a proposed policy with the explicit transition oracle. No claim of matching native robustMPC or proving plant safety.",
+        "reference_evidence": "Pinned do-mpc examples/CSTR/template_model.py andtemplate_mpc.py; original LGPL notice retained. Script seed20261020, alpha/beta scenarios1/1,0.95/0.9,1.05/1.1.",
+        "release_eligible": true,
+        "release_license_expression": "LGPL-3.0-or-later",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 600,
+        "sha256": "f027ddcfd313234ca9fb3b448d2767f7f190807732f441fc6e522b86fe3b511a",
+        "source_id": "DOMPCCSTR",
+        "source_sha256": "73367b9e1f009c6f153d6b959d4aea7098c20e79aa8479cb918fd041e5de73e9",
+        "source_url": "https://github.com/do-mpc/do-mpc/tree/9d5a8df0e4d6acac899bf0a65ffd4c30a6e2e4cc/examples/CSTR",
+        "task_fields": {
+          "process_control": {
+            "action_space": {
+              "F_per_hour": [
+                5,
+                100
+              ],
+              "Q_dot_kJ_per_hour": [
+                -8500,
+                0
+              ]
+            },
+            "auxiliary_system_identification": {
+              "inputs": [
+                "state",
+                "action",
+                "duration_hours",
+                "alpha",
+                "beta"
+              ],
+              "targets": [
+                "next_state"
+              ]
+            },
+            "evaluation_oracle": "kdd.coverage.adapters.process.cstr_step",
+            "group_fields": [
+              "trajectory_id"
+            ],
+            "inputs": [
+              "state",
+              "duration_hours",
+              "alpha",
+              "beta",
+              "setpoint_C_b_mol_per_L"
+            ],
+            "metrics": [
+              "closed-loop integrated squared C_b tracking error",
+              "temperature-bound violation",
+              "control effort and action-bound violations"
+            ],
+            "policy": "A policy chooses action from current state; cstr_step produces next state. Recorded excitation action is not an optimal label; supervised action imitation MAE is not a valid control-performance score.",
+            "targets": [
+              "action"
+            ]
+          }
+        },
+        "task_ids": [
+          "process_control"
+        ]
+      }
+    ],
+    "candidate_ids": [],
+    "candidate_status": "Source acquisition and qualification required",
+    "canonical_keys": [],
+    "counting_units": [
+      "reference record; task views can overlap native experiments"
+    ],
+    "evaluation": "Attained objective, constraint violations, failures and resources; differs from choosing one next experiment in a fixed offline pool",
+    "extension_adapter_ids": [],
+    "family_id": "process",
+    "id": "process_control",
+    "legacy_view_ids": [],
+    "metrics": [
+      "closed-loop integrated squared C_b tracking error",
+      "control effort and action-bound violations",
+      "temperature-bound violation"
+    ],
+    "origin": "promoted_from_initial_19_roadmap_definitions",
+    "primary_source_rows": 600,
+    "primary_table_count": 1,
+    "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance.",
+    "question": "Sensor history, process state and operating constraints -> physical control actions",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 1,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "required_data": "Action/observation trajectories and a validated simulator or experimental evaluation environment with operational constraints",
+    "title": "Dynamic reaction-process operation and control"
+  }
+}

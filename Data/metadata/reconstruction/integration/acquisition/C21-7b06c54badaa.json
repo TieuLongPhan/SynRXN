@@ -1,0 +1,13 @@
+{
+  "source_id": "C21",
+  "name": "supplementary_material_v3.zip",
+  "bytes": 36346814,
+  "checksum": "md5:7934b25adb63b520ac504db615874bb3",
+  "url": "https://zenodo.org/api/records/16358189/files/supplementary_material_v3.zip/content",
+  "path": "Data/raw/synrxn2/C21/supplementary_material_v3.zip",
+  "bytes_observed": 283316,
+  "sha256": "ba0187c00a5ad6165dd275fc6da9b9eb9dea75c0afde8741bdce8117ca8dfef2",
+  "md5": "da74239e51671f6952bbcbf7e7a25a20",
+  "status": "unavailable",
+  "error": "source byte size differs from the pinned release"
+}

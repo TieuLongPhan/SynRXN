@@ -1,18 +1,16 @@
-"""
-Runner module: a simple CLI and demo data generator.
+"""Runner module: a simple CLI and demo data generator.
 
-Example
--------
+.. rubric:: Example
 
 .. code-block:: console
 
-    $ python -m statistics_pipeline.runner --csv path/to/scoring.csv --save-root statistics
+    $ python -m synrxn.statistics.runner --csv path/to/scoring.csv --save-root statistics
 
 Programmatic usage:
 
 .. code-block:: python
 
-    >>> from statistics_pipeline.runner import main
+    >>> from synrxn.statistics.runner import main
     >>> summary = main(csv_path=None, save_root="statistics_demo")
     >>> "assumptions" in summary
     True
@@ -49,15 +47,14 @@ def _demo_df(seed: int = 7) -> pd.DataFrame:
 def main(
     csv_path: Optional[str] = None, save_root: str = "statistics"
 ) -> Dict[str, object]:
-    """
-    Run the full pipeline (assumptions, parametric, nonparametric) and return a summary.
+    """Run the full pipeline (assumptions, parametric, nonparametric) and return a summary.
 
     :param csv_path: Optional path to a scoring CSV (wide format: 'scoring','cv_cycle',<methods...>).
                      If None, a synthetic demo dataset is used.
     :type csv_path: Optional[str]
     :param save_root: Root folder to store outputs (default 'statistics').
     :type save_root: str
-    :returns: Summary dict describing produced directories.
+    :return: Summary dict describing produced directories.
     :rtype: Dict[str, object]
 
     .. code-block:: python

@@ -20,14 +20,13 @@ class ITSExtraction:
 
     @staticmethod
     def graph_from_smiles(smiles: str) -> nx.Graph:
-        """
-        Constructs a graph representation from a SMILES string.
+        """Constructs a graph representation from a SMILES string.
 
-        Parameters:
-        - smiles (str): A SMILES string representing a molecule or a set of molecules.
+        :param smiles: A SMILES string representing a molecule or a set of molecules.
+        :type smiles: str
 
-        Returns:
-        - nx.Graph: A graph representation of the molecule(s).
+        :return: A graph representation of the molecule(s).
+        :rtype: nx.Graph
         """
 
         mol = Chem.MolFromSmiles(smiles)
@@ -38,15 +37,14 @@ class ITSExtraction:
     def check_equivariant_graph(
         its_graphs: List[nx.Graph],
     ) -> Tuple[List[Tuple[int, int]], int]:
-        """
-        Checks for isomorphism among a list of ITS graphs.
+        """Checks for isomorphism among a list of ITS graphs.
 
-        Parameters:
-        - its_graphs (List[nx.Graph]): A list of ITS graphs.
+        :param its_graphs: A list of ITS graphs.
+        :type its_graphs: List[nx.Graph]
 
-        Returns:
-        - List[Tuple[int, int]]: A list of tuples representing pairs of indices of
-        isomorphic graphs.
+        :return: A list of tuples representing pairs of indices of
+                  isomorphic graphs.
+        :rtype: List[Tuple[int, int]]
         """
         nodeLabelNames = ["typesGH"]
         nodeLabelDefault = [()]
@@ -76,27 +74,28 @@ class ITSExtraction:
         confident_mapper: str = "graphormer",
         symbol: str = ">>",
     ) -> Dict[str, any]:
-        """
-        Processes mapped SMILES strings representing chemical reactions by constructing
+        """Processes mapped SMILES strings representing chemical reactions by constructing
         graph representations for reactants and products, generating ITS (Imaginary
         Transition State) graphs, and checking for isomorphism among these graphs. The
         function also evaluates whether the number of equivariant graphs equals a
         specified threshold to determine a specific graph output.
 
-        Parameters:
-        - mapped_smiles (Dict[str, str]): A dictionary where keys are mapper names and
-        values are SMILES strings of reactions.
-        - mapper_names (List[str]): A list of mapper names to be processed.
-        - check_method (str): A method to check for isomorphism among the ITS graphs.
-        Either 'RC' or 'ITS'. Defaults to 'RC'.
+        :param mapped_smiles: A dictionary where keys are mapper names and
+                              values are SMILES strings of reactions.
+        :type mapped_smiles: Dict[str, str]
+        :param mapper_names: A list of mapper names to be processed.
+        :type mapper_names: List[str]
+        :param check_method: A method to check for isomorphism among the ITS graphs.
+                             Either 'RC' or 'ITS'. Defaults to 'RC'.
+        :type check_method: str
 
-        Returns:
-        - Dict[str, any]: A dictionary containing graph representations for each reaction
-        (as tuples of reactants graph, products graph,
-        and ITS graph), ITS graphs, and isomorphism results. Additionally, it includes
-        either the first ITS graph or None under the
-        'ISTGraph' key, depending on the equivalence of the number of equivariant graphs
-        to the threshold.
+        :return: A dictionary containing graph representations for each reaction
+                  (as tuples of reactants graph, products graph,
+                  and ITS graph), ITS graphs, and isomorphism results. Additionally, it includes
+                  either the first ITS graph or None under the
+                  'ISTGraph' key, depending on the equivalence of the number of equivariant graphs
+                  to the threshold.
+        :rtype: Dict[str, any]
         """
         threshold = len(mapper_names) - 1
         graphs_by_map = {id_column: mapped_smiles.get(id_column, "N/A")}
@@ -191,23 +190,26 @@ class ITSExtraction:
         confident_mapper: str = "graphormer",
         symbol: str = ">>",
     ) -> List[Dict[str, any],]:
-        """
-        Processes a list of mapped SMILES strings in parallel.
+        """Processes a list of mapped SMILES strings in parallel.
 
-        Parameters:
-        - mapped_smiles_list (List[Dict[str, str]]): A list where each element is a
-        dictionary of mapped SMILES strings.
-        - mapper_names (List[str]): A list of mapper names to process.
-        - n_jobs (int): The number of jobs to run in parallel. Defaults to -1, which means
-        using all processors.
-        - verbose (int): The verbosity level of the parallel processing.
-        - check_method (str): A method to check for isomorphism among the ITS graphs.
-        Either 'RC' or 'ITS'. Defaults to 'RC'.
+        :param mapped_smiles_list: A list where each element is a
+                                   dictionary of mapped SMILES strings.
+        :type mapped_smiles_list: List[Dict[str, str]]
+        :param mapper_names: A list of mapper names to process.
+        :type mapper_names: List[str]
+        :param n_jobs: The number of jobs to run in parallel. Defaults to -1, which means
+                       using all processors.
+        :type n_jobs: int
+        :param verbose: The verbosity level of the parallel processing.
+        :type verbose: int
+        :param check_method: A method to check for isomorphism among the ITS graphs.
+                             Either 'RC' or 'ITS'. Defaults to 'RC'.
+        :type check_method: str
 
-        Returns:
-        - List[Dict[str, any]]: A list of dictionaries containing graph representations
-        for each reaction, ITS graphs, and isomorphism results for each mapped SMILES
-        string.
+        :return: A list of dictionaries containing graph representations
+                  for each reaction, ITS graphs, and isomorphism results for each mapped SMILES
+                  string.
+        :rtype: List[Dict[str, any]]
         """
         results = Parallel(n_jobs=n_jobs, verbose=verbose)(
             delayed(ITSExtraction.process_mapped_smiles)(

@@ -1,0 +1,93 @@
+{
+  "id": "C04",
+  "name": "ORDerly condition benchmarks",
+  "priority": "1 Integrate first",
+  "survey_license_note": "Paper states dataset CC BY 4.0. Retain upstream ORD provenance and applicable terms.",
+  "paper_urls": [
+    "https://doi.org/10.1021/acs.jcim.4c00292"
+  ],
+  "data_urls": [
+    "https://figshare.com/articles/dataset/ORDerly_chemical_reactions_condition_benchmarks/23298467"
+  ],
+  "project_urls": [
+    "https://github.com/sustainable-processes/ORDerly"
+  ],
+  "license_urls": [],
+  "license_verified": true,
+  "files": [
+    {
+      "name": "config_files.zip",
+      "bytes": 10160,
+      "checksum": "md5:400991e3e14907846a029a1493affad6",
+      "url": "https://ndownloader.figshare.com/files/44413037"
+    },
+    {
+      "name": "orderly_condition_test.parquet",
+      "bytes": 37584777,
+      "checksum": "md5:8951deb64a746d7ff20e9cea12a96910",
+      "url": "https://ndownloader.figshare.com/files/44413040"
+    },
+    {
+      "name": "orderly_condition_train.parquet",
+      "bytes": 356912241,
+      "checksum": "md5:bbe9ab181ef8ff2bbe5bf31d4b2d6190",
+      "url": "https://ndownloader.figshare.com/files/44413052"
+    },
+    {
+      "name": "orderly_condition_with_rare_test.parquet",
+      "bytes": 40880767,
+      "checksum": "md5:d7edd4a39c3eb5a6a469406b10f4efcc",
+      "url": "https://ndownloader.figshare.com/files/44413043"
+    },
+    {
+      "name": "orderly_condition_with_rare_train.parquet",
+      "bytes": 393887311,
+      "checksum": "md5:2133f6076ff7a1314385a1fbcef143c8",
+      "url": "https://ndownloader.figshare.com/files/44413055"
+    },
+    {
+      "name": "orderly_forward_test.parquet",
+      "bytes": 51551434,
+      "checksum": "md5:8d779c5a672f221be40274ef20d2245a",
+      "url": "https://ndownloader.figshare.com/files/44413046"
+    },
+    {
+      "name": "orderly_forward_train.parquet",
+      "bytes": 495497112,
+      "checksum": "md5:f54af59e2bbae06000b62388b2ca045f",
+      "url": "https://ndownloader.figshare.com/files/44413058"
+    },
+    {
+      "name": "orderly_retro_test.parquet",
+      "bytes": 53303576,
+      "checksum": "md5:3dc796d5fbd61de00baf9945e13d4fb1",
+      "url": "https://ndownloader.figshare.com/files/44413049"
+    },
+    {
+      "name": "orderly_retro_train.parquet",
+      "bytes": 520416959,
+      "checksum": "md5:a97ae485f100af2903069dab85cc4b07",
+      "url": "https://ndownloader.figshare.com/files/44413061"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://api.figshare.com/v2/articles/23298467",
+      "status": 200,
+      "sha256": "a290435d56d4ad68d37e8e287531f2c1729112e6373811f02954e076afbedc73",
+      "bytes": 8461,
+      "retrieved_at": "2026-10-20T15:34:24.814630+00:00"
+    }
+  ],
+  "record_id": "23298467",
+  "doi": "10.6084/m9.figshare.23298467.v4",
+  "title": "ORDerly benchmarks of chemical reactions",
+  "version": 4,
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "publication_date": "2024-02-05T23:17:43Z",
+  "description": "<p dir=\"ltr\">Benchmark datasets generated with ORDerly for chemical reaction prediction tasks</p><p dir=\"ltr\">ORDerly-forward: Forward reaction prediction (predict reaction products given reactants, solvents, and agents)</p><p dir=\"ltr\">ORDerly-retro: Retrosynthesis prediction (prediction reactants given a desired product)</p><p dir=\"ltr\">ORDerly-condition: Reaction condition prediction (predict solvents and agents given reactants and products). Note that reactions with rare solvents and agents (frequency <100) have been removed.</p><p dir=\"ltr\">ORDerly-condition-with-rare: Reaction condition prediction (predict solvents and agents given reactants and products). Reactions with rare solvents and agents have not been removed.</p><p dir=\"ltr\">Config: Contains the .log and .json files showing the parameters used in cleaning and the impact on dataset size after each cleaning step.</p><p dir=\"ltr\">Note that all datasets here were created using the reaction string and our chemically informed logic to assign reaction roles.</p><p dir=\"ltr\">Paper: https://chemrxiv.org/engage/chemrxiv/article-details/64ca5d3e4a3f7d0c0d78ca42</p><p dir=\"ltr\">Neurips workshop paper: https://openreview.net/forum?id=R8FQMsECIS</p><p dir=\"ltr\">Code: https://github.com/sustainable-processes/orderly</p><p dir=\"ltr\">The supplementary datasets used for this work can be found here: https://doi.org/10.6084/m9.figshare.23502372.v3</p><p dir=\"ltr\">Feel free to email me, Daniel Wigh, at dsw46@cam.ac.uk or my supervisor Alexei A. Lapkin.<br><br></p>"
+}

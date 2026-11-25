@@ -1,0 +1,7 @@
+C02: Borylation HTE and regioselectivity
+Data license: CC-BY-4.0
+Zenodo data-record grant.
+
+Primary source and attribution:
+https://www.nature.com/articles/s43588-026-01063-0
+https://zenodo.org/records/20773622

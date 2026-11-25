@@ -1,0 +1,42 @@
+{
+  "aam_tests_passed": 73,
+  "checks": [
+    "checksums and source pins",
+    "one retained row per nonexcluded unique input",
+    "diagnostic annotations do not exclude inputs",
+    "verbatim selected source targets and original QC",
+    "every original source record preserved exactly once",
+    "reference and provenance joins",
+    "identical-endpoint and certified-conflict exclusions"
+  ],
+  "documentation_warnings_as_errors_passed": true,
+  "final_retention_and_completion_tests_passed": 14,
+  "implementation_sha256": {
+    "scripts/audit_aam_overlap.py": "4b0d0479bac8f4f8c3805e2676fbcb612ce34b439eb69901c0d92dec635a6665",
+    "scripts/build_unique_aam.py": "9ad9c98ab963331f85b90552dc1d50e81528092b48d90efc5ab2924fbbabc8f1",
+    "synrxn/reconstruction/builders/aam_mapping_constraints.py": "be56aa73e00f22c571d40c96422f8a911d0c038eb20016c90ad3c4622bd8ebf6",
+    "synrxn/reconstruction/builders/aam_overlap_chem.py": "33b478de660fc9454e0a2af2fd99aa538456ee97b5a25f6f53546170bbf69b38"
+  },
+  "policy_proof": "Data/metadata/reconstruction/aam/raw-retention-policy-verification.json",
+  "pool_manifest_sha256": "c72f2efa9b8e2702cad5f256991de02bfe0c7f09ad80fde100a0944d8a25c68c",
+  "result": {
+    "diagnostic_reactions": 5666,
+    "excluded_identity_reactions": 1047,
+    "excluded_mapping_conflict_reactions": 880,
+    "excluded_reactions": 1927,
+    "excluded_source_records": 6264,
+    "input_source_records": 101480,
+    "input_unique_reactions": 81597,
+    "raw_only_reference_reactions": 94,
+    "reference_classes": 79576,
+    "reference_comparable_reactions": 79576,
+    "reference_entries": 79670,
+    "retained_reactions": 79670,
+    "source_records": 95216,
+    "unique_reactions": 79670,
+    "verified": true
+  },
+  "schema": "synrxn.aam-unique.v5",
+  "subtests_passed": 3,
+  "verified": true
+}

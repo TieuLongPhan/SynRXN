@@ -1,0 +1,212 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 3,
+    "data_links": 3,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 3,
+    "stored_rows_across_unique_views": 3022,
+    "task_table_bindings": 3,
+    "tasks": 1,
+    "unique_table_views": 3
+  },
+  "tables": [
+    {
+      "data_link": "coverage/process/nmr_saccharose_hydrolysis_spectra/data.jsonl.gz",
+      "display_key": "process/nmr_saccharose_hydrolysis_spectra",
+      "key": "process/nmr_saccharose_hydrolysis_snapshots",
+      "metadata": "coverage/process/nmr_saccharose_hydrolysis_spectra/table.json",
+      "namespace": "coverage"
+    },
+    {
+      "data_link": "coverage/process/nmr_pmg_284_spectra/data.jsonl.gz",
+      "display_key": "process/nmr_pmg_284_spectra",
+      "key": "process/nmr_pmg_284_snapshots",
+      "metadata": "coverage/process/nmr_pmg_284_spectra/table.json",
+      "namespace": "coverage"
+    },
+    {
+      "data_link": "coverage/process/nmr_pmg_287_spectra/data.jsonl.gz",
+      "display_key": "process/nmr_pmg_287_spectra",
+      "key": "process/nmr_pmg_287_snapshots",
+      "metadata": "coverage/process/nmr_pmg_287_spectra/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "catalog_path": "Data/coverage_expansion/process/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "reference record; task views can overlap native experiments",
+        "coverage_branch": "process",
+        "key": "process/nmr_saccharose_hydrolysis_snapshots",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/process/nmr_saccharose_hydrolysis_snapshots.jsonl.gz",
+        "qualification": "Measured NMR signal columns paired with independently computed trapezoidal component-window integrals. Targets are explicitly DERIVED analytical estimates from the same spectra, not independent concentration ground truth. Negative component integrals clipped only for derived area fractions; signed integrals preserved. NaNs are excluded within each integration window, never filled as measured zeros. Future-extracted component templates are forbidden inputs. SourcePMG284 contains999 native snapshots versus1000 nativeMnova rows, and noMnova labels are used. Three underlying measured trajectories; no random-snapshot independence claim. Numerical integration is the primary deterministic baseline; this task view is a reproducible analytical-processing contract, not evidence of a difficult concentration-estimation benchmark.",
+        "reference_evidence": "CC-BY4.0 Zenodo14814657 native cropped spectral matrices. Factual component/window calibration specifications are documented in official author config.json;5-second hydrosilylation sampling in src/utils.py and measured sucrose timestamps in the CC-BYtime-axis asset. Independently implemented numpy.trapezoid integration; no copied reference estimates or unpublished calibration.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 1023,
+        "sha256": "18f370c5b06f1203a934ad6845e175109da47670968cfc1519aa1aaecbc2ddda",
+        "source_id": "MAGNETSTEIN2025",
+        "source_sha256": "34be04ef5ce91f35a5432c823b53bf7ecd0594104f0732227abf587dca88d889",
+        "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+        "task_fields": {
+          "analytical_interpretation": {
+            "group_fields": [
+              "trajectory_id"
+            ],
+            "input_loader": "kdd.coverage.adapters.process.load_spectrum; only the specified current native column may be read",
+            "inputs": [
+              "spectrum_path",
+              "spectrum_column",
+              "component_names",
+              "integration_windows_ppm"
+            ],
+            "metrics": [
+              "MAE relative area per component",
+              "compositional L1 error"
+            ],
+            "scope": "Known-component relative analytical signal quantification, not independent absolute concentration or open-world structure elucidation.",
+            "targets": [
+              "reference_area_fractions"
+            ]
+          }
+        },
+        "task_ids": [
+          "analytical_interpretation"
+        ]
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/process/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "reference record; task views can overlap native experiments",
+        "coverage_branch": "process",
+        "key": "process/nmr_pmg_284_snapshots",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/process/nmr_pmg_284_snapshots.jsonl.gz",
+        "qualification": "Measured NMR signal columns paired with independently computed trapezoidal component-window integrals. Targets are explicitly DERIVED analytical estimates from the same spectra, not independent concentration ground truth. Negative component integrals clipped only for derived area fractions; signed integrals preserved. NaNs are excluded within each integration window, never filled as measured zeros. Future-extracted component templates are forbidden inputs. SourcePMG284 contains999 native snapshots versus1000 nativeMnova rows, and noMnova labels are used. Three underlying measured trajectories; no random-snapshot independence claim. Numerical integration is the primary deterministic baseline; this task view is a reproducible analytical-processing contract, not evidence of a difficult concentration-estimation benchmark.",
+        "reference_evidence": "CC-BY4.0 Zenodo14814657 native cropped spectral matrices. Factual component/window calibration specifications are documented in official author config.json;5-second hydrosilylation sampling in src/utils.py and measured sucrose timestamps in the CC-BYtime-axis asset. Independently implemented numpy.trapezoid integration; no copied reference estimates or unpublished calibration.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 999,
+        "sha256": "e46212c9a1e38d19ca26a234ca2c01b81e5d0ddca06f4a2cbf6a7f5e6f49e4c6",
+        "source_id": "MAGNETSTEIN2025",
+        "source_sha256": "59e09d3e8aff3da404e34c5e2cebeaf11ff5faffe0307503545982ef23c1d30c",
+        "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+        "task_fields": {
+          "analytical_interpretation": {
+            "group_fields": [
+              "trajectory_id"
+            ],
+            "input_loader": "kdd.coverage.adapters.process.load_spectrum; only the specified current native column may be read",
+            "inputs": [
+              "spectrum_path",
+              "spectrum_column",
+              "component_names",
+              "integration_windows_ppm"
+            ],
+            "metrics": [
+              "MAE relative area per component",
+              "compositional L1 error"
+            ],
+            "scope": "Known-component relative analytical signal quantification, not independent absolute concentration or open-world structure elucidation.",
+            "targets": [
+              "reference_area_fractions"
+            ]
+          }
+        },
+        "task_ids": [
+          "analytical_interpretation"
+        ]
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/process/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "reference record; task views can overlap native experiments",
+        "coverage_branch": "process",
+        "key": "process/nmr_pmg_287_snapshots",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/process/nmr_pmg_287_snapshots.jsonl.gz",
+        "qualification": "Measured NMR signal columns paired with independently computed trapezoidal component-window integrals. Targets are explicitly DERIVED analytical estimates from the same spectra, not independent concentration ground truth. Negative component integrals clipped only for derived area fractions; signed integrals preserved. NaNs are excluded within each integration window, never filled as measured zeros. Future-extracted component templates are forbidden inputs. SourcePMG284 contains999 native snapshots versus1000 nativeMnova rows, and noMnova labels are used. Three underlying measured trajectories; no random-snapshot independence claim. Numerical integration is the primary deterministic baseline; this task view is a reproducible analytical-processing contract, not evidence of a difficult concentration-estimation benchmark.",
+        "reference_evidence": "CC-BY4.0 Zenodo14814657 native cropped spectral matrices. Factual component/window calibration specifications are documented in official author config.json;5-second hydrosilylation sampling in src/utils.py and measured sucrose timestamps in the CC-BYtime-axis asset. Independently implemented numpy.trapezoid integration; no copied reference estimates or unpublished calibration.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 1000,
+        "sha256": "9f7c39f16588728a5592f5dc7ed7ad49e339d283ba7cb6c9238f77d3c6f1909b",
+        "source_id": "MAGNETSTEIN2025",
+        "source_sha256": "6bf13a9ba17537664952424cfa82431d17e49a101fd504228fc3b0830991302b",
+        "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+        "task_fields": {
+          "analytical_interpretation": {
+            "group_fields": [
+              "trajectory_id"
+            ],
+            "input_loader": "kdd.coverage.adapters.process.load_spectrum; only the specified current native column may be read",
+            "inputs": [
+              "spectrum_path",
+              "spectrum_column",
+              "component_names",
+              "integration_windows_ppm"
+            ],
+            "metrics": [
+              "MAE relative area per component",
+              "compositional L1 error"
+            ],
+            "scope": "Known-component relative analytical signal quantification, not independent absolute concentration or open-world structure elucidation.",
+            "targets": [
+              "reference_area_fractions"
+            ]
+          }
+        },
+        "task_ids": [
+          "analytical_interpretation"
+        ]
+      }
+    ],
+    "candidate_ids": [],
+    "candidate_status": "Source acquisition and qualification required",
+    "canonical_keys": [],
+    "counting_units": [
+      "reference record; task views can overlap native experiments"
+    ],
+    "evaluation": "Identification precision/recall, concentration error and coverage; mixture and instrument groups retained",
+    "extension_adapter_ids": [],
+    "family_id": "analysis",
+    "id": "analytical_interpretation",
+    "legacy_view_ids": [],
+    "metrics": [
+      "MAE relative area per component",
+      "compositional L1 error"
+    ],
+    "origin": "promoted_from_initial_19_roadmap_definitions",
+    "primary_source_rows": 3022,
+    "primary_table_count": 3,
+    "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance.",
+    "question": "Spectra, chromatograms or analytical images -> component identities or calibrated composition",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 3,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "required_data": "Raw signals linked to independently identified mixtures, concentrations, instrument settings and detection limits",
+    "title": "Reaction-mixture analytical interpretation"
+  }
+}

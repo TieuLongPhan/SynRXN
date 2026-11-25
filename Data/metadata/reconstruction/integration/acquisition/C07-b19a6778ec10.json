@@ -1,0 +1,13 @@
+{
+  "source_id": "C07",
+  "name": "Datasets.tar.bz2",
+  "bytes": 31362184,
+  "checksum": "md5:ae160c9a4b1107a0c635dbc5acbd419e",
+  "url": "https://zenodo.org/api/records/11493786/files/Datasets.tar.bz2/content",
+  "path": "Data/raw/synrxn2/C07/Datasets.tar.bz2",
+  "bytes_observed": 4598312,
+  "sha256": "c317587770419eca318ad7041309c3d393545ec91f8b1759cd37ed82c829689f",
+  "md5": "3ef38780e25a4ef9c9b5a708fa662f04",
+  "status": "unavailable",
+  "error": "source byte size differs from the pinned release"
+}

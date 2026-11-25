@@ -1,0 +1,91 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "representation",
+  "format": "csv.gz",
+  "key": "classification/ecreact",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "classification/ecreact",
+    "legacy_field_eligible_rows": {
+      "clustering": 185734
+    },
+    "namespace": "canonical",
+    "partition": "database_sharealike",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0 AND MIT AND ODbL-1.0",
+    "rights_status": "verified_author_data_grant",
+    "role": "primary",
+    "rows": 185734
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "recheck_classification_recheck_classification:zenodo-14635841.json",
+      "recheck_classification_recheck_classification:claire/README.md",
+      "recheck_classification_recheck_classification:claire-member/data/train_augmented.csv",
+      "recheck_classification_recheck_classification:claire-member/data/test_augmented.csv",
+      "recheck_classification_recheck_classification:syncat/LICENSE",
+      "recheck_classification_recheck_classification:ecreact/LICENSE",
+      "recheck_classification_recheck_classification:ecreact/README.md",
+      "recheck_classification_recheck_classification:ecreact/data/ecreact-1.0.csv",
+      "recheck_classification_recheck_classification:pathbank-2020-article.xml",
+      "recheck_classification_recheck_classification:pathbank-about.html",
+      "recheck_classification_recheck_classification:metanetx-terms.html",
+      "recheck_classification_recheck_classification:brenda-terms.html",
+      "recheck_classification_recheck_classification:rhea-terms.html",
+      "recheck_classification_recheck_classification:classification-source-joins"
+    ],
+    "expected_bytes": 2874798,
+    "expected_rows": 185734,
+    "expected_sha256": "c730e5bd196dc69b5ebc421cce37010162f7e129f149b28196f0069ee242bdcd",
+    "format": "csv.gz",
+    "key": "classification/ecreact",
+    "license_expression": "CC-BY-4.0 AND MIT AND ODbL-1.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes.",
+      "Retain the Open Database License notices and comply with database ShareAlike/source-access conditions where applicable; do not treat database rights as unrestricted CC BY rights."
+    ],
+    "namespace": "canonical",
+    "partition": "database_sharealike",
+    "path": "Data/classification/ecreact.csv.gz",
+    "qualification": "The original CLAIRE authors explicitly publish the data as CC BY 4.0 on Zenodo14635841 and link that deposit from their pinned README. Its166918 training and 18,816 test augmented rows exactly match the 185,734-row SynCat source on reaction SMILES, EC3 and native split; the canonical curator reproduces every published field. Retain SynCat/ECREACT MIT notices and the original PathBank 1.0 ODbL database notice instead of claiming a uniform standalone CC BY 4.0 grant.",
+    "rights_status": "verified_author_data_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 185734,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "zeng2025claire"
+    ],
+    "path": "Data/classification/ecreact.csv.gz",
+    "sha256": "c730e5bd196dc69b5ebc421cce37010162f7e129f149b28196f0069ee242bdcd",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "zeng2025claire"
+    ],
+    "counting_unit": "source-table row",
+    "key": "classification/ecreact",
+    "legacy_field_eligible_rows": {
+      "clustering": 185734
+    },
+    "namespace": "canonical",
+    "path": "Data/classification/ecreact.csv.gz",
+    "role": "primary",
+    "rows": 185734,
+    "sha256": "c730e5bd196dc69b5ebc421cce37010162f7e129f149b28196f0069ee242bdcd",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "ECReact classification"
+  },
+  "stored_path": "Data/families/representation/reaction_classification/canonical/classification/ecreact/data.csv.gz",
+  "task_id": "reaction_clustering",
+  "title": "ECReact classification"
+}

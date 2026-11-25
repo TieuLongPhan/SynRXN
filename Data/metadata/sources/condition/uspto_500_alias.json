@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "dataset_key": "condition/uspto_500.csv.gz",
+  "alias_of": "synthesis/uspto_500.csv.gz",
+  "alias_policy": "temporary byte-identical compatibility mirror",
+  "rows": 143535,
+  "bytes": 4485501,
+  "sha256": "fad362c125f8fc6195d49748bbd9f381ca4c9d3f03935d82f457b350ab46bef1",
+  "upstream_license": "CC-BY-4.0",
+  "citation": "10.1021/acs.jcim.1c01467",
+  "canonical_task_planned": "condition",
+  "double_count_in_totals": false,
+  "created_at": "2026-08-22"
+}

@@ -1,0 +1,243 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 5,
+    "data_links": 5,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 1,
+    "primary_table_views": 4,
+    "stored_rows_across_unique_views": 224984,
+    "task_table_bindings": 5,
+    "tasks": 1,
+    "unique_table_views": 5
+  },
+  "tables": [
+    {
+      "data_link": "canonical/property/b97xd3/data.csv.gz",
+      "key": "property/b97xd3",
+      "metadata": "canonical/property/b97xd3/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/property/cycloadd/data.csv.gz",
+      "key": "property/cycloadd",
+      "metadata": "canonical/property/cycloadd/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/property/rad6re/data.csv.gz",
+      "key": "property/rad6re",
+      "metadata": "canonical/property/rad6re/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "coverage/physics_rates/quantumpioneer_hAT_kinetics/data.csv",
+      "key": "physics_rates/quantumpioneer_hAT_kinetics",
+      "metadata": "coverage/physics_rates/quantumpioneer_hAT_kinetics/table.json",
+      "namespace": "coverage"
+    },
+    {
+      "data_link": "coverage/solution_context/cycloadd_solution_context/data.csv",
+      "key": "solution_context/cycloadd_solution_context",
+      "metadata": "coverage/solution_context/cycloadd_solution_context/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "property/b97xd3",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 16365
+      },
+      {
+        "commercial_use_allowed": true,
+        "counted_under": "coverage:solution_context/cycloadd_solution_context",
+        "counting_unit": "source-table row",
+        "key": "property/cycloadd",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "overlapping_view",
+        "rows": 5269
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "property/rad6re",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 31923
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/physics_rates/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "native computed HAT reaction with k298 and thermo-kinetic references",
+        "coverage_branch": "physics_rates",
+        "key": "physics_rates/quantumpioneer_hAT_kinetics",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "parent_groups": 135993,
+        "partition": "main",
+        "path": "Data/coverage_expansion/physics_rates/quantumpioneer_kinetics.csv",
+        "qualification": "Full166158 native positive finitek298 references. Native rates/TST are computed; no conversion to lograte legacy sourceunits. Exactrecorded-reactant groups keep candidateH-abstractionsites of same source reactants together; proposed split is new and does not establish scaffold independence. KineticCSVhasgasreferenceTST/thermo; no per-solvent correction inferred from separate solvationassets. No independent physical recomputation.",
+        "reference_evidence": "Computed native transition-state-theory rate coefficients and source Arrhenius fits; DLPNO+scaledDFTZPE barrier and reaction thermo references. Not experimental measurements.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 166158,
+        "sha256": "e81aa5f9158564e64356a524c046469e2a13e471469ff641713ded3c37ff1520",
+        "source_id": "QuantumPioneer2026",
+        "source_sha256": "1c1a836d371248cc47689450476c8cccfabd50bf9058cedad430e2a9a9ede213",
+        "source_url": "https://doi.org/10.5281/zenodo.20060606",
+        "target_units": {
+          "A_high": "m^3/(mol*s)",
+          "A_low": "m^3/(mol*s)",
+          "Ea_high": "kcal/mol;1000-2000Kfit",
+          "Ea_low": "kcal/mol;300-1000Kfit",
+          "P2M": "kcal/mol;sourcePetersson-to-Melius298K",
+          "barrier": "kcal/mol;DLPNO+scaledDFTZPE",
+          "deltaGrxn298": "kcal/mol;298K",
+          "deltaHrxn": "kcal/mol;DLPNO+scaledDFTZPE",
+          "deltaHrxn298": "kcal/mol;298K",
+          "k_298": "m^3/(mol*s)",
+          "log10_k_298": "log10 of rate expressed in m^3/(mol*s)"
+        },
+        "task_fields": {
+          "reaction_energetics": {
+            "group_fields": [
+              "reactant_pair_group",
+              "source_record_id",
+              "proposed_split"
+            ],
+            "inputs": [
+              "reaction_smiles",
+              "temperature_K",
+              "theory"
+            ],
+            "metrics": [
+              "separate_quantity_MAE_kcal_per_mol"
+            ],
+            "qualification": "Separate0Kreactionenthalpy,298Kenthalpy,298KGibbsreactionenergy variants; never collapse into a single scalarphysicalquantity. NativeCSVdeltaHrxn corresponds to SCHEMAHrxn naming.",
+            "targets": [
+              "deltaHrxn",
+              "deltaHrxn298",
+              "deltaGrxn298"
+            ]
+          }
+        },
+        "task_ids": [
+          "reaction_rates",
+          "activation_barrier",
+          "reaction_energetics"
+        ]
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/solution_context/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "existing canonical reaction-condition observation",
+        "coverage_branch": "solution_context",
+        "derived_view_of": "property/cycloadd",
+        "key": "solution_context/cycloadd_solution_context",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/solution_context/cycloadd_solution_context.csv",
+        "qualification": "5269 unchanged observations, all water/298.15K. Solvent and temperature are constant context: this table cannot establish solvent-effect or temperature generalization. Original Chemprop source splits retained as metadata; use proposed reaction-group split for this overlapping view and apply same groups to canonical parent rows. Not physically recalculated.",
+        "reference_evidence": "Complete5269-reaction native CSV bijection verifies both free-energy targets, reaction strings and source solvent/temperature. Source paper uses aqueous SMD continuum at B3LYP-D3(BJ)/def2-TZVP//B3LYP-D3(BJ)/def2-SVP; not gas phase or explicit-solvent trajectories.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 5269,
+        "sha256": "7e140a55f4c94d0250a9b742b3dbaed1901d4d061b370f5cee145505cf1a4bba",
+        "source_id": "CycloaddSolution2023",
+        "source_sha256": "5f08c6b2dc04dd3ae11c74b2e0251a595b230915c7196d7a67e96bfac7f1e12d",
+        "source_url": "https://doi.org/10.6084/m9.figshare.21707888.v5",
+        "target_units": {
+          "activation_free_energy_kcal_mol": "kcal/mol",
+          "reaction_free_energy_kcal_mol": "kcal/mol"
+        },
+        "task_fields": {
+          "reaction_energetics": {
+            "group_fields": [
+              "reaction_group",
+              "parent_dataset",
+              "parent_record_id",
+              "proposed_split"
+            ],
+            "inputs": [
+              "reaction_smiles",
+              "solvent",
+              "temperature_K",
+              "reference_kind"
+            ],
+            "metrics": [
+              "MAE_kcal_per_mol",
+              "RMSE_kcal_per_mol",
+              "coverage"
+            ],
+            "qualification": "Computed aqueous SMD reaction Gibbs free energy at298.15K; separate from activation target.",
+            "targets": [
+              "reaction_free_energy_kcal_mol"
+            ]
+          }
+        },
+        "task_ids": [
+          "activation_barrier",
+          "reaction_energetics"
+        ]
+      }
+    ],
+    "canonical_keys": [
+      "property/b97xd3",
+      "property/cycloadd",
+      "property/rad6re"
+    ],
+    "counting_units": [
+      "existing canonical reaction-condition observation",
+      "native computed HAT reaction with k298 and thermo-kinetic references",
+      "source-table row"
+    ],
+    "extension_adapter_ids": [],
+    "family_id": "physics",
+    "id": "reaction_energetics",
+    "legacy_view_ids": [],
+    "metrics": [
+      "source_specific_MAE",
+      "source_specific_RMSE",
+      "coverage"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 219715,
+    "primary_table_count": 4,
+    "qualification": "Reaction energy differs from an activation barrier. Preserve direction, quantity, units and theory; shared source rows do not become new reactions.",
+    "question": "Recorded reaction -> source reaction enthalpy or free energy",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 4,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Reaction energy and thermochemistry"
+  }
+}

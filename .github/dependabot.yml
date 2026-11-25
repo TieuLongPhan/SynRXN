@@ -6,7 +6,6 @@ version: 2
 updates:
   # Runtime package dependencies:
   # - pyproject.toml
-  # - requirements.txt
   - package-ecosystem: "pip"
     directory: "/"
     target-branch: "staging"

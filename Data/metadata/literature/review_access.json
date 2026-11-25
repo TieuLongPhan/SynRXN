@@ -1,0 +1,110 @@
+{
+  "as_of": "2026-10-20",
+  "records": [
+    {
+      "venue": "KDD.org/2025/Datasets_and_Benchmarks_Track_February",
+      "group_request": {
+        "url": "https://api2.openreview.net/groups?id=KDD.org%2F2025%2FDatasets_and_Benchmarks_Track_February",
+        "resolved_url": "https://api2.openreview.net/groups?id=KDD.org%2F2025%2FDatasets_and_Benchmarks_Track_February",
+        "status": 200,
+        "content_type": "application/json; charset=utf-8",
+        "retrieved_on": "2026-10-20",
+        "bytes": 10398,
+        "sha256": "7da52e12772df500c0e8fde7984b7904d7fd8135471bc78d3f56a341f7afd402"
+      },
+      "group_public_submissions_field": {
+        "value": false
+      },
+      "normal_notes_request": {
+        "url": "https://api2.openreview.net/notes?content.venueid=KDD.org%2F2025%2FDatasets_and_Benchmarks_Track_February&limit=1",
+        "status": 403,
+        "error": "HTTP Error 403: Forbidden",
+        "response_excerpt": "{\"name\":\"ChallengeRequiredError\",\"message\":\"Challenge verification required (2026-10-20-11190614)\",\"status\":403,\"details\":{\"challengeUrl\":\"https://openreview.net/challenge?redirect=https%3A%2F%2Fapi2.openreview.net%2Fnotes%3Fcontent.venueid%3DKDD.org%252F2025%252FDatasets_and_Benchmarks_Track_February%26limit%3D1\",\"reqId\":\"2026-10-20-11190614\"}}",
+        "retrieved_on": "2026-10-20",
+        "bytes": 347,
+        "sha256": "e5527e609fe3a9fa809fa1f8ebe4e9e560834601ccb7d5b2a023f34d814219a1"
+      },
+      "public_search_request": {
+        "url": "https://api2.openreview.net/notes/search?term=dataset+benchmark&group=KDD.org%2F2025%2FDatasets_and_Benchmarks_Track_February&source=all&limit=1000",
+        "resolved_url": "https://api2.openreview.net/notes/search?term=dataset+benchmark&group=KDD.org%2F2025%2FDatasets_and_Benchmarks_Track_February&source=all&limit=1000",
+        "status": 200,
+        "content_type": "application/json; charset=utf-8",
+        "retrieved_on": "2026-10-20",
+        "bytes": 22,
+        "sha256": "510dfc73c624069b8624346bfdd7eabf8ca8e5a165bba0c8309144ce5a958205"
+      },
+      "public_search_count": 0,
+      "interpretation": "Normal notes API requires browser verification; no matching public search records were found for this venue. This does not establish that private or unindexed reviews do not exist."
+    },
+    {
+      "venue": "KDD.org/2026/Datasets_and_Benchmark_Track_August",
+      "group_request": {
+        "url": "https://api2.openreview.net/groups?id=KDD.org%2F2026%2FDatasets_and_Benchmark_Track_August",
+        "resolved_url": "https://api2.openreview.net/groups?id=KDD.org%2F2026%2FDatasets_and_Benchmark_Track_August",
+        "status": 200,
+        "content_type": "application/json; charset=utf-8",
+        "retrieved_on": "2026-10-20",
+        "bytes": 10939,
+        "sha256": "81b46be2c9110108a4806d43e889135aa49c5523ca0de0338408d2470ff934ca"
+      },
+      "group_public_submissions_field": {
+        "value": false
+      },
+      "normal_notes_request": {
+        "url": "https://api2.openreview.net/notes?content.venueid=KDD.org%2F2026%2FDatasets_and_Benchmark_Track_August&limit=1",
+        "status": 403,
+        "error": "HTTP Error 403: Forbidden",
+        "response_excerpt": "{\"name\":\"ChallengeRequiredError\",\"message\":\"Challenge verification required (2026-10-20-11199750)\",\"status\":403,\"details\":{\"challengeUrl\":\"https://openreview.net/challenge?redirect=https%3A%2F%2Fapi2.openreview.net%2Fnotes%3Fcontent.venueid%3DKDD.org%252F2026%252FDatasets_and_Benchmark_Track_August%26limit%3D1\",\"reqId\":\"2026-10-20-11199750\"}}",
+        "retrieved_on": "2026-10-20",
+        "bytes": 344,
+        "sha256": "ce59580ba1174ef0c82ea2b4ff0fb17b8837dc68b8c973a59ef0af679127030c"
+      },
+      "public_search_request": {
+        "url": "https://api2.openreview.net/notes/search?term=dataset+benchmark&group=KDD.org%2F2026%2FDatasets_and_Benchmark_Track_August&source=all&limit=1000",
+        "resolved_url": "https://api2.openreview.net/notes/search?term=dataset+benchmark&group=KDD.org%2F2026%2FDatasets_and_Benchmark_Track_August&source=all&limit=1000",
+        "status": 200,
+        "content_type": "application/json; charset=utf-8",
+        "retrieved_on": "2026-10-20",
+        "bytes": 22,
+        "sha256": "510dfc73c624069b8624346bfdd7eabf8ca8e5a165bba0c8309144ce5a958205"
+      },
+      "public_search_count": 0,
+      "interpretation": "Normal notes API requires browser verification; no matching public search records were found for this venue. This does not establish that private or unindexed reviews do not exist."
+    },
+    {
+      "venue": "KDD.org/2026/Datasets_and_Benchmark_Track_Cycle_2",
+      "group_request": {
+        "url": "https://api2.openreview.net/groups?id=KDD.org%2F2026%2FDatasets_and_Benchmark_Track_Cycle_2",
+        "resolved_url": "https://api2.openreview.net/groups?id=KDD.org%2F2026%2FDatasets_and_Benchmark_Track_Cycle_2",
+        "status": 200,
+        "content_type": "application/json; charset=utf-8",
+        "retrieved_on": "2026-10-20",
+        "bytes": 11611,
+        "sha256": "a12d8a77149372b1bdedc6dcf734677f548115da54614925d45c68d97916be22"
+      },
+      "group_public_submissions_field": {
+        "value": false
+      },
+      "normal_notes_request": {
+        "url": "https://api2.openreview.net/notes?content.venueid=KDD.org%2F2026%2FDatasets_and_Benchmark_Track_Cycle_2&limit=1",
+        "status": 403,
+        "error": "HTTP Error 403: Forbidden",
+        "response_excerpt": "{\"name\":\"ChallengeRequiredError\",\"message\":\"Challenge verification required (2026-10-20-11206455)\",\"status\":403,\"details\":{\"challengeUrl\":\"https://openreview.net/challenge?redirect=https%3A%2F%2Fapi2.openreview.net%2Fnotes%3Fcontent.venueid%3DKDD.org%252F2026%252FDatasets_and_Benchmark_Track_Cycle_2%26limit%3D1\",\"reqId\":\"2026-10-20-11206455\"}}",
+        "retrieved_on": "2026-10-20",
+        "bytes": 345,
+        "sha256": "ac020a4a8286751e49e5931a2811e3b3e27ea255d21bd0d5a2f8da928cf52599"
+      },
+      "public_search_request": {
+        "url": "https://api2.openreview.net/notes/search?term=dataset+benchmark&group=KDD.org%2F2026%2FDatasets_and_Benchmark_Track_Cycle_2&source=all&limit=1000",
+        "resolved_url": "https://api2.openreview.net/notes/search?term=dataset+benchmark&group=KDD.org%2F2026%2FDatasets_and_Benchmark_Track_Cycle_2&source=all&limit=1000",
+        "status": 200,
+        "content_type": "application/json; charset=utf-8",
+        "retrieved_on": "2026-10-20",
+        "bytes": 22,
+        "sha256": "510dfc73c624069b8624346bfdd7eabf8ca8e5a165bba0c8309144ce5a958205"
+      },
+      "public_search_count": 0,
+      "interpretation": "Normal notes API requires browser verification; no matching public search records were found for this venue. This does not establish that private or unindexed reviews do not exist."
+    }
+  ]
+}

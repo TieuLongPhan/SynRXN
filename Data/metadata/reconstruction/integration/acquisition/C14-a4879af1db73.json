@@ -1,0 +1,13 @@
+{
+  "source_id": "C14",
+  "name": "rhea_molecules.tsv",
+  "bytes": 3497386,
+  "checksum": "md5:cb5a575a08954f6d28311b9a4bef52fe",
+  "url": "https://zenodo.org/api/records/11494913/files/rhea_molecules.tsv/content",
+  "path": "Data/raw/synrxn2/C14/rhea_molecules.tsv",
+  "bytes_observed": 2933560,
+  "sha256": "572b3990cd355f92f78bc725986f2b70860f3141489757970e9b061d3de2e43b",
+  "md5": "c90319ba9d446bfe07ab52b3f776f112",
+  "status": "unavailable",
+  "error": "source byte size differs from the pinned release"
+}

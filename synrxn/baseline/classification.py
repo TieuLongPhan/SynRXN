@@ -1,10 +1,12 @@
 from __future__ import annotations
 import os
+from pathlib import Path
 from typing import Dict, Any, Tuple
 import numpy as np
 
 from synrxn.io.io import load_df_gz, save_results_json
 from synrxn.split.repeated_kfold import RepeatedKFoldsSplitter
+from synrxn.reconstruction.paths import physical_path
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import cross_validate, RepeatedKFold
@@ -60,8 +62,7 @@ def _make_cv_results_jsonable(cv_res: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def get_data(name: str, level: int = 0) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
-    """
-    Load features and labels for a benchmark dataset.
+    """Load features and labels for a benchmark dataset.
 
     Expects feature files:
       ./Data/Benchmark/drfp/classification/drfp_{name}.npz  (array 'fps')
@@ -72,12 +73,12 @@ def get_data(name: str, level: int = 0) -> Tuple[np.ndarray, np.ndarray, np.ndar
 
     :param name: dataset name (e.g., 'syntemp' or other benchmark id)
     :param level: integer label level for syntemp (default 0)
-    :returns: (X_drfp, X_rxnfp, y) where X_* are 2D numpy arrays and y is 1D labels array
+    :return: (X_drfp, X_rxnfp, y) where X_* are 2D numpy arrays and y is 1D labels array
     :raises FileNotFoundError: if expected files are missing
     """
-    drfp_path = f"./Data/Benchmark/drfp/classification/drfp_{name}.npz"
-    rxnfp_path = f"./Data/Benchmark/rxnfp/classification/rxnfp_{name}.npz"
-    csv_path = f"Data/classification/{name}.csv.gz"
+    drfp_path = physical_path(Path(f"Data/Benchmark/drfp/classification/drfp_{name}.npz").resolve())
+    rxnfp_path = physical_path(Path(f"Data/Benchmark/rxnfp/classification/rxnfp_{name}.npz").resolve())
+    csv_path = physical_path(Path(f"Data/classification/{name}.csv.gz").resolve())
 
     if not os.path.exists(drfp_path):
         raise FileNotFoundError(drfp_path)
@@ -117,28 +118,23 @@ def Benchmark(
     n_jobs: int = 4,
     scoring: Dict[str, Any] = SCORING,
 ) -> Dict[str, Dict[str, Any]]:
-    """
-    Run random and stratified cross-validation for DRFP and RXNFP feature sets.
+    """Run random and stratified cross-validation for DRFP and RXNFP features.
 
-    It runs:
-      - Random (unstratified) CV using sklearn.model_selection.RepeatedKFold
-      - Stratified CV using RepeatedKFoldsSplitter (outer folds stratified on labels)
+    Random cross-validation uses scikit-learn's RepeatedKFold. Stratified
+    cross-validation uses RepeatedKFoldsSplitter with label-stratified outer
+    folds. Cross-validation runs with one worker to avoid nested parallelism;
+    ``n_jobs`` controls the classifier's workers.
 
-    :param name: dataset name used to locate files in ./Data/...
-    :param level: label level for 'syntemp' dataset (default 0)
-    :param n_splits: number of outer folds (k)
-    :param n_repeats: number of repeats
-    :param random_state: base RNG seed used for reproducibility
-    :param n_jobs: n_jobs to pass to RandomForestClassifier (fit)
-    - cross_validate launched with n_jobs=1 by default to avoid nested parallelism issues
-    :param scoring: scoring dict passed to cross_validate
-    :returns: dict with keys
-        {
-            'drfp_random': cv_result_dict,
-            'drfp_strat': cv_result_dict,
-            'rxnfp_random': cv_result_dict,
-            'rxnfp_strat': cv_result_dict
-        }
+    :param name: Dataset name used to locate stored features and labels.
+    :param level: Label level for hierarchical classification datasets.
+    :param n_splits: Number of outer folds.
+    :param n_repeats: Number of repetitions.
+    :param random_state: Random seed for reproducible assignments.
+    :param n_jobs: Number of workers passed to RandomForestClassifier.
+    :param scoring: Scoring dictionary passed to cross_validate.
+    :return: Cross-validation results under ``drfp_random``, ``drfp_strat``,
+        ``rxnfp_random`` and ``rxnfp_strat``.
+    :rtype: Dict[str, Dict[str, Any]]
     """
     X_drfp, X_rxnfp, y = get_data(name=name, level=level)
     results: Dict[str, Dict[str, Any]] = {}
@@ -213,7 +209,7 @@ def Benchmark(
     print("\nBenchmark completed.\n")
 
     # --- NEW: ensure result directory exists and make cv results jsonable ---
-    out_path = f"Data/Benchmark/result/classification/{name}_{level}.json"
+    out_path = f".cache/synrxn/runs/baselines/classification/{name}_{level}.json"
     out_dir = os.path.dirname(out_path)
     os.makedirs(out_dir, exist_ok=True)
 

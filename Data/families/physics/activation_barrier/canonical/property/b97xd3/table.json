@@ -1,0 +1,79 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "physics",
+  "format": "csv.gz",
+  "key": "property/b97xd3",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "property/b97xd3",
+    "legacy_field_eligible_rows": {
+      "energy_barrier": 16365
+    },
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 16365
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "b97xd3_data_grant"
+    ],
+    "expected_bytes": 641403,
+    "expected_rows": 16365,
+    "expected_sha256": "33f881612842378a6cff97b2db0c99b1c4877a7e81a318129a26dd58e9702d73",
+    "format": "csv.gz",
+    "key": "property/b97xd3",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/property/b97xd3.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 16365,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "grambow2020scientificdata",
+      "grambow2020zenodo"
+    ],
+    "path": "Data/property/b97xd3.csv.gz",
+    "sha256": "33f881612842378a6cff97b2db0c99b1c4877a7e81a318129a26dd58e9702d73",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "grambow2020scientificdata",
+      "grambow2020zenodo"
+    ],
+    "counting_unit": "source-table row",
+    "key": "property/b97xd3",
+    "legacy_field_eligible_rows": {
+      "energy_barrier": 16365
+    },
+    "namespace": "canonical",
+    "path": "Data/property/b97xd3.csv.gz",
+    "role": "primary",
+    "rows": 16365,
+    "sha256": "33f881612842378a6cff97b2db0c99b1c4877a7e81a318129a26dd58e9702d73",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "B97-D3 activation and reaction energies (legacy b97xd3 key)"
+  },
+  "stored_path": "Data/families/physics/activation_barrier/canonical/property/b97xd3/data.csv.gz",
+  "task_id": "activation_barrier",
+  "title": "B97-D3 activation and reaction energies (legacy b97xd3 key)"
+}

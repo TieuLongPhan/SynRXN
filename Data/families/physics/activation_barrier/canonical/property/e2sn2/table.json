@@ -1,0 +1,82 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "physics",
+  "format": "csv.gz",
+  "key": "property/e2sn2",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "property/e2sn2",
+    "legacy_field_eligible_rows": {
+      "energy_barrier": 3625
+    },
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 3625
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "recheck_property_synrxn_product_notice",
+      "recheck_property_chemprop_barriers_data_grant",
+      "recheck_property_property_recheck_e2sn2_crossref_retry",
+      "recheck_property_property_recheck_e2sn2_materialscloud_api"
+    ],
+    "expected_bytes": 79331,
+    "expected_rows": 3625,
+    "expected_sha256": "d3b27039841da7ea9bb18e511271fbaddfcb61d826ec1c5e31b50f71c1d3e044",
+    "format": "csv.gz",
+    "key": "property/e2sn2",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/property/e2sn2.csv.gz",
+    "qualification": "All 3,625 atom-mapped reaction strings and activation energies are an exact multiset union of the already-cleared 1,264-row E2 and 2,361-row SN2 author benchmarks. The actual Chemprop benchmark dataset deposit explicitly grants CC BY 4.0. Original IOP publisher-deposited Crossref metadata also identifies CC BY 4.0; the older Materials Cloud record itself uses a custom non-exclusive deposit license, which is not misreported as CC BY.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 3625,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "heid2022machine",
+      "vonrudorff2020thousands"
+    ],
+    "path": "Data/property/e2sn2.csv.gz",
+    "sha256": "d3b27039841da7ea9bb18e511271fbaddfcb61d826ec1c5e31b50f71c1d3e044",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "heid2022machine",
+      "vonrudorff2020thousands"
+    ],
+    "counting_unit": "source-table row",
+    "key": "property/e2sn2",
+    "legacy_field_eligible_rows": {
+      "energy_barrier": 3625
+    },
+    "namespace": "canonical",
+    "path": "Data/property/e2sn2.csv.gz",
+    "role": "primary",
+    "rows": 3625,
+    "sha256": "d3b27039841da7ea9bb18e511271fbaddfcb61d826ec1c5e31b50f71c1d3e044",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "E2/SN2 activation energies"
+  },
+  "stored_path": "Data/families/physics/activation_barrier/canonical/property/e2sn2/data.csv.gz",
+  "task_id": "activation_barrier",
+  "title": "E2/SN2 activation energies"
+}

@@ -1,0 +1,2 @@
+# Optional local analytics catalogue; independent of the benchmark preparation lock.
+duckdb==1.5.4

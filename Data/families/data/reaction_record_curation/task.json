@@ -1,0 +1,110 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 1,
+    "data_links": 1,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 1,
+    "stored_rows_across_unique_views": 2267,
+    "task_table_bindings": 1,
+    "tasks": 1,
+    "unique_table_views": 1
+  },
+  "tables": [
+    {
+      "data_link": "coverage/knowledge/EnzChemRED2024/curation/data.parquet",
+      "key": "knowledge/EnzChemRED2024/curation",
+      "metadata": "coverage/knowledge/EnzChemRED2024/curation/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "catalog_path": "Data/coverage_expansion/knowledge/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "controlled record-curation case",
+        "coverage_branch": "knowledge",
+        "key": "knowledge/EnzChemRED2024/curation",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "parent_groups": 1210,
+        "partition": "main",
+        "path": "Data/coverage_expansion/knowledge/curation.parquet",
+        "qualification": "Clean controls and deterministic single-relation deletions reuse independent expert annotations. This is a controlled corruption variant, not a dataset of naturally observed database errors. Keep both cases of each document together.",
+        "reference_evidence": "expert_reference_with_generated_corruption",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 2267,
+        "sha256": "55373a6d80a8e2c76f2472100936ce6209c463df76571c34e905be67a3fe5506",
+        "source_id": "EnzChemRED2024",
+        "source_sha256": "046f6c00663d26cf172cb828b3fe68cab92a128de947545c01aff53060c06251",
+        "source_url": "https://doi.org/10.5281/zenodo.11067998",
+        "task_fields": {
+          "reaction_record_curation": {
+            "group_fields": [
+              "parent_group"
+            ],
+            "input_keys": [
+              "passages",
+              "candidate_record"
+            ],
+            "inputs": [
+              "inputs_json"
+            ],
+            "metrics": [
+              "correction_F1",
+              "false_edit_rate",
+              "coverage"
+            ],
+            "split_policy": "SHA-256 parent-group 80/10/10 seed 2027; native split retained separately",
+            "target_keys": [
+              "needs_correction",
+              "corrected_record"
+            ],
+            "targets": [
+              "targets_json"
+            ]
+          }
+        },
+        "task_ids": [
+          "reaction_record_curation"
+        ]
+      }
+    ],
+    "candidate_ids": [],
+    "candidate_status": "Source acquisition and qualification required",
+    "canonical_keys": [],
+    "counting_units": [
+      "controlled record-curation case"
+    ],
+    "evaluation": "Error detection and correction accuracy, false-edit rate and coverage; conservation checks alone are not truth labels",
+    "extension_adapter_ids": [],
+    "family_id": "data",
+    "id": "reaction_record_curation",
+    "legacy_view_ids": [],
+    "metrics": [
+      "correction_F1",
+      "coverage",
+      "false_edit_rate"
+    ],
+    "origin": "promoted_from_initial_19_roadmap_definitions",
+    "primary_source_rows": 2267,
+    "primary_table_count": 1,
+    "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance.",
+    "question": "A noisy reaction record -> diagnosed issues and source-supported corrections or abstention",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 1,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "required_data": "Independently adjudicated original/error/corrected records with evidence, including ambiguous and unrepairable records",
+    "title": "Reaction record validation and correction"
+  }
+}

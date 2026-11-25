@@ -1,0 +1,14 @@
+{
+  "total_native_records": 80806,
+  "native_reported_impurity_phase_records": 18869,
+  "eligible_records": 7261,
+  "eligible_with_numeric_condition_context": 6519,
+  "eligible_partial_identity_sets": 273,
+  "unbalanced_or_missing_target_reaction_excluded": 3659,
+  "no_reported_impurity_phase_excluded_not_negative": 61937,
+  "no_concrete_impurity_identity_excluded": 7899,
+  "unresolved_target_or_precursor_identity_excluded": 21,
+  "target_labelled_as_impurity_excluded": 29,
+  "eligible_unique_original_dois": 6300,
+  "eligible_unique_impurity_formulas": 3495
+}

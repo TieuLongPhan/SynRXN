@@ -1,0 +1,66 @@
+{
+  "id": "C07",
+  "name": "RDB19-Rad",
+  "priority": "1 Integrate first",
+  "survey_license_note": "CC BY 4.0 on the Zenodo data record.",
+  "paper_urls": [
+    "https://doi.org/10.1021/acs.jpca.4c04121"
+  ],
+  "data_urls": [
+    "https://zenodo.org/records/11493786"
+  ],
+  "project_urls": [],
+  "license_urls": [
+    "https://zenodo.org/api/records/11493786"
+  ],
+  "license_verified": true,
+  "files": [
+    {
+      "name": "Splits.tar.bz2",
+      "bytes": 15523264,
+      "checksum": "md5:ea7f804859cecd88c508ec6677569ff9",
+      "url": "https://zenodo.org/api/records/11493786/files/Splits.tar.bz2/content"
+    },
+    {
+      "name": "Datasets.tar.bz2",
+      "bytes": 31362184,
+      "checksum": "md5:ae160c9a4b1107a0c635dbc5acbd419e",
+      "url": "https://zenodo.org/api/records/11493786/files/Datasets.tar.bz2/content"
+    },
+    {
+      "name": "README.md",
+      "bytes": 6803,
+      "checksum": "md5:402ef4a4677f3f0acc001762a8acb086",
+      "url": "https://zenodo.org/api/records/11493786/files/README.md/content"
+    },
+    {
+      "name": "Molecules.tar.bz2",
+      "bytes": 887339,
+      "checksum": "md5:a9e6f8238e7b4e115a42e74c9c392306",
+      "url": "https://zenodo.org/api/records/11493786/files/Molecules.tar.bz2/content"
+    },
+    {
+      "name": "Reactions.tar.bz2",
+      "bytes": 12207439409,
+      "checksum": "md5:71a41abd84478d1f63e8baa4c87cb9b4",
+      "url": "https://zenodo.org/api/records/11493786/files/Reactions.tar.bz2/content"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://zenodo.org/api/records/11493786",
+      "status": 200,
+      "sha256": "948720f243dec45ae540dd0a80c4067e38960f0a75dbf65534a59a075a12fa4d",
+      "bytes": 5632,
+      "retrieved_at": "2026-10-20T15:34:24.716953+00:00"
+    }
+  ],
+  "record_id": "11493786",
+  "doi": "10.5281/zenodo.11493786",
+  "title": "RDB19-Rad",
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "publication_date": "2024-06-05",
+  "description": "<p>This dataset contains supporting information for our published work, \"Accurately Predicting Barrier Heights for Radical Reactions in Solution using Deep Graph Networks\". Please see the README below for a detailed summary of every item included in this repository.&nbsp;</p>"
+}

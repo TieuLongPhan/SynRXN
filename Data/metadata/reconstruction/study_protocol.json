@@ -1,0 +1,176 @@
+{
+  "schema": "synrxn.kdd-suite-protocol.v2",
+  "version": "0.3.0",
+  "as_of": "2026-10-20",
+  "status": "Native acquisition, source provenance and scoped reference contracts prepared; predictive evaluation pending",
+  "working_title": "SynRXN: A Source-Aware Benchmark Suite for Reaction Data",
+  "task_registry": "task_registry.json",
+  "scientific_family_count": 12,
+  "local_data_backed_task_count": 41,
+  "task_ids": [
+    "atom_mapping",
+    "reaction_balancing",
+    "forward_prediction",
+    "retrosynthesis",
+    "reaction_center",
+    "reaction_classification",
+    "reaction_clustering",
+    "yield_conversion",
+    "reaction_success",
+    "reaction_feasibility",
+    "enzyme_activity",
+    "condition_recovery",
+    "condition_ranking",
+    "sequential_optimization",
+    "procedure_generation",
+    "activation_barrier",
+    "reaction_energetics",
+    "reaction_rates",
+    "regioselectivity",
+    "enantioselectivity",
+    "product_distribution",
+    "mechanistic_prediction",
+    "literature_extraction",
+    "reaction_record_curation",
+    "reaction_retrieval",
+    "impurity_prediction",
+    "reactive_potential",
+    "kinetic_parameter_inference",
+    "ts_geometry",
+    "reaction_network_modeling",
+    "analytical_interpretation",
+    "reaction_progress_monitoring",
+    "reaction_component_design",
+    "new_reactivity_discovery",
+    "reactor_scale_modeling",
+    "process_control",
+    "process_impact_assessment",
+    "enzyme_retrieval",
+    "mutation_effects",
+    "active_sites",
+    "enzyme_kinetic_parameters"
+  ],
+  "required_legacy_export_ids": [
+    "classification",
+    "clustering",
+    "yield",
+    "feasibility",
+    "reagent_set",
+    "role_aware_condition",
+    "energy_barrier",
+    "mechanistic_prediction"
+  ],
+  "legacy_protocols": "../synrxn/data/task_protocols.json",
+  "scope_policy": "Twelve reaction-informatics families, fixed 41-task universe, all eight historical exports retained; multi-step synthesis route planning excluded. Native-source availability, redistribution permission and model evidence are separate gates.",
+  "data_policy": {
+    "canonical_tables": 49,
+    "expansion_tables": 16,
+    "source_rows_are_not_unique_reactions": true,
+    "overlapping_views_not_added_to_independent_counts": true,
+    "m_csa_companion": "Separate reference/exposure-qualified mechanism views",
+    "coverage_tables": 40,
+    "redistribution_manifest": "coverage/release_manifest.json",
+    "restricted_and_unresolved_sources": "Retain unresolved source and internal-use-only history outside publication. Verified NC data are included with their terms; the reviewed PNAS factual table extraction has separate noncommercial educational conditions."
+  },
+  "input_policy": "Per-task whitelists; withhold targets, target-derived mappings/centers, source labels and identifiers unless their role is explicitly part of the scientific input. Known assay identifiers are allowed only for the declared conditional assay-activity task.",
+  "reference_policy": "Keep measurements, expert judgments, generated labels, source annotations and computed quantities separate. Interpret replay and source-reference agreement within their exact scope.",
+  "split_policy": "Retain upstream splits and provenance. Freeze scientifically appropriate source/group allocations before fitting. Do not apply the HiTEA fold design universally. Audit shared observations and source derivatives across tasks.",
+  "training_policy": "One simple control and two suitable baseline families per qualified task/dataset by default; select on validation only; share permitted information within each task; archive attempted configurations and failures.",
+  "family_baselines": {
+    "data": "Text entity/relation extraction controls; conservative record-edit controls. Freeze document-level references and splits. Controlled deletion cases must remain labeled generated corruptions.",
+    "representation": "Mapping/balancing wrappers; priors, fingerprints and learned classification/clustering; text precedent retrieval with linked expert references and unknown unannotated relevance.",
+    "transformations": "Product/precursor retrieval or template controls and a competitive single-step model. Center prediction needs source-index qualification before classifier/graph baselines. No multi-step route search.",
+    "outcomes": "Training median/class prior, fingerprint regression/classification and a learned molecular baseline; keep response definitions and FREA evidence tiers separate.",
+    "selectivity": "Simple site/response controls plus fingerprint and graph/chirality-aware baselines where references support them; distinct target definitions remain distinct endpoints.",
+    "conditions": "Frequency/retrieval controls and conditional set/sequence models; separate generic and role-aware target masks. Ranking and sequential selection score observed candidate pools.",
+    "physics": "Quantity-specific scalar controls and suitable reaction models; configuration energy/force controls and learned reactive potentials under native trajectory holdouts; known-stoichiometry inverse kinetic fits on explicitly simulated examples. Units, direction, theory and reference validation remain source-specific.",
+    "mechanisms": "Mapped-endpoint retrieval/template or electron-event models, endpoint-only diagnostics, symmetry-aware TS geometry controls and dynamical network-recovery controls under each acquired contract. Computed saddle references and simulated network examples retain their validation limits; synthesis route search is excluded.",
+    "analysis": "Spectral integration/calibration controls and suitable learned mixture interpretation; persistence and past-only time-series forecasts. Derived integrals are not independent concentrations.",
+    "design": "Training-set retrieval and conditional component/sequence generation; score validity and recorded-candidate recovery. Only observed candidates have a measured performance oracle. Substrate-scope discovery is bounded to recorded source attempts.",
+    "process": "Mechanistic/linear controls and appropriate reactor-response models; bounded CSTR environment evaluation with published equations; coke-yield prediction remains a narrow impact quantity, not full LCA.",
+    "biocatalysis": "Sequence/reaction retrieval, source-qualified mutation deltas, catalytic-residue references and per-record enzyme kinetic regression. Separate direct catalytic assays, DMS proxies and LLM-extracted evidence."
+  },
+  "evaluation_policy": "Source-specific metrics and denominators; model failures retained; dependence-aware paired uncertainty where applicable; multiple-comparison families declared before test inspection; no universal cross-task average of incompatible scores.",
+  "implementation_stages": [
+    {
+      "id": "S1",
+      "goal": "Reconcile twelve higher-level families, source bindings, explicit gaps and route-planning exclusion; preserve all eight original variants",
+      "status": "registry_prepared"
+    },
+    {
+      "id": "S2",
+      "goal": "Audit and pilot every original export variant; write standardized contracts for the additional source-backed tasks",
+      "status": "planned"
+    },
+    {
+      "id": "S3",
+      "goal": "Run and reproduce qualified baselines across the suite; publish a per-task readiness and result matrix",
+      "status": "planned"
+    },
+    {
+      "id": "S4",
+      "goal": "Deepen selected cross-family findings after broad task coverage; HiTEA is one case study",
+      "status": "planned"
+    }
+  ],
+  "compute_allocation": {
+    "primary_task_dataset_bindings": 135,
+    "trainable_baseline_families_per_binding": 2,
+    "validation_trials_per_family": 4,
+    "stochastic_final_seeds": [
+      17,
+      29,
+      43
+    ],
+    "search_execution_ceiling": 1080,
+    "additional_seed_execution_ceiling": 540,
+    "suite_execution_ceiling": 1620,
+    "legacy_binding_count": 32,
+    "legacy_execution_ceiling": 384,
+    "meaning": "Upper configuration-execution slots for the proposed matrix, not measured runtime or a claim that all model adapters exist. Deterministic algorithms do not require extra seeds. Per-source training-size caps and large-corpus budgets must be declared from pilots.",
+    "runtime_and_hardware_estimate": "Must be re-estimated from suite pilots; the former HiTEA-only CPU/GPU reservation does not cover this suite automatically.",
+    "reduction_order": [
+      "Reduce optional deep case-study grids",
+      "Reduce the common validation search before test inspection",
+      "Use explicit source/group-aware training-size tiers for large corpora while preserving the declared test population"
+    ],
+    "coverage_rule": "Do not remove the other tasks to simplify the HiTEA case study; retain every task and its honest readiness status.",
+    "roadmap_tasks_included": false,
+    "local_primary_task_dataset_bindings": 137
+  },
+  "case_studies": [
+    {
+      "id": "hitea_context",
+      "protocol": "case_studies/hitea_protocol.json",
+      "scope": "yield_conversion and condition_ranking",
+      "status": "initial source preparation completed; human qualification and predictive runs pending",
+      "role": "optional detailed analysis within the full suite"
+    }
+  ],
+  "future_task_ids": [],
+  "families_with_local_task_data": 12,
+  "roadmap_only_family_count": 0,
+  "scope_policy_file": "scope_policy.json",
+  "scope_coverage_audit": "../../../doc/data_concept.rst",
+  "excluded_task_ids": [
+    "multistep_planning"
+  ],
+  "delivery_policy": "Acquisition gaps have scoped source variants; no automatic promise of complete model results. Execute only qualified, redistributable bindings after modality-specific pilots; freeze group splits, leakage checks and actual CPU/GPU/memory costs before the comparative matrix.",
+  "total_task_definitions": 41,
+  "reproducibility": {
+    "entrypoint": "python -m synrxn.reconstruction full",
+    "profiles": [
+      "scope",
+      "preparation"
+    ],
+    "default_profile": "preparation",
+    "network": "offline; frozen local assets required",
+    "outputs": "isolated source/export verification, regenerated artifacts, 41-task readiness and pending execution plan, command logs, code/environment/input snapshots",
+    "model_execution": "not performed by this workflow; qualified predictive runners remain pending",
+    "coverage_dependencies": "coverage/requirements.txt",
+    "full_audit_command": "python -m synrxn.reconstruction full --profile preparation --check-rows --rebuild-coverage"
+  },
+  "initial_roadmap_task_definitions": 19,
+  "promoted_roadmap_task_definitions": 19,
+  "release_eligible_task_definitions": 41
+}

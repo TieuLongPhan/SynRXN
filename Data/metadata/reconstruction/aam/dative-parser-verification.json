@@ -1,0 +1,23 @@
+{
+  "all_other_module_definitions_unchanged": true,
+  "checked_strings": 202960,
+  "data_payloads_unchanged": true,
+  "different_tokenizations": 0,
+  "meaning": "The parser fix does not change the tokens passed to RDKit for any pinned input or reference.",
+  "new_core_sha256": "33b478de660fc9454e0a2af2fd99aa538456ee97b5a25f6f53546170bbf69b38",
+  "old_core_sha256": "8b376ff559bec4c90a8f862d507f270e4bcdee0450277e4f8eccf44863af6f9d",
+  "source_pool_sha256": {
+    "brenda": "a02d0e4cb2a88571502212b38801dc8ca93a489bfd7a04ea95a7d1a31d4c2c99",
+    "ecoli": "71f79d32b8e3764cad81b8abe4b324aa6325edee94aba3ab5c338f676e7f1b5d",
+    "ehreact": "57943c7f063d82d47b4df68a5d607be8280e679799608e6c9e3054bc8e5463d4",
+    "enzyme_map": "672f30dfd2cbafbfbcee5ff3a02d79471ff1854210424d4cae03d1dee76f43c4",
+    "flower": "7f39c66ac2d7aec0a5fa333bf6f6e9ebb0b15328dc698785c17991d2291d76d0",
+    "golden": "4eb1d06ae7a80d7b89dd2c574a51a7e834d26621324a585e37b2dc739383556a",
+    "metambd_cyclic": "f6a21d7d3e00575555696713945c9a99933a1a10361f17237711f2859dbbc5c7",
+    "natcomm": "d551531967bd6b83200375d7d9b41074742cd68b3351a61b9f444f6a624c679d",
+    "recon3d": "d7fcf7fc48808aa33790fdbe470a352d21a87a1f1bc1f263822278850f7cd364",
+    "sihumix": "a50cab432354906184432b2c890db4d2188abab5bcdbab19ce2e584a06d65d3b",
+    "uspto_3k": "61ae14ec957d7915d725b20b8c4634407431e20cc672e85f720e2cbf99eede15"
+  },
+  "tests": "64 passed, 3 subtests passed"
+}

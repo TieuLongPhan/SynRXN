@@ -1,0 +1,13 @@
+{
+  "source_id": "C11",
+  "name": "quantumpioneer_kinetics_dataset.csv",
+  "bytes": 39105280,
+  "checksum": "md5:a9f4df281b82ab8ee9980bad0b8012e2",
+  "url": "https://zenodo.org/api/records/20060606/files/quantumpioneer_kinetics_dataset.csv/content",
+  "path": "Data/raw/synrxn2/C11/quantumpioneer_kinetics_dataset.csv",
+  "bytes_observed": 298788,
+  "sha256": "ca1617cd1fa648d2f3497856966b1a75876f4fe65260293c1ef06262591b567a",
+  "md5": "d702152ee28d7697d10f6c7cbfa0d7cf",
+  "status": "unavailable",
+  "error": "source byte size differs from the pinned release"
+}

@@ -1,0 +1,11 @@
+{
+  "source_id": "C16",
+  "name": "data/validation_data/validation_virtual_chemist.xlsx",
+  "bytes": 12032,
+  "url": "https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/data/validation_data/validation_virtual_chemist.xlsx",
+  "path": "Data/raw/synrxn2/C16/data/validation_data/validation_virtual_chemist.xlsx",
+  "bytes_observed": 12032,
+  "sha256": "41bc736a26ca99e05dd263996d36a8c35aaa359b153beb5692ee8bd6b4e2b979",
+  "md5": "c99b2779e91e6c6e33d34040f3aa3c9e",
+  "status": "verified"
+}

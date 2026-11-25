@@ -1,222 +1,204 @@
 .. _data-concept:
 
-Data Concept
-============
+Data model and reconstruction
+=============================
 
-SynRXN treats reaction data as versioned benchmark assets. Curated tables are
-stored as compressed CSV files and loaded through :class:`synrxn.data.DataLoader`.
-Each task folder represents a benchmark family; each dataset file is a named
-record within that family.
+A family groups related scientific tasks. Each task defines an input, a target
+and an evaluation population. A source table stores the records used by one
+or more tasks. Its observation unit can be an assay, an annotated document, a
+spectrum, or a computed structure. A stored row may fall outside a task's
+eligible evaluation population. See :doc:`task_definitions` for the inputs and
+expected results, and :doc:`families` for table membership.
 
-Core model
-----------
+Rebuild SynRXN 1.5.0
+--------------------
 
-.. raw:: html
+From the repository root, install the reconstruction and query dependencies.
 
-   <div class="synrxn-icon-grid">
-     <div class="synrxn-icon-card">
-       <span class="synrxn-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
-       <strong>Task family</strong>
-       <p>A benchmark problem type such as atom mapping, classification, property prediction, rebalancing, or synthesis.</p>
-     </div>
-     <div class="synrxn-icon-card">
-       <span class="synrxn-icon"><i class="fa-solid fa-table" aria-hidden="true"></i></span>
-       <strong>Dataset record</strong>
-       <p>A named compressed CSV table with stable columns, source metadata, and task-specific supervision.</p>
-     </div>
-     <div class="synrxn-icon-card">
-       <span class="synrxn-icon"><i class="fa-solid fa-code-commit" aria-hidden="true"></i></span>
-       <strong>Source snapshot</strong>
-       <p>A Zenodo release, GitHub tag, exact commit, or development branch used to retrieve the data.</p>
-     </div>
-     <div class="synrxn-icon-card">
-       <span class="synrxn-icon"><i class="fa-solid fa-shuffle" aria-hidden="true"></i></span>
-       <strong>Split policy</strong>
-       <p>Published split columns are preserved; new repeated splits can be generated with deterministic seeds.</p>
-     </div>
-   </div>
+.. code-block:: bash
 
-The package separates concerns clearly:
+   python -m pip install -e ".[expansion,query]"
 
-- ``Data/`` contains curated benchmark tables grouped by task.
-- ``synrxn.data`` resolves, downloads, caches, verifies, lists, and loads those
-  tables.
-- ``synrxn.split`` provides deterministic split helpers when a dataset does not
-  already include the split needed for an experiment.
-- Builder scripts under ``script/`` rebuild curated artifacts from upstream raw
-  sources for developer workflows.
+The main snapshot uses 102 prepared tables and their admitted native assets.
+Use the source locks under ``Data/metadata/`` to identify the required assets.
+Restore original inputs under ``archive/datasets/raw/`` and restore matching
+prepared reference files under ``Data/families/``. Bulk rebuilds compare supported
+source recipes with those references. Tables supplied as fixed artifacts are
+restored from a checksum-matching prepared cache. The code checkout contains the
+catalogue and recipes. A public deposit of the complete data bundle is pending.
+
+Follow the table preparation steps below for files that need to be restored or
+regenerated. Then build and verify the main DuckDB snapshot. For exact native
+adapter comparisons, use the pinned environment in
+``Data/metadata/reconstruction/coverage/requirements.txt``.
 
 Storage layout
 --------------
 
-A typical source checkout or data archive follows this structure:
+``Data/`` has two directories:
 
 .. code-block:: text
 
    Data/
-   ├── aam/
-   │   ├── golden.csv.gz
-   │   └── uspto_3k.csv.gz
-   ├── classification/
-   │   ├── schneider_b.csv.gz
-   │   └── uspto_50k_u.csv.gz
-   ├── property/
-   │   ├── b97xd3.csv.gz
-   │   └── rgd1.csv.gz
-   ├── rbl/
-   │   └── mnc.csv.gz
-   └── synthesis/
-       └── uspto_50k.csv.gz
+   ├── families/           prepared data, organized by family and task
+   └── metadata/           catalogues, source locks, licenses and task definitions
+       ├── catalog.yaml
+       ├── sources/
+       ├── coverage/
+       ├── expansion/
+       └── reconstruction/
 
-``Data/classification/schneider_b.csv.gz`` is loaded as dataset
-``"schneider_b"`` with ``task="classification"``.
+Each admitted table has one prepared file under ``Data/families/``. A task that
+shares a table links to its file under the first task that uses it in the
+registry. The adjacent ``table.json`` records row counts, source identity,
+checksum and use terms. The held Diels–Alder record has metadata only.
 
-Task families
--------------
+Git excludes the native cache and prepared table payloads.
 
-.. list-table::
-   :header-rows: 1
-   :widths: 18 28 29 25
-   :class: synrxn-table
+Prepare a table
+---------------
 
-   * - Task
-     - Goal
-     - Typical targets
-     - Example datasets
-   * - ``aam``
-     - Evaluate atom-to-atom mapping quality.
-     - reference ``ground_truth`` mappings and mapper outputs
-     - ``golden``, ``enzyme_map``, ``uspto_3k``
-   * - ``classification``
-     - Predict reaction class, template, or enzyme hierarchy.
-     - ``label``, ``label_0``, ``label_1``, ``label_2``, ``ec1``--``ec3``
-     - ``schneider_b``, ``tpl_b``, ``ecreact``
-   * - ``property``
-     - Predict continuous or probabilistic reaction properties.
-     - ``ea``, ``dh``, ``G_act``, ``G_r``, ``lograte``, ``Conversion``
-     - ``b97xd3``, ``rgd1``, ``cycloadd``
-   * - ``rbl``
-     - Restore missing species and recover balanced reactions.
-     - balanced ``ground_truth`` reaction strings
-     - ``mnc``, ``mos``, ``mbs``, ``complex``
-   * - ``synthesis``
-     - Support forward synthesis, retrosynthesis, reagent inference, or reaction-center prediction.
-     - ``aam``, ``rxn``, ``reagent``, ``rc``, ``source``
-     - ``da``, ``uspto_50k``, ``uspto_mit``, ``uspto_500``
+The entry points in ``synrxn/reconstruction/families/<family>/<task>/`` select
+individual tables. The following recipe reproduces the PMG-284 NMR table from
+its pinned source files and places the result in the family tree::
 
-Naming conventions
-------------------
+    python -m synrxn.reconstruction.families.analysis.analytical_interpretation.nmr_pmg_284_spectra prepare --offline
 
-Dataset names are short, lowercase identifiers. Some names include suffixes that
-clarify the reaction representation:
+Use ``plan`` to see a table's inputs. Use ``verify`` to check its pinned assets
+and ``build`` to retain an isolated reconstruction report.
 
-- ``*_b`` denotes balanced or fuller reaction records where auxiliary species can
-  be included.
-- ``*_u`` denotes unbalanced or product-focused records, often useful for
-  template and reaction-class tasks.
-- task-specific names such as ``e2``, ``sn2``, ``rgd1``, or ``cycloadd`` keep the
-  upstream benchmark identity visible.
+``prepare`` uses a pinned local input when present. Recipes with upstream
+acquisition can fetch missing inputs. ``--offline`` restricts preparation to
+local files. ``--cache DIR`` accepts a directory containing native inputs under
+``raw/`` or prepared files under ``families/``. With ``--from-cache``, SynRXN
+places a prepared copy after verifying its checksum. Canonical artifacts without
+a native preparation recipe use the pinned prepared file.
 
-Common columns
---------------
+.. _atom-mapping-preparation:
 
-Column availability depends on the task family and upstream source. The most
-common conventions are:
+Atom-mapping tables
+-------------------
 
-- ``r_id``: stable row identifier used by most curated datasets.
-- ``rxn``: reaction SMILES without atom mapping unless otherwise documented.
-- ``aam``: atom-mapped reaction SMILES.
-- ``ground_truth``: reference answer, such as the correct atom mapping or the
-  balanced reaction string.
-- ``label``, ``label_0``, ``label_1``, ``label_2``: flat or hierarchical class
-  labels.
-- ``split``: published split assignment when available.
-- numeric target columns such as ``ea``, ``dh``, ``G_act``, ``G_r``,
-  ``lograte``, or ``Conversion``.
-- source-tracking columns such as ``original_id``, ``orig_index``, ``source``, or
-  ``code``.
+The main snapshot includes ten atom-mapping tables. Find their identifiers,
+source references and reuse terms in :doc:`data_records`. Prepare a table using
+its entry point and a matching local artifact.
 
-Source resolution
------------------
+.. code-block:: bash
 
-:class:`synrxn.data.DataLoader` lets the same user code target different data
-sources.
+   python -m synrxn.reconstruction.families.representation.atom_mapping.ecoli prepare --offline
 
-.. list-table::
-   :header-rows: 1
-   :widths: 20 28 28 24
-   :class: synrxn-table
+.. _build-database:
 
-   * - Source
-     - What it resolves
-     - Recommended use
-     - Stability
-   * - ``zenodo``
-     - Archived data release assets.
-     - Published experiments and benchmark reports.
-     - Citable and stable.
-   * - ``github``
-     - GitHub tags, releases, or branches.
-     - Synchronizing data with repository tags.
-     - Stable for tags, mutable for branches.
-   * - ``commit``
-     - Exact repository commit SHA.
-     - Reproducible development snapshots.
-     - Stable if the commit remains available.
-   * - ``latest``
-     - Current default branch tip.
-     - Exploration and development.
-     - Mutable; record the resolved commit.
-
-Cache behavior
---------------
-
-Use a persistent cache directory for performance and reproducibility.
-
-.. code-block:: python
-
-   from pathlib import Path
-   from synrxn.data import DataLoader
-
-   loader = DataLoader(
-       task="classification",
-       source="zenodo",
-       version="1.0.0",
-       cache_dir=Path("~/.cache/synrxn").expanduser(),
-   )
-
-   df = loader.load("schneider_b")
-
-The cache avoids repeated downloads, keeps resolved assets local, and makes it
-easier to archive the exact data used in an experiment.
-
-Reproducibility checklist
+Build a database snapshot
 -------------------------
 
-Record these fields with every benchmark result:
+With the prepared tables and admitted native assets available locally, check
+the family tree and build a self-contained snapshot.
 
-.. raw:: html
+.. code-block:: bash
 
-   <div class="synrxn-callout">
-     <p><strong>Minimum record:</strong> package version, task family, dataset name, source mode, data version or commit SHA, split column or split seed, preprocessing steps, and evaluation script commit.</p>
-   </div>
+   python -m synrxn.reconstruction families organize --check-hashes --allow-missing
+   python -m synrxn.reconstruction storage build --materialize --scope main \
+       --output .cache/synrxn/storage-001
+   python -m synrxn.reconstruction storage verify \
+       --database .cache/synrxn/storage-001/synrxn.duckdb
 
-For example:
+The destination must be a new or empty directory under ``.cache/`` or
+``reports/``. The builder validates source hashes, verifies the imported row
+counts, and checks embedded assets with external file access disabled. It
+writes ``synrxn.duckdb`` and a build report with source pins and the database
+checksum. See :doc:`query_and_service` for opening the result.
+``--allow-missing`` lets the local tree omit optional files. The main builder
+requires all 102 admitted files before it produces a snapshot.
 
-.. code-block:: text
+The main scope covers 12 families and 40 tasks with 102 materialized tables.
+``--scope catalogue`` also includes the optional FREA task. For local inspection,
+a build without ``--materialize`` creates SQL views over prepared files.
+``--metadata-only`` builds the catalogue without source-row relations.
 
-   package: synrxn==1.0.0
-   task: classification
-   dataset: schneider_b
-   source: zenodo
-   version: 1.0.0
-   split: published split column
-   cache: ~/.cache/synrxn
+Browse, rebuild and verify a family
+-----------------------------------
 
-See also
---------
+List families, inspect the selected source closure, and write a verification
+report to a new directory::
 
-- :doc:`Data Records <data_records>` for the complete dataset inventory.
-- :doc:`Tutorials and Examples <tutorials_and_examples>` for source-mode and
-  split workflows.
-- :doc:`API Reference <api>` for generated API documentation.
+    python -m synrxn.reconstruction families list
+    python -m synrxn.reconstruction families plan --family outcomes
+    python -m synrxn.reconstruction families verify --family outcomes --check-rows \
+        --output .cache/synrxn/runs/outcomes-verify
+
+Use ``families build`` with the same options to rebuild supported views in an
+isolated workspace and compare their bytes. Shared tables are checked once per
+run. Family verification checks data integrity. Predictive results require the
+task-specific procedures in :doc:`task_evaluation`.
+
+Refresh and verify the local family tree after updating its source metadata::
+
+    python -m synrxn.reconstruction families organize --check-hashes
+
+Source-specific acquisition commands are listed by
+``python -m synrxn.reconstruction families import-source --list``.
+
+Compare all source recipes
+--------------------------
+
+With the full local catalogue and pinned native inputs available, rebuild the
+supported expansion and coverage recipes in one isolated run. This comparison
+also verifies fixed prepared tables and checks their row counts.
+
+.. code-block:: bash
+
+   python -m synrxn.reconstruction families build --all --check-rows \
+       --output .cache/synrxn/runs/catalogue-rebuild
+
+This checks the full local catalogue, including optional and held references.
+The run directory contains regenerated files, comparison results and logs.
+The :ref:`main snapshot builder <build-database>` verifies the 102 admitted
+tables. Use ``prepare`` when a recipe needs to place an individual result into
+``Data/families/``.
+
+M-CSA mechanism tables
+----------------------
+
+The release adapter rebuilds four overlapping M-CSA views using the pinned
+companion at ``archive/research/previous/artifacts/mcsa-001/``. The lock in
+``Data/metadata/reconstruction/coverage/adapters/mcsa_sources.json`` lists its
+required files and checksums. With the companion and prepared references in
+place, check all four in one run.
+
+.. code-block:: bash
+
+   python -m synrxn.reconstruction families build --task mechanistic_prediction \
+       --check-rows --output .cache/synrxn/runs/mcsa-release-check
+
+For the independent rebuild from the original drawings, restore the
+checksum-pinned native bundle and converter files under
+``archive/datasets/raw/mcsa-v5/``. The converter requires Python 3.12.13 and the
+versions in ``requirements-converter.txt``. Run the importer from a separate
+SynRXN environment with the qualified ``synkit==1.6.3+synrxn.1`` backend.
+
+.. code-block:: bash
+
+   python3.12 -m venv .cache/mcsa-converter-env
+   .cache/mcsa-converter-env/bin/python -m pip install \
+       -r archive/datasets/raw/mcsa-v5/requirements-converter.txt
+   python -m synrxn.reconstruction families import-source mcsa_native \
+       --converter-python .cache/mcsa-converter-env/bin/python \
+       --output-dir .cache/mcsa-rebuild --jobs 2
+
+``native-build/`` contains the conversion results. ``extension/`` contains the
+standalone companion and its verification evidence. The release adapter checks
+the companion's files against its source lock before preparing release tables.
+See :doc:`task_evaluation` for replay eligibility and split requirements.
+
+Source records and reuse
+------------------------
+
+``Data/metadata/sources/`` records upstream references and source versions.
+The task registry and release manifest under ``Data/metadata/reconstruction/``
+record table membership and redistribution decisions. Dataset IDs and source
+checksums remain stable when files move. Rights and citations apply per source.
+
+- :download:`Task registry <../Data/metadata/reconstruction/task_registry.json>`
+- :download:`Release manifest <../Data/metadata/reconstruction/coverage/release_manifest.json>`
+- :doc:`data_records`

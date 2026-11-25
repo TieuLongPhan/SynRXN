@@ -1,0 +1,118 @@
+{
+  "counting_unit": "controlled record-curation case",
+  "data_link": "data.parquet",
+  "family_id": "data",
+  "format": "parquet",
+  "key": "knowledge/EnzChemRED2024/curation",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/knowledge/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "controlled record-curation case",
+    "coverage_branch": "knowledge",
+    "key": "knowledge/EnzChemRED2024/curation",
+    "license": "CC-BY-4.0",
+    "namespace": "coverage",
+    "parent_groups": 1210,
+    "partition": "main",
+    "path": "Data/coverage_expansion/knowledge/curation.parquet",
+    "qualification": "Clean controls and deterministic single-relation deletions reuse independent expert annotations. This is a controlled corruption variant, not a dataset of naturally observed database errors. Keep both cases of each document together.",
+    "reference_evidence": "expert_reference_with_generated_corruption",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 2267,
+    "sha256": "55373a6d80a8e2c76f2472100936ce6209c463df76571c34e905be67a3fe5506",
+    "source_id": "EnzChemRED2024",
+    "source_sha256": "046f6c00663d26cf172cb828b3fe68cab92a128de947545c01aff53060c06251",
+    "source_url": "https://doi.org/10.5281/zenodo.11067998",
+    "task_fields": {
+      "reaction_record_curation": {
+        "group_fields": [
+          "parent_group"
+        ],
+        "input_keys": [
+          "passages",
+          "candidate_record"
+        ],
+        "inputs": [
+          "inputs_json"
+        ],
+        "metrics": [
+          "correction_F1",
+          "false_edit_rate",
+          "coverage"
+        ],
+        "split_policy": "SHA-256 parent-group 80/10/10 seed 2027; native split retained separately",
+        "target_keys": [
+          "needs_correction",
+          "corrected_record"
+        ],
+        "targets": [
+          "targets_json"
+        ]
+      }
+    },
+    "task_ids": [
+      "reaction_record_curation"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "controlled record-curation case",
+    "expected_bytes": 2124518,
+    "expected_rows": 2267,
+    "expected_sha256": "55373a6d80a8e2c76f2472100936ce6209c463df76571c34e905be67a3fe5506",
+    "format": "parquet",
+    "key": "knowledge/EnzChemRED2024/curation",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/knowledge/curation.parquet",
+    "qualification": "Clean controls and deterministic single-relation deletions reuse independent expert annotations. This is a controlled corruption variant, not a dataset of naturally observed database errors. Keep both cases of each document together.",
+    "reasons": [],
+    "reference_evidence": "expert_reference_with_generated_corruption",
+    "release_eligible": true,
+    "source_id": "EnzChemRED2024",
+    "source_url": "https://doi.org/10.5281/zenodo.11067998",
+    "task_ids": [
+      "reaction_record_curation"
+    ]
+  },
+  "role": "primary",
+  "rows": 2267,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/knowledge/curation.parquet",
+    "sha256": "55373a6d80a8e2c76f2472100936ce6209c463df76571c34e905be67a3fe5506",
+    "source_catalogue": "Data/coverage_expansion/knowledge/catalog.json",
+    "source_id": "EnzChemRED2024",
+    "source_urls": [
+      "https://doi.org/10.5281/zenodo.11067998"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "controlled record-curation case",
+    "key": "knowledge/EnzChemRED2024/curation",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/knowledge/curation.parquet",
+    "qualification": "Clean controls and deterministic single-relation deletions reuse independent expert annotations. This is a controlled corruption variant, not a dataset of naturally observed database errors. Keep both cases of each document together.",
+    "role": "primary",
+    "rows": 2267,
+    "sha256": "55373a6d80a8e2c76f2472100936ce6209c463df76571c34e905be67a3fe5506",
+    "source_catalogue": "Data/coverage_expansion/knowledge/catalog.json",
+    "source_id": "EnzChemRED2024",
+    "source_urls": [
+      "https://doi.org/10.5281/zenodo.11067998"
+    ],
+    "title": "EnzChemRED controlled curation cases"
+  },
+  "stored_path": "Data/families/data/reaction_record_curation/coverage/knowledge/EnzChemRED2024/curation/data.parquet",
+  "task_id": "reaction_record_curation",
+  "title": "EnzChemRED controlled curation cases"
+}

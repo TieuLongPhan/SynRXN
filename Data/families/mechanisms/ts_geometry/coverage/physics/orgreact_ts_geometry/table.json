@@ -1,0 +1,112 @@
+{
+  "counting_unit": "reaction endpoint/transition-state triplet",
+  "data_link": "data.csv",
+  "family_id": "mechanisms",
+  "format": "csv",
+  "key": "physics/orgreact_ts_geometry",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/physics/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "reaction endpoint/transition-state triplet",
+    "coverage_branch": "physics",
+    "key": "physics/orgreact_ts_geometry",
+    "license": "CC-BY-4.0",
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/physics/orgreact_ts_geometry.csv",
+    "qualification": "Complete published XYZ endpoint/TS reference set; retain native atom order. Geometry-only target qualified; charge/spin and per-row IRC logs are absent from these released assets. No reverified saddle claim, no ready-made independent split.",
+    "reference_evidence": "Computed: source paper reports wB97X-D/def2-TZVP optimization, imaginary-frequency and IRC validation; no independent rerun here.",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 9649,
+    "sha256": "154424ff6277b1e8f199022a67758ff438083cedd02974ab690b2f7b89938059",
+    "source_id": "OrgReact2026",
+    "source_sha256": "e3751ac08df60bd803156b0396eebde46535d52c4fad122bf3672d3da564007b",
+    "source_url": "https://doi.org/10.6084/m9.figshare.31668682.v3",
+    "task_fields": {
+      "ts_geometry": {
+        "group_fields": [
+          "endpoint_group",
+          "reaction_id"
+        ],
+        "inputs": [
+          "elements",
+          "reactant_positions_A",
+          "product_positions_A",
+          "theory"
+        ],
+        "metrics": [
+          "symmetry-aware aligned RMSD_A",
+          "coverage",
+          "optional independently verified saddle recovery"
+        ],
+        "targets": [
+          "ts_positions_A"
+        ]
+      }
+    },
+    "task_ids": [
+      "ts_geometry"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "reaction endpoint/transition-state triplet",
+    "expected_bytes": null,
+    "expected_rows": 9649,
+    "expected_sha256": "154424ff6277b1e8f199022a67758ff438083cedd02974ab690b2f7b89938059",
+    "format": "csv",
+    "key": "physics/orgreact_ts_geometry",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/physics/orgreact_ts_geometry.csv",
+    "qualification": "Complete published XYZ endpoint/TS reference set; retain native atom order. Geometry-only target qualified; charge/spin and per-row IRC logs are absent from these released assets. No reverified saddle claim, no ready-made independent split.",
+    "reasons": [],
+    "reference_evidence": "Computed: source paper reports wB97X-D/def2-TZVP optimization, imaginary-frequency and IRC validation; no independent rerun here.",
+    "release_eligible": true,
+    "source_id": "OrgReact2026",
+    "source_url": "https://doi.org/10.6084/m9.figshare.31668682.v3",
+    "task_ids": [
+      "ts_geometry"
+    ]
+  },
+  "role": "primary",
+  "rows": 9649,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/physics/orgreact_ts_geometry.csv",
+    "sha256": "154424ff6277b1e8f199022a67758ff438083cedd02974ab690b2f7b89938059",
+    "source_catalogue": "Data/coverage_expansion/physics/catalog.json",
+    "source_id": "OrgReact2026",
+    "source_urls": [
+      "https://doi.org/10.6084/m9.figshare.31668682.v3"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "reaction endpoint/transition-state triplet",
+    "key": "physics/orgreact_ts_geometry",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/physics/orgreact_ts_geometry.csv",
+    "qualification": "Complete published XYZ endpoint/TS reference set; retain native atom order. Geometry-only target qualified; charge/spin and per-row IRC logs are absent from these released assets. No reverified saddle claim, no ready-made independent split.",
+    "role": "primary",
+    "rows": 9649,
+    "sha256": "154424ff6277b1e8f199022a67758ff438083cedd02974ab690b2f7b89938059",
+    "source_catalogue": "Data/coverage_expansion/physics/catalog.json",
+    "source_id": "OrgReact2026",
+    "source_urls": [
+      "https://doi.org/10.6084/m9.figshare.31668682.v3"
+    ],
+    "title": "OrgReact endpoint / TS triplets"
+  },
+  "stored_path": "Data/families/mechanisms/ts_geometry/coverage/physics/orgreact_ts_geometry/data.csv",
+  "task_id": "ts_geometry",
+  "title": "OrgReact endpoint / TS triplets"
+}

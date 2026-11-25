@@ -1,0 +1,128 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 4,
+    "data_links": 4,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 4,
+    "stored_rows_across_unique_views": 48167,
+    "task_table_bindings": 4,
+    "tasks": 1,
+    "unique_table_views": 4
+  },
+  "tables": [
+    {
+      "data_link": "canonical/rbl/complex/data.csv.gz",
+      "key": "rbl/complex",
+      "metadata": "canonical/rbl/complex/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/rbl/mbs/data.csv.gz",
+      "key": "rbl/mbs",
+      "metadata": "canonical/rbl/mbs/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/rbl/mnc/data.csv.gz",
+      "key": "rbl/mnc",
+      "metadata": "canonical/rbl/mnc/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/rbl/mos/data.csv.gz",
+      "key": "rbl/mos",
+      "metadata": "canonical/rbl/mos/table.json",
+      "namespace": "canonical"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "rbl/complex",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "lgpl",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND MIT AND LGPL-2.1-only",
+        "rights_status": "verified_repository_dataset_grant",
+        "role": "primary",
+        "rows": 1748
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "rbl/mbs",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND CC0-1.0",
+        "rights_status": "verified_curated_product_grant_with_open_base",
+        "role": "primary",
+        "rows": 491
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "rbl/mnc",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND CC0-1.0",
+        "rights_status": "verified_curated_product_grant_with_open_base",
+        "role": "primary",
+        "rows": 33147
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "rbl/mos",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND CC0-1.0",
+        "rights_status": "verified_curated_product_grant_with_open_base",
+        "role": "primary",
+        "rows": 12781
+      }
+    ],
+    "canonical_keys": [
+      "rbl/complex",
+      "rbl/mbs",
+      "rbl/mnc",
+      "rbl/mos"
+    ],
+    "counting_units": [
+      "source-table row"
+    ],
+    "extension_adapter_ids": [],
+    "family_id": "representation",
+    "id": "reaction_balancing",
+    "legacy_view_ids": [],
+    "metrics": [
+      "reference_completion_match",
+      "atom_and_charge_accounting",
+      "coverage"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 48167,
+    "primary_table_count": 4,
+    "qualification": "Missing-species variants reuse observations; a recovered source reference is not proof of a unique physical reaction.",
+    "question": "Incomplete recorded reaction -> supplied complete balanced reaction",
+    "readiness": "local_source_data; standardized_task_contract_needed",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 4,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Reaction completion and balancing"
+  }
+}

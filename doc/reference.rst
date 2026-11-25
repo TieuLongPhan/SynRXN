@@ -78,11 +78,11 @@ metadata.
    * - Zenodo citation
      - Version-specific DOI exported by Zenodo, for example ``10.5281/zenodo.17672847``
    * - Package version
-     - ``synrxn==1.0.0``
+     - ``synrxn==1.5.0``
    * - Data source
-     - ``zenodo`` / ``github`` / ``commit``
+     - Local DuckDB snapshot or a named source release
    * - Data version
-     - release number, tag, full commit SHA, or Zenodo version DOI
+     - Snapshot version and checksum, or the source release's version DOI
    * - Dataset
      - ``classification/schneider_b`` or ``property/b97xd3``
    * - Split

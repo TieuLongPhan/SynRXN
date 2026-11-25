@@ -1,0 +1,8 @@
+SNAr experimental activation free energies with reported solution conditions
+Creators: Kjell Jorner; Tore Brinck; Per-Ola Norrby; David Buttar
+Paper: https://doi.org/10.1039/D0SC04896H
+License: CC-BY-3.0
+Terms: https://creativecommons.org/licenses/by/3.0/
+Changes: joined original solvent and temperature to unchanged SynRXN targets; added canonical parent references and reaction-group splits.
+These are overlapping views of existing canonical observations. No independent data or physical revalidation is claimed.
+No endorsement by original creators is implied.

@@ -1,0 +1,111 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 1,
+    "data_links": 1,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 1,
+    "stored_rows_across_unique_views": 178463,
+    "task_table_bindings": 1,
+    "tasks": 1,
+    "unique_table_views": 1
+  },
+  "tables": [
+    {
+      "data_link": "coverage/bio/reactzyme_retrieval/data.parquet",
+      "key": "bio/reactzyme_retrieval",
+      "metadata": "coverage/bio/reactzyme_retrieval/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "catalog_path": "Data/coverage_expansion/bio/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "source-derived qualified task row",
+        "coverage_branch": "bio",
+        "key": "bio/reactzyme_retrieval",
+        "license": "MIT AND CC-BY-4.0; ReactZyme dataset MIT with UniProt/Rhea attribution retained",
+        "namespace": "coverage",
+        "native_split_counts": {
+          "test": 8739,
+          "train_validation": 169724
+        },
+        "partition": "main",
+        "path": "Data/coverage_expansion/bio/reactzyme_retrieval.parquet",
+        "qualification": "Native positive pairs only; no manufactured negatives. Native reaction input concatenates substrate/product molecule SMILES without a reaction arrow; preserve this upstream representation. Original train+validation pool is not silently relabeled as training. No new homology audit or model evaluation claimed.",
+        "reference_evidence": "Curated UniProt/Rhea positive enzyme-reaction associations; native sequence-smi split from ReactZyme release.",
+        "release_eligible": true,
+        "release_license_expression": "MIT AND CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 178463,
+        "sha256": "14ed9679a1974a95c2b02098a08bcabe3c38c3834ef5ab2bd30634e61f48ba8d",
+        "source_id": "C14",
+        "source_sha256": "80e00f03c8d934af20cab872c9b1df00f093c47524a00b1af8d7743d91841312",
+        "source_url": "https://zenodo.org/api/records/13635807/files/enzyme_smi_split.zip/content",
+        "task_fields": {
+          "enzyme_retrieval": {
+            "group_fields": [
+              "sequence_group",
+              "reaction_group",
+              "native_split"
+            ],
+            "inputs": [
+              "enzyme_sequence"
+            ],
+            "metrics": [
+              "Recall@k",
+              "MRR",
+              "query-macro enrichment"
+            ],
+            "targets": [
+              "reaction_molecule_smiles"
+            ]
+          }
+        },
+        "task_ids": [
+          "enzyme_retrieval"
+        ]
+      }
+    ],
+    "candidate_ids": [
+      "C14"
+    ],
+    "candidate_status": "Inherited acquisition candidates; integration and suitability are unverified",
+    "canonical_keys": [],
+    "counting_units": [
+      "source-derived qualified task row"
+    ],
+    "evaluation": "Retrieval recall/ranking, activity recovery and coverage; unlabeled candidates are not confirmed inactive",
+    "extension_adapter_ids": [
+      "enzyme_retrieval"
+    ],
+    "extension_id": "enzyme_retrieval",
+    "family_id": "biocatalysis",
+    "id": "enzyme_retrieval",
+    "legacy_view_ids": [],
+    "metrics": [
+      "MRR",
+      "Recall@k",
+      "query-macro enrichment"
+    ],
+    "origin": "promoted_from_initial_19_roadmap_definitions",
+    "primary_source_rows": 178463,
+    "primary_table_count": 1,
+    "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance.",
+    "question": "Reaction and available context -> active enzyme sequences or structures",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 1,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "required_data": "Sequence-linked positive/negative activity references, candidate universe and family-aware partitions",
+    "title": "Enzyme–reaction retrieval"
+  }
+}

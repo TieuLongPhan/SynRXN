@@ -1,0 +1,108 @@
+{
+  "citations": [
+    {
+      "citation_key": "jorner2021machine",
+      "doi": "10.1039/D0SC04896H",
+      "entry_type": "article",
+      "title": "Machine Learning Meets Mechanistic Modelling for Accurate Prediction of Experimental Activation Energies",
+      "url": ""
+    }
+  ],
+  "dataset_key": "property/snar.csv.gz",
+  "license_spdx": "CC-BY-3.0",
+  "license_url": "https://github.com/TieuLongPhan/SynRXN/blob/v1.2.1/Data/LICENSE",
+  "lock_status": "pinned_published_synrxn_product",
+  "outstanding_fields": [
+    "ultimate_original_observation_lineage"
+  ],
+  "published_release_origin": {
+    "archive_member": "Data/property/snar.csv.gz",
+    "archive_sha256": "32a9036318da1a5ef27fc417027fc1c6ca561a9e12896ed636f21f17d956bdbe",
+    "bytes_identical_to_published_release": true,
+    "data_license_sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+    "data_terms": "CC BY 3.0",
+    "doi": "10.5281/zenodo.22045145",
+    "license_evidence": "ncs/baselines/v1.2.1/Data/LICENSE",
+    "member_sha256": "df8df5b8bc8b74910c7fe9960a8dd200182c5ef1bf91de906286cb71bfe60bcd",
+    "version": "v1.2.1"
+  },
+  "qualification": "This pins the exact previously published curated SynRXN product and its explicit dataset-specific redistribution declaration. It does not recover original experimental document accessions or certify ultimate source lineage.",
+  "redistribution_partition": "main",
+  "release_checksum_recorded_in": "manifest.json",
+  "required_attribution": [
+    "10.1039/D0SC04896H"
+  ],
+  "retrieved_at": "2026-10-14",
+  "retrofit_note": "Retrofitted for a task family released before source locks were required. License, partition, and attribution are verified against the catalog and bibliography. The listed outstanding fields must be filled by a human upstream audit before this dataset is cited as reproducibly pinned. Release-side size, checksum, and row count are in manifest.json.",
+  "schema_version": "1.0",
+  "source_commit_or_version": "v1.2.1",
+  "source_doi": "10.5281/zenodo.22045145",
+  "source_file": "Data/property/snar.csv.gz",
+  "source_sha256": "df8df5b8bc8b74910c7fe9960a8dd200182c5ef1bf91de906286cb71bfe60bcd",
+  "source_url": "https://zenodo.org/records/22045145",
+  "upstream_license": "CC BY 3.0",
+  "partial_native_comparison": {
+    "dataset": "property/snar.csv.gz",
+    "retrieved_native_fold_rows": 443,
+    "native_files": {
+      "snar-native/extracted/snar/fold_0/aam_test.csv": "3e2c3e92c8699f3b5b493dd40492a26fe7a6d2c3cbe48142c9dc73d597eb58b4",
+      "snar-native/extracted/snar/fold_0/aam_train.csv": "6c09bd5bccb4879c00b4767a66cf3dc22417af1b436ed991662ec91315daf474",
+      "snar-native/extracted/snar/fold_0/aam_val.csv": "afd133d4ce305428e5679efd2d32fe352e8892061ef1cacff34703d8d733269e"
+    },
+    "candidate_rows": 503,
+    "full_native_match": false,
+    "candidate_provenance_resolved": true,
+    "qualification": "The 443-row modelling fold is a subset. The original publisher supplement contains 518 entries; all 503 eligible reaction/free-energy pairs exactly reproduce the candidate, with the remaining 15 entries excluded for missing fields."
+  },
+  "native_audit": "ncs/audit/property-native-lineage.json",
+  "native_source_checks": [
+    {
+      "dataset": "property/snar.csv.gz",
+      "native_file": "snar-native/SC-012-D0SC04896H-s050.csv",
+      "native_sha256": "590153f74fd27a1414cf6d1cdae3758e68cc9e137da81bd58fa84cc5c9750107",
+      "native_archive": {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9528810/supplementaryFiles",
+        "outer_sha256": "f908a43a7f21a3c38d59d5e22d8b3ff64117554f1114837d4203a96c534401f0",
+        "outer_member": "SC-012-D0SC04896H-s002.zip",
+        "inner_archive_sha256": "ce339248e5d4db6c3939624d08e5a7fdf8a83bcff8f3ddb0543721638641aa8e",
+        "native_csv_members": {
+          "SC-012-D0SC04896H-s050.csv": "590153f74fd27a1414cf6d1cdae3758e68cc9e137da81bd58fa84cc5c9750107",
+          "SC-012-D0SC04896H-s088.csv": "76180f5c0e3bb0b494214ee4443ea1b4ba69870c2aa199374d0d77441e852deb",
+          "SC-012-D0SC04896H-s149.csv": "64121c1e4835bc3030c23f4be2b4b95fb47bc6a84ec5812f4b056979e24e0cca",
+          "SC-012-D0SC04896H-s152.csv": "6c40c9c14cad66e3ab45b09d75dacecb2dcec9f4bc0d4d88844f419b812fd11f"
+        }
+      },
+      "native_records": 518,
+      "rows_verified": 503,
+      "excluded_native_rows": 15,
+      "exclusion_rule": "Missing reaction text or missing/nonfinite activation free energy.",
+      "native_excluded_entry_ids": [
+        "20",
+        "247",
+        "264",
+        "265",
+        "270",
+        "271",
+        "276",
+        "356",
+        "357",
+        "359",
+        "362",
+        "363",
+        "435",
+        "500",
+        "510"
+      ],
+      "reported_temperature_values": 13,
+      "reported_solvent_strings": 41,
+      "context_file": "Data/sources/property/snar-context.csv",
+      "context_sha256": "297d805797265de4098da48c6ad210052c4403253c1cff2237db297e9ffd424d",
+      "quantity": "Eyring-derived activation free energy in kcal/mol at reported source conditions.",
+      "row_join": "All 503 candidate rows match source-ordered eligible observations and values."
+    }
+  ],
+  "native_verified_on": "2026-10-15",
+  "context_license_spdx": "CC-BY-3.0",
+  "context_file": "Data/sources/property/snar-context.csv",
+  "context_sha256": "297d805797265de4098da48c6ad210052c4403253c1cff2237db297e9ffd424d"
+}

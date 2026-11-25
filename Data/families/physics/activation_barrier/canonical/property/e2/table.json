@@ -1,0 +1,77 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "physics",
+  "format": "csv.gz",
+  "key": "property/e2",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "property/e2",
+    "legacy_field_eligible_rows": {
+      "energy_barrier": 1264
+    },
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 1264
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "chemprop_barriers_data_grant"
+    ],
+    "expected_bytes": 31804,
+    "expected_rows": 1264,
+    "expected_sha256": "2b2177235aeddf06b9fa29abe9836e6a3c520ccdbd1530b9757f8e8c4c23d99e",
+    "format": "csv.gz",
+    "key": "property/e2",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/property/e2.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 1264,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "heid2023benchmark_chemprop"
+    ],
+    "path": "Data/property/e2.csv.gz",
+    "sha256": "2b2177235aeddf06b9fa29abe9836e6a3c520ccdbd1530b9757f8e8c4c23d99e",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "heid2023benchmark_chemprop"
+    ],
+    "counting_unit": "source-table row",
+    "key": "property/e2",
+    "legacy_field_eligible_rows": {
+      "energy_barrier": 1264
+    },
+    "namespace": "canonical",
+    "path": "Data/property/e2.csv.gz",
+    "role": "primary",
+    "rows": 1264,
+    "sha256": "2b2177235aeddf06b9fa29abe9836e6a3c520ccdbd1530b9757f8e8c4c23d99e",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "E2 activation energies"
+  },
+  "stored_path": "Data/families/physics/activation_barrier/canonical/property/e2/data.csv.gz",
+  "task_id": "activation_barrier",
+  "title": "E2 activation energies"
+}

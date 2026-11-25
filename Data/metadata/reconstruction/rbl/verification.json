@@ -1,0 +1,104 @@
+{
+  "checks": [
+    "Complete file manifests and source hashes",
+    "Unique IDs and split/case-type counts",
+    "gt_rxn reference alias and exact parent gt_aam",
+    "Source and global center joins",
+    "Hard/base one-to-one case identity",
+    "Unchanged core removal and source role metadata",
+    "Reactant-only native context and symmetric target carry-through"
+  ],
+  "cleanup": "Only flower and flower-hard managed output bundles remain; raw dump, parent AAM, licenses and manifests retained",
+  "commands": {
+    "rebuild": [
+      "python",
+      "scripts/build_flower_rbl.py",
+      "--all",
+      "--prepare-source",
+      "--workers",
+      "2"
+    ],
+    "verify": [
+      "python",
+      "scripts/build_flower_rbl.py",
+      "--all",
+      "--verify"
+    ]
+  },
+  "csv_payloads_byte_identical_to_previous_versions": true,
+  "datasets": [
+    {
+      "by_case_type": {
+        "both": 28127,
+        "product": 29769,
+        "reactant": 31794
+      },
+      "by_role": {
+        "test": 22725,
+        "train": 60037,
+        "val": 6928
+      },
+      "csv_sha256": "5eb809bed99f714d948c756acbacb71470fe3532a4d8b980f02362ce6d2f7dd2",
+      "rows": 89690,
+      "variant": "base",
+      "verified": true
+    },
+    {
+      "by_case_type": {
+        "both": 28127,
+        "product": 29769,
+        "reactant": 31794
+      },
+      "by_role": {
+        "test": 22725,
+        "train": 60037,
+        "val": 6928
+      },
+      "csv_sha256": "61385c140debe0d2452c63a23960a3b9b1fd0576c5bb23e81e6f938754642cbe",
+      "rows": 89690,
+      "variant": "hard",
+      "verified": true
+    }
+  ],
+  "date": "2026-10-27",
+  "environment": {
+    "networkx": "3.6.1",
+    "python": "3.12.12",
+    "rdkit": "2026.3.1",
+    "synkit": "1.6.2"
+  },
+  "full_rebuild_from_pinned_source_completed": true,
+  "global_center_annotations": {
+    "definition": "Global exact center isomorphism; one-step two-state MC equals RC; existing source roles retained",
+    "path": "Data/metadata/reconstruction/flower/center_annotations.csv.gz",
+    "rebuild_command": [
+      "python",
+      "scripts/group_flower_centers.py"
+    ],
+    "sha256": "eccf1f2e36ad223692a9d04bd27aa0f026439fe8a4101d0e667abf08bb51a87b"
+  },
+  "hard_context_counts": {
+    "augmented": 81058,
+    "no_heavy_context": 8632
+  },
+  "implementation_sha256": {
+    "scripts/build_flower_rbl.py": "8dbd40f5acfba936f96048da23071e926a9f9cab5f45007b1227946312f84f62",
+    "synrxn/reconstruction/builders/flower_center_groups.py": "9bb49bdcd64d08b4687c366f17ba76504f310dccf52b099dded4e5732743175d",
+    "synrxn/reconstruction/builders/flower_rbl.py": "0a9509eac4ed21e2bb39e597278277f337d23b2ab21f7e9213ee257baf10d4a6",
+    "synrxn/reconstruction/builders/flower_rbl_hard.py": "55db71f22e4ceca5b67053f69b5ed2a287b69c44e10f1a650688f05c7ba4d4fe",
+    "synrxn/reconstruction/builders/flower_rbl_verify.py": "89100ddbd6af6c44ca11a3163b17be590f570ea42672dff1b3307601b3ca7765"
+  },
+  "lint": "passed",
+  "schema": "synrxn.flower-rbl-reproduction.v1",
+  "scope": "FlowER-derived base and hard RBL tasks; historical canonical SynRBL datasets unchanged",
+  "source_aam": {
+    "path": "Data/tables/development/aam/flower/aam.csv.gz",
+    "sha256": "7f39c66ac2d7aec0a5fa333bf6f6e9ebb0b15328dc698785c17991d2291d76d0"
+  },
+  "source_dump": {
+    "path": "Data/dumps/flower.dump.zip",
+    "sha256": "f70e8d0705c168178c880b9e14d8455bbb7e4fee395464390d6910a1a6ee863a"
+  },
+  "sphinx_warnings_as_errors": "passed",
+  "tests": "18 RBL tests passed"
+}

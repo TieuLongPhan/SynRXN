@@ -1,0 +1,109 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 1,
+    "data_links": 1,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 1,
+    "stored_rows_across_unique_views": 2419,
+    "task_table_bindings": 1,
+    "tasks": 1,
+    "unique_table_views": 1
+  },
+  "tables": [
+    {
+      "data_link": "coverage/knowledge/EnzChemRED2024/retrieval/data.parquet",
+      "key": "knowledge/EnzChemRED2024/retrieval",
+      "metadata": "coverage/knowledge/EnzChemRED2024/retrieval/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "catalog_path": "Data/coverage_expansion/knowledge/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "annotated chemical-conversion precedent query",
+        "coverage_branch": "knowledge",
+        "key": "knowledge/EnzChemRED2024/retrieval",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "parent_groups": 2419,
+        "partition": "main",
+        "path": "Data/coverage_expansion/knowledge/retrieval.parquet",
+        "qualification": "Query-to-literature-precedent retrieval with expert linked conversion references, not graded mechanistic similarity. Gallery exposes only document IDs/text; gold entities and relation labels are withheld. Unannotated documents are unknown relevance, not confirmed negatives. Document text can be shared across query splits; no unseen-paper claim.",
+        "reference_evidence": "expert_annotated_conversion_document_links",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 2419,
+        "sha256": "92a65a8155800d2ab88eef695530051a81a2b82fa55f1bea790b8db0304fa6a5",
+        "source_id": "EnzChemRED2024",
+        "source_sha256": "046f6c00663d26cf172cb828b3fe68cab92a128de947545c01aff53060c06251",
+        "source_url": "https://doi.org/10.5281/zenodo.11067998",
+        "task_fields": {
+          "reaction_retrieval": {
+            "group_fields": [
+              "parent_group"
+            ],
+            "input_keys": [
+              "chemical_identifiers",
+              "chemical_names"
+            ],
+            "inputs": [
+              "inputs_json"
+            ],
+            "metrics": [
+              "recall_at_k",
+              "nDCG",
+              "query_coverage"
+            ],
+            "split_policy": "SHA-256 parent-group 80/10/10 seed 2027; native split retained separately",
+            "target_keys": [
+              "relevant_document_ids"
+            ],
+            "targets": [
+              "targets_json"
+            ]
+          }
+        },
+        "task_ids": [
+          "reaction_retrieval"
+        ]
+      }
+    ],
+    "candidate_ids": [],
+    "candidate_status": "Source acquisition and qualification required",
+    "canonical_keys": [],
+    "counting_units": [
+      "annotated chemical-conversion precedent query"
+    ],
+    "evaluation": "Recall at k, nDCG and query coverage under declared relevance and near-duplicate policies",
+    "extension_adapter_ids": [],
+    "family_id": "representation",
+    "id": "reaction_retrieval",
+    "legacy_view_ids": [],
+    "metrics": [
+      "nDCG",
+      "query_coverage",
+      "recall_at_k"
+    ],
+    "origin": "promoted_from_initial_19_roadmap_definitions",
+    "primary_source_rows": 2419,
+    "primary_table_count": 1,
+    "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance.",
+    "question": "A reaction or partial-reaction query -> relevant analogues or precedents",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 1,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "required_data": "Query/gallery split, graded relevance judgments and parent/source deduplication; source class equality alone is an imperfect relevance proxy",
+    "title": "Reaction similarity and retrieval"
+  }
+}

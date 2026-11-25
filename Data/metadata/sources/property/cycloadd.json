@@ -1,0 +1,105 @@
+{
+  "citations": [
+    {
+      "citation_key": "heid2023benchmark_chemprop",
+      "doi": "10.5281/zenodo.10078142",
+      "entry_type": "misc",
+      "title": "Benchmark Data for Chemprop",
+      "url": "https://zenodo.org/records/10078142"
+    }
+  ],
+  "dataset_key": "property/cycloadd.csv.gz",
+  "license_spdx": "CC-BY-4.0",
+  "license_url": "https://github.com/TieuLongPhan/SynRXN/blob/v1.2.1/Data/LICENSE",
+  "lock_status": "pinned_published_synrxn_product",
+  "outstanding_fields": [
+    "ultimate_original_observation_lineage"
+  ],
+  "published_release_origin": {
+    "archive_member": "Data/property/cycloadd.csv.gz",
+    "archive_sha256": "32a9036318da1a5ef27fc417027fc1c6ca561a9e12896ed636f21f17d956bdbe",
+    "bytes_identical_to_published_release": true,
+    "data_license_sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+    "data_terms": "CC BY 4.0",
+    "doi": "10.5281/zenodo.22045145",
+    "license_evidence": "ncs/baselines/v1.2.1/Data/LICENSE",
+    "member_sha256": "afd03a88ef6268350f2c176b70a67396ff1902b85e6742bb2ac3ef0d9ca84004",
+    "version": "v1.2.1"
+  },
+  "qualification": "This pins the exact previously published curated SynRXN product and its explicit dataset-specific redistribution declaration. It does not recover original experimental document accessions or certify ultimate source lineage.",
+  "redistribution_partition": "main",
+  "release_checksum_recorded_in": "manifest.json",
+  "required_attribution": [
+    "10.5281/zenodo.8174268",
+    "10.5281/zenodo.10078142"
+  ],
+  "retrieved_at": "2026-10-14",
+  "retrofit_note": "Retrofitted for a task family released before source locks were required. License, partition, and attribution are verified against the catalog and bibliography. The listed outstanding fields must be filled by a human upstream audit before this dataset is cited as reproducibly pinned. Release-side size, checksum, and row count are in manifest.json.",
+  "schema_version": "1.0",
+  "source_commit_or_version": "v1.2.1",
+  "source_doi": "10.5281/zenodo.22045145",
+  "source_file": "Data/property/cycloadd.csv.gz",
+  "source_sha256": "afd03a88ef6268350f2c176b70a67396ff1902b85e6742bb2ac3ef0d9ca84004",
+  "source_url": "https://zenodo.org/records/22045145",
+  "upstream_license": "CC BY 4.0",
+  "native_parent_product": {
+    "dataset": "property/cycloadd.csv.gz",
+    "native_file": "cycloadd-original.csv",
+    "native_sha256": "5f08c6b2dc04dd3ae11c74b2e0251a595b230915c7196d7a67e96bfac7f1e12d",
+    "rows_verified": 5269,
+    "source_url": "https://figshare.com/articles/dataset/dipolar_cycloaddition_dataset/21707888",
+    "numeric_comparison_decimals": 8,
+    "exact_reaction_and_numeric_target_multiset": true,
+    "reported_conditions": {
+      "solvents": [
+        "water"
+      ],
+      "temperatures_kelvin": [
+        298.15
+      ]
+    }
+  },
+  "native_audit": "ncs/audit/property-native-lineage.json",
+  "native_source_checks": [
+    {
+      "dataset": "property/cycloadd.csv.gz",
+      "native_files": {
+        "chemprop-v2/data/barriers_cycloadd/test.csv": "d3c43a758a17bea6b17129c110d31cc81bb3acc2cf558b38367176ad5269d25d",
+        "chemprop-v2/data/barriers_cycloadd/val.csv": "c329f6500ecf18e977dc7c6aa2ab3a93dc2dacfcf035507ff504ab7a8184071c",
+        "chemprop-v2/data/barriers_cycloadd/train.csv": "690bd5db3d6cda891bebfbbef200bbb39ba47fe1803220d3e4060b04648e7578"
+      },
+      "rows_verified": 5269,
+      "source_version": "Chemprop benchmark v2, DOI 10.5281/zenodo.10078142",
+      "split_and_target_multiset_matches": true
+    },
+    {
+      "dataset": "property/cycloadd.csv.gz",
+      "native_file": "cycloadd-original.csv",
+      "native_sha256": "5f08c6b2dc04dd3ae11c74b2e0251a595b230915c7196d7a67e96bfac7f1e12d",
+      "rows_verified": 5269,
+      "source_url": "https://figshare.com/articles/dataset/dipolar_cycloaddition_dataset/21707888",
+      "numeric_comparison_decimals": 8,
+      "exact_reaction_and_numeric_target_multiset": true,
+      "reported_conditions": {
+        "solvents": [
+          "water"
+        ],
+        "temperatures_kelvin": [
+          298.15
+        ]
+      }
+    }
+  ],
+  "native_verified_on": "2026-10-15",
+  "historical_catalog_citations": [
+    {
+      "citation_key": "heid2023benchmark_chemprop",
+      "doi": "10.5281/zenodo.8174268",
+      "entry_type": "misc",
+      "title": "Benchmark Data for Chemprop",
+      "url": ""
+    }
+  ],
+  "catalog_citation_correction": "The builder and exact source members use Chemprop record 10078142; the earlier 8174268 catalog citation is preserved as history.",
+  "historical_catalog_citation_snapshot": "1f40671"
+}

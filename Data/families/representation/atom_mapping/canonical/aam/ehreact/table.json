@@ -1,0 +1,83 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "representation",
+  "format": "csv.gz",
+  "key": "aam/ehreact",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "aam/ehreact",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "BSD-3-Clause",
+    "rights_status": "verified_repository_dataset_grant",
+    "role": "primary",
+    "rows": 939
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "ehreact_license",
+      "ehreact_readme",
+      "ehreact_native_alcoholdehydrogenase",
+      "ehreact_native_amidinotransferase",
+      "ehreact_native_aminedehydrogenase",
+      "ehreact_native_carboxylmethyltransferase",
+      "ehreact_native_csp2_csp3_coupling",
+      "ehreact_native_dehalogenase",
+      "ehreact_native_nitrilase",
+      "ehreact_native_transaminase",
+      "ehreact_native_tryptophan_synthase"
+    ],
+    "expected_bytes": 73805,
+    "expected_rows": 939,
+    "expected_sha256": "e085217180f396ad519eeaadf7602d39c7c374e5591b95bde85c0d8b57402124",
+    "format": "csv.gz",
+    "key": "aam/ehreact",
+    "license_expression": "BSD-3-Clause",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/aam/ehreact.csv.gz",
+    "qualification": "Actual nine manuscript assay CSVs captured from the same pinned author repository as its root BSD3 redistribution notice. No separate contradictory data terms were found; preserve the original copyright, conditions and disclaimer for these derived tables.",
+    "rights_status": "verified_repository_dataset_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 939,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "heid2021ehreact"
+    ],
+    "path": "Data/aam/ehreact.csv.gz",
+    "sha256": "e085217180f396ad519eeaadf7602d39c7c374e5591b95bde85c0d8b57402124",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "heid2021ehreact"
+    ],
+    "counting_unit": "source-table row",
+    "key": "aam/ehreact",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/aam/ehreact.csv.gz",
+    "role": "primary",
+    "rows": 939,
+    "sha256": "e085217180f396ad519eeaadf7602d39c7c374e5591b95bde85c0d8b57402124",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "EHreact atom mappings"
+  },
+  "stored_path": "Data/families/representation/atom_mapping/canonical/aam/ehreact/data.csv.gz",
+  "task_id": "atom_mapping",
+  "title": "EHreact atom mappings"
+}

@@ -1,0 +1,165 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 2,
+    "data_links": 2,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 2,
+    "stored_rows_across_unique_views": 19722,
+    "task_table_bindings": 2,
+    "tasks": 1,
+    "unique_table_views": 2
+  },
+  "tables": [
+    {
+      "data_link": "coverage/physics/orgreact_ts_geometry/data.csv",
+      "key": "physics/orgreact_ts_geometry",
+      "metadata": "coverage/physics/orgreact_ts_geometry/table.json",
+      "namespace": "coverage"
+    },
+    {
+      "data_link": "coverage/physics/transition1x_final_ts_geometry/data.csv",
+      "key": "physics/transition1x_final_ts_geometry",
+      "metadata": "coverage/physics/transition1x_final_ts_geometry/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "catalog_path": "Data/coverage_expansion/physics/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "reaction endpoint/transition-state triplet",
+        "coverage_branch": "physics",
+        "key": "physics/orgreact_ts_geometry",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/physics/orgreact_ts_geometry.csv",
+        "qualification": "Complete published XYZ endpoint/TS reference set; retain native atom order. Geometry-only target qualified; charge/spin and per-row IRC logs are absent from these released assets. No reverified saddle claim, no ready-made independent split.",
+        "reference_evidence": "Computed: source paper reports wB97X-D/def2-TZVP optimization, imaginary-frequency and IRC validation; no independent rerun here.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 9649,
+        "sha256": "154424ff6277b1e8f199022a67758ff438083cedd02974ab690b2f7b89938059",
+        "source_id": "OrgReact2026",
+        "source_sha256": "e3751ac08df60bd803156b0396eebde46535d52c4fad122bf3672d3da564007b",
+        "source_url": "https://doi.org/10.6084/m9.figshare.31668682.v3",
+        "task_fields": {
+          "ts_geometry": {
+            "group_fields": [
+              "endpoint_group",
+              "reaction_id"
+            ],
+            "inputs": [
+              "elements",
+              "reactant_positions_A",
+              "product_positions_A",
+              "theory"
+            ],
+            "metrics": [
+              "symmetry-aware aligned RMSD_A",
+              "coverage",
+              "optional independently verified saddle recovery"
+            ],
+            "targets": [
+              "ts_positions_A"
+            ]
+          }
+        },
+        "task_ids": [
+          "ts_geometry"
+        ]
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/physics/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "native reaction endpoint/transition-state triplet",
+        "coverage_branch": "physics",
+        "key": "physics/transition1x_final_ts_geometry",
+        "license": "MIT",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/physics/transition1x_final_ts_geometry.csv",
+        "qualification": "Source final NEB structures only; no intermediate-frame maximum substituted for TS. Missing final groups explicitly excluded; source-reported computational reference, independently recomputed saddle validation pending.",
+        "reference_evidence": "Computed: native wB97x/6-31G(d) NEB-region energies in eV, forces in eV/A, positions in A; trajectories and final endpoint/TS labels are source generated.",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 10073,
+        "sha256": "6c7512bb38663731d30e49bb9037d5b73ded283c1ffa8301b3d21ab5d437db82",
+        "source_id": "Transition1x2022",
+        "source_sha256": "6a20f8a3f49c50d462270d10d4c44ca102e788072e2096a91d70b5a0f598b629",
+        "source_url": "https://doi.org/10.6084/m9.figshare.19614657.v4",
+        "task_fields": {
+          "ts_geometry": {
+            "group_fields": [
+              "trajectory_id",
+              "formula",
+              "native_split"
+            ],
+            "inputs": [
+              "atomic_numbers",
+              "reactant_positions_A",
+              "product_positions_A",
+              "theory"
+            ],
+            "metrics": [
+              "symmetry-aware aligned RMSD_A",
+              "coverage"
+            ],
+            "targets": [
+              "ts_positions_A"
+            ]
+          }
+        },
+        "task_ids": [
+          "ts_geometry"
+        ]
+      }
+    ],
+    "candidate_ids": [
+      "C08",
+      "C12",
+      "C20"
+    ],
+    "candidate_status": "Inherited acquisition candidates; integration and suitability are unverified",
+    "canonical_keys": [],
+    "counting_units": [
+      "native reaction endpoint/transition-state triplet",
+      "reaction endpoint/transition-state triplet"
+    ],
+    "evaluation": "Symmetry-aware structural error, qualified saddle-point recovery and coverage",
+    "extension_adapter_ids": [
+      "ts_geometry"
+    ],
+    "extension_id": "ts_geometry",
+    "family_id": "mechanisms",
+    "id": "ts_geometry",
+    "legacy_view_ids": [],
+    "metrics": [
+      "coverage",
+      "optional independently verified saddle recovery",
+      "symmetry-aware aligned RMSD_A"
+    ],
+    "origin": "promoted_from_initial_19_roadmap_definitions",
+    "primary_source_rows": 19722,
+    "primary_table_count": 2,
+    "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance.",
+    "question": "Reaction endpoints and physical context -> candidate transition-state structures",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 2,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "required_data": "Geometry references, charge/spin, theory, connectivity and transition-state qualification",
+    "title": "Transition-state geometry"
+  }
+}

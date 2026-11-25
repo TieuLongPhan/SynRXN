@@ -1,0 +1,80 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "representation",
+  "format": "csv.gz",
+  "key": "classification/syntemp",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "classification/syntemp",
+    "legacy_field_eligible_rows": {
+      "classification": 43441
+    },
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0 AND CC0-1.0",
+    "rights_status": "verified_curated_product_grant_with_open_base",
+    "role": "primary",
+    "rows": 43441
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "synrxn_archive_record",
+      "lowe_original_data_grant"
+    ],
+    "expected_bytes": 1478384,
+    "expected_rows": 43441,
+    "expected_sha256": "5ace42ff5d956a4c5180ca854bbbd441bdbac5b71903a6bcd4684bb77320c1ed",
+    "format": "csv.gz",
+    "key": "classification/syntemp",
+    "license_expression": "CC-BY-4.0 AND CC0-1.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/classification/syntemp.csv.gz",
+    "qualification": "Official Lowe patent-reaction base grants CC0. This exact curated SynRXN product is byte-identical to its published archive member and the independently retrieved dataset-specific CC-BY4 notice matches the lock's recorded noticeSHA256. Permission is scoped to the curated product; no claim that a code license or CC0 covers other authors' separate annotation databases.",
+    "rights_status": "verified_curated_product_grant_with_open_base",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 43441,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "phan2025syntemp",
+      "liu2017retrosynthetic"
+    ],
+    "path": "Data/classification/syntemp.csv.gz",
+    "sha256": "5ace42ff5d956a4c5180ca854bbbd441bdbac5b71903a6bcd4684bb77320c1ed",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "phan2025syntemp",
+      "liu2017retrosynthetic"
+    ],
+    "counting_unit": "source-table row",
+    "key": "classification/syntemp",
+    "legacy_field_eligible_rows": {
+      "classification": 43441
+    },
+    "namespace": "canonical",
+    "path": "Data/classification/syntemp.csv.gz",
+    "role": "primary",
+    "rows": 43441,
+    "sha256": "5ace42ff5d956a4c5180ca854bbbd441bdbac5b71903a6bcd4684bb77320c1ed",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "SynTemp hierarchical classification"
+  },
+  "stored_path": "Data/families/representation/reaction_classification/canonical/classification/syntemp/data.csv.gz",
+  "task_id": "reaction_classification",
+  "title": "SynTemp hierarchical classification"
+}

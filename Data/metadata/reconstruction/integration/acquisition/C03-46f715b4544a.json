@@ -1,0 +1,12 @@
+{
+  "source_id": "C03",
+  "name": "cernak_cn.parquet",
+  "bytes": 5088296,
+  "checksum": "sha256:31b7c4762145e5dad973050373cd967bdd85caf3a9858767c83a17fed6c4af36",
+  "url": "https://media.githubusercontent.com/media/open-reaction-database/ord-data/704870642e5c93a141e6666436bc14a9b5f880ed/data/80/ord_dataset-805ad863feef48579d95d86a728035f4.parquet",
+  "path": "Data/raw/synrxn2/C03/cernak_cn.parquet",
+  "bytes_observed": 5088296,
+  "sha256": "31b7c4762145e5dad973050373cd967bdd85caf3a9858767c83a17fed6c4af36",
+  "md5": "a032a7f21c971a398bb7a9a9ac65091b",
+  "status": "verified"
+}

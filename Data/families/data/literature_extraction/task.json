@@ -1,0 +1,114 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 1,
+    "data_links": 1,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 1,
+    "stored_rows_across_unique_views": 1210,
+    "task_table_bindings": 1,
+    "tasks": 1,
+    "unique_table_views": 1
+  },
+  "tables": [
+    {
+      "data_link": "coverage/knowledge/EnzChemRED2024/documents/data.parquet",
+      "key": "knowledge/EnzChemRED2024/documents",
+      "metadata": "coverage/knowledge/EnzChemRED2024/documents/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "catalog_path": "Data/coverage_expansion/knowledge/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "expert-annotated source document",
+        "coverage_branch": "knowledge",
+        "key": "knowledge/EnzChemRED2024/documents",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "parent_groups": 1210,
+        "partition": "main",
+        "path": "Data/coverage_expansion/knowledge/documents.parquet",
+        "qualification": "Native expert BioC entities/conversions from title/abstract text. Not full-paper multimodal extraction; offsets retain native passage coordinates.",
+        "reference_evidence": "expert_curated_text_annotations",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 1210,
+        "sha256": "1aeb1adbe4b50434acf2dcc0756894f4b22be0a9757d5a59b0d9692243a1b9d4",
+        "source_id": "EnzChemRED2024",
+        "source_sha256": "046f6c00663d26cf172cb828b3fe68cab92a128de947545c01aff53060c06251",
+        "source_url": "https://doi.org/10.5281/zenodo.11067998",
+        "task_fields": {
+          "literature_extraction": {
+            "group_fields": [
+              "parent_group"
+            ],
+            "input_keys": [
+              "passages"
+            ],
+            "inputs": [
+              "inputs_json"
+            ],
+            "metrics": [
+              "entity_F1",
+              "relation_F1",
+              "document_coverage"
+            ],
+            "split_policy": "SHA-256 parent-group 80/10/10 seed 2027; native split retained separately",
+            "target_keys": [
+              "entities",
+              "relations"
+            ],
+            "targets": [
+              "targets_json"
+            ]
+          }
+        },
+        "task_ids": [
+          "literature_extraction"
+        ]
+      }
+    ],
+    "candidate_ids": [
+      "C24"
+    ],
+    "candidate_status": "Inherited acquisition candidates; integration and suitability are unverified",
+    "canonical_keys": [],
+    "counting_units": [
+      "expert-annotated source document"
+    ],
+    "evaluation": "Entity/record precision and recall, structure agreement, evidence linkage and document coverage; record extraction errors before downstream filtering",
+    "extension_adapter_ids": [
+      "literature_extraction"
+    ],
+    "extension_id": "literature_extraction",
+    "family_id": "data",
+    "id": "literature_extraction",
+    "legacy_view_ids": [],
+    "metrics": [
+      "document_coverage",
+      "entity_F1",
+      "relation_F1"
+    ],
+    "origin": "promoted_from_initial_19_roadmap_definitions",
+    "primary_source_rows": 1210,
+    "primary_table_count": 1,
+    "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance.",
+    "question": "Source document text, tables and diagrams -> reaction records linked to supporting evidence",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 1,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "required_data": "Document-disjoint corpus with linked entity, role, structure and reaction-record references; access and redistribution terms",
+    "title": "Literature reaction extraction"
+  }
+}

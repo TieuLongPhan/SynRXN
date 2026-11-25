@@ -39,8 +39,7 @@ from .utils import (
 
 
 class DataLoader:
-    """
-    DataLoader for SynRXN data stored under ``Data/<task>/<name>.csv(.gz)``.
+    """DataLoader for SynRXN data stored under ``Data/<task>/<name>.csv(.gz)``.
 
     The loader supports four sources:
       - ``'local'``: reads files from a local ``Data/``-style directory
@@ -53,8 +52,8 @@ class DataLoader:
     :param version:
         Source-dependent version identifier:
 
-        - If ``source=='zenodo'``: Zenodo version string (e.g. ``"1.2.1"``) or ``None`` for the latest record.
-        - If ``source=='github'``: GitHub release tag (e.g. ``"v1.2.1"`` or ``"1.2.1"``). ``'latest'`` can be used
+        - If ``source=='zenodo'``: Zenodo version string (e.g. ``"1.3.0"``) or ``None`` for the latest record.
+        - If ``source=='github'``: GitHub release tag (e.g. ``"v1.3.0"`` or ``"1.3.0"``). ``'latest'`` can be used
           and will resolve to the latest release tag (when available) and otherwise fall back to a branch ref.
         - If ``source=='commit'``: commit SHA (40-char) or the string ``'latest'`` to resolve the tip SHA of a branch.
     :type version: Optional[str]
@@ -101,8 +100,8 @@ class DataLoader:
     :raises RuntimeError:
         If resolving ``version='latest'`` for ``source='commit'`` fails to return a commit SHA.
 
-    Examples
-    --------
+    .. rubric:: Examples
+
     Zenodo (specific version):
 
     .. code-block:: python
@@ -113,7 +112,7 @@ class DataLoader:
         dl = DataLoader(
             task="classification",
             source="zenodo",
-            version="1.2.1",
+            version="1.3.0",
             cache_dir=Path("~/.cache/synrxn").expanduser(),
         )
         print(dl.available_names())
@@ -130,7 +129,7 @@ class DataLoader:
         dl = DataLoader(
             task="classification",
             source="github",
-            version="v1.2.1",
+            version="v1.3.0",
             gh_enable=True,
             cache_dir=Path("~/.cache/synrxn").expanduser(),
         )
@@ -177,8 +176,8 @@ class DataLoader:
         df = dl.load('schneider_b')
         print(df.head())
 
-    Notes
-    -----
+    .. rubric:: Notes
+
     - ``version='latest'`` (commit or release) is non-deterministic; record the resolved value
       (``dl.version``) if you need reproducible results.
     - For heavy GitHub API usage, provide an authenticated session
@@ -996,7 +995,7 @@ class DataLoader:
 
     def scan(self, name: str):
         """Return a lazy, bounded Parquet scan for a local derived release."""
-        from ..query import DatasetScan
+        from synrxn.access.query import DatasetScan
 
         clean_name = self._normalize_basename(name)
         self.catalog.get(self.task, clean_name)

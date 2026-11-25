@@ -1,0 +1,36 @@
+{
+  "by_role": {
+    "test": 8713,
+    "train": 23367,
+    "val": 2735
+  },
+  "columns": [
+    "r_id",
+    "ground_truth",
+    "rxn",
+    "original_id",
+    "steps",
+    "role"
+  ],
+  "dataset_key": "aam/flower",
+  "dump_file": "Data/dumps/flower.dump.zip",
+  "dump_schema": "synrxn.flower-reproducibility-dump.v1",
+  "dump_sha256": "f70e8d0705c168178c880b9e14d8455bbb7e4fee395464390d6910a1a6ee863a",
+  "license_spdx": "MIT",
+  "qualification": "Curated raw native splits, pinned elementary selection and verified RC/MC reference snapshot in one dump. Original pre-curation sources preserved as history.",
+  "recipe": {
+    "maximum_seeds": 4,
+    "maximum_steps": 0,
+    "multiple_steps": "SynKit MTG unordered local-state MC; induced active-atom context; no extra shell",
+    "one_step": "frozen curated RC selection",
+    "seed": 42,
+    "selection_key": "(role, steps, center_id)"
+  },
+  "rows": 34815,
+  "runtime_versions": {
+    "networkx": "3.6.1",
+    "rdkit": "2026.3.1",
+    "synkit": "1.6.2"
+  },
+  "schema": "synrxn.flower-source.v2"
+}

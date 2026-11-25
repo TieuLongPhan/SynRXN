@@ -1,0 +1,28 @@
+{
+  "aam_tests_passed": 73,
+  "all_selected_targets_are_verbatim_source_maps": true,
+  "diagnostic_reader_compatible": {
+    "partial_inputs": 4485,
+    "primary_import_qc_inputs": 1086
+  },
+  "documentation_warnings_as_errors_passed": true,
+  "exclusion_payloads_identical_sha256": {
+    "excluded_members.csv.gz": "500e2fb0561371fea7f60821c6ce8c5f5bf2dbdc5d35abbebb4ae688d47efb86",
+    "excluded_provenance.jsonl.gz": "378ebd968d604e011a00a0352af25a8c3f84bed029787edc09682d51c69b99b1",
+    "excluded_reactions.csv.gz": "a6e82acc174775cb672c5f37f52deec57b9d585144ef84d9bccce4f93b4f6074"
+  },
+  "final_completion_and_retention_tests_passed": 14,
+  "former_review_inputs_now_retained": 5666,
+  "generated_completions_adopted": false,
+  "lint_passed": true,
+  "new_splits_assigned": false,
+  "pool_manifest_sha256": "c72f2efa9b8e2702cad5f256991de02bfe0c7f09ad80fde100a0944d8a25c68c",
+  "prior_pool_archive": "Data/archives/aam_review/before-raw-retention-policy-2026-10-27/aam_unique",
+  "prior_selected_raw_targets_unchanged": 74004,
+  "retained_reactions": 79670,
+  "schema": "synrxn.aam-unique.v5",
+  "sihumix_R_2ACLMM_retained_raw": true,
+  "source_tables_changed": false,
+  "subtests_passed": 3,
+  "verified": true
+}

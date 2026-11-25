@@ -1,0 +1,10 @@
+LicenseRef-PNAS-NC-Educational
+
+This identifier records the original-table permission in the Standard PNAS License Terms for volumes 106–118 (2009–2021).
+Publisher terms: https://www.pnas.org/author-center/publication-charges/standard-pnas-license-terms
+Original source: Huang et al. (2015), Panoramic view of a superfamily of phosphatases through substrate profiling, PNAS 112(16), E1974–E1983. DOI:10.1073/pnas.1423570112.
+Curated source: Esther Heid and William H. Green, Machine Learning of Reaction Properties via Learned Representations of the Condensed Graph of Reaction; https://github.com/hesther/reactiondatabase.
+
+PNAS permits reuse of original figures and tables for noncommercial and educational purposes with the full journal reference. Commercial table reuse requires permission from PNAS. No endorsement is implied.
+The current SynRXN compilation applies this permission only to property/phosphatase, a factual tabular extraction with attributed reaction curation. It does not assert permission to redistribute the article or entire supporting-information package.
+The separate CC-BY-4.0 curation notice does not remove these publisher conditions or assert a Creative Commons license for the original PNAS material. See CURRENT-DATA-TERMS.txt for the complete per-table expression and provenance.

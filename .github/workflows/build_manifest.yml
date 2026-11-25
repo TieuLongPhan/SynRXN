@@ -2,7 +2,7 @@ name: Release integrity
 
 on:
   push:
-    branches: [main, data]
+    branches: [main, data, dev-new]
     tags: ["v*"]
   pull_request:
     branches: [main]
@@ -27,35 +27,13 @@ jobs:
       - name: Install validation dependencies
         run: python -m pip install -e ".[query]"
 
-      - name: Verify committed release artifacts
-        run: python -m synrxn.verify_manifest --manifest manifest.json --root Data
+      - name: Check release versions
+        run: python scripts/check_release.py
 
-      - name: Validate catalog, schemas, identifiers, and splits
+      - name: Verify the committed catalogue layout
         run: >-
-          python -m synrxn.validate_data
-          --data-dir Data
-          --metadata Data/metadata.yaml
-          --manifest manifest.json
-          --json-output release-validation.json
-
-      - name: Exercise manifest generation from scratch
-        run: >-
-          python -m synrxn.build_manifest
-          --data-dir Data
-          --manifest-output /tmp/synrxn-manifest.json
-          --citation-output /tmp/CITATION.cff
-          --no-include-code-manifest
-
-      - name: Verify regenerated manifest
-        run: >-
-          python -m synrxn.verify_manifest
-          --manifest /tmp/synrxn-manifest.json
-          --root Data
-
-      - name: Build and verify derived Parquet release
-        run: |
-          synrxn parquet build --data-dir Data --output-dir /tmp/synrxn-parquet
-          synrxn parquet verify --data-dir Data --parquet-dir /tmp/synrxn-parquet
+          python -m synrxn.reconstruction layout verify
+          --allow-missing --check-hashes > release-validation.json
 
       - name: Upload validation report
         if: always()

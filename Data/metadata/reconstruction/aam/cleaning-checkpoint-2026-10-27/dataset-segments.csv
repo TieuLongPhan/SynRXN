@@ -1,0 +1,12 @@
+dataset,original_rows,excluded_source_rows,excluded_unchanged_source_rows,excluded_conflicting_source_rows,excluded_unchanged_unique_reactions,excluded_conflicting_unique_reactions,retained_source_rows,within_source_duplicates_merged,retained_unique_source_reactions,selected_pool_rows,represented_by_other_sources,selected_complete_individual,selected_complete_classes,selected_partial,selected_unverified
+brenda,3138,703,93,610,83,534,2435,126,2309,2264,45,2264,0,0,0
+ecoli,273,6,2,4,2,4,267,56,211,209,2,208,0,0,1
+ehreact,939,3,0,3,0,2,936,198,738,738,0,738,0,0,0
+enzyme_map,47974,2732,832,1900,436,857,45242,7990,37252,36459,793,36459,0,0,0
+flower,34815,19,1,18,1,9,34796,1680,33116,33116,0,33116,0,0,0
+golden,1758,0,0,0,0,0,1758,0,1758,1756,2,316,0,1426,14
+metambd_cyclic,177,46,0,46,0,28,131,14,117,116,1,116,0,0,0
+natcomm,491,0,0,0,0,0,491,0,491,0,491,0,0,0,0
+recon3d,382,11,8,3,8,3,371,21,350,328,22,1,325,0,2
+sihumix,8533,2744,1897,847,627,204,5789,4017,1772,1685,87,1539,0,144,2
+uspto_3k,3000,0,0,0,0,0,3000,0,3000,2999,1,9,0,2915,75

@@ -1,0 +1,11 @@
+{
+  "source_id": "C06",
+  "name": "data/full_data/claisen_data_clean.csv",
+  "bytes": 63660,
+  "url": "https://raw.githubusercontent.com/jpfolch/catechol_solvent_selection/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727/data/full_data/claisen_data_clean.csv",
+  "path": "Data/raw/synrxn2/C06/data/full_data/claisen_data_clean.csv",
+  "bytes_observed": 63660,
+  "sha256": "ffbb7c280f5a150331223587debe02aa26460047c28ec6c82d4711e318fe0660",
+  "md5": "bdbfdfb76994da4be2c51e8690e08211",
+  "status": "verified"
+}

@@ -1,0 +1,87 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "representation",
+  "format": "csv.gz",
+  "key": "classification/schneider_u",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": false,
+    "counting_unit": "source-table row",
+    "key": "classification/schneider_u",
+    "legacy_field_eligible_rows": {
+      "classification": 50000
+    },
+    "namespace": "canonical",
+    "partition": "noncommercial",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+    "rights_status": "verified_noncommercial_data_grant",
+    "role": "primary",
+    "rows": 50000
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": false,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "lowe_original_data_grant",
+      "recheck_classification_recheck_classification:figshare-2213215.json",
+      "recheck_classification_recheck_classification:ci5006614_si_002.zip",
+      "recheck_classification_recheck_classification:syncat/LICENSE",
+      "recheck_classification_recheck_classification:syncat/README.md",
+      "recheck_classification_recheck_classification:gln/LICENSE",
+      "recheck_classification_recheck_classification:gln/README.md",
+      "recheck_classification_recheck_classification:classification-source-joins",
+      "recheck_classification_recheck_classification:rxnfp/LICENSE",
+      "recheck_classification_recheck_classification:rxnfp/data/schneider50k.tsv"
+    ],
+    "expected_bytes": 1517500,
+    "expected_rows": 50000,
+    "expected_sha256": "fbd6e409459354ade4a6d15aeaf2206694f7df335a315384ca7dbcf06d2ee5b4",
+    "format": "csv.gz",
+    "key": "classification/schneider_u",
+    "license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes.",
+      "Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted."
+    ],
+    "namespace": "canonical",
+    "partition": "noncommercial",
+    "path": "Data/classification/schneider_u.csv.gz",
+    "qualification": "The original Schneider 2015 data supplement currently has an explicit CC BY-NC 4.0 publisher grant. The same 50,000 reaction/class/source/split records occur in the pinned MIT RXNFP repository, then in SynCat; both SynCat balanced/unbalanced curators reproduce all canonical fields. Include for noncommercial research while preserving the original data grant and MIT notices.",
+    "rights_status": "verified_noncommercial_data_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 50000,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "schneider2015development"
+    ],
+    "path": "Data/classification/schneider_u.csv.gz",
+    "sha256": "fbd6e409459354ade4a6d15aeaf2206694f7df335a315384ca7dbcf06d2ee5b4",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "schneider2015development"
+    ],
+    "counting_unit": "source-table row",
+    "key": "classification/schneider_u",
+    "legacy_field_eligible_rows": {
+      "classification": 50000
+    },
+    "namespace": "canonical",
+    "path": "Data/classification/schneider_u.csv.gz",
+    "role": "primary",
+    "rows": 50000,
+    "sha256": "fbd6e409459354ade4a6d15aeaf2206694f7df335a315384ca7dbcf06d2ee5b4",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "Schneider unbalanced classification"
+  },
+  "stored_path": "Data/families/representation/reaction_classification/canonical/classification/schneider_u/data.csv.gz",
+  "task_id": "reaction_classification",
+  "title": "Schneider unbalanced classification"
+}

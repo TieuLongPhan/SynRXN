@@ -1,0 +1,78 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "mechanisms",
+  "format": "csv.gz",
+  "key": "mechanism/synepd_polar",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "mechanism/synepd_polar",
+    "legacy_field_eligible_rows": {
+      "mechanistic_prediction": 1924
+    },
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 1926
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "synepd_data_grant",
+      "synepd_readme"
+    ],
+    "expected_bytes": 530952,
+    "expected_rows": 1926,
+    "expected_sha256": "bc31c8764b13cde89540c763d94691f64c1b460458a759ea6a757a9d0967a7ba",
+    "format": "csv.gz",
+    "key": "mechanism/synepd_polar",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/mechanism/synepd_polar.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 1926,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "synepd2026"
+    ],
+    "path": "Data/mechanism/synepd_polar.csv.gz",
+    "sha256": "bc31c8764b13cde89540c763d94691f64c1b460458a759ea6a757a9d0967a7ba",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "synepd2026"
+    ],
+    "counting_unit": "source-table row",
+    "key": "mechanism/synepd_polar",
+    "legacy_field_eligible_rows": {
+      "mechanistic_prediction": 1924
+    },
+    "namespace": "canonical",
+    "path": "Data/mechanism/synepd_polar.csv.gz",
+    "role": "primary",
+    "rows": 1926,
+    "sha256": "bc31c8764b13cde89540c763d94691f64c1b460458a759ea6a757a9d0967a7ba",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "SynEPD polar mechanism annotations"
+  },
+  "stored_path": "Data/families/mechanisms/mechanistic_prediction/canonical/mechanism/synepd_polar/data.csv.gz",
+  "task_id": "mechanistic_prediction",
+  "title": "SynEPD polar mechanism annotations"
+}

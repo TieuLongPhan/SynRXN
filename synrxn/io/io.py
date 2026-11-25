@@ -78,12 +78,12 @@ def load_json_from_raw_github(
     :raises json.JSONDecodeError: If JSON decoding fails for the detected mode.
     :raises Exception: Unexpected exceptions may propagate (e.g., encoding issues).
 
-    :examples:
+    .. code-block:: python
 
-    >>> url = "https://raw.githubusercontent.com/owner/repo/main/data.json.gz"
-    >>> df = load_json_from_raw_github(url)  # try to get a DataFrame
-    >>> obj = load_json_from_raw_github(url, as_frame=False)  # Python object
-    >>> df_lines = load_json_from_raw_github(url, lines=True)  # force NDJSON
+        url = "https://raw.githubusercontent.com/owner/repo/main/data.json.gz"
+        df = load_json_from_raw_github(url)
+        obj = load_json_from_raw_github(url, as_frame=False)
+        df_lines = load_json_from_raw_github(url, lines=True)
     """
     # Fetch remote content
     r = requests.get(url, stream=True)
@@ -135,8 +135,7 @@ def save_df_gz(
     compresslevel: int = 9,
     to_csv_kwargs: Optional[Dict[str, Any]] = None,
 ) -> None:
-    """
-    Save a pandas DataFrame to a gzip-compressed CSV file.
+    """Save a pandas DataFrame to a gzip-compressed CSV file.
 
     :param df: DataFrame to save.
     :type df: pandas.DataFrame
@@ -152,7 +151,7 @@ def save_df_gz(
                          (for example: `sep`, `float_format`, `na_rep`, etc.). Defaults to None.
     :type to_csv_kwargs: dict or None
     :raises OSError: If the file cannot be written (e.g., permission/IO error).
-    :returns: None
+    :return: None
     :rtype: None
     """
     path = Path(path)
@@ -170,8 +169,7 @@ def load_df_gz(
     encoding: str = "utf-8",
     read_csv_kwargs: Optional[Dict[str, Any]] = None,
 ) -> pd.DataFrame:
-    """
-    Load a gzip-compressed CSV file into a pandas DataFrame.
+    """Load a gzip-compressed CSV file into a pandas DataFrame.
 
     :param path: Path to the `.csv.gz` file to read.
     :type path: str or pathlib.Path
@@ -182,7 +180,7 @@ def load_df_gz(
     :type read_csv_kwargs: dict or None
     :raises FileNotFoundError: If the input path does not exist.
     :raises OSError: If the file cannot be opened/read.
-    :returns: The loaded DataFrame.
+    :return: The loaded DataFrame.
     :rtype: pandas.DataFrame
     """
     read_csv_kwargs = dict(read_csv_kwargs or {})

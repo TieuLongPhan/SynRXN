@@ -1,0 +1,23 @@
+{
+  "all_contributing_qc_records_heavy_balanced": true,
+  "blank_reactant_label_cases_filled": 149,
+  "complete_endpoint_preserving_canon_outputs": 0,
+  "data_payloads_and_eligibility_unchanged": true,
+  "date": "2026-10-27",
+  "diagnostic_outputs_archive": "Data/archives/aam_review/before-raw-retention-policy-2026-10-27/aam_review_diagnostics",
+  "diagnostics_manifest_sha256": "721bb6cb38a9b1993d2c1e851f86f09e9b90930173708f4ff2450c1569ad0770",
+  "import_qc_inputs": 1086,
+  "lint": "passed",
+  "outcomes": {
+    "endpoint_changed": 1,
+    "invalid_or_failed": 7,
+    "still_partial": 4477
+  },
+  "parser_source_tokenization_checks": 202960,
+  "partial_inputs": 4485,
+  "pool_manifest_sha256": "f48413a0e6f8f74efe5e692d6c6bdffec36e6dc07881468a363d2a7dddeb9dc1",
+  "schema": "synrxn.aam-review-diagnostics-verification.v1",
+  "selection_status": "historical_not_selected",
+  "source_pool_archive": "Data/archives/aam_review/before-raw-retention-policy-2026-10-27/aam_unique",
+  "tests": "64 passed, 3 subtests passed"
+}

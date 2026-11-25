@@ -1,0 +1,1976 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "families": [
+    {
+      "id": "data",
+      "metadata": "data/family.json",
+      "summary": {
+        "admitted_table_views": 2,
+        "data_links": 2,
+        "families": 1,
+        "held_bindings": 0,
+        "held_table_views": 0,
+        "overlapping_table_views": 0,
+        "primary_table_views": 2,
+        "stored_rows_across_unique_views": 3477,
+        "task_table_bindings": 2,
+        "tasks": 2,
+        "unique_table_views": 2
+      },
+      "title": "Reaction data acquisition and curation"
+    },
+    {
+      "id": "representation",
+      "metadata": "representation/family.json",
+      "summary": {
+        "admitted_table_views": 23,
+        "data_links": 31,
+        "families": 1,
+        "held_bindings": 0,
+        "held_table_views": 0,
+        "overlapping_table_views": 1,
+        "primary_table_views": 22,
+        "stored_rows_across_unique_views": 1646068,
+        "task_table_bindings": 31,
+        "tasks": 5,
+        "unique_table_views": 23
+      },
+      "title": "Reaction representation, organisation and search"
+    },
+    {
+      "id": "transformations",
+      "metadata": "transformations/family.json",
+      "summary": {
+        "admitted_table_views": 2,
+        "data_links": 5,
+        "families": 1,
+        "held_bindings": 2,
+        "held_table_views": 1,
+        "overlapping_table_views": 0,
+        "primary_table_views": 3,
+        "stored_rows_across_unique_views": 540062,
+        "task_table_bindings": 7,
+        "tasks": 3,
+        "unique_table_views": 3
+      },
+      "title": "Single-step reaction transformation"
+    },
+    {
+      "id": "outcomes",
+      "metadata": "outcomes/family.json",
+      "summary": {
+        "admitted_table_views": 11,
+        "data_links": 16,
+        "families": 1,
+        "held_bindings": 0,
+        "held_table_views": 0,
+        "overlapping_table_views": 0,
+        "primary_table_views": 11,
+        "stored_rows_across_unique_views": 14800167,
+        "task_table_bindings": 16,
+        "tasks": 3,
+        "unique_table_views": 11
+      },
+      "title": "Reaction outcomes, feasibility and robustness"
+    },
+    {
+      "id": "selectivity",
+      "metadata": "selectivity/family.json",
+      "summary": {
+        "admitted_table_views": 15,
+        "data_links": 15,
+        "families": 1,
+        "held_bindings": 0,
+        "held_table_views": 0,
+        "overlapping_table_views": 1,
+        "primary_table_views": 14,
+        "stored_rows_across_unique_views": 34622,
+        "task_table_bindings": 15,
+        "tasks": 4,
+        "unique_table_views": 15
+      },
+      "title": "Selectivity, mixtures and side products"
+    },
+    {
+      "id": "conditions",
+      "metadata": "conditions/family.json",
+      "summary": {
+        "admitted_table_views": 14,
+        "data_links": 19,
+        "families": 1,
+        "held_bindings": 0,
+        "held_table_views": 0,
+        "overlapping_table_views": 1,
+        "primary_table_views": 13,
+        "stored_rows_across_unique_views": 1359502,
+        "task_table_bindings": 19,
+        "tasks": 4,
+        "unique_table_views": 14
+      },
+      "title": "Conditions, procedures and experimental design"
+    },
+    {
+      "id": "physics",
+      "metadata": "physics/family.json",
+      "summary": {
+        "admitted_table_views": 16,
+        "data_links": 21,
+        "families": 1,
+        "held_bindings": 0,
+        "held_table_views": 0,
+        "overlapping_table_views": 2,
+        "primary_table_views": 14,
+        "stored_rows_across_unique_views": 626455,
+        "task_table_bindings": 21,
+        "tasks": 5,
+        "unique_table_views": 16
+      },
+      "title": "Reaction physics, energetics and kinetics"
+    },
+    {
+      "id": "mechanisms",
+      "metadata": "mechanisms/family.json",
+      "summary": {
+        "admitted_table_views": 8,
+        "data_links": 8,
+        "families": 1,
+        "held_bindings": 0,
+        "held_table_views": 0,
+        "overlapping_table_views": 3,
+        "primary_table_views": 5,
+        "stored_rows_across_unique_views": 25746,
+        "task_table_bindings": 8,
+        "tasks": 3,
+        "unique_table_views": 8
+      },
+      "title": "Mechanisms, reactive pathways and networks"
+    },
+    {
+      "id": "analysis",
+      "metadata": "analysis/family.json",
+      "summary": {
+        "admitted_table_views": 7,
+        "data_links": 7,
+        "families": 1,
+        "held_bindings": 0,
+        "held_table_views": 0,
+        "overlapping_table_views": 0,
+        "primary_table_views": 7,
+        "stored_rows_across_unique_views": 6277,
+        "task_table_bindings": 7,
+        "tasks": 2,
+        "unique_table_views": 7
+      },
+      "title": "Analytical characterization and reaction monitoring"
+    },
+    {
+      "id": "design",
+      "metadata": "design/family.json",
+      "summary": {
+        "admitted_table_views": 3,
+        "data_links": 3,
+        "families": 1,
+        "held_bindings": 0,
+        "held_table_views": 0,
+        "overlapping_table_views": 0,
+        "primary_table_views": 3,
+        "stored_rows_across_unique_views": 57229,
+        "task_table_bindings": 3,
+        "tasks": 2,
+        "unique_table_views": 3
+      },
+      "title": "Catalyst/reagent design and new reactivity"
+    },
+    {
+      "id": "process",
+      "metadata": "process/family.json",
+      "summary": {
+        "admitted_table_views": 7,
+        "data_links": 10,
+        "families": 1,
+        "held_bindings": 0,
+        "held_table_views": 0,
+        "overlapping_table_views": 0,
+        "primary_table_views": 7,
+        "stored_rows_across_unique_views": 10788,
+        "task_table_bindings": 10,
+        "tasks": 3,
+        "unique_table_views": 7
+      },
+      "title": "Reaction engineering and process assessment"
+    },
+    {
+      "id": "biocatalysis",
+      "metadata": "biocatalysis/family.json",
+      "summary": {
+        "admitted_table_views": 7,
+        "data_links": 7,
+        "families": 1,
+        "held_bindings": 0,
+        "held_table_views": 0,
+        "overlapping_table_views": 0,
+        "primary_table_views": 7,
+        "stored_rows_across_unique_views": 628220,
+        "task_table_bindings": 7,
+        "tasks": 5,
+        "unique_table_views": 7
+      },
+      "title": "Biocatalysis and enzyme–reaction function"
+    }
+  ],
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 104,
+    "data_links": 144,
+    "families": 12,
+    "held_bindings": 2,
+    "held_table_views": 1,
+    "overlapping_table_views": 7,
+    "primary_table_views": 98,
+    "stored_rows_across_unique_views": 19611896,
+    "task_table_bindings": 146,
+    "tasks": 41,
+    "unique_table_views": 105
+  },
+  "tables": [
+    {
+      "bindings": [
+        {
+          "family_id": "data",
+          "task_id": "literature_extraction"
+        }
+      ],
+      "key": "knowledge/EnzChemRED2024/documents",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 1210,
+      "sha256": "1aeb1adbe4b50434acf2dcc0756894f4b22be0a9757d5a59b0d9692243a1b9d4",
+      "source_path": "Data/coverage_expansion/knowledge/documents.parquet",
+      "storage_path": "data/literature_extraction/coverage/knowledge/EnzChemRED2024/documents/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "data",
+          "task_id": "reaction_record_curation"
+        }
+      ],
+      "key": "knowledge/EnzChemRED2024/curation",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 2267,
+      "sha256": "55373a6d80a8e2c76f2472100936ce6209c463df76571c34e905be67a3fe5506",
+      "source_path": "Data/coverage_expansion/knowledge/curation.parquet",
+      "storage_path": "data/reaction_record_curation/coverage/knowledge/EnzChemRED2024/curation/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "atom_mapping"
+        }
+      ],
+      "key": "aam/brenda",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 3138,
+      "sha256": "dad050fba14ab6160480e6802cf81fc82ea3a70e1ccb1af9d251796cd7374580",
+      "source_path": "Data/aam/brenda.csv.gz",
+      "storage_path": "representation/atom_mapping/canonical/aam/brenda/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "atom_mapping"
+        }
+      ],
+      "key": "aam/ecoli",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 273,
+      "sha256": "d38436457c5f5d82149981005a2c39d289d56467fb45ffdeb294f0c62b631866",
+      "source_path": "Data/aam/ecoli.csv.gz",
+      "storage_path": "representation/atom_mapping/canonical/aam/ecoli/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "atom_mapping"
+        }
+      ],
+      "key": "aam/ehreact",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 939,
+      "sha256": "e085217180f396ad519eeaadf7602d39c7c374e5591b95bde85c0d8b57402124",
+      "source_path": "Data/aam/ehreact.csv.gz",
+      "storage_path": "representation/atom_mapping/canonical/aam/ehreact/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "atom_mapping"
+        }
+      ],
+      "key": "aam/enzyme_map",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 47974,
+      "sha256": "303e6638819a008f1442291443459795e9bb40b3cdea9e9da01732d05f20b807",
+      "source_path": "Data/aam/enzyme_map.csv.gz",
+      "storage_path": "representation/atom_mapping/canonical/aam/enzyme_map/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "atom_mapping"
+        }
+      ],
+      "key": "aam/flower_c",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 38745,
+      "sha256": "75f34235813ce9accff59134536f6e1f0f6af5c9a16a381e7a75e96b0f52d203",
+      "source_path": "Data/aam/flower_c.csv.gz",
+      "storage_path": "representation/atom_mapping/canonical/aam/flower_c/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "atom_mapping"
+        }
+      ],
+      "key": "aam/flower_e",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 179345,
+      "sha256": "696f0a08fa7872309918c0bc1de7cfe3a32ba862e4d732775e12844894159d8d",
+      "source_path": "Data/aam/flower_e.csv.gz",
+      "storage_path": "representation/atom_mapping/canonical/aam/flower_e/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "atom_mapping"
+        }
+      ],
+      "key": "aam/golden",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 1758,
+      "sha256": "ccce1ab8a18a45559cdbf87bcd3ecd838fc6e1cd1e3ad8d5815e39af5ddd49d9",
+      "source_path": "Data/aam/golden.csv.gz",
+      "storage_path": "representation/atom_mapping/canonical/aam/golden/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "atom_mapping"
+        }
+      ],
+      "key": "aam/natcomm",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 491,
+      "sha256": "c62f4084990533d36bd9ba706cd78a80de0bad14ee139cdf1fb3c00422da2343",
+      "source_path": "Data/aam/natcomm.csv.gz",
+      "storage_path": "representation/atom_mapping/canonical/aam/natcomm/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "atom_mapping"
+        }
+      ],
+      "key": "aam/recon3d",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 382,
+      "sha256": "a5dc370de65eb8efde9ecd703ef1f2a021d5713b850944530092798628dea45e",
+      "source_path": "Data/aam/recon3d.csv.gz",
+      "storage_path": "representation/atom_mapping/canonical/aam/recon3d/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "atom_mapping"
+        }
+      ],
+      "key": "aam/uspto_3k",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 3000,
+      "sha256": "7d46de323ec918550fd742ea5e839fc976cd451058eca061b1e2023354698145",
+      "source_path": "Data/aam/uspto_3k.csv.gz",
+      "storage_path": "representation/atom_mapping/canonical/aam/uspto_3k/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "reaction_balancing"
+        }
+      ],
+      "key": "rbl/complex",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 1748,
+      "sha256": "a2a2d887a65806fbd27596147f6209213cb3eedfbafd428370ec68586827db4c",
+      "source_path": "Data/rbl/complex.csv.gz",
+      "storage_path": "representation/reaction_balancing/canonical/rbl/complex/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "reaction_balancing"
+        }
+      ],
+      "key": "rbl/mbs",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 491,
+      "sha256": "d7cb14f9604328dcc86bd0ab10503d7649ff50a3d823a45cb02fb874bca1bd1d",
+      "source_path": "Data/rbl/mbs.csv.gz",
+      "storage_path": "representation/reaction_balancing/canonical/rbl/mbs/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "reaction_balancing"
+        }
+      ],
+      "key": "rbl/mnc",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 33147,
+      "sha256": "ed66cd15303b63fd9e0e6ea0f0ad396bada423a36d5f290dec5ee7cdf447c6cf",
+      "source_path": "Data/rbl/mnc.csv.gz",
+      "storage_path": "representation/reaction_balancing/canonical/rbl/mnc/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "reaction_balancing"
+        }
+      ],
+      "key": "rbl/mos",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 12781,
+      "sha256": "d8c6d663ad21cafba9dc64259ba435924926305af2b87a785795c289da39fc31",
+      "source_path": "Data/rbl/mos.csv.gz",
+      "storage_path": "representation/reaction_balancing/canonical/rbl/mos/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "reaction_classification"
+        },
+        {
+          "family_id": "representation",
+          "task_id": "reaction_clustering"
+        }
+      ],
+      "key": "classification/ecreact",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 185734,
+      "sha256": "c730e5bd196dc69b5ebc421cce37010162f7e129f149b28196f0069ee242bdcd",
+      "source_path": "Data/classification/ecreact.csv.gz",
+      "storage_path": "representation/reaction_classification/canonical/classification/ecreact/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "reaction_classification"
+        },
+        {
+          "family_id": "representation",
+          "task_id": "reaction_clustering"
+        }
+      ],
+      "key": "classification/schneider_b",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 50000,
+      "sha256": "72c6560f458c3777f1e0f1e73c3a35ac7974cc4a49e3ae6441421d4e91bf86b2",
+      "source_path": "Data/classification/schneider_b.csv.gz",
+      "storage_path": "representation/reaction_classification/canonical/classification/schneider_b/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "reaction_classification"
+        },
+        {
+          "family_id": "representation",
+          "task_id": "reaction_clustering"
+        }
+      ],
+      "key": "classification/schneider_u",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 50000,
+      "sha256": "fbd6e409459354ade4a6d15aeaf2206694f7df335a315384ca7dbcf06d2ee5b4",
+      "source_path": "Data/classification/schneider_u.csv.gz",
+      "storage_path": "representation/reaction_classification/canonical/classification/schneider_u/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "reaction_classification"
+        },
+        {
+          "family_id": "representation",
+          "task_id": "reaction_clustering"
+        }
+      ],
+      "key": "classification/syntemp",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 43441,
+      "sha256": "5ace42ff5d956a4c5180ca854bbbd441bdbac5b71903a6bcd4684bb77320c1ed",
+      "source_path": "Data/classification/syntemp.csv.gz",
+      "storage_path": "representation/reaction_classification/canonical/classification/syntemp/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "reaction_classification"
+        },
+        {
+          "family_id": "representation",
+          "task_id": "reaction_clustering"
+        }
+      ],
+      "key": "classification/tpl_b",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 445115,
+      "sha256": "106cec5db1b37757483d7d99f2d9dde34e89315af54fdb9aa2e3cf0770fb4dbc",
+      "source_path": "Data/classification/tpl_b.csv.gz",
+      "storage_path": "representation/reaction_classification/canonical/classification/tpl_b/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "reaction_classification"
+        },
+        {
+          "family_id": "representation",
+          "task_id": "reaction_clustering"
+        }
+      ],
+      "key": "classification/tpl_u",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 445115,
+      "sha256": "6b6a649e1cc13f17418a4ce3a8b63663a7f66c1777abfc66c16bce8e0efa2912",
+      "source_path": "Data/classification/tpl_u.csv.gz",
+      "storage_path": "representation/reaction_classification/canonical/classification/tpl_u/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "reaction_classification"
+        },
+        {
+          "family_id": "representation",
+          "task_id": "reaction_clustering"
+        }
+      ],
+      "key": "classification/uspto_50k_b",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 50016,
+      "sha256": "098f85a386e25742791e5b87b8be8a7a090e920b6eca5f2b85452aa913ddba51",
+      "source_path": "Data/classification/uspto_50k_b.csv.gz",
+      "storage_path": "representation/reaction_classification/canonical/classification/uspto_50k_b/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "reaction_classification"
+        },
+        {
+          "family_id": "representation",
+          "task_id": "reaction_clustering"
+        }
+      ],
+      "key": "classification/uspto_50k_u",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 50016,
+      "sha256": "355d38f0ef86b6546bfd24bbee97ebfe09d16c9ffed8b13282dc336734421fdb",
+      "source_path": "Data/classification/uspto_50k_u.csv.gz",
+      "storage_path": "representation/reaction_classification/canonical/classification/uspto_50k_u/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "representation",
+          "task_id": "reaction_retrieval"
+        }
+      ],
+      "key": "knowledge/EnzChemRED2024/retrieval",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 2419,
+      "sha256": "92a65a8155800d2ab88eef695530051a81a2b82fa55f1bea790b8db0304fa6a5",
+      "source_path": "Data/coverage_expansion/knowledge/retrieval.parquet",
+      "storage_path": "representation/reaction_retrieval/coverage/knowledge/EnzChemRED2024/retrieval/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "transformations",
+          "task_id": "forward_prediction"
+        },
+        {
+          "family_id": "transformations",
+          "task_id": "retrosynthesis"
+        }
+      ],
+      "key": "synthesis/da",
+      "namespace": "canonical",
+      "release_admitted": false,
+      "rows": 11011,
+      "sha256": "ddfb98a997ef53161ee43743dbd7431a31c5c674c172f5034e637eaad562afe0",
+      "source_path": "Data/synthesis/da.csv.gz",
+      "storage_path": null
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "transformations",
+          "task_id": "forward_prediction"
+        },
+        {
+          "family_id": "transformations",
+          "task_id": "retrosynthesis"
+        }
+      ],
+      "key": "synthesis/uspto_50k",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 50016,
+      "sha256": "a23d355405f037cc4ecc751cf094003f3b64c115dd212f20d99015bc9ba05ac4",
+      "source_path": "Data/synthesis/uspto_50k.csv.gz",
+      "storage_path": "transformations/forward_prediction/canonical/synthesis/uspto_50k/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "transformations",
+          "task_id": "forward_prediction"
+        },
+        {
+          "family_id": "transformations",
+          "task_id": "retrosynthesis"
+        },
+        {
+          "family_id": "transformations",
+          "task_id": "reaction_center"
+        }
+      ],
+      "key": "synthesis/uspto_mit",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 479035,
+      "sha256": "74dffc5bb8e5fdfb41c11676deb5fedb9bb63d28325bdfc719ea68d8b8d9f33b",
+      "source_path": "Data/synthesis/uspto_mit.csv.gz",
+      "storage_path": "transformations/forward_prediction/canonical/synthesis/uspto_mit/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "outcomes",
+          "task_id": "yield_conversion"
+        },
+        {
+          "family_id": "outcomes",
+          "task_id": "reaction_success"
+        },
+        {
+          "family_id": "conditions",
+          "task_id": "condition_ranking"
+        }
+      ],
+      "key": "yield/buchwald_hartwig_ood",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 27438,
+      "sha256": "1cae5ff9010813e242f6de2dc6bd3e33342f759be79c5d88ac4f3f46dc4ec409",
+      "source_path": "Data/yield/buchwald_hartwig_ood.csv.gz",
+      "storage_path": "outcomes/yield_conversion/canonical/yield/buchwald_hartwig_ood/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "outcomes",
+          "task_id": "yield_conversion"
+        },
+        {
+          "family_id": "conditions",
+          "task_id": "condition_ranking"
+        }
+      ],
+      "key": "yield/hitea",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 39546,
+      "sha256": "f0e0d0db9f37643bcebb5c9b6a29a9a6a950f7e92c05fc4541a07d9ca3d1d0e9",
+      "source_path": "Data/yield/hitea.csv.gz",
+      "storage_path": "outcomes/yield_conversion/canonical/yield/hitea/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "outcomes",
+          "task_id": "yield_conversion"
+        }
+      ],
+      "key": "yield/uspto_yield",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 526468,
+      "sha256": "a95706078ebba47315a91f853f27a3a3494e344b8ce782d53df0a5e5d5aa6f5b",
+      "source_path": "Data/yield/uspto_yield.csv.gz",
+      "storage_path": "outcomes/yield_conversion/canonical/yield/uspto_yield/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "outcomes",
+          "task_id": "yield_conversion"
+        }
+      ],
+      "key": "property/phosphatase",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 33354,
+      "sha256": "aca656158cb5b96cfa3378234641796e5becdf6647d7af0ae9f91b9e53639917",
+      "source_path": "Data/property/phosphatase.csv.gz",
+      "storage_path": "outcomes/yield_conversion/canonical/property/phosphatase/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "outcomes",
+          "task_id": "yield_conversion"
+        },
+        {
+          "family_id": "outcomes",
+          "task_id": "reaction_success"
+        },
+        {
+          "family_id": "conditions",
+          "task_id": "condition_ranking"
+        },
+        {
+          "family_id": "conditions",
+          "task_id": "sequential_optimization"
+        }
+      ],
+      "key": "C02/minot_al1_data",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 2907,
+      "sha256": "1a4593001f6dbf52487f50ff6efcbfef6b52cd0488dc5f0b001de04117faf780",
+      "source_path": "Data/expansion/main/C02/minot_al1_data.parquet",
+      "storage_path": "outcomes/yield_conversion/expansion/C02/minot_al1_data/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "outcomes",
+          "task_id": "yield_conversion"
+        },
+        {
+          "family_id": "outcomes",
+          "task_id": "reaction_success"
+        },
+        {
+          "family_id": "conditions",
+          "task_id": "condition_ranking"
+        },
+        {
+          "family_id": "conditions",
+          "task_id": "sequential_optimization"
+        }
+      ],
+      "key": "C02/minot_al2_data",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 954,
+      "sha256": "8b26a87c9577d85d2e913a1a9c0d5096777e41ad765b0fc4b7f9bb80c0db751c",
+      "source_path": "Data/expansion/main/C02/minot_al2_data.parquet",
+      "storage_path": "outcomes/yield_conversion/expansion/C02/minot_al2_data/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "outcomes",
+          "task_id": "yield_conversion"
+        },
+        {
+          "family_id": "outcomes",
+          "task_id": "reaction_success"
+        },
+        {
+          "family_id": "conditions",
+          "task_id": "condition_ranking"
+        },
+        {
+          "family_id": "conditions",
+          "task_id": "sequential_optimization"
+        }
+      ],
+      "key": "C02/minot_al3_data",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 960,
+      "sha256": "08f73be1d8027531abfdda1f26007fee8f2411221de95fcf1093e957f7364715",
+      "source_path": "Data/expansion/main/C02/minot_al3_data.parquet",
+      "storage_path": "outcomes/yield_conversion/expansion/C02/minot_al3_data/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "outcomes",
+          "task_id": "yield_conversion"
+        },
+        {
+          "family_id": "outcomes",
+          "task_id": "reaction_success"
+        },
+        {
+          "family_id": "conditions",
+          "task_id": "condition_ranking"
+        },
+        {
+          "family_id": "conditions",
+          "task_id": "sequential_optimization"
+        }
+      ],
+      "key": "C02/minot_preal_data",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 2044,
+      "sha256": "d46814951744663fc94cade06f30cd4e3f13e52bc5d13c5a0bcf43bf51793092",
+      "source_path": "Data/expansion/main/C02/minot_preal_data.parquet",
+      "storage_path": "outcomes/yield_conversion/expansion/C02/minot_preal_data/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "outcomes",
+          "task_id": "yield_conversion"
+        },
+        {
+          "family_id": "conditions",
+          "task_id": "condition_ranking"
+        },
+        {
+          "family_id": "conditions",
+          "task_id": "sequential_optimization"
+        }
+      ],
+      "key": "C03/cn_screen",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 50688,
+      "sha256": "534d2d7bc8cbed7f694694c0db65e9b34fd4cfe471878e0a37395767415bc5a0",
+      "source_path": "Data/expansion/sharealike/C03/cn_screen.parquet",
+      "storage_path": "outcomes/yield_conversion/expansion/C03/cn_screen/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "outcomes",
+          "task_id": "reaction_feasibility"
+        }
+      ],
+      "key": "feasibility/frea_corpus",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 14115057,
+      "sha256": "b7128dd8911c51f55b6740504710e621f736997a1b9c8a42594d7540ca25d8d3",
+      "source_path": "Data/feasibility/frea_corpus.csv.gz",
+      "storage_path": "outcomes/reaction_feasibility/canonical/feasibility/frea_corpus/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "outcomes",
+          "task_id": "reaction_feasibility"
+        }
+      ],
+      "key": "feasibility/frea_expert",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 751,
+      "sha256": "e9495a288e404d1ef6ff188f28809e9946e153d1ba6d67175ca13763d107507f",
+      "source_path": "Data/feasibility/frea_expert.csv.gz",
+      "storage_path": "outcomes/reaction_feasibility/canonical/feasibility/frea_expert/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "selectivity",
+          "task_id": "regioselectivity"
+        }
+      ],
+      "key": "selectivity/regiosqm_eas",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 535,
+      "sha256": "c156301e943612c5b04db9216e5fa0c173539c966933bcd489e87d7691acd9ae",
+      "source_path": "Data/selectivity/regiosqm_eas.csv.gz",
+      "storage_path": "selectivity/regioselectivity/canonical/selectivity/regiosqm_eas/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "selectivity",
+          "task_id": "regioselectivity"
+        }
+      ],
+      "key": "C02/regio",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 1030,
+      "sha256": "2c672296e347ecef0af88921a10c8849e9fd8a2892538b79b82acf8ecb97e485",
+      "source_path": "Data/expansion/main/C02/regio.parquet",
+      "storage_path": "selectivity/regioselectivity/expansion/C02/regio/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "selectivity",
+          "task_id": "enantioselectivity"
+        }
+      ],
+      "key": "selectivity/hitea_chiral_resolution",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 50,
+      "sha256": "deffeb88f4a3d9e1f1ea98ece7cdcda2f42ba8edaae899771df2aab5f1ddd8b7",
+      "source_path": "Data/selectivity/hitea_chiral_resolution.csv.gz",
+      "storage_path": "selectivity/enantioselectivity/canonical/selectivity/hitea_chiral_resolution/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "selectivity",
+          "task_id": "enantioselectivity"
+        }
+      ],
+      "key": "C16/aldol_reaction_dataset",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 13360,
+      "sha256": "727fecc820664a12bcf5656784e246872f9cae9eedc14129487032c05d167848",
+      "source_path": "Data/expansion/main/C16/aldol_reaction_dataset.parquet",
+      "storage_path": "selectivity/enantioselectivity/expansion/C16/aldol_reaction_dataset/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "selectivity",
+          "task_id": "enantioselectivity"
+        }
+      ],
+      "key": "C16/michael_addition_dataset",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 9194,
+      "sha256": "3ebcd00fcf67e6fe004d94e1ea4e9a0c6a68e174001bbddfcfb99ef8a8ec035c",
+      "source_path": "Data/expansion/main/C16/michael_addition_dataset.parquet",
+      "storage_path": "selectivity/enantioselectivity/expansion/C16/michael_addition_dataset/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "selectivity",
+          "task_id": "enantioselectivity"
+        }
+      ],
+      "key": "C16/validation_in_house_acetone",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 24,
+      "sha256": "a78c786545763bc1a4af9b67258c85c99a249c13022fa4e88c6aa9f360139e44",
+      "source_path": "Data/expansion/main/C16/validation_in_house_acetone.parquet",
+      "storage_path": "selectivity/enantioselectivity/expansion/C16/validation_in_house_acetone/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "selectivity",
+          "task_id": "enantioselectivity"
+        }
+      ],
+      "key": "C16/validation_in_house_hydroxyacetone",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 17,
+      "sha256": "c5902553914c1d3718ccb551fba622475381e36ec6282c53e1e70b57dfb9cc4d",
+      "source_path": "Data/expansion/main/C16/validation_in_house_hydroxyacetone.parquet",
+      "storage_path": "selectivity/enantioselectivity/expansion/C16/validation_in_house_hydroxyacetone/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "selectivity",
+          "task_id": "enantioselectivity"
+        }
+      ],
+      "key": "C16/validation_new_literature_aldol",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 81,
+      "sha256": "538b7824377d0a526ea8a6ff7d3837d26fbb22cda611bfa9f8fefb9ec8d2e87d",
+      "source_path": "Data/expansion/main/C16/validation_new_literature_aldol.parquet",
+      "storage_path": "selectivity/enantioselectivity/expansion/C16/validation_new_literature_aldol/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "selectivity",
+          "task_id": "enantioselectivity"
+        }
+      ],
+      "key": "C16/validation_new_literature_michael",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 109,
+      "sha256": "41639b6a17b7b092b38a0f1ef59c53256d2f40c7ed27357c189fec55a6d00441",
+      "source_path": "Data/expansion/main/C16/validation_new_literature_michael.parquet",
+      "storage_path": "selectivity/enantioselectivity/expansion/C16/validation_new_literature_michael/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "selectivity",
+          "task_id": "enantioselectivity"
+        }
+      ],
+      "key": "C16/validation_virtual_chemist",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 39,
+      "sha256": "30c9b286d0668cddbc0ee4203eafb0f8b83b269c6d5620433d8d6e880a0eb50c",
+      "source_path": "Data/expansion/main/C16/validation_virtual_chemist.parquet",
+      "storage_path": "selectivity/enantioselectivity/expansion/C16/validation_virtual_chemist/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "selectivity",
+          "task_id": "product_distribution"
+        },
+        {
+          "family_id": "conditions",
+          "task_id": "sequential_optimization"
+        }
+      ],
+      "key": "C06/catechol",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 1227,
+      "sha256": "579b186784c74a5164718c79d8abbf7fa13e26015bece574ab99164e1b50cec6",
+      "source_path": "Data/expansion/main/C06/catechol.parquet",
+      "storage_path": "selectivity/product_distribution/expansion/C06/catechol/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "selectivity",
+          "task_id": "product_distribution"
+        },
+        {
+          "family_id": "conditions",
+          "task_id": "sequential_optimization"
+        }
+      ],
+      "key": "C06/claisen",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 283,
+      "sha256": "6890901862e080d0c2f59b0bc2127ddfc638babf3eb23f7c07ca86490593c4af",
+      "source_path": "Data/expansion/main/C06/claisen.parquet",
+      "storage_path": "selectivity/product_distribution/expansion/C06/claisen/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "selectivity",
+          "task_id": "product_distribution"
+        },
+        {
+          "family_id": "conditions",
+          "task_id": "sequential_optimization"
+        }
+      ],
+      "key": "C06/single_solvent",
+      "namespace": "expansion",
+      "release_admitted": true,
+      "rows": 656,
+      "sha256": "9567764950291fd19115fc4fe05d44ef1975207b23c06c7a04b021b405455964",
+      "source_path": "Data/expansion/main/C06/single_solvent.parquet",
+      "storage_path": "selectivity/product_distribution/expansion/C06/single_solvent/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "selectivity",
+          "task_id": "impurity_prediction"
+        }
+      ],
+      "key": "impurity/pba_benzaldehyde_side_product",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 756,
+      "sha256": "b73a356906112988e8d1782f298d52ae73e45dd63054224ee84d0be30815ae35",
+      "source_path": "Data/coverage_expansion/impurity/pba_benzaldehyde_side_product.jsonl.gz",
+      "storage_path": "selectivity/impurity_prediction/coverage/impurity/pba_benzaldehyde_side_product/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "selectivity",
+          "task_id": "impurity_prediction"
+        }
+      ],
+      "key": "impurity/solid_state_reported_impurity_phases",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 7261,
+      "sha256": "8e0de53371c07b2197e827cd4e43f6020179e8d502371348d7173aaefcbdf510",
+      "source_path": "Data/coverage_expansion/impurity/solid_state_reported_impurity_phases.jsonl.gz",
+      "storage_path": "selectivity/impurity_prediction/coverage/impurity/solid_state_reported_impurity_phases/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "conditions",
+          "task_id": "condition_recovery"
+        }
+      ],
+      "key": "synthesis/uspto_500",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 143535,
+      "sha256": "fad362c125f8fc6195d49748bbd9f381ca4c9d3f03935d82f457b350ab46bef1",
+      "source_path": "Data/synthesis/uspto_500.csv.gz",
+      "storage_path": "conditions/condition_recovery/canonical/synthesis/uspto_500/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "conditions",
+          "task_id": "condition_recovery"
+        }
+      ],
+      "key": "condition/orderly_condition",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 691105,
+      "sha256": "789e1c41f6dcc00cff2600aa21d034db327428b2df29427721f2ba103ca91e57",
+      "source_path": "Data/condition/orderly_condition.csv.gz",
+      "storage_path": "conditions/condition_recovery/canonical/condition/orderly_condition/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "conditions",
+          "task_id": "condition_recovery"
+        }
+      ],
+      "key": "condition_sharealike/ord_hte_condition",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 123720,
+      "sha256": "9d77cb0ef9233dd7922e4a65ea89e046051581c9200dd3eb7c85d3ae06514c5c",
+      "source_path": "Data/condition_sharealike/ord_hte_condition.csv.gz",
+      "storage_path": "conditions/condition_recovery/canonical/condition_sharealike/ord_hte_condition/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "conditions",
+          "task_id": "procedure_generation"
+        }
+      ],
+      "key": "condition_sharealike/openexp",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 274439,
+      "sha256": "f38c6bf858aa6d6d983c15199fc90f28e999ba6ea670229ab0307e70e919edc2",
+      "source_path": "Data/condition_sharealike/openexp.csv.gz",
+      "storage_path": "conditions/procedure_generation/canonical/condition_sharealike/openexp/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "activation_barrier"
+        },
+        {
+          "family_id": "physics",
+          "task_id": "reaction_energetics"
+        }
+      ],
+      "key": "property/b97xd3",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 16365,
+      "sha256": "33f881612842378a6cff97b2db0c99b1c4877a7e81a318129a26dd58e9702d73",
+      "source_path": "Data/property/b97xd3.csv.gz",
+      "storage_path": "physics/activation_barrier/canonical/property/b97xd3/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "activation_barrier"
+        },
+        {
+          "family_id": "physics",
+          "task_id": "reaction_energetics"
+        }
+      ],
+      "key": "property/cycloadd",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 5269,
+      "sha256": "afd03a88ef6268350f2c176b70a67396ff1902b85e6742bb2ac3ef0d9ca84004",
+      "source_path": "Data/property/cycloadd.csv.gz",
+      "storage_path": "physics/activation_barrier/canonical/property/cycloadd/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "activation_barrier"
+        }
+      ],
+      "key": "property/e2",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 1264,
+      "sha256": "2b2177235aeddf06b9fa29abe9836e6a3c520ccdbd1530b9757f8e8c4c23d99e",
+      "source_path": "Data/property/e2.csv.gz",
+      "storage_path": "physics/activation_barrier/canonical/property/e2/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "activation_barrier"
+        }
+      ],
+      "key": "property/e2sn2",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 3625,
+      "sha256": "d3b27039841da7ea9bb18e511271fbaddfcb61d826ec1c5e31b50f71c1d3e044",
+      "source_path": "Data/property/e2sn2.csv.gz",
+      "storage_path": "physics/activation_barrier/canonical/property/e2sn2/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "activation_barrier"
+        }
+      ],
+      "key": "property/rdb7",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 23852,
+      "sha256": "5980529ee8cf8ab0922df24048c69ba131d2f7ad623f5cdf9d7fb67b6466849e",
+      "source_path": "Data/property/rdb7.csv.gz",
+      "storage_path": "physics/activation_barrier/canonical/property/rdb7/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "activation_barrier"
+        }
+      ],
+      "key": "property/rgd1",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 353984,
+      "sha256": "74c5fbfd38b24409c17ddf2d8dc105ad728479df8a17b2bcf65c51a3ed8bed30",
+      "source_path": "Data/property/rgd1.csv.gz",
+      "storage_path": "physics/activation_barrier/canonical/property/rgd1/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "activation_barrier"
+        }
+      ],
+      "key": "property/sn2",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 2361,
+      "sha256": "2e3c58220e44dbf7597088861d642378abead0048f1a6c12f99771a0719db2ac",
+      "source_path": "Data/property/sn2.csv.gz",
+      "storage_path": "physics/activation_barrier/canonical/property/sn2/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "activation_barrier"
+        }
+      ],
+      "key": "property/snar",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 503,
+      "sha256": "df8df5b8bc8b74910c7fe9960a8dd200182c5ef1bf91de906286cb71bfe60bcd",
+      "source_path": "Data/property/snar.csv.gz",
+      "storage_path": "physics/activation_barrier/canonical/property/snar/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "activation_barrier"
+        },
+        {
+          "family_id": "physics",
+          "task_id": "reaction_energetics"
+        },
+        {
+          "family_id": "physics",
+          "task_id": "reaction_rates"
+        }
+      ],
+      "key": "physics_rates/quantumpioneer_hAT_kinetics",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 166158,
+      "sha256": "e81aa5f9158564e64356a524c046469e2a13e471469ff641713ded3c37ff1520",
+      "source_path": "Data/coverage_expansion/physics_rates/quantumpioneer_kinetics.csv",
+      "storage_path": "physics/activation_barrier/coverage/physics_rates/quantumpioneer_hAT_kinetics/data.csv"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "activation_barrier"
+        }
+      ],
+      "key": "solution_barriers/lipred_solution_activation_gibbs",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 4514,
+      "sha256": "d028ede06408041185f2d3a583ae203bbd965b61d64fb5e4357b2315947b0cf9",
+      "source_path": "Data/coverage_expansion/solution_barriers/lipred_solution_activation_gibbs.csv",
+      "storage_path": "physics/activation_barrier/coverage/solution_barriers/lipred_solution_activation_gibbs/data.csv"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "activation_barrier"
+        }
+      ],
+      "key": "solution_context/snar_solution_context",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 503,
+      "sha256": "00133eda15cf7f07ba3bd13f4b51c4fb95f2c44f915af104a21d9d608186777d",
+      "source_path": "Data/coverage_expansion/solution_context/snar_solution_context.csv",
+      "storage_path": "physics/activation_barrier/coverage/solution_context/snar_solution_context/data.csv"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "activation_barrier"
+        },
+        {
+          "family_id": "physics",
+          "task_id": "reaction_energetics"
+        }
+      ],
+      "key": "solution_context/cycloadd_solution_context",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 5269,
+      "sha256": "7e140a55f4c94d0250a9b742b3dbaed1901d4d061b370f5cee145505cf1a4bba",
+      "source_path": "Data/coverage_expansion/solution_context/cycloadd_solution_context.csv",
+      "storage_path": "physics/activation_barrier/coverage/solution_context/cycloadd_solution_context/data.csv"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "reaction_energetics"
+        }
+      ],
+      "key": "property/rad6re",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 31923,
+      "sha256": "fd78145b61bf50e0267f61ae5e45681020a7de7d3fe552da26feabc3096db1d5",
+      "source_path": "Data/property/rad6re.csv.gz",
+      "storage_path": "physics/reaction_energetics/canonical/property/rad6re/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "reaction_rates"
+        }
+      ],
+      "key": "property/lograte",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 778,
+      "sha256": "ca79d7de36fde44961dd093a53c999356ac9aacf3aee524eb18bf90219f120f0",
+      "source_path": "Data/property/lograte.csv.gz",
+      "storage_path": "physics/reaction_rates/canonical/property/lograte/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "reactive_potential"
+        }
+      ],
+      "key": "physics/transition1x_reactive_trajectories",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 10073,
+      "sha256": "b809b5dc199bfd49624995119b8a65b1d598d3ede438f4cee1f16b504ea461f9",
+      "source_path": "Data/coverage_expansion/physics/transition1x_reactive_trajectories.csv",
+      "storage_path": "physics/reactive_potential/coverage/physics/transition1x_reactive_trajectories/data.csv"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "physics",
+          "task_id": "kinetic_parameter_inference"
+        },
+        {
+          "family_id": "mechanisms",
+          "task_id": "reaction_network_modeling"
+        }
+      ],
+      "key": "physics/chemsindy_reference_trajectories",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 14,
+      "sha256": "322bf8b9d3792d0a75ec1c1775cfff76cb1c9532f1fcb8644aa1f0eb4da7db52",
+      "source_path": "Data/coverage_expansion/physics/chemsindy_reference_trajectories.csv",
+      "storage_path": "physics/kinetic_parameter_inference/coverage/physics/chemsindy_reference_trajectories/data.csv"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "mechanisms",
+          "task_id": "mechanistic_prediction"
+        }
+      ],
+      "key": "mechanism/synepd_polar",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 1926,
+      "sha256": "bc31c8764b13cde89540c763d94691f64c1b460458a759ea6a757a9d0967a7ba",
+      "source_path": "Data/mechanism/synepd_polar.csv.gz",
+      "storage_path": "mechanisms/mechanistic_prediction/canonical/mechanism/synepd_polar/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "mechanisms",
+          "task_id": "mechanistic_prediction"
+        }
+      ],
+      "key": "mechanisms/mcsa_observed_mechanisms",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 278,
+      "sha256": "76b81eb7054d6df673178e9bc11779d609d52da66f0fefac85936998534cde9f",
+      "source_path": "Data/coverage_expansion/mechanisms/mcsa_observed_mechanisms.parquet",
+      "storage_path": "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_observed_mechanisms/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "mechanisms",
+          "task_id": "mechanistic_prediction"
+        }
+      ],
+      "key": "mechanisms/mcsa_full_mechanisms",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 479,
+      "sha256": "dfdb96211e35ea5ce6660f875173e2827f34a8961e5f10db146b52fbfc32acd3",
+      "source_path": "Data/coverage_expansion/mechanisms/mcsa_full_mechanisms.parquet",
+      "storage_path": "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_full_mechanisms/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "mechanisms",
+          "task_id": "mechanistic_prediction"
+        }
+      ],
+      "key": "mechanisms/mcsa_continuous_chains",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 934,
+      "sha256": "633eb4d7a20fe81ce8a98c05e4e476a4569490878117c069a4bd2fe8393e75c2",
+      "source_path": "Data/coverage_expansion/mechanisms/mcsa_continuous_chains.parquet",
+      "storage_path": "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_continuous_chains/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "mechanisms",
+          "task_id": "mechanistic_prediction"
+        }
+      ],
+      "key": "mechanisms/mcsa_elementary_steps",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 2393,
+      "sha256": "f8f9b70c4db8015325f4420306b6a586f76d19dc8a6772a6f356d5f5cd0c5826",
+      "source_path": "Data/coverage_expansion/mechanisms/mcsa_elementary_steps.parquet",
+      "storage_path": "mechanisms/mechanistic_prediction/coverage/mechanisms/mcsa_elementary_steps/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "mechanisms",
+          "task_id": "ts_geometry"
+        }
+      ],
+      "key": "physics/orgreact_ts_geometry",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 9649,
+      "sha256": "154424ff6277b1e8f199022a67758ff438083cedd02974ab690b2f7b89938059",
+      "source_path": "Data/coverage_expansion/physics/orgreact_ts_geometry.csv",
+      "storage_path": "mechanisms/ts_geometry/coverage/physics/orgreact_ts_geometry/data.csv"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "mechanisms",
+          "task_id": "ts_geometry"
+        }
+      ],
+      "key": "physics/transition1x_final_ts_geometry",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 10073,
+      "sha256": "6c7512bb38663731d30e49bb9037d5b73ded283c1ffa8301b3d21ab5d437db82",
+      "source_path": "Data/coverage_expansion/physics/transition1x_final_ts_geometry.csv",
+      "storage_path": "mechanisms/ts_geometry/coverage/physics/transition1x_final_ts_geometry/data.csv"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "analysis",
+          "task_id": "analytical_interpretation"
+        }
+      ],
+      "key": "process/nmr_saccharose_hydrolysis_snapshots",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 1023,
+      "sha256": "18f370c5b06f1203a934ad6845e175109da47670968cfc1519aa1aaecbc2ddda",
+      "source_path": "Data/coverage_expansion/process/nmr_saccharose_hydrolysis_snapshots.jsonl.gz",
+      "storage_path": "analysis/analytical_interpretation/coverage/process/nmr_saccharose_hydrolysis_spectra/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "analysis",
+          "task_id": "analytical_interpretation"
+        }
+      ],
+      "key": "process/nmr_pmg_284_snapshots",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 999,
+      "sha256": "e46212c9a1e38d19ca26a234ca2c01b81e5d0ddca06f4a2cbf6a7f5e6f49e4c6",
+      "source_path": "Data/coverage_expansion/process/nmr_pmg_284_snapshots.jsonl.gz",
+      "storage_path": "analysis/analytical_interpretation/coverage/process/nmr_pmg_284_spectra/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "analysis",
+          "task_id": "analytical_interpretation"
+        }
+      ],
+      "key": "process/nmr_pmg_287_snapshots",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 1000,
+      "sha256": "9f7c39f16588728a5592f5dc7ed7ad49e339d283ba7cb6c9238f77d3c6f1909b",
+      "source_path": "Data/coverage_expansion/process/nmr_pmg_287_snapshots.jsonl.gz",
+      "storage_path": "analysis/analytical_interpretation/coverage/process/nmr_pmg_287_spectra/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "analysis",
+          "task_id": "reaction_progress_monitoring"
+        }
+      ],
+      "key": "process/nmr_saccharose_hydrolysis_progress",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 1022,
+      "sha256": "631acde06a722bb3b01418ab35594af0dc4614de6d893b7890ed9b73d0d84477",
+      "source_path": "Data/coverage_expansion/process/nmr_saccharose_hydrolysis_progress.jsonl.gz",
+      "storage_path": "analysis/reaction_progress_monitoring/coverage/process/nmr_saccharose_hydrolysis_progress/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "analysis",
+          "task_id": "reaction_progress_monitoring"
+        }
+      ],
+      "key": "process/nmr_pmg_284_progress",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 998,
+      "sha256": "f36765c40bdeb20a2d14e80c98cacae4b74b66f9b10c3e05f5e22ca3306c8a56",
+      "source_path": "Data/coverage_expansion/process/nmr_pmg_284_progress.jsonl.gz",
+      "storage_path": "analysis/reaction_progress_monitoring/coverage/process/nmr_pmg_284_progress/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "analysis",
+          "task_id": "reaction_progress_monitoring"
+        }
+      ],
+      "key": "process/nmr_pmg_287_progress",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 999,
+      "sha256": "dd6da290d3921bd80bb2d3a38ddf579ab070a3814ea8d049646acbf851d21850",
+      "source_path": "Data/coverage_expansion/process/nmr_pmg_287_progress.jsonl.gz",
+      "storage_path": "analysis/reaction_progress_monitoring/coverage/process/nmr_pmg_287_progress/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "analysis",
+          "task_id": "reaction_progress_monitoring"
+        }
+      ],
+      "key": "process/lowfield_nmr_yield_progress",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 236,
+      "sha256": "ed0bb5e7f6d10dff29786a927e5c64fe5f9ddc10370a1a03a072927c81ba8fa1",
+      "source_path": "Data/coverage_expansion/process/lowfield_nmr_yield_progress.jsonl.gz",
+      "storage_path": "analysis/reaction_progress_monitoring/coverage/process/lowfield_nmr_yield_progress/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "design",
+          "task_id": "reaction_component_design"
+        }
+      ],
+      "key": "bio/enzeng_inverse_biocatalyst_design",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 488,
+      "sha256": "b7c1872fbd663be05ba2c887894ed1afaf0a993e596aae2a3c1a151573dd74ad",
+      "source_path": "Data/coverage_expansion/bio/enzeng_inverse_biocatalyst_design.parquet",
+      "storage_path": "design/reaction_component_design/coverage/bio/enzeng_inverse_biocatalyst_design/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "design",
+          "task_id": "reaction_component_design"
+        }
+      ],
+      "key": "knowledge/CatDRX_ORD2025/inverse_components",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 49876,
+      "sha256": "430f23c5527312d8cdf84a036f5d60d49f20010db9f96be658d12dbc2bd887a7",
+      "source_path": "Data/coverage_expansion/knowledge/inverse_components.parquet",
+      "storage_path": "design/reaction_component_design/coverage/knowledge/CatDRX_ORD2025/inverse_components/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "design",
+          "task_id": "new_reactivity_discovery"
+        }
+      ],
+      "key": "knowledge/MinotScope2026/scope_campaigns",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 6865,
+      "sha256": "a7b517e03bc29b8bc789d86d3d7ca72318014938ba9e3637d7de2b7b9e6486ac",
+      "source_path": "Data/coverage_expansion/knowledge/scope_campaigns.parquet",
+      "storage_path": "design/new_reactivity_discovery/coverage/knowledge/MinotScope2026/scope_campaigns/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "process",
+          "task_id": "reactor_scale_modeling"
+        }
+      ],
+      "key": "process/reac_discovery_cs1",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 55,
+      "sha256": "c347354b19579663e6da260621491a9a714e01d7813fe5ae0f043c7e0c8cfadc",
+      "source_path": "Data/coverage_expansion/process/reac_discovery_cs1.jsonl.gz",
+      "storage_path": "process/reactor_scale_modeling/coverage/process/reac_discovery_cs1/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "process",
+          "task_id": "reactor_scale_modeling"
+        }
+      ],
+      "key": "process/reac_discovery_cs2",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 58,
+      "sha256": "49764a1137e6e8622c635373da75f4f440eca08ebd86fef2457393f05747469d",
+      "source_path": "Data/coverage_expansion/process/reac_discovery_cs2.jsonl.gz",
+      "storage_path": "process/reactor_scale_modeling/coverage/process/reac_discovery_cs2/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "process",
+          "task_id": "reactor_scale_modeling"
+        }
+      ],
+      "key": "process/fcc_lab_source_full",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 10000,
+      "sha256": "7dee3a628dd58bb80250ef6752a290063edc2097788fcd879cbd2ff3ecd58a38",
+      "source_path": "Data/coverage_expansion/process/fcc_lab_source_full.jsonl.gz",
+      "storage_path": "process/reactor_scale_modeling/coverage/process/fcc_lab_source_full/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "process",
+          "task_id": "reactor_scale_modeling"
+        },
+        {
+          "family_id": "process",
+          "task_id": "process_impact_assessment"
+        }
+      ],
+      "key": "process/fcc_pilot_train",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 48,
+      "sha256": "9e753460982c68355cf602c92f9ecb5a3464ee0ac9dc987eb3860a7fc35fbd47",
+      "source_path": "Data/coverage_expansion/process/fcc_pilot_train.jsonl.gz",
+      "storage_path": "process/reactor_scale_modeling/coverage/process/fcc_pilot_train/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "process",
+          "task_id": "reactor_scale_modeling"
+        },
+        {
+          "family_id": "process",
+          "task_id": "process_impact_assessment"
+        }
+      ],
+      "key": "process/fcc_pilot_validation",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 12,
+      "sha256": "dc9257e64b3ce06c3c219db87d21f27cde21768f6e5a02784988fab0cc8c1c6c",
+      "source_path": "Data/coverage_expansion/process/fcc_pilot_validation.jsonl.gz",
+      "storage_path": "process/reactor_scale_modeling/coverage/process/fcc_pilot_validation/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "process",
+          "task_id": "reactor_scale_modeling"
+        },
+        {
+          "family_id": "process",
+          "task_id": "process_impact_assessment"
+        }
+      ],
+      "key": "process/fcc_pilot_test",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 15,
+      "sha256": "764e6e23504c46e4c1c4ba93eaa09f50767006827c7a8ed6cfa8ee60c6a0049c",
+      "source_path": "Data/coverage_expansion/process/fcc_pilot_test.jsonl.gz",
+      "storage_path": "process/reactor_scale_modeling/coverage/process/fcc_pilot_test/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "process",
+          "task_id": "process_control"
+        }
+      ],
+      "key": "process/cstr_control_transitions",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 600,
+      "sha256": "f027ddcfd313234ca9fb3b448d2767f7f190807732f441fc6e522b86fe3b511a",
+      "source_path": "Data/coverage_expansion/process/cstr_control_transitions.jsonl.gz",
+      "storage_path": "process/process_control/coverage/process/cstr_control_transitions/data.jsonl.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "biocatalysis",
+          "task_id": "enzyme_activity"
+        }
+      ],
+      "key": "classification/ehreact_activity",
+      "namespace": "canonical",
+      "release_admitted": true,
+      "rows": 1943,
+      "sha256": "eb38c0a10358fff35a616c6ae4255efd2a6bb00b8f02cc6e2dde00943fba8192",
+      "source_path": "Data/classification/ehreact_activity.csv.gz",
+      "storage_path": "biocatalysis/enzyme_activity/canonical/classification/ehreact_activity/data.csv.gz"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "biocatalysis",
+          "task_id": "enzyme_retrieval"
+        }
+      ],
+      "key": "bio/reactzyme_retrieval",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 178463,
+      "sha256": "14ed9679a1974a95c2b02098a08bcabe3c38c3834ef5ab2bd30634e61f48ba8d",
+      "source_path": "Data/coverage_expansion/bio/reactzyme_retrieval.parquet",
+      "storage_path": "biocatalysis/enzyme_retrieval/coverage/bio/reactzyme_retrieval/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "biocatalysis",
+          "task_id": "mutation_effects"
+        }
+      ],
+      "key": "bio/enzeng_mutation_effects",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 409877,
+      "sha256": "607b451c674aabbc80e1f35aa8d6ded8c16e9881a7e3edac6892d929ab21e52c",
+      "source_path": "Data/coverage_expansion/bio/enzeng_mutation_effects.parquet",
+      "storage_path": "biocatalysis/mutation_effects/coverage/bio/enzeng_mutation_effects/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "biocatalysis",
+          "task_id": "active_sites"
+        }
+      ],
+      "key": "bio/mcsa_reference_active_sites",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 969,
+      "sha256": "c9ee5321b3a876f5b8f755d4e15ac50ab5aaf6004889adbddde00a54d3892511",
+      "source_path": "Data/coverage_expansion/bio/mcsa_reference_active_sites.parquet",
+      "storage_path": "biocatalysis/active_sites/coverage/bio/mcsa_reference_active_sites/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "biocatalysis",
+          "task_id": "enzyme_kinetic_parameters"
+        }
+      ],
+      "key": "bio/brenda_record_kcat",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 11775,
+      "sha256": "83583d5eee84fc0c0469375743c2c6088c6f0e01ce8531e21c684a042be4d33f",
+      "source_path": "Data/coverage_expansion/bio/brenda_record_kcat.parquet",
+      "storage_path": "biocatalysis/enzyme_kinetic_parameters/coverage/bio/brenda_record_kcat/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "biocatalysis",
+          "task_id": "enzyme_kinetic_parameters"
+        }
+      ],
+      "key": "bio/brenda_record_km",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 19676,
+      "sha256": "254de537b9178e0dde95a650bfe7775767a18c864fbd5973af938751ee8f8af5",
+      "source_path": "Data/coverage_expansion/bio/brenda_record_km.parquet",
+      "storage_path": "biocatalysis/enzyme_kinetic_parameters/coverage/bio/brenda_record_km/data.parquet"
+    },
+    {
+      "bindings": [
+        {
+          "family_id": "biocatalysis",
+          "task_id": "enzyme_kinetic_parameters"
+        }
+      ],
+      "key": "bio/brenda_record_ki",
+      "namespace": "coverage",
+      "release_admitted": true,
+      "rows": 5517,
+      "sha256": "6c0d260b601df0ac8bca895a759ed0c8dc8b9eac5048deffe34c9071186ef704",
+      "source_path": "Data/coverage_expansion/bio/brenda_record_ki.parquet",
+      "storage_path": "biocatalysis/enzyme_kinetic_parameters/coverage/bio/brenda_record_ki/data.parquet"
+    }
+  ]
+}

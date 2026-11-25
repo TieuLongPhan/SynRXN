@@ -1,0 +1,123 @@
+{
+  "counting_unit": "recorded component-performance reference",
+  "data_link": "data.parquet",
+  "family_id": "design",
+  "format": "parquet",
+  "key": "knowledge/CatDRX_ORD2025/inverse_components",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/knowledge/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "recorded component-performance reference",
+    "coverage_branch": "knowledge",
+    "key": "knowledge/CatDRX_ORD2025/inverse_components",
+    "license": "CC-BY-SA-4.0",
+    "namespace": "coverage",
+    "parent_groups": 2177,
+    "partition": "sharealike",
+    "path": "Data/coverage_expansion/knowledge/inverse_components.parquet",
+    "qualification": "Retrospective reaction-conditioned component generation/recovery with catalyst-identity holdout. Input does not list candidates; evaluation has a finite measured lookup oracle. No prospective de novo performance is inferred for off-dataset structures. Yield measurements, native candidate identities and upstream ORD reuse remain explicit.",
+    "reference_evidence": "source_reported_measurement_and_recorded_component_structure",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-SA-4.0",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 49876,
+    "sha256": "430f23c5527312d8cdf84a036f5d60d49f20010db9f96be658d12dbc2bd887a7",
+    "source_id": "CatDRX_ORD2025",
+    "source_sha256": "26517fd0168fec04224249c6fb6acba5b4f99260a80b917b42a66dfa30e66994",
+    "source_url": "https://github.com/ohuelab/CatDRX/tree/f8952497761b0bf44cde4b48f8df3a8d40098f91",
+    "task_fields": {
+      "reaction_component_design": {
+        "group_fields": [
+          "parent_group"
+        ],
+        "input_keys": [
+          "reactants",
+          "products",
+          "reagents",
+          "desired_response_pct_interval",
+          "time_h"
+        ],
+        "inputs": [
+          "inputs_json"
+        ],
+        "metrics": [
+          "component_recovery_top_k",
+          "structure_validity",
+          "training_relative_novelty",
+          "observed_oracle_response"
+        ],
+        "split_policy": "SHA-256 parent-group 80/10/10 seed 2027; native split retained separately",
+        "target_keys": [
+          "catalyst_smiles",
+          "observed_response_pct"
+        ],
+        "targets": [
+          "targets_json"
+        ]
+      }
+    },
+    "task_ids": [
+      "reaction_component_design"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "recorded component-performance reference",
+    "expected_bytes": 5599673,
+    "expected_rows": 49876,
+    "expected_sha256": "430f23c5527312d8cdf84a036f5d60d49f20010db9f96be658d12dbc2bd887a7",
+    "format": "parquet",
+    "key": "knowledge/CatDRX_ORD2025/inverse_components",
+    "license_expression": "CC-BY-SA-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes.",
+      "Comply with the applicable ShareAlike requirements for adapted material."
+    ],
+    "namespace": "coverage",
+    "partition": "sharealike",
+    "path": "Data/coverage_expansion/knowledge/inverse_components.parquet",
+    "qualification": "Retrospective reaction-conditioned component generation/recovery with catalyst-identity holdout. Input does not list candidates; evaluation has a finite measured lookup oracle. No prospective de novo performance is inferred for off-dataset structures. Yield measurements, native candidate identities and upstream ORD reuse remain explicit.",
+    "reasons": [],
+    "reference_evidence": "source_reported_measurement_and_recorded_component_structure",
+    "release_eligible": true,
+    "source_id": "CatDRX_ORD2025",
+    "source_url": "https://github.com/ohuelab/CatDRX/tree/f8952497761b0bf44cde4b48f8df3a8d40098f91",
+    "task_ids": [
+      "reaction_component_design"
+    ]
+  },
+  "role": "primary",
+  "rows": 49876,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/knowledge/inverse_components.parquet",
+    "sha256": "430f23c5527312d8cdf84a036f5d60d49f20010db9f96be658d12dbc2bd887a7",
+    "source_catalogue": "Data/coverage_expansion/knowledge/catalog.json",
+    "source_id": "CatDRX_ORD2025",
+    "source_urls": [
+      "https://github.com/ohuelab/CatDRX/tree/f8952497761b0bf44cde4b48f8df3a8d40098f91"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "recorded component-performance reference",
+    "key": "knowledge/CatDRX_ORD2025/inverse_components",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/knowledge/inverse_components.parquet",
+    "qualification": "Retrospective reaction-conditioned component generation/recovery with catalyst-identity holdout. Input does not list candidates; evaluation has a finite measured lookup oracle. No prospective de novo performance is inferred for off-dataset structures. Yield measurements, native candidate identities and upstream ORD reuse remain explicit.",
+    "role": "primary",
+    "rows": 49876,
+    "sha256": "430f23c5527312d8cdf84a036f5d60d49f20010db9f96be658d12dbc2bd887a7",
+    "source_catalogue": "Data/coverage_expansion/knowledge/catalog.json",
+    "source_id": "CatDRX_ORD2025",
+    "source_urls": [
+      "https://github.com/ohuelab/CatDRX/tree/f8952497761b0bf44cde4b48f8df3a8d40098f91"
+    ],
+    "title": "CatDRX / ORD component design"
+  },
+  "stored_path": "Data/families/design/reaction_component_design/coverage/knowledge/CatDRX_ORD2025/inverse_components/data.parquet",
+  "task_id": "reaction_component_design",
+  "title": "CatDRX / ORD component design"
+}

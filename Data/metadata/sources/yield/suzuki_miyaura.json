@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "dataset_key": "yield/suzuki_miyaura.csv.gz",
+  "release_status": "excluded_pending_permission",
+  "distributed_by_synrxn": false,
+  "source_url": "https://doi.org/10.1126/science.aap9112",
+  "source_doi": "10.1126/science.aap9112",
+  "source_commit_or_version": "Science supplementary Data File S1",
+  "source_file": "aap9112_Data_File_S1.xlsx",
+  "source_sha256": "a869e020ba31bd5676c67a4791c3b7384711b5216de6af444b8cd0a24c284640",
+  "raw_rows": 5760,
+  "upstream_license": "LicenseRef-Unknown",
+  "license_status": "unverified",
+  "required_attribution": [
+    "10.1126/science.aap9112"
+  ],
+  "observed_third_party_redistributions": [
+    "https://github.com/rxn4chemistry/rxn_yields",
+    "https://github.com/reymond-group/drfp"
+  ],
+  "permission_request": {
+    "status": "pending",
+    "requested_at": "2026-08-22",
+    "requested_from": "Pfizer paper authors"
+  },
+  "redistribution_partition": "excluded",
+  "retrieved_at": "2026-08-22"
+}

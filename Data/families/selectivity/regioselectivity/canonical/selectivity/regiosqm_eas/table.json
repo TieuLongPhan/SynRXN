@@ -1,0 +1,74 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "selectivity",
+  "format": "csv.gz",
+  "key": "selectivity/regiosqm_eas",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "selectivity/regiosqm_eas",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 535
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "regiosqm_license",
+      "regiosqm_readme"
+    ],
+    "expected_bytes": 75109,
+    "expected_rows": 535,
+    "expected_sha256": "c156301e943612c5b04db9216e5fa0c173539c966933bcd489e87d7691acd9ae",
+    "format": "csv.gz",
+    "key": "selectivity/regiosqm_eas",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/selectivity/regiosqm_eas.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 535,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "kromann2018regiosqm"
+    ],
+    "path": "Data/selectivity/regiosqm_eas.csv.gz",
+    "sha256": "c156301e943612c5b04db9216e5fa0c173539c966933bcd489e87d7691acd9ae",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "kromann2018regiosqm"
+    ],
+    "counting_unit": "source-table row",
+    "key": "selectivity/regiosqm_eas",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/selectivity/regiosqm_eas.csv.gz",
+    "role": "primary",
+    "rows": 535,
+    "sha256": "c156301e943612c5b04db9216e5fa0c173539c966933bcd489e87d7691acd9ae",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "RegioSQM experimental EAS sites"
+  },
+  "stored_path": "Data/families/selectivity/regioselectivity/canonical/selectivity/regiosqm_eas/data.csv.gz",
+  "task_id": "regioselectivity",
+  "title": "RegioSQM experimental EAS sites"
+}

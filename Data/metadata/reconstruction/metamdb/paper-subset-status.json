@@ -1,0 +1,10 @@
+{
+  "name": "metamdb",
+  "requested_rows": 4456,
+  "status": "awaiting_exact_author_subset_or_id_list",
+  "paper_url": "https://ssrn.com/abstract=7404606",
+  "upstream_repository": "https://github.com/NoraBeier/BRMapper/tree/b1d428f3ed2d1ef5a1311150cc335ba1a916c06a",
+  "finding": "The released CSV has 49,928 rows and no selection/validation flags. No 4,456-row subset or selected-ID list was found in the repository, its history, branches, releases or relevant local downloads.",
+  "retired_full_archive_export": "Data/archives/metamdb/full-qc-27451-1375c16b/aam-export",
+  "active_export": null
+}

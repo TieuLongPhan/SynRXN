@@ -1,0 +1,60 @@
+{
+  "id": "C24",
+  "name": "EnzChemRED",
+  "priority": "3 Optional",
+  "survey_license_note": "Official SIB resource specifies CC BY 4.0.",
+  "paper_urls": [
+    "https://www.nature.com/articles/s41597-024-03835-7"
+  ],
+  "data_urls": [
+    "https://zenodo.org/records/11067998"
+  ],
+  "project_urls": [
+    "https://github.com/ncbi-nlp/EnzChemRED"
+  ],
+  "license_urls": [],
+  "license_verified": true,
+  "files": [
+    {
+      "name": "BioREx_EnzChemRED_PubMed.tsv",
+      "bytes": 56440447,
+      "checksum": "md5:e6e7ab9d612527059d8c2d89c2658f62",
+      "url": "https://zenodo.org/api/records/11067998/files/BioREx_EnzChemRED_PubMed.tsv/content"
+    },
+    {
+      "name": "EnzChemRED.tar.gz",
+      "bytes": 1651363,
+      "checksum": "md5:d05097c7cc566d1a4d043862a608e38a",
+      "url": "https://zenodo.org/api/records/11067998/files/EnzChemRED.tar.gz/content"
+    },
+    {
+      "name": "BioREx_EnzChemRED_PubMed_normalized.tsv",
+      "bytes": 4385016,
+      "checksum": "md5:36fda2aa2bf1da5486c7e37f2c414ae8",
+      "url": "https://zenodo.org/api/records/11067998/files/BioREx_EnzChemRED_PubMed_normalized.tsv/content"
+    },
+    {
+      "name": "README.txt",
+      "bytes": 3042,
+      "checksum": "md5:6ebe65cb0fab187909281694796f19c7",
+      "url": "https://zenodo.org/api/records/11067998/files/README.txt/content"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://zenodo.org/api/records/11067998",
+      "status": 200,
+      "sha256": "bdb83dad7af8f6d2baf1d61e4c5ea0dd04e34ad55a616deae54e95b0c1f834f5",
+      "bytes": 8167,
+      "retrieved_at": "2026-10-20T15:35:29.549549+00:00"
+    }
+  ],
+  "record_id": "11067998",
+  "doi": "10.5281/zenodo.11067998",
+  "title": "EnzChemRED, a rich enzyme chemistry relation extraction dataset",
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "publication_date": "2024-04-25",
+  "description": "<h1>Abstract</h1>\n<p>Expert curation is essential to capture knowledge of enzyme functions from the scientific literature in FAIR open knowledgebases but cannot keep pace with the rate of new discoveries and new publications. In this work we present EnzChemRED, for Enzyme Chemistry Relation Extraction Dataset, a new training and benchmarking dataset to support the development of Natural Language Processing (NLP) methods such as (large) language models that can assist enzyme curation. EnzChemRED consists of 1,210 expert curated PubMed abstracts in which enzymes and the chemical reactions they catalyze are annotated using UniProtKB and ChEBI identifiers. We show that fine-tuning language models with EnzChemRED significantly boosts their ability to identify proteins and chemicals in text (86.30% F1 score) and to extract the chemical conversions in which they participate (86.66% F1 score), and the enzymes that catalyze those conversions (83.79% F1 score). We apply our methods to abstracts at PubMed scale to create a draft map of enzyme functions in literature to guide curation efforts in UniProtKB and the reaction knowledgebase Rhea.</p>\n<p><strong>Corresponding authors:</strong> Alan Bridge (alan.bridge@sib.swiss) and Zhiyong Lu (zhiyong.lu@nih.gov)</p>\n<h1>Content</h1>\n<p>This repository contains data to support the development of natural language processing (NLP) methods to mine biochemical reactions from text for Rhea and UniProt.</p>"
+}

@@ -1,0 +1,1588 @@
+{
+  "as_of": "2026-10-20",
+  "results": [
+    {
+      "paper_id": "k25-batterylife",
+      "status": "downloaded",
+      "pdf": "papers/k25-batterylife.pdf",
+      "sha256": "3f170d8c960a65c8ddfb66c2f1d260ea4a936fb478acb5e9c67f97404a4c88f1",
+      "bytes": 2893849,
+      "source_url": "https://arxiv.org/pdf/2502.18807",
+      "text": "text/k25-batterylife.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2502.18807",
+          "resolved_url": "https://arxiv.org/pdf/2502.18807",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 2893849,
+          "sha256": "3f170d8c960a65c8ddfb66c2f1d260ea4a936fb478acb5e9c67f97404a4c88f1"
+        }
+      ]
+    },
+    {
+      "paper_id": "k25-begin",
+      "status": "downloaded",
+      "pdf": "papers/k25-begin.pdf",
+      "sha256": "2c5fe9633a273282eece95fe23c17283e27fa7adea3d8a34eede4771b208333a",
+      "bytes": 1893071,
+      "source_url": "https://arxiv.org/pdf/2506.12468",
+      "text": "text/k25-begin.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2506.12468",
+          "resolved_url": "https://arxiv.org/pdf/2506.12468",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1893071,
+          "sha256": "2c5fe9633a273282eece95fe23c17283e27fa7adea3d8a34eede4771b208333a"
+        }
+      ]
+    },
+    {
+      "paper_id": "k25-htfllib",
+      "status": "downloaded",
+      "pdf": "papers/k25-htfllib.pdf",
+      "sha256": "10ba98460aa00cbb33706c1158b6866fda1886e60fcde9dce167f13805bd7ed2",
+      "bytes": 1533359,
+      "source_url": "https://arxiv.org/pdf/2506.03954",
+      "text": "text/k25-htfllib.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2506.03954",
+          "resolved_url": "https://arxiv.org/pdf/2506.03954",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1533359,
+          "sha256": "10ba98460aa00cbb33706c1158b6866fda1886e60fcde9dce167f13805bd7ed2"
+        }
+      ]
+    },
+    {
+      "paper_id": "k25-computage",
+      "status": "downloaded",
+      "pdf": "papers/k25-computage.pdf",
+      "sha256": "0ce3acad36a9ea80a7614ede65f6838f35a34eea1cebfb262886ae6ffb977ce8",
+      "bytes": 4156826,
+      "source_url": "https://www.biorxiv.org/content/10.1101/2024.06.06.597715.full.pdf",
+      "text": "text/k25-computage.txt",
+      "attempts": [
+        {
+          "url": "https://openreview.net/pdf/7a52c8a332f5e6eb6af094b02525b05def41b636.pdf",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "response_excerpt": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <link href=\"https://fonts.gstatic.com\" rel=\"preconnect\" crossorigin=\"true\" />\n    <link\n      rel=\"stylesheet\"\n      href=\"https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&amp;display=swap&amp;subset=latin-ext\"\n    />\n    <link\n      rel=\"stylesheet\"\n      href=\"https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css\"\n    />\n    <link rel=\"stylesheet\" href=\"/error-styles.css\" />\n    <link rel=\"icon\" href=\"/favicon.ico\" />\n    <title>Error 403 | OpenReview</title>\n    <meta\n      name=\"description\"\n      content=\"Promoting openness in scientific communication and the peer-review process\"\n    />\n    <meta property=\"og:title\" content=\"OpenReview\" />\n    <meta property=\"og:description\" content=\"\" />\n    <meta\n      property=\"og:image\"\n      content=\"https://openreview.net/images/openreview_logo_512.png\"\n    />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:site_name\" content=\"OpenReview\" />\n    <meta name=\"twitter:card\" content=\"summary\" />\n    <meta name=\"twitter:site\" content=",
+          "retrieved_on": "2026-10-20",
+          "bytes": 12692,
+          "sha256": "a2d811e0d24af89d9bd4b19cc9e8fbc474c67ef3827648550a6560eca2a5e332"
+        },
+        {
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3711896.3737382",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "response_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-p2ecAg7HRZvmyJpe49uHHz&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{displa",
+          "retrieved_on": "2026-10-20",
+          "bytes": 5525,
+          "sha256": "884f5402e1860f707674cbb84ff7ed95b32633b00486ad3be742877259a126a9"
+        },
+        {
+          "url": "https://www.biorxiv.org/content/10.1101/2024.06.06.597715.full.pdf",
+          "resolved_url": "https://www.biorxiv.org/content/10.1101/2024.06.06.597715v2.full.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 4156826,
+          "sha256": "0ce3acad36a9ea80a7614ede65f6838f35a34eea1cebfb262886ae6ffb977ce8"
+        }
+      ]
+    },
+    {
+      "paper_id": "k25-foodpuzzle",
+      "status": "downloaded",
+      "pdf": "papers/k25-foodpuzzle.pdf",
+      "sha256": "f2a8c3ed82120a3356a592b9203dd769feb0c5a5fd4fd3cf353e3ee547944d8f",
+      "bytes": 843560,
+      "source_url": "https://arxiv.org/pdf/2409.12832",
+      "text": "text/k25-foodpuzzle.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2409.12832",
+          "resolved_url": "https://arxiv.org/pdf/2409.12832",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 843560,
+          "sha256": "f2a8c3ed82120a3356a592b9203dd769feb0c5a5fd4fd3cf353e3ee547944d8f"
+        }
+      ]
+    },
+    {
+      "paper_id": "k25-scihorizon",
+      "status": "downloaded",
+      "pdf": "papers/k25-scihorizon.pdf",
+      "sha256": "9b042818a3f7f54733981a98e408b8dbf59730f9c078cd1294d763bd24bd77bf",
+      "bytes": 1091525,
+      "source_url": "https://arxiv.org/pdf/2503.13503",
+      "text": "text/k25-scihorizon.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2503.13503",
+          "resolved_url": "https://arxiv.org/pdf/2503.13503",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1091525,
+          "sha256": "9b042818a3f7f54733981a98e408b8dbf59730f9c078cd1294d763bd24bd77bf"
+        }
+      ]
+    },
+    {
+      "paper_id": "k25-metamatbench",
+      "status": "downloaded",
+      "pdf": "papers/k25-metamatbench.pdf",
+      "sha256": "63c63e7f7cd579848b88b38d777a3c95b7e35c3a1947e09e340cf82e3782ce79",
+      "bytes": 2965868,
+      "source_url": "https://arxiv.org/pdf/2505.20299",
+      "text": "text/k25-metamatbench.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2505.20299",
+          "resolved_url": "https://arxiv.org/pdf/2505.20299",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 2965868,
+          "sha256": "63c63e7f7cd579848b88b38d777a3c95b7e35c3a1947e09e340cf82e3782ce79"
+        }
+      ]
+    },
+    {
+      "paper_id": "k25-dca",
+      "status": "downloaded",
+      "pdf": "papers/k25-dca.pdf",
+      "sha256": "57b2810648f1b7a4e7a04a4a3314d1f331c11cd318669e519a8da97993caf1dc",
+      "bytes": 1860563,
+      "source_url": "https://arxiv.org/pdf/2406.07275",
+      "text": "text/k25-dca.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2406.07275",
+          "resolved_url": "https://arxiv.org/pdf/2406.07275",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1860563,
+          "sha256": "57b2810648f1b7a4e7a04a4a3314d1f331c11cd318669e519a8da97993caf1dc"
+        }
+      ]
+    },
+    {
+      "paper_id": "k25-ebes",
+      "status": "downloaded",
+      "pdf": "papers/k25-ebes.pdf",
+      "sha256": "80b56ce66ae7f02ce5c0dfafaa5b14419eb94872f033eaa61cbbdd227d028364",
+      "bytes": 2049797,
+      "source_url": "https://arxiv.org/pdf/2410.03399",
+      "text": "text/k25-ebes.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2410.03399",
+          "resolved_url": "https://arxiv.org/pdf/2410.03399",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 2049797,
+          "sha256": "80b56ce66ae7f02ce5c0dfafaa5b14419eb94872f033eaa61cbbdd227d028364"
+        }
+      ]
+    },
+    {
+      "paper_id": "k25-pove",
+      "status": "unavailable",
+      "attempts": [
+        {
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3711896.3737430",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "response_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-LDDx0bDHlvhD47UIAJKokV&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{displa",
+          "retrieved_on": "2026-10-20",
+          "bytes": 5525,
+          "sha256": "5965046ad40f419af918a4886929d3158dc4dcd22c04727748b175e7636af081"
+        }
+      ]
+    },
+    {
+      "paper_id": "k25-rl4co",
+      "status": "downloaded",
+      "pdf": "papers/k25-rl4co.pdf",
+      "sha256": "c90280f02cb1ea5375320ec07f02b50b21611a1d8b7a22b3a65f1c31d56db10a",
+      "bytes": 6626362,
+      "source_url": "https://arxiv.org/pdf/2306.17100",
+      "text": "text/k25-rl4co.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2306.17100",
+          "resolved_url": "https://arxiv.org/pdf/2306.17100",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 6626362,
+          "sha256": "c90280f02cb1ea5375320ec07f02b50b21611a1d8b7a22b3a65f1c31d56db10a"
+        }
+      ]
+    },
+    {
+      "paper_id": "k25-linkshift",
+      "status": "downloaded",
+      "pdf": "papers/k25-linkshift.pdf",
+      "sha256": "44cfff2504ae86b0d986263cc214cc9b2f5ca39a3d25fafd905d76aee9c40844",
+      "bytes": 1322846,
+      "source_url": "https://arxiv.org/pdf/2406.08788",
+      "text": "text/k25-linkshift.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2406.08788",
+          "resolved_url": "https://arxiv.org/pdf/2406.08788",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1322846,
+          "sha256": "44cfff2504ae86b0d986263cc214cc9b2f5ca39a3d25fafd905d76aee9c40844"
+        }
+      ]
+    },
+    {
+      "paper_id": "k25-inductivekg",
+      "status": "downloaded",
+      "pdf": "papers/k25-inductivekg.pdf",
+      "sha256": "b06db36f8b36a0806db87bf40b4be4043c569ef24af3052bf63679b0892d856f",
+      "bytes": 1986516,
+      "source_url": "https://arxiv.org/pdf/2406.11898",
+      "text": "text/k25-inductivekg.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2406.11898",
+          "resolved_url": "https://arxiv.org/pdf/2406.11898",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1986516,
+          "sha256": "b06db36f8b36a0806db87bf40b4be4043c569ef24af3052bf63679b0892d856f"
+        }
+      ]
+    },
+    {
+      "paper_id": "k25-misinformation",
+      "status": "downloaded",
+      "pdf": "papers/k25-misinformation.pdf",
+      "sha256": "50681d9a180cd3a9f6afd76b50324a94457e96d65f782a75a01e8db86840a11a",
+      "bytes": 2330336,
+      "source_url": "https://arxiv.org/pdf/2411.05060",
+      "text": "text/k25-misinformation.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2411.05060",
+          "resolved_url": "https://arxiv.org/pdf/2411.05060",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 2330336,
+          "sha256": "50681d9a180cd3a9f6afd76b50324a94457e96d65f782a75a01e8db86840a11a"
+        }
+      ]
+    },
+    {
+      "paper_id": "k25-timegraph",
+      "status": "downloaded",
+      "pdf": "papers/k25-timegraph.pdf",
+      "sha256": "6d3272b9493eaace07de57f8138f51f4204e4d24d2e5265c12ae6df278734ee9",
+      "bytes": 1348547,
+      "source_url": "https://arxiv.org/pdf/2506.01361",
+      "text": "text/k25-timegraph.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2506.01361",
+          "resolved_url": "https://arxiv.org/pdf/2506.01361",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1348547,
+          "sha256": "6d3272b9493eaace07de57f8138f51f4204e4d24d2e5265c12ae6df278734ee9"
+        }
+      ]
+    },
+    {
+      "paper_id": "k25-tsfm",
+      "status": "downloaded",
+      "pdf": "papers/k25-tsfm.pdf",
+      "sha256": "ed2508e68e09cd150994fa525b90e4e2c8fa177240b6aa9234d8e3fd69660dce",
+      "bytes": 2427492,
+      "source_url": "https://arxiv.org/pdf/2410.11802",
+      "text": "text/k25-tsfm.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2410.11802",
+          "resolved_url": "https://arxiv.org/pdf/2410.11802",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 2427492,
+          "sha256": "ed2508e68e09cd150994fa525b90e4e2c8fa177240b6aa9234d8e3fd69660dce"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-nmrgym",
+      "status": "downloaded",
+      "pdf": "papers/k26-nmrgym.pdf",
+      "sha256": "65d40385f31b0a497eca011b804c0c6d05b164b22f94d46f61a3da544ec6097f",
+      "bytes": 3175755,
+      "source_url": "https://arxiv.org/pdf/2601.15763",
+      "text": "text/k26-nmrgym.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2601.15763",
+          "resolved_url": "https://arxiv.org/pdf/2601.15763",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 3175755,
+          "sha256": "65d40385f31b0a497eca011b804c0c6d05b164b22f94d46f61a3da544ec6097f"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-multitab",
+      "status": "downloaded",
+      "pdf": "papers/k26-multitab.pdf",
+      "sha256": "3f9b610291f04aa63f8ffabdc199b726de5061c6fe29a9bfbe66b8722d6c7c47",
+      "bytes": 7679295,
+      "source_url": "https://arxiv.org/pdf/2505.14312",
+      "text": "text/k26-multitab.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2505.14312",
+          "resolved_url": "https://arxiv.org/pdf/2505.14312",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 7679295,
+          "sha256": "3f9b610291f04aa63f8ffabdc199b726de5061c6fe29a9bfbe66b8722d6c7c47"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-saas",
+      "status": "unavailable",
+      "attempts": [
+        {
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3770855.3817459",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "response_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-bQzWCyKst3Dm06V6vaf6qj&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{displa",
+          "retrieved_on": "2026-10-20",
+          "bytes": 5525,
+          "sha256": "f27db1bb56466c0e55e5859ad5c353396aa194468e84139ef481838f4c9d8e3a"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-sctranslation",
+      "status": "downloaded",
+      "pdf": "papers/k26-sctranslation.pdf",
+      "sha256": "0f5d4fc8e2d5b4190a271a717d56bb4297f77480824c63dfd9d2bf72ad3d378e",
+      "bytes": 2098594,
+      "source_url": "https://arxiv.org/pdf/2606.03906",
+      "text": "text/k26-sctranslation.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2606.03906",
+          "resolved_url": "https://arxiv.org/pdf/2606.03906",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 2098594,
+          "sha256": "0f5d4fc8e2d5b4190a271a717d56bb4297f77480824c63dfd9d2bf72ad3d378e"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-speakstructure",
+      "status": "downloaded",
+      "pdf": "papers/k26-speakstructure.pdf",
+      "sha256": "70b8257dd1ed3ac8f6f5686d83ac2c69efcbf8190217f003cf58f0d88e73f077",
+      "bytes": 4807721,
+      "source_url": "https://arxiv.org/pdf/2412.14642",
+      "text": "text/k26-speakstructure.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2412.14642",
+          "resolved_url": "https://arxiv.org/pdf/2412.14642",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 4807721,
+          "sha256": "70b8257dd1ed3ac8f6f5686d83ac2c69efcbf8190217f003cf58f0d88e73f077"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-clu",
+      "status": "downloaded",
+      "pdf": "papers/k26-clu.pdf",
+      "sha256": "9b41110c001abe36bdb966c8a6782a95fd4f70c04b381c967663b6ffaa2293f9",
+      "bytes": 1230597,
+      "source_url": "https://arxiv.org/pdf/2605.29933",
+      "text": "text/k26-clu.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2605.29933",
+          "resolved_url": "https://arxiv.org/pdf/2605.29933",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1230597,
+          "sha256": "9b41110c001abe36bdb966c8a6782a95fd4f70c04b381c967663b6ffaa2293f9"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-afa",
+      "status": "downloaded",
+      "pdf": "papers/k26-afa.pdf",
+      "sha256": "1c4f49b76aedc842a1fc8886b84cb3512253fef4d70b57c9f95235bd062506f6",
+      "bytes": 4441471,
+      "source_url": "https://arxiv.org/pdf/2508.14734",
+      "text": "text/k26-afa.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2508.14734",
+          "resolved_url": "https://arxiv.org/pdf/2508.14734",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 4441471,
+          "sha256": "1c4f49b76aedc842a1fc8886b84cb3512253fef4d70b57c9f95235bd062506f6"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-fd",
+      "status": "downloaded",
+      "pdf": "papers/k26-fd.pdf",
+      "sha256": "30b5e024bec37a56f2f313441b83826c053f663df5bb0e2b3087e91f434fb14d",
+      "bytes": 18474920,
+      "source_url": "https://arxiv.org/pdf/2505.20349",
+      "text": "text/k26-fd.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2505.20349",
+          "resolved_url": "https://arxiv.org/pdf/2505.20349",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 18474920,
+          "sha256": "30b5e024bec37a56f2f313441b83826c053f663df5bb0e2b3087e91f434fb14d"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-cadel",
+      "status": "downloaded",
+      "pdf": "papers/k26-cadel.pdf",
+      "sha256": "0cb13788aa25423d539737e0692219d60b6173424ea078260db796c71833a463",
+      "bytes": 14240911,
+      "source_url": "https://arxiv.org/pdf/2605.07439",
+      "text": "text/k26-cadel.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2605.07439",
+          "resolved_url": "https://arxiv.org/pdf/2605.07439",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 14240911,
+          "sha256": "0cb13788aa25423d539737e0692219d60b6173424ea078260db796c71833a463"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-pr",
+      "status": "downloaded",
+      "pdf": "papers/k26-pr.pdf",
+      "sha256": "d9ec3f5cfbe3980c4983b1c1a9db0d8fb7a9b4ccc3e6c9fcb4e2eaa63dfe54da",
+      "bytes": 1459758,
+      "source_url": "https://wrap.warwick.ac.uk/id/eprint/201335/1/PRBench_KDD_2026.pdf",
+      "text": "text/k26-pr.txt",
+      "attempts": [
+        {
+          "url": "https://wrap.warwick.ac.uk/id/eprint/201335/1/PRBench_KDD_2026.pdf",
+          "resolved_url": "https://wrap.warwick.ac.uk/id/eprint/201335/1/PRBench_KDD_2026.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1459758,
+          "sha256": "d9ec3f5cfbe3980c4983b1c1a9db0d8fb7a9b4ccc3e6c9fcb4e2eaa63dfe54da"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-uniham",
+      "status": "unavailable",
+      "attempts": [
+        {
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3770855.3817531",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "response_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-d0VrGSzBy8ixltck0Snanm&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{displa",
+          "retrieved_on": "2026-10-20",
+          "bytes": 5525,
+          "sha256": "7e0862a21087d8fa0dcc8ca82f11eaa2cf9b5ae13b88a981e9c3877482044756"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-weaklabels",
+      "status": "downloaded",
+      "pdf": "papers/k26-weaklabels.pdf",
+      "sha256": "11ed70a6868fcb5116359c136ac14e16395265dd4c6beec8f8f73158cdf2e76c",
+      "bytes": 9781388,
+      "source_url": "https://arxiv.org/pdf/2605.26068",
+      "text": "text/k26-weaklabels.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2605.26068",
+          "resolved_url": "https://arxiv.org/pdf/2605.26068",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 9781388,
+          "sha256": "11ed70a6868fcb5116359c136ac14e16395265dd4c6beec8f8f73158cdf2e76c"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-proteinrealistic",
+      "status": "unavailable",
+      "attempts": [
+        {
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3770855.3817530",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "response_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-fd0QtyovBDaomlEP5HxgLO&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{displa",
+          "retrieved_on": "2026-10-20",
+          "bytes": 5525,
+          "sha256": "2f6a2add9f79dcd29de8e3f737476037a53ed5917af07d46ae63fca87a764f75"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-taskselection",
+      "status": "downloaded",
+      "pdf": "papers/k26-taskselection.pdf",
+      "sha256": "64f4280280e734598d22fb4b16c771cae5296a2469f0e013af6dc97fdc04363c",
+      "bytes": 5405088,
+      "source_url": "https://arxiv.org/pdf/2606.27997",
+      "text": "text/k26-taskselection.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2606.27997",
+          "resolved_url": "https://arxiv.org/pdf/2606.27997",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 5405088,
+          "sha256": "64f4280280e734598d22fb4b16c771cae5296a2469f0e013af6dc97fdc04363c"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-components",
+      "status": "downloaded",
+      "pdf": "papers/k26-components.pdf",
+      "sha256": "a517e0b4ab359b9f483a1c1c74b566c1f9e88bb0a9687baab23d63cc053d1540",
+      "bytes": 5153017,
+      "source_url": "https://arxiv.org/pdf/2605.26562",
+      "text": "text/k26-components.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2605.26562",
+          "resolved_url": "https://arxiv.org/pdf/2605.26562",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 5153017,
+          "sha256": "a517e0b4ab359b9f483a1c1c74b566c1f9e88bb0a9687baab23d63cc053d1540"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-biocuration",
+      "status": "unavailable",
+      "attempts": [
+        {
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3770855.3817556",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "response_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-EJNRcg2YdATbzkHzEmDggD&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{displa",
+          "retrieved_on": "2026-10-20",
+          "bytes": 5525,
+          "sha256": "80f69ea8107d522506a51d3b99c7d52de3a430856bb6e591f0d26cca8671b9b1"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-drift",
+      "status": "downloaded",
+      "pdf": "papers/k26-drift.pdf",
+      "sha256": "152984564c2f255f073ef3d9d070fd9a1f16193cb2e04fdf92f999fd96341430",
+      "bytes": 870520,
+      "source_url": "https://arxiv.org/pdf/2606.07789",
+      "text": "text/k26-drift.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2606.07789",
+          "resolved_url": "https://arxiv.org/pdf/2606.07789",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 870520,
+          "sha256": "152984564c2f255f073ef3d9d070fd9a1f16193cb2e04fdf92f999fd96341430"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-mac",
+      "status": "downloaded",
+      "pdf": "papers/k26-mac.pdf",
+      "sha256": "972402432720ee43e6b2ce91ea3ded3d8138d6cc832b053cd80d5d831d23eddd",
+      "bytes": 1138603,
+      "source_url": "https://arxiv.org/pdf/2603.02184",
+      "text": "text/k26-mac.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2603.02184",
+          "resolved_url": "https://arxiv.org/pdf/2603.02184",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1138603,
+          "sha256": "972402432720ee43e6b2ce91ea3ded3d8138d6cc832b053cd80d5d831d23eddd"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-uplift",
+      "status": "downloaded",
+      "pdf": "papers/k26-uplift.pdf",
+      "sha256": "807541d68c7c605adb869b76491e85ee81275bbf1c415bf0e962e62ceb9e39ac",
+      "bytes": 17491942,
+      "source_url": "https://arxiv.org/pdf/2603.20775",
+      "text": "text/k26-uplift.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2603.20775",
+          "resolved_url": "https://arxiv.org/pdf/2603.20775",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 17491942,
+          "sha256": "807541d68c7c605adb869b76491e85ee81275bbf1c415bf0e962e62ceb9e39ac"
+        }
+      ]
+    },
+    {
+      "paper_id": "n24-reactzyme",
+      "status": "downloaded",
+      "pdf": "papers/n24-reactzyme.pdf",
+      "sha256": "2d02588872ca911b7733522c2605ad2c5c9412322cb0a96b265645f07518bd9f",
+      "bytes": 2607176,
+      "source_url": "https://arxiv.org/pdf/2408.13659",
+      "text": "text/n24-reactzyme.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2408.13659",
+          "resolved_url": "https://arxiv.org/pdf/2408.13659",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 2607176,
+          "sha256": "2d02588872ca911b7733522c2605ad2c5c9412322cb0a96b265645f07518bd9f"
+        }
+      ]
+    },
+    {
+      "paper_id": "n24-care",
+      "status": "downloaded",
+      "pdf": "papers/n24-care.pdf",
+      "sha256": "5bd98349d02d5c2c7b871b713b021df769d7de50f560d56e5875061542507a2e",
+      "bytes": 4083119,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/05a7ad45d75a3082d7a3a70de8743140-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n24-care.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/05a7ad45d75a3082d7a3a70de8743140-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/05a7ad45d75a3082d7a3a70de8743140-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 4083119,
+          "sha256": "5bd98349d02d5c2c7b871b713b021df769d7de50f560d56e5875061542507a2e"
+        }
+      ]
+    },
+    {
+      "paper_id": "n24-flexmol",
+      "status": "downloaded",
+      "pdf": "papers/n24-flexmol.pdf",
+      "sha256": "87d91244618cf88f140b1ddaa5b43bae1243de30596973bd68bcd2a96006d4cd",
+      "bytes": 1626203,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/3e560698f840bceef29e9566b9bd7312-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n24-flexmol.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/3e560698f840bceef29e9566b9bd7312-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/3e560698f840bceef29e9566b9bd7312-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1626203,
+          "sha256": "87d91244618cf88f140b1ddaa5b43bae1243de30596973bd68bcd2a96006d4cd"
+        }
+      ]
+    },
+    {
+      "paper_id": "n24-welqrate",
+      "status": "downloaded",
+      "pdf": "papers/n24-welqrate.pdf",
+      "sha256": "7ed9835f385584438b9109eea269fba40c8bf251d29393298dff3d3240bf8134",
+      "bytes": 1517181,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/5f2f8305cd1c5be7e8319aea306388ce-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n24-welqrate.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/5f2f8305cd1c5be7e8319aea306388ce-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/5f2f8305cd1c5be7e8319aea306388ce-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1517181,
+          "sha256": "7ed9835f385584438b9109eea269fba40c8bf251d29393298dff3d3240bf8134"
+        }
+      ]
+    },
+    {
+      "paper_id": "n24-massspecgym",
+      "status": "downloaded",
+      "pdf": "papers/n24-massspecgym.pdf",
+      "sha256": "35693f58dad2b64526c6c8727a773df1322302176e13d01e3127880f8f5c8475",
+      "bytes": 3704196,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/c6c31413d5c53b7d1c343c1498734b0f-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n24-massspecgym.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/c6c31413d5c53b7d1c343c1498734b0f-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/c6c31413d5c53b7d1c343c1498734b0f-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 3704196,
+          "sha256": "35693f58dad2b64526c6c8727a773df1322302176e13d01e3127880f8f5c8475"
+        }
+      ]
+    },
+    {
+      "paper_id": "n24-spectra",
+      "status": "downloaded",
+      "pdf": "papers/n24-spectra.pdf",
+      "sha256": "346a550768299878554471fce9bbd1927378d1a049a33f076f75f3ecf1b1a04c",
+      "bytes": 12526496,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/e38e60b33bb2c6993e0865160cdb5cf1-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n24-spectra.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/e38e60b33bb2c6993e0865160cdb5cf1-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/e38e60b33bb2c6993e0865160cdb5cf1-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 12526496,
+          "sha256": "346a550768299878554471fce9bbd1927378d1a049a33f076f75f3ecf1b1a04c"
+        }
+      ]
+    },
+    {
+      "paper_id": "n24-moleculepuzzles",
+      "status": "downloaded",
+      "pdf": "papers/n24-moleculepuzzles.pdf",
+      "sha256": "4eed143000bcba9fbaa3e678786d626986458b59b698557d72c8a07bb73f391c",
+      "bytes": 2937766,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/f2b9e8e7a36d43ddfd3d55113d56b1e0-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n24-moleculepuzzles.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/f2b9e8e7a36d43ddfd3d55113d56b1e0-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/f2b9e8e7a36d43ddfd3d55113d56b1e0-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 2937766,
+          "sha256": "4eed143000bcba9fbaa3e678786d626986458b59b698557d72c8a07bb73f391c"
+        }
+      ]
+    },
+    {
+      "paper_id": "n24-curation",
+      "status": "downloaded",
+      "pdf": "papers/n24-curation.pdf",
+      "sha256": "a8e775d5688ace120cb22a3aef59a650ef86bd527536fa8470b8d9f891a109c3",
+      "bytes": 1000239,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/605bbd006beee7e0589a51d6a50dcae1-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n24-curation.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/605bbd006beee7e0589a51d6a50dcae1-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/605bbd006beee7e0589a51d6a50dcae1-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1000239,
+          "sha256": "a8e775d5688ace120cb22a3aef59a650ef86bd527536fa8470b8d9f891a109c3"
+        }
+      ]
+    },
+    {
+      "paper_id": "n24-gess",
+      "status": "downloaded",
+      "pdf": "papers/n24-gess.pdf",
+      "sha256": "f5b185fcf5c66344c9a9952b87b82339ded457c470684c27998aa28be86583f1",
+      "bytes": 1545210,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/a8063075b00168dc39bc81683619f1a8-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n24-gess.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/a8063075b00168dc39bc81683619f1a8-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/a8063075b00168dc39bc81683619f1a8-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1545210,
+          "sha256": "f5b185fcf5c66344c9a9952b87b82339ded457c470684c27998aa28be86583f1"
+        }
+      ]
+    },
+    {
+      "paper_id": "n24-audits",
+      "status": "downloaded",
+      "pdf": "papers/n24-audits.pdf",
+      "sha256": "9aa2b87f38617881907a84184783621d06aed2bc6d1c69d301c9a9897357e366",
+      "bytes": 13562451,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/a7ce9b6a4db012cdaac28dd48989a17d-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n24-audits.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/a7ce9b6a4db012cdaac28dd48989a17d-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/a7ce9b6a4db012cdaac28dd48989a17d-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 13562451,
+          "sha256": "9aa2b87f38617881907a84184783621d06aed2bc6d1c69d301c9a9897357e366"
+        }
+      ]
+    },
+    {
+      "paper_id": "n24-datacentric",
+      "status": "downloaded",
+      "pdf": "papers/n24-datacentric.pdf",
+      "sha256": "798e328d2a4f87037b94865d2d176d979dc8a67034d1ed56f7d850d4c62e6b75",
+      "bytes": 578970,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/ae00e5ce7142d02e30a8235ede1ec6fc-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n24-datacentric.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/ae00e5ce7142d02e30a8235ede1ec6fc-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/ae00e5ce7142d02e30a8235ede1ec6fc-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 578970,
+          "sha256": "798e328d2a4f87037b94865d2d176d979dc8a67034d1ed56f7d850d4c62e6b75"
+        }
+      ]
+    },
+    {
+      "paper_id": "n24-select",
+      "status": "downloaded",
+      "pdf": "papers/n24-select.pdf",
+      "sha256": "ff8605f4430d134d4454f97e1acb2889c6f86833304a9e14d217ecfe3ac382e5",
+      "bytes": 27182333,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/f6de5ed486b1802874fe9c70b50277e4-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n24-select.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/f6de5ed486b1802874fe9c70b50277e4-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/f6de5ed486b1802874fe9c70b50277e4-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 27182333,
+          "sha256": "ff8605f4430d134d4454f97e1acb2889c6f86833304a9e14d217ecfe3ac382e5"
+        }
+      ]
+    },
+    {
+      "paper_id": "n24-dft",
+      "status": "downloaded",
+      "pdf": "papers/n24-dft.pdf",
+      "sha256": "b04ac3eaa59feaf42bea31c207c9d084399640bb80711532e82407739790eef6",
+      "bytes": 1637557,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/40d45b1e23d00d5895e65778e85cf8ee-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n24-dft.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/40d45b1e23d00d5895e65778e85cf8ee-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/40d45b1e23d00d5895e65778e85cf8ee-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1637557,
+          "sha256": "b04ac3eaa59feaf42bea31c207c9d084399640bb80711532e82407739790eef6"
+        }
+      ]
+    },
+    {
+      "paper_id": "n25-chemix",
+      "status": "downloaded",
+      "pdf": "papers/n25-chemix.pdf",
+      "sha256": "0ec1e191ea8e926fa51949db897960b779b01ddb478eda07f7046b30caeec4d1",
+      "bytes": 1448556,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/2f803abdcad9de35b45d5a656dade45c-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n25-chemix.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/2f803abdcad9de35b45d5a656dade45c-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/2f803abdcad9de35b45d5a656dade45c-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1448556,
+          "sha256": "0ec1e191ea8e926fa51949db897960b779b01ddb478eda07f7046b30caeec4d1"
+        }
+      ]
+    },
+    {
+      "paper_id": "n25-chempile",
+      "status": "downloaded",
+      "pdf": "papers/n25-chempile.pdf",
+      "sha256": "0403e7421f6436aea720612206901bd361051db0260e04f86763882fd45428a7",
+      "bytes": 8787079,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/505dc6a661fe8dcffaac4c3621eea69d-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n25-chempile.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/505dc6a661fe8dcffaac4c3621eea69d-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/505dc6a661fe8dcffaac4c3621eea69d-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 8787079,
+          "sha256": "0403e7421f6436aea720612206901bd361051db0260e04f86763882fd45428a7"
+        }
+      ]
+    },
+    {
+      "paper_id": "n25-chemx",
+      "status": "downloaded",
+      "pdf": "papers/n25-chemx.pdf",
+      "sha256": "6cee74ff55e3773ff0cb4975114502e91ced0a8d36bdde825570ae014270a70c",
+      "bytes": 3867956,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9e08a1db869a9646418e3371b24c6ae6-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n25-chemx.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9e08a1db869a9646418e3371b24c6ae6-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9e08a1db869a9646418e3371b24c6ae6-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 3867956,
+          "sha256": "6cee74ff55e3773ff0cb4975114502e91ced0a8d36bdde825570ae014270a70c"
+        }
+      ]
+    },
+    {
+      "paper_id": "n25-boom",
+      "status": "downloaded",
+      "pdf": "papers/n25-boom.pdf",
+      "sha256": "26f9b4ca8dd1b8a3589bed22b2e0521e2a95f63de57a0640b272c5d7a2352991",
+      "bytes": 17603438,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/b94263f7f98c9766ea9a09761ddd88ee-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n25-boom.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/b94263f7f98c9766ea9a09761ddd88ee-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/b94263f7f98c9766ea9a09761ddd88ee-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 17603438,
+          "sha256": "26f9b4ca8dd1b8a3589bed22b2e0521e2a95f63de57a0640b272c5d7a2352991"
+        }
+      ]
+    },
+    {
+      "paper_id": "n25-roft",
+      "status": "downloaded",
+      "pdf": "papers/n25-roft.pdf",
+      "sha256": "239793519a0222f42aade7470b39767011513b61556c6f7e2ca37fe86b025c0a",
+      "bytes": 811064,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/013acf7d59f4333131fc8581e86148b1-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n25-roft.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/013acf7d59f4333131fc8581e86148b1-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/013acf7d59f4333131fc8581e86148b1-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 811064,
+          "sha256": "239793519a0222f42aade7470b39767011513b61556c6f7e2ca37fe86b025c0a"
+        }
+      ]
+    },
+    {
+      "paper_id": "n25-modulm",
+      "status": "downloaded",
+      "pdf": "papers/n25-modulm.pdf",
+      "sha256": "443c56ec39fb676cabed9c825888972f094477f65c9ccd1433afc020de2e6ac6",
+      "bytes": 469419,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9d71f47d4f1d240b02bb173936e5bf01-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n25-modulm.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9d71f47d4f1d240b02bb173936e5bf01-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9d71f47d4f1d240b02bb173936e5bf01-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 469419,
+          "sha256": "443c56ec39fb676cabed9c825888972f094477f65c9ccd1433afc020de2e6ac6"
+        }
+      ]
+    },
+    {
+      "paper_id": "n25-fg",
+      "status": "downloaded",
+      "pdf": "papers/n25-fg.pdf",
+      "sha256": "7de4334e56b3b8b8d65a93a08555d7821c8f4919b7742888abe179fa44425ca3",
+      "bytes": 6160355,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/bcaa0c3f644f580857a56f38e305867e-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n25-fg.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/bcaa0c3f644f580857a56f38e305867e-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/bcaa0c3f644f580857a56f38e305867e-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 6160355,
+          "sha256": "7de4334e56b3b8b8d65a93a08555d7821c8f4919b7742888abe179fa44425ca3"
+        }
+      ]
+    },
+    {
+      "paper_id": "n25-molvision",
+      "status": "downloaded",
+      "pdf": "papers/n25-molvision.pdf",
+      "sha256": "62eaafecc2d101a7f77b7c89b8c513a9268c7a43c3fda564593bb994351197dc",
+      "bytes": 3319487,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/c52d78d2776e3760405f054afbeb525f-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n25-molvision.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/c52d78d2776e3760405f054afbeb525f-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/c52d78d2776e3760405f054afbeb525f-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 3319487,
+          "sha256": "62eaafecc2d101a7f77b7c89b8c513a9268c7a43c3fda564593bb994351197dc"
+        }
+      ]
+    },
+    {
+      "paper_id": "n25-edbench",
+      "status": "downloaded",
+      "pdf": "papers/n25-edbench.pdf",
+      "sha256": "9df7b14dd737287f29b05abb8971a2b5efa465e75012ce44e757c3d167275b45",
+      "bytes": 8873669,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/d412ba5c76774f921762644e82515da3-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n25-edbench.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/d412ba5c76774f921762644e82515da3-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/d412ba5c76774f921762644e82515da3-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 8873669,
+          "sha256": "9df7b14dd737287f29b05abb8971a2b5efa465e75012ce44e757c3d167275b45"
+        }
+      ]
+    },
+    {
+      "paper_id": "n25-operations",
+      "status": "downloaded",
+      "pdf": "papers/n25-operations.pdf",
+      "sha256": "bc1d3ea056b87612c9c7276e39b2f837e152e44c3683a640eac6b7426283f379",
+      "bytes": 2906646,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/e0ed6d6c2ec6df05f929b8a67b78513a-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n25-operations.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/e0ed6d6c2ec6df05f929b8a67b78513a-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/e0ed6d6c2ec6df05f929b8a67b78513a-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 2906646,
+          "sha256": "bc1d3ea056b87612c9c7276e39b2f837e152e44c3683a640eac6b7426283f379"
+        }
+      ]
+    },
+    {
+      "paper_id": "n25-uncertainty",
+      "status": "downloaded",
+      "pdf": "papers/n25-uncertainty.pdf",
+      "sha256": "6069b9e8ded49310ceb2dc5fe8e6e4ffd85349b77c9780925ce9c12ba87cf20d",
+      "bytes": 1463267,
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9e27bc7e3946992376f2a0c401a2e6db-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "text": "text/n25-uncertainty.txt",
+      "attempts": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9e27bc7e3946992376f2a0c401a2e6db-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9e27bc7e3946992376f2a0c401a2e6db-Paper-Datasets_and_Benchmarks_Track.pdf",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1463267,
+          "sha256": "6069b9e8ded49310ceb2dc5fe8e6e4ffd85349b77c9780925ce9c12ba87cf20d"
+        }
+      ]
+    },
+    {
+      "paper_id": "r24-orderly",
+      "status": "unavailable",
+      "attempts": [
+        {
+          "url": "https://europepmc.org/articles/PMC11094788?pdf=render",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "response_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-miiebcYsWTJYgNGpFGENh3&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{displa",
+          "retrieved_on": "2026-10-20",
+          "bytes": 5543,
+          "sha256": "b12f7dd520d520ded56b2b40a69d1be8369a122d7eaf5a652701f98c436fca9e"
+        },
+        {
+          "url": "https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.4c00292",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "response_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-JYjmplH6ZinkDt6R08cD5k&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{displa",
+          "retrieved_on": "2026-10-20",
+          "bytes": 5487,
+          "sha256": "b5fc14e9b8b5e1deb0cdd465ea36c9bc28629ef2efe389b9a48170fae1449e77"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11094788/pdf/ci4c00292.pdf",
+          "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11094788/pdf/ci4c00292.pdf",
+          "status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "retrieved_on": "2026-10-20",
+          "bytes": 21360,
+          "sha256": "de4374d0156274185a9797e086448cf699f5d1010c5451c5535f46f0363d01f3"
+        }
+      ]
+    },
+    {
+      "paper_id": "r24-chemprop",
+      "status": "unavailable",
+      "attempts": [
+        {
+          "url": "https://europepmc.org/articles/PMC10777403?pdf=render",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "response_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-K1xgjabsL954J3RzjcVDBB&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{displa",
+          "retrieved_on": "2026-10-20",
+          "bytes": 5543,
+          "sha256": "a2e8319b3f3f564fc2d2560c2a8a33cb9f699131670bd2a34dbb5ac37ba5f9f3"
+        },
+        {
+          "url": "https://chemrxiv.org/engage/api-gateway/chemrxiv/assets/orp/resource/item/64d1f13d4a3f7d0c0dcd836b/original/chemprop-a-machine-learning-package-for-chemical-property-prediction.pdf",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "response_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-QTesgR96gJMnJJZ79gd8iN&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{displa",
+          "retrieved_on": "2026-10-20",
+          "bytes": 6082,
+          "sha256": "3027f35693b7dad1dca75e947e3233e7ca8cce124ade9013f60186a0f3630c1a"
+        },
+        {
+          "url": "https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.3c01250",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "response_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-sTXpc7b2OexKfTfkAMdiMb&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{displa",
+          "retrieved_on": "2026-10-20",
+          "bytes": 5487,
+          "sha256": "fc3ebaa773d795435b49d3dc94a087c7a37c3bf4069575c89f4ac67bb56f42a3"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10777403/pdf/ci3c01250.pdf",
+          "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10777403/pdf/ci3c01250.pdf",
+          "status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "retrieved_on": "2026-10-20",
+          "bytes": 21361,
+          "sha256": "38ca9fd32acbaec70b7122645bbffa5732d2f9d03f3f00a13ad14624c0236f4d"
+        }
+      ]
+    },
+    {
+      "paper_id": "r24-mechfinder",
+      "status": "downloaded",
+      "pdf": "papers/r24-mechfinder.pdf",
+      "sha256": "77d865992ba201af16023338515d6e322b004335e2bcfe432d45b2b2895ce68e",
+      "bytes": 2865497,
+      "source_url": "https://www.nature.com/articles/s41597-024-03709-y.pdf",
+      "text": "text/r24-mechfinder.txt",
+      "attempts": [
+        {
+          "url": "https://www.nature.com/articles/s41597-024-03709-y.pdf",
+          "resolved_url": "https://www.nature.com/articles/s41597-024-03709-y.pdf?error=cookies_not_supported&code=e698b99d-44dc-4d0e-bd38-19dcbd6a0b41",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 2865497,
+          "sha256": "77d865992ba201af16023338515d6e322b004335e2bcfe432d45b2b2895ce68e"
+        }
+      ]
+    },
+    {
+      "paper_id": "r24-hitea",
+      "status": "downloaded",
+      "pdf": "papers/r24-hitea.pdf",
+      "sha256": "df2e63064de13069d28d440b567b2f8cf30b0b456c91a9b441fe1ea13662b0cc",
+      "bytes": 1922234,
+      "source_url": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/d6e60ce7-5387-4132-bc5e-2e85f0e98a31/content",
+      "text": "text/r24-hitea.txt",
+      "attempts": [
+        {
+          "url": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/d6e60ce7-5387-4132-bc5e-2e85f0e98a31/content",
+          "resolved_url": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/d6e60ce7-5387-4132-bc5e-2e85f0e98a31/content",
+          "status": 200,
+          "content_type": "application/pdf;charset=UTF-8",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1922234,
+          "sha256": "df2e63064de13069d28d440b567b2f8cf30b0b456c91a9b441fe1ea13662b0cc"
+        }
+      ]
+    },
+    {
+      "paper_id": "r24-misato",
+      "status": "downloaded",
+      "pdf": "papers/r24-misato.pdf",
+      "sha256": "37544a2442a9d7452035e860153f33df4b5008aee0fba141308bab42581b1000",
+      "bytes": 3254345,
+      "source_url": "https://www.nature.com/articles/s43588-024-00627-2.pdf",
+      "text": "text/r24-misato.txt",
+      "attempts": [
+        {
+          "url": "https://europepmc.org/articles/PMC11136668?pdf=render",
+          "status": 403,
+          "error": "HTTP Error 403: Forbidden",
+          "response_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-XNg2BhL9RilY5SlxSbMsGw&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{displa",
+          "retrieved_on": "2026-10-20",
+          "bytes": 5543,
+          "sha256": "3d31b3405e84ecfb04be802b8e74b3ad7c7377763d3776c64588f5a1902a1e81"
+        },
+        {
+          "url": "https://www.nature.com/articles/s43588-024-00627-2.pdf",
+          "resolved_url": "https://www.nature.com/articles/s43588-024-00627-2.pdf?error=cookies_not_supported&code=773f7fcd-21f6-4ef0-a86c-ff2668c910ad",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 3254345,
+          "sha256": "37544a2442a9d7452035e860153f33df4b5008aee0fba141308bab42581b1000"
+        }
+      ]
+    },
+    {
+      "paper_id": "r25-flower",
+      "status": "downloaded",
+      "pdf": "papers/r25-flower.pdf",
+      "sha256": "3c05cf8cd052c95427d80cf0a7fa8f9ca36316835c322a629906042effdde2a2",
+      "bytes": 5407056,
+      "source_url": "https://arxiv.org/pdf/2502.12979",
+      "text": "text/r25-flower.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2502.12979",
+          "resolved_url": "https://arxiv.org/pdf/2502.12979",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 5407056,
+          "sha256": "3c05cf8cd052c95427d80cf0a7fa8f9ca36316835c322a629906042effdde2a2"
+        }
+      ]
+    },
+    {
+      "paper_id": "r25-omebench",
+      "status": "downloaded",
+      "pdf": "papers/r25-omebench.pdf",
+      "sha256": "7e0d4ffee05c7040e19380aa7822c57de4f0315ecf5a018f6878d141cf24dd64",
+      "bytes": 2868663,
+      "source_url": "https://arxiv.org/pdf/2510.07731",
+      "text": "text/r25-omebench.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2510.07731",
+          "resolved_url": "https://arxiv.org/pdf/2510.07731",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 2868663,
+          "sha256": "7e0d4ffee05c7040e19380aa7822c57de4f0315ecf5a018f6878d141cf24dd64"
+        }
+      ]
+    },
+    {
+      "paper_id": "r26-frea",
+      "status": "downloaded",
+      "pdf": "papers/r26-frea.pdf",
+      "sha256": "b52b9e95079db6331af67717b78e3cb028c45963bb4a24bf38036fd1c9155349",
+      "bytes": 415577,
+      "source_url": "https://arxiv.org/pdf/2610.06614",
+      "text": "text/r26-frea.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2610.06614",
+          "resolved_url": "https://arxiv.org/pdf/2610.06614",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 415577,
+          "sha256": "b52b9e95079db6331af67717b78e3cb028c45963bb4a24bf38036fd1c9155349"
+        }
+      ]
+    },
+    {
+      "paper_id": "r26-tsbench",
+      "status": "downloaded",
+      "pdf": "papers/r26-tsbench.pdf",
+      "sha256": "199d2945c0dfa18424df16add78a892ac45b0e450e9de47377d6cbe47e7d969b",
+      "bytes": 2404499,
+      "source_url": "https://arxiv.org/pdf/2609.08503",
+      "text": "text/r26-tsbench.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2609.08503",
+          "resolved_url": "https://arxiv.org/pdf/2609.08503",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 2404499,
+          "sha256": "199d2945c0dfa18424df16add78a892ac45b0e450e9de47377d6cbe47e7d969b"
+        }
+      ]
+    },
+    {
+      "paper_id": "r26-fukuyama",
+      "status": "downloaded",
+      "pdf": "papers/r26-fukuyama.pdf",
+      "sha256": "58a4242e5d7f51cc133ca6be9ca620a5eefb41689b4723bfb0a16c8023c8c236",
+      "bytes": 2372258,
+      "source_url": "https://arxiv.org/pdf/2607.12771",
+      "text": "text/r26-fukuyama.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2607.12771",
+          "resolved_url": "https://arxiv.org/pdf/2607.12771",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 2372258,
+          "sha256": "58a4242e5d7f51cc133ca6be9ca620a5eefb41689b4723bfb0a16c8023c8c236"
+        }
+      ]
+    },
+    {
+      "paper_id": "r26-mechbench",
+      "status": "downloaded",
+      "pdf": "papers/r26-mechbench.pdf",
+      "sha256": "5d07170787da8ff405b0a3f11b40336c2ebb441322f0c919dd2dbebef83a6157",
+      "bytes": 1664550,
+      "source_url": "https://arxiv.org/pdf/2609.33608",
+      "text": "text/r26-mechbench.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2609.33608",
+          "resolved_url": "https://arxiv.org/pdf/2609.33608",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1664550,
+          "sha256": "5d07170787da8ff405b0a3f11b40336c2ebb441322f0c919dd2dbebef83a6157"
+        }
+      ]
+    },
+    {
+      "paper_id": "r26-mechfind",
+      "status": "downloaded",
+      "pdf": "papers/r26-mechfind.pdf",
+      "sha256": "e2b0318ba0835d3c2a178ce5723f0ac32d6aed883a86a042fc7d314267c74b2c",
+      "bytes": 1748831,
+      "source_url": "https://www.nature.com/articles/s41467-026-71957-0.pdf",
+      "text": "text/r26-mechfind.txt",
+      "attempts": [
+        {
+          "url": "https://www.nature.com/articles/s41467-026-71957-0.pdf",
+          "resolved_url": "https://www.nature.com/articles/s41467-026-71957-0.pdf?error=cookies_not_supported&code=e869a2f7-2410-401f-90f4-f0de6393be5d",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1748831,
+          "sha256": "e2b0318ba0835d3c2a178ce5723f0ac32d6aed883a86a042fc7d314267c74b2c"
+        }
+      ]
+    },
+    {
+      "paper_id": "r26-omat",
+      "status": "downloaded",
+      "pdf": "papers/r26-omat.pdf",
+      "sha256": "3bbcd0bb5ced6be069e22c02c5a957ee7178cc4392330b367d50056b6a5ac0cf",
+      "bytes": 3018420,
+      "source_url": "https://arxiv.org/pdf/2410.12771",
+      "text": "text/r26-omat.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2410.12771",
+          "resolved_url": "https://arxiv.org/pdf/2410.12771",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 3018420,
+          "sha256": "3bbcd0bb5ced6be069e22c02c5a957ee7178cc4392330b367d50056b6a5ac0cf"
+        }
+      ]
+    },
+    {
+      "paper_id": "r26-synrxn",
+      "status": "downloaded",
+      "pdf": "papers/r26-synrxn.pdf",
+      "sha256": "800add54a8e7730aa0b146c32e7b941ef7348c33bbd5fa55c961d6fdef727204",
+      "bytes": 1986259,
+      "source_url": "https://arxiv.org/pdf/2601.01943",
+      "text": "text/r26-synrxn.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2601.01943",
+          "resolved_url": "https://arxiv.org/pdf/2601.01943",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1986259,
+          "sha256": "800add54a8e7730aa0b146c32e7b941ef7348c33bbd5fa55c961d6fdef727204"
+        }
+      ]
+    },
+    {
+      "paper_id": "r26-venusrx",
+      "status": "downloaded",
+      "pdf": "papers/r26-venusrx.pdf",
+      "sha256": "835468715b3d25ac29d80531fdddb16366d28d8424e048f89335816f66690dcc",
+      "bytes": 562727,
+      "source_url": "https://arxiv.org/pdf/2610.11694",
+      "text": "text/r26-venusrx.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2610.11694",
+          "resolved_url": "https://arxiv.org/pdf/2610.11694",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 562727,
+          "sha256": "835468715b3d25ac29d80531fdddb16366d28d8424e048f89335816f66690dcc"
+        }
+      ]
+    },
+    {
+      "paper_id": "r26-multipleanswers",
+      "status": "downloaded",
+      "pdf": "papers/r26-multipleanswers.pdf",
+      "sha256": "335497e9b99e58a2e9998b33c0a3516d63998d4169cc7bf971f2e408ffe88c58",
+      "bytes": 10663158,
+      "source_url": "https://arxiv.org/pdf/2602.03554",
+      "text": "text/r26-multipleanswers.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2602.03554",
+          "resolved_url": "https://arxiv.org/pdf/2602.03554",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 10663158,
+          "sha256": "335497e9b99e58a2e9998b33c0a3516d63998d4169cc7bf971f2e408ffe88c58"
+        }
+      ]
+    },
+    {
+      "paper_id": "r24-syntheseus",
+      "status": "downloaded",
+      "pdf": "papers/r24-syntheseus.pdf",
+      "sha256": "b71bc8a174b79e0bb28a01e0df9fc6388073cb873c238e3c1af607ba1ebdb162",
+      "bytes": 1208005,
+      "source_url": "https://arxiv.org/pdf/2310.19796",
+      "text": "text/r24-syntheseus.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2310.19796",
+          "resolved_url": "https://arxiv.org/pdf/2310.19796",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 1208005,
+          "sha256": "b71bc8a174b79e0bb28a01e0df9fc6388073cb873c238e3c1af607ba1ebdb162"
+        }
+      ]
+    },
+    {
+      "paper_id": "k26-tsarena",
+      "status": "downloaded",
+      "pdf": "papers/k26-tsarena.pdf",
+      "sha256": "a9ad29a295f7160ebdad9365f64ce9cd97f086ced6859553860964a141e8e729",
+      "bytes": 2099221,
+      "source_url": "https://arxiv.org/pdf/2512.20761",
+      "text": "text/k26-tsarena.txt",
+      "attempts": [
+        {
+          "url": "https://arxiv.org/pdf/2512.20761",
+          "resolved_url": "https://arxiv.org/pdf/2512.20761",
+          "status": 200,
+          "content_type": "application/pdf",
+          "retrieved_on": "2026-10-20",
+          "bytes": 2099221,
+          "sha256": "a9ad29a295f7160ebdad9365f64ce9cd97f086ced6859553860964a141e8e729"
+        }
+      ]
+    },
+    {
+      "paper_id": "r26-bh-ood",
+      "status": "unavailable",
+      "attempts": [],
+      "note": "Author-deposited full text XML retrieved; no PDF URL attempted."
+    }
+  ]
+}

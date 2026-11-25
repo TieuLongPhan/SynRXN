@@ -1,0 +1,13 @@
+{
+  "source_id": "C14",
+  "name": "cleaned_uniprot_rhea.tsv",
+  "bytes": 87396123,
+  "checksum": "md5:669bdd627c946114e87f06bffb4f33d9",
+  "url": "https://zenodo.org/api/records/11494913/files/cleaned_uniprot_rhea.tsv/content",
+  "path": "Data/raw/synrxn2/C14/cleaned_uniprot_rhea.tsv",
+  "bytes_observed": 2209528,
+  "sha256": "2ea3cd4592a404c58fd2431a4321d3b24cbb2ab9639f3e74653ff439916fc65b",
+  "md5": "e413c2616c01f5f6b861a1e737566cf5",
+  "status": "unavailable",
+  "error": "source byte size differs from the pinned release"
+}

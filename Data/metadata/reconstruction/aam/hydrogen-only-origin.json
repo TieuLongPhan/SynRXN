@@ -1,0 +1,15 @@
+{
+  "groups": 6,
+  "source_records": 12,
+  "dataset": "flower",
+  "role": "train",
+  "original_source_indices_one_based": true,
+  "raw_pathway_groups_verified": true,
+  "files": {
+    "hydrogen-only-origin.rst": "d67b123f6da9c1f27b0d1052220b37fb2da6009d113b31ffbe374d773ca7e007",
+    "hydrogen-only-indices.csv": "81cb7b30b70a5a55af11abfa0a70d9ecb9ff3becbf5faf86e62e7ec2243bdefa",
+    "hydrogen-only-pathways.jsonl.gz": "713b8b02ac1ccffda60d922e0c37544af6061b6169823f31d21a0bfec7fe51a5"
+  },
+  "heavy_atom_aam_eligible_groups": 6,
+  "hydrogen_only_review_exclusions": 0
+}

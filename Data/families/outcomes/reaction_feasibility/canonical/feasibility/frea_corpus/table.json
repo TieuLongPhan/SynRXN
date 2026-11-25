@@ -1,0 +1,77 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "outcomes",
+  "format": "csv.gz",
+  "key": "feasibility/frea_corpus",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "feasibility/frea_corpus",
+    "legacy_field_eligible_rows": {
+      "feasibility": 14115057
+    },
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 14115057
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "frea_corpus_data_grant"
+    ],
+    "expected_bytes": 1294268197,
+    "expected_rows": 14115057,
+    "expected_sha256": "b7128dd8911c51f55b6740504710e621f736997a1b9c8a42594d7540ca25d8d3",
+    "format": "csv.gz",
+    "key": "feasibility/frea_corpus",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/feasibility/frea_corpus.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 14115057,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "frea2026"
+    ],
+    "path": "Data/feasibility/frea_corpus.csv.gz",
+    "sha256": "b7128dd8911c51f55b6740504710e621f736997a1b9c8a42594d7540ca25d8d3",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "frea2026"
+    ],
+    "counting_unit": "source-table row",
+    "key": "feasibility/frea_corpus",
+    "legacy_field_eligible_rows": {
+      "feasibility": 14115057
+    },
+    "namespace": "canonical",
+    "path": "Data/feasibility/frea_corpus.csv.gz",
+    "role": "primary",
+    "rows": 14115057,
+    "sha256": "b7128dd8911c51f55b6740504710e621f736997a1b9c8a42594d7540ca25d8d3",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "FREA generated-label supervision"
+  },
+  "stored_path": "Data/families/outcomes/reaction_feasibility/canonical/feasibility/frea_corpus/data.csv.gz",
+  "task_id": "reaction_feasibility",
+  "title": "FREA generated-label supervision"
+}

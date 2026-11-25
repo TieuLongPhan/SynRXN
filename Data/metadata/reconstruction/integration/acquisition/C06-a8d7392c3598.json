@@ -1,0 +1,11 @@
+{
+  "source_id": "C06",
+  "name": "kaggle_data/catechol-benchmark-metadata.json",
+  "bytes": 33805,
+  "url": "https://raw.githubusercontent.com/jpfolch/catechol_solvent_selection/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727/kaggle_data/catechol-benchmark-metadata.json",
+  "path": "Data/raw/synrxn2/C06/kaggle_data/catechol-benchmark-metadata.json",
+  "bytes_observed": 33805,
+  "sha256": "8addca413020ae31a89db92b05c5b8e09046515c8ae4f8b1ff29835517f707d2",
+  "md5": "a78a4c1a301d12c5e6e5c17c138cd619",
+  "status": "verified"
+}

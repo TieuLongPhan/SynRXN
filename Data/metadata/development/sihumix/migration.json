@@ -1,0 +1,28 @@
+{
+  "active_table": "Data/tables/development/sihumix/aam.csv.gz",
+  "active_table_sha256": "a50cab432354906184432b2c890db4d2188abab5bcdbab19ce2e584a06d65d3b",
+  "all_retained_fields_except_dataset_id_unchanged": true,
+  "by_source": {
+    "ChemRecon": 309,
+    "RDT-generated": 4230,
+    "User-curated": 3994
+  },
+  "dataset_key": "aam/sihumix",
+  "history_archive": "archive/pilots/sihumix_aam/2026-10-26-retired-exports",
+  "hydrogen_balance": {
+    "balanced": 4915,
+    "imbalanced": 3618
+  },
+  "hydrogen_completion": false,
+  "new_id_prefix": "sihumix:",
+  "previous_membership_set_preserved": true,
+  "proton_additions": 0,
+  "retired_metadata_columns": [
+    "reference_candidate",
+    "reference_representative",
+    "review_flags",
+    "reference_exclusion_reasons",
+    "r0_recovery"
+  ],
+  "rows": 8533
+}

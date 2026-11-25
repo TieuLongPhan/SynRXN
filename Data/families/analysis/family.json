@@ -1,0 +1,49 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "family": {
+    "counting_units": [
+      "reference record; task views can overlap native experiments"
+    ],
+    "data_counting_policy": "Deduplicated by namespace/source-table key within this family only; row units can differ, source views can overlap and rows are not unique reactions. Inspect each binding's counting_unit and physical configuration counts.",
+    "data_status": "local task references present; qualification varies",
+    "future_task_ids": [],
+    "gaps": "Native NMR trajectories and low-field yield-time profiles are acquired. Integration targets are derived analytical areas, not independent absolute concentrations. Broad MS/IR/multimodal structures and prospective endpoints need further references.",
+    "id": "analysis",
+    "overlapping_view_count": 0,
+    "primary_source_rows": 6277,
+    "primary_table_count": 7,
+    "release_eligible_table_count": 7,
+    "scope": "Infer identities and compositions from spectra, chromatograms or images; infer reaction progress, endpoints and anomalies from time-dependent signals.",
+    "task_ids": [
+      "analytical_interpretation",
+      "reaction_progress_monitoring"
+    ],
+    "title": "Analytical characterization and reaction monitoring"
+  },
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 7,
+    "data_links": 7,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 7,
+    "stored_rows_across_unique_views": 6277,
+    "task_table_bindings": 7,
+    "tasks": 2,
+    "unique_table_views": 7
+  },
+  "tasks": [
+    {
+      "id": "analytical_interpretation",
+      "metadata": "analytical_interpretation/task.json",
+      "title": "Reaction-mixture analytical interpretation"
+    },
+    {
+      "id": "reaction_progress_monitoring",
+      "metadata": "reaction_progress_monitoring/task.json",
+      "title": "Reaction progress, endpoint and anomaly monitoring"
+    }
+  ]
+}

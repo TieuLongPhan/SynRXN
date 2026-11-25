@@ -6,7 +6,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
-from .catalog import Task
+from .catalog import DatasetCatalog, Task
+from .release import artifact_keys, artifact_path
 
 
 @dataclass(frozen=True)
@@ -20,17 +21,16 @@ class LocalSource:
 
     def available_names(self, task: str | Task) -> list[str]:
         normalized = task if isinstance(task, Task) else Task.normalize(task)
-        task_dir = self.data_dir / normalized.value
-        if not task_dir.is_dir():
-            return []
         names = set()
-        for path in task_dir.iterdir():
-            if not path.is_file():
-                continue
-            if path.name.endswith(".csv.gz"):
-                names.add(path.name[: -len(".csv.gz")])
-            elif path.name.endswith(".csv"):
-                names.add(path.name[: -len(".csv")])
+        for key in artifact_keys(self.data_dir, normalized.value):
+            parts = Path(key).parts
+            if len(parts) == 2 and parts[1].endswith((".csv.gz", ".csv")):
+                names.add(parts[1].removesuffix(".gz").removesuffix(".csv"))
+        metadata = artifact_path(self.data_dir, "metadata.yaml")
+        if (self.data_dir / "families/index.json").is_file() and metadata.is_file():
+            for item in DatasetCatalog(metadata).list(normalized):
+                if (item.alias_of or not item.is_redistributable) and self.resolve(normalized, item.name):
+                    names.add(item.name)
         return sorted(names)
 
     def resolve(self, task: str | Task, name: str) -> Optional[Path]:
@@ -41,7 +41,7 @@ class LocalSource:
                 clean_name = clean_name[: -len(suffix)]
                 break
         for suffix in (".csv.gz", ".csv"):
-            path = self.data_dir / normalized.value / f"{clean_name}{suffix}"
+            path = artifact_path(self.data_dir, f"{normalized.value}/{clean_name}{suffix}")
             if path.is_file():
                 return path
         return None

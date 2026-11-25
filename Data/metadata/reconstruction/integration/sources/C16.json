@@ -1,0 +1,424 @@
+{
+  "id": "C16",
+  "name": "OrgAIcat / iSynth",
+  "priority": "2 Targeted expansion",
+  "survey_license_note": "Official repository claims MIT. Confirm data provenance and source-specific terms.",
+  "paper_urls": [
+    "https://github.com/DeepSynthesis/orgaicat"
+  ],
+  "data_urls": [
+    "https://github.com/DeepSynthesis/orgaicat/tree/main/data"
+  ],
+  "project_urls": [
+    "https://github.com/DeepSynthesis/orgaicat"
+  ],
+  "license_urls": [],
+  "license_verified": false,
+  "files": [],
+  "requests": [
+    {
+      "url": "https://api.github.com/repos/DeepSynthesis/orgaicat",
+      "status": 200,
+      "sha256": "b26b4a902929766bacd81d7c100317e995a00924cfced3ad198cd5a8039fb887",
+      "bytes": 6508,
+      "retrieved_at": "2026-10-20T15:34:59.885679+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/commits/main",
+      "status": 200,
+      "sha256": "289c2e18ac834dd407e7bf6cc8bfd1045570da3efef59e4ed72f181a0ac17d78",
+      "bytes": 5681,
+      "retrieved_at": "2026-10-20T15:45:37.674790+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/trees/9ba285de6e2c5dfe0373e2815b90cd8b7a166632?recursive=1",
+      "status": 200,
+      "sha256": "865c00e27dce64b69fff5614de08791d11c91bc784019bbf801a90ab9fbc5e84",
+      "bytes": 12340,
+      "retrieved_at": "2026-10-20T15:46:52.438114+00:00"
+    }
+  ],
+  "github": {
+    "repository": "DeepSynthesis/orgaicat",
+    "commit": "9ba285de6e2c5dfe0373e2815b90cd8b7a166632",
+    "tree_sha": "9ba285de6e2c5dfe0373e2815b90cd8b7a166632",
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "tree": [
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e15106e38fcfbb5539a05bafed10272160ba69ed",
+        "size": 4562,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/e15106e38fcfbb5539a05bafed10272160ba69ed"
+      },
+      {
+        "path": "LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "244b915d156523922c13d94ede4977f3cd96c815",
+        "size": 1077,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/244b915d156523922c13d94ede4977f3cd96c815"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "87a29127f015f02260c33d8420d0b6957c635263",
+        "size": 6628,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/87a29127f015f02260c33d8420d0b6957c635263"
+      },
+      {
+        "path": "data",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f03b0f35567147cf5c6d1d6688f6152db5752899",
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/trees/f03b0f35567147cf5c6d1d6688f6152db5752899"
+      },
+      {
+        "path": "data/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "26fc379d05b2ec91d3624e3274854ab986b63fc7",
+        "size": 1419,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/26fc379d05b2ec91d3624e3274854ab986b63fc7"
+      },
+      {
+        "path": "data/aldol_reaction-dataset.xlsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "94c277b2350af6e62847e4af596390a60a0db70b",
+        "size": 684281,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/94c277b2350af6e62847e4af596390a60a0db70b"
+      },
+      {
+        "path": "data/mannich_reaction_Denmark.xlsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a71c95f8d2ab01de0a5cad843a6e5c2f98307b29",
+        "size": 6528,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/a71c95f8d2ab01de0a5cad843a6e5c2f98307b29"
+      },
+      {
+        "path": "data/michael_addition-dataset.xlsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3043963de13b8c7086958253decf2fe282447302",
+        "size": 502445,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/3043963de13b8c7086958253decf2fe282447302"
+      },
+      {
+        "path": "data/validation_data",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "22da949f087d44c57717a16ef036c68af93f8e85",
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/trees/22da949f087d44c57717a16ef036c68af93f8e85"
+      },
+      {
+        "path": "data/validation_data/validation_in_house_acetone.xlsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bd71ff05e34ffa0798529d26323ebd9620a60c8d",
+        "size": 12339,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/bd71ff05e34ffa0798529d26323ebd9620a60c8d"
+      },
+      {
+        "path": "data/validation_data/validation_in_house_hydroxyacetone.xlsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fee472fa401d2ba8694426b95d0a647c484f4a94",
+        "size": 13389,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/fee472fa401d2ba8694426b95d0a647c484f4a94"
+      },
+      {
+        "path": "data/validation_data/validation_new_literature_aldol.xlsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "72854b5fcd0420fed489552567596f50becf21c5",
+        "size": 14262,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/72854b5fcd0420fed489552567596f50becf21c5"
+      },
+      {
+        "path": "data/validation_data/validation_new_literature_michael.xlsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "eb840d659fc9d26af881e6f430d54b7697c9a2c6",
+        "size": 18502,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/eb840d659fc9d26af881e6f430d54b7697c9a2c6"
+      },
+      {
+        "path": "data/validation_data/validation_virtual_chemist.xlsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0c1f5c0797638144d3dcc845236a491f854a5c93",
+        "size": 12032,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/0c1f5c0797638144d3dcc845236a491f854a5c93"
+      },
+      {
+        "path": "environment.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "35feab65b7abf39740f06e3834614896a8799ed0",
+        "size": 367,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/35feab65b7abf39740f06e3834614896a8799ed0"
+      },
+      {
+        "path": "orgaicat",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "16ba0ca55ed1fda2dccd55218c6e1a5d2ebc9f1e",
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/trees/16ba0ca55ed1fda2dccd55218c6e1a5d2ebc9f1e"
+      },
+      {
+        "path": "orgaicat/01_generate_descriptors",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "78961b9b95765f5a69dc39e6f53d3e28eec1f2ac",
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/trees/78961b9b95765f5a69dc39e6f53d3e28eec1f2ac"
+      },
+      {
+        "path": "orgaicat/01_generate_descriptors/generate_differential_ecfp_aldol.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d6150b2273046719b92298c848a2145f581ed57d",
+        "size": 6558,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/d6150b2273046719b92298c848a2145f581ed57d"
+      },
+      {
+        "path": "orgaicat/01_generate_descriptors/generate_differential_ecfp_michael.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1779a492cd94e0bcc5e0d4c9a391c2b2747e3999",
+        "size": 7165,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/1779a492cd94e0bcc5e0d4c9a391c2b2747e3999"
+      },
+      {
+        "path": "orgaicat/01_generate_descriptors/generate_drfp_descriptor_aldol.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1a5049e4202d331a97855525404d24eb7fa3e498",
+        "size": 6103,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/1a5049e4202d331a97855525404d24eb7fa3e498"
+      },
+      {
+        "path": "orgaicat/01_generate_descriptors/generate_drfp_descriptor_michael.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b4a7134e75ef12b1ccda856b727c60a4906c32fb",
+        "size": 6103,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/b4a7134e75ef12b1ccda856b727c60a4906c32fb"
+      },
+      {
+        "path": "orgaicat/01_generate_descriptors/generate_ecfp_descriptor_aldol.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aa66965ba966100075df04d9a21173fca06da70c",
+        "size": 6098,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/aa66965ba966100075df04d9a21173fca06da70c"
+      },
+      {
+        "path": "orgaicat/01_generate_descriptors/generate_ecfp_descriptor_michael.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7bf4db6ba491974fe72cde83bcb0b3e8322c641e",
+        "size": 6051,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/7bf4db6ba491974fe72cde83bcb0b3e8322c641e"
+      },
+      {
+        "path": "orgaicat/01_generate_descriptors/generate_onehot_descriptor_aldol.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ae244509333b0950c644cf05cecdac75bf8c607c",
+        "size": 3839,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/ae244509333b0950c644cf05cecdac75bf8c607c"
+      },
+      {
+        "path": "orgaicat/01_generate_descriptors/generate_onehot_descriptor_michael.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "dd530d2d1b73b36cadd54eae06b71271a54d7aec",
+        "size": 3843,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/dd530d2d1b73b36cadd54eae06b71271a54d7aec"
+      },
+      {
+        "path": "orgaicat/01_generate_descriptors/generate_r_spoc_descriptor_aldol.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ee326e47555312f87647f8f190d92a24a33f1897",
+        "size": 7512,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/ee326e47555312f87647f8f190d92a24a33f1897"
+      },
+      {
+        "path": "orgaicat/01_generate_descriptors/generate_r_spoc_descriptor_michael.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ad33c03af4227092958e547fb3e8c99e483410dd",
+        "size": 7516,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/ad33c03af4227092958e547fb3e8c99e483410dd"
+      },
+      {
+        "path": "orgaicat/01_generate_descriptors/generate_rxnfp_descriptor.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7077456eabcc61da3e28707df97b5816ad9f3ece",
+        "size": 565,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/7077456eabcc61da3e28707df97b5816ad9f3ece"
+      },
+      {
+        "path": "orgaicat/01_generate_descriptors/generate_rxnfp_descriptor_aldol.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d5b97c5c3a5f6caa6d1fcc9eadadc5d264dddf85",
+        "size": 6135,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/d5b97c5c3a5f6caa6d1fcc9eadadc5d264dddf85"
+      },
+      {
+        "path": "orgaicat/01_generate_descriptors/generate_rxnfp_descriptor_michael.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1521246ee09dc9c833fd0a31092714fe52604be3",
+        "size": 6195,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/1521246ee09dc9c833fd0a31092714fe52604be3"
+      },
+      {
+        "path": "orgaicat/02_run_benchmark",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6fbae8004a47f16fcec821d78a6abab7081b4676",
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/trees/6fbae8004a47f16fcec821d78a6abab7081b4676"
+      },
+      {
+        "path": "orgaicat/02_run_benchmark/benchmark.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "683c315eb53c29fb3994408db23c4bcfa5030c3a",
+        "size": 18878,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/683c315eb53c29fb3994408db23c4bcfa5030c3a"
+      },
+      {
+        "path": "orgaicat/03_train_model",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "2c6cb8524575da67b91d14ec89703078a382e5df",
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/trees/2c6cb8524575da67b91d14ec89703078a382e5df"
+      },
+      {
+        "path": "orgaicat/03_train_model/train_extraTree_aldol_classification.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c29e35e69c6dd2d99a14df7efa7a44c0fdfea988",
+        "size": 14413,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/c29e35e69c6dd2d99a14df7efa7a44c0fdfea988"
+      },
+      {
+        "path": "orgaicat/03_train_model/train_extraTree_aldol_regression.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e3b7dbd6ed9640b78a1e3af39f763ae93e4a2100",
+        "size": 21303,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/e3b7dbd6ed9640b78a1e3af39f763ae93e4a2100"
+      },
+      {
+        "path": "orgaicat/03_train_model/train_extraTree_michael_classification.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "42645c0bb45172fa51aea7c29df971c0b987a933",
+        "size": 14419,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/42645c0bb45172fa51aea7c29df971c0b987a933"
+      },
+      {
+        "path": "orgaicat/03_train_model/train_extraTree_michael_regression.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "44645abc5827fa9ac8a66b25ce2301c8ee24cf44",
+        "size": 20799,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/44645abc5827fa9ac8a66b25ce2301c8ee24cf44"
+      },
+      {
+        "path": "orgaicat/04_predict_validation",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "744d16cb2d278836a73ef2e2c04c9c4ec620f40d",
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/trees/744d16cb2d278836a73ef2e2c04c9c4ec620f40d"
+      },
+      {
+        "path": "orgaicat/04_predict_validation/evaluate_external_test_set_aldol.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "eb3fcec6ec52323d729947495494bd6dbf20e2fe",
+        "size": 20454,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/eb3fcec6ec52323d729947495494bd6dbf20e2fe"
+      },
+      {
+        "path": "orgaicat/04_predict_validation/evaluate_external_test_set_michael.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "18ee189e3189a67294a49633256c9571763bb356",
+        "size": 20266,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/18ee189e3189a67294a49633256c9571763bb356"
+      },
+      {
+        "path": "orgaicat/05_reaction_optimization",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "a2532a1e048d742b75bc4d075294c523f4ee969a",
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/trees/a2532a1e048d742b75bc4d075294c523f4ee969a"
+      },
+      {
+        "path": "orgaicat/05_reaction_optimization/step1_featurization.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "860b01ad97d21337c03bd5aa173e87e91255c026",
+        "size": 7005,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/860b01ad97d21337c03bd5aa173e87e91255c026"
+      },
+      {
+        "path": "orgaicat/05_reaction_optimization/step2_clustering.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f8875d54a396c8921cb8e26c747dbbf0d6a94b3c",
+        "size": 16699,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/f8875d54a396c8921cb8e26c747dbbf0d6a94b3c"
+      },
+      {
+        "path": "orgaicat/05_reaction_optimization/step3_forward_prediction.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c9628dd44baf3be91775991765bde5c4ad706d6f",
+        "size": 15640,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/c9628dd44baf3be91775991765bde5c4ad706d6f"
+      },
+      {
+        "path": "orgaicat/05_reaction_optimization/step4_commercial_selection.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "01372650fef6d600bb428cb48f8152d6b43af4f1",
+        "size": 25216,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/01372650fef6d600bb428cb48f8152d6b43af4f1"
+      },
+      {
+        "path": "package-lock.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a694133142cba4d7f548ab45c8722f180026433b",
+        "size": 94,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/a694133142cba4d7f548ab45c8722f180026433b"
+      },
+      {
+        "path": "requirements.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "98e3d5f751802269c632b2913ee95717ac15f264",
+        "size": 354,
+        "url": "https://api.github.com/repos/DeepSynthesis/orgaicat/git/blobs/98e3d5f751802269c632b2913ee95717ac15f264"
+      }
+    ],
+    "truncated": false
+  }
+}

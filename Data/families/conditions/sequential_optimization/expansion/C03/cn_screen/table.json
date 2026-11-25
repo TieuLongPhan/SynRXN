@@ -1,0 +1,80 @@
+{
+  "counting_unit": "HTE experiment",
+  "data_link": "data.parquet",
+  "family_id": "conditions",
+  "format": "parquet",
+  "key": "C03/cn_screen",
+  "namespace": "expansion",
+  "registry_binding": {
+    "adapter_ids": [
+      "sequential_optimization"
+    ],
+    "commercial_use_allowed": true,
+    "counting_unit": "HTE experiment",
+    "key": "C03/cn_screen",
+    "namespace": "expansion",
+    "partition": "sharealike",
+    "qualification": "UPLC assay yields are selected by ORD measurement type and desired-product flag. Area and internal-standard measurements remain native metadata.",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-SA-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 50688
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "ord_expansion_readme",
+      "ord_expansion_license"
+    ],
+    "expected_bytes": 7165935,
+    "expected_rows": 50688,
+    "expected_sha256": "534d2d7bc8cbed7f694694c0db65e9b34fd4cfe471878e0a37395767415bc5a0",
+    "format": "parquet",
+    "key": "C03/cn_screen",
+    "license_expression": "CC-BY-SA-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes.",
+      "Comply with the applicable ShareAlike requirements for adapted material."
+    ],
+    "namespace": "expansion",
+    "partition": "sharealike",
+    "path": "Data/expansion/sharealike/C03/cn_screen.parquet",
+    "qualification": "Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 50688,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/expansion/sharealike/C03/cn_screen.parquet",
+    "sha256": "534d2d7bc8cbed7f694694c0db65e9b34fd4cfe471878e0a37395767415bc5a0",
+    "source_catalogue": "Data/expansion/catalog.json",
+    "source_id": "C03",
+    "source_urls": [
+      "https://open-reaction-database.org/dataset/ord_dataset-805ad863feef48579d95d86a728035f4",
+      "https://doi.org/10.1021/jacs.6c05959"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "HTE experiment",
+    "key": "C03/cn_screen",
+    "namespace": "expansion",
+    "path": "Data/expansion/sharealike/C03/cn_screen.parquet",
+    "role": "primary",
+    "rows": 50688,
+    "sha256": "534d2d7bc8cbed7f694694c0db65e9b34fd4cfe471878e0a37395767415bc5a0",
+    "source_catalogue": "Data/expansion/catalog.json",
+    "source_id": "C03",
+    "source_urls": [
+      "https://open-reaction-database.org/dataset/ord_dataset-805ad863feef48579d95d86a728035f4",
+      "https://doi.org/10.1021/jacs.6c05959"
+    ],
+    "title": "Cernak C–N coupling screen"
+  },
+  "stored_path": "Data/families/outcomes/yield_conversion/expansion/C03/cn_screen/data.parquet",
+  "task_id": "sequential_optimization",
+  "title": "Cernak C–N coupling screen"
+}

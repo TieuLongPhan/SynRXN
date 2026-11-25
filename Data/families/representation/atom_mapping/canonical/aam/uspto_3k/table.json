@@ -1,0 +1,85 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "representation",
+  "format": "csv.gz",
+  "key": "aam/uspto_3k",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "aam/uspto_3k",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "copyleft",
+    "release_eligible": true,
+    "release_license_expression": "GPL-3.0-only AND CC-BY-SA-4.0 AND MIT",
+    "rights_status": "verified_redistributable",
+    "role": "primary",
+    "rows": 3000
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "syntemp_license",
+      "syntemp_readme",
+      "recheck_mapping_mapping_syntemp_native_license",
+      "recheck_mapping_mapping_syntemp_tree",
+      "recheck_mapping_mapping_syntemp_paper_xml",
+      "recheck_mapping_mapping_syntemp_commit",
+      "recheck_mapping_mapping_localmapper_2024_license",
+      "recheck_mapping_mapping_localmapper_2024_readme",
+      "recheck_mapping_mapping_localmapper_2024_tree",
+      "recheck_mapping_mapping_localmapper_2024_uspto",
+      "recheck_mapping_mapping_lowe_original_data_grant"
+    ],
+    "expected_bytes": 1039902,
+    "expected_rows": 3000,
+    "expected_sha256": "7d46de323ec918550fd742ea5e839fc976cd451058eca061b1e2023354698145",
+    "format": "csv.gz",
+    "key": "aam/uspto_3k",
+    "license_expression": "GPL-3.0-only AND CC-BY-SA-4.0 AND MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes.",
+      "Comply with the applicable ShareAlike requirements for adapted material.",
+      "Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it."
+    ],
+    "namespace": "canonical",
+    "partition": "copyleft",
+    "path": "Data/aam/uspto_3k.csv.gz",
+    "qualification": "Exact3000sample identifiers/order and historical comparison predictions available in pre2026 LocalMapper GPL3 commit; underlying USPTO collection has Lowe CC BY-SA4 grant. SynTemp supplies the final corrected benchmark payload.",
+    "rights_status": "verified_redistributable",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 3000,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "chen2024precise"
+    ],
+    "path": "Data/aam/uspto_3k.csv.gz",
+    "sha256": "7d46de323ec918550fd742ea5e839fc976cd451058eca061b1e2023354698145",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "chen2024precise"
+    ],
+    "counting_unit": "source-table row",
+    "key": "aam/uspto_3k",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/aam/uspto_3k.csv.gz",
+    "role": "primary",
+    "rows": 3000,
+    "sha256": "7d46de323ec918550fd742ea5e839fc976cd451058eca061b1e2023354698145",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "USPTO 3K atom mapping"
+  },
+  "stored_path": "Data/families/representation/atom_mapping/canonical/aam/uspto_3k/data.csv.gz",
+  "task_id": "atom_mapping",
+  "title": "USPTO 3K atom mapping"
+}

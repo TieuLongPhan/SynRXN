@@ -1,0 +1,10 @@
+{
+  "source_id": "C09",
+  "name": "ref_routes_reaction_hashes.txt",
+  "bytes": 4403965,
+  "checksum": "md5:ead05b84040fd8d594b936fb4cc5501a",
+  "url": "https://zenodo.org/api/records/7341155/files/ref_routes_reaction_hashes.txt/content",
+  "path": "Data/raw/synrxn2/C09/ref_routes_reaction_hashes.txt",
+  "status": "unavailable",
+  "error": "range 0-1048575: <urlopen error [Errno -3] Temporary failure in name resolution>"
+}

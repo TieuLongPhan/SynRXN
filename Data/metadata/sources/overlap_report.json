@@ -1,0 +1,451 @@
+{
+  "caveats": [
+    "Structure-only identity. Shared identity means the same transformation, not the same experiment or measurement.",
+    "Unparsed rows are excluded from identity sets and are reported per corpus; they are not silently treated as unique.",
+    "Pooled row totals must never be reported as reaction counts.",
+    "High-throughput campaigns are redundant under this identity by design: one transformation is screened across many conditions. For HTE corpora the meaningful identity is (reaction, condition), so a low unique-reaction count is not a data-quality defect. It does bound how many independent transformations an HTE split can hold out."
+  ],
+  "corpora": {
+    "classification/uspto_50k_b": {
+      "identity_column": "rxn",
+      "internal_duplicate_fraction": 0.0063,
+      "internal_duplicate_rows": 314,
+      "parsed_rows": 49840,
+      "rows": 50016,
+      "unique_reactions": 49526,
+      "unparsed_rows": 176
+    },
+    "condition/orderly_condition": {
+      "identity_column": "canonical_reaction_smiles",
+      "internal_duplicate_fraction": 0.031479,
+      "internal_duplicate_rows": 21755,
+      "parsed_rows": 691105,
+      "rows": 691105,
+      "unique_reactions": 669350,
+      "unparsed_rows": 0
+    },
+    "condition/uspto_500": {
+      "identity_column": "rxn",
+      "internal_duplicate_fraction": 0.054983,
+      "internal_duplicate_rows": 7892,
+      "parsed_rows": 143535,
+      "rows": 143535,
+      "unique_reactions": 135643,
+      "unparsed_rows": 0
+    },
+    "condition_sharealike/openexp": {
+      "identity_column": "canonical_reaction_smiles",
+      "internal_duplicate_fraction": 0.007196,
+      "internal_duplicate_rows": 1975,
+      "parsed_rows": 274439,
+      "rows": 274439,
+      "unique_reactions": 272464,
+      "unparsed_rows": 0
+    },
+    "condition_sharealike/ord_hte_condition": {
+      "identity_column": "canonical_reaction_smiles",
+      "internal_duplicate_fraction": 0.985289,
+      "internal_duplicate_rows": 121900,
+      "parsed_rows": 123720,
+      "rows": 123720,
+      "unique_reactions": 1820,
+      "unparsed_rows": 0
+    },
+    "synthesis/uspto_500": {
+      "identity_column": "rxn",
+      "internal_duplicate_fraction": 0.054983,
+      "internal_duplicate_rows": 7892,
+      "parsed_rows": 143535,
+      "rows": 143535,
+      "unique_reactions": 135643,
+      "unparsed_rows": 0
+    },
+    "synthesis/uspto_50k": {
+      "identity_column": "aam",
+      "internal_duplicate_fraction": 0.008037,
+      "internal_duplicate_rows": 402,
+      "parsed_rows": 50016,
+      "rows": 50016,
+      "unique_reactions": 49614,
+      "unparsed_rows": 0
+    },
+    "synthesis/uspto_mit": {
+      "identity_column": "aam",
+      "internal_duplicate_fraction": 0.010778,
+      "internal_duplicate_rows": 5163,
+      "parsed_rows": 479024,
+      "rows": 479035,
+      "unique_reactions": 473861,
+      "unparsed_rows": 11
+    },
+    "yield/buchwald_hartwig_ood": {
+      "identity_column": "canonical_reaction_smiles",
+      "internal_duplicate_fraction": 0.790291,
+      "internal_duplicate_rows": 21684,
+      "parsed_rows": 27438,
+      "rows": 27438,
+      "unique_reactions": 5754,
+      "unparsed_rows": 0
+    },
+    "yield/hitea": {
+      "identity_column": "canonical_reaction_smiles",
+      "internal_duplicate_fraction": 0.984904,
+      "internal_duplicate_rows": 38949,
+      "parsed_rows": 39546,
+      "rows": 39546,
+      "unique_reactions": 597,
+      "unparsed_rows": 0
+    },
+    "yield/uspto_yield": {
+      "identity_column": "canonical_reaction_smiles",
+      "internal_duplicate_fraction": 0.0,
+      "internal_duplicate_rows": 0,
+      "parsed_rows": 526468,
+      "rows": 526468,
+      "unique_reactions": 526468,
+      "unparsed_rows": 0
+    }
+  },
+  "generated_at": "2026-08-22",
+  "identity_definition": "canonical atom-map-free reactants>>products, isomeric SMILES, components sorted; agents and conditions ignored",
+  "pairwise_overlap": {
+    "condition/orderly_condition | classification/uspto_50k_b": {
+      "fraction_of_first": 0.001104,
+      "fraction_of_second": 0.014921,
+      "jaccard": 0.001029,
+      "shared_reactions": 739
+    },
+    "condition/orderly_condition | condition/uspto_500": {
+      "fraction_of_first": 0.120462,
+      "fraction_of_second": 0.594435,
+      "jaccard": 0.111313,
+      "shared_reactions": 80631
+    },
+    "condition/orderly_condition | condition_sharealike/openexp": {
+      "fraction_of_first": 0.049101,
+      "fraction_of_second": 0.120625,
+      "jaccard": 0.036158,
+      "shared_reactions": 32866
+    },
+    "condition/orderly_condition | condition_sharealike/ord_hte_condition": {
+      "fraction_of_first": 4e-06,
+      "fraction_of_second": 0.001648,
+      "jaccard": 4e-06,
+      "shared_reactions": 3
+    },
+    "condition/orderly_condition | synthesis/uspto_500": {
+      "fraction_of_first": 0.120462,
+      "fraction_of_second": 0.594435,
+      "jaccard": 0.111313,
+      "shared_reactions": 80631
+    },
+    "condition/orderly_condition | synthesis/uspto_50k": {
+      "fraction_of_first": 0.032974,
+      "fraction_of_second": 0.444854,
+      "jaccard": 0.031671,
+      "shared_reactions": 22071
+    },
+    "condition/orderly_condition | synthesis/uspto_mit": {
+      "fraction_of_first": 0.064434,
+      "fraction_of_second": 0.091016,
+      "jaccard": 0.039205,
+      "shared_reactions": 43129
+    },
+    "condition/uspto_500 | classification/uspto_50k_b": {
+      "fraction_of_first": 0.000848,
+      "fraction_of_second": 0.002322,
+      "jaccard": 0.000621,
+      "shared_reactions": 115
+    },
+    "condition/uspto_500 | synthesis/uspto_500": {
+      "fraction_of_first": 1.0,
+      "fraction_of_second": 1.0,
+      "jaccard": 1.0,
+      "shared_reactions": 135643
+    },
+    "condition/uspto_500 | synthesis/uspto_50k": {
+      "fraction_of_first": 0.064957,
+      "fraction_of_second": 0.177591,
+      "jaccard": 0.049936,
+      "shared_reactions": 8811
+    },
+    "condition/uspto_500 | synthesis/uspto_mit": {
+      "fraction_of_first": 0.004718,
+      "fraction_of_second": 0.001351,
+      "jaccard": 0.001051,
+      "shared_reactions": 640
+    },
+    "condition_sharealike/openexp | classification/uspto_50k_b": {
+      "fraction_of_first": 0.000492,
+      "fraction_of_second": 0.002706,
+      "jaccard": 0.000416,
+      "shared_reactions": 134
+    },
+    "condition_sharealike/openexp | condition/uspto_500": {
+      "fraction_of_first": 0.016376,
+      "fraction_of_second": 0.032895,
+      "jaccard": 0.011054,
+      "shared_reactions": 4462
+    },
+    "condition_sharealike/openexp | condition_sharealike/ord_hte_condition": {
+      "fraction_of_first": 0.0,
+      "fraction_of_second": 0.0,
+      "jaccard": 0.0,
+      "shared_reactions": 0
+    },
+    "condition_sharealike/openexp | synthesis/uspto_500": {
+      "fraction_of_first": 0.016376,
+      "fraction_of_second": 0.032895,
+      "jaccard": 0.011054,
+      "shared_reactions": 4462
+    },
+    "condition_sharealike/openexp | synthesis/uspto_50k": {
+      "fraction_of_first": 0.004929,
+      "fraction_of_second": 0.027069,
+      "jaccard": 0.004187,
+      "shared_reactions": 1343
+    },
+    "condition_sharealike/openexp | synthesis/uspto_mit": {
+      "fraction_of_first": 0.019467,
+      "fraction_of_second": 0.011193,
+      "jaccard": 0.007158,
+      "shared_reactions": 5304
+    },
+    "condition_sharealike/ord_hte_condition | classification/uspto_50k_b": {
+      "fraction_of_first": 0.0,
+      "fraction_of_second": 0.0,
+      "jaccard": 0.0,
+      "shared_reactions": 0
+    },
+    "condition_sharealike/ord_hte_condition | condition/uspto_500": {
+      "fraction_of_first": 0.003297,
+      "fraction_of_second": 4.4e-05,
+      "jaccard": 4.4e-05,
+      "shared_reactions": 6
+    },
+    "condition_sharealike/ord_hte_condition | synthesis/uspto_500": {
+      "fraction_of_first": 0.003297,
+      "fraction_of_second": 4.4e-05,
+      "jaccard": 4.4e-05,
+      "shared_reactions": 6
+    },
+    "condition_sharealike/ord_hte_condition | synthesis/uspto_50k": {
+      "fraction_of_first": 0.002198,
+      "fraction_of_second": 8.1e-05,
+      "jaccard": 7.8e-05,
+      "shared_reactions": 4
+    },
+    "condition_sharealike/ord_hte_condition | synthesis/uspto_mit": {
+      "fraction_of_first": 0.000549,
+      "fraction_of_second": 2e-06,
+      "jaccard": 2e-06,
+      "shared_reactions": 1
+    },
+    "synthesis/uspto_500 | classification/uspto_50k_b": {
+      "fraction_of_first": 0.000848,
+      "fraction_of_second": 0.002322,
+      "jaccard": 0.000621,
+      "shared_reactions": 115
+    },
+    "synthesis/uspto_500 | synthesis/uspto_50k": {
+      "fraction_of_first": 0.064957,
+      "fraction_of_second": 0.177591,
+      "jaccard": 0.049936,
+      "shared_reactions": 8811
+    },
+    "synthesis/uspto_500 | synthesis/uspto_mit": {
+      "fraction_of_first": 0.004718,
+      "fraction_of_second": 0.001351,
+      "jaccard": 0.001051,
+      "shared_reactions": 640
+    },
+    "synthesis/uspto_50k | classification/uspto_50k_b": {
+      "fraction_of_first": 0.020256,
+      "fraction_of_second": 0.020292,
+      "jaccard": 0.010241,
+      "shared_reactions": 1005
+    },
+    "synthesis/uspto_50k | synthesis/uspto_mit": {
+      "fraction_of_first": 0.062664,
+      "fraction_of_second": 0.006561,
+      "jaccard": 0.005975,
+      "shared_reactions": 3109
+    },
+    "synthesis/uspto_mit | classification/uspto_50k_b": {
+      "fraction_of_first": 0.000169,
+      "fraction_of_second": 0.001615,
+      "jaccard": 0.000153,
+      "shared_reactions": 80
+    },
+    "yield/buchwald_hartwig_ood | classification/uspto_50k_b": {
+      "fraction_of_first": 0.0,
+      "fraction_of_second": 0.0,
+      "jaccard": 0.0,
+      "shared_reactions": 0
+    },
+    "yield/buchwald_hartwig_ood | condition/orderly_condition": {
+      "fraction_of_first": 0.003302,
+      "fraction_of_second": 2.8e-05,
+      "jaccard": 2.8e-05,
+      "shared_reactions": 19
+    },
+    "yield/buchwald_hartwig_ood | condition/uspto_500": {
+      "fraction_of_first": 0.00139,
+      "fraction_of_second": 5.9e-05,
+      "jaccard": 5.7e-05,
+      "shared_reactions": 8
+    },
+    "yield/buchwald_hartwig_ood | condition_sharealike/openexp": {
+      "fraction_of_first": 0.0,
+      "fraction_of_second": 0.0,
+      "jaccard": 0.0,
+      "shared_reactions": 0
+    },
+    "yield/buchwald_hartwig_ood | condition_sharealike/ord_hte_condition": {
+      "fraction_of_first": 0.003997,
+      "fraction_of_second": 0.012637,
+      "jaccard": 0.003046,
+      "shared_reactions": 23
+    },
+    "yield/buchwald_hartwig_ood | synthesis/uspto_500": {
+      "fraction_of_first": 0.00139,
+      "fraction_of_second": 5.9e-05,
+      "jaccard": 5.7e-05,
+      "shared_reactions": 8
+    },
+    "yield/buchwald_hartwig_ood | synthesis/uspto_50k": {
+      "fraction_of_first": 0.000869,
+      "fraction_of_second": 0.000101,
+      "jaccard": 9e-05,
+      "shared_reactions": 5
+    },
+    "yield/buchwald_hartwig_ood | synthesis/uspto_mit": {
+      "fraction_of_first": 0.00139,
+      "fraction_of_second": 1.7e-05,
+      "jaccard": 1.7e-05,
+      "shared_reactions": 8
+    },
+    "yield/buchwald_hartwig_ood | yield/hitea": {
+      "fraction_of_first": 0.003302,
+      "fraction_of_second": 0.031826,
+      "jaccard": 0.003001,
+      "shared_reactions": 19
+    },
+    "yield/buchwald_hartwig_ood | yield/uspto_yield": {
+      "fraction_of_first": 0.000695,
+      "fraction_of_second": 8e-06,
+      "jaccard": 8e-06,
+      "shared_reactions": 4
+    },
+    "yield/hitea | classification/uspto_50k_b": {
+      "fraction_of_first": 0.0,
+      "fraction_of_second": 0.0,
+      "jaccard": 0.0,
+      "shared_reactions": 0
+    },
+    "yield/hitea | condition/orderly_condition": {
+      "fraction_of_first": 0.01005,
+      "fraction_of_second": 9e-06,
+      "jaccard": 9e-06,
+      "shared_reactions": 6
+    },
+    "yield/hitea | condition/uspto_500": {
+      "fraction_of_first": 0.0,
+      "fraction_of_second": 0.0,
+      "jaccard": 0.0,
+      "shared_reactions": 0
+    },
+    "yield/hitea | condition_sharealike/openexp": {
+      "fraction_of_first": 0.0,
+      "fraction_of_second": 0.0,
+      "jaccard": 0.0,
+      "shared_reactions": 0
+    },
+    "yield/hitea | condition_sharealike/ord_hte_condition": {
+      "fraction_of_first": 0.0,
+      "fraction_of_second": 0.0,
+      "jaccard": 0.0,
+      "shared_reactions": 0
+    },
+    "yield/hitea | synthesis/uspto_500": {
+      "fraction_of_first": 0.0,
+      "fraction_of_second": 0.0,
+      "jaccard": 0.0,
+      "shared_reactions": 0
+    },
+    "yield/hitea | synthesis/uspto_50k": {
+      "fraction_of_first": 0.0,
+      "fraction_of_second": 0.0,
+      "jaccard": 0.0,
+      "shared_reactions": 0
+    },
+    "yield/hitea | synthesis/uspto_mit": {
+      "fraction_of_first": 0.0,
+      "fraction_of_second": 0.0,
+      "jaccard": 0.0,
+      "shared_reactions": 0
+    },
+    "yield/hitea | yield/uspto_yield": {
+      "fraction_of_first": 0.0,
+      "fraction_of_second": 0.0,
+      "jaccard": 0.0,
+      "shared_reactions": 0
+    },
+    "yield/uspto_yield | classification/uspto_50k_b": {
+      "fraction_of_first": 0.000118,
+      "fraction_of_second": 0.001252,
+      "jaccard": 0.000108,
+      "shared_reactions": 62
+    },
+    "yield/uspto_yield | condition/orderly_condition": {
+      "fraction_of_first": 0.061702,
+      "fraction_of_second": 0.048531,
+      "jaccard": 0.027923,
+      "shared_reactions": 32484
+    },
+    "yield/uspto_yield | condition/uspto_500": {
+      "fraction_of_first": 0.000484,
+      "fraction_of_second": 0.00188,
+      "jaccard": 0.000385,
+      "shared_reactions": 255
+    },
+    "yield/uspto_yield | condition_sharealike/openexp": {
+      "fraction_of_first": 0.003795,
+      "fraction_of_second": 0.007333,
+      "jaccard": 0.002507,
+      "shared_reactions": 1998
+    },
+    "yield/uspto_yield | condition_sharealike/ord_hte_condition": {
+      "fraction_of_first": 2e-06,
+      "fraction_of_second": 0.000549,
+      "jaccard": 2e-06,
+      "shared_reactions": 1
+    },
+    "yield/uspto_yield | synthesis/uspto_500": {
+      "fraction_of_first": 0.000484,
+      "fraction_of_second": 0.00188,
+      "jaccard": 0.000385,
+      "shared_reactions": 255
+    },
+    "yield/uspto_yield | synthesis/uspto_50k": {
+      "fraction_of_first": 0.002372,
+      "fraction_of_second": 0.025174,
+      "jaccard": 0.002173,
+      "shared_reactions": 1249
+    },
+    "yield/uspto_yield | synthesis/uspto_mit": {
+      "fraction_of_first": 0.021842,
+      "fraction_of_second": 0.024267,
+      "jaccard": 0.011629,
+      "shared_reactions": 11499
+    }
+  },
+  "totals": {
+    "corpora_compared": 11,
+    "distinct_reactions_in_union": 1963937,
+    "pooled_parsed_rows": 2548666,
+    "pooled_rows": 2548853,
+    "redundancy_fraction": 0.229426,
+    "rows_beyond_distinct_reactions": 584729
+  }
+}

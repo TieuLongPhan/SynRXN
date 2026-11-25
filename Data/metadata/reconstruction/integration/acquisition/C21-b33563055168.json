@@ -1,0 +1,12 @@
+{
+  "source_id": "C21",
+  "name": "README.md",
+  "bytes": 1619,
+  "checksum": "md5:863b9acd64d0e18a01281c61868d2b85",
+  "url": "https://zenodo.org/api/records/16358189/files/README.md/content",
+  "path": "Data/raw/synrxn2/C21/README.md",
+  "bytes_observed": 1619,
+  "sha256": "3b909fbafad61a87751608440d319917a70fb060a2326db486792fd61a36d375",
+  "md5": "863b9acd64d0e18a01281c61868d2b85",
+  "status": "verified"
+}

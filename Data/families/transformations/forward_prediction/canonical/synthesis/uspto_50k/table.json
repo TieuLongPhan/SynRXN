@@ -1,0 +1,86 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "transformations",
+  "format": "csv.gz",
+  "key": "synthesis/uspto_50k",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": false,
+    "counting_unit": "source-table row",
+    "key": "synthesis/uspto_50k",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "noncommercial",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+    "rights_status": "verified_noncommercial_data_grant",
+    "role": "primary",
+    "rows": 50016
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": false,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "lowe_original_data_grant",
+      "recheck_classification_recheck_classification:figshare-4295660.json",
+      "recheck_classification_recheck_classification:ci6b00564_si_002.zip",
+      "recheck_classification_recheck_classification:syncat/LICENSE",
+      "recheck_classification_recheck_classification:syncat/README.md",
+      "recheck_classification_recheck_classification:gln/LICENSE",
+      "recheck_classification_recheck_classification:gln/README.md",
+      "recheck_classification_recheck_classification:classification-source-joins",
+      "recheck_classification_recheck_classification:figshare-25046471.json",
+      "recheck_classification_recheck_classification:figshare-25459573.json",
+      "recheck_classification_recheck_classification:uspto50k-native-source-join"
+    ],
+    "expected_bytes": 4411638,
+    "expected_rows": 50016,
+    "expected_sha256": "a23d355405f037cc4ecc751cf094003f3b64c115dd212f20d99015bc9ba05ac4",
+    "format": "csv.gz",
+    "key": "synthesis/uspto_50k",
+    "license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes.",
+      "Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted."
+    ],
+    "namespace": "canonical",
+    "partition": "noncommercial",
+    "path": "Data/synthesis/uspto_50k.csv.gz",
+    "qualification": "The source chain goes through the Schneider 2016 USPTO-50K data release, whose actual dataset ZIP currently has an explicit CC BY-NC 4.0 publisher grant. The proximate SynCat and GLN repositories are MIT; preserve those notices without treating their code license as blanket relicensing of imported original annotations. Include the derived view in the noncommercial partition.",
+    "rights_status": "verified_noncommercial_data_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 50016,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "chen2024precise",
+      "liu2017retrosynthetic"
+    ],
+    "path": "Data/synthesis/uspto_50k.csv.gz",
+    "sha256": "a23d355405f037cc4ecc751cf094003f3b64c115dd212f20d99015bc9ba05ac4",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "chen2024precise",
+      "liu2017retrosynthetic"
+    ],
+    "counting_unit": "source-table row",
+    "key": "synthesis/uspto_50k",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/synthesis/uspto_50k.csv.gz",
+    "role": "primary",
+    "rows": 50016,
+    "sha256": "a23d355405f037cc4ecc751cf094003f3b64c115dd212f20d99015bc9ba05ac4",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "USPTO-50K synthesis"
+  },
+  "stored_path": "Data/families/transformations/forward_prediction/canonical/synthesis/uspto_50k/data.csv.gz",
+  "task_id": "forward_prediction",
+  "title": "USPTO-50K synthesis"
+}

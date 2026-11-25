@@ -1,0 +1,79 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "conditions",
+  "format": "csv.gz",
+  "key": "condition_sharealike/ord_hte_condition",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "condition_sharealike/ord_hte_condition",
+    "legacy_field_eligible_rows": {
+      "role_aware_condition": 122050
+    },
+    "namespace": "canonical",
+    "partition": "sharealike",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-SA-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 123720
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "ord_data_readme",
+      "ord_data_license"
+    ],
+    "expected_bytes": 24004331,
+    "expected_rows": 123720,
+    "expected_sha256": "9d77cb0ef9233dd7922e4a65ea89e046051581c9200dd3eb7c85d3ae06514c5c",
+    "format": "csv.gz",
+    "key": "condition_sharealike/ord_hte_condition",
+    "license_expression": "CC-BY-SA-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes.",
+      "Comply with the applicable ShareAlike requirements for adapted material."
+    ],
+    "namespace": "canonical",
+    "partition": "sharealike",
+    "path": "Data/condition_sharealike/ord_hte_condition.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 123720,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "kearnes2021ord"
+    ],
+    "path": "Data/condition_sharealike/ord_hte_condition.csv.gz",
+    "sha256": "9d77cb0ef9233dd7922e4a65ea89e046051581c9200dd3eb7c85d3ae06514c5c",
+    "source_catalogue": "doc/_static/catalog-sharealike-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "kearnes2021ord"
+    ],
+    "counting_unit": "source-table row",
+    "key": "condition_sharealike/ord_hte_condition",
+    "legacy_field_eligible_rows": {
+      "role_aware_condition": 122050
+    },
+    "namespace": "canonical",
+    "path": "Data/condition_sharealike/ord_hte_condition.csv.gz",
+    "role": "primary",
+    "rows": 123720,
+    "sha256": "9d77cb0ef9233dd7922e4a65ea89e046051581c9200dd3eb7c85d3ae06514c5c",
+    "source_catalogue": "doc/_static/catalog-sharealike-data.json",
+    "title": "ORD high-throughput condition benchmark"
+  },
+  "stored_path": "Data/families/conditions/condition_recovery/canonical/condition_sharealike/ord_hte_condition/data.csv.gz",
+  "task_id": "condition_recovery",
+  "title": "ORD high-throughput condition benchmark"
+}

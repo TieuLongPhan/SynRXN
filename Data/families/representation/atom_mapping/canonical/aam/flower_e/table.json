@@ -1,0 +1,75 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "representation",
+  "format": "csv.gz",
+  "key": "aam/flower_e",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "aam/flower_e",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 179345
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "flower_data_grant"
+    ],
+    "expected_bytes": 12842463,
+    "expected_rows": 179345,
+    "expected_sha256": "696f0a08fa7872309918c0bc1de7cfe3a32ba862e4d732775e12844894159d8d",
+    "format": "csv.gz",
+    "key": "aam/flower_e",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/aam/flower_e.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 179345,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "joung2025electron",
+      "fong2026flower_data"
+    ],
+    "path": "Data/aam/flower_e.csv.gz",
+    "sha256": "696f0a08fa7872309918c0bc1de7cfe3a32ba862e4d732775e12844894159d8d",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "joung2025electron",
+      "fong2026flower_data"
+    ],
+    "counting_unit": "source-table row",
+    "key": "aam/flower_e",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/aam/flower_e.csv.gz",
+    "role": "primary",
+    "rows": 179345,
+    "sha256": "696f0a08fa7872309918c0bc1de7cfe3a32ba862e4d732775e12844894159d8d",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "FlowER elementary atom mappings"
+  },
+  "stored_path": "Data/families/representation/atom_mapping/canonical/aam/flower_e/data.csv.gz",
+  "task_id": "atom_mapping",
+  "title": "FlowER elementary atom mappings"
+}

@@ -29,6 +29,7 @@ from __future__ import annotations
 
 import argparse
 import logging
+import os
 import shlex
 import shutil
 import subprocess
@@ -38,15 +39,14 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import List, Optional, Sequence
 
+from synrxn.reconstruction.families._importers import module_for
+
 LOGGER = logging.getLogger(__name__)
 
-# Map logical targets to their default script locations
-DEFAULT_SCRIPTS = {
-    "aam": "script/build_aam_dataset.py",
-    "rbl": "script/build_rbl_dataset.py",
-    "classification": "script/build_classification_dataset.py",
-    "synthesis": "script/build_synthesis_dataset.py",
-    "property": "script/build_property_dataset.py",
+DEFAULT_BUILDERS = {
+    target: module_for(target)
+    for target in ('aam', 'rbl', 'classification', 'synthesis', 'property',
+                   'feasibility', 'impurity', 'selectivity', 'yield', 'condition')
 }
 
 
@@ -68,25 +68,12 @@ def configure_logging(verbose: bool) -> None:
 
 def find_repo_root(start: Path) -> Path:
     """
-    Try to detect the repository root starting from the given path.
-
-    Strategy:
-    - Walk upwards until we find a directory that contains a "script" subdir.
-    - Fallback to "start" if nothing is found.
+    Locate checkout metadata; installed commands otherwise use the working directory.
     """
     for p in [start, *start.parents]:
-        if (p / "script").is_dir():
+        if (p / "pyproject.toml").is_file() and (p / "synrxn").is_dir():
             return p
-    return start
-
-
-def find_script_path(repo_root: Path, override: Optional[str], target: str) -> Path:
-    """Resolve the script path for a given target (possibly overridden)."""
-    if override is not None:
-        return Path(override).expanduser().resolve()
-
-    rel = DEFAULT_SCRIPTS[target]
-    return (repo_root / rel).resolve()
+    return Path.cwd()
 
 
 def build_command(
@@ -98,7 +85,8 @@ def build_command(
     return [python_exe, str(script_path), *forwarded_args]
 
 
-def run_subprocess(cmd: List[str], cwd: Path, dry_run: bool = False) -> int:
+def run_subprocess(cmd: List[str], cwd: Path, dry_run: bool = False,
+                   module_root: Optional[Path] = None) -> int:
     """
     Run subprocess and return exit code.
 
@@ -112,7 +100,12 @@ def run_subprocess(cmd: List[str], cwd: Path, dry_run: bool = False) -> int:
         return 0
 
     try:
-        process = subprocess.Popen(cmd, cwd=str(cwd))
+        environment = None
+        if module_root is not None:
+            environment = dict(os.environ)
+            previous = environment.get('PYTHONPATH')
+            environment['PYTHONPATH'] = str(module_root) + (os.pathsep + previous if previous else '')
+        process = subprocess.Popen(cmd, cwd=str(cwd), env=environment)
         process.wait()
         return process.returncode or 0
     except KeyboardInterrupt:
@@ -136,6 +129,8 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
         prog="synrxn",
         description="SynRXN dataset access and maintenance commands.",
     )
+    from synrxn import __version__
+    parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     parser.add_argument(
         "-v",
         "--verbose",
@@ -147,11 +142,27 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
 
     # build subcommand
     build_p = subparsers.add_parser(
-        "build", help="Run repository-only dataset builder scripts."
+        "build", help="Run packaged dataset importers."
     )
     # builder flags (can be combined)
     build_p.add_argument("--aam", action="store_true", help="Run AAM dataset builder.")
     build_p.add_argument("--rbl", action="store_true", help="Run RBL dataset builder.")
+    build_p.add_argument("--condition", action="store_true", help="Run condition dataset builder.")
+    build_p.add_argument(
+        "--feasibility",
+        action="store_true",
+        help="Run feasibility dataset builder.",
+    )
+    build_p.add_argument(
+        "--impurity",
+        action="store_true",
+        help="Run impurity dataset builder.",
+    )
+    build_p.add_argument(
+        "--selectivity",
+        action="store_true",
+        help="Run selectivity dataset builder.",
+    )
     build_p.add_argument(
         "--classification",
         action="store_true",
@@ -166,6 +177,12 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
         "--property",
         action="store_true",
         help="Run property dataset builder.",
+    )
+    build_p.add_argument(
+        "--yield",
+        action="store_true",
+        dest="yield_task",
+        help="Run yield dataset builder.",
     )
 
     build_p.add_argument(
@@ -246,6 +263,7 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     parquet_build.add_argument("--data-dir", default="Data")
     parquet_build.add_argument("--output-dir", required=True)
     parquet_build.add_argument("--manifest", default="manifest.json")
+    parquet_build.add_argument("--partition", choices=("main", "sharealike"))
     parquet_verify = parquet_sub.add_parser(
         "verify", help="Verify Parquet artifacts against canonical CSV files."
     )
@@ -261,6 +279,35 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     catalog_p.add_argument("--output", default="doc/_static/catalog-data.json")
     catalog_p.add_argument("--reaction-dir", default="doc/_static/catalog-reactions")
 
+    references_p = subparsers.add_parser(
+        "references", help="Inspect a checksum-pinned observation/reference release.")
+    references_p.add_argument("--store", type=Path, required=True)
+    references_p.add_argument("--accession")
+    references_p.add_argument("--evidence-tier")
+    references_p.add_argument("--offset", type=int, default=0)
+    references_p.add_argument("--limit", type=int, default=20)
+
+    evaluate_p = subparsers.add_parser(
+        "evaluate", help="Score archived predictions under an explicit task contract.")
+    evaluate_p.add_argument("--contract", type=Path, required=True)
+    evaluate_p.add_argument("--instances", type=Path, required=True)
+    evaluate_p.add_argument("--references", type=Path, required=True)
+    evaluate_p.add_argument("--predictions", type=Path, required=True)
+    evaluate_p.add_argument("--membership", type=Path,
+                            help="Select the exact records from a versioned split manifest")
+    evaluate_p.add_argument("--partition", choices=("train", "validation", "test"), default="test")
+    evaluate_p.add_argument("--output", type=Path)
+
+    task_p = subparsers.add_parser("task", help="Inspect or export one of the eight input/target task views.")
+    task_p.add_argument("action", choices=("list", "show", "export"))
+    task_p.add_argument("--task-id")
+    task_p.add_argument("--dataset", help="Canonical key such as feasibility/frea_expert.csv.gz")
+    task_p.add_argument("--data-dir", type=Path, default=Path("Data"))
+    task_p.add_argument("--output", type=Path)
+    task_p.add_argument("--seed", type=int, default=42)
+    task_p.add_argument("--no-proposed-split", action="store_true",
+                        help="Export for review before choosing an evaluation split")
+    task_p.add_argument("--limit", type=int, help="Bounded preview; omitted for a complete data view")
     return parser.parse_args(argv)
 
 
@@ -273,8 +320,81 @@ def main(argv: Optional[List[str]] = None) -> int:
     args = parse_args(argv)
     configure_logging(args.verbose)
 
+    if args.command == "task":
+        from synrxn.benchmarks.task_views import definitions, export_task_view, task_definition
+
+        try:
+            if args.action == "list":
+                result = [{"id": task["id"], "name": task["name"]} for task in definitions()["tasks"]]
+            elif args.action == "show":
+                if not args.task_id:
+                    raise ValueError("--task-id is required")
+                result = task_definition(args.task_id)
+            else:
+                if not args.task_id or not args.dataset or not args.output:
+                    raise ValueError("export requires --task-id, --dataset and --output")
+                result = export_task_view(args.task_id, args.dataset, args.data_dir, args.output,
+                                          seed=args.seed, limit=args.limit, propose_split=not args.no_proposed_split)
+            print(json.dumps(result, indent=2))
+            return 0
+        except (ValueError, KeyError, OSError) as exc:
+            LOGGER.error("Task-view command failed: %s", exc)
+            return 2
+
+    if args.command == "references":
+        from synrxn.benchmarks.reference_store import ReferenceStore
+
+        try:
+            store = ReferenceStore(args.store)
+            result = store.inspect(args.accession) if args.accession else store.list(
+                evidence_tier=args.evidence_tier, offset=args.offset, limit=args.limit)
+        except (ValueError, KeyError, OSError) as exc:
+            LOGGER.error("Reference inspection failed: %s", exc)
+            return 2
+        print(json.dumps(result, indent=2))
+        return 0
+
+    if args.command == "evaluate":
+        from synrxn.metrics.reference import evaluate_predictions
+        from synrxn.benchmarks.contracts import ReferenceRecord, TaskContract
+        from synrxn.benchmarks.reference_store import read_jsonl
+        import hashlib
+
+        try:
+            contract = TaskContract.from_dict(json.loads(args.contract.read_text()))
+            instances = read_jsonl(args.instances)
+            if args.membership:
+                membership = json.loads(args.membership.read_text())["membership"]
+                unknown = set(membership) - {row["instance_id"] for row in instances}
+                if unknown:
+                    raise ValueError("split manifest contains unknown task instances")
+                instances = [row for row in instances
+                             if membership.get(row["instance_id"]) == args.partition]
+            result = evaluate_predictions(
+                instances,
+                [ReferenceRecord.from_dict(r) for r in read_jsonl(args.references)],
+                read_jsonl(args.predictions), contract)
+            result["input_sha256"] = {
+                name: hashlib.sha256(getattr(args, name).read_bytes()).hexdigest()
+                for name in ("contract", "instances", "references", "predictions")}
+            if args.membership:
+                result["input_sha256"]["membership"] = hashlib.sha256(args.membership.read_bytes()).hexdigest()
+                result["partition"] = args.partition
+            rendered = json.dumps(result, indent=2) + "\n"
+            if args.output:
+                if args.output.exists():
+                    raise ValueError("score output exists; choose a new path to preserve prior scoring")
+                args.output.parent.mkdir(parents=True, exist_ok=True)
+                args.output.write_text(rendered)
+            else:
+                print(rendered, end="")
+        except (ValueError, KeyError, OSError) as exc:
+            LOGGER.error("Evaluation failed: %s", exc)
+            return 2
+        return 0
+
     if args.command == "verify-manifest":
-        from .verify_manifest import main as verify_manifest_main
+        from synrxn.data.verify_manifest import main as verify_manifest_main
 
         verify_argv = ["--manifest", args.manifest]
         if args.root:
@@ -286,7 +406,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         return verify_manifest_main(verify_argv)
 
     if args.command == "validate":
-        from .validate_data import main as validate_data_main
+        from synrxn.data.validate import main as validate_data_main
 
         validate_argv = [
             "--data-dir",
@@ -338,7 +458,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         return 0
 
     if args.command == "parquet":
-        from .query import main as query_main
+        from synrxn.access.query import main as query_main
 
         query_argv = [
             args.parquet_command,
@@ -349,12 +469,14 @@ def main(argv: Optional[List[str]] = None) -> int:
             query_argv.extend(
                 ["--output-dir", args.output_dir, "--manifest", args.manifest]
             )
+            if args.partition:
+                query_argv.extend(["--partition", args.partition])
         else:
             query_argv.extend(["--parquet-dir", args.parquet_dir])
         return query_main(query_argv)
 
     if args.command == "catalog-assets":
-        from .build_catalog import main as catalog_main
+        from synrxn.data.build_catalog import main as catalog_main
 
         return catalog_main(
             [
@@ -387,11 +509,22 @@ def main(argv: Optional[List[str]] = None) -> int:
         targets.append("synthesis")
     if args.property:
         targets.append("property")
+    if args.condition:
+        targets.append("condition")
+    if args.feasibility:
+        targets.append("feasibility")
+    if args.impurity:
+        targets.append("impurity")
+    if args.selectivity:
+        targets.append("selectivity")
+    if args.yield_task:
+        targets.append("yield")
 
     if not targets:
         LOGGER.error(
             "No build target provided. Use one or more of "
-            "--aam, --rbl, --classification, --synthesis, or --property."
+            "--aam, --rbl, --classification, --synthesis, --property, --condition, "
+            "--feasibility, --impurity, --selectivity, or --yield."
         )
         return 2
 
@@ -422,14 +555,15 @@ def main(argv: Optional[List[str]] = None) -> int:
     overall_rc = 0
 
     for target in targets:
-        script_path = find_script_path(repo_root, args.script, target)
-        if not script_path.exists():
-            LOGGER.error("Target script for '%s' not found: %s", target, script_path)
-            # Keep last non-zero, but continue with other targets
-            overall_rc = overall_rc or 4
-            continue
-
-        cmd = build_command(python_exe, script_path, forwarded_for_builder)
+        if args.script is not None:
+            script_path = Path(args.script).expanduser().resolve()
+            if not script_path.exists():
+                LOGGER.error("Target script for '%s' not found: %s", target, script_path)
+                overall_rc = overall_rc or 4
+                continue
+            cmd = build_command(python_exe, script_path, forwarded_for_builder)
+        else:
+            cmd = [python_exe, '-m', DEFAULT_BUILDERS[target], *forwarded_for_builder]
 
         LOGGER.info(
             "Running target '%s': %s",
@@ -438,7 +572,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         )
         LOGGER.debug("Working directory: %s", cwd)
 
-        rc = run_subprocess(cmd, cwd=cwd, dry_run=args.dry_run)  # type: ignore
+        rc = run_subprocess(cmd, cwd=cwd, dry_run=args.dry_run, module_root=repo_root)  # type: ignore
         if rc != 0:
             LOGGER.error("Target '%s' exited with code %d", target, rc)
             overall_rc = rc

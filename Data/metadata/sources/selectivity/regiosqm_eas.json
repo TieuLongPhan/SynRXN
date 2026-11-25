@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "dataset_key": "selectivity/regiosqm_eas.csv.gz",
+  "source_url": "https://github.com/jensengroup/db-regioselectivity",
+  "source_doi": "10.1039/C7SC04156J",
+  "source_commit_or_version": "f734ce480c61608c636c5d4c0e9866f6bcbbb9a9",
+  "source_file": "compounds_smiles.csv; compounds_doi.csv; compounds_yield.csv",
+  "source_files": {
+    "compounds_smiles.csv": "256b852c51685f6baa50288cf5acdcebdd67629640ea2c72087e0c50ed452585",
+    "compounds_doi.csv": "48b170949032b5279a1ec3a57ab0d0bd5a970fe057c8ec4eb04b8366cefc0cd1",
+    "compounds_yield.csv": "92d80f6813aeb8bde18685e019b0d63fd8addefc3c2589cfe813635d9ac5ad87"
+  },
+  "upstream_license": "MIT",
+  "license_spdx": "MIT",
+  "license_url": "https://github.com/jensengroup/db-regioselectivity/blob/f734ce480c61608c636c5d4c0e9866f6bcbbb9a9/LICENSE",
+  "license_scope": "The repository is a database-only release; its README identifies the CSV files as experimental database tables and its root LICENSE declares MIT.",
+  "accepted_rows": 535,
+  "observed_sites": 604,
+  "output_sha256": "c156301e943612c5b04db9216e5fa0c173539c966933bcd489e87d7691acd9ae",
+  "output_bytes": 75109,
+  "required_attribution": ["10.1039/C7SC04156J"],
+  "site_index_basis": "zero_based_atom_order_in_upstream_substrate_smiles",
+  "redistribution_partition": "main",
+  "retrieved_at": "2026-08-22"
+}

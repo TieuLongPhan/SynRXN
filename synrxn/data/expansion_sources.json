@@ -1,0 +1,658 @@
+{
+  "schema": "synrxn.expansion-sources.v1",
+  "sources": [
+    {
+      "id": "C01",
+      "name": "BH-HTE-OOD",
+      "paper_urls": [
+        "https://www.nature.com/articles/s43588-026-01017-6"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/19636649"
+      ],
+      "project_urls": [
+        "https://github.com/schwallergroup/bh-hte-ood"
+      ],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "existing",
+      "rights_evidence": "Already integrated as yield/buchwald_hartwig_ood; do not count twice.",
+      "revision": "10.5281/zenodo.19636649",
+      "existing_artifact": "yield/buchwald_hartwig_ood.csv.gz",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "existing",
+      "issues": []
+    },
+    {
+      "id": "C02",
+      "name": "Borylation HTE and regioselectivity",
+      "paper_urls": [
+        "https://www.nature.com/articles/s43588-026-01063-0"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/20773622"
+      ],
+      "project_urls": [],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo data-record grant.",
+      "revision": "10.5281/zenodo.20773622",
+      "acquisition": {
+        "verified_assets": 5,
+        "failed_assets": 0
+      },
+      "integration_status": "integrated",
+      "issues": []
+    },
+    {
+      "id": "C03",
+      "name": "Cernak C–N coupling screen",
+      "paper_urls": [
+        "https://doi.org/10.1021/jacs.6c05959"
+      ],
+      "data_urls": [
+        "https://open-reaction-database.org/dataset/ord_dataset-805ad863feef48579d95d86a728035f4"
+      ],
+      "project_urls": [
+        "https://github.com/open-reaction-database/ord-data"
+      ],
+      "license_spdx": "CC-BY-SA-4.0",
+      "partition": "sharealike",
+      "admission": "admitted",
+      "rights_evidence": "ORD data license; Apache-2.0 applies separately to code.",
+      "revision": "704870642e5c93a141e6666436bc14a9b5f880ed",
+      "acquisition": {
+        "verified_assets": 1,
+        "failed_assets": 0
+      },
+      "integration_status": "integrated",
+      "issues": []
+    },
+    {
+      "id": "C04",
+      "name": "ORDerly condition benchmarks",
+      "paper_urls": [
+        "https://doi.org/10.1021/acs.jcim.4c00292"
+      ],
+      "data_urls": [
+        "https://figshare.com/articles/dataset/ORDerly_chemical_reactions_condition_benchmarks/23298467"
+      ],
+      "project_urls": [
+        "https://github.com/sustainable-processes/ORDerly"
+      ],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "existing",
+      "rights_evidence": "Already integrated as condition/orderly; preserve upstream source attribution.",
+      "revision": "10.6084/m9.figshare.23298467.v4",
+      "existing_artifact": "condition/orderly.csv.gz",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "existing",
+      "issues": []
+    },
+    {
+      "id": "C05",
+      "name": "Denmark CPA thiol addition",
+      "paper_urls": [
+        "https://doi.org/10.1126/science.aau5631"
+      ],
+      "data_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6417887/"
+      ],
+      "project_urls": [],
+      "license_spdx": "UNVERIFIED",
+      "partition": "excluded",
+      "admission": "terms_unresolved",
+      "rights_evidence": "Accessible supplementary information alone does not establish a data redistribution grant.",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "terms_unresolved",
+      "issues": []
+    },
+    {
+      "id": "C06",
+      "name": "Catechol solvent-selection benchmark",
+      "paper_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2025/file/ad61e68e2c4208d5d092b3ecd6064b46-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "data_urls": [
+        "https://github.com/jpfolch/catechol_solvent_selection"
+      ],
+      "project_urls": [
+        "https://github.com/jpfolch/catechol_solvent_selection"
+      ],
+      "license_spdx": "MIT",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Author-provided Croissant dataset metadata explicitly declares MIT; README covers code and data.",
+      "revision": "0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727",
+      "acquisition": {
+        "verified_assets": 7,
+        "failed_assets": 0
+      },
+      "integration_status": "integrated",
+      "issues": []
+    },
+    {
+      "id": "C07",
+      "name": "RDB19-Rad",
+      "paper_urls": [
+        "https://doi.org/10.1021/acs.jpca.4c04121"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/11493786"
+      ],
+      "project_urls": [],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo data-record grant; preserve directions, solvents and resonance parent IDs.",
+      "revision": "10.5281/zenodo.11493786",
+      "acquisition": {
+        "verified_assets": 2,
+        "failed_assets": 2
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": []
+    },
+    {
+      "id": "C08",
+      "name": "Transition1x",
+      "paper_urls": [
+        "https://www.nature.com/articles/s41597-022-01870-w"
+      ],
+      "data_urls": [
+        "https://figshare.com/articles/dataset/Transition1x/19614657"
+      ],
+      "project_urls": [],
+      "license_spdx": "MIT",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Figshare grant covers the native HDF5 asset.",
+      "revision": "10.6084/m9.figshare.19614657.v4",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 1
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "name": "PaRoutes 2.0",
+      "paper_urls": [
+        "https://doi.org/10.1039/D2DD00015F"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/7341155"
+      ],
+      "project_urls": [
+        "https://github.com/MolecularAI/PaRoutes"
+      ],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo data grant; software separately Apache-2.0.",
+      "revision": "10.5281/zenodo.7341155",
+      "acquisition": {
+        "verified_assets": 4,
+        "failed_assets": 3
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": []
+    },
+    {
+      "id": "C10",
+      "name": "RxnSolvKSE (Chung–Green)",
+      "paper_urls": [
+        "https://pubs.rsc.org/en/content/articlehtml/2024/sc/d3sc05353a"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/8423911"
+      ],
+      "project_urls": [],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo grant and explicit data README; preserve source studies.",
+      "revision": "10.5281/zenodo.8423911",
+      "acquisition": {
+        "verified_assets": 1,
+        "failed_assets": 1
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C11",
+      "name": "QuantumPioneer HAT database",
+      "paper_urls": [
+        "https://doi.org/10.1021/jacs.6c10371"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/20060606"
+      ],
+      "project_urls": [
+        "https://github.com/QuantumPioneer/database"
+      ],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo data-record grant.",
+      "revision": "10.5281/zenodo.20060606",
+      "acquisition": {
+        "verified_assets": 1,
+        "failed_assets": 2
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": []
+    },
+    {
+      "id": "C12",
+      "name": "OrgReact",
+      "paper_urls": [
+        "https://www.nature.com/articles/s41597-026-07771-6"
+      ],
+      "data_urls": [
+        "https://doi.org/10.6084/m9.figshare.31668682"
+      ],
+      "project_urls": [],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Figshare data-record grant.",
+      "revision": "10.6084/m9.figshare.31668682.v3",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 2
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C13",
+      "name": "EnzEngDB",
+      "paper_urls": [
+        "https://doi.org/10.1093/nar/gkaf1142"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/17310823"
+      ],
+      "project_urls": [
+        "https://github.com/fhalab/EnzymeEngineeringDB"
+      ],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo compilation grant; retain source-paper and assay evidence.",
+      "revision": "10.5281/zenodo.17310823",
+      "acquisition": {
+        "verified_assets": 1,
+        "failed_assets": 1
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C14",
+      "name": "ReactZyme",
+      "paper_urls": [
+        "https://arxiv.org/html/2408.13659v3"
+      ],
+      "data_urls": [
+        "https://github.com/WillHua127/ReactZyme/tree/main/data"
+      ],
+      "project_urls": [
+        "https://github.com/WillHua127/ReactZyme"
+      ],
+      "license_spdx": "MIT",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Primary Zenodo dataset 11494913 explicitly declares MIT; GitHub code is CC0. Retain UniProt/Rhea attribution and original terms.",
+      "revision": "c4d1554640a01e5b8ae8e2de716b452ce93b1bc6",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C15",
+      "name": "CatPred-DB",
+      "paper_urls": [
+        "https://www.nature.com/articles/s41467-025-57215-9"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/14775076"
+      ],
+      "project_urls": [
+        "https://github.com/maranasgroup/CatPred-DB"
+      ],
+      "license_spdx": "MIT",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo data-record grant; retain original BRENDA/SABIO-RK attribution and measurement provenance.",
+      "revision": "10.5281/zenodo.14775076",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C16",
+      "name": "OrgAIcat / iSynth",
+      "paper_urls": [
+        "https://github.com/DeepSynthesis/orgaicat"
+      ],
+      "data_urls": [
+        "https://github.com/DeepSynthesis/orgaicat/tree/main/data"
+      ],
+      "project_urls": [
+        "https://github.com/DeepSynthesis/orgaicat"
+      ],
+      "license_spdx": "MIT",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Official repository explicitly supplies code and datasets under MIT. Retain per-paper DOIs and endpoint definitions.",
+      "revision": "9ba285de6e2c5dfe0373e2815b90cd8b7a166632",
+      "acquisition": {
+        "verified_assets": 11,
+        "failed_assets": 0
+      },
+      "integration_status": "integrated",
+      "issues": [
+        {
+          "asset": "data/mannich_reaction_Denmark.xlsx",
+          "reason": "native Output endpoint has no documented unit; retained as source, excluded from ee views"
+        }
+      ]
+    },
+    {
+      "id": "C17",
+      "name": "CHORISO",
+      "paper_urls": [
+        "https://arxiv.org/abs/2312.09004"
+      ],
+      "data_urls": [
+        "https://figshare.com/articles/dataset/CHORISO_-_chemical_reaction_SMILES_from_academic_journals/22598230"
+      ],
+      "project_urls": [
+        "https://github.com/schwallergroup/choriso"
+      ],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Figshare data-record grant; patent-derived reactions are not quantitative selectivity experiments.",
+      "revision": "10.6084/m9.figshare.22598230.v1",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 2
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C18",
+      "name": "Perera Suzuki–Miyaura HTE",
+      "paper_urls": [
+        "https://www.science.org/doi/10.1126/science.aap9112"
+      ],
+      "data_urls": [
+        "https://www.science.org/doi/10.1126/science.aap9112"
+      ],
+      "project_urls": [],
+      "license_spdx": "UNVERIFIED",
+      "partition": "excluded",
+      "admission": "terms_unresolved",
+      "rights_evidence": "Existing Perera source remains excluded until a dataset-specific grant is verified.",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "terms_unresolved",
+      "issues": []
+    },
+    {
+      "id": "C19",
+      "name": "Parrot USPTO-Condition",
+      "paper_urls": [
+        "https://doi.org/10.34133/research.0231"
+      ],
+      "data_urls": [
+        "https://github.com/wangxr0526/Parrot"
+      ],
+      "project_urls": [
+        "https://github.com/wangxr0526/Parrot"
+      ],
+      "license_spdx": "UNVERIFIED",
+      "partition": "excluded",
+      "admission": "terms_unresolved",
+      "rights_evidence": "Parrot code MIT does not resolve the underlying dataset redistribution terms.",
+      "revision": "0fb2325567e21011589641544e32427c8244e2a9",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "terms_unresolved",
+      "issues": []
+    },
+    {
+      "id": "C20",
+      "name": "OC20NEB",
+      "paper_urls": [
+        "https://doi.org/10.1021/acscatal.4c04272"
+      ],
+      "data_urls": [
+        "https://facebookresearch.github.io/fairchem/oc20neb/"
+      ],
+      "project_urls": [],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Official OC20NEB dataset page states CC BY 4.0. Preserve slab/cell/periodicity context.",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C21",
+      "name": "LiPRED",
+      "paper_urls": [
+        "https://pubs.rsc.org/en/content/articlehtml/2026/cp/d6cp00088f"
+      ],
+      "data_urls": [
+        "https://doi.org/10.5281/zenodo.8396100"
+      ],
+      "project_urls": [],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Zenodo data-record grant; preserve calculation methods and solvent groups.",
+      "revision": "10.5281/zenodo.16358189",
+      "acquisition": {
+        "verified_assets": 1,
+        "failed_assets": 1
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C22",
+      "name": "RMG database",
+      "paper_urls": [
+        "https://pubs.acs.org/jcisd8/article/62/20/4906/884055/RMG-Database-for-Chemical-Property-Prediction"
+      ],
+      "data_urls": [
+        "https://github.com/ReactionMechanismGenerator/RMG-database"
+      ],
+      "project_urls": [
+        "https://github.com/ReactionMechanismGenerator/RMG-database"
+      ],
+      "license_spdx": "UNVERIFIED",
+      "partition": "excluded",
+      "admission": "terms_unresolved",
+      "rights_evidence": "No blanket data license verified in the pinned repository archive; individual rate libraries need source review.",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "terms_unresolved",
+      "issues": []
+    },
+    {
+      "id": "C23",
+      "name": "EasIFA SwissProt E-RXN ASA",
+      "paper_urls": [
+        "https://www.nature.com/articles/s41467-024-51511-6"
+      ],
+      "data_urls": [
+        "https://github.com/wangxr0526/EasIFA"
+      ],
+      "project_urls": [
+        "https://github.com/wangxr0526/EasIFA"
+      ],
+      "license_spdx": "UNVERIFIED",
+      "partition": "excluded",
+      "admission": "terms_unresolved",
+      "rights_evidence": "MIT code does not establish all underlying active-site dataset terms. Preserve UniProt/M-CSA provenance and inferred reaction pairings.",
+      "revision": "fb65cfe083c8a247ceae0174a59c8e4811fc8c1b",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "terms_unresolved",
+      "issues": []
+    },
+    {
+      "id": "C24",
+      "name": "EnzChemRED",
+      "paper_urls": [
+        "https://www.nature.com/articles/s41597-024-03835-7"
+      ],
+      "data_urls": [
+        "https://zenodo.org/records/11067998"
+      ],
+      "project_urls": [
+        "https://github.com/ncbi-nlp/EnzChemRED"
+      ],
+      "license_spdx": "CC-BY-4.0",
+      "partition": "main",
+      "admission": "admitted",
+      "rights_evidence": "Official SIB/Zenodo data-record grant; manually annotated corpus is distinct from predicted text-mined expansion.",
+      "revision": "10.5281/zenodo.11067998",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 2
+      },
+      "integration_status": "pending_acquisition_or_adapter",
+      "issues": [
+        {
+          "asset": "adapter",
+          "reason": "native adapter not yet available; source assets are not counted as usable tables"
+        }
+      ]
+    },
+    {
+      "id": "C25",
+      "name": "CompleteRXN",
+      "paper_urls": [
+        "https://arxiv.org/html/2605.00222v2"
+      ],
+      "data_urls": [
+        "https://huggingface.co/datasets/completeRXN-benchmark-26/completeRXN"
+      ],
+      "project_urls": [],
+      "license_spdx": "UNVERIFIED",
+      "partition": "excluded",
+      "admission": "terms_unresolved",
+      "rights_evidence": "README limits MIT to benchmark code; underlying USPTO/FlowER data retain their original terms.",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "terms_unresolved",
+      "issues": []
+    },
+    {
+      "id": "C26",
+      "name": "PMechDB / RMechDB",
+      "paper_urls": [
+        "https://deeprxn.ics.uci.edu/pmechdb/download"
+      ],
+      "data_urls": [
+        "https://deeprxn.ics.uci.edu/rmechdb/howtouse"
+      ],
+      "project_urls": [],
+      "license_spdx": "CC-BY-NC-ND",
+      "partition": "excluded",
+      "admission": "modified_redistribution_hold",
+      "rights_evidence": "Official database pages specify NC/ND terms; no modified redistribution grant established.",
+      "acquisition": {
+        "verified_assets": 0,
+        "failed_assets": 0
+      },
+      "integration_status": "modified_redistribution_hold",
+      "issues": []
+    }
+  ]
+}

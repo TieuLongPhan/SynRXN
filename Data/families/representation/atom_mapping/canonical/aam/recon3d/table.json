@@ -1,0 +1,82 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "representation",
+  "format": "csv.gz",
+  "key": "aam/recon3d",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": false,
+    "counting_unit": "source-table row",
+    "key": "aam/recon3d",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "noncommercial",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-NC-4.0 AND MIT",
+    "rights_status": "verified_redistributable",
+    "role": "primary",
+    "rows": 382
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": false,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "syntemp_license",
+      "syntemp_readme",
+      "recheck_mapping_mapping_syntemp_native_license",
+      "recheck_mapping_mapping_syntemp_tree",
+      "recheck_mapping_mapping_syntemp_paper_xml",
+      "recheck_mapping_mapping_syntemp_commit",
+      "recheck_mapping_mapping_recon_figshare",
+      "recheck_mapping_mapping_recon_native_zip",
+      "recheck_mapping_mapping_recon_figshare3"
+    ],
+    "expected_bytes": 230314,
+    "expected_rows": 382,
+    "expected_sha256": "a5dc370de65eb8efde9ecd703ef1f2a021d5713b850944530092798628dea45e",
+    "format": "csv.gz",
+    "key": "aam/recon3d",
+    "license_expression": "CC-BY-NC-4.0 AND MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes.",
+      "Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted."
+    ],
+    "namespace": "canonical",
+    "partition": "noncommercial",
+    "path": "Data/aam/recon3d.csv.gz",
+    "qualification": "Original author ACS Figshare dataset record7469537 declares CC BY-NC4 and native ZIP contains all382local source identifiers.",
+    "rights_status": "verified_redistributable",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 382,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "litsa2018machine"
+    ],
+    "path": "Data/aam/recon3d.csv.gz",
+    "sha256": "a5dc370de65eb8efde9ecd703ef1f2a021d5713b850944530092798628dea45e",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "litsa2018machine"
+    ],
+    "counting_unit": "source-table row",
+    "key": "aam/recon3d",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/aam/recon3d.csv.gz",
+    "role": "primary",
+    "rows": 382,
+    "sha256": "a5dc370de65eb8efde9ecd703ef1f2a021d5713b850944530092798628dea45e",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "Recon3D atom mapping"
+  },
+  "stored_path": "Data/families/representation/atom_mapping/canonical/aam/recon3d/data.csv.gz",
+  "task_id": "atom_mapping",
+  "title": "Recon3D atom mapping"
+}

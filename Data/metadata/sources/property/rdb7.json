@@ -1,0 +1,96 @@
+{
+  "citations": [
+    {
+      "citation_key": "heid2023benchmark_chemprop",
+      "doi": "10.5281/zenodo.10078142",
+      "entry_type": "misc",
+      "title": "Benchmark Data for Chemprop",
+      "url": "https://zenodo.org/records/10078142"
+    }
+  ],
+  "dataset_key": "property/rdb7.csv.gz",
+  "license_spdx": "CC-BY-4.0",
+  "license_url": "https://github.com/TieuLongPhan/SynRXN/blob/v1.2.1/Data/LICENSE",
+  "lock_status": "pinned_published_synrxn_product",
+  "native_parent_product": {
+    "directional_records": 23852,
+    "file": "ccsdtf12_dz.csv",
+    "forward_rule": "dE0",
+    "native_records": 11926,
+    "reverse_rule": "dE0-dHrxn298",
+    "source_sha256": "d5db1487a1cb9324f5a2b4a0044a3130194be02525059cb6a029b5fa69ec3141",
+    "source_url": "https://zenodo.org/records/6618262"
+  },
+  "native_row_verification": {
+    "audit": "ncs/audit/property-native-lineage.json",
+    "dataset": "property/rdb7.csv.gz",
+    "scope": "Exact reaction records and numeric targets; physically independent validation is not claimed."
+  },
+  "outstanding_fields": [
+    "ultimate_original_observation_lineage"
+  ],
+  "published_release_origin": {
+    "archive_member": "Data/property/rdb7.csv.gz",
+    "archive_sha256": "32a9036318da1a5ef27fc417027fc1c6ca561a9e12896ed636f21f17d956bdbe",
+    "bytes_identical_to_published_release": true,
+    "data_license_sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+    "data_terms": "CC BY 4.0",
+    "doi": "10.5281/zenodo.22045145",
+    "license_evidence": "ncs/baselines/v1.2.1/Data/LICENSE",
+    "member_sha256": "5980529ee8cf8ab0922df24048c69ba131d2f7ad623f5cdf9d7fb67b6466849e",
+    "version": "v1.2.1"
+  },
+  "qualification": "This pins the exact previously published curated SynRXN product and its explicit dataset-specific redistribution declaration. It does not recover original experimental document accessions or certify ultimate source lineage.",
+  "redistribution_partition": "main",
+  "release_checksum_recorded_in": "manifest.json",
+  "required_attribution": [
+    "10.5281/zenodo.8174268",
+    "10.5281/zenodo.10078142"
+  ],
+  "retrieved_at": "2026-10-14",
+  "retrofit_note": "Retrofitted for a task family released before source locks were required. License, partition, and attribution are verified against the catalog and bibliography. The listed outstanding fields must be filled by a human upstream audit before this dataset is cited as reproducibly pinned. Release-side size, checksum, and row count are in manifest.json.",
+  "schema_version": "1.0",
+  "source_commit_or_version": "v1.2.1",
+  "source_doi": "10.5281/zenodo.22045145",
+  "source_file": "Data/property/rdb7.csv.gz",
+  "source_sha256": "5980529ee8cf8ab0922df24048c69ba131d2f7ad623f5cdf9d7fb67b6466849e",
+  "source_url": "https://zenodo.org/records/22045145",
+  "upstream_license": "CC BY 4.0",
+  "native_source_checks": [
+    {
+      "dataset": "property/rdb7.csv.gz",
+      "native_file": "ccsdtf12_dz.csv",
+      "native_sha256": "d5db1487a1cb9324f5a2b4a0044a3130194be02525059cb6a029b5fa69ec3141",
+      "native_records": 11926,
+      "directional_rows_verified": 23852,
+      "forward_rule": "ea=dE0",
+      "reverse_rule": "ea=dE0-dHrxn298",
+      "numeric_comparison_decimals": 8,
+      "qualification": "The published directional convention mixes a zero-point barrier and a 298 K reaction enthalpy in the reverse calculation; it is recorded as supplied, not independently revalidated thermochemistry."
+    },
+    {
+      "dataset": "property/rdb7.csv.gz",
+      "native_files": {
+        "chemprop-v2/data/barriers_rdb7/test.csv": "c14e7c4384be44a5fc482a08e524926af42046251c21f31d11e0004d97121864",
+        "chemprop-v2/data/barriers_rdb7/val.csv": "4b9aadeecde2e8140af4a7c21b05fc40fb8a2051117c669f1a7566587e821f7d",
+        "chemprop-v2/data/barriers_rdb7/train.csv": "a2fc01ff3d890b968d0f97a487f798bf604842236cff0ecc05908dd490d97006"
+      },
+      "rows_verified": 23852,
+      "source_version": "Chemprop benchmark v2, DOI 10.5281/zenodo.10078142",
+      "split_and_target_multiset_matches": true
+    }
+  ],
+  "native_audit": "ncs/audit/property-native-lineage.json",
+  "native_verified_on": "2026-10-15",
+  "historical_catalog_citations": [
+    {
+      "citation_key": "heid2023benchmark_chemprop",
+      "doi": "10.5281/zenodo.8174268",
+      "entry_type": "misc",
+      "title": "Benchmark Data for Chemprop",
+      "url": ""
+    }
+  ],
+  "catalog_citation_correction": "The builder and exact source members use Chemprop record 10078142; the earlier 8174268 catalog citation is preserved as history.",
+  "historical_catalog_citation_snapshot": "1f40671"
+}

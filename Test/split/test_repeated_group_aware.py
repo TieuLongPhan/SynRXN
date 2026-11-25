@@ -1,6 +1,5 @@
 # test_repeated_group_aware.py
 import unittest
-import warnings
 import numpy as np
 import pandas as pd
 
@@ -37,7 +36,7 @@ class TestRepeatedGroupAwareSplitter(unittest.TestCase):
     def test_fit_and_basic_get_split_behavior(self):
         # create a simple dataset with clear groups
         rows = []
-        for g in ("A", "B", "C", "D", "E"):
+        for g in ("A", "B", "C", "D", "E", "F"):
             for i in range(3):  # cluster size = 3 for each label
                 rows.append({"value": f"{g}{i}", "group": g})
         df = pd.DataFrame(rows)
@@ -78,7 +77,7 @@ class TestRepeatedGroupAwareSplitter(unittest.TestCase):
             list(splitter.split_generator())
 
     def test_invalid_repeat_or_fold_index_raises(self):
-        rows = [{"x": i, "g": i % 3} for i in range(9)]
+        rows = [{"x": i, "g": i % 6} for i in range(18)]
         df = pd.DataFrame(rows)
         splitter = RepeatedGroupAwareSplitter(
             n_splits=3, n_repeats=1, label_key="g", random_state=1
@@ -89,18 +88,14 @@ class TestRepeatedGroupAwareSplitter(unittest.TestCase):
         with self.assertRaises(IndexError):
             splitter.get_split(repeat=0, holdout_fold=10)
 
-    def test_warning_when_clusters_less_than_n_splits(self):
-        # only 2 labels but n_splits = 5 -> should warn
+    def test_too_few_clusters_fail_instead_of_returning_empty_partitions(self):
         rows = [{"x": i, "g": "A" if i < 5 else "B"} for i in range(10)]
         df = pd.DataFrame(rows)
-        with warnings.catch_warnings(record=True) as w:
-            warnings.simplefilter("always")
+        with self.assertRaisesRegex(ValueError, "At least 10 independent groups"):
             splitter = RepeatedGroupAwareSplitter(
                 n_splits=5, n_repeats=1, label_key="g", random_state=0
             )
             splitter.fit(df)
-            # at least one warning should be issued (UserWarning)
-            self.assertTrue(any(issubclass(wi.category, UserWarning) for wi in w))
 
     def test_split_generator_length_and_consistency(self):
         # build dataset with 6 labels
@@ -129,7 +124,7 @@ class TestRepeatedGroupAwareSplitter(unittest.TestCase):
     def test_get_split_arrays_and_positions_mapping(self):
         rows = []
         labels = []
-        for label in ("X", "Y", "Z"):
+        for label in ("W", "X", "Y", "Z"):
             for i in range(4):
                 rows.append({"payload": i, "label": label})
                 labels.append(label)
@@ -204,6 +199,10 @@ class TestRepeatedGroupAwareSplitter(unittest.TestCase):
         for rep in range(splitter.n_repeats):
             for holdout_fold in range(splitter.n_splits):
                 tr_idx, va_idx, te_idx = splitter.get_split(rep, holdout_fold)
+                self.assertFalse(set(tr_idx) & set(va_idx))
+                self.assertFalse(set(tr_idx) & set(te_idx))
+                self.assertFalse(set(va_idx) & set(te_idx))
+                self.assertEqual(set(tr_idx) | set(va_idx) | set(te_idx), set(df.index))
                 # candidate folds other than holdout_fold should include val fold's labels wholly
                 # build mapping pos->fold from assignments
                 assignment = splitter._assignments_per_repeat[rep]
@@ -247,6 +246,48 @@ class TestRepeatedGroupAwareSplitter(unittest.TestCase):
                 np.testing.assert_array_equal(a_train, b_train)
                 np.testing.assert_array_equal(a_val, b_val)
                 np.testing.assert_array_equal(a_test, b_test)
+
+    def test_one_group_per_cluster_holdout_is_rejected(self):
+        splitter = RepeatedGroupAwareSplitter(n_splits=3, n_repeats=1, label_key="g")
+        with self.assertRaisesRegex(ValueError, "At least 6 independent groups"):
+            splitter.fit(pd.DataFrame({"g": ["a", "b", "c"]}))
+
+    def test_invalid_group_rows(self):
+        splitter = RepeatedGroupAwareSplitter(n_splits=2, n_repeats=1, label_key="group")
+        with self.assertRaisesRegex(ValueError, "must not be missing"):
+            splitter.fit(pd.DataFrame({"group": ["a", None, "b"]}))
+        with self.assertRaisesRegex(ValueError, "index must be unique"):
+            splitter.fit(pd.DataFrame({"group": ["a", "b", "c"]}, index=[1, 1, 2]))
+
+    def test_separate_fold_mode_requires_nonempty_training(self):
+        with self.assertRaisesRegex(ValueError, "at least three folds"):
+            RepeatedGroupAwareSplitter(n_splits=2, label_key="g", holdout_split_mode="separate_fold")
+
+    def test_extreme_group_sizes_and_ratios_keep_every_partition_nonempty(self):
+        rows = [{"g": "large"} for _ in range(100)]
+        rows.extend({"g": f"small-{i}"} for i in range(5))
+        splitter = RepeatedGroupAwareSplitter(
+            n_splits=3, n_repeats=2, label_key="g", random_state=7, ratio=(8, 1, 100))
+        splitter.fit(pd.DataFrame(rows))
+        for train, validation, test in splitter.split_generator():
+            self.assertTrue(len(train) > 0)
+            self.assertTrue(len(validation) > 0)
+            self.assertTrue(len(test) > 0)
+
+    def test_failed_refit_clears_prior_cohort(self):
+        splitter = RepeatedGroupAwareSplitter(n_splits=3, n_repeats=1, label_key="g")
+        splitter.fit(pd.DataFrame({"g": [f"g{i // 2}" for i in range(12)]}))
+        with self.assertRaises(KeyError):
+            splitter.fit(pd.DataFrame({"wrong_column": range(12)}))
+        with self.assertRaises(RuntimeError):
+            splitter.get_split(0, 0)
+
+    def test_zero_repeats_and_empty_requested_partitions_are_rejected(self):
+        with self.assertRaisesRegex(ValueError, "n_repeats"):
+            RepeatedGroupAwareSplitter(label_key="g", n_repeats=0)
+        for ratio in ((8, 0, 1), (8, 1, 0), (8, -1, 2), (8, 1)):
+            with self.assertRaisesRegex(ValueError, "three positive entries"):
+                RepeatedGroupAwareSplitter(label_key="g", ratio=ratio)
 
 
 if __name__ == "__main__":

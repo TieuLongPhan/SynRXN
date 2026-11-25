@@ -1,0 +1,246 @@
+{
+  "id": "C25",
+  "name": "CompleteRXN",
+  "priority": "3 Optional",
+  "survey_license_note": "MIT applies to benchmark code. Preserve original source-data licenses; no blanket MIT data grant assumed.",
+  "paper_urls": [
+    "https://arxiv.org/html/2605.00222v2"
+  ],
+  "data_urls": [
+    "https://huggingface.co/datasets/completeRXN-benchmark-26/completeRXN"
+  ],
+  "project_urls": [],
+  "license_urls": [],
+  "license_verified": false,
+  "files": [],
+  "requests": [
+    {
+      "url": "https://huggingface.co/api/datasets/completeRXN-benchmark-26/completeRXN",
+      "status": 200,
+      "sha256": "e23282fa798d9f21343c0fd2a285606f472eed13e20d902a040dd78e299bd813",
+      "bytes": 4022,
+      "retrieved_at": "2026-10-20T15:35:37.210434+00:00"
+    }
+  ],
+  "huggingface": {
+    "_id": "69ee4a6362d99e6d43104d93",
+    "id": "completeRXN-benchmark-26/completeRXN",
+    "author": "completeRXN-benchmark-26",
+    "sha": "cf8af89b40bd48bb5dfe92f7187ef8e0378e64ed",
+    "lastModified": "2026-04-30T16:05:41.000Z",
+    "private": false,
+    "gated": false,
+    "disabled": false,
+    "tags": [
+      "task_categories:other",
+      "language:en",
+      "license:mit",
+      "size_categories:100K<n<1M",
+      "format:csv",
+      "modality:tabular",
+      "modality:text",
+      "library:datasets",
+      "library:pandas",
+      "library:polars",
+      "library:mlcroissant",
+      "region:us",
+      "chemistry",
+      "reactions",
+      "SMILES",
+      "reaction-completion",
+      "benchmarking",
+      "USPTO"
+    ],
+    "description": "\n\t\n\t\t\n\t\n\t\n\t\tCompleteRxn Benchmark\n\t\n\n206,423 reactions for the task of reaction completion: given an atom-unbalanced\nUSPTO reaction SMILES, predict the missing molecules to produce a balanced equation.\nGround-truth targets come from FlowER\nmechanistic steps mapped to USPTO records. Three split types (random, group OOD, extreme\nOOD) with 5 repetitions each test generalization across structural novelty levels.\nCode: r/CompleteRxn-Benchmarking-2280\n\n\t\n\t\t\n\t\n\t\n\t\tFiles\n\t\n\nbenchmark_final.csv       ←… See the full description on the dataset page: https://huggingface.co/datasets/completeRXN-benchmark-26/completeRXN.",
+    "downloads": 118,
+    "likes": 1,
+    "cardData": {
+      "license": "mit",
+      "task_categories": [
+        "other"
+      ],
+      "language": [
+        "en"
+      ],
+      "tags": [
+        "chemistry",
+        "reactions",
+        "SMILES",
+        "reaction-completion",
+        "benchmarking",
+        "USPTO"
+      ],
+      "pretty_name": "CompleteRxn Benchmark",
+      "size_categories": [
+        "100K<n<1M"
+      ],
+      "configs": [
+        {
+          "config_name": "default",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "benchmark_final.csv"
+            }
+          ]
+        }
+      ],
+      "dataset_info": {
+        "features": [
+          {
+            "name": "Unique_identifier",
+            "dtype": "string"
+          },
+          {
+            "name": "OriginalReaction",
+            "dtype": "string"
+          },
+          {
+            "name": "InputReaction",
+            "dtype": "string"
+          },
+          {
+            "name": "TargetReaction",
+            "dtype": "string"
+          },
+          {
+            "name": "TargetReaction_with_stereo",
+            "dtype": "string"
+          },
+          {
+            "name": "has_unresolved_stereo",
+            "dtype": "bool"
+          },
+          {
+            "name": "CanonicalOriginalReaction",
+            "dtype": "string"
+          },
+          {
+            "name": "CanonicalReaction",
+            "dtype": "string"
+          },
+          {
+            "name": "MissingNrAtoms",
+            "dtype": "int64"
+          },
+          {
+            "name": "MissingNrCarbons",
+            "dtype": "int64"
+          },
+          {
+            "name": "MissingMw",
+            "dtype": "float64"
+          },
+          {
+            "name": "IsBalanced",
+            "dtype": "bool"
+          },
+          {
+            "name": "Balance",
+            "dtype": "string"
+          },
+          {
+            "name": "rxn_class",
+            "dtype": "string"
+          },
+          {
+            "name": "1kTPLLabel",
+            "dtype": "string"
+          },
+          {
+            "name": "FlowER_ID",
+            "dtype": "string"
+          },
+          {
+            "name": "PatentNumber",
+            "dtype": "string"
+          },
+          {
+            "name": "ParagraphNum",
+            "dtype": "string"
+          },
+          {
+            "name": "Year",
+            "dtype": "int64"
+          }
+        ]
+      }
+    },
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "benchmark_columns.json"
+      },
+      {
+        "rfilename": "benchmark_final.csv"
+      },
+      {
+        "rfilename": "croissant.json"
+      },
+      {
+        "rfilename": "extreme_ood_splits/benchmark_final_extreme_ood_splits_rep0.csv"
+      },
+      {
+        "rfilename": "extreme_ood_splits/benchmark_final_extreme_ood_splits_rep1.csv"
+      },
+      {
+        "rfilename": "extreme_ood_splits/benchmark_final_extreme_ood_splits_rep2.csv"
+      },
+      {
+        "rfilename": "extreme_ood_splits/benchmark_final_extreme_ood_splits_rep3.csv"
+      },
+      {
+        "rfilename": "extreme_ood_splits/benchmark_final_extreme_ood_splits_rep4.csv"
+      },
+      {
+        "rfilename": "group_splits/benchmark_final_group_splits_meta.json"
+      },
+      {
+        "rfilename": "group_splits/benchmark_final_group_splits_rep0.csv"
+      },
+      {
+        "rfilename": "group_splits/benchmark_final_group_splits_rep1.csv"
+      },
+      {
+        "rfilename": "group_splits/benchmark_final_group_splits_rep2.csv"
+      },
+      {
+        "rfilename": "group_splits/benchmark_final_group_splits_rep3.csv"
+      },
+      {
+        "rfilename": "group_splits/benchmark_final_group_splits_rep4.csv"
+      },
+      {
+        "rfilename": "random_splits/benchmark_final_random_splits.csv"
+      },
+      {
+        "rfilename": "random_splits/benchmark_final_random_splits_rep0_seed42.csv"
+      },
+      {
+        "rfilename": "random_splits/benchmark_final_random_splits_rep1_seed43.csv"
+      },
+      {
+        "rfilename": "random_splits/benchmark_final_random_splits_rep2_seed44.csv"
+      },
+      {
+        "rfilename": "random_splits/benchmark_final_random_splits_rep3_seed45.csv"
+      },
+      {
+        "rfilename": "random_splits/benchmark_final_random_splits_rep4_seed46.csv"
+      },
+      {
+        "rfilename": "raw/flower_full_single_reactions_with_main_products.tsv"
+      },
+      {
+        "rfilename": "raw/master_dataset_mapped.csv"
+      }
+    ],
+    "createdAt": "2026-04-26T17:24:51.000Z",
+    "usedStorage": 2534773661
+  }
+}

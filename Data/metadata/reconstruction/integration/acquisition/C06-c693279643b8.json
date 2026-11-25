@@ -1,0 +1,11 @@
+{
+  "source_id": "C06",
+  "name": "LICENSE",
+  "bytes": 1073,
+  "url": "https://raw.githubusercontent.com/jpfolch/catechol_solvent_selection/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727/LICENSE",
+  "path": "Data/raw/synrxn2/C06/LICENSE",
+  "bytes_observed": 1073,
+  "sha256": "841488468d1a4aa4fc495eeceaeba3d92fb56779e7bae1578e8423fde808e045",
+  "md5": "a972eea299cfaff91f1f9eb573ae90c0",
+  "status": "verified"
+}

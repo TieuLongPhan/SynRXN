@@ -1,0 +1,20 @@
+{
+  "archive_sha256": "fd7db3d1ff81f777159b497d87051963324ad84dedf3f493fb9415253740ecc9",
+  "archive_url": "https://codeload.github.com/NoraBeier/cAAMsGEMs_of_SIHUMIx/tar.gz/c2c225efd8cc4489632f5a4044d81754265598d6",
+  "attribution": "Beier et al. (2026). Atom-to-Atom Mapped Genome-Scale Models for a Small Gut Microbiome Consortium.",
+  "commit": "c2c225efd8cc4489632f5a4044d81754265598d6",
+  "dataset_key": "aam/sihumix",
+  "environment_snapshot": "rebuild-environment.yml",
+  "grant_scope": "dataset",
+  "grant_snapshot": "UPSTREAM_README.txt",
+  "grant_snapshot_sha256": "58de4768bad4c3f8438e59a5b55814a2a3dd60f8181fa7c579187b8c9ee39f2f",
+  "grant_url": "https://raw.githubusercontent.com/NoraBeier/cAAMsGEMs_of_SIHUMIx/c2c225efd8cc4489632f5a4044d81754265598d6/README.md",
+  "hydrogen_completion": false,
+  "license_spdx": "CC-BY-4.0",
+  "license_text_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "qualification": "Pinned upstream dataset declaration; no independent biological validation is implied. Notebook/code licensing is outside this dataset export.",
+  "repository": "https://github.com/NoraBeier/cAAMsGEMs_of_SIHUMIx",
+  "selection": "Original mappings; exclude missing, one-sided, parser-failed and generic records; retain H imbalance as metadata.",
+  "source_collection": "cAAMsGEMs_of_SIHUMIx"
+}

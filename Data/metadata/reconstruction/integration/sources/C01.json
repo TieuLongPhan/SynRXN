@@ -1,0 +1,44 @@
+{
+  "id": "C01",
+  "name": "BH-HTE-OOD",
+  "priority": "1 Integrate first",
+  "survey_license_note": "CC BY 4.0 on the Zenodo data record. Code Apache-2.0. Preserve original HTE provenance.",
+  "paper_urls": [
+    "https://www.nature.com/articles/s43588-026-01017-6"
+  ],
+  "data_urls": [
+    "https://zenodo.org/records/19636649"
+  ],
+  "project_urls": [
+    "https://github.com/schwallergroup/bh-hte-ood"
+  ],
+  "license_urls": [
+    "https://zenodo.org/api/records/19636649"
+  ],
+  "license_verified": true,
+  "files": [
+    {
+      "name": "2026-02-21_df_HTE_BH_QM_10iter_9-3clustertest.pkl",
+      "bytes": 1405922485,
+      "checksum": "md5:c088ab8b56c78ceb381910a05265791c",
+      "url": "https://zenodo.org/api/records/19636649/files/2026-02-21_df_HTE_BH_QM_10iter_9-3clustertest.pkl/content"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://zenodo.org/api/records/19636649",
+      "status": 200,
+      "sha256": "a7c49f76e70bf0567a5de91fd7c83a4c962aa073c3e8b6b4ff3069bb60b0dfe4",
+      "bytes": 7120,
+      "retrieved_at": "2026-10-20T15:34:13.848135+00:00"
+    }
+  ],
+  "record_id": "19636649",
+  "doi": "10.5281/zenodo.19636649",
+  "title": "Collection of Curated Buchwald–Hartwig HTE Reactions (2026-04-17)",
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "publication_date": "2026-04-18",
+  "description": "<pre><br><br></pre>\n<p>This dataset contains ~27500 Buchwald Hartwig reactions, of which 11300 Buchwald&ndash;Hartwig reactions derived from a dedicated JnJ open-source data production effort in combination with a curated colection of 16200 open-source Buchwald&ndash;Hartwig / Pd-catalyzed C&ndash;N highthroughput experimentation reactions (see Dataset references below). Critically for generalization across sources, every chemical entity was curated with an internal JnJ tool to have a single consistent SMILES and Name representation across the entire combined set.</p>\n<div>If you use this dataset, please cite the associated publication: <strong>Neves, P. et al. &ldquo;Robust out-of-distribution prediction of Buchwald&ndash;Hartwig reactions.&rdquo;&nbsp;<em>Nature Computational Science</em>&nbsp;(2026).&nbsp;<a href=\"https://doi.org/10.1038/s43588-026-01017-6\" rel=\"nofollow\">https://doi.org/10.1038/s43588-026-01017-6</a></strong></div>\n<p><br>Please also cite the original data sources where appropriate.</p>\n<ul>\n<li>\n<p>Santanilla, A. B. et al.&nbsp;<em>Nanomole-scale high-throughput chemistry for the synthesis of complex molecules.</em>&nbsp;<em>Science</em>,&nbsp;2015, 347, 49&ndash;53.</p>\n</li>\n<li>\n<p>Ahneman, D. T.; Estrada, J. G.; Lin, S.; Dreher, S. D.; Doyle, A. G.<br><em>Predicting Reaction Performance in C&ndash;N Cross-Coupling Using Machine Learning.</em><br><em>Science</em>&nbsp;2018, 360, 186&ndash;190. DOI: 10.1126/science.aar5169.</p>\n</li>\n<li>\n<p>Rinehart, N. I.; Saunthwal, R. K.; Wellauer, J.; Zahrt, A. F.; Schlemper, L.; Shved, A. S.; Bigler, R.; Fantasia, S.; Denmark, S. E.<br><em>A Machine-Learning Tool to Predict Substrate-Adaptive Conditions for Pd-Catalyzed C&ndash;N Couplings.</em><br><em>Science</em>&nbsp;2023, 381, 965&ndash;972.</p>\n</li>\n<li>\n<p>Fitzner, M.; Wuitschik, G.; Koller, R. J.; Adam, J.-M.; Schindler, T.; Reymond, J.-L.<br><em>What Can Reaction Databases Teach Us about Buchwald&ndash;Hartwig Cross-Couplings?</em><br><em>Chem. Sci.</em>&nbsp;2020, 11, 13085&ndash;13093.</p>\n</li>\n<li>\n<p>Saebi, M.; Nan, B.; Herr, J. E.; Bustillo, L.; Wiest, O.; Shields, B. J.; et al.<br><em>On the Use of Real-World Datasets for Reaction Yield Prediction.</em><br><em>Chem. Sci.</em>&nbsp;2023, 14, 1671&ndash;1685.</p>\n</li>\n<li>\n<p>King-Smith, E.; et al.<br><em>Probing the Chemical &ldquo;Reactome&rdquo; with High-Throughput Experimentation Data.</em><br><em>Nat. Chem.</em>&nbsp;2024, 16, 633&ndash;643.</p>\n</li>\n<li>\n<p>Ha, S. K.; et al.<br><em>Developing Pharmaceutically Relevant Pd-Catalyzed C&ndash;N Coupling Reactivity Models Leveraging High-Throughput Experimentation.</em><br><em>J. Am. Chem. Soc.</em> 2025, 147, 19602&ndash;19613.</p>\n</li>\n</ul>"
+}

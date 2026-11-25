@@ -1,0 +1,122 @@
+{
+  "counting_unit": "complete native reaction trajectory; configuration_count gives individual atomic configurations",
+  "data_link": "data.csv",
+  "family_id": "physics",
+  "format": "csv",
+  "key": "physics/transition1x_reactive_trajectories",
+  "namespace": "coverage",
+  "registry_binding": {
+    "atomic_configurations": 9624594,
+    "catalog_path": "Data/coverage_expansion/physics/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "complete native reaction trajectory; configuration_count gives individual atomic configurations",
+    "coverage_branch": "physics",
+    "key": "physics/transition1x_reactive_trajectories",
+    "license": "MIT",
+    "namespace": "coverage",
+    "native_split_trajectories": {
+      "test": 287,
+      "train": 9561,
+      "unassigned": 0,
+      "val": 225
+    },
+    "partition": "main",
+    "path": "Data/coverage_expansion/physics/transition1x_reactive_trajectories.csv",
+    "qualification": "CSV indexes full native trajectory tensors: rows count reaction trajectories, configuration_count sums molecular configurations. Native formula train/val/test retained; adjacent frames stay together. Per-row charge/spin are not supplied in native HDF5.",
+    "reference_evidence": "Computed: native wB97x/6-31G(d) NEB-region energies in eV, forces in eV/A, positions in A; trajectories and final endpoint/TS labels are source generated.",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 10073,
+    "sha256": "b809b5dc199bfd49624995119b8a65b1d598d3ede438f4cee1f16b504ea461f9",
+    "source_id": "Transition1x2022",
+    "source_sha256": "6a20f8a3f49c50d462270d10d4c44ca102e788072e2096a91d70b5a0f598b629",
+    "source_url": "https://doi.org/10.6084/m9.figshare.19614657.v4",
+    "task_fields": {
+      "reactive_potential": {
+        "group_fields": [
+          "trajectory_id",
+          "formula",
+          "native_split"
+        ],
+        "inputs": [
+          "atomic_numbers",
+          "positions_path",
+          "native_file",
+          "theory"
+        ],
+        "metrics": [
+          "energy_MAE_eV",
+          "force_MAE_eV_per_A",
+          "per-trajectory error"
+        ],
+        "targets": [
+          "energies_path",
+          "forces_path"
+        ]
+      }
+    },
+    "task_ids": [
+      "reactive_potential"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "complete native reaction trajectory; configuration_count gives individual atomic configurations",
+    "expected_bytes": null,
+    "expected_rows": 10073,
+    "expected_sha256": "b809b5dc199bfd49624995119b8a65b1d598d3ede438f4cee1f16b504ea461f9",
+    "format": "csv",
+    "key": "physics/transition1x_reactive_trajectories",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/physics/transition1x_reactive_trajectories.csv",
+    "qualification": "CSV indexes full native trajectory tensors: rows count reaction trajectories, configuration_count sums molecular configurations. Native formula train/val/test retained; adjacent frames stay together. Per-row charge/spin are not supplied in native HDF5.",
+    "reasons": [],
+    "reference_evidence": "Computed: native wB97x/6-31G(d) NEB-region energies in eV, forces in eV/A, positions in A; trajectories and final endpoint/TS labels are source generated.",
+    "release_eligible": true,
+    "source_id": "Transition1x2022",
+    "source_url": "https://doi.org/10.6084/m9.figshare.19614657.v4",
+    "task_ids": [
+      "reactive_potential"
+    ]
+  },
+  "role": "primary",
+  "rows": 10073,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/physics/transition1x_reactive_trajectories.csv",
+    "sha256": "b809b5dc199bfd49624995119b8a65b1d598d3ede438f4cee1f16b504ea461f9",
+    "source_catalogue": "Data/coverage_expansion/physics/catalog.json",
+    "source_id": "Transition1x2022",
+    "source_urls": [
+      "https://doi.org/10.6084/m9.figshare.19614657.v4"
+    ]
+  },
+  "source_table_metadata": {
+    "atomic_configurations": 9624594,
+    "counting_unit": "complete native reaction trajectory; configuration_count gives individual atomic configurations",
+    "key": "physics/transition1x_reactive_trajectories",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/physics/transition1x_reactive_trajectories.csv",
+    "qualification": "CSV indexes full native trajectory tensors: rows count reaction trajectories, configuration_count sums molecular configurations. Native formula train/val/test retained; adjacent frames stay together. Per-row charge/spin are not supplied in native HDF5.",
+    "role": "primary",
+    "rows": 10073,
+    "sha256": "b809b5dc199bfd49624995119b8a65b1d598d3ede438f4cee1f16b504ea461f9",
+    "source_catalogue": "Data/coverage_expansion/physics/catalog.json",
+    "source_id": "Transition1x2022",
+    "source_urls": [
+      "https://doi.org/10.6084/m9.figshare.19614657.v4"
+    ],
+    "title": "Transition1x reactive trajectories"
+  },
+  "stored_path": "Data/families/physics/reactive_potential/coverage/physics/transition1x_reactive_trajectories/data.csv",
+  "task_id": "reactive_potential",
+  "title": "Transition1x reactive trajectories"
+}

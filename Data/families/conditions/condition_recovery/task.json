@@ -1,0 +1,117 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 3,
+    "data_links": 3,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 3,
+    "stored_rows_across_unique_views": 958360,
+    "task_table_bindings": 3,
+    "tasks": 1,
+    "unique_table_views": 3
+  },
+  "tables": [
+    {
+      "data_link": "canonical/synthesis/uspto_500/data.csv.gz",
+      "key": "synthesis/uspto_500",
+      "metadata": "canonical/synthesis/uspto_500/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/condition/orderly_condition/data.csv.gz",
+      "key": "condition/orderly_condition",
+      "metadata": "canonical/condition/orderly_condition/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/condition_sharealike/ord_hte_condition/data.csv.gz",
+      "key": "condition_sharealike/ord_hte_condition",
+      "metadata": "canonical/condition_sharealike/ord_hte_condition/table.json",
+      "namespace": "canonical"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "synthesis/uspto_500",
+        "legacy_field_eligible_rows": {
+          "reagent_set": 143535
+        },
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND CC0-1.0",
+        "rights_status": "verified_curated_product_grant_with_open_base",
+        "role": "primary",
+        "rows": 143535
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "condition/orderly_condition",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 691105
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "condition_sharealike/ord_hte_condition",
+        "legacy_field_eligible_rows": {
+          "role_aware_condition": 122050
+        },
+        "namespace": "canonical",
+        "partition": "sharealike",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-SA-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 123720
+      }
+    ],
+    "canonical_keys": [
+      "synthesis/uspto_500",
+      "condition/orderly_condition",
+      "condition_sharealike/ord_hte_condition"
+    ],
+    "counting_units": [
+      "source-table row"
+    ],
+    "extension_adapter_ids": [],
+    "family_id": "conditions",
+    "id": "condition_recovery",
+    "legacy_view_ids": [
+      "reagent_set",
+      "role_aware_condition"
+    ],
+    "metrics": [
+      "set_micro_F1",
+      "set_macro_F1",
+      "per_role_F1",
+      "numeric_target_MAE",
+      "coverage"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 958360,
+    "primary_table_count": 3,
+    "qualification": "Keep generic-agent and role-aware outputs as named task variants; missing roles are unknown and a recorded recipe is not uniquely correct.",
+    "question": "Recorded endpoints -> reported generic agents, explicit role sets or operating conditions",
+    "readiness": "legacy_export_variants_available",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 3,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Recorded reagent and condition recovery"
+  }
+}

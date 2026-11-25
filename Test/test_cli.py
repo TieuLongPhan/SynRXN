@@ -10,6 +10,9 @@ def test_cli_exposes_public_maintenance_commands():
         == "build"
     )
     assert parse_args(["catalog-assets"]).command == "catalog-assets"
+    assert parse_args(["build", "--feasibility", "--dry-run"]).feasibility
+    assert parse_args(["build", "--impurity", "--dry-run"]).impurity
+    assert parse_args(["build", "--selectivity", "--dry-run"]).selectivity
 
 
 def test_cli_verify_manifest_delegates(tmp_path):

@@ -1,0 +1,74 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "transformations",
+  "format": "csv.gz",
+  "key": "synthesis/uspto_mit",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "synthesis/uspto_mit",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0 AND CC0-1.0",
+    "rights_status": "verified_curated_product_grant_with_open_base",
+    "role": "primary",
+    "rows": 479035
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "synrxn_archive_record",
+      "lowe_original_data_grant"
+    ],
+    "expected_bytes": 57264696,
+    "expected_rows": 479035,
+    "expected_sha256": "74dffc5bb8e5fdfb41c11676deb5fedb9bb63d28325bdfc719ea68d8b8d9f33b",
+    "format": "csv.gz",
+    "key": "synthesis/uspto_mit",
+    "license_expression": "CC-BY-4.0 AND CC0-1.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/synthesis/uspto_mit.csv.gz",
+    "qualification": "Official Lowe patent-reaction base grants CC0. This exact curated SynRXN product is byte-identical to its published archive member and the independently retrieved dataset-specific CC-BY4 notice matches the lock's recorded noticeSHA256. Permission is scoped to the curated product; no claim that a code license or CC0 covers other authors' separate annotation databases.",
+    "rights_status": "verified_curated_product_grant_with_open_base",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 479035,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "jin2017predicting_outcomes"
+    ],
+    "path": "Data/synthesis/uspto_mit.csv.gz",
+    "sha256": "74dffc5bb8e5fdfb41c11676deb5fedb9bb63d28325bdfc719ea68d8b8d9f33b",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "jin2017predicting_outcomes"
+    ],
+    "counting_unit": "source-table row",
+    "key": "synthesis/uspto_mit",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/synthesis/uspto_mit.csv.gz",
+    "role": "primary",
+    "rows": 479035,
+    "sha256": "74dffc5bb8e5fdfb41c11676deb5fedb9bb63d28325bdfc719ea68d8b8d9f33b",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "USPTO-MIT synthesis"
+  },
+  "stored_path": "Data/families/transformations/forward_prediction/canonical/synthesis/uspto_mit/data.csv.gz",
+  "task_id": "forward_prediction",
+  "title": "USPTO-MIT synthesis"
+}

@@ -1,0 +1,7 @@
+C17: CHORISO
+Data license: CC-BY-4.0
+Figshare data-record grant; patent-derived reactions are not quantitative selectivity experiments.
+
+Primary source and attribution:
+https://arxiv.org/abs/2312.09004
+https://figshare.com/articles/dataset/CHORISO_-_chemical_reaction_SMILES_from_academic_journals/22598230

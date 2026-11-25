@@ -1,0 +1,520 @@
+{
+  "schema": "synrxn.license-recheck.property.v1",
+  "date": "2026-10-20",
+  "scope": "Six formerly held property/rebalancing/synthesis tables; no original bytes or frozen catalogs changed. Lograte handled separately by root. Late original Diels-Alder Reaxys lineage discovery replaces the initial provisional clearance; see full evidence.",
+  "tables": [
+    {
+      "key": "property/e2sn2",
+      "namespace": "canonical",
+      "rows": 3625,
+      "data_path": "Data/property/e2sn2.csv.gz",
+      "data_sha256": "d3b27039841da7ea9bb18e511271fbaddfcb61d826ec1c5e31b50f71c1d3e044",
+      "declared_license_spdx": "CC-BY-4.0",
+      "release_eligible": true,
+      "status": "verified_upstream_grant",
+      "release_license_expression": "CC-BY-4.0",
+      "reason": "All 3,625 atom-mapped reaction strings and activation energies are an exact multiset union of the already-cleared 1,264-row E2 and 2,361-row SN2 author benchmarks. The actual Chemprop benchmark dataset deposit explicitly grants CC BY 4.0. Original IOP publisher-deposited Crossref metadata also identifies CC BY 4.0; the older Materials Cloud record itself uses a custom non-exclusive deposit license, which is not misreported as CC BY.",
+      "evidence_ids": [
+        "synrxn_product_notice",
+        "chemprop_barriers_data_grant",
+        "property_recheck_e2sn2_crossref_retry",
+        "property_recheck_e2sn2_materialscloud_api"
+      ],
+      "remaining_qualification": [
+        "The 3,625-row table is an overlapping combined view, not new experiments or an independent corpus. Retain original QMrxn20, reactiondatabase and Chemprop attribution."
+      ],
+      "source_lock_path": "Data/sources/property/e2sn2.json",
+      "source_lock_sha256": "d98c581fe7f8e7a20447d887e53559079f70e873a845547040a39a201ccbc171",
+      "native_join_proof": {
+        "path": "kdd/coverage/rights_recheck/property/e2sn2_union_comparison.json",
+        "sha256": "1049e1fab8c9d8de8250b33dddd05f620968df6b16dabdbd6cdad6c0273a4f38",
+        "reproduce": "python kdd/coverage/rights_recheck/property/reproduce_comparisons.py"
+      }
+    },
+    {
+      "key": "property/rad6re",
+      "namespace": "canonical",
+      "rows": 31923,
+      "data_path": "Data/property/rad6re.csv.gz",
+      "data_sha256": "fd78145b61bf50e0267f61ae5e45681020a7de7d3fe552da26feabc3096db1d5",
+      "declared_license_spdx": "CC-BY-4.0",
+      "release_eligible": true,
+      "status": "verified_upstream_grant",
+      "release_license_expression": "CC-BY-4.0",
+      "reason": "The original author-generated Rad-6-RE data are explicitly supplied as Supplementary Data 1 with the original Nature Communications article under CC BY 4.0. The native supplement was captured and opened as a complete ZIP; it contains Rad-6-RE_network.txt and Rad-6_databases.xyz. Existing native lineage audit matches all 31,923 curated reaction/enthalpy pairs to the reactiondatabase author CSV. No separate restrictive notice was found in the supplement.",
+      "evidence_ids": [
+        "synrxn_product_notice",
+        "reactiondatabase_readme",
+        "property_recheck_rad6re_article",
+        "property_recheck_rad6re_native_supplement"
+      ],
+      "remaining_qualification": [
+        "The published 32,515-edge native network is filtered to the balanced, curated 31,923-row reactiondatabase product; preserve that transformation and both source citations. The existing audit verifies source fidelity, not independent quantum-chemical recalculation."
+      ],
+      "source_lock_path": "Data/sources/property/rad6re.json",
+      "source_lock_sha256": "ce1cb22250f77600bec37d85d933beec4d6a534e0707aaa4d9e86378e8cbcbd8"
+    },
+    {
+      "key": "property/snar",
+      "namespace": "canonical",
+      "rows": 503,
+      "data_path": "Data/property/snar.csv.gz",
+      "data_sha256": "df8df5b8bc8b74910c7fe9960a8dd200182c5ef1bf91de906286cb71bfe60bcd",
+      "declared_license_spdx": "CC-BY-3.0",
+      "release_eligible": true,
+      "status": "verified_upstream_grant",
+      "release_license_expression": "CC-BY-3.0",
+      "reason": "The original RSC publisher landing page expressly licenses the article CC BY 3.0; publisher-deposited Crossref metadata independently confirms that same license. The actual publisher supplementary CSV has already been joined to all 503 curated reaction/free-energy observations, with 15 of 518 native entries excluded for missing fields. This source-specific primary supplement route clears the former permission-verification hold.",
+      "evidence_ids": [
+        "synrxn_product_notice",
+        "property_recheck_snar_crossref",
+        "property_recheck_snar_pmc_xml"
+      ],
+      "remaining_qualification": [
+        "Keep CC BY 3.0 attribution rather than replacing it with a blanket CC BY 4.0 label. Rates/activation free energies refer to their published solvent and temperature contexts recorded in Data/sources/property/snar-context.csv."
+      ],
+      "source_lock_path": "Data/sources/property/snar.json",
+      "source_lock_sha256": "f0be982035516378232cf64dd5b99fb0c88c97510d32b1317d47bb010fb89108"
+    },
+    {
+      "key": "rbl/complex",
+      "namespace": "canonical",
+      "rows": 1748,
+      "data_path": "Data/rbl/complex.csv.gz",
+      "data_sha256": "a2a2d887a65806fbd27596147f6209213cb3eedfbafd428370ec68586827db4c",
+      "declared_license_spdx": "CC-BY-4.0",
+      "release_eligible": true,
+      "status": "verified_repository_dataset_grant",
+      "release_license_expression": "CC-BY-4.0 AND MIT AND LGPL-2.1-only",
+      "reason": "All 1,748 curated reaction/ground-truth pairs join the actual author SynRBL validation CSV (1,282 Golden and 466 Jaworski records). Preserve the pinned SynRBL MIT author repository notice and original Golden author data repository LGPL-2.1-only notice. The latter is a supplied hand-curated dataset, not merely an atom-mapping executable. The SynRXN compilation retains CC BY 4.0. The SynRBL paper CC0 data waiver is recorded for author contributions but does not remove borrowed Golden obligations.",
+      "evidence_ids": [
+        "synrxn_product_notice",
+        "property_recheck_synrbl_pinned_license",
+        "property_recheck_synrbl_pinned_readme",
+        "property_recheck_synrbl_native_validation",
+        "property_recheck_synrbl_article",
+        "property_recheck_synrbl_commit",
+        "mapping_golden_native_license",
+        "mapping_golden_native_readme",
+        "mapping_golden_native_zip"
+      ],
+      "remaining_qualification": [
+        "Native atom-map identifiers and stereochemistry are normalized for the matching test; native molecular hydrogen [HH] is normalized to [H][H], as in the existing curation. The source contains 1,892 eligible category entries and the local table is a 1,748-row curated subset. Preserve Golden/Lin and Jaworski citations and their original notices as recorded by the broader mapping-source audit.",
+        "The native balancing reference does not include LocalMapper GPL-3.0 atom-mapper prediction columns. Retain Golden LGPL-2.1-only data-source notice and provide the actual editable source data in addition to the SynRBL MIT and SynRXN CC BY 4.0 notices."
+      ],
+      "source_lock_path": "Data/sources/rbl/complex.json",
+      "source_lock_sha256": "3d7eddb0f1ca1f9215486c90f7f705f58c988dfb10dc78e7bb09505cce77114e",
+      "native_join_proof": {
+        "path": "kdd/coverage/rights_recheck/property/rbl_complex_native_comparison.json",
+        "sha256": "bad28ad302b23d905d0db9660302c85cd10616c8a244b0fb6233909d86ea5de4",
+        "reproduce": "python kdd/coverage/rights_recheck/property/reproduce_comparisons.py"
+      },
+      "required_notice_evidence_ids": [
+        "synrxn_product_notice",
+        "property_recheck_synrbl_pinned_license",
+        "mapping_golden_native_license"
+      ]
+    },
+    {
+      "key": "synthesis/da",
+      "namespace": "canonical",
+      "rows": 11011,
+      "data_path": "Data/synthesis/da.csv.gz",
+      "data_sha256": "ddfb98a997ef53161ee43743dbd7431a31c5c674c172f5034e637eaad562afe0",
+      "declared_license_spdx": "CC-BY-3.0",
+      "release_eligible": false,
+      "status": "upstream_database_terms_unverified",
+      "release_license_expression": null,
+      "reason": "All 11,011 local reaction_original strings and code values match the pinned Goodman-lab/TwoBondChem data CSV in source order, and its associated 2024 RSC article is CC BY 3.0. Deeper lineage confirms this is the training portion of Li et al.2022, DOI10.1039/D2RA06022A, whose article is CC BY-NC 3.0 and explicitly states that 14,092 training/validation reactions were downloaded from Reaxys. The original GAN repository contains an inherited MIT software notice (copyright2021dudwojae) and publicly supplies a dataset directory, but no explicit independent grant resolving the commercial Reaxys extraction has been found. Accordingly the complete original data permission chain remains unverified; the later CC BY 3.0 curation is not assumed to remove upstream restrictions.",
+      "evidence_ids": [
+        "synrxn_product_notice",
+        "property_recheck_da_crossref",
+        "property_recheck_da_publisher_pdf",
+        "property_recheck_twobond_readme",
+        "property_recheck_twobond_native_da",
+        "property_recheck_twobond_commits",
+        "property_recheck_twobond_tree",
+        "property_recheck_da_original_pmc",
+        "property_recheck_da_original_crossref",
+        "property_recheck_da_original_pinned_license",
+        "property_recheck_da_original_pinned_readme",
+        "property_recheck_da_original_tree",
+        "property_recheck_da_original_commit"
+      ],
+      "remaining_qualification": [
+        "The local author-curated product notice is CC BY 3.0, original Li2022 article notice CC BY-NC 3.0 and original code repository notice MIT. Article and software licenses are recorded separately from the unresolved original Reaxys data reuse permission.",
+        "A verified source-specific right to redistribute the borrowed Reaxys reaction subset would resolve the hold. This is not a finding that publishing a numerical/structural curated derivative is prohibited; it is a remaining evidence gap under the project original-grant gate. No author messages were sent."
+      ],
+      "source_lock_path": "Data/sources/synthesis/da.json",
+      "source_lock_sha256": "297ceaa0ef8dc8f671c398f792b7ac0d0630c45ba9af7b4fab41112ea7900bdb",
+      "native_join_proof": {
+        "path": "kdd/coverage/rights_recheck/property/da_native_comparison.json",
+        "sha256": "c2cd125cc96be11c5110d1fc6f2443d2344ddf04e2b7f18bd1169948416bd5c1",
+        "reproduce": "python kdd/coverage/rights_recheck/property/reproduce_comparisons.py"
+      },
+      "observed_license_notices": {
+        "curated_goodman_paper": "CC-BY-3.0",
+        "original_li_paper": "CC-BY-NC-3.0",
+        "original_gan_code": "MIT",
+        "ultimate_source": "Reaxys; dataset-specific extraction/redistribution grant unverified"
+      },
+      "original_dataset_origin": {
+        "article_doi": "10.1039/D2RA06022A",
+        "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9693912/",
+        "origin_quote": "a dataset of Diels\u2013Alder reactions downloaded from the Reaxys database was created.",
+        "original_dataset_rows": 14092,
+        "repository_commit": "2f20aa524d03de56b1d31578a7d26043a49eca19",
+        "native_files": [
+          {
+            "path": "dataset/train.txt",
+            "git_blob_sha1": "e4e5ce62d7408bd856b998537b1b4fc79cd38374",
+            "bytes": 1253194,
+            "url": "https://raw.githubusercontent.com/hongliangduan/Generation-of-novel-Diels-Alder-reaction-using-a-GAN-/2f20aa524d03de56b1d31578a7d26043a49eca19/dataset/train.txt"
+          },
+          {
+            "path": "dataset/vaild.txt",
+            "git_blob_sha1": "1057b34b6da21b13bb244dcfb63851ea1e43fd68",
+            "bytes": 317057,
+            "url": "https://raw.githubusercontent.com/hongliangduan/Generation-of-novel-Diels-Alder-reaction-using-a-GAN-/2f20aa524d03de56b1d31578a7d26043a49eca19/dataset/vaild.txt"
+          }
+        ]
+      }
+    },
+    {
+      "key": "property/phosphatase",
+      "namespace": "canonical",
+      "rows": 33354,
+      "data_path": "Data/property/phosphatase.csv.gz",
+      "data_sha256": "aca656158cb5b96cfa3378234641796e5becdf6647d7af0ae9f91b9e53639917",
+      "declared_license_spdx": "CC-BY-4.0",
+      "release_eligible": false,
+      "status": "original_grant_unverified",
+      "release_license_expression": null,
+      "reason": "Recheck confirms the exact 33,354-row curated SynRXN product has a dataset-specific CC BY 4.0 declaration and all reaction/assay targets match the manually curated reactiondatabase CSV. However, the original PNAS 2015 record is free to read through PMC but EuropePMC explicitly classifies it isOpenAccess=N and provides no Creative Commons license. reactiondatabase defers individual data licenses to the original manuscript. No original PNAS supporting-data redistribution grant has been established, so this remains a permission-chain verification hold under the upstream-grant gate. This is not a finding that the curated factual data are illegal or unpublishable.",
+      "evidence_ids": [
+        "synrxn_product_notice",
+        "reactiondatabase_readme",
+        "property_recheck_phosphatase_pmc",
+        "property_recheck_phosphatase_pubmed"
+      ],
+      "remaining_qualification": [
+        "Do not confuse a verified author-curated CC BY 4.0 product declaration with a verified upstream PNAS dataset grant. The hold can be resolved by a source-specific reusable data grant or permission; no author contact was performed. Original PNAS article or supplement text/figures should not be distributed based on the curated table notice alone."
+      ],
+      "source_lock_path": "Data/sources/property/phosphatase.json",
+      "source_lock_sha256": "52b4055038f880be54f6e8f80248edd6d14aee81445e987dd711aabad922787b"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "property_recheck_e2sn2_crossref_retry",
+      "url": "https://api.crossref.org/works/10.1088%2F2632-2153%2Faba822",
+      "path": "kdd/coverage/rights_recheck/property/e2sn2_crossref_retry.txt",
+      "sha256": "319f7f6c5b6d8e783985ea0306d734505e7d31270d12c158027015c908775771",
+      "bytes": 24396,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_e2sn2_materialscloud_api",
+      "url": "https://archive.materialscloud.org/api/records/gkqvy-3vp74",
+      "path": "kdd/coverage/rights_recheck/property/e2sn2_materialscloud_api.txt",
+      "sha256": "e42bc9be93d2e9fc9a8dd8ec7ebe931fa7de6a18c04b28fb92f963e80ff97d9c",
+      "bytes": 11369,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_rad6re_article",
+      "url": "https://www.nature.com/articles/s41467-020-19267-x",
+      "path": "kdd/coverage/rights_recheck/property/rad6re_article.txt",
+      "sha256": "5bf0888034bac73b16f4c06ab363a7e5a3358a89dc05d751a48e9b1296fce885",
+      "bytes": 502325,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_rad6re_native_supplement",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-020-19267-x/MediaObjects/41467_2020_19267_MOESM3_ESM.zip",
+      "path": "kdd/coverage/rights_recheck/property/rad6re_native_supplement.zip",
+      "sha256": "c7b2c8bcc55c2f1b42cb14e8d76f20fc18afe1a126d0f178ec209c91376ecade",
+      "bytes": 10171643,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_da_crossref",
+      "url": "https://api.crossref.org/works/10.1039/D4DD00092G",
+      "path": "kdd/coverage/rights_recheck/property/da_crossref.txt",
+      "sha256": "cfb61bb343a62584f0b7b877020be8ecf6fcd0acb7d8519a0acd61cf13bcb934",
+      "bytes": 11738,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_da_publisher_pdf",
+      "url": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/e839d2f2-3a7a-4ded-b622-da997622d01d/content",
+      "path": "kdd/coverage/rights_recheck/property/da_publisher_pdf.pdf",
+      "sha256": "1c077cade153255310ff17bb52b8808b5787f6bebb6d3aea680227f95a7bb998",
+      "bytes": 1129092,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_twobond_readme",
+      "url": "https://raw.githubusercontent.com/Goodman-lab/TwoBondChem/b2ac4269c51b1cbddb379ee4501b81f7988241b3/README.md",
+      "path": "kdd/coverage/rights_recheck/property/twobond_readme.txt",
+      "sha256": "c28190d5692d7284d1e4bffb6a8bcde94dd250baa9b40df4577eec171eab7694",
+      "bytes": 9537,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_twobond_native_da",
+      "url": "https://raw.githubusercontent.com/Goodman-lab/TwoBondChem/b2ac4269c51b1cbddb379ee4501b81f7988241b3/dataset/diels_alder_data_v7_19052024.csv",
+      "path": "kdd/coverage/rights_recheck/property/twobond_native_da.txt",
+      "sha256": "82f6dfac1b5781d547b0dfb4d091bf1bed6eddcf2150915bd892298319971806",
+      "bytes": 7554510,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_twobond_commits",
+      "url": "https://api.github.com/repos/Goodman-lab/TwoBondChem/commits/main",
+      "path": "kdd/coverage/rights_recheck/property/twobond_commits.txt",
+      "sha256": "0555ddb2456a3fef2a9af4c86719ec7e2354fd609863ffa62694e26254ea37df",
+      "bytes": 14996,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_twobond_tree",
+      "url": "https://api.github.com/repos/Goodman-lab/TwoBondChem/git/trees/b2ac4269c51b1cbddb379ee4501b81f7988241b3?recursive=1",
+      "path": "kdd/coverage/rights_recheck/property/twobond_tree.txt",
+      "sha256": "21712013e505bdd43d067eb39168b89cad76a700e75a87bf0d4a4a26ba830a80",
+      "bytes": 23689,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_snar_crossref",
+      "url": "https://api.crossref.org/works/10.1039/D0SC04896H",
+      "path": "kdd/coverage/rights_recheck/property/snar_crossref.txt",
+      "sha256": "f16fb7acfd9c538db0d8fad7ec6d4b1bae2de4192d6c73964de4f057480721d3",
+      "bytes": 17728,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_snar_pmc_xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9528810/fullTextXML",
+      "path": "kdd/coverage/rights_recheck/property/snar_pmc_xml.txt",
+      "sha256": "3a6c76cb1e2313ed51b2add538cab188a47e36cd12dd8814b3662bd4c8c0377c",
+      "bytes": 119842,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_synrbl_pinned_license",
+      "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRBL/fad0e1a07346497b056dd0f42b13b35682750fc1/LICENSE",
+      "path": "kdd/coverage/rights_recheck/property/synrbl_pinned_license.txt",
+      "sha256": "aa1c87b8ab0374975ff70a6b665969975cab295a9533ea3cda2e71c103e2a5b2",
+      "bytes": 1071,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_synrbl_pinned_readme",
+      "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRBL/fad0e1a07346497b056dd0f42b13b35682750fc1/README.md",
+      "path": "kdd/coverage/rights_recheck/property/synrbl_pinned_readme.txt",
+      "sha256": "a2f4aa33d34887d18925b45937f819c6635150662c41f0d56a740a5bd37b69ca",
+      "bytes": 8021,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_synrbl_native_validation",
+      "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRBL/fad0e1a07346497b056dd0f42b13b35682750fc1/Data/Validation_set/validation_set.csv",
+      "path": "kdd/coverage/rights_recheck/property/synrbl_native_validation.txt",
+      "sha256": "d424b015075770bbad5ba28322438a203e304bd53d1f1c96eef8533fab5493b2",
+      "bytes": 1982718,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_synrbl_article",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11264917/",
+      "path": "kdd/coverage/rights_recheck/property/synrbl_article.txt",
+      "sha256": "23d2a11b23b8e7c86c839322d9b911e2980a7982089929de7981ca2bbc1f588b",
+      "bytes": 281951,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_synrbl_commit",
+      "url": "https://api.github.com/repos/TieuLongPhan/SynRBL/commits/main",
+      "path": "kdd/coverage/rights_recheck/property/synrbl_commit.txt",
+      "sha256": "955f0d2fd001a10db69997fd711197efb9782398561e8e23afcdb724e4796316",
+      "bytes": 7103,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_phosphatase_pmc",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4413258/",
+      "path": "kdd/coverage/rights_recheck/property/phosphatase_pmc.txt",
+      "sha256": "c384efcdd4fd79388ef8819ca4d0f1e2eb0e345d77d726cbdd46fde0af1dcf55",
+      "bytes": 267331,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_phosphatase_pubmed",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:25848029&format=json&resultType=core",
+      "path": "kdd/coverage/rights_recheck/property/phosphatase_pubmed.txt",
+      "sha256": "6d5e20266ba6b5c0d763cccc71d94ba84af9ab8eab9cf97be1799a3aa424d921",
+      "bytes": 10495,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "synrxn_product_notice",
+      "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE",
+      "path": "kdd/coverage/rights_legacy/synrxn_product_notice.txt",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE",
+      "status": "captured",
+      "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+      "bytes": 8007
+    },
+    {
+      "id": "chemprop_barriers_data_grant",
+      "url": "https://zenodo.org/api/records/10078142",
+      "path": "kdd/coverage/rights_legacy/chemprop_barriers_data_grant.txt",
+      "http_status": 200,
+      "final_url": "https://zenodo.org/api/records/10078142",
+      "status": "captured",
+      "sha256": "2a6cc22a75844ff506260c983f7081376bfaa5faeca3150a4878b5cda35d5a46",
+      "bytes": 8646
+    },
+    {
+      "id": "reactiondatabase_readme",
+      "url": "https://raw.githubusercontent.com/hesther/reactiondatabase/74094e26f42538ea7b7139e4db20abf80e5f0b38/README.md",
+      "path": "kdd/coverage/rights_legacy/reactiondatabase_readme.txt",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/hesther/reactiondatabase/74094e26f42538ea7b7139e4db20abf80e5f0b38/README.md",
+      "status": "captured",
+      "sha256": "1f7ef00e9fe22bff12360787d49bb8851d79d627bb3872b8a0dfe30407e31fb5",
+      "bytes": 4207
+    },
+    {
+      "path": "kdd/coverage/rights_recheck/mapping/golden_native_license.txt",
+      "sha256": "20c17d8b8c48a600800dfd14f95d5cb9ff47066a9641ddeab48dc54aec96e331",
+      "bytes": 26526,
+      "url": "https://raw.githubusercontent.com/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/793475e54d8b2c7f714165a61e4eb439435d7d92/LICENSE",
+      "http_status": 200,
+      "id": "mapping_golden_native_license",
+      "status": "captured"
+    },
+    {
+      "path": "kdd/coverage/rights_recheck/mapping/golden_native_readme.txt",
+      "sha256": "f2e27c354918840a0b92357b29546e285b57c328e9eba0c8eb677ab29ef44e0e",
+      "bytes": 2146,
+      "url": "https://raw.githubusercontent.com/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/793475e54d8b2c7f714165a61e4eb439435d7d92/README.md",
+      "http_status": 200,
+      "id": "mapping_golden_native_readme",
+      "status": "captured"
+    },
+    {
+      "path": "kdd/coverage/rights_recheck/mapping/golden_native_zip.zip",
+      "sha256": "baf10464a6cd92dc4719f8becd5f001ab4b6bdafd363d74c5ae9dee77755f3d6",
+      "bytes": 978225,
+      "url": "https://raw.githubusercontent.com/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/793475e54d8b2c7f714165a61e4eb439435d7d92/data/golden_dataset.zip",
+      "http_status": 200,
+      "id": "mapping_golden_native_zip",
+      "status": "captured"
+    },
+    {
+      "id": "property_recheck_da_original_pmc",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9693912/",
+      "path": "kdd/coverage/rights_recheck/property/da_original_pmc.txt",
+      "sha256": "e7f36c0d9b1d558247be8cea92924893e6edf020bf8813a3662f4e302ea762ed",
+      "bytes": 157993,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_da_original_crossref",
+      "url": "https://api.crossref.org/works/10.1039%2FD2RA06022A",
+      "path": "kdd/coverage/rights_recheck/property/da_original_crossref.txt",
+      "sha256": "ade011bf52911c70dbddfdcc76fc5c521fd2a7597d56c4f5d2e1100cb6c41e02",
+      "bytes": 10496,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_da_original_pinned_license",
+      "url": "https://raw.githubusercontent.com/hongliangduan/Generation-of-novel-Diels-Alder-reaction-using-a-GAN-/2f20aa524d03de56b1d31578a7d26043a49eca19/LICENSE",
+      "path": "kdd/coverage/rights_recheck/property/da_original_pinned_license.txt",
+      "sha256": "8e5df5e7ce73a540f6b4f80c778a8f025392c3fc7ad9dabce7de42c29a42b943",
+      "bytes": 1065,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_da_original_pinned_readme",
+      "url": "https://raw.githubusercontent.com/hongliangduan/Generation-of-novel-Diels-Alder-reaction-using-a-GAN-/2f20aa524d03de56b1d31578a7d26043a49eca19/README.md",
+      "path": "kdd/coverage/rights_recheck/property/da_original_pinned_readme.txt",
+      "sha256": "8228ecdff305f061303d399d096479a934401a97a235b3132657ba61ff3d2999",
+      "bytes": 704,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_da_original_tree",
+      "url": "https://api.github.com/repos/hongliangduan/Generation-of-novel-Diels-Alder-reaction-using-a-GAN-/git/trees/2f20aa524d03de56b1d31578a7d26043a49eca19?recursive=1",
+      "path": "kdd/coverage/rights_recheck/property/da_original_tree.txt",
+      "sha256": "a01bb6b91a58b49917f14505d6f8ce422061934ead8b82685ffaa008f8cb7387",
+      "bytes": 22573,
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "id": "property_recheck_da_original_commit",
+      "url": "https://api.github.com/repos/hongliangduan/Generation-of-novel-Diels-Alder-reaction-using-a-GAN-/commits/main",
+      "path": "kdd/coverage/rights_recheck/property/da_original_commit.txt",
+      "sha256": "cdf4c3376cecfaff1371268665d5ecb4a35568443191fa246a757f509585b4be",
+      "bytes": 5389,
+      "status": "captured",
+      "http_status": 200
+    }
+  ],
+  "comparison_artifacts": [
+    {
+      "path": "kdd/coverage/rights_recheck/property/e2sn2_union_comparison.json",
+      "sha256": "1049e1fab8c9d8de8250b33dddd05f620968df6b16dabdbd6cdad6c0273a4f38",
+      "bytes": 418
+    },
+    {
+      "path": "kdd/coverage/rights_recheck/property/da_native_comparison.json",
+      "sha256": "c2cd125cc96be11c5110d1fc6f2443d2344ddf04e2b7f18bd1169948416bd5c1",
+      "bytes": 269
+    },
+    {
+      "path": "kdd/coverage/rights_recheck/property/rbl_complex_native_comparison.json",
+      "sha256": "bad28ad302b23d905d0db9660302c85cd10616c8a244b0fb6233909d86ea5de4",
+      "bytes": 345758
+    },
+    {
+      "path": "kdd/coverage/rights_recheck/property/reproduce_comparisons.py",
+      "sha256": "65db722c10f2fdd10051735e23f0e6b5208c6dbd87d0ab4d193127a278798281",
+      "bytes": 5198
+    }
+  ],
+  "summary": {
+    "tables_rechecked": 6,
+    "release_eligible": 4,
+    "original_grant_unverified": 1,
+    "upstream_database_terms_unverified": 1
+  },
+  "method": "Check dataset-specific original/associated author grants and actual data identities; acknowledge open read access and repeated use are not by themselves redistribution licenses."
+}

@@ -1,0 +1,10 @@
+{
+  "source_id": "C17",
+  "name": "choriso_public.tar.gz",
+  "bytes": 240537498,
+  "checksum": "md5:7cd65aeb54d420495a3543273d5a8b10",
+  "url": "https://ndownloader.figshare.com/files/43525509",
+  "path": "Data/raw/synrxn2/C17/choriso_public.tar.gz",
+  "status": "unavailable",
+  "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+}

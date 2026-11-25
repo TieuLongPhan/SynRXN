@@ -1,0 +1,73 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "representation",
+  "format": "csv.gz",
+  "key": "aam/brenda",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "aam/brenda",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 3138
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "brenda_data_terms"
+    ],
+    "expected_bytes": 385458,
+    "expected_rows": 3138,
+    "expected_sha256": "dad050fba14ab6160480e6802cf81fc82ea3a70e1ccb1af9d251796cd7374580",
+    "format": "csv.gz",
+    "key": "aam/brenda",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/aam/brenda.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 3138,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "hauenstein2026brenda"
+    ],
+    "path": "Data/aam/brenda.csv.gz",
+    "sha256": "dad050fba14ab6160480e6802cf81fc82ea3a70e1ccb1af9d251796cd7374580",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "hauenstein2026brenda"
+    ],
+    "counting_unit": "source-table row",
+    "key": "aam/brenda",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/aam/brenda.csv.gz",
+    "role": "primary",
+    "rows": 3138,
+    "sha256": "dad050fba14ab6160480e6802cf81fc82ea3a70e1ccb1af9d251796cd7374580",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "BRENDA balanced atom mappings"
+  },
+  "stored_path": "Data/families/representation/atom_mapping/canonical/aam/brenda/data.csv.gz",
+  "task_id": "atom_mapping",
+  "title": "BRENDA balanced atom mappings"
+}

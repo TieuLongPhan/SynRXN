@@ -1,0 +1,117 @@
+{
+  "counting_unit": "expert-annotated source document",
+  "data_link": "data.parquet",
+  "family_id": "data",
+  "format": "parquet",
+  "key": "knowledge/EnzChemRED2024/documents",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/knowledge/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "expert-annotated source document",
+    "coverage_branch": "knowledge",
+    "key": "knowledge/EnzChemRED2024/documents",
+    "license": "CC-BY-4.0",
+    "namespace": "coverage",
+    "parent_groups": 1210,
+    "partition": "main",
+    "path": "Data/coverage_expansion/knowledge/documents.parquet",
+    "qualification": "Native expert BioC entities/conversions from title/abstract text. Not full-paper multimodal extraction; offsets retain native passage coordinates.",
+    "reference_evidence": "expert_curated_text_annotations",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 1210,
+    "sha256": "1aeb1adbe4b50434acf2dcc0756894f4b22be0a9757d5a59b0d9692243a1b9d4",
+    "source_id": "EnzChemRED2024",
+    "source_sha256": "046f6c00663d26cf172cb828b3fe68cab92a128de947545c01aff53060c06251",
+    "source_url": "https://doi.org/10.5281/zenodo.11067998",
+    "task_fields": {
+      "literature_extraction": {
+        "group_fields": [
+          "parent_group"
+        ],
+        "input_keys": [
+          "passages"
+        ],
+        "inputs": [
+          "inputs_json"
+        ],
+        "metrics": [
+          "entity_F1",
+          "relation_F1",
+          "document_coverage"
+        ],
+        "split_policy": "SHA-256 parent-group 80/10/10 seed 2027; native split retained separately",
+        "target_keys": [
+          "entities",
+          "relations"
+        ],
+        "targets": [
+          "targets_json"
+        ]
+      }
+    },
+    "task_ids": [
+      "literature_extraction"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "expert-annotated source document",
+    "expected_bytes": 1343931,
+    "expected_rows": 1210,
+    "expected_sha256": "1aeb1adbe4b50434acf2dcc0756894f4b22be0a9757d5a59b0d9692243a1b9d4",
+    "format": "parquet",
+    "key": "knowledge/EnzChemRED2024/documents",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/knowledge/documents.parquet",
+    "qualification": "Native expert BioC entities/conversions from title/abstract text. Not full-paper multimodal extraction; offsets retain native passage coordinates.",
+    "reasons": [],
+    "reference_evidence": "expert_curated_text_annotations",
+    "release_eligible": true,
+    "source_id": "EnzChemRED2024",
+    "source_url": "https://doi.org/10.5281/zenodo.11067998",
+    "task_ids": [
+      "literature_extraction"
+    ]
+  },
+  "role": "primary",
+  "rows": 1210,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/knowledge/documents.parquet",
+    "sha256": "1aeb1adbe4b50434acf2dcc0756894f4b22be0a9757d5a59b0d9692243a1b9d4",
+    "source_catalogue": "Data/coverage_expansion/knowledge/catalog.json",
+    "source_id": "EnzChemRED2024",
+    "source_urls": [
+      "https://doi.org/10.5281/zenodo.11067998"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "expert-annotated source document",
+    "key": "knowledge/EnzChemRED2024/documents",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/knowledge/documents.parquet",
+    "qualification": "Native expert BioC entities/conversions from title/abstract text. Not full-paper multimodal extraction; offsets retain native passage coordinates.",
+    "role": "primary",
+    "rows": 1210,
+    "sha256": "1aeb1adbe4b50434acf2dcc0756894f4b22be0a9757d5a59b0d9692243a1b9d4",
+    "source_catalogue": "Data/coverage_expansion/knowledge/catalog.json",
+    "source_id": "EnzChemRED2024",
+    "source_urls": [
+      "https://doi.org/10.5281/zenodo.11067998"
+    ],
+    "title": "EnzChemRED source documents"
+  },
+  "stored_path": "Data/families/data/literature_extraction/coverage/knowledge/EnzChemRED2024/documents/data.parquet",
+  "task_id": "literature_extraction",
+  "title": "EnzChemRED source documents"
+}

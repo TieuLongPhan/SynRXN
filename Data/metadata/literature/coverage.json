@@ -1,0 +1,57 @@
+{
+  "as_of": "2026-10-20",
+  "official_kdd_track_records": 246,
+  "official_kdd_track_counts": {
+    "kdd2025": 64,
+    "cycle2Papers": 153,
+    "cycle1Papers": 29
+  },
+  "kdd_2024_db_track": "did not exist; launched in 2025",
+  "selected_papers": 78,
+  "selected_by_year": {
+    "2025": 29,
+    "2026": 30,
+    "2024": 19
+  },
+  "selected_by_cohort": {
+    "kdd_track": 36,
+    "adjacent_db": 24,
+    "reaction_prior": 16,
+    "resource_prior": 2
+  },
+  "downloaded_pdfs": 70,
+  "downloaded_pdf_bytes": 307461230,
+  "full_text_xml_articles": 4,
+  "xml_without_pdf": 3,
+  "papers_with_local_full_text": 73,
+  "metadata_only_paper_ids": [
+    "k25-pove",
+    "k26-biocuration",
+    "k26-proteinrealistic",
+    "k26-saas",
+    "k26-uniham"
+  ],
+  "review_forums_attempted": 43,
+  "review_forums_with_notes": 36,
+  "papers_with_public_review_records": 35,
+  "public_note_counts": {
+    "Official_Review": 139,
+    "Official_Comment": 378,
+    "Decision": 35,
+    "Meta_Review": 9,
+    "Withdrawal": 1,
+    "Other": 5
+  },
+  "decisions_with_rationale": 26,
+  "retrieved_review_notes_under_kdd_venue": 0,
+  "limitations": [
+    "Topic-selected corpus, not an exhaustive census of all 2024-2026 scientific publications.",
+    "All KDD D&B titles were screened; excluded papers did not receive a full-text rejection review.",
+    "Downloaded author versions may differ from the final proceedings and from earlier reviewed versions.",
+    "Normal OpenReview notes/forum access requires browser verification; public search was used where available.",
+    "No direct KDD review threads were retrieved; prior-venue reviews retain their original provenance.",
+    "Public-search retrieval does not establish complete coverage of all replies in a forum.",
+    "No unpublished/private reviews or synthetic review datasets are used as peer-review evidence.",
+    "Focused reading notes do not represent a detailed methods critique of every catalog entry."
+  ]
+}

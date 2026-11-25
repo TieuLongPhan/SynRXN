@@ -1,0 +1,46 @@
+Biocatalysis data attribution and redistribution notices
+
+EnzEngDB / Enzyme Engineering Database authors and contributors.
+Data deposit: https://zenodo.org/records/17310823 (CC-BY-4.0).
+Publication: https://doi.org/10.1093/nar/gkaf1142
+Changes: source qualification, native-parent median differences, and inverse
+biocatalyst-design views. Original campaign/reference DOI and extraction tier
+remain in each row. Inverse design excludes DMSDB and LLMDB observations.
+
+ReactZyme: Chenqing Hua and coauthors.
+Data deposit: https://zenodo.org/records/13635807 (MIT dataset grant).
+Publication: https://arxiv.org/abs/2408.13659
+Changes: positive-pair normalization, stable row IDs and native split retention.
+The deposit license metadata is retained; no new negative labels were invented.
+
+CatPred-DB: Veda Sheersh Boorla and Costas D. Maranas.
+Data deposit: https://zenodo.org/records/14775076 (MIT contribution grant).
+Publication: https://doi.org/10.1038/s41467-025-57215-9
+Original MIT notice: licenses/CatPred-MIT.txt.
+Changes: retained BRENDA-record endpoints only. Mixed SABIO-containing pooled
+aggregate targets and ambiguous source origins are excluded from release.
+
+BRENDA Enzyme Database, original curators and current DSMZ contributors.
+https://www.brenda-enzymes.org/download.php (CC-BY-4.0).
+Only identifiable retained BRENDA records are included, as mapped by the
+pinned CatPred processing/merge source; source clipping and units are recorded.
+
+M-CSA: A. J. M. Ribeiro, G. L. Holliday, N. Furnham, J. D. Tyzack, K. Ferris,
+J. M. Thornton, EMBL-EBI and contributors.
+https://www.ebi.ac.uk/thornton-srv/m-csa/ (CC-BY-4.0).
+Publication: https://doi.org/10.1093/nar/gkx1012
+Changes: native reference catalytic residues joined to frozen UniProt sequences,
+position/amino-acid checks, residue labels, and explicit grouping identifiers.
+
+UniProt Consortium: https://www.uniprot.org/ (CC-BY-4.0).
+Rights: https://rest.uniprot.org/help/license
+Rhea/SIB contributors: https://www.rhea-db.org/ (CC-BY-4.0).
+Rights: https://sparql.rhea-db.org/.well-known/void
+Sequences, reactions and associations retain source identifiers and attribution.
+
+CC-BY-4.0 terms: https://creativecommons.org/licenses/by/4.0/
+MIT terms: https://opensource.org/license/mit
+Keep these notices, license metadata and row provenance with redistributed data.
+The quarantine directory is outside the release set. Mixed CatPred raw assets,
+EasIFA labels and raw website/application evidence are not cleared by this file.
+Only raw assets individually marked redistribution_allowed=true may be bundled.
