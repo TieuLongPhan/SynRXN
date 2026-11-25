@@ -1,0 +1,34 @@
+Source-specific redistribution terms for the SynRXN 1.5.0 Zstandard mirrors
+
+SynRXN converted gzip to Zstandard and split the ORDerly CSV at row boundaries. Each ORDerly part includes the original header. The CSV values, row order and source terms are preserved. See the source locks and attribution in README.md.
+
+canonical:condition/orderly_condition
+Path: Data/condition/orderly_condition.csv.gz
+License expression: CC-BY-4.0
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://api.figshare.com/v2/articles/23298467/versions/4
+
+canonical:condition_sharealike/openexp
+Path: Data/condition_sharealike/openexp.csv.gz
+License expression: CC-BY-SA-4.0
+Partition: sharealike
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Comply with the applicable ShareAlike requirements for adapted material.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://aclanthology.org/2024.findings-acl.318.pdf
+
+canonical:yield/uspto_yield
+Path: Data/yield/uspto_yield.csv.gz
+License expression: MIT
+Partition: main
+Commercial use allowed by these grants: True
+Retain source attribution, applicable license notices and descriptions of changes.
+Source/curation: Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.
+Evidence/source: https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE
+Evidence/source: https://api.figshare.com/v2/articles/14414039/versions/1

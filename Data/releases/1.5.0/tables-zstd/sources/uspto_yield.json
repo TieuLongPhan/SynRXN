@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "dataset_key": "yield/uspto_yield.csv.gz",
+  "source_url": "https://figshare.com/articles/dataset/14414039",
+  "source_doi": "10.6084/m9.figshare.14414039.v1",
+  "source_commit_or_version": "1",
+  "source_file": "Schwaller_US_patents_1976-Sep2016_1product_reactions_yield_ok_cropped_data.zip",
+  "source_file_id": 27613961,
+  "source_md5": "8075bf24bd8c383297d4f1f8fbeca7a3",
+  "source_sha256": "e83c1a7b80e1855a45e30b834f02ab8540eadf66caa0b688609d2a9d00bb1783",
+  "upstream_license": "MIT",
+  "license_url": "https://opensource.org/license/mit",
+  "required_attribution": [
+    "10.6084/m9.figshare.14414039.v1",
+    "10.6084/m9.figshare.5104873.v1"
+  ],
+  "redistribution_partition": "main",
+  "retrieved_at": "2026-08-21"
+}
