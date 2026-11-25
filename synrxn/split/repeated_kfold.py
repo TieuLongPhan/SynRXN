@@ -55,6 +55,11 @@ class RepeatedKFoldsSplitter:
     splitting the outer holdout into validation and test sets. For example, `ratio=(8,1,1)`
     means the holdout is split val:test = 1:1.
 
+    Every call recomputes positions from the supplied observations, labels and groups.
+    GroupKFold outer assignments are deterministic and repeat unchanged; only
+    their validation/test subdivision is reseeded. These are not independent
+    outer splits. ``outer_repeat_policy_`` records this distinction.
+
     Notes on stratification:
 
     - Pass `y` (array-like) to stratify by labels (sklearn-conventional).
@@ -96,7 +101,9 @@ class RepeatedKFoldsSplitter:
     ):
         if n_splits < 2:
             raise ValueError("n_splits must be >= 2")
-        if any(int(r) <= 0 for r in ratio):
+        if int(n_repeats) < 1:
+            raise ValueError("n_repeats must be >= 1")
+        if len(ratio) != 3 or any(int(r) <= 0 for r in ratio):
             raise ValueError("All entries of ratio must be positive integers")
         self.n_splits = int(n_splits)
         self.n_repeats = int(n_repeats)
@@ -108,6 +115,7 @@ class RepeatedKFoldsSplitter:
         self._splits: List[SplitIndices] = []
         # store original X if provided as DataFrame for as_frame slicing
         self._X_provided: Optional[Any] = None  # can be DataFrame or array-like
+        self.outer_repeat_policy_: Optional[str] = None
 
     def __repr__(self) -> str:
         return (
@@ -120,13 +128,12 @@ class RepeatedKFoldsSplitter:
 
     # sklearn API
     def get_n_splits(self, X=None, y=None, groups=None) -> int:
-        """
-        Return how many (train, holdout) splits will be produced.
+        """Return how many (train, holdout) splits will be produced.
 
         :param X: Feature matrix or dataframe (ignored for counting).
         :param y: Labels (ignored for counting).
         :param groups: Groups (ignored for counting).
-        :returns: Total number of outer splits (n_splits * n_repeats).
+        :return: Total number of outer splits (n_splits * n_repeats).
         """
         return self.n_splits * self.n_repeats
 
@@ -137,8 +144,7 @@ class RepeatedKFoldsSplitter:
         groups: Optional[Any] = None,
         stratify: Optional[Union[str, Any]] = None,
     ) -> Iterable[Tuple[np.ndarray, np.ndarray]]:
-        """
-        sklearn-compatible generator yielding (train_idx, holdout_idx) where holdout_idx == val + test.
+        """sklearn-compatible generator yielding (train_idx, holdout_idx) where holdout_idx == val + test.
 
         The `stratify` argument may be:
          - a column name (str) if X is a pandas.DataFrame, or
@@ -150,7 +156,7 @@ class RepeatedKFoldsSplitter:
         :param y: Labels (array-like). Used for stratification if `stratify` is None.
         :param groups: Group labels for GroupKFold (optional).
         :param stratify: Column name or array-like used to stratify folds (optional).
-        :yields: Tuples (train_idx, holdout_idx) for each repeat/fold.
+        :yield: Tuples (train_idx, holdout_idx) for each repeat/fold.
         """
         # If a DataFrame column name of stratify is passed, extract it
         stratify_arr = None
@@ -170,9 +176,8 @@ class RepeatedKFoldsSplitter:
         X_arr, y_arr, groups_arr = indexable(X, y_for_split, groups)
         self._X_provided = X  # store original for get_split(as_frame=True)
 
-        # Ensure splits computed (will use y_arr or groups_arr for stratification/grouping)
-        if not self._splits:
-            self._compute_splits(X_arr, y_arr, groups_arr)
+        # Position arrays belong to these observations and groups, never a prior call.
+        self._compute_splits(X_arr, y_arr, groups_arr)
 
         for s in self._splits:
             # holdout = val + test (concatenate)
@@ -186,14 +191,13 @@ class RepeatedKFoldsSplitter:
         groups: Optional[Any] = None,
         stratify: Optional[Union[str, Any]] = None,
     ) -> Iterable[SplitIndices]:
-        """
-        Yield SplitIndices objects containing (train, val, test) indices.
+        """Yield SplitIndices objects containing (train, val, test) indices.
 
         :param X: Feature matrix or pandas.DataFrame.
         :param y: Labels (array-like). Used for stratification if `stratify` is None.
         :param groups: Group labels for GroupKFold (optional).
         :param stratify: Column name or array-like used to stratify folds (optional).
-        :yields: SplitIndices objects for each repeat and fold.
+        :yield: SplitIndices objects for each repeat and fold.
         """
         # handle stratify similar to split(...)
         stratify_arr = None
@@ -210,8 +214,7 @@ class RepeatedKFoldsSplitter:
 
         X_arr, y_arr, groups_arr = indexable(X, y_for_split, groups)
         self._X_provided = X
-        if not self._splits:
-            self._compute_splits(X_arr, y_arr, groups_arr)
+        self._compute_splits(X_arr, y_arr, groups_arr)
         for s in self._splits:
             yield s
 
@@ -225,19 +228,32 @@ class RepeatedKFoldsSplitter:
         :param y_arr: indexable labels used for stratification (or None).
         :param groups_arr: groups (or None).
         """
+        self._splits = []
+        self.outer_repeat_policy_ = None
+        computed_splits: List[SplitIndices] = []
         n = len(X_arr)
         if n < self.n_splits:
             raise ValueError(
                 f"n_splits={self.n_splits} is larger than dataset size {n}"
             )
 
-        # reset
-        self._splits = []
         base_rs = check_random_state(self.random_state)
 
         # if y_arr is provided use stratification; if groups_arr is provided prefer GroupKFold
         use_groups = groups_arr is not None
         use_stratify = (y_arr is not None) and not use_groups
+        if use_groups and pd.isna(np.asarray(groups_arr)).any():
+            raise ValueError("Group labels must not be missing")
+        self.outer_repeat_policy_ = (
+            "deterministic_group_outer_folds" if use_groups else
+            "seeded_shuffled_outer_folds" if self.shuffle else
+            "deterministic_unshuffled_outer_folds")
+        if use_groups and self.n_repeats > 1:
+            warnings.warn(
+                "Grouped outer folds are deterministic and repeat unchanged; "
+                "only validation/test subdivisions vary. Repeats are not independent outer splits.",
+                UserWarning,
+            )
 
         for r in range(self.n_repeats):
             rs_seed = base_rs.randint(np.iinfo(np.int32).max)
@@ -253,9 +269,11 @@ class RepeatedKFoldsSplitter:
                     outer_cv = StratifiedKFold(
                         n_splits=self.n_splits,
                         shuffle=self.shuffle,
-                        random_state=rs_seed,
+                        random_state=rs_seed if self.shuffle else None,
                     )
-                    split_gen = outer_cv.split(X_arr, y_arr)
+                    # Materialize inside the guard: sklearn validates classes
+                    # while consuming the generator, not when creating it.
+                    split_gen = list(outer_cv.split(X_arr, y_arr))
                 except ValueError:
                     warnings.warn(
                         "StratifiedKFold failed (likely too few members in some classes). Falling back to KFold.",
@@ -264,12 +282,13 @@ class RepeatedKFoldsSplitter:
                     outer_cv = KFold(
                         n_splits=self.n_splits,
                         shuffle=self.shuffle,
-                        random_state=rs_seed,
+                        random_state=rs_seed if self.shuffle else None,
                     )
                     split_gen = outer_cv.split(X_arr)
             else:
                 outer_cv = KFold(
-                    n_splits=self.n_splits, shuffle=self.shuffle, random_state=rs_seed
+                    n_splits=self.n_splits, shuffle=self.shuffle,
+                    random_state=rs_seed if self.shuffle else None
                 )
                 split_gen = outer_cv.split(X_arr)
 
@@ -279,6 +298,10 @@ class RepeatedKFoldsSplitter:
                 mask = np.ones(n, dtype=bool)
                 mask[hold_idx] = False
                 train_idx = np.nonzero(mask)[0].astype(int)
+                if not len(train_idx) or len(hold_idx) < 2:
+                    raise ValueError(
+                        "Each outer fold requires nonempty training and at least two "
+                        "held-out rows for nonempty validation and test partitions")
 
                 # Now split holdout into val/test according to ratio
                 hold_targets = None
@@ -289,6 +312,33 @@ class RepeatedKFoldsSplitter:
                     except Exception:
                         hold_targets = None
 
+                if use_groups:
+                    # GroupKFold protects the outer train/holdout boundary;
+                    # preserve those same groups when making validation/test.
+                    # Splitting holdout rows would leak the held-out entities.
+                    group_values = np.asarray(groups_arr)[hold_idx]
+                    unique_groups = np.unique(group_values)
+                    if len(unique_groups) < 2:
+                        raise ValueError(
+                            "Each held-out fold needs at least two independent groups "
+                            "for nonempty group-disjoint validation and test partitions"
+                        )
+                    shuffled_groups = unique_groups.copy()
+                    rs.shuffle(shuffled_groups)
+                    val_group_count = max(1, min(len(shuffled_groups) - 1,
+                                               round(len(shuffled_groups) * self._val_frac_within_holdout)))
+                    validation_groups = shuffled_groups[:val_group_count]
+                    validation_mask = np.isin(group_values, validation_groups)
+                    val_idx = hold_idx[validation_mask]
+                    test_idx = hold_idx[~validation_mask]
+                    computed_splits.append(
+                        SplitIndices(repeat=r, fold=fold_i,
+                                     train_idx=np.asarray(train_idx, dtype=int),
+                                     val_idx=np.asarray(val_idx, dtype=int),
+                                     test_idx=np.asarray(test_idx, dtype=int))
+                    )
+                    continue
+
                 try:
                     val_idx, test_idx = train_test_split(
                         hold_idx,
@@ -297,21 +347,30 @@ class RepeatedKFoldsSplitter:
                         shuffle=True,
                         stratify=hold_targets,
                     )
-                except Exception:
+                except ValueError as exc:
+                    if hold_targets is None:
+                        raise ValueError(
+                            "The requested ratio cannot form nonempty validation and test "
+                            "partitions from this held-out fold") from exc
                     warnings.warn(
                         "Inner holdout stratified split failed (likely too few members in some classes). "
                         "Falling back to non-stratified split.",
                         UserWarning,
                     )
-                    val_idx, test_idx = train_test_split(
-                        hold_idx,
-                        test_size=(1.0 - self._val_frac_within_holdout),
-                        random_state=int(rs.randint(np.iinfo(np.int32).max)),
-                        shuffle=True,
-                        stratify=None,
-                    )
+                    try:
+                        val_idx, test_idx = train_test_split(
+                            hold_idx,
+                            test_size=(1.0 - self._val_frac_within_holdout),
+                            random_state=int(rs.randint(np.iinfo(np.int32).max)),
+                            shuffle=True,
+                            stratify=None,
+                        )
+                    except ValueError as fallback_exc:
+                        raise ValueError(
+                            "The requested ratio cannot form nonempty validation and test "
+                            "partitions from this held-out fold") from fallback_exc
 
-                self._splits.append(
+                computed_splits.append(
                     SplitIndices(
                         repeat=r,
                         fold=fold_i,
@@ -320,6 +379,7 @@ class RepeatedKFoldsSplitter:
                         test_idx=np.asarray(test_idx, dtype=int),
                     )
                 )
+        self._splits = computed_splits
 
     def prepare_splits(
         self,
@@ -350,14 +410,13 @@ class RepeatedKFoldsSplitter:
         self._compute_splits(X_arr, y_arr, groups_arr)
 
     def get_split(self, repeat: int = 0, fold: int = 0, as_frame: bool = False):
-        """
-        Retrieve either index arrays (train_idx, val_idx, test_idx) or slices
+        """Retrieve either index arrays (train_idx, val_idx, test_idx) or slices
         of the originally provided X (if it was a DataFrame or array-like) when as_frame=True.
 
         :param repeat: Repeat index (0-based).
         :param fold: Fold index within the repeat (0-based).
         :param as_frame: If True, return slices of the original X (DataFrame or ndarray) rather than indices.
-        :returns: Tuple of (train, val, test) either as index arrays or as slices of X.
+        :return: Tuple of (train, val, test) either as index arrays or as slices of X.
         :raises RuntimeError: If no splits have been computed yet.
         :raises IndexError: If the requested (repeat, fold) does not exist.
         """
@@ -401,17 +460,15 @@ class RepeatedKFoldsSplitter:
             return found.train_idx.copy(), found.val_idx.copy(), found.test_idx.copy()
 
     def iter_splits(self) -> Iterator[SplitIndices]:
-        """
-        Iterate over computed splits in order (repeat major, fold minor).
+        """Iterate over computed splits in order (repeat major, fold minor).
 
-        :returns: Iterator of SplitIndices objects.
+        :return: Iterator of SplitIndices objects.
         """
         for s in self._splits:
             yield s
 
     def __getitem__(self, key: Union[int, Tuple[int, int]]) -> SplitIndices:
-        """
-        Allow indexing into computed splits.
+        """Allow indexing into computed splits.
 
         - splitter[0] -> first stored SplitIndices (by stored-order)
         - splitter[(repeat, fold)] -> SplitIndices for that repeat and fold
@@ -420,7 +477,7 @@ class RepeatedKFoldsSplitter:
         :raises RuntimeError: if splits have not been computed yet.
         :raises IndexError: if the requested split is not found.
         :raises TypeError: if key type is unsupported.
-        :returns: SplitIndices
+        :return: SplitIndices
         """
         if not self._splits:
             raise RuntimeError(

@@ -1,0 +1,7 @@
+C24: EnzChemRED
+Data license: CC-BY-4.0
+Official SIB/Zenodo data-record grant; manually annotated corpus is distinct from predicted text-mined expansion.
+
+Primary source and attribution:
+https://www.nature.com/articles/s41597-024-03835-7
+https://zenodo.org/records/11067998

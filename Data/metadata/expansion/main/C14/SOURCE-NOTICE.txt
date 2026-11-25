@@ -1,0 +1,7 @@
+C14: ReactZyme
+Data license: MIT
+Primary Zenodo dataset 11494913 explicitly declares MIT; GitHub code is CC0. Retain UniProt/Rhea attribution and original terms.
+
+Primary source and attribution:
+https://arxiv.org/html/2408.13659v3
+https://github.com/WillHua127/ReactZyme/tree/main/data

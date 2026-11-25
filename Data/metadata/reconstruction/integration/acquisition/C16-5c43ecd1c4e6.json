@@ -1,0 +1,11 @@
+{
+  "source_id": "C16",
+  "name": "data/aldol_reaction-dataset.xlsx",
+  "bytes": 684281,
+  "url": "https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/data/aldol_reaction-dataset.xlsx",
+  "path": "Data/raw/synrxn2/C16/data/aldol_reaction-dataset.xlsx",
+  "bytes_observed": 684281,
+  "sha256": "e9d206bdf08baa3e42080860b1d4e753c9994da3651b6c3b4e637635ca8920e7",
+  "md5": "1f6f4f95af22dad77b99405adda3cb03",
+  "status": "verified"
+}

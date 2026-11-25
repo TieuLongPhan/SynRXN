@@ -1,0 +1,69 @@
+{
+  "datasets": [
+    {
+      "accepted_rows": 27438,
+      "dataset": "buchwald_hartwig_ood",
+      "output_file": "buchwald_hartwig_ood.csv.gz",
+      "output_sha256": "1cae5ff9010813e242f6de2dc6bd3e33342f759be79c5d88ac4f3f46dc4ec409",
+      "quarantine_reasons": {
+        "yield_outside_0_100": 59
+      },
+      "quarantined_rows": 59,
+      "raw_rows": 27497,
+      "source_file": "buchwald_hartwig_ood.csv.gz",
+      "source_sha256": "623a0b58f4155d7438e8515e0075b3cbc776bf8567de8dd80d59f2c2027519aa",
+      "unique_chemical_split_groups": 5754,
+      "unique_duplicate_groups": 22521,
+      "unique_source_record_ids": 27438,
+      "zero_yields": 10696
+    },
+    {
+      "accepted_rows": 526468,
+      "dataset": "uspto_yield",
+      "output_file": "uspto_yield.csv.gz",
+      "output_sha256": "a95706078ebba47315a91f853f27a3a3494e344b8ce782d53df0a5e5d5aa6f5b",
+      "quarantine_reasons": {},
+      "quarantined_rows": 0,
+      "raw_rows": 526468,
+      "source_file": "uspto-yield-schwaller-cropped.zip",
+      "source_sha256": "e83c1a7b80e1855a45e30b834f02ab8540eadf66caa0b688609d2a9d00bb1783",
+      "unique_chemical_split_groups": 507616,
+      "unique_duplicate_groups": 526468,
+      "unique_source_record_ids": 501322,
+      "zero_yields": 0
+    },
+    {
+      "accepted_rows": 39546,
+      "dataset": "hitea",
+      "output_file": "hitea.csv.gz",
+      "output_sha256": "f0e0d0db9f37643bcebb5c9b6a29a9a6a950f7e92c05fc4541a07d9ca3d1d0e9",
+      "quarantine_reasons": {},
+      "quarantined_rows": 0,
+      "raw_rows": 39546,
+      "source_file": "hitea-full.csv",
+      "source_sha256": "9d3b35b8606538df7fc8dd9104b6dd43188ddc8dc43e3d9d3972e10a621ef889",
+      "unique_chemical_split_groups": 597,
+      "unique_duplicate_groups": 34638,
+      "unique_source_record_ids": 39546,
+      "zero_yields": 22513
+    },
+    {
+      "accepted_rows": 5760,
+      "dataset": "suzuki_miyaura",
+      "output_file": "suzuki_miyaura.csv.gz",
+      "output_sha256": "638e83b7cb6af4ff8265ba577119a179a536205d78eca305e5642b4491422248",
+      "quarantine_reasons": {},
+      "quarantined_rows": 0,
+      "raw_rows": 5760,
+      "redistributable": false,
+      "release_status": "pending_permission",
+      "source_file": "aap9112_Data_File_S1.xlsx",
+      "source_sha256": "a869e020ba31bd5676c67a4791c3b7384711b5216de6af444b8cd0a24c284640",
+      "unique_chemical_split_groups": 15,
+      "unique_duplicate_groups": 5760,
+      "unique_source_record_ids": 5760,
+      "zero_yields": 275
+    }
+  ],
+  "schema_version": "1.0"
+}

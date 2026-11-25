@@ -1,13 +1,26 @@
-{# Compact persistent project links for the primary left sidebar.
-   Kept icon-free so PyData/Sphinx styling does not create doubled symbols. #}
-<nav class="synrxn-sidebar-section" aria-label="Section Navigation">
-  <p class="synrxn-sidebar-title">Section Navigation</p>
+<nav class="synrxn-sidebar-section" aria-label="Documentation">
+  <p class="synrxn-sidebar-title">Data</p>
   <ul class="synrxn-sidebar-list">
-    <li><a class="reference internal" href="{{ pathto('catalog') }}">Dataset Catalog</a></li>
-    <li><a class="reference internal" href="{{ pathto('whats_new') }}">What&rsquo;s New</a></li>
-    <li><a class="reference internal" href="{{ pathto('api') }}">API Reference</a></li>
-    <li><a class="reference internal" href="{{ pathto('paper') }}">Paper</a></li>
-    <li><a class="reference internal" href="{{ pathto('issues') }}">Issues</a></li>
-    <li><a class="reference internal" href="{{ pathto('reference') }}">References</a></li>
+    <li><a href="{{ pathto('query_and_service') }}"{% if pagename == 'query_and_service' %} aria-current="page"{% endif %}>Database access</a></li>
+    <li><a href="{{ pathto('families') }}"{% if pagename == 'families' %} aria-current="page"{% endif %}>Families and tasks</a></li>
+    <li><a href="{{ pathto('task_definitions') }}"{% if pagename == 'task_definitions' %} aria-current="page"{% endif %}>Task definitions</a></li>
+    <li><a href="{{ pathto('data_records') }}"{% if pagename == 'data_records' %} aria-current="page"{% endif %}>Data records</a></li>
+  </ul>
+  <p class="synrxn-sidebar-title">Methods</p>
+  <ul class="synrxn-sidebar-list">
+    <li><a href="{{ pathto('data_concept') }}"{% if pagename == 'data_concept' %} aria-current="page"{% endif %}>Data model and reconstruction</a></li>
+    <li><a href="{{ pathto('task_evaluation') }}"{% if pagename == 'task_evaluation' %} aria-current="page"{% endif %}>Metrics and splits</a></li>
+  </ul>
+  <p class="synrxn-sidebar-title">Software</p>
+  <ul class="synrxn-sidebar-list">
+    <li><a href="{{ pathto('getting_started') }}"{% if pagename == 'getting_started' %} aria-current="page"{% endif %}>Installation and access</a></li>
+    <li><a href="{{ pathto('tutorials_and_examples') }}"{% if pagename == 'tutorials_and_examples' %} aria-current="page"{% endif %}>Examples</a></li>
+    <li><a href="{{ pathto('api') }}"{% if pagename == 'api' %} aria-current="page"{% endif %}>API reference</a></li>
+  </ul>
+  <p class="synrxn-sidebar-title">Project</p>
+  <ul class="synrxn-sidebar-list">
+    <li><a href="{{ pathto('reference') }}"{% if pagename == 'reference' %} aria-current="page"{% endif %}>References and citation</a></li>
+    <li><a href="{{ pathto('whats_new') }}"{% if pagename == 'whats_new' %} aria-current="page"{% endif %}>Changes</a></li>
+    <li><a href="{{ pathto('issues') }}"{% if pagename == 'issues' %} aria-current="page"{% endif %}>Issues</a></li>
   </ul>
 </nav>

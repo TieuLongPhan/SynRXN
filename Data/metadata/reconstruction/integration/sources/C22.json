@@ -1,0 +1,40 @@
+{
+  "id": "C22",
+  "name": "RMG database",
+  "priority": "3 Optional",
+  "survey_license_note": "Open repository. Blanket data terms and each source library require verification.",
+  "paper_urls": [
+    "https://pubs.acs.org/jcisd8/article/62/20/4906/884055/RMG-Database-for-Chemical-Property-Prediction"
+  ],
+  "data_urls": [
+    "https://github.com/ReactionMechanismGenerator/RMG-database"
+  ],
+  "project_urls": [
+    "https://github.com/ReactionMechanismGenerator/RMG-database"
+  ],
+  "license_urls": [],
+  "license_verified": false,
+  "files": [],
+  "requests": [
+    {
+      "url": "https://api.github.com/repos/ReactionMechanismGenerator/RMG-database",
+      "status": 200,
+      "sha256": "605608e68f3a6aba3c62176c4c9ee781c739a38416a08ecd8ce0ea3261635661",
+      "bytes": 7497,
+      "retrieved_at": "2026-10-20T15:35:13.896990+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/ReactionMechanismGenerator/RMG-database/commits/main",
+      "status": 200,
+      "sha256": "490f806e9c87e4be21c2d017bf3953fa21782b884791e84f8785b897dd353612",
+      "bytes": 8533,
+      "retrieved_at": "2026-10-20T15:47:54.057792+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/ReactionMechanismGenerator/RMG-database/git/trees/6391cc4f75341803605d9ad17417e14cf2db1f59?recursive=1",
+      "status": null,
+      "error": "IncompleteRead(294912 bytes read)",
+      "retrieved_at": "2026-10-20T15:49:41.123615+00:00"
+    }
+  ]
+}

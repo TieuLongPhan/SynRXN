@@ -1,0 +1,11 @@
+{
+  "source_id": "C06",
+  "name": "data/single_solvent/catechol_single_solvent_yields.csv",
+  "bytes": 186992,
+  "url": "https://raw.githubusercontent.com/jpfolch/catechol_solvent_selection/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727/data/single_solvent/catechol_single_solvent_yields.csv",
+  "path": "Data/raw/synrxn2/C06/data/single_solvent/catechol_single_solvent_yields.csv",
+  "bytes_observed": 186992,
+  "sha256": "8e1831b469541c3bce59a19a0842e7861c35aab8f58f5e524b973372dcdcedf2",
+  "md5": "0d4c3fe2f7a0203fc53773d8f7e871a1",
+  "status": "verified"
+}

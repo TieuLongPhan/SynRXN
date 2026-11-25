@@ -1,0 +1,114 @@
+{
+  "counting_unit": "source-derived qualified task row",
+  "data_link": "data.parquet",
+  "family_id": "biocatalysis",
+  "format": "parquet",
+  "key": "bio/reactzyme_retrieval",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/bio/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "source-derived qualified task row",
+    "coverage_branch": "bio",
+    "key": "bio/reactzyme_retrieval",
+    "license": "MIT AND CC-BY-4.0; ReactZyme dataset MIT with UniProt/Rhea attribution retained",
+    "namespace": "coverage",
+    "native_split_counts": {
+      "test": 8739,
+      "train_validation": 169724
+    },
+    "partition": "main",
+    "path": "Data/coverage_expansion/bio/reactzyme_retrieval.parquet",
+    "qualification": "Native positive pairs only; no manufactured negatives. Native reaction input concatenates substrate/product molecule SMILES without a reaction arrow; preserve this upstream representation. Original train+validation pool is not silently relabeled as training. No new homology audit or model evaluation claimed.",
+    "reference_evidence": "Curated UniProt/Rhea positive enzyme-reaction associations; native sequence-smi split from ReactZyme release.",
+    "release_eligible": true,
+    "release_license_expression": "MIT AND CC-BY-4.0",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 178463,
+    "sha256": "14ed9679a1974a95c2b02098a08bcabe3c38c3834ef5ab2bd30634e61f48ba8d",
+    "source_id": "C14",
+    "source_sha256": "80e00f03c8d934af20cab872c9b1df00f093c47524a00b1af8d7743d91841312",
+    "source_url": "https://zenodo.org/api/records/13635807/files/enzyme_smi_split.zip/content",
+    "task_fields": {
+      "enzyme_retrieval": {
+        "group_fields": [
+          "sequence_group",
+          "reaction_group",
+          "native_split"
+        ],
+        "inputs": [
+          "enzyme_sequence"
+        ],
+        "metrics": [
+          "Recall@k",
+          "MRR",
+          "query-macro enrichment"
+        ],
+        "targets": [
+          "reaction_molecule_smiles"
+        ]
+      }
+    },
+    "task_ids": [
+      "enzyme_retrieval"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-derived qualified task row",
+    "expected_bytes": null,
+    "expected_rows": 178463,
+    "expected_sha256": "14ed9679a1974a95c2b02098a08bcabe3c38c3834ef5ab2bd30634e61f48ba8d",
+    "format": "parquet",
+    "key": "bio/reactzyme_retrieval",
+    "license_expression": "MIT AND CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/bio/reactzyme_retrieval.parquet",
+    "qualification": "Native positive pairs only; no manufactured negatives. Native reaction input concatenates substrate/product molecule SMILES without a reaction arrow; preserve this upstream representation. Original train+validation pool is not silently relabeled as training. No new homology audit or model evaluation claimed.",
+    "reasons": [],
+    "reference_evidence": "Curated UniProt/Rhea positive enzyme-reaction associations; native sequence-smi split from ReactZyme release.",
+    "release_eligible": true,
+    "source_id": "C14",
+    "source_url": "https://zenodo.org/api/records/13635807/files/enzyme_smi_split.zip/content",
+    "task_ids": [
+      "enzyme_retrieval"
+    ]
+  },
+  "role": "primary",
+  "rows": 178463,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/bio/reactzyme_retrieval.parquet",
+    "sha256": "14ed9679a1974a95c2b02098a08bcabe3c38c3834ef5ab2bd30634e61f48ba8d",
+    "source_catalogue": "Data/coverage_expansion/bio/catalog.json",
+    "source_id": "C14",
+    "source_urls": [
+      "https://zenodo.org/api/records/13635807/files/enzyme_smi_split.zip/content"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "source-derived qualified task row",
+    "key": "bio/reactzyme_retrieval",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/bio/reactzyme_retrieval.parquet",
+    "qualification": "Native positive pairs only; no manufactured negatives. Native reaction input concatenates substrate/product molecule SMILES without a reaction arrow; preserve this upstream representation. Original train+validation pool is not silently relabeled as training. No new homology audit or model evaluation claimed.",
+    "role": "primary",
+    "rows": 178463,
+    "sha256": "14ed9679a1974a95c2b02098a08bcabe3c38c3834ef5ab2bd30634e61f48ba8d",
+    "source_catalogue": "Data/coverage_expansion/bio/catalog.json",
+    "source_id": "C14",
+    "source_urls": [
+      "https://zenodo.org/api/records/13635807/files/enzyme_smi_split.zip/content"
+    ],
+    "title": "ReactZyme enzyme–reaction retrieval"
+  },
+  "stored_path": "Data/families/biocatalysis/enzyme_retrieval/coverage/bio/reactzyme_retrieval/data.parquet",
+  "task_id": "enzyme_retrieval",
+  "title": "ReactZyme enzyme–reaction retrieval"
+}

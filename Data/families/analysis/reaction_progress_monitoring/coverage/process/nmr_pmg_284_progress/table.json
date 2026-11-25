@@ -1,0 +1,113 @@
+{
+  "counting_unit": "reference record; task views can overlap native experiments",
+  "data_link": "data.jsonl.gz",
+  "family_id": "analysis",
+  "format": "jsonl.gz",
+  "key": "process/nmr_pmg_284_progress",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/process/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "reference record; task views can overlap native experiments",
+    "coverage_branch": "process",
+    "key": "process/nmr_pmg_284_progress",
+    "license": "CC-BY-4.0",
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/process/nmr_pmg_284_progress.jsonl.gz",
+    "qualification": "Forecasting view of the same native measured trajectories; overlaps analytical snapshot records and is not an additional physical experiment. Native time ordering preserved. Target is next measured-spectrum DERIVED relative integrated area, not a new independent chemical label.",
+    "reference_evidence": "Current native spectrum-column index paired with subsequent independently derived spectral area reference; source mapping and time evidence identical to the snapshot table.",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 998,
+    "sha256": "f36765c40bdeb20a2d14e80c98cacae4b74b66f9b10c3e05f5e22ca3306c8a56",
+    "source_id": "MAGNETSTEIN2025",
+    "source_sha256": "59e09d3e8aff3da404e34c5e2cebeaf11ff5faffe0307503545982ef23c1d30c",
+    "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+    "task_fields": {
+      "reaction_progress_monitoring": {
+        "group_fields": [
+          "trajectory_id"
+        ],
+        "inputs": [
+          "spectrum_path",
+          "spectrum_column",
+          "elapsed_seconds",
+          "target_elapsed_seconds",
+          "component_names",
+          "integration_windows_ppm"
+        ],
+        "metrics": [
+          "next-step MAE relative area",
+          "error versus current-state persistence"
+        ],
+        "targets": [
+          "next_reference_area_fractions"
+        ],
+        "temporal_policy": "Input loader exposes only current spectrum. Target spectrum, next references, full trajectories and future-derived component templates are forbidden inputs."
+      }
+    },
+    "task_ids": [
+      "reaction_progress_monitoring"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "reference record; task views can overlap native experiments",
+    "expected_bytes": null,
+    "expected_rows": 998,
+    "expected_sha256": "f36765c40bdeb20a2d14e80c98cacae4b74b66f9b10c3e05f5e22ca3306c8a56",
+    "format": "jsonl.gz",
+    "key": "process/nmr_pmg_284_progress",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/process/nmr_pmg_284_progress.jsonl.gz",
+    "qualification": "Forecasting view of the same native measured trajectories; overlaps analytical snapshot records and is not an additional physical experiment. Native time ordering preserved. Target is next measured-spectrum DERIVED relative integrated area, not a new independent chemical label.",
+    "reasons": [],
+    "reference_evidence": "Current native spectrum-column index paired with subsequent independently derived spectral area reference; source mapping and time evidence identical to the snapshot table.",
+    "release_eligible": true,
+    "source_id": "MAGNETSTEIN2025",
+    "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+    "task_ids": [
+      "reaction_progress_monitoring"
+    ]
+  },
+  "role": "primary",
+  "rows": 998,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/process/nmr_pmg_284_progress.jsonl.gz",
+    "sha256": "f36765c40bdeb20a2d14e80c98cacae4b74b66f9b10c3e05f5e22ca3306c8a56",
+    "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+    "source_id": "MAGNETSTEIN2025",
+    "source_urls": [
+      "https://doi.org/10.1021/acs.analchem.5c00800"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "reference record; task views can overlap native experiments",
+    "key": "process/nmr_pmg_284_progress",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/process/nmr_pmg_284_progress.jsonl.gz",
+    "qualification": "Forecasting view of the same native measured trajectories; overlaps analytical snapshot records and is not an additional physical experiment. Native time ordering preserved. Target is next measured-spectrum DERIVED relative integrated area, not a new independent chemical label.",
+    "role": "primary",
+    "rows": 998,
+    "sha256": "f36765c40bdeb20a2d14e80c98cacae4b74b66f9b10c3e05f5e22ca3306c8a56",
+    "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+    "source_id": "MAGNETSTEIN2025",
+    "source_urls": [
+      "https://doi.org/10.1021/acs.analchem.5c00800"
+    ],
+    "title": "NMR PMG-284 progress"
+  },
+  "stored_path": "Data/families/analysis/reaction_progress_monitoring/coverage/process/nmr_pmg_284_progress/data.jsonl.gz",
+  "task_id": "reaction_progress_monitoring",
+  "title": "NMR PMG-284 progress"
+}

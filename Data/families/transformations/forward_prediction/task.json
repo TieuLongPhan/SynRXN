@@ -1,0 +1,108 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 2,
+    "data_links": 2,
+    "families": 1,
+    "held_bindings": 1,
+    "held_table_views": 1,
+    "overlapping_table_views": 0,
+    "primary_table_views": 3,
+    "stored_rows_across_unique_views": 540062,
+    "task_table_bindings": 3,
+    "tasks": 1,
+    "unique_table_views": 3
+  },
+  "tables": [
+    {
+      "data_link": null,
+      "key": "synthesis/da",
+      "metadata": "canonical/synthesis/da/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/synthesis/uspto_50k/data.csv.gz",
+      "key": "synthesis/uspto_50k",
+      "metadata": "canonical/synthesis/uspto_50k/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/synthesis/uspto_mit/data.csv.gz",
+      "key": "synthesis/uspto_mit",
+      "metadata": "canonical/synthesis/uspto_mit/table.json",
+      "namespace": "canonical"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "commercial_use_allowed": false,
+        "counting_unit": "source-table row",
+        "key": "synthesis/da",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": false,
+        "release_license_expression": null,
+        "rights_status": "upstream_database_terms_unverified",
+        "role": "primary",
+        "rows": 11011
+      },
+      {
+        "commercial_use_allowed": false,
+        "counting_unit": "source-table row",
+        "key": "synthesis/uspto_50k",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "noncommercial",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+        "rights_status": "verified_noncommercial_data_grant",
+        "role": "primary",
+        "rows": 50016
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "synthesis/uspto_mit",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND CC0-1.0",
+        "rights_status": "verified_curated_product_grant_with_open_base",
+        "role": "primary",
+        "rows": 479035
+      }
+    ],
+    "canonical_keys": [
+      "synthesis/da",
+      "synthesis/uspto_50k",
+      "synthesis/uspto_mit"
+    ],
+    "counting_units": [
+      "source-table row"
+    ],
+    "extension_adapter_ids": [],
+    "family_id": "transformations",
+    "id": "forward_prediction",
+    "legacy_view_ids": [],
+    "metrics": [
+      "product_recovery_top_k",
+      "valid_output_fraction",
+      "coverage"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 540062,
+    "primary_table_count": 3,
+    "qualification": "Derive a target-isolated view from endpoints; remove product-derived mappings, reaction centers and identifiers from inputs.",
+    "question": "Recorded reactants and permitted context -> recorded product structures",
+    "readiness": "local_source_data; standardized_task_contract_needed",
+    "release_blocked_table_count": 1,
+    "release_eligible_table_count": 2,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Forward product prediction"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "archive_sha256": "06d7790625e37d8730a3ffcc2d96a7504482ec197f56f89d3d889ba40a053d82",
+  "source": "https://api.figshare.com/v2/articles/33201870",
+  "counts": {
+    "./cliff_pair_corpus/cliff_pairs.json": {
+      "pairs": 3332
+    },
+    "./test_sets/P2M_unsynthesizable.json": {
+      "reported_count": 1715,
+      "actual_smiles": 1715,
+      "unique_exact_smiles": 1715
+    },
+    "./test_sets/RIPK1_7YDX_unsynthesizable.json": {
+      "reported_count": 42,
+      "actual_smiles": 42,
+      "unique_exact_smiles": 42
+    },
+    "./test_sets/ResGen_unsynthesizable.json": {
+      "reported_count": 1025,
+      "actual_smiles": 1025,
+      "unique_exact_smiles": 1025
+    }
+  },
+  "inference": {
+    "./multi_llm_inference/ResGen_gemini.jsonl": {
+      "rows": 1025,
+      "sources": 1025,
+      "passes": [
+        0
+      ]
+    },
+    "./multi_llm_inference/ResGen_dsv4flash.jsonl": {
+      "rows": 5125,
+      "sources": 1025,
+      "passes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "./multi_llm_inference/P2M_dsv4flash.jsonl": {
+      "rows": 8575,
+      "sources": 1715,
+      "passes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "./multi_llm_inference/ResGen_gpt52.jsonl": {
+      "rows": 1025,
+      "sources": 1025,
+      "passes": [
+        0
+      ]
+    },
+    "./multi_llm_inference/P2M_dsv4pro.jsonl": {
+      "rows": 8575,
+      "sources": 1715,
+      "passes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "./multi_llm_inference/ResGen_dsv4pro.jsonl": {
+      "rows": 5125,
+      "sources": 1025,
+      "passes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "./multi_llm_inference/P2M_gemini.jsonl": {
+      "rows": 1715,
+      "sources": 1715,
+      "passes": [
+        0
+      ]
+    },
+    "./multi_llm_inference/P2M_gpt52.jsonl": {
+      "rows": 1715,
+      "sources": 1715,
+      "passes": [
+        0
+      ]
+    }
+  },
+  "manifest_failures": []
+}

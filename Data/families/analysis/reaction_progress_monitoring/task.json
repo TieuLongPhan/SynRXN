@@ -1,0 +1,266 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 4,
+    "data_links": 4,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 4,
+    "stored_rows_across_unique_views": 3255,
+    "task_table_bindings": 4,
+    "tasks": 1,
+    "unique_table_views": 4
+  },
+  "tables": [
+    {
+      "data_link": "coverage/process/nmr_saccharose_hydrolysis_progress/data.jsonl.gz",
+      "key": "process/nmr_saccharose_hydrolysis_progress",
+      "metadata": "coverage/process/nmr_saccharose_hydrolysis_progress/table.json",
+      "namespace": "coverage"
+    },
+    {
+      "data_link": "coverage/process/nmr_pmg_284_progress/data.jsonl.gz",
+      "key": "process/nmr_pmg_284_progress",
+      "metadata": "coverage/process/nmr_pmg_284_progress/table.json",
+      "namespace": "coverage"
+    },
+    {
+      "data_link": "coverage/process/nmr_pmg_287_progress/data.jsonl.gz",
+      "key": "process/nmr_pmg_287_progress",
+      "metadata": "coverage/process/nmr_pmg_287_progress/table.json",
+      "namespace": "coverage"
+    },
+    {
+      "data_link": "coverage/process/lowfield_nmr_yield_progress/data.jsonl.gz",
+      "key": "process/lowfield_nmr_yield_progress",
+      "metadata": "coverage/process/lowfield_nmr_yield_progress/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "catalog_path": "Data/coverage_expansion/process/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "reference record; task views can overlap native experiments",
+        "coverage_branch": "process",
+        "key": "process/nmr_saccharose_hydrolysis_progress",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/process/nmr_saccharose_hydrolysis_progress.jsonl.gz",
+        "qualification": "Forecasting view of the same native measured trajectories; overlaps analytical snapshot records and is not an additional physical experiment. Native time ordering preserved. Target is next measured-spectrum DERIVED relative integrated area, not a new independent chemical label.",
+        "reference_evidence": "Current native spectrum-column index paired with subsequent independently derived spectral area reference; source mapping and time evidence identical to the snapshot table.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 1022,
+        "sha256": "631acde06a722bb3b01418ab35594af0dc4614de6d893b7890ed9b73d0d84477",
+        "source_id": "MAGNETSTEIN2025",
+        "source_sha256": "34be04ef5ce91f35a5432c823b53bf7ecd0594104f0732227abf587dca88d889",
+        "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+        "task_fields": {
+          "reaction_progress_monitoring": {
+            "group_fields": [
+              "trajectory_id"
+            ],
+            "inputs": [
+              "spectrum_path",
+              "spectrum_column",
+              "elapsed_seconds",
+              "target_elapsed_seconds",
+              "component_names",
+              "integration_windows_ppm"
+            ],
+            "metrics": [
+              "next-step MAE relative area",
+              "error versus current-state persistence"
+            ],
+            "targets": [
+              "next_reference_area_fractions"
+            ],
+            "temporal_policy": "Input loader exposes only current spectrum. Target spectrum, next references, full trajectories and future-derived component templates are forbidden inputs."
+          }
+        },
+        "task_ids": [
+          "reaction_progress_monitoring"
+        ]
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/process/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "reference record; task views can overlap native experiments",
+        "coverage_branch": "process",
+        "key": "process/nmr_pmg_284_progress",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/process/nmr_pmg_284_progress.jsonl.gz",
+        "qualification": "Forecasting view of the same native measured trajectories; overlaps analytical snapshot records and is not an additional physical experiment. Native time ordering preserved. Target is next measured-spectrum DERIVED relative integrated area, not a new independent chemical label.",
+        "reference_evidence": "Current native spectrum-column index paired with subsequent independently derived spectral area reference; source mapping and time evidence identical to the snapshot table.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 998,
+        "sha256": "f36765c40bdeb20a2d14e80c98cacae4b74b66f9b10c3e05f5e22ca3306c8a56",
+        "source_id": "MAGNETSTEIN2025",
+        "source_sha256": "59e09d3e8aff3da404e34c5e2cebeaf11ff5faffe0307503545982ef23c1d30c",
+        "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+        "task_fields": {
+          "reaction_progress_monitoring": {
+            "group_fields": [
+              "trajectory_id"
+            ],
+            "inputs": [
+              "spectrum_path",
+              "spectrum_column",
+              "elapsed_seconds",
+              "target_elapsed_seconds",
+              "component_names",
+              "integration_windows_ppm"
+            ],
+            "metrics": [
+              "next-step MAE relative area",
+              "error versus current-state persistence"
+            ],
+            "targets": [
+              "next_reference_area_fractions"
+            ],
+            "temporal_policy": "Input loader exposes only current spectrum. Target spectrum, next references, full trajectories and future-derived component templates are forbidden inputs."
+          }
+        },
+        "task_ids": [
+          "reaction_progress_monitoring"
+        ]
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/process/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "reference record; task views can overlap native experiments",
+        "coverage_branch": "process",
+        "key": "process/nmr_pmg_287_progress",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/process/nmr_pmg_287_progress.jsonl.gz",
+        "qualification": "Forecasting view of the same native measured trajectories; overlaps analytical snapshot records and is not an additional physical experiment. Native time ordering preserved. Target is next measured-spectrum DERIVED relative integrated area, not a new independent chemical label.",
+        "reference_evidence": "Current native spectrum-column index paired with subsequent independently derived spectral area reference; source mapping and time evidence identical to the snapshot table.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 999,
+        "sha256": "dd6da290d3921bd80bb2d3a38ddf579ab070a3814ea8d049646acbf851d21850",
+        "source_id": "MAGNETSTEIN2025",
+        "source_sha256": "6bf13a9ba17537664952424cfa82431d17e49a101fd504228fc3b0830991302b",
+        "source_url": "https://doi.org/10.1021/acs.analchem.5c00800",
+        "task_fields": {
+          "reaction_progress_monitoring": {
+            "group_fields": [
+              "trajectory_id"
+            ],
+            "inputs": [
+              "spectrum_path",
+              "spectrum_column",
+              "elapsed_seconds",
+              "target_elapsed_seconds",
+              "component_names",
+              "integration_windows_ppm"
+            ],
+            "metrics": [
+              "next-step MAE relative area",
+              "error versus current-state persistence"
+            ],
+            "targets": [
+              "next_reference_area_fractions"
+            ],
+            "temporal_policy": "Input loader exposes only current spectrum. Target spectrum, next references, full trajectories and future-derived component templates are forbidden inputs."
+          }
+        },
+        "task_ids": [
+          "reaction_progress_monitoring"
+        ]
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/process/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "reference record; task views can overlap native experiments",
+        "coverage_branch": "process",
+        "key": "process/lowfield_nmr_yield_progress",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/process/lowfield_nmr_yield_progress.jsonl.gz",
+        "qualification": "Four measured yield profiles,60 observations per reaction,236 adjacent forecast pairs. Measurements from the same reaction remain one group. Processed yield observations, not raw-FID-to-yield calibration. Native MATLAB plotting script labels x-axis Time[min] and y-axis Yield[%]. Raw FIDs76GB are indexed upstream but were not downloaded because no verified trajectory-specific rawFID association was required for this narrower view.",
+        "reference_evidence": "Source workbookReactions:A3:E62 and authorYield_calculations.m. Overview worksheet separately provides terminal lowfield/1H-Bruker/13C-Bruker comparisons for four reactions.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 236,
+        "sha256": "ed0bb5e7f6d10dff29786a927e5c64fe5f9ddc10370a1a03a072927c81ba8fa1",
+        "source_id": "LOWFIELDNMR2026",
+        "source_sha256": "705fed264e598ca40037c9c17eeee4fc8cc4c76801f699d3306da39b2f1ec369",
+        "source_url": "https://doi.org/10.26434/chemrxiv.15005188/v1",
+        "task_fields": {
+          "reaction_progress_monitoring": {
+            "group_fields": [
+              "trajectory_id"
+            ],
+            "inputs": [
+              "trajectory_id",
+              "elapsed_minutes",
+              "observed_yield_percent",
+              "target_elapsed_minutes"
+            ],
+            "metrics": [
+              "next-step MAE yield percentage points",
+              "MAE versus persistence"
+            ],
+            "targets": [
+              "next_yield_percent"
+            ],
+            "temporal_policy": "Only the current measured yield and earlier measurements are allowed. This view does not require raw FIDs or claim raw-spectrum interpretation."
+          }
+        },
+        "task_ids": [
+          "reaction_progress_monitoring"
+        ]
+      }
+    ],
+    "candidate_ids": [],
+    "candidate_status": "Source acquisition and qualification required",
+    "canonical_keys": [],
+    "counting_units": [
+      "reference record; task views can overlap native experiments"
+    ],
+    "evaluation": "Progress error and endpoint/anomaly timing metrics as named variants; entire experiment trajectories kept together",
+    "extension_adapter_ids": [],
+    "family_id": "analysis",
+    "id": "reaction_progress_monitoring",
+    "legacy_view_ids": [],
+    "metrics": [
+      "MAE versus persistence",
+      "error versus current-state persistence",
+      "next-step MAE relative area",
+      "next-step MAE yield percentage points"
+    ],
+    "origin": "promoted_from_initial_19_roadmap_definitions",
+    "primary_source_rows": 3255,
+    "primary_table_count": 4,
+    "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance.",
+    "question": "Observed signal history -> current progress, endpoint status or operational anomaly",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 4,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "required_data": "Time-stamped trajectories with independent progress/end-state/anomaly references and no future-signal input leakage",
+    "title": "Reaction progress, endpoint and anomaly monitoring"
+  }
+}

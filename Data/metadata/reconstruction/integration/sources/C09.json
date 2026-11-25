@@ -1,0 +1,140 @@
+{
+  "id": "C09",
+  "name": "PaRoutes 2.0",
+  "priority": "1 Integrate first",
+  "survey_license_note": "CC BY 4.0 on the Zenodo data record. Software Apache-2.0.",
+  "paper_urls": [
+    "https://doi.org/10.1039/D2DD00015F"
+  ],
+  "data_urls": [
+    "https://zenodo.org/records/7341155"
+  ],
+  "project_urls": [
+    "https://github.com/MolecularAI/PaRoutes"
+  ],
+  "license_urls": [
+    "https://zenodo.org/api/records/7341155"
+  ],
+  "license_verified": true,
+  "files": [
+    {
+      "name": "all_loaded_routes.json.gz",
+      "bytes": 123662325,
+      "checksum": "md5:7a403ac400c4e875945337dc10a787bd",
+      "url": "https://zenodo.org/api/records/7341155/files/all_loaded_routes.json.gz/content"
+    },
+    {
+      "name": "ref_routes_reaction_hashes.txt",
+      "bytes": 4403965,
+      "checksum": "md5:ead05b84040fd8d594b936fb4cc5501a",
+      "url": "https://zenodo.org/api/records/7341155/files/ref_routes_reaction_hashes.txt/content"
+    },
+    {
+      "name": "targets_n1.txt",
+      "bytes": 459136,
+      "checksum": "md5:29425c56cd51cdb55047f9a65f088f89",
+      "url": "https://zenodo.org/api/records/7341155/files/targets_n1.txt/content"
+    },
+    {
+      "name": "targets_n5.txt",
+      "bytes": 487792,
+      "checksum": "md5:9ef17bb2b615259f0a2899e300e88882",
+      "url": "https://zenodo.org/api/records/7341155/files/targets_n5.txt/content"
+    },
+    {
+      "name": "uspto_keras_model.hdf5",
+      "bytes": 274578664,
+      "checksum": "md5:b3c15fcd469e00404879ce4e04d267e8",
+      "url": "https://zenodo.org/api/records/7341155/files/uspto_keras_model.hdf5/content"
+    },
+    {
+      "name": "uspto_lookup.json",
+      "bytes": 86066275,
+      "checksum": "md5:7c4fd9cef02eec1f883c71f69493284a",
+      "url": "https://zenodo.org/api/records/7341155/files/uspto_lookup.json/content"
+    },
+    {
+      "name": "uspto_ringbreaker_keras_model.hdf5",
+      "bytes": 45132232,
+      "checksum": "md5:bbe3dd5cbb87746329fe4be2ccfacc5f",
+      "url": "https://zenodo.org/api/records/7341155/files/uspto_ringbreaker_keras_model.hdf5/content"
+    },
+    {
+      "name": "uspto_ringbreaker_template_library.csv",
+      "bytes": 41591969,
+      "checksum": "md5:025076616d9f8e1103fa5de1e514321b",
+      "url": "https://zenodo.org/api/records/7341155/files/uspto_ringbreaker_template_library.csv/content"
+    },
+    {
+      "name": "uspto_ringbreaker_unique_templates.csv.gz",
+      "bytes": 373753,
+      "checksum": "md5:a6d0117ee6122e2cca3b7f8efa35541d",
+      "url": "https://zenodo.org/api/records/7341155/files/uspto_ringbreaker_unique_templates.csv.gz/content"
+    },
+    {
+      "name": "uspto_template_library.csv",
+      "bytes": 574070435,
+      "checksum": "md5:e40c33ae2a9907d21312137ea4f1e2d8",
+      "url": "https://zenodo.org/api/records/7341155/files/uspto_template_library.csv/content"
+    },
+    {
+      "name": "uspto_unique_templates.csv.gz",
+      "bytes": 3313598,
+      "checksum": "md5:e8fb29d4dcd54073658000e212b7845a",
+      "url": "https://zenodo.org/api/records/7341155/files/uspto_unique_templates.csv.gz/content"
+    },
+    {
+      "name": "ref_routes_n1.json",
+      "bytes": 64187987,
+      "checksum": "md5:8f11ca81d6d184539fa4d2c5bde215af",
+      "url": "https://zenodo.org/api/records/7341155/files/ref_routes_n1.json/content"
+    },
+    {
+      "name": "ref_routes_n5.json",
+      "bytes": 82120928,
+      "checksum": "md5:1da36cbada13175668c66546db6fd952",
+      "url": "https://zenodo.org/api/records/7341155/files/ref_routes_n5.json/content"
+    },
+    {
+      "name": "selected_reactions_all.csv",
+      "bytes": 3255344764,
+      "checksum": "md5:cbe9d69502fe3e64121ad995bf6a1e09",
+      "url": "https://zenodo.org/api/records/7341155/files/selected_reactions_all.csv/content"
+    },
+    {
+      "name": "selected_reactions.csv",
+      "bytes": 582648364,
+      "checksum": "md5:0e77ccbfd0ff650afe09148d13cb04ee",
+      "url": "https://zenodo.org/api/records/7341155/files/selected_reactions.csv/content"
+    },
+    {
+      "name": "stock_n1.txt",
+      "bytes": 368802,
+      "checksum": "md5:cfa7e97b0398c7e88e46c02ae5876edf",
+      "url": "https://zenodo.org/api/records/7341155/files/stock_n1.txt/content"
+    },
+    {
+      "name": "stock_n5.txt",
+      "bytes": 360970,
+      "checksum": "md5:741a804816fd0484a683b58846e142bb",
+      "url": "https://zenodo.org/api/records/7341155/files/stock_n5.txt/content"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://zenodo.org/api/records/7341155",
+      "status": 200,
+      "sha256": "1afe9453f16f43fbda6fd410ed1966bbfe1e7516ce362b1b7902e628fcb50781",
+      "bytes": 7651,
+      "retrieved_at": "2026-10-20T15:34:32.069819+00:00"
+    }
+  ],
+  "record_id": "7341155",
+  "doi": "10.5281/zenodo.7341155",
+  "title": "PaRoutes 2.0 and USPTO-based models",
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "publication_date": "2022-11-22",
+  "description": "<p>This contains</p>\n\n<ul>\n\t<li>PaRoutes 2.0&nbsp;reference routes and stocks.&nbsp;</li>\n\t<li>USPTO-based models derived from pipelines in rxnutils and aizynthtrain</li>\n</ul>"
+}

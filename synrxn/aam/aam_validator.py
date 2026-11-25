@@ -20,14 +20,13 @@ class AAMValidator:
 
     @staticmethod
     def graph_from_smiles(smiles: str) -> nx.Graph:
-        """
-        Constructs a graph representation from a SMILES string.
+        """Constructs a graph representation from a SMILES string.
 
-        Parameters:
-        - smiles (str): A SMILES string representing a molecule or a set of molecules.
+        :param smiles: A SMILES string representing a molecule or a set of molecules.
+        :type smiles: str
 
-        Returns:
-        - nx.Graph: A graph representation of the molecule(s).
+        :return: A graph representation of the molecule(s).
+        :rtype: nx.Graph
         """
         mol = Chem.MolFromSmiles(smiles)
         graph = MolToGraph().mol_to_graph(mol, drop_non_aam=True)
@@ -37,17 +36,14 @@ class AAMValidator:
     def check_equivariant_graph(
         its_graphs: List[nx.Graph],
     ) -> Tuple[List[Tuple[int, int]], int]:
-        """
-        Checks for isomorphism among a list of ITS graphs and
+        """Checks for isomorphism among a list of ITS graphs and
         identifies all pairs of isomorphic graphs.
 
-        Parameters:
-        - its_graphs (List[nx.Graph]): A list of ITS graphs.
+        :param its_graphs: A list of ITS graphs.
+        :type its_graphs: List[nx.Graph]
 
-        Returns:
-        - List[Tuple[int, int]]: A list of tuples representing
-                pairs of indices of isomorphic graphs.
-        - int: The count of unique isomorphic graph pairs found.
+        :return: Pairs of indices of isomorphic graphs and the number of pairs.
+        :rtype: Tuple[List[Tuple[int, int]], int]
         """
         nodeLabelNames = ["typesGH"]
         nodeLabelDefault = ["*", False, 0, 0, ()]
@@ -75,21 +71,23 @@ class AAMValidator:
         check_method: str = "RC",  # or 'ITS'
         ignore_aromaticity: bool = False,
     ) -> bool:
-        """
-        Checks the equivalence of mapped SMILES against ground truth
+        """Checks the equivalence of mapped SMILES against ground truth
         using reaction center (RC) or ITS graph method.
 
-        Parameters:
-        - mapped_smile (str): The mapped SMILES string.
-        - ground_truth (str): The ground truth SMILES string.
-        - check_method (str): The method used for validation
-            ('RC' or 'ITS').
-        - ignore_aromaticity (bool): Flag to ignore aromaticity
-                                    in ITS graph construction.
+        :param mapped_smile: The mapped SMILES string.
+        :type mapped_smile: str
+        :param ground_truth: The ground truth SMILES string.
+        :type ground_truth: str
+        :param check_method: The method used for validation
+                             ('RC' or 'ITS').
+        :type check_method: str
+        :param ignore_aromaticity: Flag to ignore aromaticity
+                                   in ITS graph construction.
+        :type ignore_aromaticity: bool
 
-        Returns:
-        - bool: True if the mapped SMILES is equivalent to the ground truth,
-                    False otherwise.
+        :return: True if the mapped SMILES is equivalent to the ground truth,
+                  False otherwise.
+        :rtype: bool
         """
         its_graphs = []
         rules_graphs = []
@@ -121,29 +119,30 @@ class AAMValidator:
         check_method: str = "RC",  # or 'ITS'
         ignore_aromaticity: bool = False,
     ) -> Optional[bool]:
-        """
-        Determines if a given mapped SMILE string is equivalent to any tautomer of
+        """Determines if a given mapped SMILE string is equivalent to any tautomer of
         a ground truth SMILES string using a specified comparison method.
 
-        Parameters:
-        - mapped_smile (str): The mapped SMILES string to check against the tautomers of
-        the ground truth.
-        - ground_truth (str): The reference SMILES string for generating possible
-        tautomers.
-        - check_method (str): The method used for checking equivalence. Default is 'RC'.
-        Possible values are 'RC' for reaction center or 'ITS'.
-        - ignore_aromaticity (bool): Flag to ignore differences in aromaticity between
-        the mapped SMILE and the tautomers.Default is False.
+        :param mapped_smile: The mapped SMILES string to check against the tautomers of
+                             the ground truth.
+        :type mapped_smile: str
+        :param ground_truth: The reference SMILES string for generating possible
+                             tautomers.
+        :type ground_truth: str
+        :param check_method: The method used for checking equivalence. Default is 'RC'.
+                             Possible values are 'RC' for reaction center or 'ITS'.
+        :type check_method: str
+        :param ignore_aromaticity: Flag to ignore differences in aromaticity between
+                                   the mapped SMILE and the tautomers.Default is False.
+        :type ignore_aromaticity: bool
 
-        Returns:
-        - Optional[bool]: True if the mapped SMILE matches any of the enumerated tautomers
-        of the ground truth according to the specified check method.
-        Returns False if no match is found.
-        Returns None if an error occurs during processing.
+        :return: True if the mapped SMILE matches any of the enumerated tautomers
+                  of the ground truth according to the specified check method.
+                  Returns False if no match is found.
+                  Returns None if an error occurs during processing.
+        :rtype: Optional[bool]
 
-        Raises:
-        - Exception: If an error occurs during the tautomer enumeration
-        or the comparison process.
+        :raises Exception: If an error occurs during the tautomer enumeration
+            or the comparison process.
         """
         try:
             ground_truth_tautomers = enumerate_tautomers(ground_truth)
@@ -166,28 +165,32 @@ class AAMValidator:
         ignore_aromaticity: bool = False,
         ignore_tautomers: bool = False,
     ) -> bool:
-        """
-        Checks the equivalence between the mapped and ground truth
+        """Checks the equivalence between the mapped and ground truth
         values within a given mapping dictionary, using a specified check method.
         The check can optionally ignore aromaticity.
 
-        Parameters:
-        - mapping (Dict[str, str]): A dictionary containing the data entries to check.
-        - mapped_col (str): The key in the mapping dictionary corresponding
-        to the mapped value.
-        - ground_truth_col (str): The key in the mapping dictionary corresponding
-        to the ground truth value.
-        - check_method (str, optional): The method used for checking the equivalence.
-        Defaults to 'RC'.
-        - ignore_aromaticity (bool, optional): Flag to indicate whether aromaticity
-        should be ignored during the check. Defaults to False.
-        - ignore_tautomers (bool, optional): Flag to indicate whether tautomers
-        should be ignored during the check. Defaults to False.
+        :param mapping: A dictionary containing the data entries to check.
+        :type mapping: Dict[str, str]
+        :param mapped_col: The key in the mapping dictionary corresponding
+                           to the mapped value.
+        :type mapped_col: str
+        :param ground_truth_col: The key in the mapping dictionary corresponding
+                                 to the ground truth value.
+        :type ground_truth_col: str
+        :param check_method: The method used for checking the equivalence.
+                             Defaults to 'RC'.
+        :type check_method: str, optional
+        :param ignore_aromaticity: Flag to indicate whether aromaticity
+                                   should be ignored during the check. Defaults to False.
+        :type ignore_aromaticity: bool, optional
+        :param ignore_tautomers: Flag to indicate whether tautomers
+                                 should be ignored during the check. Defaults to False.
+        :type ignore_tautomers: bool, optional
 
-        Returns:
-        - bool: The result of the check, indicating whether the mapped value is
-        equivalent to the ground truth according to the specified method
-        and considerations regarding aromaticity.
+        :return: The result of the check, indicating whether the mapped value is
+                  equivalent to the ground truth according to the specified method
+                  and considerations regarding aromaticity.
+        :rtype: bool
         """
         if ignore_tautomers:
             return AAMValidator.smiles_check(
@@ -221,26 +224,31 @@ class AAMValidator:
         ],
         ignore_tautomers=True,
     ) -> List[Dict[str, Union[str, float, List[bool]]]]:
-        """
-        Validates collections of mapped SMILES against their ground truths for
+        """Validates collections of mapped SMILES against their ground truths for
         multiple mappers and calculates the accuracy.
 
-        Parameters:
-        - data (Union[pd.DataFrame, List[Dict[str, str]]]):
-        The input data containing mapped and ground truth SMILES.
-        - id_col (str): The name of the column or key containing the reaction ID.
-        - ground_truth_col (str): The name of the column or key containing
-        the ground truth SMILES.
-        - mapped_cols (List[str]): The list of columns or keys containing
-        the mapped SMILES for different mappers.
-        - check_method (str): The method used for validation ('RC' or 'ITS').
-        - ignore_aromaticity (bool): Flag to ignore aromaticity in ITS graph construction.
-        - n_jobs (int): The number of parallel jobs to run.
-        - verbose (int): The verbosity level for joblib's parallel execution.
+        :param data: The input data containing mapped and ground truth SMILES.
+        :type data: Union[pd.DataFrame, List[Dict[str, str]]]
+        :param id_col: The name of the column or key containing the reaction ID.
+        :type id_col: str
+        :param ground_truth_col: The name of the column or key containing
+                                 the ground truth SMILES.
+        :type ground_truth_col: str
+        :param mapped_cols: The list of columns or keys containing
+                            the mapped SMILES for different mappers.
+        :type mapped_cols: List[str]
+        :param check_method: The method used for validation ('RC' or 'ITS').
+        :type check_method: str
+        :param ignore_aromaticity: Flag to ignore aromaticity in ITS graph construction.
+        :type ignore_aromaticity: bool
+        :param n_jobs: The number of parallel jobs to run.
+        :type n_jobs: int
+        :param verbose: The verbosity level for joblib's parallel execution.
+        :type verbose: int
 
-        Returns:
-        - List[Dict[str, Union[str, float, List[bool]]]]: A list of dictionaries, each
-        containing the mapper name, accuracy, and individual results for each SMILES pair.
+        :return: A list of dictionaries, each
+                  containing the mapper name, accuracy, and individual results for each SMILES pair.
+        :rtype: List[Dict[str, Union[str, float, List[bool]]]]
         """
 
         validation_results = []

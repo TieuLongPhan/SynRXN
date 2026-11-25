@@ -1,0 +1,228 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 8,
+    "data_links": 8,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 1,
+    "primary_table_views": 7,
+    "stored_rows_across_unique_views": 59719,
+    "task_table_bindings": 8,
+    "tasks": 1,
+    "unique_table_views": 8
+  },
+  "tables": [
+    {
+      "data_link": "expansion/C02/minot_al1_data/data.parquet",
+      "key": "C02/minot_al1_data",
+      "metadata": "expansion/C02/minot_al1_data/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C02/minot_al2_data/data.parquet",
+      "key": "C02/minot_al2_data",
+      "metadata": "expansion/C02/minot_al2_data/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C02/minot_al3_data/data.parquet",
+      "key": "C02/minot_al3_data",
+      "metadata": "expansion/C02/minot_al3_data/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C02/minot_preal_data/data.parquet",
+      "key": "C02/minot_preal_data",
+      "metadata": "expansion/C02/minot_preal_data/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C03/cn_screen/data.parquet",
+      "key": "C03/cn_screen",
+      "metadata": "expansion/C03/cn_screen/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C06/catechol/data.parquet",
+      "key": "C06/catechol",
+      "metadata": "expansion/C06/catechol/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C06/claisen/data.parquet",
+      "key": "C06/claisen",
+      "metadata": "expansion/C06/claisen/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C06/single_solvent/data.parquet",
+      "key": "C06/single_solvent",
+      "metadata": "expansion/C06/single_solvent/table.json",
+      "namespace": "expansion"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "adapter_ids": [
+          "sequential_optimization"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_al1_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 2907
+      },
+      {
+        "adapter_ids": [
+          "sequential_optimization"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_al2_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 954
+      },
+      {
+        "adapter_ids": [
+          "sequential_optimization"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_al3_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 960
+      },
+      {
+        "adapter_ids": [
+          "sequential_optimization"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_preal_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 2044
+      },
+      {
+        "adapter_ids": [
+          "sequential_optimization"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE experiment",
+        "key": "C03/cn_screen",
+        "namespace": "expansion",
+        "partition": "sharealike",
+        "qualification": "UPLC assay yields are selected by ORD measurement type and desired-product flag. Area and internal-standard measurements remain native metadata.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-SA-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 50688
+      },
+      {
+        "adapter_ids": [
+          "sequential_optimization"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "flow-condition observation",
+        "key": "C06/catechol",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Single-solvent observations overlap the complete panel. Residence time is an input, not an observed time trajectory. Missing mass is not renormalized.",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 1227
+      },
+      {
+        "adapter_ids": [
+          "sequential_optimization"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "flow-condition observation",
+        "key": "C06/claisen",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Single-solvent observations overlap the complete panel. Residence time is an input, not an observed time trajectory. Missing mass is not renormalized.",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 283
+      },
+      {
+        "adapter_ids": [
+          "sequential_optimization"
+        ],
+        "commercial_use_allowed": true,
+        "counted_under": "expansion:C06/catechol",
+        "counting_unit": "flow-condition observation",
+        "key": "C06/single_solvent",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Single-solvent observations overlap the complete panel. Residence time is an input, not an observed time trajectory. Missing mass is not renormalized.",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "overlapping_view",
+        "rows": 656
+      }
+    ],
+    "canonical_keys": [],
+    "counting_units": [
+      "HTE experiment",
+      "HTE observation",
+      "flow-condition observation"
+    ],
+    "extension_adapter_ids": [
+      "sequential_optimization"
+    ],
+    "family_id": "conditions",
+    "id": "sequential_optimization",
+    "legacy_view_ids": [],
+    "metrics": [
+      "best_response_vs_budget",
+      "observed_regret",
+      "hit_rate"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 59063,
+    "primary_table_count": 7,
+    "qualification": "Offline replay uses measured candidate points. It does not establish prospective laboratory performance or infer unmeasured outcomes.",
+    "question": "Observed candidate pool and prior observations -> next experiment choice",
+    "readiness": "extension_adapter_available; standardized_contract_and_qualification_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 7,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Sequential experiment selection"
+  }
+}

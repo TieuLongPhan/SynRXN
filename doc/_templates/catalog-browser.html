@@ -1,0 +1,28 @@
+<div id="synrxn-catalog" class="catalog-app" aria-busy="true">
+  <section class="catalog-toolbar" aria-label="Table filters">
+    <label>Search
+      <input id="catalog-search" type="search" placeholder="Dataset, target, column or citation" autocomplete="off">
+    </label>
+    <label>Loading interface
+      <select id="catalog-task"><option value="">All interfaces</option></select>
+    </label>
+    <label>License
+      <select id="catalog-license"><option value="">All licenses</option></select>
+    </label>
+    <label>Target field
+      <select id="catalog-target"><option value="">All targets</option></select>
+    </label>
+    <label>Stored rows
+      <select id="catalog-size"><option value="">Any count</option><option value="small">Fewer than 10,000</option><option value="medium">10,000–100,000</option><option value="large">More than 100,000</option></select>
+    </label>
+    <label class="catalog-check"><input id="catalog-split" type="checkbox"> Recorded split</label>
+    <button id="catalog-clear" type="button">Reset filters</button>
+  </section>
+  <div class="catalog-status"><strong id="catalog-count" aria-live="polite">Loading catalogue…</strong><span id="catalog-release"></span></div>
+  <div id="catalog-error" class="catalog-error" role="alert" hidden></div>
+  <section id="catalog-detail" class="catalog-detail" hidden></section>
+  <div id="catalog-results" class="catalog-results"></div>
+  <section id="catalog-compare" class="catalog-compare" aria-live="polite" hidden></section>
+  <noscript><p>Table filters and previews require JavaScript. The written reference
+  below lists the source tables, fields, and reuse terms.</p></noscript>
+</div>

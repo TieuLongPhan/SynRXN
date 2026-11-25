@@ -1,0 +1,78 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "physics",
+  "format": "csv.gz",
+  "key": "property/rad6re",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "property/rad6re",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 31923
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "recheck_property_synrxn_product_notice",
+      "recheck_property_reactiondatabase_readme",
+      "recheck_property_property_recheck_rad6re_article",
+      "recheck_property_property_recheck_rad6re_native_supplement"
+    ],
+    "expected_bytes": 866920,
+    "expected_rows": 31923,
+    "expected_sha256": "fd78145b61bf50e0267f61ae5e45681020a7de7d3fe552da26feabc3096db1d5",
+    "format": "csv.gz",
+    "key": "property/rad6re",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/property/rad6re.csv.gz",
+    "qualification": "The original author-generated Rad-6-RE data are explicitly supplied as Supplementary Data 1 with the original Nature Communications article under CC BY 4.0. The native supplement was captured and opened as a complete ZIP; it contains Rad-6-RE_network.txt and Rad-6_databases.xyz. Existing native lineage audit matches all 31,923 curated reaction/enthalpy pairs to the reactiondatabase author CSV. No separate restrictive notice was found in the supplement.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 31923,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "heid2022machine",
+      "stocker2020machine"
+    ],
+    "path": "Data/property/rad6re.csv.gz",
+    "sha256": "fd78145b61bf50e0267f61ae5e45681020a7de7d3fe552da26feabc3096db1d5",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "heid2022machine",
+      "stocker2020machine"
+    ],
+    "counting_unit": "source-table row",
+    "key": "property/rad6re",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/property/rad6re.csv.gz",
+    "role": "primary",
+    "rows": 31923,
+    "sha256": "fd78145b61bf50e0267f61ae5e45681020a7de7d3fe552da26feabc3096db1d5",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "RAD-6 reaction enthalpies"
+  },
+  "stored_path": "Data/families/physics/reaction_energetics/canonical/property/rad6re/data.csv.gz",
+  "task_id": "reaction_energetics",
+  "title": "RAD-6 reaction enthalpies"
+}

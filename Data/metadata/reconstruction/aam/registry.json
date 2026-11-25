@@ -1,0 +1,1417 @@
+{
+  "core_columns": [
+    "r_id",
+    "ground_truth",
+    "rxn",
+    "original_id"
+  ],
+  "datasets": [
+    {
+      "archive_member": "Data/aam/brenda.csv.gz",
+      "evidence": [
+        {
+          "id": "synrxn_product_notice",
+          "path": "Data/metadata/reconstruction/aam/licenses/synrxn_product_notice.txt",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "id": "brenda_data_terms",
+          "path": "Data/metadata/reconstruction/aam/licenses/brenda_data_terms.txt",
+          "sha256": "f14efa58f678b6c3df4742b51b6fb66ce0242ef0352be56850854afa49467262",
+          "url": "https://www.brenda-enzymes.info/"
+        }
+      ],
+      "mode": "published_product",
+      "name": "brenda",
+      "product_columns": [
+        "r_id",
+        "ground_truth",
+        "rxn",
+        "original_id",
+        "pubmed_ids"
+      ],
+      "product_sha256": "dad050fba14ab6160480e6802cf81fc82ea3a70e1ccb1af9d251796cd7374580",
+      "qualification": "Exact frozen published curated product; not a reconstruction of original experimental observations. Ultimate lineage limitations remain in the source lock.",
+      "rights": {
+        "commercial_use_allowed": true,
+        "evidence_ids": [
+          "synrxn_product_notice",
+          "brenda_data_terms"
+        ],
+        "license_expression": "CC-BY-4.0",
+        "license_obligations": [
+          "Retain source attribution, applicable license notices and descriptions of changes."
+        ],
+        "partition": "main",
+        "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+        "rights_status": "verified_upstream_grant"
+      },
+      "rights_evidence_records": [
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE",
+          "id": "synrxn_product_notice",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "final_url": "https://www.brenda-enzymes.info/",
+          "id": "brenda_data_terms",
+          "sha256": "f14efa58f678b6c3df4742b51b6fb66ce0242ef0352be56850854afa49467262",
+          "status": "captured",
+          "url": "https://www.brenda-enzymes.info/"
+        }
+      ],
+      "rows": 3138,
+      "source_lock": {
+        "path": "Data/metadata/sources/aam/brenda.json",
+        "sha256": "120a2bc61d84691d471297bbfa08055d002ddbae97bc8040c463f1137577bab9"
+      },
+      "source_product": "Data/tables/canonical/aam/brenda.csv.gz",
+      "source_rows_sha256": "9bdcd008097f02059d7b4fa2cf694a1a091efc50f801652b73b37f0775f4df91"
+    },
+    {
+      "archive_member": "Data/aam/ecoli.csv.gz",
+      "evidence": [
+        {
+          "id": "synrxn_product_notice",
+          "path": "Data/metadata/reconstruction/aam/licenses/synrxn_product_notice.txt",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "id": "syntemp_license",
+          "path": "Data/metadata/reconstruction/aam/licenses/syntemp_license.txt",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_native_license",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_syntemp_native_license.txt",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "id": "syntemp_readme",
+          "path": "Data/metadata/reconstruction/aam/licenses/syntemp_readme.txt",
+          "sha256": "7aea76dc3ca8c925bbd8ab6f89704fe17a50394eb1a6bbb7334bbd6361cef122",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_paper_xml",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_syntemp_paper_xml.txt",
+          "sha256": "094ee044b5100f5494bbd6c2820126be2ed902e9b41a7d79fbd9348ef309a1c1",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11938280/fullTextXML"
+        }
+      ],
+      "mode": "published_product",
+      "name": "ecoli",
+      "product_columns": [
+        "r_id",
+        "ground_truth",
+        "reactions",
+        "rxn_mapper",
+        "graphormer",
+        "local_mapper",
+        "rdt",
+        "original_id"
+      ],
+      "product_sha256": "d38436457c5f5d82149981005a2c39d289d56467fb45ffdeb294f0c62b631866",
+      "qualification": "Exact frozen published curated product; not a reconstruction of original experimental observations. Ultimate lineage limitations remain in the source lock.",
+      "rights": {
+        "commercial_use_allowed": true,
+        "evidence_ids": [
+          "synrxn_product_notice",
+          "syntemp_license",
+          "syntemp_readme",
+          "recheck_mapping_mapping_syntemp_native_license",
+          "recheck_mapping_mapping_syntemp_tree",
+          "recheck_mapping_mapping_syntemp_paper_xml",
+          "recheck_mapping_mapping_syntemp_commit"
+        ],
+        "license_expression": "MIT",
+        "license_obligations": [
+          "Retain source attribution, applicable license notices and descriptions of changes."
+        ],
+        "partition": "main",
+        "qualification": "Documented dataset-bearing SynTemp repository project grant; no nested data exclusion or conflicting notice found. Article points explicitly to repository/Data for supporting datasets.",
+        "rights_status": "verified_redistributable"
+      },
+      "rights_evidence_records": [
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE",
+          "id": "synrxn_product_notice",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE",
+          "id": "syntemp_license",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md",
+          "id": "syntemp_readme",
+          "sha256": "7aea76dc3ca8c925bbd8ab6f89704fe17a50394eb1a6bbb7334bbd6361cef122",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_native_license",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_tree",
+          "sha256": "607f3de46610dcb75b7ba737f3299e6c7987c68f6eb847129a2b6676a3a0f68b",
+          "status": "captured",
+          "url": "https://api.github.com/repos/TieuLongPhan/SynTemp/git/trees/fb9f7948abb0090f8d530287517591f8407f2c89?recursive=1"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_paper_xml",
+          "sha256": "094ee044b5100f5494bbd6c2820126be2ed902e9b41a7d79fbd9348ef309a1c1",
+          "status": "captured",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11938280/fullTextXML"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_commit",
+          "sha256": "e49cb6ac828c3cb613890ef167cac8eb6bbdf766647f19ad617392745054bac4",
+          "status": "captured",
+          "url": "https://api.github.com/repos/TieuLongPhan/SynTemp/commits/fb9f7948abb0090f8d530287517591f8407f2c89"
+        }
+      ],
+      "rows": 273,
+      "source_lock": {
+        "path": "Data/metadata/sources/aam/ecoli.json",
+        "sha256": "e1076738da97d04278dea5516b50af819d1f0406de6031ff116546d88f03c01a"
+      },
+      "source_product": "Data/tables/canonical/aam/ecoli.csv.gz",
+      "source_rows_sha256": "17cbb33fa3438b125a6e942d9e811c96a78e93420e23a001d139ccd76e4a7140"
+    },
+    {
+      "archive_member": "Data/aam/ehreact.csv.gz",
+      "evidence": [
+        {
+          "id": "synrxn_product_notice",
+          "path": "Data/metadata/reconstruction/aam/licenses/synrxn_product_notice.txt",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "id": "ehreact_license",
+          "path": "Data/metadata/reconstruction/aam/licenses/ehreact_license.txt",
+          "sha256": "e38c9bd72184818fd139130ba4e2b4210fbf3cf6729506a5c2b2092287e205e6",
+          "url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/LICENSE"
+        },
+        {
+          "id": "ehreact_readme",
+          "path": "Data/metadata/reconstruction/aam/licenses/ehreact_readme.txt",
+          "sha256": "c42288ab9b8dad99fe1411eef8c4c13a2280d8dedbf78a50e240b4f824979308",
+          "url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/README.md"
+        }
+      ],
+      "mode": "published_product",
+      "name": "ehreact",
+      "product_columns": [
+        "r_id",
+        "ground_truth",
+        "rxn",
+        "original_id",
+        "system",
+        "input",
+        "input_type",
+        "assay_labels",
+        "n_assays",
+        "n_active",
+        "mapping_curated",
+        "validated"
+      ],
+      "product_sha256": "e085217180f396ad519eeaadf7602d39c7c374e5591b95bde85c0d8b57402124",
+      "qualification": "Exact frozen published curated product; not a reconstruction of original experimental observations. Ultimate lineage limitations remain in the source lock.",
+      "rights": {
+        "commercial_use_allowed": true,
+        "evidence_ids": [
+          "synrxn_product_notice",
+          "ehreact_license",
+          "ehreact_readme",
+          "ehreact_native_alcoholdehydrogenase",
+          "ehreact_native_amidinotransferase",
+          "ehreact_native_aminedehydrogenase",
+          "ehreact_native_carboxylmethyltransferase",
+          "ehreact_native_csp2_csp3_coupling",
+          "ehreact_native_dehalogenase",
+          "ehreact_native_nitrilase",
+          "ehreact_native_transaminase",
+          "ehreact_native_tryptophan_synthase"
+        ],
+        "license_expression": "BSD-3-Clause",
+        "license_obligations": [
+          "Retain source attribution, applicable license notices and descriptions of changes."
+        ],
+        "partition": "main",
+        "qualification": "Actual nine manuscript assay CSVs captured from the same pinned author repository as its root BSD3 redistribution notice. No separate contradictory data terms were found; preserve the original copyright, conditions and disclaimer for these derived tables.",
+        "rights_status": "verified_repository_dataset_grant"
+      },
+      "rights_evidence_records": [
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE",
+          "id": "synrxn_product_notice",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/LICENSE",
+          "id": "ehreact_license",
+          "sha256": "e38c9bd72184818fd139130ba4e2b4210fbf3cf6729506a5c2b2092287e205e6",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/LICENSE"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/README.md",
+          "id": "ehreact_readme",
+          "sha256": "c42288ab9b8dad99fe1411eef8c4c13a2280d8dedbf78a50e240b4f824979308",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/README.md"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/alcoholdehydrogenase.csv",
+          "id": "ehreact_native_alcoholdehydrogenase",
+          "sha256": "510adddfb69d752a988ffe9046ceb475e770232ad3abb9b1e52cfcdcfc5d67a9",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/alcoholdehydrogenase.csv"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/amidinotransferase.csv",
+          "id": "ehreact_native_amidinotransferase",
+          "sha256": "be7190f033a1d652bdd45b57cfb538e0eed1fe0d328b745e6f999b6d4f3641b2",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/amidinotransferase.csv"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/aminedehydrogenase.csv",
+          "id": "ehreact_native_aminedehydrogenase",
+          "sha256": "5979837eca803e9f5e8f00ae42c220e7779a1039a9d967455aee07fb32cfa183",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/aminedehydrogenase.csv"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/carboxylmethyltransferase.csv",
+          "id": "ehreact_native_carboxylmethyltransferase",
+          "sha256": "a1b5e0caa74b12c8da05747fc0ad228d39c9793d3ca63b5f36f3f8f51c9e8582",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/carboxylmethyltransferase.csv"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/csp2_csp3_coupling.csv",
+          "id": "ehreact_native_csp2_csp3_coupling",
+          "sha256": "791b4b475f13c497b37a3c0ce25e33f3b34f1d191750706ae7804fef12251e0b",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/csp2_csp3_coupling.csv"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/dehalogenase.csv",
+          "id": "ehreact_native_dehalogenase",
+          "sha256": "b16c60487b8c531bbdc66cf092ec41ef8171cc310755ec1e6703cdf73432c78a",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/dehalogenase.csv"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/nitrilase.csv",
+          "id": "ehreact_native_nitrilase",
+          "sha256": "42a6dc38cc272d54d3d383a1397569c0f7e06f2936fc10fac85f21da352a0759",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/nitrilase.csv"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/transaminase.csv",
+          "id": "ehreact_native_transaminase",
+          "sha256": "50721f7588c279e25fa824545636ef07584d9351d5e92a2440827c2e2d521e23",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/transaminase.csv"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/tryptophan_synthase.csv",
+          "id": "ehreact_native_tryptophan_synthase",
+          "sha256": "95faa3f46e70eaf1a45801370a30342aad210ea41e35b552ff67bc7305c6d0a1",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/hesther/ehreact/e6d29c21bd24ee23302e5e441680af4f6ed1d458/data_manuscript/tryptophan_synthase.csv"
+        }
+      ],
+      "rows": 939,
+      "source_lock": {
+        "path": "Data/metadata/sources/aam/ehreact.json",
+        "sha256": "61dfdc4d06de7fb16e8e36e14fdf3804a31a4119ac1008af544098d70de76a29"
+      },
+      "source_product": "Data/tables/canonical/aam/ehreact.csv.gz",
+      "source_rows_sha256": "a896e6963afa73b6591ff0eeaab914481ae6dfe118c01e7f16bcfe0f49b39b32"
+    },
+    {
+      "archive_member": "Data/aam/enzyme_map.csv.gz",
+      "evidence": [
+        {
+          "id": "synrxn_product_notice",
+          "path": "Data/metadata/reconstruction/aam/licenses/synrxn_product_notice.txt",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "id": "enzymemap_data_grant",
+          "path": "Data/metadata/reconstruction/aam/licenses/enzymemap_data_grant.txt",
+          "sha256": "d93d5ef007c85e67e11cf1fd604c0c8d9820e62dbe1405b760cf4e6ec022e141",
+          "url": "https://zenodo.org/api/records/8254726"
+        }
+      ],
+      "mode": "published_product",
+      "name": "enzyme_map",
+      "product_columns": [
+        "r_id",
+        "ground_truth",
+        "rxn",
+        "original_id"
+      ],
+      "product_sha256": "303e6638819a008f1442291443459795e9bb40b3cdea9e9da01732d05f20b807",
+      "qualification": "Exact frozen published curated product; not a reconstruction of original experimental observations. Ultimate lineage limitations remain in the source lock.",
+      "rights": {
+        "commercial_use_allowed": true,
+        "evidence_ids": [
+          "synrxn_product_notice",
+          "enzymemap_data_grant"
+        ],
+        "license_expression": "CC-BY-4.0",
+        "license_obligations": [
+          "Retain source attribution, applicable license notices and descriptions of changes."
+        ],
+        "partition": "main",
+        "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+        "rights_status": "verified_upstream_grant"
+      },
+      "rights_evidence_records": [
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE",
+          "id": "synrxn_product_notice",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "final_url": "https://zenodo.org/api/records/8254726",
+          "id": "enzymemap_data_grant",
+          "sha256": "d93d5ef007c85e67e11cf1fd604c0c8d9820e62dbe1405b760cf4e6ec022e141",
+          "status": "captured",
+          "url": "https://zenodo.org/api/records/8254726"
+        }
+      ],
+      "rows": 47974,
+      "source_lock": {
+        "path": "Data/metadata/sources/aam/enzyme_map.json",
+        "sha256": "601c51969332ce5dee9db78e341a89b25a2953597904e742832d836bdf6a655e"
+      },
+      "source_product": "Data/tables/canonical/aam/enzyme_map.csv.gz",
+      "source_rows_sha256": "575298aab57b75f4205f53978a4dc62fa07ec797212d6f6c95641ec8ea4a4949"
+    },
+    {
+      "center_annotations": {
+        "definition": "Global exact center isomorphism; one-step two-state MC equals RC; existing source roles retained",
+        "path": "Data/metadata/reconstruction/flower/center_annotations.csv.gz",
+        "rebuild_command": [
+          "python",
+          "scripts/group_flower_centers.py"
+        ],
+        "sha256": "eccf1f2e36ad223692a9d04bd27aa0f026439fe8a4101d0e667abf08bb51a87b"
+      },
+      "evidence": [
+        {
+          "path": "Data/metadata/development/flower/LICENSE-MIT.txt",
+          "sha256": "df7a7749aab3ca566a49f48f8d86b57d9883de0a055e89b2a16bb192b29d3375"
+        },
+        {
+          "path": "Data/metadata/development/flower/UPSTREAM_LICENSE.json",
+          "sha256": "047e8375fd9538b1b268636f23b06a08b9328e8a3b749d3dc0b6053bdd519d0a"
+        }
+      ],
+      "mode": "native",
+      "name": "flower",
+      "native_archive": {
+        "path": "Data/dumps/flower.dump.zip",
+        "sha256": "f70e8d0705c168178c880b9e14d8455bbb7e4fee395464390d6910a1a6ee863a"
+      },
+      "native_bundle": true,
+      "native_recipe": {
+        "command": [
+          "python",
+          "scripts/build_flower_aam.py"
+        ],
+        "implementation": [
+          {
+            "path": "scripts/build_flower_aam.py",
+            "sha256": "4ddda536e566ebd6b8425597cb7dd59ad69a88b53c3c2b5c29dbb3824426a523"
+          },
+          {
+            "path": "synrxn/reconstruction/builders/flower_dump.py",
+            "sha256": "13f5b6acc81deb7d049370a2ba3fc0336763135807ae14db7f560eac440eeccb"
+          },
+          {
+            "path": "synrxn/reconstruction/builders/flower_mc_pipeline.py",
+            "sha256": "57736af941e0d85c771766e9fefaf2df887f1d18e5704a6d8041769ad9c2708c"
+          },
+          {
+            "path": "synrxn/reconstruction/builders/flower_mc_export.py",
+            "sha256": "1fb42bd86bd1988a9725a8e6fdbf66b358743ec502846de9cc9b4e3e1490b0f1"
+          },
+          {
+            "path": "synrxn/reconstruction/builders/flower_mc_store.py",
+            "sha256": "8799036a502708263441b72c74073842ac54ea8cc23224a22869a5c751bb1785"
+          },
+          {
+            "path": "synrxn/reconstruction/builders/flower_mechanistic_center.py",
+            "sha256": "c3031e481bc1d47a3f2e087ae2ca7b9c7be25b9f0e6f70922038316bcf1779d9"
+          },
+          {
+            "path": "synrxn/reconstruction/builders/flower.py",
+            "sha256": "11d56ad24553659df2458d148e188c9b1f500b04d9228789117ca522d31d332e"
+          }
+        ],
+        "recipe": {
+          "maximum_seeds": 4,
+          "maximum_steps": 0,
+          "multiple_steps": "SynKit MTG unordered local-state MC; induced active-atom context; no extra shell",
+          "one_step": "frozen curated RC selection",
+          "seed": 42,
+          "selection_key": "(role, steps, center_id)"
+        },
+        "versions": {
+          "networkx": "3.6.1",
+          "rdkit": "2026.3.1",
+          "synkit": "1.6.2"
+        }
+      },
+      "product_columns": [
+        "r_id",
+        "ground_truth",
+        "rxn",
+        "original_id",
+        "steps",
+        "role"
+      ],
+      "product_sha256": "e3510ca5fa8b12c2e622516ebcf0b940d0c8e4825a400f01ad587d4bd770bff6",
+      "qualification": "One self-contained local dump; original native roles retained. One-step pinned RC selection and uncapped multistep SynKit MTG MC representatives. Default verified snapshot export; optional full raw recomputation.",
+      "rights": {
+        "license_expression": "MIT",
+        "partition": "main",
+        "rights_status": "verified_upstream_grant"
+      },
+      "rows": 34815,
+      "source_lock": {
+        "path": "Data/metadata/development/flower/source.json",
+        "sha256": "3f6404e568f8b2aef890c3a6403c3fc53619b59b8f3352763b6269891c93def9"
+      },
+      "source_product": ".cache/flower/native-product/aam.csv.gz",
+      "source_rows_sha256": "8c30e8e97e3650d15fe5fe00050fa902c47ab6a84c2d9910746feb3145b7bfbc"
+    },
+    {
+      "archive_member": "Data/aam/golden.csv.gz",
+      "evidence": [
+        {
+          "id": "synrxn_product_notice",
+          "path": "Data/metadata/reconstruction/aam/licenses/synrxn_product_notice.txt",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "id": "syntemp_license",
+          "path": "Data/metadata/reconstruction/aam/licenses/syntemp_license.txt",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_native_license",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_syntemp_native_license.txt",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_license",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_localmapper_2024_license.txt",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_golden_native_license",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_golden_native_license.txt",
+          "sha256": "20c17d8b8c48a600800dfd14f95d5cb9ff47066a9641ddeab48dc54aec96e331",
+          "url": "https://raw.githubusercontent.com/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/793475e54d8b2c7f714165a61e4eb439435d7d92/LICENSE"
+        },
+        {
+          "id": "syntemp_readme",
+          "path": "Data/metadata/reconstruction/aam/licenses/syntemp_readme.txt",
+          "sha256": "7aea76dc3ca8c925bbd8ab6f89704fe17a50394eb1a6bbb7334bbd6361cef122",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_paper_xml",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_syntemp_paper_xml.txt",
+          "sha256": "094ee044b5100f5494bbd6c2820126be2ed902e9b41a7d79fbd9348ef309a1c1",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11938280/fullTextXML"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_readme",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_localmapper_2024_readme.txt",
+          "sha256": "6b29ec20542e689d9b4123f73a20833385bed1231842363a6eb75d65eed9ccd5",
+          "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_golden_native_readme",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_golden_native_readme.txt",
+          "sha256": "f2e27c354918840a0b92357b29546e285b57c328e9eba0c8eb677ab29ef44e0e",
+          "url": "https://raw.githubusercontent.com/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/793475e54d8b2c7f714165a61e4eb439435d7d92/README.md"
+        }
+      ],
+      "mode": "published_product",
+      "name": "golden",
+      "product_columns": [
+        "r_id",
+        "reactions",
+        "ground_truth",
+        "rxn_mapper",
+        "graphormer",
+        "local_mapper",
+        "rdt",
+        "original_id"
+      ],
+      "product_sha256": "ccce1ab8a18a45559cdbf87bcd3ecd838fc6e1cd1e3ad8d5815e39af5ddd49d9",
+      "qualification": "Exact frozen published curated product; not a reconstruction of original experimental observations. Ultimate lineage limitations remain in the source lock.",
+      "rights": {
+        "commercial_use_allowed": true,
+        "evidence_ids": [
+          "synrxn_product_notice",
+          "syntemp_license",
+          "syntemp_readme",
+          "recheck_mapping_mapping_syntemp_native_license",
+          "recheck_mapping_mapping_syntemp_tree",
+          "recheck_mapping_mapping_syntemp_paper_xml",
+          "recheck_mapping_mapping_syntemp_commit",
+          "recheck_mapping_mapping_localmapper_2024_license",
+          "recheck_mapping_mapping_localmapper_2024_readme",
+          "recheck_mapping_mapping_localmapper_2024_tree",
+          "recheck_mapping_mapping_localmapper_2024_golden",
+          "recheck_mapping_mapping_golden_native_license",
+          "recheck_mapping_mapping_golden_native_readme",
+          "recheck_mapping_mapping_golden_native_zip",
+          "recheck_mapping_mapping_golden_clean_tree"
+        ],
+        "license_expression": "GPL-3.0-only AND LGPL-2.1-only AND MIT",
+        "license_obligations": [
+          "Retain source attribution, applicable license notices and descriptions of changes.",
+          "Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it."
+        ],
+        "partition": "copyleft",
+        "qualification": "Exact1758reaction and reference-label rows match historical LocalMapper comparison under GPL3; original Golden author repository explicitly distributes hand-curated data under repository LGPL2.1.",
+        "rights_status": "verified_redistributable"
+      },
+      "rights_evidence_records": [
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE",
+          "id": "synrxn_product_notice",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE",
+          "id": "syntemp_license",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md",
+          "id": "syntemp_readme",
+          "sha256": "7aea76dc3ca8c925bbd8ab6f89704fe17a50394eb1a6bbb7334bbd6361cef122",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_native_license",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_tree",
+          "sha256": "607f3de46610dcb75b7ba737f3299e6c7987c68f6eb847129a2b6676a3a0f68b",
+          "status": "captured",
+          "url": "https://api.github.com/repos/TieuLongPhan/SynTemp/git/trees/fb9f7948abb0090f8d530287517591f8407f2c89?recursive=1"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_paper_xml",
+          "sha256": "094ee044b5100f5494bbd6c2820126be2ed902e9b41a7d79fbd9348ef309a1c1",
+          "status": "captured",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11938280/fullTextXML"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_commit",
+          "sha256": "e49cb6ac828c3cb613890ef167cac8eb6bbdf766647f19ad617392745054bac4",
+          "status": "captured",
+          "url": "https://api.github.com/repos/TieuLongPhan/SynTemp/commits/fb9f7948abb0090f8d530287517591f8407f2c89"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_license",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_readme",
+          "sha256": "6b29ec20542e689d9b4123f73a20833385bed1231842363a6eb75d65eed9ccd5",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_tree",
+          "sha256": "a101b71c0ece071732af79415cc9ef5eb386773c37469cd376a22a36227c74b5",
+          "status": "captured",
+          "url": "https://api.github.com/repos/snu-micc/LocalMapper/git/trees/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495?recursive=1"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_golden",
+          "sha256": "ecc94eb427cbfd934743e180ed160e175d9c3ffa01ed5ffc60f2aecacc8f5065",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/comparison/Golden_mappings.csv"
+        },
+        {
+          "id": "recheck_mapping_mapping_golden_native_license",
+          "sha256": "20c17d8b8c48a600800dfd14f95d5cb9ff47066a9641ddeab48dc54aec96e331",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/793475e54d8b2c7f714165a61e4eb439435d7d92/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_golden_native_readme",
+          "sha256": "f2e27c354918840a0b92357b29546e285b57c328e9eba0c8eb677ab29ef44e0e",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/793475e54d8b2c7f714165a61e4eb439435d7d92/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_golden_native_zip",
+          "sha256": "baf10464a6cd92dc4719f8becd5f001ab4b6bdafd363d74c5ae9dee77755f3d6",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/793475e54d8b2c7f714165a61e4eb439435d7d92/data/golden_dataset.zip"
+        },
+        {
+          "id": "recheck_mapping_mapping_golden_clean_tree",
+          "sha256": "bbdb18c5e385432407da7c67bae86fc79d99400d295427274202168895528f58",
+          "status": "captured",
+          "url": "https://api.github.com/repos/Laboratoire-de-Chemoinformatique/Reaction_Data_Cleaning/git/trees/master?recursive=1"
+        }
+      ],
+      "rows": 1758,
+      "source_lock": {
+        "path": "Data/metadata/sources/aam/golden.json",
+        "sha256": "eb35f8b426f4efe44cb3c28b11a27685dcc3e03c4c0fa3066193d2a1c0c6ccb5"
+      },
+      "source_product": "Data/tables/canonical/aam/golden.csv.gz",
+      "source_rows_sha256": "42af358aa3f2a3ab4fee71be77b1a7143e015008423e18b28a6bdb7a6424e6c9"
+    },
+    {
+      "evidence": [],
+      "mode": "native",
+      "name": "metambd_cyclic",
+      "native_bundle": true,
+      "native_provenance": {
+        "path": "Data/raw/aam/metambd_cyclic/native-product/native_provenance.jsonl.gz",
+        "sha256": "3189c33cf593bec9a36850be11fabfcd4f661ef28a62b3efd0325c5e985496db"
+      },
+      "native_recipe": {
+        "command": [
+          "python",
+          "scripts/build_metamdb_aam.py",
+          "--datasets",
+          "metambd_cyclic",
+          "--fetch"
+        ],
+        "implementation": [
+          {
+            "path": "scripts/build_metamdb_aam.py",
+            "sha256": "44a54826792ca3e021ce0dcd31bb9aa24a88fcdafb3d7c5b5c3389b1fd3d9bbe"
+          },
+          {
+            "path": "scripts/audit_metamdb_aam.py",
+            "sha256": "c397bb307330bff871786dc15a583dc6795813c3aee91dc2a5117dfd3d64f4d3"
+          }
+        ],
+        "versions": {
+          "numpy": "2.4.4",
+          "rdkit": "2026.3.1",
+          "scikit-learn": "1.7.2"
+        }
+      },
+      "product_columns": [
+        "r_id",
+        "ground_truth",
+        "rxn",
+        "original_id",
+        "role",
+        "source",
+        "reference_tier",
+        "validation_status",
+        "mapping_scope",
+        "hydrogen_map_mismatch",
+        "element_balanced",
+        "charge_balanced",
+        "spectator_pairs_removed"
+      ],
+      "product_sha256": "f6a21d7d3e00575555696713945c9a99933a1a10361f17237711f2859dbbc5c7",
+      "qualification": "Source reference mappings; independent human review is unverified. The paper-reported 10,579 validated subset is not reconstructed or claimed.",
+      "rights": {
+        "license_expression": "LicenseRef-Unknown",
+        "partition": "excluded",
+        "rights_status": "unverified"
+      },
+      "rows": 177,
+      "source_lock": {
+        "path": "Data/metadata/sources/aam/metambd_cyclic.json",
+        "sha256": "cfc77ccd1ba217b42530d451c95291f103ad90e02f722f2b067fa23465cb69d1"
+      },
+      "source_product": "Data/raw/aam/metambd_cyclic/native-product/aam.csv.gz",
+      "source_rows_sha256": "d51c110c449353fbcbdad5cfbf8be464ef67896c3a7498785d9f1e27649ae326"
+    },
+    {
+      "archive_member": "Data/aam/natcomm.csv.gz",
+      "evidence": [
+        {
+          "id": "synrxn_product_notice",
+          "path": "Data/metadata/reconstruction/aam/licenses/synrxn_product_notice.txt",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "id": "syntemp_license",
+          "path": "Data/metadata/reconstruction/aam/licenses/syntemp_license.txt",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_native_license",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_syntemp_native_license.txt",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_license",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_localmapper_2024_license.txt",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/LICENSE"
+        },
+        {
+          "id": "syntemp_readme",
+          "path": "Data/metadata/reconstruction/aam/licenses/syntemp_readme.txt",
+          "sha256": "7aea76dc3ca8c925bbd8ab6f89704fe17a50394eb1a6bbb7334bbd6361cef122",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_paper_xml",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_syntemp_paper_xml.txt",
+          "sha256": "094ee044b5100f5494bbd6c2820126be2ed902e9b41a7d79fbd9348ef309a1c1",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11938280/fullTextXML"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_readme",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_localmapper_2024_readme.txt",
+          "sha256": "6b29ec20542e689d9b4123f73a20833385bed1231842363a6eb75d65eed9ccd5",
+          "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_natcomm_xml",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_natcomm_xml.txt",
+          "sha256": "ea603f79bc2f847351b4539372f0c79529dbbd4ec5dac58ba345008d9285c056",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6441094/fullTextXML"
+        }
+      ],
+      "mode": "published_product",
+      "name": "natcomm",
+      "product_columns": [
+        "r_id",
+        "reactions",
+        "ground_truth",
+        "rxn_mapper",
+        "graphormer",
+        "local_mapper",
+        "rdt",
+        "original_id"
+      ],
+      "product_sha256": "c62f4084990533d36bd9ba706cd78a80de0bad14ee139cdf1fb3c00422da2343",
+      "qualification": "Exact frozen published curated product; not a reconstruction of original experimental observations. Ultimate lineage limitations remain in the source lock.",
+      "rights": {
+        "commercial_use_allowed": true,
+        "evidence_ids": [
+          "synrxn_product_notice",
+          "syntemp_license",
+          "syntemp_readme",
+          "recheck_mapping_mapping_syntemp_native_license",
+          "recheck_mapping_mapping_syntemp_tree",
+          "recheck_mapping_mapping_syntemp_paper_xml",
+          "recheck_mapping_mapping_syntemp_commit",
+          "recheck_mapping_mapping_localmapper_2024_license",
+          "recheck_mapping_mapping_localmapper_2024_readme",
+          "recheck_mapping_mapping_localmapper_2024_tree",
+          "recheck_mapping_mapping_localmapper_2024_natcomm",
+          "recheck_mapping_mapping_natcomm_xml"
+        ],
+        "license_expression": "CC-BY-4.0 AND GPL-3.0-only AND MIT",
+        "license_obligations": [
+          "Retain source attribution, applicable license notices and descriptions of changes.",
+          "Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it."
+        ],
+        "partition": "copyleft",
+        "qualification": "Original Jaworski article and included source supplement are CC BY4; exact491reaction/reference rows also match historical GPL3 LocalMapper comparison.",
+        "rights_status": "verified_redistributable"
+      },
+      "rights_evidence_records": [
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE",
+          "id": "synrxn_product_notice",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE",
+          "id": "syntemp_license",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md",
+          "id": "syntemp_readme",
+          "sha256": "7aea76dc3ca8c925bbd8ab6f89704fe17a50394eb1a6bbb7334bbd6361cef122",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_native_license",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_tree",
+          "sha256": "607f3de46610dcb75b7ba737f3299e6c7987c68f6eb847129a2b6676a3a0f68b",
+          "status": "captured",
+          "url": "https://api.github.com/repos/TieuLongPhan/SynTemp/git/trees/fb9f7948abb0090f8d530287517591f8407f2c89?recursive=1"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_paper_xml",
+          "sha256": "094ee044b5100f5494bbd6c2820126be2ed902e9b41a7d79fbd9348ef309a1c1",
+          "status": "captured",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11938280/fullTextXML"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_commit",
+          "sha256": "e49cb6ac828c3cb613890ef167cac8eb6bbdf766647f19ad617392745054bac4",
+          "status": "captured",
+          "url": "https://api.github.com/repos/TieuLongPhan/SynTemp/commits/fb9f7948abb0090f8d530287517591f8407f2c89"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_license",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_readme",
+          "sha256": "6b29ec20542e689d9b4123f73a20833385bed1231842363a6eb75d65eed9ccd5",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_tree",
+          "sha256": "a101b71c0ece071732af79415cc9ef5eb386773c37469cd376a22a36227c74b5",
+          "status": "captured",
+          "url": "https://api.github.com/repos/snu-micc/LocalMapper/git/trees/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495?recursive=1"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_natcomm",
+          "sha256": "cf4ce29284694f621602c71c611d91c97587cdd23d006803946dcd6c0b305f0b",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/comparison/NatComm_mappings.csv"
+        },
+        {
+          "id": "recheck_mapping_mapping_natcomm_xml",
+          "sha256": "ea603f79bc2f847351b4539372f0c79529dbbd4ec5dac58ba345008d9285c056",
+          "status": "captured",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6441094/fullTextXML"
+        }
+      ],
+      "rows": 491,
+      "source_lock": {
+        "path": "Data/metadata/sources/aam/natcomm.json",
+        "sha256": "5572b106cda24e209c22301846cef20a2162f435ff00bfbb19213d079662cf33"
+      },
+      "source_product": "Data/tables/canonical/aam/natcomm.csv.gz",
+      "source_rows_sha256": "9566d54b3f2f32ef773cdf57af039635cf41888b99dac244d5a7431956cc98b2"
+    },
+    {
+      "archive_member": "Data/aam/recon3d.csv.gz",
+      "evidence": [
+        {
+          "id": "synrxn_product_notice",
+          "path": "Data/metadata/reconstruction/aam/licenses/synrxn_product_notice.txt",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "id": "syntemp_license",
+          "path": "Data/metadata/reconstruction/aam/licenses/syntemp_license.txt",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_native_license",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_syntemp_native_license.txt",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "id": "syntemp_readme",
+          "path": "Data/metadata/reconstruction/aam/licenses/syntemp_readme.txt",
+          "sha256": "7aea76dc3ca8c925bbd8ab6f89704fe17a50394eb1a6bbb7334bbd6361cef122",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_paper_xml",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_syntemp_paper_xml.txt",
+          "sha256": "094ee044b5100f5494bbd6c2820126be2ed902e9b41a7d79fbd9348ef309a1c1",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11938280/fullTextXML"
+        },
+        {
+          "id": "recheck_mapping_mapping_recon_figshare",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_recon_figshare.txt",
+          "sha256": "de0111560c91d7a44311cc19a167eaece59c0d3d4829086d1c5e368c5c727c84",
+          "url": "https://api.figshare.com/v2/articles/7469537"
+        },
+        {
+          "id": "recheck_mapping_mapping_recon_figshare3",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_recon_figshare3.txt",
+          "sha256": "b54c3719266547eb6b240812d1a12e39e6de53625483804d5ced3c9a82662207",
+          "url": "https://api.figshare.com/v2/articles/7469531"
+        },
+        {
+          "path": "Data/metadata/reconstruction/aam/licenses/CC-BY-NC-4.0.txt",
+          "sha256": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0",
+          "url": "https://creativecommons.org/licenses/by-nc/4.0/legalcode"
+        }
+      ],
+      "mode": "published_product",
+      "name": "recon3d",
+      "product_columns": [
+        "r_id",
+        "ground_truth",
+        "reactions",
+        "rxn_mapper",
+        "graphormer",
+        "local_mapper",
+        "rdt",
+        "original_id"
+      ],
+      "product_sha256": "a5dc370de65eb8efde9ecd703ef1f2a021d5713b850944530092798628dea45e",
+      "qualification": "Exact frozen published curated product; not a reconstruction of original experimental observations. Ultimate lineage limitations remain in the source lock.",
+      "rights": {
+        "commercial_use_allowed": false,
+        "evidence_ids": [
+          "synrxn_product_notice",
+          "syntemp_license",
+          "syntemp_readme",
+          "recheck_mapping_mapping_syntemp_native_license",
+          "recheck_mapping_mapping_syntemp_tree",
+          "recheck_mapping_mapping_syntemp_paper_xml",
+          "recheck_mapping_mapping_syntemp_commit",
+          "recheck_mapping_mapping_recon_figshare",
+          "recheck_mapping_mapping_recon_native_zip",
+          "recheck_mapping_mapping_recon_figshare3"
+        ],
+        "license_expression": "CC-BY-NC-4.0 AND MIT",
+        "license_obligations": [
+          "Retain source attribution, applicable license notices and descriptions of changes.",
+          "Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted."
+        ],
+        "partition": "noncommercial",
+        "qualification": "Original author ACS Figshare dataset record7469537 declares CC BY-NC4 and native ZIP contains all382local source identifiers.",
+        "rights_status": "verified_redistributable"
+      },
+      "rights_evidence_records": [
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE",
+          "id": "synrxn_product_notice",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE",
+          "id": "syntemp_license",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md",
+          "id": "syntemp_readme",
+          "sha256": "7aea76dc3ca8c925bbd8ab6f89704fe17a50394eb1a6bbb7334bbd6361cef122",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_native_license",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_tree",
+          "sha256": "607f3de46610dcb75b7ba737f3299e6c7987c68f6eb847129a2b6676a3a0f68b",
+          "status": "captured",
+          "url": "https://api.github.com/repos/TieuLongPhan/SynTemp/git/trees/fb9f7948abb0090f8d530287517591f8407f2c89?recursive=1"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_paper_xml",
+          "sha256": "094ee044b5100f5494bbd6c2820126be2ed902e9b41a7d79fbd9348ef309a1c1",
+          "status": "captured",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11938280/fullTextXML"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_commit",
+          "sha256": "e49cb6ac828c3cb613890ef167cac8eb6bbdf766647f19ad617392745054bac4",
+          "status": "captured",
+          "url": "https://api.github.com/repos/TieuLongPhan/SynTemp/commits/fb9f7948abb0090f8d530287517591f8407f2c89"
+        },
+        {
+          "id": "recheck_mapping_mapping_recon_figshare",
+          "sha256": "de0111560c91d7a44311cc19a167eaece59c0d3d4829086d1c5e368c5c727c84",
+          "status": "captured",
+          "url": "https://api.figshare.com/v2/articles/7469537"
+        },
+        {
+          "id": "recheck_mapping_mapping_recon_native_zip",
+          "sha256": "6d1929dfca8b31269cf187974a94a22903907e87977a4a9d5687da62e43c2565",
+          "status": "captured",
+          "url": "https://ndownloader.figshare.com/files/13834547"
+        },
+        {
+          "id": "recheck_mapping_mapping_recon_figshare3",
+          "sha256": "b54c3719266547eb6b240812d1a12e39e6de53625483804d5ced3c9a82662207",
+          "status": "captured",
+          "url": "https://api.figshare.com/v2/articles/7469531"
+        }
+      ],
+      "rows": 382,
+      "source_lock": {
+        "path": "Data/metadata/sources/aam/recon3d.json",
+        "sha256": "acdcea7ac1a0d68c778276a0e417851ff10a3c9c415df0d46891287d55e6f598"
+      },
+      "source_product": "Data/tables/canonical/aam/recon3d.csv.gz",
+      "source_rows_sha256": "8c17871ede2f5dbf301b07987e6a7ba378f24c3fa08634d1db56abbfb6d870b0"
+    },
+    {
+      "evidence": [
+        {
+          "path": "Data/metadata/development/sihumix/LICENSE-CC-BY-4.0.txt",
+          "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+        },
+        {
+          "path": "Data/metadata/development/sihumix/UPSTREAM_README.txt",
+          "sha256": "58de4768bad4c3f8438e59a5b55814a2a3dd60f8181fa7c579187b8c9ee39f2f"
+        },
+        {
+          "path": "Data/metadata/development/sihumix/rebuild-environment.yml",
+          "sha256": "05da3b1d7e9adc57026ea918c16cec7d40820bc7f15423add8d4fc4b457a0aa5"
+        }
+      ],
+      "mode": "native",
+      "name": "sihumix",
+      "native_bundle": true,
+      "native_recipe": {
+        "command": [
+          "python",
+          "-m",
+          "synrxn.reconstruction.builders.sihumix",
+          "--fetch"
+        ],
+        "implementation": [
+          {
+            "path": "synrxn/reconstruction/builders/sihumix.py",
+            "sha256": "67a4ff3abb7924bc23c69e74565bae462fc06826871a1c0ccdc53b87e0a3f615"
+          },
+          {
+            "path": "synrxn/reconstruction/builders/sihumix_quality.py",
+            "sha256": "4dd9b9f33efa3e427ebc13b7d456cb40b8fde8624d0065ebcb52e34d2f3bdcc3"
+          }
+        ],
+        "versions": {
+          "Pillow": "11.3.0",
+          "networkx": "3.5",
+          "numpy": "2.4.6",
+          "python": "3.11.0",
+          "python_implementation": "CPython",
+          "rdkit": "2026.3.4",
+          "zlib_compile": "1.2.13",
+          "zlib_runtime": "1.3.1"
+        }
+      },
+      "product_columns": [
+        "r_id",
+        "ground_truth",
+        "rxn",
+        "original_id",
+        "source",
+        "organism",
+        "reaction_name",
+        "license",
+        "upstream_source",
+        "reference_tier",
+        "validation_status",
+        "original_aam",
+        "mapping_variant",
+        "reaction_group",
+        "mapping_equivalence",
+        "parseable",
+        "concrete_structures",
+        "heavy_element_balanced",
+        "element_balanced",
+        "charge_balanced",
+        "heavy_mapping_valid",
+        "explicit_mapping_valid",
+        "is_transport",
+        "is_transport_1to1",
+        "is_identity",
+        "structural_qc_pass",
+        "exclusion_reasons",
+        "source_file",
+        "source_pointer",
+        "hydrogen_balance_status",
+        "hydrogen_dH",
+        "hydrogen_dQ"
+      ],
+      "product_sha256": "a50cab432354906184432b2c890db4d2188abab5bcdbab19ce2e584a06d65d3b",
+      "qualification": "Original concrete two-sided mappings; H imbalance is retained, without completion.",
+      "rights": {
+        "license_expression": "CC-BY-4.0",
+        "partition": "main",
+        "rights_status": "verified_upstream_grant"
+      },
+      "rows": 8533,
+      "source_lock": {
+        "path": "Data/metadata/development/sihumix/source.json",
+        "sha256": "03c8d516f8ba9170b40ee62922e788460312ade0d69dcf02b35253d73704caac"
+      },
+      "source_product": "Data/tables/development/sihumix/aam.csv.gz",
+      "source_rows_sha256": "bb0d71acc241d5d76d3df08c23d77541610dc8e3df12ff9650d7c2f09437d33f"
+    },
+    {
+      "archive_member": "Data/aam/uspto_3k.csv.gz",
+      "evidence": [
+        {
+          "id": "synrxn_product_notice",
+          "path": "Data/metadata/reconstruction/aam/licenses/synrxn_product_notice.txt",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "id": "syntemp_license",
+          "path": "Data/metadata/reconstruction/aam/licenses/syntemp_license.txt",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_native_license",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_syntemp_native_license.txt",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_license",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_localmapper_2024_license.txt",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_lowe_original_data_grant",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_lowe_original_data_grant.txt",
+          "sha256": "1cd6d5cb2babcfe28e5edd83e7d6d3b58abf97a4102a504a3f1a0d5ed2e592cd",
+          "url": "https://figshare.com/articles/dataset/Chemical_reactions_from_US_patents_1976-Sep2016_/5104873"
+        },
+        {
+          "id": "syntemp_readme",
+          "path": "Data/metadata/reconstruction/aam/licenses/syntemp_readme.txt",
+          "sha256": "7aea76dc3ca8c925bbd8ab6f89704fe17a50394eb1a6bbb7334bbd6361cef122",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_paper_xml",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_syntemp_paper_xml.txt",
+          "sha256": "094ee044b5100f5494bbd6c2820126be2ed902e9b41a7d79fbd9348ef309a1c1",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11938280/fullTextXML"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_readme",
+          "path": "Data/metadata/reconstruction/aam/licenses/recheck_mapping_mapping_localmapper_2024_readme.txt",
+          "sha256": "6b29ec20542e689d9b4123f73a20833385bed1231842363a6eb75d65eed9ccd5",
+          "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/README.md"
+        }
+      ],
+      "mode": "published_product",
+      "name": "uspto_3k",
+      "product_columns": [
+        "r_id",
+        "ground_truth",
+        "reactions",
+        "rxn_mapper",
+        "graphormer",
+        "local_mapper",
+        "rdt",
+        "original_id"
+      ],
+      "product_sha256": "7d46de323ec918550fd742ea5e839fc976cd451058eca061b1e2023354698145",
+      "qualification": "Exact frozen published curated product; not a reconstruction of original experimental observations. Ultimate lineage limitations remain in the source lock.",
+      "rights": {
+        "commercial_use_allowed": true,
+        "evidence_ids": [
+          "synrxn_product_notice",
+          "syntemp_license",
+          "syntemp_readme",
+          "recheck_mapping_mapping_syntemp_native_license",
+          "recheck_mapping_mapping_syntemp_tree",
+          "recheck_mapping_mapping_syntemp_paper_xml",
+          "recheck_mapping_mapping_syntemp_commit",
+          "recheck_mapping_mapping_localmapper_2024_license",
+          "recheck_mapping_mapping_localmapper_2024_readme",
+          "recheck_mapping_mapping_localmapper_2024_tree",
+          "recheck_mapping_mapping_localmapper_2024_uspto",
+          "recheck_mapping_mapping_lowe_original_data_grant"
+        ],
+        "license_expression": "GPL-3.0-only AND CC-BY-SA-4.0 AND MIT",
+        "license_obligations": [
+          "Retain source attribution, applicable license notices and descriptions of changes.",
+          "Comply with the applicable ShareAlike requirements for adapted material.",
+          "Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it."
+        ],
+        "partition": "copyleft",
+        "qualification": "Exact3000sample identifiers/order and historical comparison predictions available in pre2026 LocalMapper GPL3 commit; underlying USPTO collection has Lowe CC BY-SA4 grant. SynTemp supplies the final corrected benchmark payload.",
+        "rights_status": "verified_redistributable"
+      },
+      "rights_evidence_records": [
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE",
+          "id": "synrxn_product_notice",
+          "sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynRXN/v1.2.1/Data/LICENSE"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE",
+          "id": "syntemp_license",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "final_url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md",
+          "id": "syntemp_readme",
+          "sha256": "7aea76dc3ca8c925bbd8ab6f89704fe17a50394eb1a6bbb7334bbd6361cef122",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_native_license",
+          "sha256": "b11d413a34a2d787d86b8ad8492d2f0b5f91aa9364002c6b82d9ba2435af5f46",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_tree",
+          "sha256": "607f3de46610dcb75b7ba737f3299e6c7987c68f6eb847129a2b6676a3a0f68b",
+          "status": "captured",
+          "url": "https://api.github.com/repos/TieuLongPhan/SynTemp/git/trees/fb9f7948abb0090f8d530287517591f8407f2c89?recursive=1"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_paper_xml",
+          "sha256": "094ee044b5100f5494bbd6c2820126be2ed902e9b41a7d79fbd9348ef309a1c1",
+          "status": "captured",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11938280/fullTextXML"
+        },
+        {
+          "id": "recheck_mapping_mapping_syntemp_commit",
+          "sha256": "e49cb6ac828c3cb613890ef167cac8eb6bbdf766647f19ad617392745054bac4",
+          "status": "captured",
+          "url": "https://api.github.com/repos/TieuLongPhan/SynTemp/commits/fb9f7948abb0090f8d530287517591f8407f2c89"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_license",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/LICENSE"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_readme",
+          "sha256": "6b29ec20542e689d9b4123f73a20833385bed1231842363a6eb75d65eed9ccd5",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/README.md"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_tree",
+          "sha256": "a101b71c0ece071732af79415cc9ef5eb386773c37469cd376a22a36227c74b5",
+          "status": "captured",
+          "url": "https://api.github.com/repos/snu-micc/LocalMapper/git/trees/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495?recursive=1"
+        },
+        {
+          "id": "recheck_mapping_mapping_localmapper_2024_uspto",
+          "sha256": "bfb0d856a2f6ce3630bed40c1e92a58ec062b1a1bc414864d82787cc42da734c",
+          "status": "captured",
+          "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/4cea90d9e03d7b03c01fe8804d7859ec9ffa0495/comparison/USPTO_sampled.csv"
+        },
+        {
+          "id": "recheck_mapping_mapping_lowe_original_data_grant",
+          "sha256": "1cd6d5cb2babcfe28e5edd83e7d6d3b58abf97a4102a504a3f1a0d5ed2e592cd",
+          "status": "captured",
+          "url": "https://figshare.com/articles/dataset/Chemical_reactions_from_US_patents_1976-Sep2016_/5104873"
+        }
+      ],
+      "rows": 3000,
+      "source_lock": {
+        "path": "Data/metadata/sources/aam/uspto_3k.json",
+        "sha256": "5dbbdb0c9d819a850d53d9999da349d32369845bff3627a522fea8801fe9c64a"
+      },
+      "source_product": "Data/tables/canonical/aam/uspto_3k.csv.gz",
+      "source_rows_sha256": "25981f24ee48e0635f2282b5506f3574fe63ecd8b08aee65196079b51025cb8f"
+    }
+  ],
+  "expected_rows": 101480,
+  "pending_datasets": [
+    {
+      "active_export": null,
+      "finding": "The released CSV has 49,928 rows and no selection/validation flags. No 4,456-row subset or selected-ID list was found in the repository, its history, branches, releases or relevant local downloads.",
+      "name": "metamdb",
+      "paper_url": "https://ssrn.com/abstract=7404606",
+      "requested_rows": 4456,
+      "retired_full_archive_export": "Data/archives/metamdb/full-qc-27451-1375c16b/aam-export",
+      "status": "awaiting_exact_author_subset_or_id_list",
+      "upstream_repository": "https://github.com/NoraBeier/BRMapper/tree/b1d428f3ed2d1ef5a1311150cc335ba1a916c06a"
+    }
+  ],
+  "published_archive": {
+    "doi": "10.5281/zenodo.22045145",
+    "path": "Data/raw/aam/synrxn-v1.2.1.zip",
+    "sha256": "32a9036318da1a5ef27fc417027fc1c6ca561a9e12896ed636f21f17d956bdbe",
+    "url": "https://zenodo.org/api/records/22045145/files/TieuLongPhan/SynRXN-v1.2.1.zip/content"
+  },
+  "retired_datasets": [
+    "flower_c",
+    "flower_e"
+  ],
+  "schema": "synrxn.aam-sources.v1"
+}

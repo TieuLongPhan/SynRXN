@@ -1,0 +1,195 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 5,
+    "data_links": 5,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 5,
+    "stored_rows_across_unique_views": 34303,
+    "task_table_bindings": 5,
+    "tasks": 1,
+    "unique_table_views": 5
+  },
+  "tables": [
+    {
+      "data_link": "canonical/yield/buchwald_hartwig_ood/data.csv.gz",
+      "key": "yield/buchwald_hartwig_ood",
+      "metadata": "canonical/yield/buchwald_hartwig_ood/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "expansion/C02/minot_al1_data/data.parquet",
+      "key": "C02/minot_al1_data",
+      "metadata": "expansion/C02/minot_al1_data/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C02/minot_al2_data/data.parquet",
+      "key": "C02/minot_al2_data",
+      "metadata": "expansion/C02/minot_al2_data/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C02/minot_al3_data/data.parquet",
+      "key": "C02/minot_al3_data",
+      "metadata": "expansion/C02/minot_al3_data/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C02/minot_preal_data/data.parquet",
+      "key": "C02/minot_preal_data",
+      "metadata": "expansion/C02/minot_preal_data/table.json",
+      "namespace": "expansion"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "binding_origin": "qualified_after_initial_matrix",
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "yield/buchwald_hartwig_ood",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "qualification": "Observed success under source-specific recorded conditions. Preserve native labels, including threshold exceptions; a negative does not mean chemical impossibility. Reactant/reagent-only input contract; full-reaction author reproduction is a separately declared input variant.",
+        "reference_evidence": "https://doi.org/10.1038/s43588-026-01017-6",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 27438,
+        "task_fields": {
+          "reaction_success": {
+            "excluded_inputs": [
+              "yield_pct",
+              "source_metadata_json",
+              "success",
+              "sample_id",
+              "source_record_id",
+              "source_index",
+              "upstream_split",
+              "split_metadata"
+            ],
+            "inputs": [
+              "reactants",
+              "reagents"
+            ],
+            "native_label_selector": "source_metadata_json.upstream_labels",
+            "qualification": "Observed success under source-specific recorded conditions. Preserve native labels, including threshold exceptions; a negative does not mean chemical impossibility. Reactant/reagent-only input contract; full-reaction author reproduction is a separately declared input variant.",
+            "reference_evidence": "https://doi.org/10.1038/s43588-026-01017-6",
+            "split_metadata": "kdd/case_studies/ncs_yield/native_splits.csv",
+            "split_protocol": "Ten native cluster initializations, four held-out cycles each; calibration and model selection use outer training only. Cluster OOD does not establish unseen-substrate evaluation.",
+            "target_join_key": "sample_id",
+            "target_path": "kdd/case_studies/ncs_yield/success_targets.csv",
+            "targets": [
+              "success"
+            ]
+          }
+        }
+      },
+      {
+        "adapter_ids": [
+          "reaction_success"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_al1_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 2907
+      },
+      {
+        "adapter_ids": [
+          "reaction_success"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_al2_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 954
+      },
+      {
+        "adapter_ids": [
+          "reaction_success"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_al3_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 960
+      },
+      {
+        "adapter_ids": [
+          "reaction_success"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_preal_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 2044
+      }
+    ],
+    "canonical_keys": [
+      "yield/buchwald_hartwig_ood"
+    ],
+    "counting_units": [
+      "HTE observation",
+      "source-table row"
+    ],
+    "extension_adapter_ids": [
+      "reaction_success"
+    ],
+    "family_id": "outcomes",
+    "id": "reaction_success",
+    "legacy_view_ids": [],
+    "metrics": [
+      "AUROC",
+      "AUPRC",
+      "balanced_accuracy",
+      "MCC",
+      "Brier_score",
+      "log_loss",
+      "reliability_diagram",
+      "selective_risk_vs_coverage"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 34303,
+    "primary_table_count": 5,
+    "qualification": "Preserve the native label and establish its threshold definition; missing observations and generated distractors are not failed experiments.",
+    "question": "Recorded attempted experiment -> source-defined success label",
+    "readiness": "extension_adapter_available; standardized_contract_and_qualification_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 5,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Experimental reaction success"
+  }
+}

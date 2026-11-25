@@ -166,6 +166,95 @@ class TestRepeatedKFoldsSplitter(unittest.TestCase):
             np.testing.assert_array_equal(a.val_idx, b.val_idx)
             np.testing.assert_array_equal(a.test_idx, b.test_idx)
 
+    def test_changed_cohort_recomputes_cached_positions(self):
+        splitter = RepeatedKFoldsSplitter(n_splits=3, random_state=7)
+        list(splitter.split_with_val(np.zeros((30, 1))))
+        splits = list(splitter.split_with_val(np.zeros((18, 1))))
+        for split in splits:
+            positions = np.concatenate((split.train_idx, split.val_idx, split.test_idx))
+            self.assertEqual(sorted(positions.tolist()), list(range(18)))
+
+    def test_sklearn_split_api_recomputes_changed_cohort(self):
+        splitter = RepeatedKFoldsSplitter(n_splits=3, random_state=7)
+        list(splitter.split(np.zeros((30, 1))))
+        for train, holdout in splitter.split(np.zeros((18, 1))):
+            self.assertEqual(sorted(np.concatenate((train, holdout)).tolist()), list(range(18)))
+
+    def test_changed_groups_and_labels_recompute_assignments(self):
+        frame = pd.DataFrame({"x": np.arange(36)})
+        splitter = RepeatedKFoldsSplitter(n_splits=3, random_state=11)
+        list(splitter.split_with_val(frame))
+        groups = np.array([f"g{i // 3}" for i in range(36)])
+        splits = list(splitter.split_with_val(frame, groups=groups))
+        for split in splits:
+            partitions = [set(groups[index]) for index in
+                          (split.train_idx, split.val_idx, split.test_idx)]
+            self.assertTrue(partitions[0].isdisjoint(partitions[1]))
+            self.assertTrue(partitions[0].isdisjoint(partitions[2]))
+            self.assertTrue(partitions[1].isdisjoint(partitions[2]))
+        labels = np.array([i % 2 for i in range(36)])
+        expected = RepeatedKFoldsSplitter(n_splits=3, random_state=11)
+        label_splits = list(splitter.split_with_val(frame, stratify=labels))
+        expected_splits = list(expected.split_with_val(frame, stratify=labels))
+        for actual, reference in zip(label_splits, expected_splits):
+            np.testing.assert_array_equal(actual.train_idx, reference.train_idx)
+            np.testing.assert_array_equal(actual.val_idx, reference.val_idx)
+            np.testing.assert_array_equal(actual.test_idx, reference.test_idx)
+
+    def test_failed_recomputation_clears_prior_assignments(self):
+        splitter = RepeatedKFoldsSplitter(n_splits=3, random_state=2)
+        list(splitter.split_with_val(np.zeros((18, 1))))
+        with self.assertRaisesRegex(ValueError, "at least two held-out rows"):
+            list(splitter.split_with_val(np.zeros((3, 1))))
+        self.assertEqual(splitter.n_generated_splits, 0)
+        with self.assertRaises(RuntimeError):
+            splitter.get_split()
+
+    def test_deterministic_grouped_outer_repeats_are_disclosed(self):
+        groups = np.array([f"g{i // 3}" for i in range(36)])
+        splitter = RepeatedKFoldsSplitter(n_splits=3, n_repeats=2, random_state=7)
+        with self.assertWarnsRegex(UserWarning, "not independent outer splits"):
+            splits = list(splitter.split_with_val(np.zeros((36, 1)), groups=groups))
+        self.assertEqual(splitter.outer_repeat_policy_, "deterministic_group_outer_folds")
+        for first, second in zip(splits[:3], splits[3:]):
+            first_holdout = np.sort(np.concatenate((first.val_idx, first.test_idx)))
+            second_holdout = np.sort(np.concatenate((second.val_idx, second.test_idx)))
+            np.testing.assert_array_equal(first_holdout, second_holdout)
+
+    def test_unshuffled_outer_folds_have_no_random_state_error(self):
+        splitter = RepeatedKFoldsSplitter(n_splits=3, shuffle=False, random_state=7)
+        splits = list(splitter.split_with_val(np.zeros((18, 1))))
+        self.assertEqual(len(splits), 3)
+        self.assertEqual(splitter.outer_repeat_policy_, "deterministic_unshuffled_outer_folds")
+
+    def test_lazy_stratification_failure_uses_documented_fallback(self):
+        splitter = RepeatedKFoldsSplitter(n_splits=3, random_state=7)
+        labels = np.arange(18)
+        with self.assertWarnsRegex(UserWarning, "Falling back to KFold"):
+            splits = list(splitter.split_with_val(np.zeros((18, 1)), stratify=labels))
+        self.assertEqual(len(splits), 3)
+
+    def test_zero_repeats_and_indivisible_holdout_fail_explicitly(self):
+        with self.assertRaisesRegex(ValueError, "n_repeats"):
+            RepeatedKFoldsSplitter(n_repeats=0)
+        splitter = RepeatedKFoldsSplitter(n_splits=3, ratio=(8, 1, 100), random_state=7)
+        with self.assertRaisesRegex(ValueError, "cannot form nonempty validation and test"):
+            list(splitter.split_with_val(np.zeros((6, 1))))
+
+    def test_group_kfold_holdout_keeps_groups_and_rejects_indivisible_folds(self):
+        splitter = RepeatedKFoldsSplitter(n_splits=3, n_repeats=1, random_state=7)
+        groups = np.repeat(np.arange(12), 3)
+        features = np.zeros((len(groups), 1))
+        for split in splitter.split_with_val(features, groups=groups):
+            partitions = split.train_idx, split.val_idx, split.test_idx
+            train, validation, test = (set(groups[indices]) for indices in partitions)
+            self.assertFalse(train & validation)
+            self.assertFalse(train & test)
+            self.assertFalse(validation & test)
+            self.assertEqual(sorted(np.concatenate(partitions)), list(range(len(groups))))
+        with self.assertRaisesRegex(ValueError, "at least two independent groups"):
+            list(splitter.split_with_val(np.zeros((6, 1)), groups=np.repeat(np.arange(3), 2)))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,79 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "physics",
+  "format": "csv.gz",
+  "key": "property/cycloadd",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counted_under": "coverage:solution_context/cycloadd_solution_context",
+    "counting_unit": "source-table row",
+    "key": "property/cycloadd",
+    "legacy_field_eligible_rows": {
+      "energy_barrier": 5269
+    },
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "overlapping_view",
+    "rows": 5269
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "chemprop_barriers_data_grant"
+    ],
+    "expected_bytes": 381702,
+    "expected_rows": 5269,
+    "expected_sha256": "afd03a88ef6268350f2c176b70a67396ff1902b85e6742bb2ac3ef0d9ca84004",
+    "format": "csv.gz",
+    "key": "property/cycloadd",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/property/cycloadd.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "overlapping_view",
+  "rows": 5269,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "heid2023benchmark_chemprop"
+    ],
+    "path": "Data/property/cycloadd.csv.gz",
+    "sha256": "afd03a88ef6268350f2c176b70a67396ff1902b85e6742bb2ac3ef0d9ca84004",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "heid2023benchmark_chemprop"
+    ],
+    "counted_under": "coverage:solution_context/cycloadd_solution_context",
+    "counting_unit": "source-table row",
+    "key": "property/cycloadd",
+    "legacy_field_eligible_rows": {
+      "energy_barrier": 5269
+    },
+    "namespace": "canonical",
+    "path": "Data/property/cycloadd.csv.gz",
+    "role": "overlapping_view",
+    "rows": 5269,
+    "sha256": "afd03a88ef6268350f2c176b70a67396ff1902b85e6742bb2ac3ef0d9ca84004",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "Cycloaddition original source format"
+  },
+  "stored_path": "Data/families/physics/activation_barrier/canonical/property/cycloadd/data.csv.gz",
+  "task_id": "activation_barrier",
+  "title": "Cycloaddition original source format"
+}

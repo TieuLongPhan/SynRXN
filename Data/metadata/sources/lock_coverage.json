@@ -1,0 +1,399 @@
+{
+  "already_locked": [
+    "aam/brenda.csv.gz",
+    "aam/ecoli.csv.gz",
+    "aam/ehreact.csv.gz",
+    "aam/enzyme_map.csv.gz",
+    "aam/flower_c.csv.gz",
+    "aam/flower_e.csv.gz",
+    "aam/golden.csv.gz",
+    "aam/natcomm.csv.gz",
+    "aam/recon3d.csv.gz",
+    "aam/uspto_3k.csv.gz",
+    "classification/ecreact.csv.gz",
+    "classification/ehreact_activity.csv.gz",
+    "classification/schneider_b.csv.gz",
+    "classification/schneider_u.csv.gz",
+    "classification/syntemp.csv.gz",
+    "classification/tpl_b.csv.gz",
+    "classification/tpl_u.csv.gz",
+    "classification/uspto_50k_b.csv.gz",
+    "classification/uspto_50k_u.csv.gz",
+    "condition/orderly_condition.csv.gz",
+    "condition/uspto_500.csv.gz",
+    "condition_sharealike/openexp.csv.gz",
+    "condition_sharealike/ord_hte_condition.csv.gz",
+    "property/b97xd3.csv.gz",
+    "property/cycloadd.csv.gz",
+    "property/e2.csv.gz",
+    "property/e2sn2.csv.gz",
+    "property/lograte.csv.gz",
+    "property/phosphatase.csv.gz",
+    "property/rad6re.csv.gz",
+    "property/rdb7.csv.gz",
+    "property/rgd1.csv.gz",
+    "property/sn2.csv.gz",
+    "property/snar.csv.gz",
+    "rbl/complex.csv.gz",
+    "rbl/mbs.csv.gz",
+    "rbl/mnc.csv.gz",
+    "rbl/mos.csv.gz",
+    "selectivity/hitea_chiral_resolution.csv.gz",
+    "selectivity/regiosqm_eas.csv.gz",
+    "synthesis/da.csv.gz",
+    "synthesis/uspto_500.csv.gz",
+    "synthesis/uspto_50k.csv.gz",
+    "synthesis/uspto_mit.csv.gz",
+    "yield/buchwald_hartwig_ood.csv.gz",
+    "yield/hitea.csv.gz",
+    "yield/suzuki_miyaura.csv.gz",
+    "yield/uspto_yield.csv.gz"
+  ],
+  "catalog_datasets": 48,
+  "coverage": "48/48",
+  "fully_pinned": [
+    "condition/orderly_condition.csv.gz",
+    "condition_sharealike/openexp.csv.gz",
+    "condition_sharealike/ord_hte_condition.csv.gz",
+    "selectivity/hitea_chiral_resolution.csv.gz",
+    "selectivity/regiosqm_eas.csv.gz",
+    "yield/buchwald_hartwig_ood.csv.gz",
+    "yield/hitea.csv.gz",
+    "yield/suzuki_miyaura.csv.gz",
+    "yield/uspto_yield.csv.gz"
+  ],
+  "generated_at": "2026-10-13T12:36:23.799308+00:00",
+  "partition_mismatches": [],
+  "pin_scope": "Retrieval pins identify bytes. They do not independently certify ultimate source rights or reference validity.",
+  "retrieval_pin_gaps": {
+    "aam/brenda.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "aam/ehreact.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "aam/enzyme_map.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "aam/flower_c.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "aam/flower_e.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "classification/ecreact.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "classification/ehreact_activity.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "classification/schneider_b.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "classification/schneider_u.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "classification/syntemp.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "classification/tpl_b.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "classification/tpl_u.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "classification/uspto_50k_b.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "classification/uspto_50k_u.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "condition/uspto_500.csv.gz": [
+      "canonical_alias_source_not_independently_pinned"
+    ],
+    "property/b97xd3.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "property/cycloadd.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "property/e2.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "property/e2sn2.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "property/lograte.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "property/phosphatase.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "property/rad6re.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "property/rdb7.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "property/rgd1.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "property/sn2.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "property/snar.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "rbl/complex.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "rbl/mbs.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "rbl/mnc.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "rbl/mos.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "synthesis/da.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "synthesis/uspto_500.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "synthesis/uspto_50k.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ],
+    "synthesis/uspto_mit.csv.gz": [
+      "retrieved_at",
+      "source_commit_or_version",
+      "source_file",
+      "source_sha256",
+      "source_url"
+    ]
+  },
+  "retrieval_pinned": [
+    "aam/ecoli.csv.gz",
+    "aam/golden.csv.gz",
+    "aam/natcomm.csv.gz",
+    "aam/recon3d.csv.gz",
+    "aam/uspto_3k.csv.gz",
+    "condition/orderly_condition.csv.gz",
+    "condition_sharealike/openexp.csv.gz",
+    "condition_sharealike/ord_hte_condition.csv.gz",
+    "selectivity/hitea_chiral_resolution.csv.gz",
+    "selectivity/regiosqm_eas.csv.gz",
+    "yield/buchwald_hartwig_ood.csv.gz",
+    "yield/hitea.csv.gz",
+    "yield/suzuki_miyaura.csv.gz",
+    "yield/uspto_yield.csv.gz"
+  ],
+  "retrieval_unpinned": [
+    "aam/brenda.csv.gz",
+    "aam/ehreact.csv.gz",
+    "aam/enzyme_map.csv.gz",
+    "aam/flower_c.csv.gz",
+    "aam/flower_e.csv.gz",
+    "classification/ecreact.csv.gz",
+    "classification/ehreact_activity.csv.gz",
+    "classification/schneider_b.csv.gz",
+    "classification/schneider_u.csv.gz",
+    "classification/syntemp.csv.gz",
+    "classification/tpl_b.csv.gz",
+    "classification/tpl_u.csv.gz",
+    "classification/uspto_50k_b.csv.gz",
+    "classification/uspto_50k_u.csv.gz",
+    "condition/uspto_500.csv.gz",
+    "property/b97xd3.csv.gz",
+    "property/cycloadd.csv.gz",
+    "property/e2.csv.gz",
+    "property/e2sn2.csv.gz",
+    "property/lograte.csv.gz",
+    "property/phosphatase.csv.gz",
+    "property/rad6re.csv.gz",
+    "property/rdb7.csv.gz",
+    "property/rgd1.csv.gz",
+    "property/sn2.csv.gz",
+    "property/snar.csv.gz",
+    "rbl/complex.csv.gz",
+    "rbl/mbs.csv.gz",
+    "rbl/mnc.csv.gz",
+    "rbl/mos.csv.gz",
+    "synthesis/da.csv.gz",
+    "synthesis/uspto_500.csv.gz",
+    "synthesis/uspto_50k.csv.gz",
+    "synthesis/uspto_mit.csv.gz"
+  ],
+  "retrofit_pending_upstream_verification": [
+    "aam/brenda.csv.gz",
+    "aam/ecoli.csv.gz",
+    "aam/ehreact.csv.gz",
+    "aam/enzyme_map.csv.gz",
+    "aam/flower_c.csv.gz",
+    "aam/flower_e.csv.gz",
+    "aam/golden.csv.gz",
+    "aam/natcomm.csv.gz",
+    "aam/recon3d.csv.gz",
+    "aam/uspto_3k.csv.gz",
+    "classification/ecreact.csv.gz",
+    "classification/ehreact_activity.csv.gz",
+    "classification/schneider_b.csv.gz",
+    "classification/schneider_u.csv.gz",
+    "classification/syntemp.csv.gz",
+    "classification/tpl_b.csv.gz",
+    "classification/tpl_u.csv.gz",
+    "classification/uspto_50k_b.csv.gz",
+    "classification/uspto_50k_u.csv.gz",
+    "property/b97xd3.csv.gz",
+    "property/cycloadd.csv.gz",
+    "property/e2.csv.gz",
+    "property/e2sn2.csv.gz",
+    "property/lograte.csv.gz",
+    "property/phosphatase.csv.gz",
+    "property/rad6re.csv.gz",
+    "property/rdb7.csv.gz",
+    "property/rgd1.csv.gz",
+    "property/sn2.csv.gz",
+    "property/snar.csv.gz",
+    "rbl/complex.csv.gz",
+    "rbl/mbs.csv.gz",
+    "rbl/mnc.csv.gz",
+    "rbl/mos.csv.gz",
+    "synthesis/da.csv.gz",
+    "synthesis/uspto_500.csv.gz",
+    "synthesis/uspto_50k.csv.gz",
+    "synthesis/uspto_mit.csv.gz"
+  ],
+  "retrofitted": [],
+  "source_products": 49,
+  "still_unlocked": []
+}

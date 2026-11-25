@@ -1,0 +1,79 @@
+{
+  "counting_unit": "literature or validation observation",
+  "data_link": "data.parquet",
+  "family_id": "selectivity",
+  "format": "parquet",
+  "key": "C16/validation_virtual_chemist",
+  "namespace": "expansion",
+  "registry_binding": {
+    "adapter_ids": [
+      "enantioselectivity"
+    ],
+    "commercial_use_allowed": true,
+    "counting_unit": "literature or validation observation",
+    "key": "C16/validation_virtual_chemist",
+    "namespace": "expansion",
+    "partition": "main",
+    "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 39
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "orgaicat_readme",
+      "orgaicat_license"
+    ],
+    "expected_bytes": 10666,
+    "expected_rows": 39,
+    "expected_sha256": "30c9b286d0668cddbc0ee4203eafb0f8b83b269c6d5620433d8d6e880a0eb50c",
+    "format": "parquet",
+    "key": "C16/validation_virtual_chemist",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "expansion",
+    "partition": "main",
+    "path": "Data/expansion/main/C16/validation_virtual_chemist.parquet",
+    "qualification": "Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 39,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/expansion/main/C16/validation_virtual_chemist.parquet",
+    "sha256": "30c9b286d0668cddbc0ee4203eafb0f8b83b269c6d5620433d8d6e880a0eb50c",
+    "source_catalogue": "Data/expansion/catalog.json",
+    "source_id": "C16",
+    "source_urls": [
+      "https://github.com/DeepSynthesis/orgaicat/tree/main/data",
+      "https://github.com/DeepSynthesis/orgaicat"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "literature or validation observation",
+    "key": "C16/validation_virtual_chemist",
+    "namespace": "expansion",
+    "path": "Data/expansion/main/C16/validation_virtual_chemist.parquet",
+    "role": "primary",
+    "rows": 39,
+    "sha256": "30c9b286d0668cddbc0ee4203eafb0f8b83b269c6d5620433d8d6e880a0eb50c",
+    "source_catalogue": "Data/expansion/catalog.json",
+    "source_id": "C16",
+    "source_urls": [
+      "https://github.com/DeepSynthesis/orgaicat/tree/main/data",
+      "https://github.com/DeepSynthesis/orgaicat"
+    ],
+    "title": "OrgAIcat Virtual Chemist validation"
+  },
+  "stored_path": "Data/families/selectivity/enantioselectivity/expansion/C16/validation_virtual_chemist/data.parquet",
+  "task_id": "enantioselectivity",
+  "title": "OrgAIcat Virtual Chemist validation"
+}

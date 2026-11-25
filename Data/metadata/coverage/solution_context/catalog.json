@@ -1,0 +1,320 @@
+{
+  "schema": "synrxn.coverage-solution-context.v1",
+  "sources": [
+    {
+      "id": "SNArSolution2021",
+      "name": "SNAr experimental activation free energies with reported solution conditions",
+      "url": "https://doi.org/10.1039/D0SC04896H",
+      "paper_url": "https://doi.org/10.1039/D0SC04896H",
+      "creators": [
+        "Kjell Jorner",
+        "Tore Brinck",
+        "Per-Ola Norrby",
+        "David Buttar"
+      ],
+      "license": "CC-BY-3.0",
+      "data_license_spdx": "CC-BY-3.0",
+      "redistribution_allowed": true,
+      "release_status": "redistributable_with_attribution_and_source_notices",
+      "source_sha256": "590153f74fd27a1414cf6d1cdae3758e68cc9e137da81bd58fa84cc5c9750107",
+      "files": [
+        {
+          "path": "Data/raw/coverage/solution_context/snar.native.csv",
+          "sha256": "590153f74fd27a1414cf6d1cdae3758e68cc9e137da81bd58fa84cc5c9750107",
+          "bytes": 281470
+        },
+        {
+          "path": "Data/raw/coverage/solution_context/snar.canonical.csv.gz",
+          "sha256": "df8df5b8bc8b74910c7fe9960a8dd200182c5ef1bf91de906286cb71bfe60bcd",
+          "bytes": 5965
+        },
+        {
+          "path": "Data/raw/coverage/solution_context/snar.context.csv",
+          "sha256": "297d805797265de4098da48c6ad210052c4403253c1cff2237db297e9ffd424d",
+          "bytes": 70179
+        },
+        {
+          "path": "Data/raw/coverage/solution_context/snar.grant.xml",
+          "sha256": "3a6c76cb1e2313ed51b2add538cab188a47e36cd12dd8814b3662bd4c8c0377c",
+          "bytes": 119842
+        },
+        {
+          "path": "Data/raw/coverage/solution_context/snar.crossref.json",
+          "sha256": "f16fb7acfd9c538db0d8fad7ec6d4b1bae2de4192d6c73964de4f057480721d3",
+          "bytes": 17728
+        }
+      ],
+      "reference_evidence": "All503 canonical reactions and activation free energies match source-ordered eligible entries of original518-entry supplement. Solvent/temperature/reference/duplicate fields checked independently against that table; no remeasurement.",
+      "rights": {
+        "scope": "publisher_bundled_supplementary_data",
+        "grant_url": "https://api.crossref.org/works/10.1039/D0SC04896H",
+        "grant_snapshot": {
+          "path": "Data/raw/coverage/solution_context/snar.crossref.json",
+          "sha256": "f16fb7acfd9c538db0d8fad7ec6d4b1bae2de4192d6c73964de4f057480721d3",
+          "bytes": 17728
+        },
+        "license_terms_url": "https://creativecommons.org/licenses/by/3.0/",
+        "license_snapshot": {
+          "path": "Data/raw/coverage/solution_context/CC-BY-3.0.txt",
+          "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76",
+          "bytes": 19467
+        },
+        "notice": {
+          "path": "Data/coverage_expansion/solution_context/SNArSolution2021.NOTICE.txt",
+          "sha256": "6cd70b1c5a85f8f9926bb473703153ec645ce5c8532eccb90d62117e562520f0",
+          "bytes": 564
+        },
+        "publication_doi": "10.1039/D0SC04896H",
+        "scope_qualification": "Original publisher-bundled SNAr supplementary reaction table and its verified SynRXN curation/context join. The publisher's article license is not treated as a grant for independently hosted repository data."
+      }
+    },
+    {
+      "id": "CycloaddSolution2023",
+      "name": "Dipolar cycloaddition computed aqueous reaction profiles",
+      "url": "https://doi.org/10.6084/m9.figshare.21707888.v5",
+      "paper_url": "https://doi.org/10.1038/s41597-023-01977-8",
+      "creators": [
+        "Thijs Stuyver",
+        "Kjell Jorner",
+        "Connor Coley"
+      ],
+      "license": "CC-BY-4.0",
+      "data_license_spdx": "CC-BY-4.0",
+      "redistribution_allowed": true,
+      "release_status": "redistributable_with_attribution_and_source_notices",
+      "source_sha256": "5f08c6b2dc04dd3ae11c74b2e0251a595b230915c7196d7a67e96bfac7f1e12d",
+      "files": [
+        {
+          "path": "Data/raw/coverage/solution_context/cycloadd.native.csv",
+          "sha256": "5f08c6b2dc04dd3ae11c74b2e0251a595b230915c7196d7a67e96bfac7f1e12d",
+          "bytes": 2185526
+        },
+        {
+          "path": "Data/raw/coverage/solution_context/cycloadd.canonical.csv.gz",
+          "sha256": "afd03a88ef6268350f2c176b70a67396ff1902b85e6742bb2ac3ef0d9ca84004",
+          "bytes": 381702
+        },
+        {
+          "path": "Data/raw/coverage/solution_context/cycloadd.metadata.json",
+          "sha256": "3787bb2a90ce8db61ee7380e1e688ed485a04c36de52197fe7899eaae2cc528d",
+          "bytes": 5089
+        }
+      ],
+      "reference_evidence": "Complete5269-reaction native CSV bijection verifies both free-energy targets, reaction strings and source solvent/temperature. Source paper uses aqueous SMD continuum at B3LYP-D3(BJ)/def2-TZVP//B3LYP-D3(BJ)/def2-SVP; not gas phase or explicit-solvent trajectories.",
+      "rights": {
+        "scope": "source dataset factual reaction and condition tables and their already released SynRXN curation",
+        "grant_url": "https://api.figshare.com/v2/articles/21707888/versions/5",
+        "grant_snapshot": {
+          "path": "Data/raw/coverage/solution_context/cycloadd.metadata.json",
+          "sha256": "3787bb2a90ce8db61ee7380e1e688ed485a04c36de52197fe7899eaae2cc528d",
+          "bytes": 5089
+        },
+        "license_terms_url": "https://creativecommons.org/licenses/by/4.0/",
+        "license_snapshot": {
+          "path": "Data/raw/coverage/solution_context/CC-BY-4.0.txt",
+          "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+          "bytes": 18657
+        },
+        "notice": {
+          "path": "Data/coverage_expansion/solution_context/CycloaddSolution2023.NOTICE.txt",
+          "sha256": "26c62fc97eb222057864263a416679faaa69cf075e20ec29c967ee63a1ccfba7",
+          "bytes": 543
+        }
+      }
+    }
+  ],
+  "tables": [
+    {
+      "id": "snar_solution_context",
+      "path": "Data/coverage_expansion/solution_context/snar_solution_context.csv",
+      "rows": 503,
+      "columns": [
+        "source_record_id",
+        "parent_dataset",
+        "parent_record_id",
+        "native_record_id",
+        "native_row",
+        "reaction_smiles",
+        "solvent",
+        "temperature_K",
+        "reaction_group",
+        "proposed_split",
+        "source_split",
+        "reference_kind",
+        "activation_free_energy_kcal_mol",
+        "literature_reference",
+        "literature_doi",
+        "duplicate_entry_ids"
+      ],
+      "sha256": "00133eda15cf7f07ba3bd13f4b51c4fb95f2c44f915af104a21d9d608186777d",
+      "task_ids": [
+        "activation_barrier"
+      ],
+      "task_fields": {
+        "activation_barrier": {
+          "inputs": [
+            "reaction_smiles",
+            "solvent",
+            "temperature_K",
+            "reference_kind"
+          ],
+          "targets": [
+            "activation_free_energy_kcal_mol"
+          ],
+          "group_fields": [
+            "reaction_group",
+            "parent_dataset",
+            "parent_record_id",
+            "proposed_split"
+          ],
+          "metrics": [
+            "MAE_kcal_per_mol",
+            "RMSE_kcal_per_mol",
+            "coverage"
+          ],
+          "qualification": "Eyring-derived activation FREE energy at reported solvent and temperature; not Arrhenius Ea or gas-phase electronic barrier."
+        }
+      },
+      "source_id": "SNArSolution2021",
+      "source_url": "https://doi.org/10.1039/D0SC04896H",
+      "source_sha256": "590153f74fd27a1414cf6d1cdae3758e68cc9e137da81bd58fa84cc5c9750107",
+      "license": "CC-BY-3.0",
+      "release_status": "redistributable_with_attribution_and_source_notices",
+      "reference_evidence": "All503 canonical reactions and activation free energies match source-ordered eligible entries of original518-entry supplement. Solvent/temperature/reference/duplicate fields checked independently against that table; no remeasurement.",
+      "counting_unit": "existing canonical reaction-condition observation",
+      "role": "overlapping_view",
+      "overlapping_view": true,
+      "overlap_parent": "property/snar",
+      "derived_view_of": "property/snar",
+      "independent_observations_added": 0,
+      "builder": "kdd/coverage/adapters/solution_context.py",
+      "adapter_sha256": "5362dfe5e784f93da9a5c318b559105bf19afc182b4c41dd1ea9b503ccefec75",
+      "source_lock": "kdd/coverage/adapters/solution_context_sources.json",
+      "source_lock_sha256": "f67a76b2a19bea498db03d54d4c344fd9747f28446faadda4a0b047fca9a1144",
+      "solvent_strings": 41,
+      "temperature_values": 13,
+      "reaction_groups": 346,
+      "proposed_split_counts": {
+        "validation": 93,
+        "train": 361,
+        "test": 49
+      },
+      "target_units": {
+        "activation_free_energy_kcal_mol": "kcal/mol"
+      },
+      "qualification": "503 unchanged observations;41 literal solvent strings (including mixtures/aliases) and13 temperatures. Exact normalized reaction endpoints remain grouped across conditions. Proposed splits are new group splits, not source evaluation splits or scaffold/solvent extrapolation guarantees. Parent canonical rows must never be used as independent train/test data. Preserve raw solvent labels;41 strings does not mean41 chemically distinct pure solvents."
+    },
+    {
+      "id": "cycloadd_solution_context",
+      "path": "Data/coverage_expansion/solution_context/cycloadd_solution_context.csv",
+      "rows": 5269,
+      "columns": [
+        "source_record_id",
+        "parent_dataset",
+        "parent_record_id",
+        "native_record_id",
+        "native_row",
+        "reaction_smiles",
+        "solvent",
+        "temperature_K",
+        "reaction_group",
+        "proposed_split",
+        "source_split",
+        "reference_kind",
+        "activation_free_energy_kcal_mol",
+        "reaction_free_energy_kcal_mol"
+      ],
+      "sha256": "7e140a55f4c94d0250a9b742b3dbaed1901d4d061b370f5cee145505cf1a4bba",
+      "task_ids": [
+        "activation_barrier",
+        "reaction_energetics"
+      ],
+      "task_fields": {
+        "activation_barrier": {
+          "inputs": [
+            "reaction_smiles",
+            "solvent",
+            "temperature_K",
+            "reference_kind"
+          ],
+          "targets": [
+            "activation_free_energy_kcal_mol"
+          ],
+          "group_fields": [
+            "reaction_group",
+            "parent_dataset",
+            "parent_record_id",
+            "proposed_split"
+          ],
+          "metrics": [
+            "MAE_kcal_per_mol",
+            "RMSE_kcal_per_mol",
+            "coverage"
+          ],
+          "qualification": "Computed aqueous SMD activation Gibbs free energy; not gas-phase electronic barrier."
+        },
+        "reaction_energetics": {
+          "inputs": [
+            "reaction_smiles",
+            "solvent",
+            "temperature_K",
+            "reference_kind"
+          ],
+          "targets": [
+            "reaction_free_energy_kcal_mol"
+          ],
+          "group_fields": [
+            "reaction_group",
+            "parent_dataset",
+            "parent_record_id",
+            "proposed_split"
+          ],
+          "metrics": [
+            "MAE_kcal_per_mol",
+            "RMSE_kcal_per_mol",
+            "coverage"
+          ],
+          "qualification": "Computed aqueous SMD reaction Gibbs free energy at298.15K; separate from activation target."
+        }
+      },
+      "source_id": "CycloaddSolution2023",
+      "source_url": "https://doi.org/10.6084/m9.figshare.21707888.v5",
+      "source_sha256": "5f08c6b2dc04dd3ae11c74b2e0251a595b230915c7196d7a67e96bfac7f1e12d",
+      "license": "CC-BY-4.0",
+      "release_status": "redistributable_with_attribution_and_source_notices",
+      "reference_evidence": "Complete5269-reaction native CSV bijection verifies both free-energy targets, reaction strings and source solvent/temperature. Source paper uses aqueous SMD continuum at B3LYP-D3(BJ)/def2-TZVP//B3LYP-D3(BJ)/def2-SVP; not gas phase or explicit-solvent trajectories.",
+      "counting_unit": "existing canonical reaction-condition observation",
+      "role": "overlapping_view",
+      "overlapping_view": true,
+      "overlap_parent": "property/cycloadd",
+      "derived_view_of": "property/cycloadd",
+      "independent_observations_added": 0,
+      "builder": "kdd/coverage/adapters/solution_context.py",
+      "adapter_sha256": "5362dfe5e784f93da9a5c318b559105bf19afc182b4c41dd1ea9b503ccefec75",
+      "source_lock": "kdd/coverage/adapters/solution_context_sources.json",
+      "source_lock_sha256": "f67a76b2a19bea498db03d54d4c344fd9747f28446faadda4a0b047fca9a1144",
+      "solvent_strings": 1,
+      "temperature_values": 1,
+      "reaction_groups": 5269,
+      "proposed_split_counts": {
+        "train": 4248,
+        "test": 512,
+        "validation": 509
+      },
+      "target_units": {
+        "activation_free_energy_kcal_mol": "kcal/mol",
+        "reaction_free_energy_kcal_mol": "kcal/mol"
+      },
+      "qualification": "5269 unchanged observations, all water/298.15K. Solvent and temperature are constant context: this table cannot establish solvent-effect or temperature generalization. Original Chemprop source splits retained as metadata; use proposed reaction-group split for this overlapping view and apply same groups to canonical parent rows. Not physically recalculated."
+    }
+  ],
+  "source_lock": "kdd/coverage/adapters/solution_context_sources.json",
+  "source_lock_sha256": "f67a76b2a19bea498db03d54d4c344fd9747f28446faadda4a0b047fca9a1144",
+  "overlap_policy": "Both tables are overlapping solvent-aware views of canonical parents, adding zero independent observations. Parent rows and all condition variants must share evaluation groups; never concatenate as independent examples.",
+  "adapter": "kdd/coverage/adapters/solution_context.py",
+  "adapter_sha256": "5362dfe5e784f93da9a5c318b559105bf19afc182b4c41dd1ea9b503ccefec75",
+  "reproduction": {
+    "offline_command": "python kdd/coverage/adapters/solution_context.py",
+    "acquisition_command": "python kdd/coverage/adapters/solution_context.py --fetch"
+  }
+}

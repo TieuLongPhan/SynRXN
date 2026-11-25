@@ -1,0 +1,5 @@
+EnzChemRED expert-annotated enzyme chemistry corpus
+https://doi.org/10.5281/zenodo.11067998
+Data license: CC-BY-4.0
+Changes: Parse BioC XML; preserve native spans and relations; generated deletion controls and query/gallery links are explicitly derived.
+Official data record declares cc-by-4.0 for the annotated dataset; retain PMID attribution and native text provenance.

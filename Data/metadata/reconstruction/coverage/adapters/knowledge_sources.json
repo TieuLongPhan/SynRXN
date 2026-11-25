@@ -1,0 +1,126 @@
+{
+  "schema": "synrxn.coverage-knowledge-lock.v1",
+  "assets": [
+    {
+      "path": "Data/raw/synrxn2/C24/EnzChemRED.tar.gz",
+      "url": "https://zenodo.org/api/records/11067998/files/EnzChemRED.tar.gz/content",
+      "bytes": 1651363,
+      "sha256": "046f6c00663d26cf172cb828b3fe68cab92a128de947545c01aff53060c06251",
+      "upstream_checksum": "md5:d05097c7cc566d1a4d043862a608e38a",
+      "expected_bytes": 1651363,
+      "verification": "verified"
+    },
+    {
+      "path": "Data/raw/coverage/root/CatDRX/dataset/ord.csv",
+      "url": "https://raw.githubusercontent.com/ohuelab/CatDRX/f8952497761b0bf44cde4b48f8df3a8d40098f91/dataset/ord.csv",
+      "bytes": 29851700,
+      "sha256": "26517fd0168fec04224249c6fb6acba5b4f99260a80b917b42a66dfa30e66994",
+      "upstream_checksum": null,
+      "expected_bytes": 29851700,
+      "verification": "verified"
+    },
+    {
+      "path": "Data/raw/synrxn2/C02/Minot_AL1_Data.csv",
+      "url": "https://zenodo.org/api/records/20773622/files/Minot_AL1_Data.csv/content",
+      "bytes": 1140015,
+      "sha256": "56b5e6a470bef65f5d2d392fc458df0d2fc9c33360f6cc34673986074ba8f023",
+      "upstream_checksum": null,
+      "expected_bytes": 1140015,
+      "verification": "verified"
+    },
+    {
+      "path": "Data/raw/synrxn2/C02/Minot_AL2_Data.csv",
+      "url": "https://zenodo.org/api/records/20773622/files/Minot_AL2_Data.csv/content",
+      "bytes": 370564,
+      "sha256": "99a74890359de43f2b1ae8800b4204b8531a5e7f05a2e2708ccc5a390e59736f",
+      "upstream_checksum": null,
+      "expected_bytes": 370564,
+      "verification": "verified"
+    },
+    {
+      "path": "Data/raw/synrxn2/C02/Minot_AL3_Data.csv",
+      "url": "https://zenodo.org/api/records/20773622/files/Minot_AL3_Data.csv/content",
+      "bytes": 382624,
+      "sha256": "cc12b4dc38927c0840d6cb5a11d5f2bdd2f504163c0afcb7d32c212d74e90195",
+      "upstream_checksum": null,
+      "expected_bytes": 382624,
+      "verification": "verified"
+    },
+    {
+      "path": "Data/raw/synrxn2/C02/Minot_preAL_Data.csv",
+      "url": "https://zenodo.org/api/records/20773622/files/Minot_preAL_Data.csv/content",
+      "bytes": 824834,
+      "sha256": "ee4c86f379ff01aedc973712cb9d47f66c996641611da7392d6c523bec84ebd4",
+      "upstream_checksum": null,
+      "expected_bytes": 824834,
+      "verification": "verified"
+    },
+    {
+      "path": "Data/raw/synrxn2/notes/C03/LICENSE",
+      "url": "https://raw.githubusercontent.com/open-reaction-database/ord-data/704870642e5c93a141e6666436bc14a9b5f880ed/LICENSE",
+      "bytes": 20137,
+      "sha256": "5e436ff8ffbb77d8607220e9bce20c8915d860010feeb6c1ebef5a85688e9b39"
+    }
+  ],
+  "catdrx_manifest": {
+    "source_id": "CatDRX2025",
+    "repository": "ohuelab/CatDRX",
+    "commit": "f8952497761b0bf44cde4b48f8df3a8d40098f91",
+    "license": "MIT",
+    "assets": [
+      {
+        "path": "Data/raw/coverage/root/CatDRX/dataset/ord.csv",
+        "url": "https://raw.githubusercontent.com/ohuelab/CatDRX/f8952497761b0bf44cde4b48f8df3a8d40098f91/dataset/ord.csv",
+        "bytes": 29851700,
+        "sha256": "26517fd0168fec04224249c6fb6acba5b4f99260a80b917b42a66dfa30e66994",
+        "git_blob_sha1": "abac6e554ce4822fd0c45f63ec5c074f2e918fd4"
+      },
+      {
+        "path": "Data/raw/coverage/root/CatDRX/dataset/bh_test1.csv",
+        "url": "https://raw.githubusercontent.com/ohuelab/CatDRX/f8952497761b0bf44cde4b48f8df3a8d40098f91/dataset/bh_test1.csv",
+        "bytes": 2874579,
+        "sha256": "d5fe50a1f835a61a3d173bca9e598624b015ed5831e49a3231b74dcb7bc05eae",
+        "git_blob_sha1": "089d8283781c497d0e03ba4fa1e9092e69cc4172"
+      },
+      {
+        "path": "Data/raw/coverage/root/CatDRX/dataset/sm_test1.csv",
+        "url": "https://raw.githubusercontent.com/ohuelab/CatDRX/f8952497761b0bf44cde4b48f8df3a8d40098f91/dataset/sm_test1.csv",
+        "bytes": 3462045,
+        "sha256": "32645e25687261a8af07661d9f9c2ae7d179a1871184e166af86b925110c0105",
+        "git_blob_sha1": "732e1715f9d9b1c72ced67ab2c00bf274ccf20fd"
+      },
+      {
+        "path": "Data/raw/coverage/root/CatDRX/dataset/l_sm.csv",
+        "url": "https://raw.githubusercontent.com/ohuelab/CatDRX/f8952497761b0bf44cde4b48f8df3a8d40098f91/dataset/l_sm.csv",
+        "bytes": 19525,
+        "sha256": "435b4a4baad9a9fe90a1e3a4f229718ea3526d2b694ddafaace24d2653e98cac",
+        "git_blob_sha1": "397721a105df33bb8ef53735955422accccd6b8e"
+      },
+      {
+        "path": "Data/raw/coverage/root/CatDRX/dataset/ps.csv",
+        "url": "https://raw.githubusercontent.com/ohuelab/CatDRX/f8952497761b0bf44cde4b48f8df3a8d40098f91/dataset/ps.csv",
+        "bytes": 381596,
+        "sha256": "ff9795c8e736c755349283c4f15f296d8d8c57cedd90d0235c0ad1e8eee38fb2",
+        "git_blob_sha1": "43d3b2aea4519415511081eb9c0033c31b5b1486"
+      },
+      {
+        "path": "Data/raw/coverage/root/CatDRX/LICENSE",
+        "url": "https://raw.githubusercontent.com/ohuelab/CatDRX/f8952497761b0bf44cde4b48f8df3a8d40098f91/LICENSE",
+        "bytes": 1087,
+        "sha256": "c06ab41b9009ba1caa217febdf964b865a94df8b6e5053daed0342d14d2d8294",
+        "git_blob_sha1": "2c31264fb4f1496038b2f05c58f5f845b153b3de"
+      },
+      {
+        "path": "Data/raw/coverage/root/CatDRX/readme.md",
+        "url": "https://raw.githubusercontent.com/ohuelab/CatDRX/f8952497761b0bf44cde4b48f8df3a8d40098f91/readme.md",
+        "bytes": 6923,
+        "sha256": "d5df55b052bde6211122a4354a1dbd618bdc4ddb6a884642db1b3716aa0d7375",
+        "git_blob_sha1": "3653a76756ed3a0dcf004e89c26848216cf099fe"
+      }
+    ]
+  },
+  "notes": [
+    "Only ORD-derived CatDRX data admitted under original ORD CC BY-SA4.0.",
+    "Minot native preprocessing dependencies are pinned in Data/expansion/catalog.json and rebuilt by script/build_expansion_dataset.py."
+  ]
+}

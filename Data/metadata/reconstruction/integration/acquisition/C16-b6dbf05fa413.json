@@ -1,0 +1,11 @@
+{
+  "source_id": "C16",
+  "name": "data/mannich_reaction_Denmark.xlsx",
+  "bytes": 6528,
+  "url": "https://raw.githubusercontent.com/DeepSynthesis/orgaicat/9ba285de6e2c5dfe0373e2815b90cd8b7a166632/data/mannich_reaction_Denmark.xlsx",
+  "path": "Data/raw/synrxn2/C16/data/mannich_reaction_Denmark.xlsx",
+  "bytes_observed": 6528,
+  "sha256": "0b45ecb3c996507b5dfb9ab024ebae9a87c3613da77c648eee71bacf300e57ed",
+  "md5": "1ba0c91a6d68b4001cee3988b9ab8284",
+  "status": "verified"
+}

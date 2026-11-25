@@ -1,0 +1,77 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "physics",
+  "format": "csv.gz",
+  "key": "property/lograte",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": false,
+    "counting_unit": "source-table row",
+    "key": "property/lograte",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "noncommercial",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-NC-4.0",
+    "rights_status": "verified_noncommercial_grant",
+    "role": "primary",
+    "rows": 778
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": false,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "reactiondatabase_readme",
+      "autotst_kinetic_si_grant"
+    ],
+    "expected_bytes": 20166,
+    "expected_rows": 778,
+    "expected_sha256": "ca79d7de36fde44961dd093a53c999356ac9aacf3aee524eb18bf90219f120f0",
+    "format": "csv.gz",
+    "key": "property/lograte",
+    "license_expression": "CC-BY-NC-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes.",
+      "Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted."
+    ],
+    "namespace": "canonical",
+    "partition": "noncommercial",
+    "path": "Data/property/lograte.csv.gz",
+    "qualification": "Original AutoTST supporting-data record5398342 explicitly grants CC-BY-NC4.0. The user accepts noncommercial redistribution, so publish this table in a separately labeled noncommercial partition with source attribution and change notice. Correct the current release metadata; no new commercial-use permission is asserted.",
+    "rights_status": "verified_noncommercial_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 778,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "heid2022machine",
+      "bhoorasingh2017automated"
+    ],
+    "path": "Data/property/lograte.csv.gz",
+    "sha256": "ca79d7de36fde44961dd093a53c999356ac9aacf3aee524eb18bf90219f120f0",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "heid2022machine",
+      "bhoorasingh2017automated"
+    ],
+    "counting_unit": "source-table row",
+    "key": "property/lograte",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/property/lograte.csv.gz",
+    "role": "primary",
+    "rows": 778,
+    "sha256": "ca79d7de36fde44961dd093a53c999356ac9aacf3aee524eb18bf90219f120f0",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "Reaction log rates"
+  },
+  "stored_path": "Data/families/physics/reaction_rates/canonical/property/lograte/data.csv.gz",
+  "task_id": "reaction_rates",
+  "title": "Reaction log rates"
+}

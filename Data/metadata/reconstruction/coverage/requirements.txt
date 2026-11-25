@@ -1,0 +1,10 @@
+# Exact versions from the audited Python3.12.12/Linux environment.
+-r ../requirements-reproduction.txt
+numpy==2.4.4
+pandas==2.3.3
+pyarrow==25.0.0
+scipy==1.17.0
+h5py==3.16.0
+rdkit==2026.3.1
+openpyxl==3.1.5
+requests==2.32.5

@@ -1,0 +1,250 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 9,
+    "data_links": 9,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 9,
+    "stored_rows_across_unique_views": 684359,
+    "task_table_bindings": 9,
+    "tasks": 1,
+    "unique_table_views": 9
+  },
+  "tables": [
+    {
+      "data_link": "canonical/yield/buchwald_hartwig_ood/data.csv.gz",
+      "key": "yield/buchwald_hartwig_ood",
+      "metadata": "canonical/yield/buchwald_hartwig_ood/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/yield/hitea/data.csv.gz",
+      "key": "yield/hitea",
+      "metadata": "canonical/yield/hitea/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/yield/uspto_yield/data.csv.gz",
+      "key": "yield/uspto_yield",
+      "metadata": "canonical/yield/uspto_yield/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/property/phosphatase/data.csv.gz",
+      "key": "property/phosphatase",
+      "metadata": "canonical/property/phosphatase/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "expansion/C02/minot_al1_data/data.parquet",
+      "key": "C02/minot_al1_data",
+      "metadata": "expansion/C02/minot_al1_data/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C02/minot_al2_data/data.parquet",
+      "key": "C02/minot_al2_data",
+      "metadata": "expansion/C02/minot_al2_data/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C02/minot_al3_data/data.parquet",
+      "key": "C02/minot_al3_data",
+      "metadata": "expansion/C02/minot_al3_data/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C02/minot_preal_data/data.parquet",
+      "key": "C02/minot_preal_data",
+      "metadata": "expansion/C02/minot_preal_data/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C03/cn_screen/data.parquet",
+      "key": "C03/cn_screen",
+      "metadata": "expansion/C03/cn_screen/table.json",
+      "namespace": "expansion"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "yield/buchwald_hartwig_ood",
+        "legacy_field_eligible_rows": {
+          "yield": 27438
+        },
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 27438
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "yield/hitea",
+        "legacy_field_eligible_rows": {
+          "yield": 39354
+        },
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 39546
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "yield/uspto_yield",
+        "legacy_field_eligible_rows": {
+          "yield": 526468
+        },
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 526468
+      },
+      {
+        "commercial_use_allowed": false,
+        "counting_unit": "source-table row",
+        "key": "property/phosphatase",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "noncommercial_educational",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND LicenseRef-PNAS-NC-Educational",
+        "rights_status": "verified_noncommercial_educational_grant",
+        "role": "primary",
+        "rows": 33354
+      },
+      {
+        "adapter_ids": [
+          "yield_conversion"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_al1_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 2907
+      },
+      {
+        "adapter_ids": [
+          "yield_conversion"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_al2_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 954
+      },
+      {
+        "adapter_ids": [
+          "yield_conversion"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_al3_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 960
+      },
+      {
+        "adapter_ids": [
+          "yield_conversion"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_preal_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 2044
+      },
+      {
+        "adapter_ids": [
+          "yield_conversion"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE experiment",
+        "key": "C03/cn_screen",
+        "namespace": "expansion",
+        "partition": "sharealike",
+        "qualification": "UPLC assay yields are selected by ORD measurement type and desired-product flag. Area and internal-standard measurements remain native metadata.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-SA-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 50688
+      }
+    ],
+    "canonical_keys": [
+      "yield/buchwald_hartwig_ood",
+      "yield/hitea",
+      "yield/uspto_yield",
+      "property/phosphatase"
+    ],
+    "counting_units": [
+      "HTE experiment",
+      "HTE observation",
+      "source-table row"
+    ],
+    "extension_adapter_ids": [
+      "yield_conversion"
+    ],
+    "family_id": "outcomes",
+    "id": "yield_conversion",
+    "legacy_view_ids": [
+      "yield"
+    ],
+    "metrics": [
+      "MAE",
+      "RMSE",
+      "coverage"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 684359,
+    "primary_table_count": 9,
+    "qualification": "Yield, UV response and conversion are distinct endpoints within this task family. Keep units, measurement methods and source-specific scores separate.",
+    "question": "Reaction and recorded context -> source-specific measured response",
+    "readiness": "legacy_export_variants_available",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 9,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Yield, assay response and conversion"
+  }
+}

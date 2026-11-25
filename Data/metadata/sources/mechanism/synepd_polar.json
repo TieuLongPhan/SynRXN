@@ -1,0 +1,37 @@
+{
+  "annotation_semantics": "Curated ordered paired-electron arrows; supplied order does not establish physical timing or a uniquely proven mechanism.",
+  "dataset_key": "mechanism/synepd_polar.csv.gz",
+  "license_url": "https://github.com/TieuLongPhan/SynEPD/blob/879c590f0473c99120bdd75bbb5bbf58c17481eb/data/release-manifest.json",
+  "normalized_input_file": "synepd_polar.csv.gz",
+  "normalized_input_sha256": "bc31c8764b13cde89540c763d94691f64c1b460458a759ea6a757a9d0967a7ba",
+  "preparation_artifact": {
+    "artifact": "ncs/artifacts/mechanistic-002",
+    "manifest_sha256": "bf7724be718950c2163c92720a84389fa8816bd646c4061f87273c58a7e31af5",
+    "report_sha256": "21ba757240759064ca0a6b17630c18c8c54a795a0320d4743ea07a651488b873"
+  },
+  "redistribution_partition": "main",
+  "required_attribution": [
+    "SynEPD contributors",
+    "https://github.com/TieuLongPhan/SynEPD"
+  ],
+  "retrieved_at": "2026-10-14",
+  "schema_version": "1.0",
+  "source_commit_or_version": "879c590f0473c99120bdd75bbb5bbf58c17481eb",
+  "source_file": [
+    "polar.json",
+    "epdb.sqlite"
+  ],
+  "source_files": {
+    "epdb.sqlite": "78c2b292a413fa3cf8090c3e986eb71868416203d81a9be29ae6994197565f1d",
+    "polar.json": "84b3d907cc1595269e34ba34be0163c4863f4314f646cd768b44967648210a29"
+  },
+  "source_release_manifest_sha256": "5161fdcf96b2adc1cebdf51f8fdcc7691151a87f66226a43062a0fad0aebe5c2",
+  "source_url": "https://github.com/TieuLongPhan/SynEPD",
+  "source_version": "v0.4.1",
+  "upstream_license": "CC-BY-4.0",
+  "verification_levels": {
+    "DELTA_CONSISTENT": 2,
+    "EXACT": 1913,
+    "NORMALIZED": 11
+  }
+}

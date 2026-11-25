@@ -1,0 +1,12 @@
+{
+  "source_id": "C10",
+  "name": "README.md",
+  "bytes": 4295,
+  "checksum": "md5:f55f6e59487f886a8750d10d4b5a1492",
+  "url": "https://zenodo.org/api/records/8423911/files/README.md/content",
+  "path": "Data/raw/synrxn2/C10/README.md",
+  "bytes_observed": 4295,
+  "sha256": "e8b4dca66ed8dc1ce249322f0130103a4d3645f9a60e9d81cbd5da423d715df9",
+  "md5": "f55f6e59487f886a8750d10d4b5a1492",
+  "status": "verified"
+}

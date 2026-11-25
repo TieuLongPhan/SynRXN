@@ -1,0 +1,13 @@
+{
+  "source_id": "C14",
+  "name": "reaction_smi_split.zip",
+  "bytes": 46726304,
+  "checksum": "md5:2d9f4e6c78d8daf5752cc2a5ae2bef0d",
+  "url": "https://zenodo.org/api/records/11494913/files/reaction_smi_split.zip/content",
+  "path": "Data/raw/synrxn2/C14/reaction_smi_split.zip",
+  "bytes_observed": 560800,
+  "sha256": "7709598f1fa1ad8848d843f47925dbd829cb99df009124f6c2f7446996cad9e3",
+  "md5": "13c0fd2d4c2a2a6a2459f90dd495312f",
+  "status": "unavailable",
+  "error": "source byte size differs from the pinned release"
+}

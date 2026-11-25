@@ -1,0 +1,83 @@
+{
+  "examples": [
+    {
+      "distinct_stereo_sensitive_inputs": 3,
+      "kind": "stereo_variants",
+      "records": [
+        {
+          "ground_truth": "[CH3:1][CH:2]([OH:3])[CH2:4][OH:5]>>[CH3:1][CH2:2][CH:4]=[O:5].[OH2:3]",
+          "original_id": "310376",
+          "r_id": "43605",
+          "rxn": "CC(O)CO>>CCC=O.O"
+        },
+        {
+          "ground_truth": "[CH3:1][C@@H:2]([OH:3])[CH2:4][OH:5]>>[CH3:1][CH2:2][CH:4]=[O:5].[OH2:3]",
+          "original_id": "310377",
+          "r_id": "43606",
+          "rxn": "C[C@@H](O)CO>>CCC=O.O"
+        },
+        {
+          "ground_truth": "[CH3:1][C@H:2]([OH:3])[CH2:4][OH:5]>>[CH3:1][CH2:2][CH:4]=[O:5].[OH2:3]",
+          "original_id": "310378",
+          "r_id": "43607",
+          "rxn": "C[C@H](O)CO>>CCC=O.O"
+        }
+      ],
+      "same_stereo_free_heavy_its": true
+    },
+    {
+      "distinct_stereo_sensitive_inputs": 2,
+      "kind": "double_bond_stereo_variants",
+      "records": [
+        {
+          "ground_truth": "[CH3:1][CH2:2][CH2:3]/[CH:4]=[N:5]/[OH:6]>>[CH3:1][CH2:2][CH2:3][C:4]#[N:5].[OH2:6]",
+          "original_id": "321709",
+          "r_id": "44886",
+          "rxn": "CCC/C=N/O>>CCCC#N.O"
+        },
+        {
+          "ground_truth": "[CH3:1][CH2:2][CH2:3]/[CH:4]=[N:5]\\[OH:6]>>[CH3:1][CH2:2][CH2:3][C:4]#[N:5].[OH2:6]",
+          "original_id": "321718",
+          "r_id": "44893",
+          "rxn": "CCC/C=N\\O>>CCCC#N.O"
+        }
+      ],
+      "same_stereo_free_heavy_its": true
+    },
+    {
+      "distinct_stereo_sensitive_inputs": 1,
+      "kind": "symmetry_equivalent_maps",
+      "records": [
+        {
+          "ground_truth": "[NH3:1].[O:2]=[C:3]([OH:4])[CH2:5][C:6](=[O:7])[OH:8]>>[NH2:1][C:3](=[O:2])[CH2:5][C:6](=[O:7])[OH:8].[OH2:4]",
+          "original_id": "269777",
+          "r_id": "39055",
+          "rxn": "N.O=C(O)CC(=O)O>>NC(=O)CC(=O)O.O"
+        },
+        {
+          "ground_truth": "[NH3:1].[O:2]=[C:3]([OH:4])[CH2:5][C:6](=[O:7])[OH:8]>>[NH2:1][C:6]([CH2:5][C:3](=[O:2])[OH:4])=[O:7].[OH2:8]",
+          "original_id": "270241",
+          "r_id": "39144",
+          "rxn": "N.O=C(O)CC(=O)O>>NC(=O)CC(=O)O.O"
+        }
+      ],
+      "same_stereo_free_heavy_its": true
+    }
+  ],
+  "interpretation": "The current source is a flat mapped-reaction table. Most additional retained-input merges are caused by ignoring stereo. Symmetric-atom map alternatives can also have identical ITS graphs. No new cleaning rule is applied by this inspection.",
+  "pooled_manifest_sha256": "c72f2efa9b8e2702cad5f256991de02bfe0c7f09ad80fde100a0944d8a25c68c",
+  "record_date": "2026-10-27",
+  "schema": "synrxn.enzymemap-aam-duplicate-inspection.v1",
+  "source_pool_changed": false,
+  "source_table_sha256": "672f30dfd2cbafbfbcee5ff3a02d79471ff1854210424d4cae03d1dee76f43c4",
+  "statistics": {
+    "active_rows": 45242,
+    "additional_merges_when_stereo_ignored": 7826,
+    "duplicate_merges_with_stereo_distinguished": 164,
+    "merged_duplicate_rows": 7990,
+    "original_rows": 47974,
+    "repeated_reaction_groups": 4941,
+    "retained_unique_reactions": 37252
+  },
+  "stereo_sensitive_baseline_manifest_sha256": "e28cfb2fd0b0d25ab7f35bc39bb27bd3e61e45385a506aa4e597bf9fe326d880"
+}

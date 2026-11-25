@@ -1,0 +1,123 @@
+{
+  "counting_unit": "existing canonical reaction-condition observation",
+  "data_link": "data.csv",
+  "family_id": "physics",
+  "format": "csv",
+  "key": "solution_context/cycloadd_solution_context",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/solution_context/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "existing canonical reaction-condition observation",
+    "coverage_branch": "solution_context",
+    "derived_view_of": "property/cycloadd",
+    "key": "solution_context/cycloadd_solution_context",
+    "license": "CC-BY-4.0",
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/solution_context/cycloadd_solution_context.csv",
+    "qualification": "5269 unchanged observations, all water/298.15K. Solvent and temperature are constant context: this table cannot establish solvent-effect or temperature generalization. Original Chemprop source splits retained as metadata; use proposed reaction-group split for this overlapping view and apply same groups to canonical parent rows. Not physically recalculated.",
+    "reference_evidence": "Complete5269-reaction native CSV bijection verifies both free-energy targets, reaction strings and source solvent/temperature. Source paper uses aqueous SMD continuum at B3LYP-D3(BJ)/def2-TZVP//B3LYP-D3(BJ)/def2-SVP; not gas phase or explicit-solvent trajectories.",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 5269,
+    "sha256": "7e140a55f4c94d0250a9b742b3dbaed1901d4d061b370f5cee145505cf1a4bba",
+    "source_id": "CycloaddSolution2023",
+    "source_sha256": "5f08c6b2dc04dd3ae11c74b2e0251a595b230915c7196d7a67e96bfac7f1e12d",
+    "source_url": "https://doi.org/10.6084/m9.figshare.21707888.v5",
+    "target_units": {
+      "activation_free_energy_kcal_mol": "kcal/mol",
+      "reaction_free_energy_kcal_mol": "kcal/mol"
+    },
+    "task_fields": {
+      "activation_barrier": {
+        "group_fields": [
+          "reaction_group",
+          "parent_dataset",
+          "parent_record_id",
+          "proposed_split"
+        ],
+        "inputs": [
+          "reaction_smiles",
+          "solvent",
+          "temperature_K",
+          "reference_kind"
+        ],
+        "metrics": [
+          "MAE_kcal_per_mol",
+          "RMSE_kcal_per_mol",
+          "coverage"
+        ],
+        "qualification": "Computed aqueous SMD activation Gibbs free energy; not gas-phase electronic barrier.",
+        "targets": [
+          "activation_free_energy_kcal_mol"
+        ]
+      }
+    },
+    "task_ids": [
+      "activation_barrier",
+      "reaction_energetics"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "existing canonical reaction-condition observation",
+    "expected_bytes": null,
+    "expected_rows": 5269,
+    "expected_sha256": "7e140a55f4c94d0250a9b742b3dbaed1901d4d061b370f5cee145505cf1a4bba",
+    "format": "csv",
+    "key": "solution_context/cycloadd_solution_context",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/solution_context/cycloadd_solution_context.csv",
+    "qualification": "5269 unchanged observations, all water/298.15K. Solvent and temperature are constant context: this table cannot establish solvent-effect or temperature generalization. Original Chemprop source splits retained as metadata; use proposed reaction-group split for this overlapping view and apply same groups to canonical parent rows. Not physically recalculated.",
+    "reasons": [],
+    "reference_evidence": "Complete5269-reaction native CSV bijection verifies both free-energy targets, reaction strings and source solvent/temperature. Source paper uses aqueous SMD continuum at B3LYP-D3(BJ)/def2-TZVP//B3LYP-D3(BJ)/def2-SVP; not gas phase or explicit-solvent trajectories.",
+    "release_eligible": true,
+    "source_id": "CycloaddSolution2023",
+    "source_url": "https://doi.org/10.6084/m9.figshare.21707888.v5",
+    "task_ids": [
+      "activation_barrier",
+      "reaction_energetics"
+    ]
+  },
+  "role": "primary",
+  "rows": 5269,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/solution_context/cycloadd_solution_context.csv",
+    "sha256": "7e140a55f4c94d0250a9b742b3dbaed1901d4d061b370f5cee145505cf1a4bba",
+    "source_catalogue": "Data/coverage_expansion/solution_context/catalog.json",
+    "source_id": "CycloaddSolution2023",
+    "source_urls": [
+      "https://doi.org/10.6084/m9.figshare.21707888.v5"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "existing canonical reaction-condition observation",
+    "derived_view_of": "property/cycloadd",
+    "key": "solution_context/cycloadd_solution_context",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/solution_context/cycloadd_solution_context.csv",
+    "qualification": "5269 unchanged observations, all water/298.15K. Solvent and temperature are constant context: this table cannot establish solvent-effect or temperature generalization. Original Chemprop source splits retained as metadata; use proposed reaction-group split for this overlapping view and apply same groups to canonical parent rows. Not physically recalculated.",
+    "role": "primary",
+    "rows": 5269,
+    "sha256": "7e140a55f4c94d0250a9b742b3dbaed1901d4d061b370f5cee145505cf1a4bba",
+    "source_catalogue": "Data/coverage_expansion/solution_context/catalog.json",
+    "source_id": "CycloaddSolution2023",
+    "source_urls": [
+      "https://doi.org/10.6084/m9.figshare.21707888.v5"
+    ],
+    "title": "Cycloaddition activation and reaction free energies in water"
+  },
+  "stored_path": "Data/families/physics/activation_barrier/coverage/solution_context/cycloadd_solution_context/data.csv",
+  "task_id": "activation_barrier",
+  "title": "Cycloaddition activation and reaction free energies in water"
+}

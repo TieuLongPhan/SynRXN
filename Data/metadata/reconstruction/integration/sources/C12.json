@@ -1,0 +1,51 @@
+{
+  "id": "C12",
+  "name": "OrgReact",
+  "priority": "2 Targeted expansion",
+  "survey_license_note": "CC BY 4.0 on the Figshare data record.",
+  "paper_urls": [
+    "https://www.nature.com/articles/s41597-026-07771-6"
+  ],
+  "data_urls": [
+    "https://doi.org/10.6084/m9.figshare.31668682"
+  ],
+  "project_urls": [],
+  "license_urls": [
+    "https://api.figshare.com/v2/articles/31668682"
+  ],
+  "license_verified": true,
+  "files": [
+    {
+      "name": "OrgReact_xyz.zip",
+      "bytes": 14928834,
+      "checksum": "md5:47783af56ffe750041df2ba95e8a934d",
+      "url": "https://ndownloader.figshare.com/files/64758867"
+    },
+    {
+      "name": "energy_and_bonds_changes_files.zip",
+      "bytes": 112204,
+      "checksum": "md5:5db5b52442732408e8769091d4d95034",
+      "url": "https://ndownloader.figshare.com/files/64783677"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://api.figshare.com/v2/articles/31668682",
+      "status": 200,
+      "sha256": "48d129ffdaf4c8a90707fef4b0424b7f0195579dc8b058a5905e9aa72773a9c4",
+      "bytes": 2719,
+      "retrieved_at": "2026-10-20T15:34:56.595650+00:00"
+    }
+  ],
+  "record_id": "31668682",
+  "doi": "10.6084/m9.figshare.31668682.v3",
+  "title": "OrgReact dataset",
+  "version": 3,
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "publication_date": "2026-05-22T01:14:44Z",
+  "description": "<p dir=\"ltr\">The OrgReact dataset explores more new reactions within the low energy barrier range.</p><p><br></p>"
+}

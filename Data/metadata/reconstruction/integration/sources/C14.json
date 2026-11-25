@@ -1,0 +1,420 @@
+{
+  "id": "C14",
+  "name": "ReactZyme",
+  "priority": "2 Targeted expansion",
+  "survey_license_note": "Repository CC0-1.0. Preserve upstream Rhea/UniProt attribution and terms.",
+  "paper_urls": [
+    "https://arxiv.org/html/2408.13659v3"
+  ],
+  "data_urls": [
+    "https://github.com/WillHua127/ReactZyme/tree/main/data"
+  ],
+  "project_urls": [
+    "https://github.com/WillHua127/ReactZyme"
+  ],
+  "license_urls": [],
+  "license_verified": true,
+  "files": [
+    {
+      "name": "molecule_vocab.pkl",
+      "bytes": 1357,
+      "checksum": "md5:5a64bef090335f884a767006867d64cf",
+      "url": "https://zenodo.org/api/records/11494913/files/molecule_vocab.pkl/content"
+    },
+    {
+      "name": "reaction_smi_split.zip",
+      "bytes": 46726304,
+      "checksum": "md5:2d9f4e6c78d8daf5752cc2a5ae2bef0d",
+      "url": "https://zenodo.org/api/records/11494913/files/reaction_smi_split.zip/content"
+    },
+    {
+      "name": "uniprot_molecules.tsv",
+      "bytes": 62305590,
+      "checksum": "md5:a669647f418bf54dc7c5d0059c2b2a09",
+      "url": "https://zenodo.org/api/records/11494913/files/uniprot_molecules.tsv/content"
+    },
+    {
+      "name": "deepchem_vocab.txt",
+      "bytes": 3556,
+      "checksum": "md5:95ca5f1d57a4a7a82bb3cca0ad742e9c",
+      "url": "https://zenodo.org/api/records/11494913/files/deepchem_vocab.txt/content"
+    },
+    {
+      "name": "cleaned_uniprot_rhea.tsv",
+      "bytes": 87396123,
+      "checksum": "md5:669bdd627c946114e87f06bffb4f33d9",
+      "url": "https://zenodo.org/api/records/11494913/files/cleaned_uniprot_rhea.tsv/content"
+    },
+    {
+      "name": "uniprot_rhea.tsv",
+      "bytes": 100738213,
+      "checksum": "md5:5b9d384c96a597680b140c3a333f1600",
+      "url": "https://zenodo.org/api/records/11494913/files/uniprot_rhea.tsv/content"
+    },
+    {
+      "name": "rhea_molecules.tsv",
+      "bytes": 3497386,
+      "checksum": "md5:cb5a575a08954f6d28311b9a4bef52fe",
+      "url": "https://zenodo.org/api/records/11494913/files/rhea_molecules.tsv/content"
+    },
+    {
+      "name": "enzyme_smi_split.zip",
+      "bytes": 47503969,
+      "checksum": "md5:e351fdb85830968fc9abe933c39f9eda",
+      "url": "https://zenodo.org/api/records/11494913/files/enzyme_smi_split.zip/content"
+    },
+    {
+      "name": "time_split.zip",
+      "bytes": 47593879,
+      "checksum": "md5:c437435a239326c157e1d20f00d8e00e",
+      "url": "https://zenodo.org/api/records/11494913/files/time_split.zip/content"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://zenodo.org/api/records/11494913",
+      "status": 200,
+      "sha256": "a4a4378ff4e6b32b494a864a54fe9ca240883ad4b2d8937af051f3504d4c0587",
+      "bytes": 6833,
+      "retrieved_at": "2026-10-20T15:45:38.196272+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/WillHua127/ReactZyme",
+      "status": 200,
+      "sha256": "c9a8e8769a0cda85551a1ea84150e770446409d39ca9c7f6520e3aa5044fff08",
+      "bytes": 5358,
+      "retrieved_at": "2026-10-20T15:34:55.583572+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/WillHua127/ReactZyme/commits/main",
+      "status": 200,
+      "sha256": "a17e89abfdd49838a1304b5819a6a23df17acdc6933bda549817f893dd0e5eb6",
+      "bytes": 13360,
+      "retrieved_at": "2026-10-20T15:46:52.436742+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/trees/c4d1554640a01e5b8ae8e2de716b452ce93b1bc6?recursive=1",
+      "status": 200,
+      "sha256": "a50ef633375f04216af02235c20d9b534f7320f35cd58b7d7de71c552552fbef",
+      "bytes": 8692,
+      "retrieved_at": "2026-10-20T15:47:56.692991+00:00"
+    }
+  ],
+  "record_id": "11494913",
+  "doi": "10.5281/zenodo.11494913",
+  "title": "Reactzyme: A Benchmark for Enzyme-Reaction Prediction",
+  "license": {
+    "id": "mit-license"
+  },
+  "publication_date": "2024-06-05",
+  "description": "<h3>Official dataset of <span>Reactzyme -</span>&nbsp;<span>Reactzyme: A Benchmark for</span><span>Enzyme-Reaction Prediction.</span></h3>\n<p><span>Our study utilizes a comprehensive dataset compiled from the SwissProt and Rhea databases. SwissProt, a curated subset of the UniProt database, has been selected for its high-quality, human-derived functional annotations of protein sequences. This section of UniProt is particularly valuable for its expert-reviewed entries, which ensure reliable and accurate functional data, making it ideal for our analysis. Rhea is employed for its precise mapping from enzymes to specific catalyzed functions, offering detailed descriptions of biochemical reactions.&nbsp;</span></p>\n<p><span>The SwissProt and Rhea dataset are downloaded on January 8, 2024, and includes data entries up to this date, providing the most recent and comprehensive data available for our study. We selectively exclude water molecules and unspecific functional groups that could mask the true molecular structures. Conversely, we remove metal ions, gas molecules, and other small molecules because of their potential to bind to proteins, a characteristic that presents a valuable learning feature for our model. To this end, the total dataset comprises 178,463 positive enzyme-reaction pairs, including 178,327 unique enzymes and 7,726 unique reactions.&nbsp;</span></p>",
+  "github": {
+    "repository": "WillHua127/ReactZyme",
+    "commit": "c4d1554640a01e5b8ae8e2de716b452ce93b1bc6",
+    "tree_sha": "c4d1554640a01e5b8ae8e2de716b452ce93b1bc6",
+    "license": {
+      "key": "cc0-1.0",
+      "name": "Creative Commons Zero v1.0 Universal",
+      "spdx_id": "CC0-1.0",
+      "url": "https://api.github.com/licenses/cc0-1.0",
+      "node_id": "MDc6TGljZW5zZTY="
+    },
+    "tree": [
+      {
+        "path": "LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0e259d42c996742e9e3cba14c677129b2c1b6311",
+        "size": 7048,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/0e259d42c996742e9e3cba14c677129b2c1b6311"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c420a281d2e8e449a1aeb98f1734cd82bcd3d152",
+        "size": 4710,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/c420a281d2e8e449a1aeb98f1734cd82bcd3d152"
+      },
+      {
+        "path": "data",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "d99ed0a67ab125f88a97e04a9a2c65f2cb6a7e4c",
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/trees/d99ed0a67ab125f88a97e04a9a2c65f2cb6a7e4c"
+      },
+      {
+        "path": "data/afdb",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "950ef1dec9d74289b94b509e2a0b5b03465647fa",
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/trees/950ef1dec9d74289b94b509e2a0b5b03465647fa"
+      },
+      {
+        "path": "data/afdb/readme.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9eafb96210ad00036517d28fce84e11f8a394e41",
+        "size": 49,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/9eafb96210ad00036517d28fce84e11f8a394e41"
+      },
+      {
+        "path": "data/embedding",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "247d3f9ccc9a73c6474abc46d4a4a7c37feb8f14",
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/trees/247d3f9ccc9a73c6474abc46d4a4a7c37feb8f14"
+      },
+      {
+        "path": "data/embedding/readme.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b1fce4edc4e6166db8f11768dbf84fd8cebd7a6f",
+        "size": 121,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/b1fce4edc4e6166db8f11768dbf84fd8cebd7a6f"
+      },
+      {
+        "path": "data/new_mol_smi",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "3c379316c8e9bfb8713814b62febb833fe50b5ee",
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/trees/3c379316c8e9bfb8713814b62febb833fe50b5ee"
+      },
+      {
+        "path": "data/new_mol_smi/readme.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2825de5a4edc4dac5bc32460367a3aa222b97b47",
+        "size": 222,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/2825de5a4edc4dac5bc32460367a3aa222b97b47"
+      },
+      {
+        "path": "data/new_seq_smi",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "75b559971abc7cb8e43a28612a50deda0575f94e",
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/trees/75b559971abc7cb8e43a28612a50deda0575f94e"
+      },
+      {
+        "path": "data/new_seq_smi/readme.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "13cfaa9249a182d4bed458d6d3dfaaf9c09820e7",
+        "size": 222,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/13cfaa9249a182d4bed458d6d3dfaaf9c09820e7"
+      },
+      {
+        "path": "data/new_time",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "3ab31d843c16df8e982f221d013594b8a07a97f2",
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/trees/3ab31d843c16df8e982f221d013594b8a07a97f2"
+      },
+      {
+        "path": "data/new_time/readme.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6173d0369c2806f1b22da97863e227456113f70f",
+        "size": 212,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/6173d0369c2806f1b22da97863e227456113f70f"
+      },
+      {
+        "path": "data/readme.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5e0197998372fdea4b30eb961821eda1cd029ebb",
+        "size": 244,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/5e0197998372fdea4b30eb961821eda1cd029ebb"
+      },
+      {
+        "path": "data_utils.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5b01ddfc6abe9162c84af3f93243442f79b3ca3f",
+        "size": 5223,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/5b01ddfc6abe9162c84af3f93243442f79b3ca3f"
+      },
+      {
+        "path": "get_afdb.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7068d39b71c50d7e61fd17654f69dcacad3dd3d0",
+        "size": 10874,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/7068d39b71c50d7e61fd17654f69dcacad3dd3d0"
+      },
+      {
+        "path": "logger",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "8db2bfc46a1eb78815f9b76f7a7d893612879378",
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/trees/8db2bfc46a1eb78815f9b76f7a7d893612879378"
+      },
+      {
+        "path": "logger/readme.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8955154e296d0da0ca655100078d9aed7ace005e",
+        "size": 30,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/8955154e296d0da0ca655100078d9aed7ace005e"
+      },
+      {
+        "path": "mat.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f9715da2d0ba35ba8c1e8bcea7723902db356503",
+        "size": 15680,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/f9715da2d0ba35ba8c1e8bcea7723902db356503"
+      },
+      {
+        "path": "model",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "1faf77e465d181e50b90a29fad524689fd0fc1b0",
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/trees/1faf77e465d181e50b90a29fad524689fd0fc1b0"
+      },
+      {
+        "path": "model/readme.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e36590891038ba62fa7965bc984f975d716fbddf",
+        "size": 23,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/e36590891038ba62fa7965bc984f975d716fbddf"
+      },
+      {
+        "path": "prepare_graphs.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f048818a10f16886c96cb04bb36c489d5169e577",
+        "size": 3846,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/f048818a10f16886c96cb04bb36c489d5169e577"
+      },
+      {
+        "path": "prepare_negative.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f7db2d479288e5173c7f392e46170dcc9a8ee5dc",
+        "size": 1740,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/f7db2d479288e5173c7f392e46170dcc9a8ee5dc"
+      },
+      {
+        "path": "pretrained",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "302326553dbab9ad571657f34363653176e5fe18",
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/trees/302326553dbab9ad571657f34363653176e5fe18"
+      },
+      {
+        "path": "pretrained/SaProt_650M_PDB",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "c9ad684b1b6b0b8e4330f3c30efc5fe2bcf09d7a",
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/trees/c9ad684b1b6b0b8e4330f3c30efc5fe2bcf09d7a"
+      },
+      {
+        "path": "pretrained/SaProt_650M_PDB/readme.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "42fb18e86785195308143c79db8a464c79a97978",
+        "size": 259,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/42fb18e86785195308143c79db8a464c79a97978"
+      },
+      {
+        "path": "pretrained/readme.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "79721cc4a1c242f88e3b8109dd7ddadc4d80edbb",
+        "size": 461,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/79721cc4a1c242f88e3b8109dd7ddadc4d80edbb"
+      },
+      {
+        "path": "process_esm.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "efe5ab7d95433ad479d25824c6e8061c12caf69b",
+        "size": 1497,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/efe5ab7d95433ad479d25824c6e8061c12caf69b"
+      },
+      {
+        "path": "process_mat.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "56741fbdf632cee32c9aec99f6c35bef4254adcf",
+        "size": 5330,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/56741fbdf632cee32c9aec99f6c35bef4254adcf"
+      },
+      {
+        "path": "process_saprot.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "42f7fad0eceee591eb9f106f7f1abddb576f7ebb",
+        "size": 4538,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/42f7fad0eceee591eb9f106f7f1abddb576f7ebb"
+      },
+      {
+        "path": "retrieval.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a392055bf9ad2363c5c16822d4b0f4e331379668",
+        "size": 14594,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/a392055bf9ad2363c5c16822d4b0f4e331379668"
+      },
+      {
+        "path": "retrieval_rnn.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8be24df725b394103829ac3c6e5f4c96e9d5fcad",
+        "size": 14384,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/8be24df725b394103829ac3c6e5f4c96e9d5fcad"
+      },
+      {
+        "path": "retrieval_tfmr.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c143739241d5782ff801979f0a24397a704d81bd",
+        "size": 14318,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/c143739241d5782ff801979f0a24397a704d81bd"
+      },
+      {
+        "path": "train.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "607c7c650ba1117438175bc8f917f013dd45be7d",
+        "size": 14276,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/607c7c650ba1117438175bc8f917f013dd45be7d"
+      },
+      {
+        "path": "train_contra.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "26fb5cf31b5ba6e216cd2338aa9f2d23acae00f5",
+        "size": 15273,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/26fb5cf31b5ba6e216cd2338aa9f2d23acae00f5"
+      },
+      {
+        "path": "train_rnn.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4c2eba81f6469dfc803b17aae833f8dfa82004ed",
+        "size": 14234,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/4c2eba81f6469dfc803b17aae833f8dfa82004ed"
+      },
+      {
+        "path": "train_tfmr.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cfaa98822d7db7ca63c197d69145999b30bbeaa6",
+        "size": 13999,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/cfaa98822d7db7ca63c197d69145999b30bbeaa6"
+      },
+      {
+        "path": "unimol.ipynb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4e78abee50d1a0053a9bdc787aec3bdf23484ee1",
+        "size": 10027831,
+        "url": "https://api.github.com/repos/WillHua127/ReactZyme/git/blobs/4e78abee50d1a0053a9bdc787aec3bdf23484ee1"
+      }
+    ],
+    "truncated": false
+  }
+}

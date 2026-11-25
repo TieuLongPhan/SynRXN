@@ -1,0 +1,7 @@
+C13: EnzEngDB
+Data license: CC-BY-4.0
+Zenodo compilation grant; retain source-paper and assay evidence.
+
+Primary source and attribution:
+https://doi.org/10.1093/nar/gkaf1142
+https://zenodo.org/records/17310823

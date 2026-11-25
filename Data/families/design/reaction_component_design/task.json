@@ -1,0 +1,178 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 2,
+    "data_links": 2,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 2,
+    "stored_rows_across_unique_views": 50364,
+    "task_table_bindings": 2,
+    "tasks": 1,
+    "unique_table_views": 2
+  },
+  "tables": [
+    {
+      "data_link": "coverage/bio/enzeng_inverse_biocatalyst_design/data.parquet",
+      "key": "bio/enzeng_inverse_biocatalyst_design",
+      "metadata": "coverage/bio/enzeng_inverse_biocatalyst_design/table.json",
+      "namespace": "coverage"
+    },
+    {
+      "data_link": "coverage/knowledge/CatDRX_ORD2025/inverse_components/data.parquet",
+      "key": "knowledge/CatDRX_ORD2025/inverse_components",
+      "metadata": "coverage/knowledge/CatDRX_ORD2025/inverse_components/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "catalog_path": "Data/coverage_expansion/bio/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "source-derived qualified task row",
+        "coverage_branch": "bio",
+        "key": "bio/enzeng_inverse_biocatalyst_design",
+        "license": "CC-BY-4.0; EnzEngDB data release with explicit record/paper attribution",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/bio/enzeng_inverse_biocatalyst_design.parquet",
+        "qualification": "Inverse biocatalyst-sequence design subtype, not general small-molecule catalyst generation. Only ARNLD curated campaigns with explicit finite nonnegative TTN/reaction-activity-percent labels and qualified parent/variant sequence context. All DMSDB and LLMDB rows excluded. Desired response is an explicit design goal, not an outcome-prediction input. Each native variant is a demonstrated solution rather than the only correct output. Oracle values exist only for exact observed variant/context/endpoint tuples; unseen generated sequences require experiments and receive no fabricated response. Activity-percent is retained as reported, not automatically equated with isolated yield. Views overlap the mutation-effect source rows.",
+        "reference_evidence": "Native explicit catalytic endpoint from the CC-BY-4.0 EnzEngDB experiment member, with source row ID and parent reference inherited from qualified mutation view.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 488,
+        "sha256": "b7c1872fbd663be05ba2c887894ed1afaf0a993e596aae2a3c1a151573dd74ad",
+        "source_id": "C13",
+        "source_sha256": "8013ad81586db2187162aada0709c1cabc7e7d69f03dd5c199776aaf000dd6ea",
+        "source_url": "https://zenodo.org/api/records/17310823/files/Data.zip/content",
+        "task_fields": {
+          "reaction_component_design": {
+            "group_fields": [
+              "reference_doi",
+              "campaign_id",
+              "campaign_assay_group",
+              "parent_sequence_group",
+              "reaction_group",
+              "split_component",
+              "derived_split"
+            ],
+            "inputs": [
+              "parent_sequence",
+              "reaction_smiles",
+              "recorded_assay_context_json",
+              "desired_endpoint_kind",
+              "desired_native_response"
+            ],
+            "metrics": [
+              "sequence validity",
+              "mutation constraint satisfaction",
+              "native measured-oracle goal attainment for exact observed sequences only"
+            ],
+            "targets": [
+              "variant_sequence"
+            ]
+          }
+        },
+        "task_ids": [
+          "reaction_component_design"
+        ]
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/knowledge/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "recorded component-performance reference",
+        "coverage_branch": "knowledge",
+        "key": "knowledge/CatDRX_ORD2025/inverse_components",
+        "license": "CC-BY-SA-4.0",
+        "namespace": "coverage",
+        "parent_groups": 2177,
+        "partition": "sharealike",
+        "path": "Data/coverage_expansion/knowledge/inverse_components.parquet",
+        "qualification": "Retrospective reaction-conditioned component generation/recovery with catalyst-identity holdout. Input does not list candidates; evaluation has a finite measured lookup oracle. No prospective de novo performance is inferred for off-dataset structures. Yield measurements, native candidate identities and upstream ORD reuse remain explicit.",
+        "reference_evidence": "source_reported_measurement_and_recorded_component_structure",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-SA-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 49876,
+        "sha256": "430f23c5527312d8cdf84a036f5d60d49f20010db9f96be658d12dbc2bd887a7",
+        "source_id": "CatDRX_ORD2025",
+        "source_sha256": "26517fd0168fec04224249c6fb6acba5b4f99260a80b917b42a66dfa30e66994",
+        "source_url": "https://github.com/ohuelab/CatDRX/tree/f8952497761b0bf44cde4b48f8df3a8d40098f91",
+        "task_fields": {
+          "reaction_component_design": {
+            "group_fields": [
+              "parent_group"
+            ],
+            "input_keys": [
+              "reactants",
+              "products",
+              "reagents",
+              "desired_response_pct_interval",
+              "time_h"
+            ],
+            "inputs": [
+              "inputs_json"
+            ],
+            "metrics": [
+              "component_recovery_top_k",
+              "structure_validity",
+              "training_relative_novelty",
+              "observed_oracle_response"
+            ],
+            "split_policy": "SHA-256 parent-group 80/10/10 seed 2027; native split retained separately",
+            "target_keys": [
+              "catalyst_smiles",
+              "observed_response_pct"
+            ],
+            "targets": [
+              "targets_json"
+            ]
+          }
+        },
+        "task_ids": [
+          "reaction_component_design"
+        ]
+      }
+    ],
+    "candidate_ids": [],
+    "candidate_status": "Source acquisition and qualification required",
+    "canonical_keys": [],
+    "counting_units": [
+      "recorded component-performance reference",
+      "source-derived qualified task row"
+    ],
+    "evaluation": "Verified performance, validity, novelty, diversity and failures under a common budget; different component roles are variants, not automatically separate task counts",
+    "extension_adapter_ids": [],
+    "family_id": "design",
+    "id": "reaction_component_design",
+    "legacy_view_ids": [],
+    "metrics": [
+      "component_recovery_top_k",
+      "mutation constraint satisfaction",
+      "native measured-oracle goal attainment for exact observed sequences only",
+      "observed_oracle_response",
+      "sequence validity",
+      "structure_validity",
+      "training_relative_novelty"
+    ],
+    "origin": "promoted_from_initial_19_roadmap_definitions",
+    "primary_source_rows": 50364,
+    "primary_table_count": 2,
+    "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance.",
+    "question": "Reaction and desired response -> novel catalyst, ligand, reagent, medium or biocatalyst candidates",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 2,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "required_data": "Structural design space, known-data exposure, independent performance oracle or experiments, feasibility constraints and evaluation budget",
+    "title": "Reaction-conditioned component design"
+  }
+}

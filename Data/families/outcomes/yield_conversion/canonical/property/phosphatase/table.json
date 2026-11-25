@@ -1,0 +1,93 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "outcomes",
+  "format": "csv.gz",
+  "key": "property/phosphatase",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": false,
+    "counting_unit": "source-table row",
+    "key": "property/phosphatase",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "noncommercial_educational",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0 AND LicenseRef-PNAS-NC-Educational",
+    "rights_status": "verified_noncommercial_educational_grant",
+    "role": "primary",
+    "rows": 33354
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": false,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "reactiondatabase_readme",
+      "phosphatase_original_article",
+      "recheck_property_synrxn_product_notice",
+      "recheck_property_reactiondatabase_readme",
+      "recheck_property_property_recheck_phosphatase_pmc",
+      "recheck_property_property_recheck_phosphatase_pubmed",
+      "recheck_phosphatase_followup_phosphatase_followup_standard_terms",
+      "recheck_phosphatase_followup_phosphatase_followup_exclusive_ltp",
+      "recheck_phosphatase_followup_phosphatase_followup_exclusive_ltp_text",
+      "recheck_phosphatase_followup_phosphatase_followup_heid_figshare",
+      "recheck_phosphatase_followup_phosphatase_followup_s1_author_mirror",
+      "recheck_phosphatase_followup_phosphatase_followup_s2_author_mirror",
+      "recheck_phosphatase_followup_phosphatase_followup_goldman_parser",
+      "recheck_phosphatase_followup_phosphatase_followup_goldman_readme",
+      "recheck_phosphatase_followup_phosphatase_followup_heid_native_csv",
+      "recheck_phosphatase_followup_phosphatase_followup_original_article",
+      "recheck_phosphatase_followup_phosphatase_followup_native_comparison"
+    ],
+    "expected_bytes": 1137562,
+    "expected_rows": 33354,
+    "expected_sha256": "aca656158cb5b96cfa3378234641796e5becdf6647d7af0ae9f91b9e53639917",
+    "format": "csv.gz",
+    "key": "property/phosphatase",
+    "license_expression": "CC-BY-4.0 AND LicenseRef-PNAS-NC-Educational",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes.",
+      "Use and redistribution are limited by the applicable NonCommercial terms; no commercial-use grant is asserted.",
+      "The PNAS permission covers original figures/tables for noncommercial and educational use with the full journal reference. This compilation applies it only to the cited factual table extraction; it does not assert a Creative Commons grant for PNAS material or permission to redistribute the article or entire supplement."
+    ],
+    "namespace": "canonical",
+    "partition": "noncommercial_educational",
+    "path": "Data/property/phosphatase.csv.gz",
+    "qualification": "PNAS expressly permits original figures/tables under its exclusive License to Publish to be used without requesting permission for noncommercial educational purposes with the full journal reference. Its Standard PNAS License Terms explicitly cover volumes106–118(2009–2021), including Huang et al.2015, volume112. The actual publisher License to Publish independently grants third-party noncommercial use of original author figures/tables and includes supporting-information rights on a nonexclusive basis. The curated CSV contains factual reaction/assay records, not article prose, figures, publisher layout or the complete paper. Every local reaction/target matches the exact pinned Heid author CSV; all33354 assay targets reconstruct from the original-named DatasetS2 spreadsheet mirror, as32918 direct numerical cells plus436 maximum-of-two-cell reconstructions. Admit this table only as a noncommercial educational benchmark under the explicit custom PNAS table-use conditions, retaining the SynRXN CC BY4 curation notice without claiming that either PNAS or Heid granted a new unrestricted CC BY4 license to the original observations.",
+    "rights_status": "verified_noncommercial_educational_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 33354,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "heid2022machine",
+      "huang2015panoramic"
+    ],
+    "path": "Data/property/phosphatase.csv.gz",
+    "sha256": "aca656158cb5b96cfa3378234641796e5becdf6647d7af0ae9f91b9e53639917",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "heid2022machine",
+      "huang2015panoramic"
+    ],
+    "counting_unit": "source-table row",
+    "key": "property/phosphatase",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/property/phosphatase.csv.gz",
+    "role": "primary",
+    "rows": 33354,
+    "sha256": "aca656158cb5b96cfa3378234641796e5becdf6647d7af0ae9f91b9e53639917",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "Phosphatase assay responses"
+  },
+  "stored_path": "Data/families/outcomes/yield_conversion/canonical/property/phosphatase/data.csv.gz",
+  "task_id": "yield_conversion",
+  "title": "Phosphatase assay responses"
+}

@@ -1,0 +1,139 @@
+{
+  "counting_unit": "attempted substrate-scope experiment",
+  "data_link": "data.parquet",
+  "family_id": "design",
+  "format": "parquet",
+  "key": "knowledge/MinotScope2026/scope_campaigns",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/knowledge/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "attempted substrate-scope experiment",
+    "coverage_branch": "knowledge",
+    "key": "knowledge/MinotScope2026/scope_campaigns",
+    "license": "CC-BY-4.0",
+    "namespace": "coverage",
+    "parent_groups": 568,
+    "partition": "main",
+    "path": "Data/coverage_expansion/knowledge/scope_campaigns.parquet",
+    "qualification": "Bounded retrospective substrate-scope discovery variant from native adaptive rounds, preserving failed attempts and dates. Source success labels and conversion are references; no claim of new transformations, exhaustive product characterization or prospective discovery. These same observations already support other Minot tasks and are not additional independent experiments.",
+    "reference_evidence": "reported_experimental_hit_labels_and_conversion",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 6865,
+    "sha256": "a7b517e03bc29b8bc789d86d3d7ca72318014938ba9e3637d7de2b7b9e6486ac",
+    "source_id": "MinotScope2026",
+    "source_sha256": "56b5e6a470bef65f5d2d392fc458df0d2fc9c33360f6cc34673986074ba8f023",
+    "source_url": "https://doi.org/10.5281/zenodo.20773622",
+    "task_fields": {
+      "new_reactivity_discovery": {
+        "group_fields": [
+          "parent_group"
+        ],
+        "input_keys": [
+          "additive_1_eq",
+          "additive_1_smiles",
+          "atmosphere",
+          "catalyst_1_eq",
+          "catalyst_1_smiles",
+          "concentration_mol_l",
+          "ligand_1_eq",
+          "ligand_1_smiles",
+          "ligand_2_eq",
+          "ligand_2_smiles",
+          "reagent_1_eq",
+          "reagent_1_smiles",
+          "reagent_2_eq",
+          "reagent_2_smiles",
+          "scale_mol",
+          "solvent_1_fraction",
+          "solvent_1_smiles",
+          "solvent_2_fraction",
+          "solvent_2_smiles",
+          "startingmat_1_eq",
+          "startingmat_1_smiles",
+          "temperature_deg_c",
+          "time_h"
+        ],
+        "inputs": [
+          "inputs_json"
+        ],
+        "metrics": [
+          "source_hit_recovery_vs_budget",
+          "substrate_scope_coverage",
+          "failure_accounting"
+        ],
+        "split_policy": "SHA-256 parent-group 80/10/10 seed 2027; native split retained separately",
+        "target_keys": [
+          "native_hit_label",
+          "conversion_fraction"
+        ],
+        "targets": [
+          "targets_json"
+        ]
+      }
+    },
+    "task_ids": [
+      "new_reactivity_discovery"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "attempted substrate-scope experiment",
+    "expected_bytes": 381078,
+    "expected_rows": 6865,
+    "expected_sha256": "a7b517e03bc29b8bc789d86d3d7ca72318014938ba9e3637d7de2b7b9e6486ac",
+    "format": "parquet",
+    "key": "knowledge/MinotScope2026/scope_campaigns",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/knowledge/scope_campaigns.parquet",
+    "qualification": "Bounded retrospective substrate-scope discovery variant from native adaptive rounds, preserving failed attempts and dates. Source success labels and conversion are references; no claim of new transformations, exhaustive product characterization or prospective discovery. These same observations already support other Minot tasks and are not additional independent experiments.",
+    "reasons": [],
+    "reference_evidence": "reported_experimental_hit_labels_and_conversion",
+    "release_eligible": true,
+    "source_id": "MinotScope2026",
+    "source_url": "https://doi.org/10.5281/zenodo.20773622",
+    "task_ids": [
+      "new_reactivity_discovery"
+    ]
+  },
+  "role": "primary",
+  "rows": 6865,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/knowledge/scope_campaigns.parquet",
+    "sha256": "a7b517e03bc29b8bc789d86d3d7ca72318014938ba9e3637d7de2b7b9e6486ac",
+    "source_catalogue": "Data/coverage_expansion/knowledge/catalog.json",
+    "source_id": "MinotScope2026",
+    "source_urls": [
+      "https://doi.org/10.5281/zenodo.20773622"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "attempted substrate-scope experiment",
+    "key": "knowledge/MinotScope2026/scope_campaigns",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/knowledge/scope_campaigns.parquet",
+    "qualification": "Bounded retrospective substrate-scope discovery variant from native adaptive rounds, preserving failed attempts and dates. Source success labels and conversion are references; no claim of new transformations, exhaustive product characterization or prospective discovery. These same observations already support other Minot tasks and are not additional independent experiments.",
+    "role": "primary",
+    "rows": 6865,
+    "sha256": "a7b517e03bc29b8bc789d86d3d7ca72318014938ba9e3637d7de2b7b9e6486ac",
+    "source_catalogue": "Data/coverage_expansion/knowledge/catalog.json",
+    "source_id": "MinotScope2026",
+    "source_urls": [
+      "https://doi.org/10.5281/zenodo.20773622"
+    ],
+    "title": "Minot substrate-scope campaigns"
+  },
+  "stored_path": "Data/families/design/new_reactivity_discovery/coverage/knowledge/MinotScope2026/scope_campaigns/data.parquet",
+  "task_id": "new_reactivity_discovery",
+  "title": "Minot substrate-scope campaigns"
+}

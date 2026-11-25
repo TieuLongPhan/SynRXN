@@ -1,0 +1,64 @@
+{
+  "all_records": {
+    "all_three": 2359,
+    "classes_by_role": {
+      "test": 8712,
+      "train": 23364,
+      "val": 2735
+    },
+    "pairwise": {
+      "train_test": 7750,
+      "train_val": 2644,
+      "val_test": 2366
+    }
+  },
+  "by_role": {
+    "test": 8713,
+    "train": 23367,
+    "val": 2735
+  },
+  "definition": "One-step two-state MC (RC); multistep unordered MC; same labels, global exact iso",
+  "files": {
+    "center_annotations.csv.gz": "eccf1f2e36ad223692a9d04bd27aa0f026439fe8a4101d0e667abf08bb51a87b",
+    "center_templates.jsonl.gz": "e7edae93a50e007e57182e900e21cfd7ccdb82a6873c628be6c00a919767f3ff"
+  },
+  "global_classes": 24410,
+  "grouping_excludes": [
+    "role",
+    "steps",
+    "map_numbers",
+    "local_center_ids"
+  ],
+  "implementation_sha256": "9bb49bdcd64d08b4687c366f17ba76504f310dccf52b099dded4e5732743175d",
+  "multistep_records": {
+    "all_three": 1542,
+    "classes_by_role": {
+      "test": 6264,
+      "train": 16737,
+      "val": 1834
+    },
+    "pairwise": {
+      "train_test": 5505,
+      "train_val": 1759,
+      "val_test": 1549
+    }
+  },
+  "native_provenance_sha256": "39c07938024bd365ce36d8cc8802e55a0448f8c035df188df5c1b1d7b8ab5389",
+  "one_step_records": {
+    "all_three": 817,
+    "classes_by_role": {
+      "test": 2449,
+      "train": 6630,
+      "val": 901
+    },
+    "pairwise": {
+      "train_test": 2246,
+      "train_val": 885,
+      "val_test": 817
+    }
+  },
+  "rows": 34815,
+  "schema": "synrxn.flower-global-centers.v1",
+  "source_dump": "Data/dumps/flower.dump.zip",
+  "source_dump_sha256": "f70e8d0705c168178c880b9e14d8455bbb7e4fee395464390d6910a1a6ee863a"
+}

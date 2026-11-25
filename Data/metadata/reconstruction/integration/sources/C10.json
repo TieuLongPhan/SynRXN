@@ -1,0 +1,54 @@
+{
+  "id": "C10",
+  "name": "RxnSolvKSE (Chung–Green)",
+  "priority": "2 Targeted expansion",
+  "survey_license_note": "CC BY 4.0 on the Zenodo data record.",
+  "paper_urls": [
+    "https://pubs.rsc.org/en/content/articlehtml/2024/sc/d3sc05353a"
+  ],
+  "data_urls": [
+    "https://zenodo.org/records/8423911"
+  ],
+  "project_urls": [],
+  "license_urls": [
+    "https://zenodo.org/api/records/8423911"
+  ],
+  "license_verified": true,
+  "files": [
+    {
+      "name": "RxnSolvKSE_dataset_v1.1.zip",
+      "bytes": 311651755,
+      "checksum": "md5:0c6f5ce05888ef366104e64c2bed0301",
+      "url": "https://zenodo.org/api/records/8423911/files/RxnSolvKSE_dataset_v1.1.zip/content"
+    },
+    {
+      "name": "RxnSolvKSE_ML_model_files.zip",
+      "bytes": 294526943,
+      "checksum": "md5:f9e1d33baa230b2cf7d22af86df34fa8",
+      "url": "https://zenodo.org/api/records/8423911/files/RxnSolvKSE_ML_model_files.zip/content"
+    },
+    {
+      "name": "README.md",
+      "bytes": 4295,
+      "checksum": "md5:f55f6e59487f886a8750d10d4b5a1492",
+      "url": "https://zenodo.org/api/records/8423911/files/README.md/content"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://zenodo.org/api/records/8423911",
+      "status": 200,
+      "sha256": "5d666a91e1e2b5b37dcb016a298c71498cc2ab18eeb11e261919864cfabfd8c8",
+      "bytes": 9130,
+      "retrieved_at": "2026-10-20T15:34:37.083122+00:00"
+    }
+  ],
+  "record_id": "8423911",
+  "doi": "10.5281/zenodo.8423911",
+  "title": "Data sets and machine learning models for: Machine learning from quantum chemistry to predict experimental solvent effects on reaction rates",
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "publication_date": "2023-06-17",
+  "description": "<p>The datasets and&nbsp;final machine learning model files&nbsp;for the manuscript \"Machine learning from quantum chemistry to predict experimental solvent effects on reaction rates\".&nbsp;Citation should refer directly to the manuscript:</p>\n<ul>\n<li>Chung, Y.; Green, W. H. Machine learning from quantum chemistry to predict experimental solvent effects on reaction rates. <em>Chemical Science </em><strong>2024,</strong>&nbsp;doi: <a href=\"https://doi.org/10.1039/D3SC05353A\">10.1039/D3SC05353A</a></li>\n</ul>\n<p>To use the machine learning&nbsp;models, please refer to the sample files and instructions on&nbsp;<a href=\"https://github.com/yunsiechung/chemprop/tree/RxnSolvKSE_ML\">https://github.com/yunsiechung/chemprop/tree/RxnSolvKSE_ML</a>.&nbsp;</p>\n<p>Detailed information&nbsp;can be found in README.md file.</p>\n<p><br><strong>Details on the files</strong></p>\n<p>In the pretraining and finetuning set csv files, each column represents:</p>\n<ol>\n<li>rxn_smiles: atom-mapped reaction SMILES</li>\n<li>solvent_smiles: solvent SMILES</li>\n<li>ddGsolv: solvation free energy of activation of a reaction-solvent pair at 298K in kcal/mol (main prediction target)</li>\n<li>ddHsolv: solvation enthalpy of activation of a reaction-solvent pair at 298K in kcal/mol (main prediction target)</li>\n<li>dGsolv_reactant: solvation free energy of reactant(s) at 298K in kcal/mol (additional feature)</li>\n<li>dGsolv_product: solvation free energy of product(s) at 298K in kcal/mol (additional feature)</li>\n<li>dHsolv_reactant: solvation enthalpy of reactant(s) at 298K in kcal/mol (additional feature)</li>\n<li>dHsolv_product: solvation enthalpy of product(s) at 298K in kcal/mol (additional feature)</li>\n</ol>\n<p><strong>Data sets under 'RxnSolvKSE_dataset_v1.1.zip'</strong></p>\n<ul>\n<li>pretraining_set: contains the dataset used for pre-training\n<ul>\n<li>all_data: contains all calculated data\n<ul>\n<li>pretraining_rxn_solvent_ddGsolv_ddHsolv_with_features_all.csv: contains both main&nbsp;prediction targets and additional feature&nbsp;for reaction-solvent pairs</li>\n<li>pretraining_solvent_info.csv: list of all solvents</li>\n<li>pretraining_unique_rxn.csv: list of all reactions, both forward and reverse directions</li>\n</ul>\n</li>\n<li>chosen_500k_data: contains the chosen 500k data\n<ul>\n<li>pretraining_rxn_solvent_ddGsolv_ddHsolv_500k.csv: contains main prediction targets for reaction-solvent pairs</li>\n<li>pretraining_features_react_prod_dGsolv_dHsolv_500k.csv: contains additional features for reaction-solvent pairs</li>\n<li>train_test_split: contains the 5-fold random split training and test sets.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>finetuning_set: contains the dataset used for fine-tuning\n<ul>\n<li>all_data: contains all calculated data\n<ul>\n<li>finetuning_rxn_solvent_ddGsolv_ddHsolv_with_features_all.csv: constains both main prediction targets and additional features&nbsp;for reaction-solvent pairs. The rxn_key column indicates whether the reaction is bimolecular hydrogen abstraction (bihabs),&nbsp;unimolecular hydrogen migration (intrahabs), or radical addition to a multiple bond (raddition). The 'fwd' and 'rev' each&nbsp;indicate forward and reverse reactions.</li>\n<li>finetuning_solvent_info.csv: list of all solvents</li>\n<li>finetuning_unique_rxn.csv: list of all reactions, both forward and reverse directions</li>\n</ul>\n</li>\n<li>chosen_data: contains chosen data\n<ul>\n<li>finetuning_rxn_solvent_ddGsolv_ddHsolv_chosen.csv: contains main prediction targets for reaction-solvent pairs</li>\n<li>finetuning_features_react_prod_dGsolv_dHsolv_chosen.csv: contains additional features for reaction-solvent pairs</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>experimental_set: contains the experimental rate constant data used to test the model. The original experimental data can be found at <a href=\"../record/7747557\">https://zenodo.org/record/7747557</a>.\n<ul>\n<li>&nbsp;expt_rxn_atom_mapped_smiles.csv: contains the atom-mapped reaction SMILES used for the experimental data.</li>\n<li>expt_data_collected.xlsx: contains all experimental data and detailed information</li>\n<li>expt_rxn_solv_smiles_with_features_all.csv: contains the computed additional features for the experimental reaction-solvent pairs.</li>\n</ul>\n</li>\n</ul>\n<p><strong>Machine learning model files under 'RxnSolvKSE_ML_model_files.zip'</strong></p>\n<ul>\n<li>Contains the Chemprop machine learning model files for predicting ddGsolv and ddHsolv for a reaction-solvent pair. It takes&nbsp;atom-mapped reaction SMILES and solvent SMILES as inputs.</li>\n<li>To use these ML models, please refer to the sample files and instructions on <a href=\"https://github.com/yunsiechung/chemprop/tree/RxnSolvKSE_ML\">https://github.com/yunsiechung/chemprop/tree/RxnSolvKSE_ML</a></li>\n</ul>"
+}

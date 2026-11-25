@@ -1,0 +1,4171 @@
+{
+  "id": "C06",
+  "name": "Catechol solvent-selection benchmark",
+  "priority": "1 Integrate first",
+  "survey_license_note": "Repository MIT. Kaggle/deposit data terms require verification.",
+  "paper_urls": [
+    "https://proceedings.neurips.cc/paper_files/paper/2025/file/ad61e68e2c4208d5d092b3ecd6064b46-Paper-Datasets_and_Benchmarks_Track.pdf"
+  ],
+  "data_urls": [
+    "https://github.com/jpfolch/catechol_solvent_selection"
+  ],
+  "project_urls": [
+    "https://github.com/jpfolch/catechol_solvent_selection"
+  ],
+  "license_urls": [],
+  "license_verified": false,
+  "files": [],
+  "requests": [
+    {
+      "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection",
+      "status": 200,
+      "sha256": "2a97788861ebdb3a6f9e432fee351ef2d4610142ec18013469b0df064789e5ce",
+      "bytes": 5927,
+      "retrieved_at": "2026-10-20T15:34:24.815335+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/commits/main",
+      "status": 200,
+      "sha256": "c6ff04f116913e0cb0c7d66842fbcbe70ff842da4f43acd7a7da1f3459dc755e",
+      "bytes": 10747,
+      "retrieved_at": "2026-10-20T15:45:40.395609+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727?recursive=1",
+      "status": 200,
+      "sha256": "664d7586e408756c14874d4b8dd93316443a263f3dcd0627e2315f732564386c",
+      "bytes": 146911,
+      "retrieved_at": "2026-10-20T15:47:17.376964+00:00"
+    }
+  ],
+  "github": {
+    "repository": "jpfolch/catechol_solvent_selection",
+    "commit": "0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727",
+    "tree_sha": "0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727",
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "tree": [
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3837214f756b2e857a0ef3c12442167483351b09",
+        "size": 3487,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/3837214f756b2e857a0ef3c12442167483351b09"
+      },
+      {
+        "path": ".pre-commit-config.yaml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "49988e9ee57f615cb67dcf20be0b986beaa0f9e3",
+        "size": 244,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/49988e9ee57f615cb67dcf20be0b986beaa0f9e3"
+      },
+      {
+        "path": ".python-version",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2c0733315e415bfb5e5b353f9996ecd964d395b2",
+        "size": 5,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/2c0733315e415bfb5e5b353f9996ecd964d395b2"
+      },
+      {
+        "path": "CONTRIBUTING.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "02684a33e148ae76ed504ea6bc147da89e20a897",
+        "size": 1394,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/02684a33e148ae76ed504ea6bc147da89e20a897"
+      },
+      {
+        "path": "LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "dc217c09cd688aab92d9cb0a02e860bf26359d90",
+        "size": 1073,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/dc217c09cd688aab92d9cb0a02e860bf26359d90"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b4f6451adc5bf6d578ba94a2835681bd05dad88c",
+        "size": 3849,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b4f6451adc5bf6d578ba94a2835681bd05dad88c"
+      },
+      {
+        "path": "data",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "5e050c80db8d7f1f8b5b8e1bbfca4942010647a8",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/5e050c80db8d7f1f8b5b8e1bbfca4942010647a8"
+      },
+      {
+        "path": "data/featurization_look_ups",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "e958524ef937658b0580ae9f5f08ff744862b446",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/e958524ef937658b0580ae9f5f08ff744862b446"
+      },
+      {
+        "path": "data/featurization_look_ups/acs_pca_descriptors_lookup.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fbba62bbc95116b77d1e3b2e147eaf62c883e487",
+        "size": 1698,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/fbba62bbc95116b77d1e3b2e147eaf62c883e487"
+      },
+      {
+        "path": "data/featurization_look_ups/drfps_catechol_lookup.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2cb851cae1764c21a3eaf7ada9c892ed19daaa33",
+        "size": 206274,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/2cb851cae1764c21a3eaf7ada9c892ed19daaa33"
+      },
+      {
+        "path": "data/featurization_look_ups/drfps_claisen_lookup.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "65bf92070d5e0951a1cf0eff8cf14f3f5142babe",
+        "size": 99452,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/65bf92070d5e0951a1cf0eff8cf14f3f5142babe"
+      },
+      {
+        "path": "data/featurization_look_ups/fragprints_lookup.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3517442f5b9e990a48023683ae50fddd8761c349",
+        "size": 112475,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/3517442f5b9e990a48023683ae50fddd8761c349"
+      },
+      {
+        "path": "data/featurization_look_ups/green_lookup.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5046e6eb14f8a63b3f2498f43f29fab9891bf6e5",
+        "size": 617,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5046e6eb14f8a63b3f2498f43f29fab9891bf6e5"
+      },
+      {
+        "path": "data/featurization_look_ups/smiles_lookup.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "418a6fb91a5d90cb754b6df70d6f833fdedc79e2",
+        "size": 854,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/418a6fb91a5d90cb754b6df70d6f833fdedc79e2"
+      },
+      {
+        "path": "data/featurization_look_ups/spange_descriptors_lookup.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2af0071a0dc203be69ca35e14b242e240e7b6388",
+        "size": 2554,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/2af0071a0dc203be69ca35e14b242e240e7b6388"
+      },
+      {
+        "path": "data/full_data",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "0b1971f8034426b370afb956afb33ecdaba2d942",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/0b1971f8034426b370afb956afb33ecdaba2d942"
+      },
+      {
+        "path": "data/full_data/catechol_full_data_yields.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c8df1b68faf66bfe2f3e349d7ba89bc140c748c7",
+        "size": 520566,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c8df1b68faf66bfe2f3e349d7ba89bc140c748c7"
+      },
+      {
+        "path": "data/full_data/claisen_data_clean.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "51a1008d2135fca1db4a0fba023a0229862b6d71",
+        "size": 63660,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/51a1008d2135fca1db4a0fba023a0229862b6d71"
+      },
+      {
+        "path": "data/full_data/solvent_featurizations",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "46beda180522a6ffbc6fcf78f00c14ed5ee86363",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/46beda180522a6ffbc6fcf78f00c14ed5ee86363"
+      },
+      {
+        "path": "data/full_data/solvent_featurizations/acs_pca_descriptors_a.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c6fa715942474a6596b0e533290bc70bd35f9a11",
+        "size": 57247,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c6fa715942474a6596b0e533290bc70bd35f9a11"
+      },
+      {
+        "path": "data/full_data/solvent_featurizations/acs_pca_descriptors_b.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5777efbc0ae7d11e45486152edf107f559124ec0",
+        "size": 61426,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5777efbc0ae7d11e45486152edf107f559124ec0"
+      },
+      {
+        "path": "data/full_data/solvent_featurizations/drfps_a.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "562a6821c1b2a5cc0898050bd02fecf466f24089",
+        "size": 10060714,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/562a6821c1b2a5cc0898050bd02fecf466f24089"
+      },
+      {
+        "path": "data/full_data/solvent_featurizations/drfps_b.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "67bef5c4111e00b7d4a07a43e7d4806b91f5a881",
+        "size": 10060714,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/67bef5c4111e00b7d4a07a43e7d4806b91f5a881"
+      },
+      {
+        "path": "data/full_data/solvent_featurizations/fragprints_a.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c913ecc206ad75aac7d9d9a3c1ef156e48f4d447",
+        "size": 5243937,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c913ecc206ad75aac7d9d9a3c1ef156e48f4d447"
+      },
+      {
+        "path": "data/full_data/solvent_featurizations/fragprints_b.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "467540175462bdcc2b2e9121a647291ee56665c1",
+        "size": 5243937,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/467540175462bdcc2b2e9121a647291ee56665c1"
+      },
+      {
+        "path": "data/single_solvent",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "7ac00951d47c93c57afffac81f8e058cd3e27fcf",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/7ac00951d47c93c57afffac81f8e058cd3e27fcf"
+      },
+      {
+        "path": "data/single_solvent/catechol_single_solvent_yields.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0de3b59905c04097dcdeac37d25e6b094f801ec5",
+        "size": 186992,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/0de3b59905c04097dcdeac37d25e6b094f801ec5"
+      },
+      {
+        "path": "data/single_solvent/solvent_featurizations",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "68478ccc0d0110b1f933fdd4f5a3cdb1f7a30dc6",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/68478ccc0d0110b1f933fdd4f5a3cdb1f7a30dc6"
+      },
+      {
+        "path": "data/single_solvent/solvent_featurizations/acs_pca_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "204ab2c5f525ed77e777a215ecf41e87c7830eae",
+        "size": 31109,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/204ab2c5f525ed77e777a215ecf41e87c7830eae"
+      },
+      {
+        "path": "data/single_solvent/solvent_featurizations/drfps.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0207b076eda256f3c394fcb5cb4c91fd8325db6b",
+        "size": 5383082,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/0207b076eda256f3c394fcb5cb4c91fd8325db6b"
+      },
+      {
+        "path": "data/single_solvent/solvent_featurizations/fragprints.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c85bbfc96b82b65b72405b7412eeb7ab4946ef15",
+        "size": 2808051,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c85bbfc96b82b65b72405b7412eeb7ab4946ef15"
+      },
+      {
+        "path": "kaggle_data",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "d805a37e96b2a7ea52269adf2e25b1bca986d19b",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/d805a37e96b2a7ea52269adf2e25b1bca986d19b"
+      },
+      {
+        "path": "kaggle_data/README_KAGGLE.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f4cff25238afaa126cfd06b618e39fb1e7737824",
+        "size": 439,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/f4cff25238afaa126cfd06b618e39fb1e7737824"
+      },
+      {
+        "path": "kaggle_data/archive.zip",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d7b63dcb9950684746f61453ebdf46d3ad6776a1",
+        "size": 100664,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d7b63dcb9950684746f61453ebdf46d3ad6776a1"
+      },
+      {
+        "path": "kaggle_data/catechol-benchmark-metadata.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c0b9846fd417aaed3041b48718cbeaa880b20bcf",
+        "size": 33805,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c0b9846fd417aaed3041b48718cbeaa880b20bcf"
+      },
+      {
+        "path": "kaggle_data/mlcroissant.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3be64d7d5f1cf9b4eabe2f3d62e53f94fed1bad4",
+        "size": 744,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/3be64d7d5f1cf9b4eabe2f3d62e53f94fed1bad4"
+      },
+      {
+        "path": "kaggle_data/report_croissant-validation_Catechol Benchmark.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a0c60fa4aa84f8d828231e2953af101884b13514",
+        "size": 49410,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a0c60fa4aa84f8d828231e2953af101884b13514"
+      },
+      {
+        "path": "pareto_front.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a78788073d853ffa9a11aa062f9bf9432ccf59d2",
+        "size": 581958,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a78788073d853ffa9a11aa062f9bf9432ccf59d2"
+      },
+      {
+        "path": "pyproject.toml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a2d06d803cbd175f4779651431d4cd7b872f6921",
+        "size": 1023,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a2d06d803cbd175f4779651431d4cd7b872f6921"
+      },
+      {
+        "path": "requirements.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "471087ee7ce360aa8ade1ce0c6b3804f14ecfe1b",
+        "size": 5193,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/471087ee7ce360aa8ade1ce0c6b3804f14ecfe1b"
+      },
+      {
+        "path": "results",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "d9f8bbed72e1e513cb1f6937196c0e3c325895b0",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/d9f8bbed72e1e513cb1f6937196c0e3c325895b0"
+      },
+      {
+        "path": "results/active_learning",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "e8f0d36b659e1a6de15b418fa9899e3016534cbd",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/e8f0d36b659e1a6de15b418fa9899e3016534cbd"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "522550fa46c89bc3a9f13cb428b65b1074e1004d",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/522550fa46c89bc3a9f13cb428b65b1074e1004d"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "a9eb546c9b1c931d79beef0d1deaadf6855fe05f",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/a9eb546c9b1c931d79beef0d1deaadf6855fe05f"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/0.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3451564055aeb5240761e4397388c77c9234b03f",
+        "size": 4260,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/3451564055aeb5240761e4397388c77c9234b03f"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/1.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ecb9b83092529b6fb021a73da6dc52f7ca1718ce",
+        "size": 4259,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/ecb9b83092529b6fb021a73da6dc52f7ca1718ce"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/10.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "eabb7af0c237f92459068cee13070ebd143ff3dc",
+        "size": 4259,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/eabb7af0c237f92459068cee13070ebd143ff3dc"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/11.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "82da561dace5f185e7cb695d41466ac23e330426",
+        "size": 4283,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/82da561dace5f185e7cb695d41466ac23e330426"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/12.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "36e93119a2e31aa6b7150f5ffdb11b27cfebf381",
+        "size": 4259,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/36e93119a2e31aa6b7150f5ffdb11b27cfebf381"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/13.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5ec787ac54256e161f17a974b3b52fc8e187705f",
+        "size": 4270,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5ec787ac54256e161f17a974b3b52fc8e187705f"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/14.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b620f0a96706471a4072224217e7265ea55788d6",
+        "size": 4257,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b620f0a96706471a4072224217e7265ea55788d6"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/15.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "34864deb01e761421d2367cb2b6086edf02a5ed2",
+        "size": 4288,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/34864deb01e761421d2367cb2b6086edf02a5ed2"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/16.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6319b11c8476aae5a43151558ad10cf4a5490a29",
+        "size": 4258,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/6319b11c8476aae5a43151558ad10cf4a5490a29"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/17.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "be081503ded4df35ef6f523159c2cbd8361f7722",
+        "size": 4270,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/be081503ded4df35ef6f523159c2cbd8361f7722"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/18.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a966ac75911796b8dd594c141784ef1f13bc0723",
+        "size": 4267,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a966ac75911796b8dd594c141784ef1f13bc0723"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/19.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "eac13f2686406a7fafeeaeba4a8ee3d20265920e",
+        "size": 4261,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/eac13f2686406a7fafeeaeba4a8ee3d20265920e"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/2.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4104f396f8cf24d76046ce9d53e92af9c932b217",
+        "size": 4233,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4104f396f8cf24d76046ce9d53e92af9c932b217"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/20.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "22383df3407688ece5829ac8f164007400c397cf",
+        "size": 4248,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/22383df3407688ece5829ac8f164007400c397cf"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/21.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1caf8cc5ac5e5334c4f10374e027f30a0ecb1889",
+        "size": 4264,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1caf8cc5ac5e5334c4f10374e027f30a0ecb1889"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/22.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6fc216ae19a7971a5d36075ec6b4c082e9be30e9",
+        "size": 4264,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/6fc216ae19a7971a5d36075ec6b4c082e9be30e9"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/23.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a5dd42c28676b1984e68919030e45c352b714f91",
+        "size": 4247,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a5dd42c28676b1984e68919030e45c352b714f91"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/24.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "43f5a8bf4836043ede9c6c78f056e914e42fed5a",
+        "size": 4252,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/43f5a8bf4836043ede9c6c78f056e914e42fed5a"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/25.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "71b811372b6b1bb27a994b46fe5aaa259df3339e",
+        "size": 4249,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/71b811372b6b1bb27a994b46fe5aaa259df3339e"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/26.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9465515659d91cb92fbe59e3270e7c6254d6a75b",
+        "size": 4243,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/9465515659d91cb92fbe59e3270e7c6254d6a75b"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/27.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "df89884eeecc257daa35ade4a0be47a850e1e038",
+        "size": 4255,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/df89884eeecc257daa35ade4a0be47a850e1e038"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/28.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "41759c43510b4edc359f640b8a63036e77da3735",
+        "size": 4254,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/41759c43510b4edc359f640b8a63036e77da3735"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/29.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6de1997e1c10b5c187d6372fe3fd5198a4fff171",
+        "size": 4246,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/6de1997e1c10b5c187d6372fe3fd5198a4fff171"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/3.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "40fb1e42b11f902ef99d1b765c65cfb87588380f",
+        "size": 4253,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/40fb1e42b11f902ef99d1b765c65cfb87588380f"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/4.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "86612ebc4788356b2248a23058993afb1c2ff18f",
+        "size": 4276,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/86612ebc4788356b2248a23058993afb1c2ff18f"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/5.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "782f8c6b7355fa20e78aa881eef4998b1d25b31b",
+        "size": 4283,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/782f8c6b7355fa20e78aa881eef4998b1d25b31b"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/6.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "eaa71d8069bc1693cf6f66ac90d80fa524ab17ec",
+        "size": 4260,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/eaa71d8069bc1693cf6f66ac90d80fa524ab17ec"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/7.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "19f09dbd0177457aef87be7c38a5243900c984f5",
+        "size": 4266,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/19f09dbd0177457aef87be7c38a5243900c984f5"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/8.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5a6d9175189bd5a5fdc48beb689ad9ce37b41b89",
+        "size": 4253,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5a6d9175189bd5a5fdc48beb689ad9ce37b41b89"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/entropy/9.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4e2fcc945e9e35a7dbb515ecb76a4387017e5c32",
+        "size": 4243,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4e2fcc945e9e35a7dbb515ecb76a4387017e5c32"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "422e67fb3067d9bfcbdcf91faf54bb5b7a9fa128",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/422e67fb3067d9bfcbdcf91faf54bb5b7a9fa128"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/0.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "127bfcae4f80dd84227a32349463caca40148e55",
+        "size": 4252,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/127bfcae4f80dd84227a32349463caca40148e55"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/1.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c5d5d8c1cb50097fd11db1291475b6c60478cdc3",
+        "size": 4255,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c5d5d8c1cb50097fd11db1291475b6c60478cdc3"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/10.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "efa528b0a1fc81724753721570105ddef19365e3",
+        "size": 4247,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/efa528b0a1fc81724753721570105ddef19365e3"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/11.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e4da3b43b113dda22a45e7ed5d02e8d140828a6b",
+        "size": 4270,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e4da3b43b113dda22a45e7ed5d02e8d140828a6b"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/12.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cd6763b79940d3813f9b3b79ae4ba251428bb921",
+        "size": 4261,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/cd6763b79940d3813f9b3b79ae4ba251428bb921"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/13.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "585afcbd0698740bbd644479e134cb28e5fe581f",
+        "size": 4256,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/585afcbd0698740bbd644479e134cb28e5fe581f"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/14.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f78752e23b8c889ea5b21699baa8efe64cbd7e7a",
+        "size": 4267,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/f78752e23b8c889ea5b21699baa8efe64cbd7e7a"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/15.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "769fe0bc742463c40029e14848d2162985d6f4e2",
+        "size": 4268,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/769fe0bc742463c40029e14848d2162985d6f4e2"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/16.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "48042135c90baeffc8d8293a425397308899315b",
+        "size": 4270,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/48042135c90baeffc8d8293a425397308899315b"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/17.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "912559641de2d0c46a5eeb72df27a28c336cad3c",
+        "size": 4252,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/912559641de2d0c46a5eeb72df27a28c336cad3c"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/18.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b28a2ed5031ed562e1612546f6b777f882d39073",
+        "size": 4275,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b28a2ed5031ed562e1612546f6b777f882d39073"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/19.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c1e3bb1f50b358db124e72f5d8182f8a406ce6a1",
+        "size": 4251,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c1e3bb1f50b358db124e72f5d8182f8a406ce6a1"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/2.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4ab3696111acb4949c95c0151b34e3554f6d23fc",
+        "size": 4254,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4ab3696111acb4949c95c0151b34e3554f6d23fc"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/20.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8e5bb2c9c2b8cbac11a3f1601b9aec5d64b98e03",
+        "size": 4258,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/8e5bb2c9c2b8cbac11a3f1601b9aec5d64b98e03"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/21.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e7f534f972a970395b4f2dfee1608c532f885b0d",
+        "size": 4261,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e7f534f972a970395b4f2dfee1608c532f885b0d"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/22.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "74606b4d02360d00e18f8e3091f067fec70a5d86",
+        "size": 4246,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/74606b4d02360d00e18f8e3091f067fec70a5d86"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/23.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7ae27d0c9f47b3159c252a07f5cfcb1dbd99d9e1",
+        "size": 4248,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/7ae27d0c9f47b3159c252a07f5cfcb1dbd99d9e1"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/24.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8b60623d9e1cb8925e4ac3975bfb23ff6c89ce07",
+        "size": 4267,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/8b60623d9e1cb8925e4ac3975bfb23ff6c89ce07"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/25.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "49c10bf5f3a1e917dd076d864b846188d0c7ac7a",
+        "size": 4272,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/49c10bf5f3a1e917dd076d864b846188d0c7ac7a"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/26.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4361ff52a3a3bc520ec5b04c51bfe39424dc0cfa",
+        "size": 4270,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4361ff52a3a3bc520ec5b04c51bfe39424dc0cfa"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/27.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a55bd7c3a39f0dca89ba239398cb763e597f0df7",
+        "size": 4265,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a55bd7c3a39f0dca89ba239398cb763e597f0df7"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/28.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aa3c27ad59e5c62beb697e301645d0858b94c572",
+        "size": 4276,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/aa3c27ad59e5c62beb697e301645d0858b94c572"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/29.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "484858ea5b4ba4931373b095b0d5edf2d89044f6",
+        "size": 4262,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/484858ea5b4ba4931373b095b0d5edf2d89044f6"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/3.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2487dbbe0a631ac23ee9fcf2cb74ed6315474b79",
+        "size": 4266,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/2487dbbe0a631ac23ee9fcf2cb74ed6315474b79"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/4.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d3dd6c36f2ccbcf7615d29a762ffba582828c613",
+        "size": 4258,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d3dd6c36f2ccbcf7615d29a762ffba582828c613"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/5.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d5c91af08ce3e3699ced4849e6f8994addb45dc7",
+        "size": 4262,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d5c91af08ce3e3699ced4849e6f8994addb45dc7"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/6.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "900869f58df9f82448de2f7f7d6d441a90df1482",
+        "size": 4269,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/900869f58df9f82448de2f7f7d6d441a90df1482"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/7.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0cc4292a5fb3d663f0786c19d24c484bdb849364",
+        "size": 4261,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/0cc4292a5fb3d663f0786c19d24c484bdb849364"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/8.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3d9a2d9d85a3a39df3cf2d5ecc0dad3d9928708a",
+        "size": 4277,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/3d9a2d9d85a3a39df3cf2d5ecc0dad3d9928708a"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/mutual_information/9.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ba4ac5ddcd44be2369307d5e7145ae62f8c474fb",
+        "size": 4265,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/ba4ac5ddcd44be2369307d5e7145ae62f8c474fb"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "3bc20c29d303e3c41cefaaa98a277a14dfd185a7",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/3bc20c29d303e3c41cefaaa98a277a14dfd185a7"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/0.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "af7802ff7ed890288e96d2f5ba714a9d0a315d2a",
+        "size": 4228,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/af7802ff7ed890288e96d2f5ba714a9d0a315d2a"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/1.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e06e7ccd89d1ed62819636dbc8b1f76e2624f0c6",
+        "size": 4236,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e06e7ccd89d1ed62819636dbc8b1f76e2624f0c6"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/10.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e6f71fb911d8504bfdc1da0e531be3cd71ce547a",
+        "size": 4256,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e6f71fb911d8504bfdc1da0e531be3cd71ce547a"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/11.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "884e23f53bc0361962a0980c48ad207c751e7ce7",
+        "size": 4249,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/884e23f53bc0361962a0980c48ad207c751e7ce7"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/12.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4e404d529fb331da5dd1ab37508ee808534a3eed",
+        "size": 4235,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4e404d529fb331da5dd1ab37508ee808534a3eed"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/13.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "39cea3889e88b6d9c0e74899b557b8e0231a8043",
+        "size": 4246,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/39cea3889e88b6d9c0e74899b557b8e0231a8043"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/14.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0c6492c84e5e95a73b788fa0d2ad832a76f4e54f",
+        "size": 4223,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/0c6492c84e5e95a73b788fa0d2ad832a76f4e54f"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/15.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "849f5433d91332216046d5a4479d7242c3db9ea8",
+        "size": 4240,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/849f5433d91332216046d5a4479d7242c3db9ea8"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/16.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2a4dc688a0fb9608cd4fa8ecb74379bcb77a0e99",
+        "size": 4246,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/2a4dc688a0fb9608cd4fa8ecb74379bcb77a0e99"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/17.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aeea6a8dc0e0e0fb57806540a6dce45e8e66e70c",
+        "size": 4228,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/aeea6a8dc0e0e0fb57806540a6dce45e8e66e70c"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/18.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "059e2c382848b542d05960da9d43031431ff1fde",
+        "size": 4254,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/059e2c382848b542d05960da9d43031431ff1fde"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/19.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f91bfbe857a66c208f6c11dc42d36a879020d165",
+        "size": 4221,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/f91bfbe857a66c208f6c11dc42d36a879020d165"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/2.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4e41b66449328ac46d2c5802d9d92adfb976f594",
+        "size": 4238,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4e41b66449328ac46d2c5802d9d92adfb976f594"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/20.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c580dadb88258825d213420b30584140cfa05118",
+        "size": 4232,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c580dadb88258825d213420b30584140cfa05118"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/21.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c9e0fe133264c74949c5090ef34189772587e20c",
+        "size": 4262,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c9e0fe133264c74949c5090ef34189772587e20c"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/22.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3a43b609f0e55ead1fb860261bd7974929a52919",
+        "size": 4230,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/3a43b609f0e55ead1fb860261bd7974929a52919"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/23.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "df606e27362787716d0f2ca3009d12a0b33cc7fb",
+        "size": 4251,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/df606e27362787716d0f2ca3009d12a0b33cc7fb"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/24.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "83adb7d846a0a382939b6ddc93e23475f3d41bec",
+        "size": 4238,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/83adb7d846a0a382939b6ddc93e23475f3d41bec"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/25.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f5520419dd0fdd4581fefcbe0bc48861bd8fdc36",
+        "size": 4243,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/f5520419dd0fdd4581fefcbe0bc48861bd8fdc36"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/26.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ffed8771b08d2b5cb9dba4b222231295d76e2b4a",
+        "size": 4237,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/ffed8771b08d2b5cb9dba4b222231295d76e2b4a"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/27.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5cb569d179d3eb36d5dcc49769939e1c8e1bc1b7",
+        "size": 4250,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5cb569d179d3eb36d5dcc49769939e1c8e1bc1b7"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/28.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ef8804e096fd1596d676af5b1434b6b68169311d",
+        "size": 4256,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/ef8804e096fd1596d676af5b1434b6b68169311d"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/29.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1615726862cd012ac9b6d95b872a7a4b9e3f9eb7",
+        "size": 4244,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1615726862cd012ac9b6d95b872a7a4b9e3f9eb7"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/3.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "719eb7e958c3c0397d90d1909fdd48b6469aab78",
+        "size": 4240,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/719eb7e958c3c0397d90d1909fdd48b6469aab78"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/4.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b553b7e81ab33c631e1125c7aa78fd7a02ac3c56",
+        "size": 4229,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b553b7e81ab33c631e1125c7aa78fd7a02ac3c56"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/5.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "32f3e2d23f6ab2355d15befa470ffc679679d750",
+        "size": 4248,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/32f3e2d23f6ab2355d15befa470ffc679679d750"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/6.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "22226f67f88c7ca959e883c13813f6a895b61b8d",
+        "size": 4232,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/22226f67f88c7ca959e883c13813f6a895b61b8d"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/7.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2b60677632c0252db45ad7208f8bdc7a7d5643fe",
+        "size": 4234,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/2b60677632c0252db45ad7208f8bdc7a7d5643fe"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/8.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "04a729c10015fee2cc1a56dbc1fa5e8c8e778064",
+        "size": 4241,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/04a729c10015fee2cc1a56dbc1fa5e8c8e778064"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-acs_pca_descriptors/random/9.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1d91458229f43d30747ed47b84198be7e2569fa9",
+        "size": 4238,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1d91458229f43d30747ed47b84198be7e2569fa9"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "75b52cedee2a38e3825269c0e5027e4aca157d40",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/75b52cedee2a38e3825269c0e5027e4aca157d40"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "39dbf3351eae1a131b31b1b3aeecbebbe12be7f7",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/39dbf3351eae1a131b31b1b3aeecbebbe12be7f7"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/0.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "71d5b1d1573cd36b4ea74d71ff0b85aaf2eaba51",
+        "size": 4272,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/71d5b1d1573cd36b4ea74d71ff0b85aaf2eaba51"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/1.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4eaca68fc46e204e1218eac9c64a82013b723b11",
+        "size": 4248,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4eaca68fc46e204e1218eac9c64a82013b723b11"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/10.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1c58323b1cf53f7c7ad7093a6a9342eba87de178",
+        "size": 4249,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1c58323b1cf53f7c7ad7093a6a9342eba87de178"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/11.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9c1b6ab98618941ded75b317e7730873d93463fb",
+        "size": 4273,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/9c1b6ab98618941ded75b317e7730873d93463fb"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/12.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3219d437c7688db4cc4a5b8c221d836c0ea3e988",
+        "size": 4267,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/3219d437c7688db4cc4a5b8c221d836c0ea3e988"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/13.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2d9eddcf1bdfab9e8c8d5d115a898ee79d058db7",
+        "size": 4268,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/2d9eddcf1bdfab9e8c8d5d115a898ee79d058db7"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/14.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ec54b09e9521b75edefe89cd6be07653c62c26dd",
+        "size": 4258,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/ec54b09e9521b75edefe89cd6be07653c62c26dd"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/15.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9fd6f1baea33cebfa4028b29ad1372d178da386f",
+        "size": 4246,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/9fd6f1baea33cebfa4028b29ad1372d178da386f"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/16.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1d4b077e5fe750f15534cdb43b348d5876c3e329",
+        "size": 4257,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1d4b077e5fe750f15534cdb43b348d5876c3e329"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/17.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "285c16a058b2db0df53dd188c678a92de9c7fe09",
+        "size": 4265,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/285c16a058b2db0df53dd188c678a92de9c7fe09"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/18.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c8b5465daa4b09b0edfd593e05d6d338bc203d03",
+        "size": 4255,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c8b5465daa4b09b0edfd593e05d6d338bc203d03"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/19.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1b88868893508069535c54851039046fb6c33983",
+        "size": 4254,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1b88868893508069535c54851039046fb6c33983"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/2.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "58ed5346b563b2120297581aae561b0405b8520e",
+        "size": 4249,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/58ed5346b563b2120297581aae561b0405b8520e"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/20.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "14a76f0c4e86face381328894740dfc6a6b5987d",
+        "size": 4249,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/14a76f0c4e86face381328894740dfc6a6b5987d"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/21.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "63971885bde8026b8fb311c36ad1a08cd878482c",
+        "size": 4264,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/63971885bde8026b8fb311c36ad1a08cd878482c"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/22.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "daa667c58f725084b612bce5087e49187829e06e",
+        "size": 4264,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/daa667c58f725084b612bce5087e49187829e06e"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/23.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "56ffb480c1d929f955b69532f66112e224df6a83",
+        "size": 4273,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/56ffb480c1d929f955b69532f66112e224df6a83"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/24.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "89d91e45b5d401c75942db09e329d9e02306a0e8",
+        "size": 4261,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/89d91e45b5d401c75942db09e329d9e02306a0e8"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/25.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "dbb4867e8414cd3fcea88c332d2965fa909befef",
+        "size": 4250,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/dbb4867e8414cd3fcea88c332d2965fa909befef"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/26.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "366981ee5dddc5b315f5ba110aa9a8fb7d9545be",
+        "size": 4249,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/366981ee5dddc5b315f5ba110aa9a8fb7d9545be"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/27.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "253c546962adc580f0e206ab2ffba338a986f0bf",
+        "size": 4272,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/253c546962adc580f0e206ab2ffba338a986f0bf"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/28.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "dd4fbcf7c77ae893527eb412ad9285e04336b57f",
+        "size": 4276,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/dd4fbcf7c77ae893527eb412ad9285e04336b57f"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/29.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4cde0d09122e64c40a39ac684d71814accbd76af",
+        "size": 4271,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4cde0d09122e64c40a39ac684d71814accbd76af"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/3.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6ebfe8360538ef604a0ee369f86307ae4dcb9019",
+        "size": 4276,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/6ebfe8360538ef604a0ee369f86307ae4dcb9019"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/4.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5baea67cc9cfbe24336e376a16d086c7e12d3daa",
+        "size": 4269,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5baea67cc9cfbe24336e376a16d086c7e12d3daa"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/5.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "372605ee44ed0e56554ff283c404e35a66c8b062",
+        "size": 4266,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/372605ee44ed0e56554ff283c404e35a66c8b062"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/6.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "edf5d04c87ca67af2034ab5ef5c19f859d9a8e46",
+        "size": 4250,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/edf5d04c87ca67af2034ab5ef5c19f859d9a8e46"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/7.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b4f99957a6e4044fc29a2c42450b566f24c52d8d",
+        "size": 4262,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b4f99957a6e4044fc29a2c42450b566f24c52d8d"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/8.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d2702a16041982920a965502fea02323716a01fd",
+        "size": 4258,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d2702a16041982920a965502fea02323716a01fd"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/entropy/9.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "13404084bc797c8b45823b37e62c48b7bcd9fc81",
+        "size": 4246,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/13404084bc797c8b45823b37e62c48b7bcd9fc81"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "2cec49ab13aafa8b067e46365874d252e99320fc",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/2cec49ab13aafa8b067e46365874d252e99320fc"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/0.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "99e7d562f6612be0453fbc69c9fef1c3d5949e57",
+        "size": 4250,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/99e7d562f6612be0453fbc69c9fef1c3d5949e57"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/1.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2cb0e97559adf7b1da8452431dc0bff0640e240c",
+        "size": 4244,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/2cb0e97559adf7b1da8452431dc0bff0640e240c"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/10.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3da018ba231a0c3f13d26399d6de3157f6f2a373",
+        "size": 4248,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/3da018ba231a0c3f13d26399d6de3157f6f2a373"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/11.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e75509dbf654b3d4a7a147782ed0b47f2c430768",
+        "size": 4244,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e75509dbf654b3d4a7a147782ed0b47f2c430768"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/12.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "341a491f414ffcce6b2d024b6f135f191124125d",
+        "size": 4260,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/341a491f414ffcce6b2d024b6f135f191124125d"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/13.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "29ec62c0a4dc0e83554590f45e1474d56656395a",
+        "size": 4244,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/29ec62c0a4dc0e83554590f45e1474d56656395a"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/14.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "065bdb65531e32faea910813bdd70b354eb9ac7d",
+        "size": 4252,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/065bdb65531e32faea910813bdd70b354eb9ac7d"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/15.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "34d1cb96110d048983b9dfbddef7d9c723b33f48",
+        "size": 4254,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/34d1cb96110d048983b9dfbddef7d9c723b33f48"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/16.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "177287a6397e0f7f549f025868a5fe4d3ff31dc7",
+        "size": 4257,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/177287a6397e0f7f549f025868a5fe4d3ff31dc7"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/17.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e7678fd8ab2e95d834261c7e9e2691622a06c7b0",
+        "size": 4243,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e7678fd8ab2e95d834261c7e9e2691622a06c7b0"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/18.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c414ec2a27a0ac6b7991008567ef3e779ec8b4d1",
+        "size": 4265,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c414ec2a27a0ac6b7991008567ef3e779ec8b4d1"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/19.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e354c449db55da5df3f349343eeed0d924c1fbbc",
+        "size": 4252,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e354c449db55da5df3f349343eeed0d924c1fbbc"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/2.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "53e196c334a99d600113ae9d69e1d76dfb6f2be4",
+        "size": 4240,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/53e196c334a99d600113ae9d69e1d76dfb6f2be4"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/20.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "74f231397349895367f867a85d0fb02cc6105898",
+        "size": 4248,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/74f231397349895367f867a85d0fb02cc6105898"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/21.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e77f1a444e553813f7f08b53f1d5c36a783648d5",
+        "size": 4255,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e77f1a444e553813f7f08b53f1d5c36a783648d5"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/22.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "121462a0c4f8c4432a4775cefabc308bbd586058",
+        "size": 4249,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/121462a0c4f8c4432a4775cefabc308bbd586058"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/23.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "81f962f2b6da1bca37993923699541eb5986ba5e",
+        "size": 4261,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/81f962f2b6da1bca37993923699541eb5986ba5e"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/24.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8cb5dfb1ef35b1db3bf9e3cbcf695574c8e91b9f",
+        "size": 4266,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/8cb5dfb1ef35b1db3bf9e3cbcf695574c8e91b9f"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/25.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e0f9434807557164d9e3ac8d4334cb1c9fddc0c6",
+        "size": 4245,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e0f9434807557164d9e3ac8d4334cb1c9fddc0c6"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/26.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4e8beed95711ac625184631ad14a905bf68b6051",
+        "size": 4244,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4e8beed95711ac625184631ad14a905bf68b6051"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/27.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "730330bd910960dcdc614fbecb27cf6732b14cd6",
+        "size": 4266,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/730330bd910960dcdc614fbecb27cf6732b14cd6"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/28.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "12618d9898ec586dac315564e99b7b670507fbd0",
+        "size": 4267,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/12618d9898ec586dac315564e99b7b670507fbd0"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/29.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0167bfec1c56e18cc086e882c4e6149daea7a21f",
+        "size": 4259,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/0167bfec1c56e18cc086e882c4e6149daea7a21f"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/3.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e116fb038705d63870faa22f565e5fa817e936a3",
+        "size": 4252,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e116fb038705d63870faa22f565e5fa817e936a3"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/4.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2532f602138180c571e4016550f0e1406b2bcd6f",
+        "size": 4252,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/2532f602138180c571e4016550f0e1406b2bcd6f"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/5.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bb8b9a06e4da39149d210867b46cfb1eb661e340",
+        "size": 4252,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/bb8b9a06e4da39149d210867b46cfb1eb661e340"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/6.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5a79f3b0c02bbff2b3840a7b243ca142356345a0",
+        "size": 4259,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5a79f3b0c02bbff2b3840a7b243ca142356345a0"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/7.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "74c274a0dfe9c6879944e00217a8b6a1bd87c60a",
+        "size": 4250,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/74c274a0dfe9c6879944e00217a8b6a1bd87c60a"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/8.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b3b5bf1f6d4d142a8d499afe27f6958fb9445cf7",
+        "size": 4255,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b3b5bf1f6d4d142a8d499afe27f6958fb9445cf7"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/mutual_information/9.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a2a0e93d946009c0ed5905f8927c8db7f8a73e74",
+        "size": 4238,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a2a0e93d946009c0ed5905f8927c8db7f8a73e74"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "a76798452fc461a81205f040ea08557f02d95dc1",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/a76798452fc461a81205f040ea08557f02d95dc1"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/0.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d1fa073a72ee074c47ae7ef618ed92fd487be448",
+        "size": 4267,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d1fa073a72ee074c47ae7ef618ed92fd487be448"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/1.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c5656cc5f6ff89e0a42b9dc2610a60bf2cb5cdbf",
+        "size": 4262,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c5656cc5f6ff89e0a42b9dc2610a60bf2cb5cdbf"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/10.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "93087b5875079280cc77a18d9172d7f7f8da994a",
+        "size": 4246,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/93087b5875079280cc77a18d9172d7f7f8da994a"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/11.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "48c3d4049a2c3b990e1dc7ad6bc306aa65a7c0de",
+        "size": 4250,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/48c3d4049a2c3b990e1dc7ad6bc306aa65a7c0de"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/12.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0b46dc97d6f6b612c3a30eb425580c43c6126734",
+        "size": 4256,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/0b46dc97d6f6b612c3a30eb425580c43c6126734"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/13.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f7987e1926819398c78ae12b60b83e32495c4ba4",
+        "size": 4246,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/f7987e1926819398c78ae12b60b83e32495c4ba4"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/14.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e752d76557055c2f350be906e5761992d5cbbba6",
+        "size": 4242,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e752d76557055c2f350be906e5761992d5cbbba6"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/15.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e3d189bae36fbd3b0d790522e15bacd021ffbb7c",
+        "size": 4260,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e3d189bae36fbd3b0d790522e15bacd021ffbb7c"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/16.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "86f5187ad4bbb71bddc256f173fe1732c2e8f668",
+        "size": 4246,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/86f5187ad4bbb71bddc256f173fe1732c2e8f668"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/17.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3fd7e1918c65d9d2e9ee356e3bf542c9881bf2f1",
+        "size": 4253,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/3fd7e1918c65d9d2e9ee356e3bf542c9881bf2f1"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/18.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "21840ff326098ead2876a9fb5d336acc3d371ad0",
+        "size": 4251,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/21840ff326098ead2876a9fb5d336acc3d371ad0"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/19.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b9b1ca18428f38a39b4d9d0b59f6f747231382d4",
+        "size": 4238,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b9b1ca18428f38a39b4d9d0b59f6f747231382d4"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/2.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8fbd6f6455f3b114b08b88c8e8b400034da70a6b",
+        "size": 4248,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/8fbd6f6455f3b114b08b88c8e8b400034da70a6b"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/20.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "66cca704c588680b95a07628ef630724858b78d8",
+        "size": 4235,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/66cca704c588680b95a07628ef630724858b78d8"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/21.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e972d6a7dcc20ef28962e0135658363ed5fa7337",
+        "size": 4241,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e972d6a7dcc20ef28962e0135658363ed5fa7337"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/22.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "09ceaecc521e4510de43fe71122b84e8758271b1",
+        "size": 4244,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/09ceaecc521e4510de43fe71122b84e8758271b1"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/23.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "10168371e4af9812a1867caf3fa5a42832cb2613",
+        "size": 4246,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/10168371e4af9812a1867caf3fa5a42832cb2613"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/24.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "adbecb67ed3caaf5ddcef956dc08dc21cfc1f342",
+        "size": 4243,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/adbecb67ed3caaf5ddcef956dc08dc21cfc1f342"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/25.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "10a4af8192845aad4b882cf49f3ad9ac2a3188fb",
+        "size": 4249,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/10a4af8192845aad4b882cf49f3ad9ac2a3188fb"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/26.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f283c1a3d11ae3fb0df9a4c6347bec84d3b906c7",
+        "size": 4222,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/f283c1a3d11ae3fb0df9a4c6347bec84d3b906c7"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/27.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "51eacaabe7fbdba78dec558f3a495a05dd8c84ce",
+        "size": 4246,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/51eacaabe7fbdba78dec558f3a495a05dd8c84ce"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/28.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d00013f87f4098fc36d48a5b885b316ad072aaa9",
+        "size": 4244,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d00013f87f4098fc36d48a5b885b316ad072aaa9"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/29.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8a9062354d1ebc042455e77601e59ab2e8ee4295",
+        "size": 4249,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/8a9062354d1ebc042455e77601e59ab2e8ee4295"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/3.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e82609a01dc931a4ee5adc030de8b8aff2eb52bd",
+        "size": 4249,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e82609a01dc931a4ee5adc030de8b8aff2eb52bd"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/4.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "30995dce2ae66834326c0f01133c05671dbad835",
+        "size": 4236,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/30995dce2ae66834326c0f01133c05671dbad835"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/5.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "53537664853d48741167adf044d82978e97b0b11",
+        "size": 4247,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/53537664853d48741167adf044d82978e97b0b11"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/6.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ca3b57bb1660b902fe64395825ecdbbe574308a5",
+        "size": 4249,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/ca3b57bb1660b902fe64395825ecdbbe574308a5"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/7.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9d41bb5f36b70228b9292c72e89ab84ce710638e",
+        "size": 4249,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/9d41bb5f36b70228b9292c72e89ab84ce710638e"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/8.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "584908d54276f0b5681965f5109e861de728935c",
+        "size": 4239,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/584908d54276f0b5681965f5109e861de728935c"
+      },
+      {
+        "path": "results/active_learning/GPModel-indep-spange_descriptors/random/9.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c401cc0ff5abc96c78152b55a86bbd473f2f9801",
+        "size": 4250,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c401cc0ff5abc96c78152b55a86bbd473f2f9801"
+      },
+      {
+        "path": "results/bo",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "50709503386f68cef62e3e47b44d8de0a50a3f0f",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/50709503386f68cef62e3e47b44d8de0a50a3f0f"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "76d594fb34dfd67f9eaf5c7c8c1d919bcfad0f80",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/76d594fb34dfd67f9eaf5c7c8c1d919bcfad0f80"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "923a9569a6d4eb1d04e262c591dff62f4149faf0",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/923a9569a6d4eb1d04e262c591dff62f4149faf0"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/0.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1a68f39327b0477f759d9969714c0d4de3a68b1d",
+        "size": 2434,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1a68f39327b0477f759d9969714c0d4de3a68b1d"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/1.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3753140ad6a7fa8b10d5d45796102cb229ad05ed",
+        "size": 2418,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/3753140ad6a7fa8b10d5d45796102cb229ad05ed"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/10.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7416cc870761c0c3c67409c82b8e6edc5f233006",
+        "size": 2433,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/7416cc870761c0c3c67409c82b8e6edc5f233006"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/11.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ae27e8dd778f99c74979fadeb3a6c22b6d037d73",
+        "size": 2432,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/ae27e8dd778f99c74979fadeb3a6c22b6d037d73"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/12.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f032744ac5755816c05435b586d74cdcd6c81bb4",
+        "size": 2423,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/f032744ac5755816c05435b586d74cdcd6c81bb4"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/13.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "67b8002e80112913e1127701124290913cf1a3f0",
+        "size": 2453,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/67b8002e80112913e1127701124290913cf1a3f0"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/14.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f82722d3f58cd6fdba0905e5804410517fca78b7",
+        "size": 2444,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/f82722d3f58cd6fdba0905e5804410517fca78b7"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/15.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d9fe73c235517155f02097ab12db156de24be660",
+        "size": 2439,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d9fe73c235517155f02097ab12db156de24be660"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/16.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "712ec876a26a374bb978be099a9cb27d03ee21cd",
+        "size": 2428,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/712ec876a26a374bb978be099a9cb27d03ee21cd"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/17.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cdcf22a1db5ab6797064a3baca2a94d47ead5547",
+        "size": 2447,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/cdcf22a1db5ab6797064a3baca2a94d47ead5547"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/18.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e77ee1c66f0d4c5452be8f3bdca4808cefa9db19",
+        "size": 2433,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e77ee1c66f0d4c5452be8f3bdca4808cefa9db19"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/19.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d97eec0a6f1de53484cbec4157f94d6f9e17c78d",
+        "size": 2438,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d97eec0a6f1de53484cbec4157f94d6f9e17c78d"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/2.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "70d76ccfad62e4fbc5a6aa4bd71d0db3d74c16ea",
+        "size": 2431,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/70d76ccfad62e4fbc5a6aa4bd71d0db3d74c16ea"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/20.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0c4a8259ee1af9065af17609527477b1f9deb08c",
+        "size": 2438,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/0c4a8259ee1af9065af17609527477b1f9deb08c"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/21.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "06504fcbbdd159ce7569254a8891bd586fe7aa44",
+        "size": 2437,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/06504fcbbdd159ce7569254a8891bd586fe7aa44"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/22.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3573827ed7e2dfb9d4181c62c1d45a2b74b8fefd",
+        "size": 2456,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/3573827ed7e2dfb9d4181c62c1d45a2b74b8fefd"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/23.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b79ea88a20099bfcb3ac3c0547afe7161b308c27",
+        "size": 2441,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b79ea88a20099bfcb3ac3c0547afe7161b308c27"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/24.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e4e9137aa6742d025b5b1705bbac20cceee3afad",
+        "size": 2423,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e4e9137aa6742d025b5b1705bbac20cceee3afad"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/25.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8fb719d2998a14b9ade0df582d94672476d7a110",
+        "size": 2422,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/8fb719d2998a14b9ade0df582d94672476d7a110"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/26.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "39a42af5acef1a7536577f1a175cf54efb3c5b2d",
+        "size": 2437,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/39a42af5acef1a7536577f1a175cf54efb3c5b2d"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/27.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bd194cdb15c1a0735279b5e0c2c47ab18b50c7c8",
+        "size": 2427,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/bd194cdb15c1a0735279b5e0c2c47ab18b50c7c8"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/28.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "acc11413cbca87f1a36f24cd3a796ba2f24e783f",
+        "size": 2444,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/acc11413cbca87f1a36f24cd3a796ba2f24e783f"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/29.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "53591f00aed5f79df6d67b121c657565ebb5c1ff",
+        "size": 2429,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/53591f00aed5f79df6d67b121c657565ebb5c1ff"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/3.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "84cf92a62bf51429f30cf60bb1d9f3ff7e1e95a6",
+        "size": 2436,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/84cf92a62bf51429f30cf60bb1d9f3ff7e1e95a6"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/4.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "064c365d023114cb8d32c5c27fd9df93503333e3",
+        "size": 2451,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/064c365d023114cb8d32c5c27fd9df93503333e3"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/5.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9f40bfeb0b733f16fdb5474b07bc014a634d944f",
+        "size": 2428,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/9f40bfeb0b733f16fdb5474b07bc014a634d944f"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/6.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "20a2ac296597898974e48e6cd1ef5bd75bd63d8d",
+        "size": 2423,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/20a2ac296597898974e48e6cd1ef5bd75bd63d8d"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/7.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0792cee7da9d15658c20d7c236458c9aa338b410",
+        "size": 2433,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/0792cee7da9d15658c20d7c236458c9aa338b410"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/8.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7cedb6347ee7bff5d6c4b9453f50bcc556897b95",
+        "size": 2438,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/7cedb6347ee7bff5d6c4b9453f50bcc556897b95"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ei/9.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e078cf0e6dcfbfd50b2568bc4d93a0b4fb52f5bf",
+        "size": 2419,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e078cf0e6dcfbfd50b2568bc4d93a0b4fb52f5bf"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6011b430985dfb085f95f26194f06e6d30f6c7b2",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/6011b430985dfb085f95f26194f06e6d30f6c7b2"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/0.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9914761924e023a7139849626d966544263f1897",
+        "size": 2433,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/9914761924e023a7139849626d966544263f1897"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/1.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "82dd475c82ee5864b8108b08b0546e0b725abb5b",
+        "size": 2522,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/82dd475c82ee5864b8108b08b0546e0b725abb5b"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/10.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9bbd5d29ed6509401f0f202649fbc75a7a22f5cb",
+        "size": 2429,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/9bbd5d29ed6509401f0f202649fbc75a7a22f5cb"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/11.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "73512bb0193d16b4e85ee89cc26e627e6fed2ce6",
+        "size": 2467,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/73512bb0193d16b4e85ee89cc26e627e6fed2ce6"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/12.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1ccc715de39a20ed9ffd85f143626967409871cd",
+        "size": 2423,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1ccc715de39a20ed9ffd85f143626967409871cd"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/13.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a7222290959384a255e498d17c0a18dca45bc0e2",
+        "size": 2446,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a7222290959384a255e498d17c0a18dca45bc0e2"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/14.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "38cc1d0d9d644fe0e157e46e210fa0a461fe3778",
+        "size": 2522,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/38cc1d0d9d644fe0e157e46e210fa0a461fe3778"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/15.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5a4894b9b29796a3b75932c44b20ff8df956f068",
+        "size": 2513,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5a4894b9b29796a3b75932c44b20ff8df956f068"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/16.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "292de15a39c224cc778a935101b114c4c648d818",
+        "size": 2509,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/292de15a39c224cc778a935101b114c4c648d818"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/17.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "587f68058f79e0b9254f55ad890e30be56eb4f3a",
+        "size": 2435,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/587f68058f79e0b9254f55ad890e30be56eb4f3a"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/18.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "42425d6ec43c8d366e7e3a37b7bcc2b508f9e3bb",
+        "size": 2522,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/42425d6ec43c8d366e7e3a37b7bcc2b508f9e3bb"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/19.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c1d0c0964b198898b8b3d9cefa1b05732043a855",
+        "size": 2522,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c1d0c0964b198898b8b3d9cefa1b05732043a855"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/2.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f7e3affcdf50b546d6bc38eb7ef6a51f48df297d",
+        "size": 2464,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/f7e3affcdf50b546d6bc38eb7ef6a51f48df297d"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/20.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c31072217a01ddf1d5af589fe08ba98accb3fc0e",
+        "size": 2423,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c31072217a01ddf1d5af589fe08ba98accb3fc0e"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/21.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6a7af454c4d89ebe06e92af02d5361ed1c15bd01",
+        "size": 2503,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/6a7af454c4d89ebe06e92af02d5361ed1c15bd01"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/22.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a06581ee6b029ee23a42cd36302fccb6c0ff2cac",
+        "size": 2522,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a06581ee6b029ee23a42cd36302fccb6c0ff2cac"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/23.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b00241f258b908c4872c117e0237eec047366086",
+        "size": 2477,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b00241f258b908c4872c117e0237eec047366086"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/24.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0c7ea15f6aa21921421c365b64e199a9a93bf593",
+        "size": 2430,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/0c7ea15f6aa21921421c365b64e199a9a93bf593"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/25.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fdb5c10c22800087ef84f06c804d144c9855be86",
+        "size": 2522,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/fdb5c10c22800087ef84f06c804d144c9855be86"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/26.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5c65b7ca6b0c5bf3f227042cb123de00d1ae2999",
+        "size": 2524,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5c65b7ca6b0c5bf3f227042cb123de00d1ae2999"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/27.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bdc84412ea181a618d70ec21af0b07821f7c9a33",
+        "size": 2522,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/bdc84412ea181a618d70ec21af0b07821f7c9a33"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/28.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4ab274746def3f1687a1cfe2dbf621dbb450d83b",
+        "size": 2515,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4ab274746def3f1687a1cfe2dbf621dbb450d83b"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/29.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aa2174c4c8d9c1b129940dfd7dcf083ba62426bd",
+        "size": 2445,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/aa2174c4c8d9c1b129940dfd7dcf083ba62426bd"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/3.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1852ea2011a968e2a875eddbc91bd5b47ee5c93a",
+        "size": 2477,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1852ea2011a968e2a875eddbc91bd5b47ee5c93a"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/4.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "16a4fd511cd09786386d429369a3d339fb5cf0f3",
+        "size": 2522,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/16a4fd511cd09786386d429369a3d339fb5cf0f3"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/5.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ff45b4e97eb365552ff9dd5924b8fc25502bb8c4",
+        "size": 2452,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/ff45b4e97eb365552ff9dd5924b8fc25502bb8c4"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/6.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "23f0a1858194189a0eac71e9c8e1c86b6e287d4e",
+        "size": 2522,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/23f0a1858194189a0eac71e9c8e1c86b6e287d4e"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/7.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "242e20315f743478dd2c37d6964c1d7e10583577",
+        "size": 2516,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/242e20315f743478dd2c37d6964c1d7e10583577"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/8.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "85deb482053344e3831682cdcb8262f1f2cfecce",
+        "size": 2426,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/85deb482053344e3831682cdcb8262f1f2cfecce"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/random/9.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b56b9a1d4c4738bd7efb5df207462c8e42ce131b",
+        "size": 2448,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b56b9a1d4c4738bd7efb5df207462c8e42ce131b"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "71818cc9ac82da638261045a1313738c145b00cc",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/71818cc9ac82da638261045a1313738c145b00cc"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/0.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "167b99d8e7a62c6aa77fb82b8ba210603b61dc57",
+        "size": 2415,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/167b99d8e7a62c6aa77fb82b8ba210603b61dc57"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/1.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3469c91b78699f8aad89487f2b1b7fdd62d3d8e6",
+        "size": 2442,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/3469c91b78699f8aad89487f2b1b7fdd62d3d8e6"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/10.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "61c7812fca8670d78d2a17ed67977af7b411c9eb",
+        "size": 2432,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/61c7812fca8670d78d2a17ed67977af7b411c9eb"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/11.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1a054fcfe1f34be41c18d1f5fb2e8eeb2d8bde43",
+        "size": 2436,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1a054fcfe1f34be41c18d1f5fb2e8eeb2d8bde43"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/12.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b8da555eb17c43461a5b79988c295d3aadb2940a",
+        "size": 2423,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b8da555eb17c43461a5b79988c295d3aadb2940a"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/13.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e076f64f3436c44fbfba56b0ffe82b23cc5496e9",
+        "size": 2441,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e076f64f3436c44fbfba56b0ffe82b23cc5496e9"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/14.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a3cc8f2a6312f52ebf093e625dbc45ebd8bbe172",
+        "size": 2437,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a3cc8f2a6312f52ebf093e625dbc45ebd8bbe172"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/15.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "af462cd37051f28f5ffe653189dba1b272b33e38",
+        "size": 2435,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/af462cd37051f28f5ffe653189dba1b272b33e38"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/16.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1d766167a29c380ac19d1cde1d9eeddb366337af",
+        "size": 2431,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1d766167a29c380ac19d1cde1d9eeddb366337af"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/17.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "97602948b69603cdc55423c32cf1c12e139e4dbf",
+        "size": 2441,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/97602948b69603cdc55423c32cf1c12e139e4dbf"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/18.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "dddcd31f41cedd6a12cd1f6c53ba164728840b54",
+        "size": 2444,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/dddcd31f41cedd6a12cd1f6c53ba164728840b54"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/19.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8ce72da7425197aa260c8810f6d4de2dac6f26f4",
+        "size": 2440,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/8ce72da7425197aa260c8810f6d4de2dac6f26f4"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/2.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "31bb18cd3e21aae450f788c2372e2b756cea47e6",
+        "size": 2428,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/31bb18cd3e21aae450f788c2372e2b756cea47e6"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/20.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "41fcb7e86d8a34018959d670ce60a1de1976bf36",
+        "size": 2423,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/41fcb7e86d8a34018959d670ce60a1de1976bf36"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/21.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5da28c629b060e5bfe7b0c96985addda8676772c",
+        "size": 2426,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5da28c629b060e5bfe7b0c96985addda8676772c"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/22.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c2ff9803ebb03478c8dd1e22a040e9d755fd7f70",
+        "size": 2466,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c2ff9803ebb03478c8dd1e22a040e9d755fd7f70"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/23.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "38d6cda23192ca1d2631760a7f29795e99fd96c9",
+        "size": 2428,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/38d6cda23192ca1d2631760a7f29795e99fd96c9"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/24.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e054f8e9271af4a4195b0d860d0a375f8eedc6dd",
+        "size": 2429,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e054f8e9271af4a4195b0d860d0a375f8eedc6dd"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/25.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ab66be372b70d1caced46a2d3d125eafa222abf9",
+        "size": 2412,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/ab66be372b70d1caced46a2d3d125eafa222abf9"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/26.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4300d05ac915f398fab9494e26f16286f14a71c5",
+        "size": 2468,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4300d05ac915f398fab9494e26f16286f14a71c5"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/27.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e88d99603ef5c4ce587f93508104dce795ca0a5a",
+        "size": 2435,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e88d99603ef5c4ce587f93508104dce795ca0a5a"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/28.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a73fc9e25db2098cd15491e5843317adddf64d5a",
+        "size": 2436,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a73fc9e25db2098cd15491e5843317adddf64d5a"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/29.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "43389fd90ffb7f15ebf6f84f38c438379ca3aed5",
+        "size": 2434,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/43389fd90ffb7f15ebf6f84f38c438379ca3aed5"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/3.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5b450f28fa4c5fab68b14984cb2df8a7a5af380b",
+        "size": 2433,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5b450f28fa4c5fab68b14984cb2df8a7a5af380b"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/4.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "388a0434ba56f813d04c05b79517d3a9daf194a9",
+        "size": 2464,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/388a0434ba56f813d04c05b79517d3a9daf194a9"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/5.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "352951cca20880870ea20298397bfdc6cc50f5cf",
+        "size": 2433,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/352951cca20880870ea20298397bfdc6cc50f5cf"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/6.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6572f2abeb3b7a4f9729a1195aa0e5b7e970260a",
+        "size": 2443,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/6572f2abeb3b7a4f9729a1195aa0e5b7e970260a"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/7.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "011f0d676834029acc627f7bbf1b09ee01590901",
+        "size": 2425,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/011f0d676834029acc627f7bbf1b09ee01590901"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/8.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "20a75b3a556e2bd5546532460403e94abe3c854e",
+        "size": 2430,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/20a75b3a556e2bd5546532460403e94abe3c854e"
+      },
+      {
+        "path": "results/bo/GPModel-indep-spange_descriptors/ucb/9.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b06f6c86adeef846c4a8af2506625d42f8fa3cb7",
+        "size": 2426,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b06f6c86adeef846c4a8af2506625d42f8fa3cb7"
+      },
+      {
+        "path": "results/full_data",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f324d00d8e1f79079a648f840dbc558127bc0526",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/f324d00d8e1f79079a648f840dbc558127bc0526"
+      },
+      {
+        "path": "results/full_data/BaselineGPModel.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "32513c7bce6eb0d82be7cccdb36486d26ca90369",
+        "size": 1109,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/32513c7bce6eb0d82be7cccdb36486d26ca90369"
+      },
+      {
+        "path": "results/full_data/BaselineModel.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5425dab8b30097611a651bd4ee5cead4b1da428d",
+        "size": 1108,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5425dab8b30097611a651bd4ee5cead4b1da428d"
+      },
+      {
+        "path": "results/full_data/GPModel-indep-acs_pca_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9e5896f2c77e78ede06e713d5eb2473c96d05625",
+        "size": 1107,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/9e5896f2c77e78ede06e713d5eb2473c96d05625"
+      },
+      {
+        "path": "results/full_data/GPModel-indep-drfps_catechol.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "acc9852cec0c06f156cdac01a3327f70b19031e9",
+        "size": 1108,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/acc9852cec0c06f156cdac01a3327f70b19031e9"
+      },
+      {
+        "path": "results/full_data/GPModel-indep-fragprints.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4a6a4087426ec28b1498dbac79126f436fa3ea85",
+        "size": 1108,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4a6a4087426ec28b1498dbac79126f436fa3ea85"
+      },
+      {
+        "path": "results/full_data/GPModel-indep-learnmean-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9d2b111cb77714f36314370f7bbf300f07a812f0",
+        "size": 1104,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/9d2b111cb77714f36314370f7bbf300f07a812f0"
+      },
+      {
+        "path": "results/full_data/GPModel-indep-separated-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "32056b0d062fd8af2f415f7a934c834aecb00a27",
+        "size": 1117,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/32056b0d062fd8af2f415f7a934c834aecb00a27"
+      },
+      {
+        "path": "results/full_data/GPModel-indep-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3ff1a1b481fcb6b2578ff9535b9610c3ed0ff924",
+        "size": 1111,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/3ff1a1b481fcb6b2578ff9535b9610c3ed0ff924"
+      },
+      {
+        "path": "results/full_data/GPModel-indep-spange_descriptors_learn_mean.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9d2b111cb77714f36314370f7bbf300f07a812f0",
+        "size": 1104,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/9d2b111cb77714f36314370f7bbf300f07a812f0"
+      },
+      {
+        "path": "results/full_data/GPModel-indep-warp-acs_pca_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cc2e37f903992811b069e09c329dfcc6bef0f485",
+        "size": 1107,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/cc2e37f903992811b069e09c329dfcc6bef0f485"
+      },
+      {
+        "path": "results/full_data/GPModel-indep-warp-drfps_catechol.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "da1de0671125f78018cb8a04af17fd1549cb6890",
+        "size": 1105,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/da1de0671125f78018cb8a04af17fd1549cb6890"
+      },
+      {
+        "path": "results/full_data/GPModel-indep-warp-fragprints.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7c3efcc1b5338f1ec29e07bb73611aef7839d1a9",
+        "size": 1105,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/7c3efcc1b5338f1ec29e07bb73611aef7839d1a9"
+      },
+      {
+        "path": "results/full_data/GPModel-indep-warp-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ae9cefdde34a9c6c2cceee893e7dacaa183d0363",
+        "size": 1111,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/ae9cefdde34a9c6c2cceee893e7dacaa183d0363"
+      },
+      {
+        "path": "results/full_data/GPModel-multi-acs_pca_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bdd561657f41ecb949ba6c8d6032ca7cff52ae80",
+        "size": 1105,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/bdd561657f41ecb949ba6c8d6032ca7cff52ae80"
+      },
+      {
+        "path": "results/full_data/GPModel-multi-drfps_catechol.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6b3f52dafbb919be83edfe1e6bd6b867e78f19ca",
+        "size": 1103,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/6b3f52dafbb919be83edfe1e6bd6b867e78f19ca"
+      },
+      {
+        "path": "results/full_data/GPModel-multi-fragprints.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b97b3c7ba105657d442655fb77021ae926cea12f",
+        "size": 1102,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b97b3c7ba105657d442655fb77021ae926cea12f"
+      },
+      {
+        "path": "results/full_data/GPModel-multi-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "42991fb35fb8a66963e896aec156ce3c64df568c",
+        "size": 1112,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/42991fb35fb8a66963e896aec156ce3c64df568c"
+      },
+      {
+        "path": "results/full_data/GPModel-multi-warp-acs_pca_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "42297eb892a03fd8c30dfe072d43277542718b11",
+        "size": 1106,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/42297eb892a03fd8c30dfe072d43277542718b11"
+      },
+      {
+        "path": "results/full_data/GPModel-multi-warp-drfps_catechol.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5c371c63a90b5e4b406c0eace6f821c9fe05d741",
+        "size": 1106,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5c371c63a90b5e4b406c0eace6f821c9fe05d741"
+      },
+      {
+        "path": "results/full_data/GPModel-multi-warp-fragprints.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "10db557ce83a4532f923660907048f38f2374c05",
+        "size": 1106,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/10db557ce83a4532f923660907048f38f2374c05"
+      },
+      {
+        "path": "results/full_data/GPModel-multi-warp-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9443b194f9c787b53cebfe4983289f7e3ef80bcf",
+        "size": 1112,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/9443b194f9c787b53cebfe4983289f7e3ef80bcf"
+      },
+      {
+        "path": "results/full_data/LLMModel-chemberta-smiles.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0e86d38cba0735a3f56ba6ca7312eea9975becc9",
+        "size": 860,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/0e86d38cba0735a3f56ba6ca7312eea9975becc9"
+      },
+      {
+        "path": "results/full_data/LLMModel-rxnfp-smiles.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "269834131700ac2f1271accb53973c8e04b55286",
+        "size": 859,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/269834131700ac2f1271accb53973c8e04b55286"
+      },
+      {
+        "path": "results/full_data/MLPModel-acs_pca_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c7c563f4fb74ad5c708436919fbd2f83283c1cd8",
+        "size": 875,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c7c563f4fb74ad5c708436919fbd2f83283c1cd8"
+      },
+      {
+        "path": "results/full_data/MLPModel-drfps_catechol.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6060d26112ceb44847d68744c19c2447f9c45d41",
+        "size": 871,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/6060d26112ceb44847d68744c19c2447f9c45d41"
+      },
+      {
+        "path": "results/full_data/MLPModel-fragprints.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b756a54ebdbc6561417ff6962845b79fc18457ee",
+        "size": 877,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b756a54ebdbc6561417ff6962845b79fc18457ee"
+      },
+      {
+        "path": "results/full_data/MLPModel-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d624c6e721498be4858ff8bbd780708b550e0788",
+        "size": 873,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d624c6e721498be4858ff8bbd780708b550e0788"
+      },
+      {
+        "path": "results/mobo",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f2064ff47035637f3295af8f4bde9de96c36c58d",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/f2064ff47035637f3295af8f4bde9de96c36c58d"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "997aff723bce921ba65c748334258d63d67f27f5",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/997aff723bce921ba65c748334258d63d67f27f5"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "0d49bef0cbd11de2ed3a4c7952d764bfb90d59a7",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/0d49bef0cbd11de2ed3a4c7952d764bfb90d59a7"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/0.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "92bcc762f776d8056b1683dd93b51d27a53bf1af",
+        "size": 7095,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/92bcc762f776d8056b1683dd93b51d27a53bf1af"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/1.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6b9ac6cd76a1c5ff61659501ca44eb02d976638c",
+        "size": 7048,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/6b9ac6cd76a1c5ff61659501ca44eb02d976638c"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/10.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d9295637024d6d1feaa904973c8f9772c9b3eff5",
+        "size": 7171,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d9295637024d6d1feaa904973c8f9772c9b3eff5"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/11.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5c6e622beef8d6a92d814cf3637bdc6b72517945",
+        "size": 6986,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5c6e622beef8d6a92d814cf3637bdc6b72517945"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/12.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "39e9c42a801e0a2fd71fd6f54f42d289b4798a7b",
+        "size": 7084,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/39e9c42a801e0a2fd71fd6f54f42d289b4798a7b"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/13.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4917d8ab36863d30f58bcf381a67760598fc7348",
+        "size": 7152,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4917d8ab36863d30f58bcf381a67760598fc7348"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/14.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6b94e8392fd0f7c14904d3ea517a10f211c914fa",
+        "size": 7180,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/6b94e8392fd0f7c14904d3ea517a10f211c914fa"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/15.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "271aabab00876675e378170374c3a51fa831abce",
+        "size": 7176,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/271aabab00876675e378170374c3a51fa831abce"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/16.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "85dd767076986d0a1f59bfdfe177930b18887247",
+        "size": 7155,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/85dd767076986d0a1f59bfdfe177930b18887247"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/17.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c84cbf366240e21fb1cfac7ff2c0db39be9a2ba8",
+        "size": 7125,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c84cbf366240e21fb1cfac7ff2c0db39be9a2ba8"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/18.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "06a368a91d78b326b2f1a7fb8af5972ef3cffebe",
+        "size": 7168,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/06a368a91d78b326b2f1a7fb8af5972ef3cffebe"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/19.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fc4e6a45f2cbe2e6013f400aae4825dd5d3d537b",
+        "size": 7129,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/fc4e6a45f2cbe2e6013f400aae4825dd5d3d537b"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/2.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4e43f7ea30500fc5f20b63cc3bfece1819adf8b2",
+        "size": 7135,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4e43f7ea30500fc5f20b63cc3bfece1819adf8b2"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/20.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bd47158ab319fba1c98b9bc979f95091d9573e6f",
+        "size": 7162,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/bd47158ab319fba1c98b9bc979f95091d9573e6f"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/21.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2441d4fc98a7156c7dd06b88191d09ab6c4aa3ba",
+        "size": 7049,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/2441d4fc98a7156c7dd06b88191d09ab6c4aa3ba"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/22.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1f23611a7101987d122474b9097be3fc9ffa7923",
+        "size": 7034,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1f23611a7101987d122474b9097be3fc9ffa7923"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/23.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "174b04ac29b803b2c9d7842677afe739eb37f779",
+        "size": 7085,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/174b04ac29b803b2c9d7842677afe739eb37f779"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/24.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "55725e6e291d7226b452af061bfcbbba6d5493d3",
+        "size": 7116,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/55725e6e291d7226b452af061bfcbbba6d5493d3"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/3.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ed744f46791f8024aeedcee6bc4d0356276ec7f5",
+        "size": 7078,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/ed744f46791f8024aeedcee6bc4d0356276ec7f5"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/4.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7724d4172735085f417baf30d7e000ee009cd26b",
+        "size": 7166,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/7724d4172735085f417baf30d7e000ee009cd26b"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/5.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "25396ae0c12a90cc3153cc2eed8f127c47cfb71f",
+        "size": 7145,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/25396ae0c12a90cc3153cc2eed8f127c47cfb71f"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/6.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cb12c265a7c1d8da19d4f6a72b8af788fe0e89db",
+        "size": 7065,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/cb12c265a7c1d8da19d4f6a72b8af788fe0e89db"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/7.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "965beb7fdeb5786e5f3a7f1eb8d9388b22b1a6bc",
+        "size": 7109,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/965beb7fdeb5786e5f3a7f1eb8d9388b22b1a6bc"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/8.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ad7b590384ea4911ee8f1819880a1d56540be724",
+        "size": 7065,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/ad7b590384ea4911ee8f1819880a1d56540be724"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random/9.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "127f4576f660a84c38d1784616374840b66070e6",
+        "size": 7128,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/127f4576f660a84c38d1784616374840b66070e6"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "399607a6cf512d5b8e50f83e4b9553a803460ff6",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/399607a6cf512d5b8e50f83e4b9553a803460ff6"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/0.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a106c5ad1313fbe850d1041961f9475dfcc35752",
+        "size": 7291,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a106c5ad1313fbe850d1041961f9475dfcc35752"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/1.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "55c3ab56f73e81aad0ff0906835ff3685a440b08",
+        "size": 7311,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/55c3ab56f73e81aad0ff0906835ff3685a440b08"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/10.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5241b115bdd202c61f0139e0972a88ef2b6f44fe",
+        "size": 7289,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5241b115bdd202c61f0139e0972a88ef2b6f44fe"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/11.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4d9c8a576e47930cac4bbe19d63571e4134f9020",
+        "size": 7230,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4d9c8a576e47930cac4bbe19d63571e4134f9020"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/12.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "336695ba36a530783c17549af094dc156a427171",
+        "size": 7318,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/336695ba36a530783c17549af094dc156a427171"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/13.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bab9f8f0303bd4394da5752d694056fe7252c428",
+        "size": 7283,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/bab9f8f0303bd4394da5752d694056fe7252c428"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/14.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "79ded577d639ddbac22a890c2edb3ead277c7ba5",
+        "size": 7303,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/79ded577d639ddbac22a890c2edb3ead277c7ba5"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/15.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d6190053c8caac48e21c312d1c972bcd4ec969cb",
+        "size": 7282,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d6190053c8caac48e21c312d1c972bcd4ec969cb"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/16.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7a29c6e65fa81680b2f5cf82284bbf078d4eded3",
+        "size": 7118,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/7a29c6e65fa81680b2f5cf82284bbf078d4eded3"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/17.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "689bb1e54ae4fab0a70adddc39844ce6de046aea",
+        "size": 7316,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/689bb1e54ae4fab0a70adddc39844ce6de046aea"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/18.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "100ec9868e3da64e800fe7b70fe931b5a2fecce5",
+        "size": 7323,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/100ec9868e3da64e800fe7b70fe931b5a2fecce5"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/19.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "83f7bff0a082b883c0ad5ae86724bd0b03899bcf",
+        "size": 7152,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/83f7bff0a082b883c0ad5ae86724bd0b03899bcf"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/2.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "428461787ab8e49ceb0767dbd0a8b1f3a1decddd",
+        "size": 7263,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/428461787ab8e49ceb0767dbd0a8b1f3a1decddd"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/20.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6c268a4f5720ab12e79836391ac4150d564c8a64",
+        "size": 7315,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/6c268a4f5720ab12e79836391ac4150d564c8a64"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/21.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "00451cf3d0ca6142bcb4ab72f8126ed8631a2941",
+        "size": 7112,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/00451cf3d0ca6142bcb4ab72f8126ed8631a2941"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/22.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8f9e9a9a5069608817fa4d5781d34546c68dc61e",
+        "size": 7315,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/8f9e9a9a5069608817fa4d5781d34546c68dc61e"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/23.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2352cfbf361064dab8b3b86b6f756c631702502c",
+        "size": 7274,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/2352cfbf361064dab8b3b86b6f756c631702502c"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/24.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6816aa90ee8f989e127681646803c00adaeb3835",
+        "size": 7265,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/6816aa90ee8f989e127681646803c00adaeb3835"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/3.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7d5d452f59a0fe0d1f6170455466a5b94112cebc",
+        "size": 7263,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/7d5d452f59a0fe0d1f6170455466a5b94112cebc"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/4.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f344baa4bdb9699b569f5a25f24ed8e49573bc1c",
+        "size": 7262,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/f344baa4bdb9699b569f5a25f24ed8e49573bc1c"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/5.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6cae6c4d0b6d8112dd086a004fdddda2e35b1f89",
+        "size": 7196,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/6cae6c4d0b6d8112dd086a004fdddda2e35b1f89"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/6.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9d47649434845b9028b6872b19adbfcb35c128fc",
+        "size": 7227,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/9d47649434845b9028b6872b19adbfcb35c128fc"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/7.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8e1909cd65c52b632cc82ccf5eac6b4a7ebd41c2",
+        "size": 7249,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/8e1909cd65c52b632cc82ccf5eac6b4a7ebd41c2"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/8.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "260226ff5b4b83e97c9d86cdf7b8f9799516bb20",
+        "size": 7236,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/260226ff5b4b83e97c9d86cdf7b8f9799516bb20"
+      },
+      {
+        "path": "results/mobo/GPModel-indep-spange_descriptors/random_scalars/9.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ae9175e8b07564618d2861ee5a0968b74592f4c1",
+        "size": 7253,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/ae9175e8b07564618d2861ee5a0968b74592f4c1"
+      },
+      {
+        "path": "results/single_solvent",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "3bdab9967c6cde285c7db04ae7abfcf330c5d455",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/3bdab9967c6cde285c7db04ae7abfcf330c5d455"
+      },
+      {
+        "path": "results/single_solvent/BaselineGPModel.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3f885380df3dd4c2a9b25ea0c2621347681a288c",
+        "size": 1502,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/3f885380df3dd4c2a9b25ea0c2621347681a288c"
+      },
+      {
+        "path": "results/single_solvent/BaselineModel.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "defa6dee14210a0cec48e6e5445af43c176878a8",
+        "size": 1496,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/defa6dee14210a0cec48e6e5445af43c176878a8"
+      },
+      {
+        "path": "results/single_solvent/EODEModel-acs_pca_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e36b20320276ba6ddb6a933beb4a50a54567b467",
+        "size": 1490,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e36b20320276ba6ddb6a933beb4a50a54567b467"
+      },
+      {
+        "path": "results/single_solvent/EODEModel-drfps.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a97dbf04491285d9ba1c3cc3262de80d82100f5e",
+        "size": 1497,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a97dbf04491285d9ba1c3cc3262de80d82100f5e"
+      },
+      {
+        "path": "results/single_solvent/EODEModel-fragprints.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1cbcda73a8757d8b0527ad31a600a9fd50d49c9e",
+        "size": 1496,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1cbcda73a8757d8b0527ad31a600a9fd50d49c9e"
+      },
+      {
+        "path": "results/single_solvent/EODEModel-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "42de6a2faf694b1048348b0d7abc4338bfd089ed",
+        "size": 1493,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/42de6a2faf694b1048348b0d7abc4338bfd089ed"
+      },
+      {
+        "path": "results/single_solvent/GPModel-indep-acs_pca_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "540bad3f33c971b1c92aae4ad777df9fd695e7e3",
+        "size": 1503,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/540bad3f33c971b1c92aae4ad777df9fd695e7e3"
+      },
+      {
+        "path": "results/single_solvent/GPModel-indep-drfps_catechol.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b5115b9e1bd2846ac89ec40d12c6f8c3ae94002f",
+        "size": 1495,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b5115b9e1bd2846ac89ec40d12c6f8c3ae94002f"
+      },
+      {
+        "path": "results/single_solvent/GPModel-indep-fragprints.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2b80ada9eda32e0f7628fe0b5499d20ba7c02613",
+        "size": 1505,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/2b80ada9eda32e0f7628fe0b5499d20ba7c02613"
+      },
+      {
+        "path": "results/single_solvent/GPModel-indep-learnmean-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "528f8dd8df8af4177f6576227187afd7c9277e50",
+        "size": 1508,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/528f8dd8df8af4177f6576227187afd7c9277e50"
+      },
+      {
+        "path": "results/single_solvent/GPModel-indep-separated-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "08526711f959e070fe826660fb3d7dbb7778c147",
+        "size": 1505,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/08526711f959e070fe826660fb3d7dbb7778c147"
+      },
+      {
+        "path": "results/single_solvent/GPModel-indep-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0b6fc492bd2a39a63aa558a5849c4540d1f2e602",
+        "size": 1505,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/0b6fc492bd2a39a63aa558a5849c4540d1f2e602"
+      },
+      {
+        "path": "results/single_solvent/GPModel-indep-spange_descriptors_learn_mean.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "528f8dd8df8af4177f6576227187afd7c9277e50",
+        "size": 1508,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/528f8dd8df8af4177f6576227187afd7c9277e50"
+      },
+      {
+        "path": "results/single_solvent/GPModel-indep-warp-acs_pca_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "351a7913e2a783982cd66ab425d62f817ba5787b",
+        "size": 1508,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/351a7913e2a783982cd66ab425d62f817ba5787b"
+      },
+      {
+        "path": "results/single_solvent/GPModel-indep-warp-drfps_catechol.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7f01f7c6b560e5ff1cd8ec0f196c2e4ef424ae01",
+        "size": 1500,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/7f01f7c6b560e5ff1cd8ec0f196c2e4ef424ae01"
+      },
+      {
+        "path": "results/single_solvent/GPModel-indep-warp-fragprints.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1002599e7aba3b286ef04adbefe3213f74630a2e",
+        "size": 1502,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1002599e7aba3b286ef04adbefe3213f74630a2e"
+      },
+      {
+        "path": "results/single_solvent/GPModel-indep-warp-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a2bdb75d50eea8bf2d4871a3b592661e47fd8d6d",
+        "size": 1509,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a2bdb75d50eea8bf2d4871a3b592661e47fd8d6d"
+      },
+      {
+        "path": "results/single_solvent/GPModel-multi-acs_pca_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7a3ed437194afc642eba5c494c6c0bdc207f0ccd",
+        "size": 1498,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/7a3ed437194afc642eba5c494c6c0bdc207f0ccd"
+      },
+      {
+        "path": "results/single_solvent/GPModel-multi-drfps_catechol.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8ce0ee2f8210e4eef1c63470d702eb7f18ca16e5",
+        "size": 1493,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/8ce0ee2f8210e4eef1c63470d702eb7f18ca16e5"
+      },
+      {
+        "path": "results/single_solvent/GPModel-multi-fragprints.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "84c41004290b8cb27f2f08192166bb51cb48d275",
+        "size": 1505,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/84c41004290b8cb27f2f08192166bb51cb48d275"
+      },
+      {
+        "path": "results/single_solvent/GPModel-multi-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9e097967d4049eb673f3b60b3aca881ecb4c2834",
+        "size": 1525,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/9e097967d4049eb673f3b60b3aca881ecb4c2834"
+      },
+      {
+        "path": "results/single_solvent/GPModel-multi-warp-acs_pca_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "86330aa7983643d8cd0b6e3c0f6a8fec9b9cbb5d",
+        "size": 1498,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/86330aa7983643d8cd0b6e3c0f6a8fec9b9cbb5d"
+      },
+      {
+        "path": "results/single_solvent/GPModel-multi-warp-drfps_catechol.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5846e1d68350b8ec37eb2ff9b50583bbff51e163",
+        "size": 1489,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/5846e1d68350b8ec37eb2ff9b50583bbff51e163"
+      },
+      {
+        "path": "results/single_solvent/GPModel-multi-warp-fragprints.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0c52599de0ba551b89830f400a3d103a6c865b01",
+        "size": 1501,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/0c52599de0ba551b89830f400a3d103a6c865b01"
+      },
+      {
+        "path": "results/single_solvent/GPModel-multi-warp-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1ea6cabbfe99a40fa9ada1c22e3094c1c7d18d91",
+        "size": 1515,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1ea6cabbfe99a40fa9ada1c22e3094c1c7d18d91"
+      },
+      {
+        "path": "results/single_solvent/LLMModel-chemberta-smiles.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "37f41a824a47a2dc88f223eefa9b756c645a261d",
+        "size": 607,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/37f41a824a47a2dc88f223eefa9b756c645a261d"
+      },
+      {
+        "path": "results/single_solvent/LLMModel-rxnfp-smiles.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ac2f0261be555e5c4d4cb6132e909db3098f10b3",
+        "size": 611,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/ac2f0261be555e5c4d4cb6132e909db3098f10b3"
+      },
+      {
+        "path": "results/single_solvent/LODEModel-acs_pca_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "78c6f2949bc848bc50df9826f2be94bbd85a2e5b",
+        "size": 1499,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/78c6f2949bc848bc50df9826f2be94bbd85a2e5b"
+      },
+      {
+        "path": "results/single_solvent/LODEModel-drfps.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aa1050d3aa3a82135741f7878cf4d2ab25ec2025",
+        "size": 1491,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/aa1050d3aa3a82135741f7878cf4d2ab25ec2025"
+      },
+      {
+        "path": "results/single_solvent/LODEModel-fragprints.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6bf0f649795e6aae95f0488dd5e72a963d51762a",
+        "size": 1494,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/6bf0f649795e6aae95f0488dd5e72a963d51762a"
+      },
+      {
+        "path": "results/single_solvent/LODEModel-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cf8cd93b5edc8204a2ea4c207d93f5db3e0e9280",
+        "size": 1496,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/cf8cd93b5edc8204a2ea4c207d93f5db3e0e9280"
+      },
+      {
+        "path": "results/single_solvent/MLPModel-acs_pca_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b6ece05a34b5c10b94e6c6c5d99d443ad974a98c",
+        "size": 1070,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b6ece05a34b5c10b94e6c6c5d99d443ad974a98c"
+      },
+      {
+        "path": "results/single_solvent/MLPModel-drfps_catechol.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "72f901e28de60b4a2b2f623834a868303f48ab9d",
+        "size": 1065,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/72f901e28de60b4a2b2f623834a868303f48ab9d"
+      },
+      {
+        "path": "results/single_solvent/MLPModel-fragprints.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d3f31ef91bda0fce9aa948840f8371fefbe68503",
+        "size": 1078,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d3f31ef91bda0fce9aa948840f8371fefbe68503"
+      },
+      {
+        "path": "results/single_solvent/MLPModel-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1ce51a1d71139a20d875bba510336a52810ca451",
+        "size": 1071,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1ce51a1d71139a20d875bba510336a52810ca451"
+      },
+      {
+        "path": "results/single_solvent/NODEModel-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "54d1ecaa4b782fced182ca59f00030b0b291075e",
+        "size": 1062,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/54d1ecaa4b782fced182ca59f00030b0b291075e"
+      },
+      {
+        "path": "results/single_solvent/NPModel-acs_pca_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "40d6d840a49233abce1b16668dd1196e11d165cb",
+        "size": 1502,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/40d6d840a49233abce1b16668dd1196e11d165cb"
+      },
+      {
+        "path": "results/single_solvent/NPModel-drfps_catechol.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b7dee75bf8c3b1841908a1d2acc1beada1d9338e",
+        "size": 1497,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b7dee75bf8c3b1841908a1d2acc1beada1d9338e"
+      },
+      {
+        "path": "results/single_solvent/NPModel-fragprints.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d71f1d6f84d3f2e68a240cc79a5d352434cdc430",
+        "size": 1494,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d71f1d6f84d3f2e68a240cc79a5d352434cdc430"
+      },
+      {
+        "path": "results/single_solvent/NPModel-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7e83f15e29c99312656dbd0ca9ca7497b4dc12c2",
+        "size": 1501,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/7e83f15e29c99312656dbd0ca9ca7497b4dc12c2"
+      },
+      {
+        "path": "results/transfer_learning",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "d0fe796738c56730c6bd27a0b0cd7ca4e3084492",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/d0fe796738c56730c6bd27a0b0cd7ca4e3084492"
+      },
+      {
+        "path": "results/transfer_learning/BaselineGPModel.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "50bce4274461365e94f3c32be46ab614f64e7496",
+        "size": 1113,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/50bce4274461365e94f3c32be46ab614f64e7496"
+      },
+      {
+        "path": "results/transfer_learning/BaselineModel-transfer.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e680a3851d71800ce11a4966626e228b193d7fb5",
+        "size": 1111,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e680a3851d71800ce11a4966626e228b193d7fb5"
+      },
+      {
+        "path": "results/transfer_learning/BaselineModel.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "678c5d956bf9196ad7cfd783d96b7b22c13fa5b7",
+        "size": 1112,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/678c5d956bf9196ad7cfd783d96b7b22c13fa5b7"
+      },
+      {
+        "path": "results/transfer_learning/GPModel-indep-separated-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "31242cc95137618a42b00f58e74fb28ced12dc86",
+        "size": 1110,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/31242cc95137618a42b00f58e74fb28ced12dc86"
+      },
+      {
+        "path": "results/transfer_learning/GPModel-indep-separated-transfer-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "169a6457848130b81e4dfeca87196185610d3e68",
+        "size": 1114,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/169a6457848130b81e4dfeca87196185610d3e68"
+      },
+      {
+        "path": "results/transfer_learning/LLMModel-chemberta-smiles.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1290f29f8a1946d627ad2261aa5df2644643337b",
+        "size": 867,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1290f29f8a1946d627ad2261aa5df2644643337b"
+      },
+      {
+        "path": "results/transfer_learning/LLMModel-chemberta-transfer-smiles.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cd04b99ece5bcb401d45a8e2bf86bbf85b103fdf",
+        "size": 863,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/cd04b99ece5bcb401d45a8e2bf86bbf85b103fdf"
+      },
+      {
+        "path": "results/transfer_learning/LLMModel-rxnfp-smiles.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4b4cf799c2b0ecc28e189327615760811be429c7",
+        "size": 865,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4b4cf799c2b0ecc28e189327615760811be429c7"
+      },
+      {
+        "path": "results/transfer_learning/LLMModel-rxnfp-transfer-smiles.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2cef8e110338bb47c9bd28bbd3198c2524b08c89",
+        "size": 864,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/2cef8e110338bb47c9bd28bbd3198c2524b08c89"
+      },
+      {
+        "path": "results/transfer_learning/MLPModel-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "88e3cc957d2a8c000f9ccabcd522c3db518aebeb",
+        "size": 867,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/88e3cc957d2a8c000f9ccabcd522c3db518aebeb"
+      },
+      {
+        "path": "results/transfer_learning/MLPModel-transfer-spange_descriptors.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0634dc13fff1730f83cdf3ebc3f877c8ce7cef82",
+        "size": 867,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/0634dc13fff1730f83cdf3ebc3f877c8ce7cef82"
+      },
+      {
+        "path": "scripts",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "346c32e2a2e24a9417e5f2178a261f8df47c9a8f",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/346c32e2a2e24a9417e5f2178a261f8df47c9a8f"
+      },
+      {
+        "path": "scripts/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bed5575556b2a00f94b928e45036d4bec0ef52f4",
+        "size": 3597,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/bed5575556b2a00f94b928e45036d4bec0ef52f4"
+      },
+      {
+        "path": "scripts/eval_active_learning.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d5d1023c522d86feef3c6ffb5af7d03a7ff53714",
+        "size": 4257,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d5d1023c522d86feef3c6ffb5af7d03a7ff53714"
+      },
+      {
+        "path": "scripts/eval_bayes_opt.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "418d1defc6d0c48a3956c3a4321c981744276679",
+        "size": 3832,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/418d1defc6d0c48a3956c3a4321c981744276679"
+      },
+      {
+        "path": "scripts/eval_mo_bayes_opt.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "28413f345705709d9788feaee8b49f9669b46f93",
+        "size": 5723,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/28413f345705709d9788feaee8b49f9669b46f93"
+      },
+      {
+        "path": "scripts/eval_single_solvents.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a886e0a774fd01b9601ccb67bdf04d98a4b9b54b",
+        "size": 2819,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a886e0a774fd01b9601ccb67bdf04d98a4b9b54b"
+      },
+      {
+        "path": "scripts/eval_solvent_ramps.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "424c101048a61323e707265d5de262f20bf404ad",
+        "size": 2853,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/424c101048a61323e707265d5de262f20bf404ad"
+      },
+      {
+        "path": "scripts/eval_transfer_learning.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "074610b10b68f7bcdb238f868ecd8eb578973bdd",
+        "size": 3746,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/074610b10b68f7bcdb238f868ecd8eb578973bdd"
+      },
+      {
+        "path": "scripts/featurize_graphs.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "845695512eef5a44ef7fe11756da1ff8d18d4327",
+        "size": 685,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/845695512eef5a44ef7fe11756da1ff8d18d4327"
+      },
+      {
+        "path": "scripts/featurize_solvents.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b89762c1708ef0d1416431171aacb2f877f8d5e2",
+        "size": 496,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b89762c1708ef0d1416431171aacb2f877f8d5e2"
+      },
+      {
+        "path": "scripts/llm_regression.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fb37065801bbd3790a7de1f643bf9d069b754a42",
+        "size": 4260,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/fb37065801bbd3790a7de1f643bf9d069b754a42"
+      },
+      {
+        "path": "scripts/mlp_regression.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "89fdb81f7fec0698a98a2999fdd62ed8ed6e2531",
+        "size": 3056,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/89fdb81f7fec0698a98a2999fdd62ed8ed6e2531"
+      },
+      {
+        "path": "scripts/np_regression.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8064ac34cac61603a1132ad57bf3f99959cceb9a",
+        "size": 2358,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/8064ac34cac61603a1132ad57bf3f99959cceb9a"
+      },
+      {
+        "path": "scripts/ode_regression.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "07a67301834196c9b4c0304805f357f535c9dbd4",
+        "size": 3798,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/07a67301834196c9b4c0304805f357f535c9dbd4"
+      },
+      {
+        "path": "scripts/paper_figs",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "95b9b1f64b70b7aa68260aa6d487a78a5c427a5d",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/95b9b1f64b70b7aa68260aa6d487a78a5c427a5d"
+      },
+      {
+        "path": "scripts/paper_figs/plot_acs_solvents.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f24e2118778a8a4ce011c9b3cbeb6de166f01e3a",
+        "size": 1701,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/f24e2118778a8a4ce011c9b3cbeb6de166f01e3a"
+      },
+      {
+        "path": "scripts/paper_figs/plot_experiment_surfaces.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b0f75db1ee3d090653a09fc76a695502b5ff0a76",
+        "size": 3647,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b0f75db1ee3d090653a09fc76a695502b5ff0a76"
+      },
+      {
+        "path": "scripts/paper_figs/plot_gp_posterior.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1e2a30dd5af9f12f123daad66943c797181fe462",
+        "size": 1949,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1e2a30dd5af9f12f123daad66943c797181fe462"
+      },
+      {
+        "path": "scripts/paper_figs/plot_input_warping.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8144bde10577aa10cac14c0983fee3ec03f3b4e4",
+        "size": 1231,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/8144bde10577aa10cac14c0983fee3ec03f3b4e4"
+      },
+      {
+        "path": "scripts/paper_figs/plot_pareto_front.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "42ccc33b3d55ad53810db79e1f512ced2024b29b",
+        "size": 951,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/42ccc33b3d55ad53810db79e1f512ced2024b29b"
+      },
+      {
+        "path": "scripts/paper_figs/plot_rt_illustration.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a057b40a3e975b2b0b1b1477a5717492aee1a7db",
+        "size": 2578,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a057b40a3e975b2b0b1b1477a5717492aee1a7db"
+      },
+      {
+        "path": "scripts/paper_figs/plot_single_solvent_data.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "003e65bfa34b2708ec2fc328e083018e28d4ef82",
+        "size": 5463,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/003e65bfa34b2708ec2fc328e083018e28d4ef82"
+      },
+      {
+        "path": "scripts/paper_figs/plot_solvent_ramps.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "99b859b6354de8a87729f21806b7fdd0f8bcaa93",
+        "size": 4493,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/99b859b6354de8a87729f21806b7fdd0f8bcaa93"
+      },
+      {
+        "path": "scripts/results_processing",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "c0a42aa0a6a338093521d552c5d3c016c1731989",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/c0a42aa0a6a338093521d552c5d3c016c1731989"
+      },
+      {
+        "path": "scripts/results_processing/process_active_learning.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f440d1704a669e4e5b32e0207ecb8c690268c15f",
+        "size": 2162,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/f440d1704a669e4e5b32e0207ecb8c690268c15f"
+      },
+      {
+        "path": "scripts/results_processing/process_bo.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d3f01f1eb78e2ec4e5c0beb43f069afa7dcd4065",
+        "size": 2270,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d3f01f1eb78e2ec4e5c0beb43f069afa7dcd4065"
+      },
+      {
+        "path": "scripts/results_processing/process_full_data.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9a4f84d3175a4dd998ed5b28eb3b5698d4c41419",
+        "size": 6554,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/9a4f84d3175a4dd998ed5b28eb3b5698d4c41419"
+      },
+      {
+        "path": "scripts/results_processing/process_mobo.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "53296639af2612b4e4b1c763c5c5c61b80305f55",
+        "size": 2353,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/53296639af2612b4e4b1c763c5c5c61b80305f55"
+      },
+      {
+        "path": "scripts/simple_ramp_regression.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "480e3d6e66cc7e8b909abab01ed54c36a8bb2a99",
+        "size": 2047,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/480e3d6e66cc7e8b909abab01ed54c36a8bb2a99"
+      },
+      {
+        "path": "scripts/simple_regression.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9fa619d713dd3a7f7168d70d525789a1b2ae39d2",
+        "size": 1853,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/9fa619d713dd3a7f7168d70d525789a1b2ae39d2"
+      },
+      {
+        "path": "src",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "a1c8443f4d395a9b705b9fad9cf3ea48b2f724b0",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/a1c8443f4d395a9b705b9fad9cf3ea48b2f724b0"
+      },
+      {
+        "path": "src/catechol",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6514cdb1fdff49ed2068fce81ccdf26edcca926d",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/6514cdb1fdff49ed2068fce81ccdf26edcca926d"
+      },
+      {
+        "path": "src/catechol/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "size": 0,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "src/catechol/data",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "fcdfb25649c70018e0732671c8cb01d9bc15d273",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/fcdfb25649c70018e0732671c8cb01d9bc15d273"
+      },
+      {
+        "path": "src/catechol/data/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "71b954a9dcd922c498f04a855a577ccdc6c5edff",
+        "size": 166,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/71b954a9dcd922c498f04a855a577ccdc6c5edff"
+      },
+      {
+        "path": "src/catechol/data/bo_benchmark.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "177d07b2159ca8ab8a2ae8ead6153cd3504b48f9",
+        "size": 4952,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/177d07b2159ca8ab8a2ae8ead6153cd3504b48f9"
+      },
+      {
+        "path": "src/catechol/data/data_labels.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bbe573e63f686bb18f8b5c92d46d57f19231e156",
+        "size": 1410,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/bbe573e63f686bb18f8b5c92d46d57f19231e156"
+      },
+      {
+        "path": "src/catechol/data/featurizations.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1ecf0b7898b92fde313e8aa5744e1e13d2112215",
+        "size": 3836,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1ecf0b7898b92fde313e8aa5744e1e13d2112215"
+      },
+      {
+        "path": "src/catechol/data/loader.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1e61eb003d7a047861645b6eca73a61af757061e",
+        "size": 6595,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/1e61eb003d7a047861645b6eca73a61af757061e"
+      },
+      {
+        "path": "src/catechol/data/normalize.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0ca2cd386b3e2157c7cecfc3971fbbf1a081a9d3",
+        "size": 476,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/0ca2cd386b3e2157c7cecfc3971fbbf1a081a9d3"
+      },
+      {
+        "path": "src/catechol/metrics.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b28d909eb0ced638e7dfb567600e0e9c3d2525c8",
+        "size": 958,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/b28d909eb0ced638e7dfb567600e0e9c3d2525c8"
+      },
+      {
+        "path": "src/catechol/models",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f46cde622a1aa0d606b3cd223ae2dbd101b539f2",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/f46cde622a1aa0d606b3cd223ae2dbd101b539f2"
+      },
+      {
+        "path": "src/catechol/models/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7899e2f9828b3863da3a256c24658e1b34ba8b6f",
+        "size": 876,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/7899e2f9828b3863da3a256c24658e1b34ba8b6f"
+      },
+      {
+        "path": "src/catechol/models/base_model.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "591c375c14b89e86d22af3a6a54874c4b7f905e1",
+        "size": 2698,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/591c375c14b89e86d22af3a6a54874c4b7f905e1"
+      },
+      {
+        "path": "src/catechol/models/baseline.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d2c13f3fcbd3bac4b2e311ddb41dd754341dfa03",
+        "size": 2822,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/d2c13f3fcbd3bac4b2e311ddb41dd754341dfa03"
+      },
+      {
+        "path": "src/catechol/models/gp.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "afc939657159a6e1b38f05ba72d999b9327b6068",
+        "size": 18977,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/afc939657159a6e1b38f05ba72d999b9327b6068"
+      },
+      {
+        "path": "src/catechol/models/learn_mean.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2f76bb33853a6cd1442a9ad4eb7a8bf90f7675ea",
+        "size": 1386,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/2f76bb33853a6cd1442a9ad4eb7a8bf90f7675ea"
+      },
+      {
+        "path": "src/catechol/models/llm.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e50238e73336013f8cbed1644625b4ad9615fb92",
+        "size": 14241,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e50238e73336013f8cbed1644625b4ad9615fb92"
+      },
+      {
+        "path": "src/catechol/models/mlp.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a0eafc7a4b3659856d9bd26655ddf46bbeb7536c",
+        "size": 11060,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/a0eafc7a4b3659856d9bd26655ddf46bbeb7536c"
+      },
+      {
+        "path": "src/catechol/models/multitask.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4ae7e47fea0aa4f5fef0d3afd7a24298ef7b0b26",
+        "size": 19490,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4ae7e47fea0aa4f5fef0d3afd7a24298ef7b0b26"
+      },
+      {
+        "path": "src/catechol/models/np.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4f312888daa6f60ca1705c1a33559cfe9b855d3b",
+        "size": 9571,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/4f312888daa6f60ca1705c1a33559cfe9b855d3b"
+      },
+      {
+        "path": "src/catechol/models/ode.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0f0f3f20c88c3d6cb31029aff88ce067688cec1e",
+        "size": 39926,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/0f0f3f20c88c3d6cb31029aff88ce067688cec1e"
+      },
+      {
+        "path": "src/catechol/plots",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "3804d4da6b94f7bbc38b2805eaed5a51d7d95beb",
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/trees/3804d4da6b94f7bbc38b2805eaed5a51d7d95beb"
+      },
+      {
+        "path": "src/catechol/plots/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "size": 0,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "src/catechol/plots/plot_covariance_matrix.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c4e87a85871150fc151a23001b92941fd4128535",
+        "size": 765,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c4e87a85871150fc151a23001b92941fd4128535"
+      },
+      {
+        "path": "src/catechol/plots/plot_solvent_prediction.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c836ffa1d0d68ebca960677caf4857c9e72bbfdd",
+        "size": 6191,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/c836ffa1d0d68ebca960677caf4857c9e72bbfdd"
+      },
+      {
+        "path": "src/catechol/plots/style.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "da1635d97f4c5527d7ce6a32e0e76e9e555fa055",
+        "size": 198,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/da1635d97f4c5527d7ce6a32e0e76e9e555fa055"
+      },
+      {
+        "path": "src/catechol/script_utils.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bd789dbb5bef3b5896a92f4b65493e5d2ff79b01",
+        "size": 3795,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/bd789dbb5bef3b5896a92f4b65493e5d2ff79b01"
+      },
+      {
+        "path": "uv.lock",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "30ee633698e735e209119001cce8baaae2de49e6",
+        "size": 497658,
+        "url": "https://api.github.com/repos/jpfolch/catechol_solvent_selection/git/blobs/30ee633698e735e209119001cce8baaae2de49e6"
+      }
+    ],
+    "truncated": false
+  }
+}

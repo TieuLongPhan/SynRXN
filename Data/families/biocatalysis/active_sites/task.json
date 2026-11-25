@@ -1,0 +1,109 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 1,
+    "data_links": 1,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 1,
+    "stored_rows_across_unique_views": 969,
+    "task_table_bindings": 1,
+    "tasks": 1,
+    "unique_table_views": 1
+  },
+  "tables": [
+    {
+      "data_link": "coverage/bio/mcsa_reference_active_sites/data.parquet",
+      "key": "bio/mcsa_reference_active_sites",
+      "metadata": "coverage/bio/mcsa_reference_active_sites/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "catalog_path": "Data/coverage_expansion/bio/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "source-derived qualified task row",
+        "coverage_branch": "bio",
+        "key": "bio/mcsa_reference_active_sites",
+        "license": "CC-BY-4.0; native M-CSA annotations and UniProt sequences",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/bio/mcsa_reference_active_sites.parquet",
+        "qualification": "Native M-CSA reaction-associated reference catalytic residues, joined to frozen UniProt FASTA and checked for exact amino-acid identity at every labeled position. Reaction representation retains ChEBI/name/stoichiometry participants, not invented SMILES. Binary zeros are unannotated residues, not experimentally proven nonfunctional sites. Only reference annotations retained; homology-transferred labels excluded. Derived partitions close native-entry and exact-sequence connected components; they remain development-exposed, not a new independent homology holdout. Previously inspected M-CSA data overlap the existing mechanism companion.",
+        "reference_evidence": "Direct M-CSA reference catalytic-residue annotations and separately licensed UniProt sequence; no EasIFA annotations or code required.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 969,
+        "sha256": "c9ee5321b3a876f5b8f755d4e15ac50ab5aaf6004889adbddde00a54d3892511",
+        "source_id": "MCSA",
+        "source_sha256": "4c4314d5bd7bd10c3b79054b27aba5cc24f91e7a05bbbbbc6f91a515ede1fdf0",
+        "source_url": "https://www.ebi.ac.uk/thornton-srv/m-csa/api/entries/?format=json",
+        "task_fields": {
+          "active_sites": {
+            "group_fields": [
+              "sequence_group",
+              "mechanism_group",
+              "split_component",
+              "derived_split"
+            ],
+            "inputs": [
+              "enzyme_sequence",
+              "reaction_compounds_json"
+            ],
+            "metrics": [
+              "protein-macro residue AUPRC",
+              "F1",
+              "MCC"
+            ],
+            "targets": [
+              "residue_labels_json"
+            ]
+          }
+        },
+        "task_ids": [
+          "active_sites"
+        ]
+      }
+    ],
+    "candidate_ids": [
+      "C23"
+    ],
+    "candidate_status": "Inherited acquisition candidates; integration and suitability are unverified",
+    "canonical_keys": [],
+    "counting_units": [
+      "source-derived qualified task row"
+    ],
+    "evaluation": "Residue precision/recall, localization and coverage; annotation agreement is not independent catalytic proof",
+    "extension_adapter_ids": [
+      "active_sites"
+    ],
+    "extension_id": "active_sites",
+    "family_id": "biocatalysis",
+    "id": "active_sites",
+    "legacy_view_ids": [],
+    "metrics": [
+      "F1",
+      "MCC",
+      "protein-macro residue AUPRC"
+    ],
+    "origin": "promoted_from_initial_19_roadmap_definitions",
+    "primary_source_rows": 969,
+    "primary_table_count": 1,
+    "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance.",
+    "question": "Reaction and enzyme sequence/structure -> catalytic residues or active-site annotation",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 1,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "required_data": "Reaction-linked residue references, index mapping, evidence tier and structure/sequence group separation",
+    "title": "Reaction-conditioned active sites"
+  }
+}

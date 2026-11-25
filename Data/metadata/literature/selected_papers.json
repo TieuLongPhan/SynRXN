@@ -1,0 +1,3154 @@
+{
+  "as_of": "2026-10-20",
+  "papers": [
+    {
+      "id": "k25-batterylife",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "BatteryLife: A Comprehensive Dataset and Benchmark for Battery Life Prediction",
+      "doi": "10.1145/3711896.3737372",
+      "url": "https://doi.org/10.1145/3711896.3737372",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-batterylife-a-comprehensive-dataset-and-benchmark-for-battery-life-prediction",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "scientific integration; source transfer",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2502.18807",
+        "https://arxiv.org/pdf/2502.18807v7",
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737372"
+      ],
+      "search_term": "BatteryLife",
+      "arxiv_id": "2502.18807",
+      "authors": [
+        "Ruifeng Tan",
+        "Weixiang Hong",
+        "Jiayue Tang",
+        "Xibin Lu",
+        "Ruijun Ma",
+        "Xiang Zheng",
+        "Jia Li",
+        "Jiaqiang Huang",
+        "Tong-Yi Zhang"
+      ],
+      "metadata_sources": [
+        "hykGIBwuBR",
+        "PRQm4buQHd",
+        "suBwKasEYe"
+      ],
+      "review_forums": []
+    },
+    {
+      "id": "k25-begin",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Delving into Instance-Dependent Label Noise in Graph Data: A Comprehensive Study and Benchmark",
+      "doi": "10.1145/3711896.3737376",
+      "url": "https://doi.org/10.1145/3711896.3737376",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-delving-into-instance-dependent-label-noise-in-graph-data-a-comprehensive-study-and-benchmark",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "generated labels; robustness",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2506.12468",
+        "https://arxiv.org/pdf/2506.12468v2",
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737376"
+      ],
+      "search_term": "Delving into Instance-Dependent Label Noise in Graph Data",
+      "arxiv_id": "2506.12468",
+      "authors": [
+        "Kim, Suyeon",
+        "Kang, SeongKu",
+        "Kim, Dongwoo",
+        "Ok, Jungseul",
+        "Yu, Hwanjo"
+      ],
+      "metadata_sources": [
+        "5y2o8MhjrC",
+        "utZuKH3fTf",
+        "DK6KcHlWoc"
+      ],
+      "review_forums": []
+    },
+    {
+      "id": "k25-htfllib",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "HtFLlib: A Comprehensive Heterogeneous Federated Learning Library and Benchmark",
+      "doi": "10.1145/3711896.3737379",
+      "url": "https://doi.org/10.1145/3711896.3737379",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-htfllib-a-comprehensive-heterogeneous-federated-learning-library-and-benchmark",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "benchmark library; fair comparison",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2506.03954",
+        "https://arxiv.org/pdf/2506.03954v1",
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737379"
+      ],
+      "search_term": "HtFLlib",
+      "arxiv_id": "2506.03954",
+      "authors": [
+        "Zhang, Jianqing",
+        "Wu, Xinghao",
+        "Zhou, Yanbing",
+        "Sun, Xiaoting",
+        "Cai, Qiqi",
+        "Liu, Yang",
+        "Hua, Yang",
+        "Zheng, Zhenzhe",
+        "Cao, Jian",
+        "Yang, Qiang"
+      ],
+      "metadata_sources": [
+        "Rs5A5rWSaW",
+        "1QMd4GSoFk",
+        "RUcPQnfByo"
+      ],
+      "review_forums": []
+    },
+    {
+      "id": "k25-computage",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "ComputAgeBench: Epigenetic Aging Clocks Benchmark",
+      "doi": "10.1145/3711896.3737382",
+      "url": "https://doi.org/10.1145/3711896.3737382",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-computagebench-epigenetic-aging-clocks-benchmark",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "heterogeneous scientific cohorts",
+      "pdf_urls": [
+        "https://openreview.net/pdf/7a52c8a332f5e6eb6af094b02525b05def41b636.pdf",
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737382",
+        "https://www.biorxiv.org/content/10.1101/2024.06.06.597715.full.pdf"
+      ],
+      "search_term": "ComputAgeBench",
+      "authors": [
+        "Kriukov, Dmitrii",
+        "Efimov, Evgeniy",
+        "Kuzmina, Ekaterina",
+        "Dudkovskaia, Anastasiia",
+        "Khrameeva, Ekaterina E.",
+        "Dylov, Dmitry V."
+      ],
+      "review_forums": [
+        {
+          "forum_id": "0ApkwFlCxq",
+          "venue": "Submitted to ICLR 2025",
+          "venueid": "ICLR.cc/2025/Conference/Rejected_Submission",
+          "number": 7894,
+          "title": "ComputAgeBench: Epigenetic Aging Clocks Benchmark",
+          "invitations": [
+            "ICLR.cc/2025/Conference/-/Submission",
+            "ICLR.cc/2025/Conference/-/Post_Submission",
+            "ICLR.cc/2025/Conference/Submission7894/-/Full_Submission",
+            "ICLR.cc/2025/Conference/Submission7894/-/Rebuttal_Revision",
+            "ICLR.cc/2025/Conference/-/Edit"
+          ],
+          "venue_root": "ICLR.cc/2025/Conference"
+        }
+      ],
+      "metadata_sources": [
+        "0ApkwFlCxq"
+      ],
+      "code_urls": [
+        "https://github.com/ComputationalAgingLab/ComputAge"
+      ]
+    },
+    {
+      "id": "k25-foodpuzzle",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "FoodPuzzle: Toward Developing Large Language Models as Autonomous Flavor Scientists",
+      "doi": "10.1145/3711896.3737384",
+      "url": "https://doi.org/10.1145/3711896.3737384",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-foodpuzzle-toward-developing-large-language-models-as-autonomous-flavor-scientists",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "scientific chemical reasoning",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2409.12832",
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737384"
+      ],
+      "search_term": "FoodPuzzle",
+      "authors": [
+        "Dong Hee Lee",
+        "Emily Steliotes",
+        "Jiatong Shi",
+        "John Sweeney",
+        "Jonathan May",
+        "Matthew Lange",
+        "Muhao Chen",
+        "Tenghao Huang"
+      ],
+      "metadata_sources": [
+        "5WIvVqMSt0",
+        "jxqfNNLrpz"
+      ],
+      "arxiv_id": "2409.12832",
+      "review_forums": []
+    },
+    {
+      "id": "k25-scihorizon",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "SciHorizon: Benchmarking AI-for-Science Readiness from Scientific Data to Large Language Models",
+      "doi": "10.1145/3711896.3737403",
+      "url": "https://doi.org/10.1145/3711896.3737403",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-scihorizon-benchmarking-ai-for-science-readiness-from-scientific-data-to-large-language-models",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "scientific data readiness",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2503.13503",
+        "https://arxiv.org/pdf/2503.13503v1",
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737403"
+      ],
+      "search_term": "SciHorizon",
+      "authors": [
+        "Qin, Chuan",
+        "Chen, Xin",
+        "Wang, Chengrui",
+        "Wu, Pengmin",
+        "Chen, Xi",
+        "Cheng, Yihang",
+        "Zhao, Jingyi",
+        "Xiao, Meng",
+        "Dong, Xiangchao",
+        "Long, Qingqing",
+        "Pan, Boya",
+        "Wu, Han",
+        "Li, Chengzan",
+        "Zhou, Yuanchun",
+        "Xiong, Hui",
+        "Zhu, Hengshu"
+      ],
+      "arxiv_id": "2503.13503",
+      "metadata_sources": [
+        "WIQMAwKrF4",
+        "9UefsC69Fu",
+        "nLmT9Kb5lJ"
+      ],
+      "review_forums": []
+    },
+    {
+      "id": "k25-metamatbench",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "MetamatBench: Integrating Heterogeneous Data, Computational Tools, and Visual Interface for Metamaterial Discovery",
+      "doi": "10.1145/3711896.3737416",
+      "url": "https://doi.org/10.1145/3711896.3737416",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-metamatbench-integrating-heterogeneous-data-computational-tools-and-visual-interface-for-metamateria",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "scientific integration; domain metrics",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2505.20299",
+        "https://arxiv.org/pdf/2505.20299v1",
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737416"
+      ],
+      "search_term": "MetamatBench",
+      "arxiv_id": "2505.20299",
+      "authors": [
+        "Chen, Jianpeng",
+        "Zhan, Wangzhi",
+        "Wang, Haohui",
+        "Jia, Zian",
+        "Gan, Jingru",
+        "Zhang, Junkai",
+        "Qi, Jingyuan",
+        "Chen, Tingwei",
+        "Huang, Lifu",
+        "Chen, Muhao",
+        "Li, Ling",
+        "Wang, Wei",
+        "Zhou, Dawei"
+      ],
+      "metadata_sources": [
+        "CYbY57gOgW",
+        "CQBrhAiSPE",
+        "WElPXWaApS"
+      ],
+      "review_forums": []
+    },
+    {
+      "id": "k25-dca",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "DCA-Bench: A Benchmark for Dataset Curation Agents",
+      "doi": "10.1145/3711896.3737422",
+      "url": "https://doi.org/10.1145/3711896.3737422",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-dca-bench-a-benchmark-for-dataset-curation-agents",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "dataset curation evaluation",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2406.07275",
+        "https://arxiv.org/pdf/2406.07275v1",
+        "https://openreview.net/pdf/eb08973e9634f527229fd43c3214f633fe5a7b87.pdf",
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737422"
+      ],
+      "search_term": "DCA-Bench",
+      "authors": [
+        "Huang, Benhao",
+        "Yu, Yingzhuo",
+        "Huang, Jin",
+        "Zhang, Xingjian",
+        "Ma, Jiaqi W."
+      ],
+      "arxiv_id": "2406.07275",
+      "metadata_sources": [
+        "VnjKlzg8bD",
+        "a4sknPttwV"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "a4sknPttwV",
+          "venue": "Submitted to ICLR 2025",
+          "venueid": "ICLR.cc/2025/Conference/Rejected_Submission",
+          "number": 8573,
+          "title": "DCA-Bench: A Benchmark for Dataset Curation Agents",
+          "invitations": [
+            "ICLR.cc/2025/Conference/-/Submission",
+            "ICLR.cc/2025/Conference/-/Post_Submission",
+            "ICLR.cc/2025/Conference/Submission8573/-/Full_Submission",
+            "ICLR.cc/2025/Conference/Submission8573/-/Rebuttal_Revision",
+            "ICLR.cc/2025/Conference/-/Edit"
+          ],
+          "venue_root": "ICLR.cc/2025/Conference"
+        }
+      ]
+    },
+    {
+      "id": "k25-ebes",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "EBES: Easy Benchmarking for Event Sequences",
+      "doi": "10.1145/3711896.3737428",
+      "url": "https://doi.org/10.1145/3711896.3737428",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-ebes-easy-benchmarking-for-event-sequences",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "reusable benchmark software",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2410.03399",
+        "https://arxiv.org/pdf/2410.03399v2",
+        "https://openreview.net/pdf/f3ab5f43a39e468d1bde3c9bdcb7e5d4529f7027.pdf",
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737428"
+      ],
+      "search_term": "\"EBES: Easy Benchmarking for Event Sequences\"",
+      "authors": [
+        "Osin, Dmitry",
+        "Udovichenko, Igor",
+        "Shvetsov, Egor",
+        "Moskvoretskii, Viktor",
+        "Burnaev, Evgeny"
+      ],
+      "metadata_sources": [
+        "szc6YajYoI",
+        "A9o4vdvxqj",
+        "orEX9GKQAD"
+      ],
+      "arxiv_id": "2410.03399",
+      "review_forums": [
+        {
+          "forum_id": "orEX9GKQAD",
+          "venue": "ICLR 2025 Conference Withdrawn Submission",
+          "venueid": "ICLR.cc/2025/Conference/Withdrawn_Submission",
+          "number": 6469,
+          "title": "EBES: Easy Benchmarking for Event Sequences",
+          "invitations": [
+            "ICLR.cc/2025/Conference/-/Submission",
+            "ICLR.cc/2025/Conference/-/Post_Submission",
+            "ICLR.cc/2025/Conference/Submission6469/-/Full_Submission",
+            "ICLR.cc/2025/Conference/Submission6469/-/Rebuttal_Revision",
+            "ICLR.cc/2025/Conference/-/Edit",
+            "ICLR.cc/2025/Conference/-/Withdrawn_Submission"
+          ],
+          "venue_root": "ICLR.cc/2025/Conference"
+        }
+      ]
+    },
+    {
+      "id": "k25-pove",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "POVE: A Preoptimized Vault of Expressions for Symbolic Regression Research and Benchmarking",
+      "doi": "10.1145/3711896.3737430",
+      "url": "https://doi.org/10.1145/3711896.3737430",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-pove-a-preoptimized-vault-of-expressions-for-symbolic-regression-research-and-benchmarking",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "curated scientific reference targets",
+      "pdf_urls": [
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737430"
+      ],
+      "search_term": "\"POVE: A Preoptimized Vault of Expressions for Symbolic Regression Research and Benchmarking\"",
+      "review_forums": [],
+      "authors": [
+        "Fong, Kei Sen",
+        "Motani, Mehul"
+      ]
+    },
+    {
+      "id": "k25-rl4co",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "RL4CO: An Extensive Reinforcement Learning for Combinatorial Optimization Benchmark",
+      "doi": "10.1145/3711896.3737433",
+      "url": "https://doi.org/10.1145/3711896.3737433",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "benchmark toolkit; standardized algorithms",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2306.17100",
+        "https://arxiv.org/pdf/2306.17100v4",
+        "https://openreview.net/pdf/7b99d8745e8ed5d1d7914bea9a71e9803d1981e1.pdf",
+        "https://openreview.net/pdf/2f8da563f503057eaa8c82b48fa70ce03f78a659.pdf",
+        "https://openreview.net/pdf/06e8d09cf069000fb2633beb15ebf95480688328.pdf",
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737433"
+      ],
+      "search_term": "\"RL4CO: An Extensive Reinforcement Learning for Combinatorial Optimization Benchmark\"",
+      "authors": [
+        "Berto, Federico",
+        "Hua, Chuanbo",
+        "Park, Junyoung",
+        "Luttmann, Laurin",
+        "Ma, Yining",
+        "Bu, Fanchen",
+        "Wang, Jiarui",
+        "Ye, Haoran",
+        "Kim, Minsu",
+        "Choi, Sanghyeok",
+        "Zepeda, Nayeli Gast",
+        "Hottung, André",
+        "Zhou, Jianan",
+        "Bi, Jieyi",
+        "Hu, Yu",
+        "Liu, Fei",
+        "Kim, Hyeonah",
+        "Son, Jiwoo",
+        "Kim, Haeyeon",
+        "Angioni, Davide",
+        "Kool, Wouter",
+        "Cao, Zhiguang",
+        "Zhang, Qingfu",
+        "Kim, Joungho",
+        "Zhang, Jie",
+        "Shin, Kijung",
+        "Wu, Cathy",
+        "Ahn, Sungsoo",
+        "Song, Guojie",
+        "Kwon, Changhyun",
+        "Tierney, Kevin",
+        "Xie, Lin",
+        "Park, Jinkyoo"
+      ],
+      "metadata_sources": [
+        "ALG6PNVriS",
+        "1rE0npbzBH",
+        "Becrgm5xAq",
+        "MGZyUtaYUb",
+        "LJhfKeqZdu"
+      ],
+      "arxiv_id": "2306.17100",
+      "review_forums": [
+        {
+          "forum_id": "Becrgm5xAq",
+          "venue": "Submitted to NeurIPS 2024 Track Datasets and Benchmarks",
+          "venueid": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Rejected_Submission",
+          "number": 1909,
+          "title": "RL4CO: an Extensive Reinforcement Learning for Combinatorial Optimization Benchmark",
+          "invitations": [
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission1909/-/Supplementary_Material",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Edit"
+          ],
+          "venue_root": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track"
+        },
+        {
+          "forum_id": "MGZyUtaYUb",
+          "venue": "ICLR 2025 Conference Desk Rejected Submission",
+          "venueid": "ICLR.cc/2025/Conference/Desk_Rejected_Submission",
+          "number": 13736,
+          "title": "RL4CO: an Extensive Reinforcement Learning for Combinatorial Optimization Benchmark",
+          "invitations": [
+            "ICLR.cc/2025/Conference/-/Submission",
+            "ICLR.cc/2025/Conference/-/Post_Submission",
+            "ICLR.cc/2025/Conference/Submission13736/-/Full_Submission",
+            "ICLR.cc/2025/Conference/-/Desk_Rejected_Submission"
+          ],
+          "venue_root": "ICLR.cc/2025/Conference"
+        }
+      ]
+    },
+    {
+      "id": "k25-linkshift",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Towards Understanding Link Predictor Generalizability Under Distribution Shifts",
+      "doi": "10.1145/3711896.3737434",
+      "url": "https://doi.org/10.1145/3711896.3737434",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-towards-understanding-link-predictor-generalizability-under-distribution-shifts",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "distribution shift and split validity",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2406.08788",
+        "https://openreview.net/pdf/238f3b27c64f8a6300cb7980f72fc416ac074fa3.pdf",
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737434"
+      ],
+      "search_term": "\"Towards Understanding Link Predictor Generalizability Under Distribution Shifts\"",
+      "authors": [
+        "Jay Revolinsky",
+        "Harry Shomer",
+        "Jiliang Tang"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "rQ8mHhEIeB",
+          "venue": "Submitted to ICLR 2025",
+          "venueid": "ICLR.cc/2025/Conference/Rejected_Submission",
+          "number": 7544,
+          "title": "Towards Understanding Link Predictor Generalizability Under Distribution Shifts",
+          "invitations": [
+            "ICLR.cc/2025/Conference/-/Submission",
+            "ICLR.cc/2025/Conference/-/Post_Submission",
+            "ICLR.cc/2025/Conference/Submission7544/-/Full_Submission",
+            "ICLR.cc/2025/Conference/Submission7544/-/Rebuttal_Revision",
+            "ICLR.cc/2025/Conference/-/Edit"
+          ],
+          "venue_root": "ICLR.cc/2025/Conference"
+        }
+      ],
+      "metadata_sources": [
+        "rQ8mHhEIeB"
+      ],
+      "arxiv_id": "2406.08788"
+    },
+    {
+      "id": "k25-inductivekg",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Towards Better Benchmark Datasets for Inductive Knowledge Graph Completion",
+      "doi": "10.1145/3711896.3737438",
+      "url": "https://doi.org/10.1145/3711896.3737438",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-towards-better-benchmark-datasets-for-inductive-knowledge-graph-completion",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "benchmark reconstruction and leakage",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2406.11898",
+        "https://arxiv.org/pdf/2406.11898v2",
+        "https://openreview.net/pdf/9f23a17b441a9d4a9a2583f3c1edfaf35a535244.pdf",
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737438"
+      ],
+      "search_term": "\"Towards Better Benchmark Datasets for Inductive Knowledge Graph Completion\"",
+      "authors": [
+        "Shomer, Harry",
+        "Revolinsky, Jay",
+        "Tang, Jiliang"
+      ],
+      "arxiv_id": "2406.11898",
+      "metadata_sources": [
+        "QtW0VYbo70",
+        "npBAHV5BJI"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "npBAHV5BJI",
+          "venue": "Submitted to ICLR 2025",
+          "venueid": "ICLR.cc/2025/Conference/Rejected_Submission",
+          "number": 7457,
+          "title": "Towards Better Benchmark Datasets for Inductive Knowledge Graph Completion",
+          "invitations": [
+            "ICLR.cc/2025/Conference/-/Submission",
+            "ICLR.cc/2025/Conference/-/Post_Submission",
+            "ICLR.cc/2025/Conference/Submission7457/-/Full_Submission",
+            "ICLR.cc/2025/Conference/Submission7457/-/Rebuttal_Revision",
+            "ICLR.cc/2025/Conference/-/Edit"
+          ],
+          "venue_root": "ICLR.cc/2025/Conference"
+        }
+      ]
+    },
+    {
+      "id": "k25-misinformation",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "A Guide to Misinformation Detection Data and Evaluation",
+      "doi": "10.1145/3711896.3737437",
+      "url": "https://doi.org/10.1145/3711896.3737437",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-a-guide-to-misinformation-detection-data-and-evaluation",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "data and evaluation auditing",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2411.05060",
+        "https://openreview.net/pdf/b11574a354fca65b78ca1b1dfc6e96c827f7430f.pdf",
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737437"
+      ],
+      "search_term": "\"A Guide to Misinformation Detection Data and Evaluation\"",
+      "authors": [
+        "Thibault, Camille",
+        "Tian, Jacob-Junqi",
+        "Péloquin-Skulski, Gabrielle",
+        "Curtis, Taylor Lynn",
+        "Zhou, James",
+        "Laflamme, Florence",
+        "Guan, Luke Yuxiang",
+        "Rabbany, Reihaneh",
+        "Godbout, Jean-François",
+        "Pelrine, Kellin"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "A4hZihc6QE",
+          "venue": "SCSL @ ICLR 2025",
+          "venueid": "ICLR.cc/2025/Workshop/SCSL",
+          "number": 52,
+          "title": "A Guide to Misinformation Detection Data and Evaluation",
+          "invitations": [
+            "ICLR.cc/2025/Workshop/SCSL/-/Submission",
+            "ICLR.cc/2025/Workshop/SCSL/-/Post_Submission",
+            "ICLR.cc/2025/Workshop/SCSL/-/Edit",
+            "ICLR.cc/2025/Workshop/SCSL/Submission52/-/Camera-Ready_Version"
+          ],
+          "venue_root": "ICLR.cc/2025/Workshop/SCSL"
+        },
+        {
+          "forum_id": "Vi97jgyNBv",
+          "venue": "MLDPR 2025",
+          "venueid": "ICLR.cc/2025/Workshop/MLDPR",
+          "number": 13,
+          "title": "A Guide to Misinformation Detection Data and Evaluation",
+          "invitations": [
+            "ICLR.cc/2025/Workshop/MLDPR/-/Submission",
+            "ICLR.cc/2025/Workshop/MLDPR/-/Post_Submission",
+            "ICLR.cc/2025/Workshop/MLDPR/-/Edit",
+            "ICLR.cc/2025/Workshop/MLDPR/Submission13/-/Camera-Ready_Revisions"
+          ],
+          "venue_root": "ICLR.cc/2025/Workshop/MLDPR"
+        }
+      ],
+      "metadata_sources": [
+        "A4hZihc6QE",
+        "Vi97jgyNBv"
+      ],
+      "arxiv_id": "2411.05060"
+    },
+    {
+      "id": "k25-timegraph",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "TimeGraph: Synthetic Benchmark Datasets for Robust Time-Series Causal Discovery",
+      "doi": "10.1145/3711896.3737439",
+      "url": "https://doi.org/10.1145/3711896.3737439",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-timegraph-synthetic-benchmark-datasets-for-robust-time-series-causal-discovery",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "synthetic data validity",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2506.01361",
+        "https://arxiv.org/pdf/2506.01361v1",
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737439"
+      ],
+      "search_term": "TimeGraph",
+      "authors": [
+        "Ferdous, Muhammad Hasan",
+        "Hossain, Emam",
+        "Gani, Md Osman"
+      ],
+      "arxiv_id": "2506.01361",
+      "metadata_sources": [
+        "lSHuwyeQev",
+        "XQMUbMdtKA"
+      ],
+      "review_forums": []
+    },
+    {
+      "id": "k25-tsfm",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "TSFM-Bench: A Comprehensive and Unified Benchmark of Foundation Models for Time Series Forecasting",
+      "doi": "10.1145/3711896.3737442",
+      "url": "https://doi.org/10.1145/3711896.3737442",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "inventory_id": "kdd2025-tsfm-bench-a-comprehensive-and-unified-benchmark-of-foundation-models-for-time-series-forecasting",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "unified multi-dataset comparison",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2410.11802",
+        "https://dl.acm.org/doi/pdf/10.1145/3711896.3737442"
+      ],
+      "search_term": "TSFM-Bench",
+      "authors": [
+        "Zhe Li",
+        "Xiangfei Qiu",
+        "Peng Chen",
+        "Yihang Wang",
+        "Hanyin Cheng",
+        "Yang Shu",
+        "Jilin Hu",
+        "Chenjuan Guo",
+        "Aoying Zhou",
+        "Christian S. Jensen",
+        "Bin Yang"
+      ],
+      "metadata_sources": [
+        "KmPTSYRrMY"
+      ],
+      "arxiv_id": "2410.11802",
+      "review_forums": []
+    },
+    {
+      "id": "k26-nmrgym",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "NMRGym: A Comprehensive Benchmark for Nuclear Magnetic Resonance Based Molecular Structure Elucidation",
+      "doi": "10.1145/3770855.3817452",
+      "url": "https://doi.org/10.1145/3770855.3817452",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-nmrgym-a-comprehensive-benchmark-for-nuclear-magnetic-resonance-based-molecular-structure-elucidatio",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "chemistry benchmark",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2601.15763",
+        "https://arxiv.org/pdf/2601.15763v1",
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817452"
+      ],
+      "search_term": "NMRGym",
+      "authors": [
+        "Zheng Fang",
+        "Chen Yang",
+        "Hai-tao Yu",
+        "Haoming Luo",
+        "Haitao He",
+        "Jiaqing Xie",
+        "Zhuo Yang",
+        "Yuqiang Li",
+        "Jun Xia"
+      ],
+      "arxiv_id": "2601.15763",
+      "metadata_sources": [
+        "a0ZKidm4n1",
+        "YCV3bnsQ3S"
+      ],
+      "review_forums": []
+    },
+    {
+      "id": "k26-multitab",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "MultiTab: A Comprehensive Benchmark Suite for Multi-Dimensional Evaluation in Tabular Domains",
+      "doi": "10.1145/3770855.3817455",
+      "url": "https://doi.org/10.1145/3770855.3817455",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-multitab-a-comprehensive-benchmark-suite-for-multi-dimensional-evaluation-in-tabular-domains",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "multi-task benchmark toolkit",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2505.14312",
+        "https://arxiv.org/pdf/2505.14312v1",
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817455"
+      ],
+      "search_term": "MultiTab",
+      "authors": [
+        "Lee, Kyungeun",
+        "Eo, Moonjung",
+        "Cho, Hye-Seung",
+        "Kim, Dongmin",
+        "Sim, Ye Seul",
+        "Kim, Seoyoon",
+        "Suh, Min-Kook",
+        "Lim, Woohyung"
+      ],
+      "arxiv_id": "2505.14312",
+      "metadata_sources": [
+        "BxhH7Y8FgA",
+        "iSKuCBgKQk"
+      ],
+      "review_forums": []
+    },
+    {
+      "id": "k26-saas",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "SAASBench: A synthetic antibody–antigen specificity benchmark",
+      "doi": "10.1145/3770855.3817459",
+      "url": "https://doi.org/10.1145/3770855.3817459",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-saasbench-a-synthetic-antibodyantigen-specificity-benchmark",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "synthetic biological reference validity",
+      "pdf_urls": [
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817459"
+      ],
+      "search_term": "SAASBench",
+      "review_forums": [],
+      "authors": [
+        "Umerenkov, Dmitry",
+        "Poddiakov, Ivan"
+      ]
+    },
+    {
+      "id": "k26-sctranslation",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "scTranslation: A Comprehensive Benchmark for Single-Cell Multi-Omics Modality Translation",
+      "doi": "10.1145/3770855.3817464",
+      "url": "https://doi.org/10.1145/3770855.3817464",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-sctranslation-a-comprehensive-benchmark-for-single-cell-multi-omics-modality-translation",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "multi-source scientific benchmark",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2606.03906",
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817464"
+      ],
+      "search_term": "scTranslation",
+      "authors": [
+        "Cheng, Jiabei",
+        "Zhou, Jingbo",
+        "Xia, Jun",
+        "Li, Changkai",
+        "Lei, Zhen",
+        "Yu, Chang",
+        "Li, Stan Z."
+      ],
+      "arxiv_id": "2606.03906",
+      "metadata_sources": [
+        "mGcuhGq1sY"
+      ],
+      "review_forums": []
+    },
+    {
+      "id": "k26-speakstructure",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Speak-to-Structure: Evaluating LLMs in Open-domain Natural Language-Driven Molecule Generation",
+      "doi": "10.1145/3770855.3817473",
+      "url": "https://doi.org/10.1145/3770855.3817473",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-speak-to-structure-evaluating-llms-in-open-domain-natural-language-driven-molecule-generation",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "molecular structured prediction",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2412.14642",
+        "https://openreview.net/pdf/f7e5984a71da02278ce794f437fd2519eff45c55.pdf",
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817473"
+      ],
+      "search_term": "Speak-to-Structure",
+      "authors": [
+        "Li, Jiatong",
+        "Li, Junxian",
+        "Wang, Weida",
+        "Liu, Yunqing",
+        "Zheng, Changmeng",
+        "Bian, Yatao",
+        "Zhou, Dongzhan",
+        "Wei, Xiao-Yong",
+        "Li, Qing"
+      ],
+      "metadata_sources": [
+        "tfg9EHvh8Q",
+        "qTTmUJFG38"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "qTTmUJFG38",
+          "venue": "Submitted to ICLR 2026",
+          "venueid": "ICLR.cc/2026/Conference/Rejected_Submission",
+          "number": 4020,
+          "title": "Speak-to-Structure: Evaluating LLMs in Open-domain Natural Language-Driven Molecule Generation",
+          "invitations": [
+            "ICLR.cc/2026/Conference/-/Submission",
+            "ICLR.cc/2026/Conference/-/Post_Submission",
+            "ICLR.cc/2026/Conference/Submission4020/-/Full_Submission",
+            "ICLR.cc/2026/Conference/Submission4020/-/Rebuttal_Revision",
+            "ICLR.cc/2026/Conference/-/Edit"
+          ],
+          "venue_root": "ICLR.cc/2026/Conference"
+        }
+      ],
+      "arxiv_id": "2412.14642"
+    },
+    {
+      "id": "k26-clu",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "CLUBench: A Clustering Benchmark",
+      "doi": "10.1145/3770855.3817483",
+      "url": "https://doi.org/10.1145/3770855.3817483",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-clubench-a-clustering-benchmark",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "clustering evaluation",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2605.29933",
+        "https://openreview.net/pdf/78fb541b2260096ed8d0f8e2043ba062ca8b77f5.pdf",
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817483"
+      ],
+      "search_term": "CLUBench",
+      "authors": [
+        "Xiao, Feng",
+        "Fu, Dazhi",
+        "Ding, Chris",
+        "Fan, Jicong"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "5uwXigCRnB",
+          "venue": "ICLR 2026 Conference Withdrawn Submission",
+          "venueid": "ICLR.cc/2026/Conference/Withdrawn_Submission",
+          "number": 4099,
+          "title": "CLUBench: A Clustering Benchmark",
+          "invitations": [
+            "ICLR.cc/2026/Conference/-/Submission",
+            "ICLR.cc/2026/Conference/-/Post_Submission",
+            "ICLR.cc/2026/Conference/Submission4099/-/Full_Submission",
+            "ICLR.cc/2026/Conference/-/Withdrawn_Submission"
+          ],
+          "venue_root": "ICLR.cc/2026/Conference"
+        }
+      ],
+      "metadata_sources": [
+        "5uwXigCRnB"
+      ],
+      "arxiv_id": "2605.29933"
+    },
+    {
+      "id": "k26-afa",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "AFABench: A Generic Framework for Benchmarking Active Feature Acquisition",
+      "doi": "10.1145/3770855.3817493",
+      "url": "https://doi.org/10.1145/3770855.3817493",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-afabench-a-generic-framework-for-benchmarking-active-feature-acquisition",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "generic benchmark framework",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2508.14734",
+        "https://arxiv.org/pdf/2508.14734v1",
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817493"
+      ],
+      "search_term": "AFABench",
+      "authors": [
+        "Schütz, Valter",
+        "Wu, Han",
+        "Rezvan, Reza",
+        "Aronsson, Linus",
+        "Haghir Chehreghani, Morteza"
+      ],
+      "arxiv_id": "2508.14734",
+      "metadata_sources": [
+        "MzNXFW2UAl",
+        "EUnuErSY9O",
+        "2EaUHFq5oF"
+      ],
+      "review_forums": []
+    },
+    {
+      "id": "k26-fd",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "FD-Bench: A Modular and Fair Benchmark for Data-driven Fluid Simulation",
+      "doi": "10.1145/3770855.3817497",
+      "url": "https://doi.org/10.1145/3770855.3817497",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-fd-bench-a-modular-and-fair-benchmark-for-data-driven-fluid-simulation",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "fair scientific benchmark; modular software",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2505.20349",
+        "https://arxiv.org/pdf/2505.20349v1",
+        "https://openreview.net/pdf/d34078f964379449afc5bf0358883f5d9cfad7fa.pdf",
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817497"
+      ],
+      "search_term": "FD-Bench",
+      "arxiv_id": "2505.20349",
+      "authors": [
+        "Wang, Haixin",
+        "Li, Ruoyan",
+        "Xu, Fred",
+        "Sun, Fang",
+        "Han, Kaiqiao",
+        "Huang, Zijie",
+        "Chang, Ching",
+        "Luo, Xiao",
+        "Wang, Wei",
+        "Sun, Yizhou"
+      ],
+      "metadata_sources": [
+        "iqofVrOG13",
+        "RhQ1BzUppB",
+        "OJvpsCn5em",
+        "39bGJRAQbV"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "RhQ1BzUppB",
+          "venue": "Submitted to ICLR 2026",
+          "venueid": "ICLR.cc/2026/Conference/Rejected_Submission",
+          "number": 3896,
+          "title": "FD-Bench: A Modular and Fair Benchmark for Data-driven Fluid Simulation",
+          "invitations": [
+            "ICLR.cc/2026/Conference/-/Submission",
+            "ICLR.cc/2026/Conference/-/Post_Submission",
+            "ICLR.cc/2026/Conference/Submission3896/-/Full_Submission",
+            "ICLR.cc/2026/Conference/-/Edit"
+          ],
+          "venue_root": "ICLR.cc/2026/Conference"
+        }
+      ]
+    },
+    {
+      "id": "k26-cadel",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "CA-DEL: An Open Multi-Target, Multi-Modal Benchmark for Learning from DNA-Encoded Library Screens",
+      "doi": "10.1145/3770855.3817504",
+      "url": "https://doi.org/10.1145/3770855.3817504",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-ca-del-an-open-multi-target-multi-modal-benchmark-for-learning-from-dna-encoded-library-screens",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "chemical screening; multi-source tasks",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2605.07439",
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817504"
+      ],
+      "search_term": "CA-DEL",
+      "arxiv_id": "2605.07439",
+      "review_forums": [],
+      "authors": [
+        "He, Mutian",
+        "Cao, Hanqun",
+        "Tan, Cheng",
+        "Gao, Zijun",
+        "Yao, Xiaojun",
+        "Gu, Chunbin",
+        "Heng, Pheng-Ann"
+      ]
+    },
+    {
+      "id": "k26-pr",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "PRBench: A Standardized Probabilistic Robustness Benchmark",
+      "doi": "10.1145/3770855.3817518",
+      "url": "https://doi.org/10.1145/3770855.3817518",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-prbench-a-standardized-probabilistic-robustness-benchmark",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "probabilistic robustness evaluation",
+      "pdf_urls": [
+        "https://wrap.warwick.ac.uk/id/eprint/201335/1/PRBench_KDD_2026.pdf",
+        "https://arxiv.org/pdf/2511.01724",
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817518"
+      ],
+      "search_term": "PRBench",
+      "arxiv_id": "2511.01724",
+      "review_forums": [],
+      "authors": [
+        "Yi Zhang",
+        "Zheng Wang",
+        "Zhen Chen",
+        "Wenjie Ruan",
+        "Qing Guo",
+        "Siddartha Khastgir",
+        "Carsten Maple",
+        "Xingyu Zhao"
+      ]
+    },
+    {
+      "id": "k26-uniham",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "UniHam: A Large-Scale SOC-Complete Dataset and Benchmark for Hamiltonian Learning in Materials",
+      "doi": "10.1145/3770855.3817531",
+      "url": "https://doi.org/10.1145/3770855.3817531",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-uniham-a-large-scale-soc-complete-dataset-and-benchmark-for-hamiltonian-learning-in-materials",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "scientific quantities and data scope",
+      "pdf_urls": [
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817531"
+      ],
+      "search_term": "UniHam",
+      "review_forums": [],
+      "code_urls": [
+        "https://github.com/WendyYW/UniHam"
+      ],
+      "authors": [
+        "Huang, Yuewen",
+        "Chen, Pin",
+        "Lu, Yutong"
+      ]
+    },
+    {
+      "id": "k26-weaklabels",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Rethinking Weak Supervision in Anomaly Detection: A Comprehensive Benchmark",
+      "doi": "10.1145/3770855.3817536",
+      "url": "https://doi.org/10.1145/3770855.3817536",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-rethinking-weak-supervision-in-anomaly-detection-a-comprehensive-benchmark",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "weak-label benchmarking",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2605.26068",
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817536"
+      ],
+      "search_term": "Rethinking Weak Supervision in Anomaly Detection",
+      "arxiv_id": "2605.26068",
+      "review_forums": [],
+      "authors": [
+        "Yao, Xu",
+        "Zhou, Siyuan",
+        "Wu, Zhenbo",
+        "Hou, Chaochuan",
+        "Liang, Shuang",
+        "Wang, Shiping",
+        "Huang, Hailiang",
+        "Han, Songqiao",
+        "Jiang, Minqi"
+      ]
+    },
+    {
+      "id": "k26-proteinrealistic",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "General Protein Pretraining or Domain-Specific Designs? Benchmarking Protein Modeling on Realistic Applications",
+      "doi": "10.1145/3770855.3817530",
+      "url": "https://doi.org/10.1145/3770855.3817530",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-general-protein-pretraining-or-domain-specific-designs-benchmarking-protein-modeling-on-realistic-ap",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "realistic biological evaluation",
+      "pdf_urls": [
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817530"
+      ],
+      "search_term": "\"General Protein Pretraining or Domain-Specific Designs? Benchmarking Protein Modeling on Realistic Applications\"",
+      "review_forums": [],
+      "authors": [
+        "Yan, Shuo",
+        "Yan, Yuliang",
+        "Ma, Bin",
+        "Li, Chenao",
+        "Tang, Haochun",
+        "Lu, Jiahua",
+        "Lin, Minhua",
+        "Feng, Yuyuan",
+        "Dai, Enyan"
+      ]
+    },
+    {
+      "id": "k26-taskselection",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Benchmarking on Tasks That Matter: Dataset Selection for Preserving Model Rankings",
+      "doi": "10.1145/3770855.3817569",
+      "url": "https://doi.org/10.1145/3770855.3817569",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-benchmarking-on-tasks-that-matter-dataset-selection-for-preserving-model-rankings",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "model ranking stability; benchmark selection",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2606.27997",
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817569"
+      ],
+      "search_term": "Benchmarking on Tasks That Matter",
+      "arxiv_id": "2606.27997",
+      "review_forums": [],
+      "authors": [
+        "Gusev, Rostislav",
+        "Zaytsev, Alexey"
+      ]
+    },
+    {
+      "id": "k26-components",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Beyond Holistic Models: Systematic Component-level Benchmarking of Deep Multivariate Time-Series Forecasting",
+      "doi": "10.1145/3770855.3817551",
+      "url": "https://doi.org/10.1145/3770855.3817551",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-beyond-holistic-models-systematic-component-level-benchmarking-of-deep-multivariate-time-series-fore",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "component-level evaluation",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2605.26562",
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817551"
+      ],
+      "search_term": "Beyond Holistic Models",
+      "arxiv_id": "2605.26562",
+      "review_forums": [],
+      "authors": [
+        "Liang, Shuang",
+        "Hou, Chaochuan",
+        "Yao, Xu",
+        "Wang, Shiping",
+        "Huang, Hailiang",
+        "Han, Songqiao",
+        "Jiang, Minqi"
+      ]
+    },
+    {
+      "id": "k26-biocuration",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Benchmarking LLM Agents on Real-World Biological Database Curation for Data-Driven Scientific Discovery",
+      "doi": "10.1145/3770855.3817556",
+      "url": "https://doi.org/10.1145/3770855.3817556",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-benchmarking-llm-agents-on-real-world-biological-database-curation-for-data-driven-scientific-discov",
+      "cohort": "kdd_track",
+      "priority": 1,
+      "relevance": "scientific database curation",
+      "pdf_urls": [
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817556"
+      ],
+      "search_term": "\"Benchmarking LLM Agents on Real-World Biological Database Curation for Data-Driven Scientific Discovery\"",
+      "review_forums": [],
+      "authors": [
+        "Yan, Jiaxian",
+        "Fang, Xi",
+        "Zhu, Jintao",
+        "Wu, Chenmin",
+        "Yang, Yuhang",
+        "Du, Chenxi",
+        "Fang, Meijing",
+        "Zhang, Kai",
+        "Zhang, Zaixi",
+        "Liu, Qi"
+      ]
+    },
+    {
+      "id": "k26-drift",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "A Framework for Evaluating and Benchmarking Concept Drift Detection Methods",
+      "doi": "10.1145/3770855.3819070",
+      "url": "https://doi.org/10.1145/3770855.3819070",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-a-framework-for-evaluating-and-benchmarking-concept-drift-detection-methods",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "evaluation methodology",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2606.07789",
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3819070"
+      ],
+      "search_term": "\"A Framework for Evaluating and Benchmarking Concept Drift Detection Methods\"",
+      "review_forums": [],
+      "arxiv_id": "2606.07789",
+      "authors": [
+        "Cerqueira, Vitor",
+        "Gomes, Heitor Murilo",
+        "Heyden, Marco",
+        "Pfahringer, Bernhard",
+        "Bifet, Albert"
+      ]
+    },
+    {
+      "id": "k26-mac",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "MAC: A Conversion Rate Prediction Benchmark Featuring Labels Under Multiple Attribution Mechanisms",
+      "doi": "10.1145/3770855.3817488",
+      "url": "https://doi.org/10.1145/3770855.3817488",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-mac-a-conversion-rate-prediction-benchmark-featuring-labels-under-multiple-attribution-mechanisms",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "different labeling mechanisms",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2603.02184",
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817488"
+      ],
+      "search_term": "\"MAC: A Conversion Rate Prediction Benchmark Featuring Labels Under Multiple Attribution Mechanisms\"",
+      "metadata_sources": [
+        "3mRzexaIjp"
+      ],
+      "authors": [
+        "Wu, Jinqi",
+        "Chen, Sishuo",
+        "Chan, Zhangming",
+        "Bai, Yong",
+        "Zhang, Lei",
+        "Chen, Sheng",
+        "Hou, Chenghuan",
+        "Sheng, Xiang-Rong",
+        "Zhu, Han",
+        "Xu, Jian",
+        "Zheng, Bo",
+        "Fu, Chaoyou"
+      ],
+      "arxiv_id": "2603.02184",
+      "review_forums": []
+    },
+    {
+      "id": "k26-uplift",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Evaluating Uplift Modeling under Structural Biases: Insights into Metric Stability and Model Robustness",
+      "doi": "10.1145/3770855.3817465",
+      "url": "https://doi.org/10.1145/3770855.3817465",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-evaluating-uplift-modeling-under-structural-biases-insights-into-metric-stability-and-model-robustne",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "metric stability and structural bias",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2603.20775",
+        "https://arxiv.org/pdf/2603.20775",
+        "https://dl.acm.org/doi/pdf/10.1145/3770855.3817465"
+      ],
+      "search_term": "Evaluating Uplift Modeling under Structural Biases",
+      "metadata_sources": [
+        "x3DsbGgxju",
+        "L8WkbuqUBW"
+      ],
+      "authors": [
+        "Yang, Yuxuan",
+        "Liu, Dugang",
+        "Huang, Yiyan"
+      ],
+      "arxiv_id": "2603.20775",
+      "review_forums": []
+    },
+    {
+      "title": "ReactZyme: A Benchmark for Enzyme-Reaction Prediction",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/2e68b2367d2e0bc8dd6f0ff86e07c2eb-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n24-reactzyme",
+      "year": 2024,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 1,
+      "relevance": "enzyme reaction task; source and temporal splits",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2408.13659",
+        "https://proceedings.neurips.cc/paper_files/paper/2024/file/2e68b2367d2e0bc8dd6f0ff86e07c2eb-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://arxiv.org/pdf/2408.13659v3",
+        "https://openreview.net/pdf/5a7331da9e7e8700e6886c1428f180ce81874960.pdf"
+      ],
+      "search_term": "ReactZyme",
+      "authors": [
+        "Chenqing Hua",
+        "Bozitao Zhong",
+        "Sitao Luan",
+        "Liang Hong",
+        "Guy Wolf",
+        "Doina Precup",
+        "Shuangjia Zheng"
+      ],
+      "arxiv_id": "2408.13659",
+      "metadata_sources": [
+        "z5PQiIdsXg",
+        "xjsvBtEmUW",
+        "xepxnDQoGq"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "xepxnDQoGq",
+          "venue": "NeurIPS 2024 Track Datasets and Benchmarks Poster",
+          "venueid": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "number": 1371,
+          "title": "ReactZyme: A Benchmark for Enzyme-Reaction Prediction",
+          "invitations": [
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission1371/-/Supplementary_Material",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission1371/-/Camera_Ready_Revision"
+          ],
+          "venue_root": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track"
+        }
+      ]
+    },
+    {
+      "title": "CARE: a Benchmark Suite for the Classification and Retrieval of Enzymes",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/05a7ad45d75a3082d7a3a70de8743140-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n24-care",
+      "year": 2024,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 1,
+      "relevance": "reaction and enzyme benchmark suite",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2024/file/05a7ad45d75a3082d7a3a70de8743140-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/afd392d438f17302bdc094ae741d600c00e54f19.pdf"
+      ],
+      "search_term": "\"CARE: a Benchmark Suite for the Classification and Retrieval of Enzymes\"",
+      "metadata_sources": [
+        "PFwlw9bnAr"
+      ],
+      "authors": [
+        "Jason Yang",
+        "Ariane Mora",
+        "Shengchao Liu",
+        "Bruce James Wittmann",
+        "Anima Anandkumar",
+        "Frances H. Arnold",
+        "Yisong Yue"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "PFwlw9bnAr",
+          "venue": "NeurIPS 2024 Track Datasets and Benchmarks Poster",
+          "venueid": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "number": 2262,
+          "title": "CARE: a Benchmark Suite for the Classification and Retrieval of Enzymes",
+          "venue_root": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission2262/-/Camera_Ready_Revision"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "FlexMol: A Flexible Toolkit for Benchmarking Molecular Relational Learning",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/3e560698f840bceef29e9566b9bd7312-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n24-flexmol",
+      "year": 2024,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 1,
+      "relevance": "molecular benchmarking software",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2024/file/3e560698f840bceef29e9566b9bd7312-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/b76ff99371cb85d91240ed8e98b16e88a2f516ce.pdf",
+        "https://arxiv.org/pdf/2410.15010v1",
+        "https://arxiv.org/pdf/2410.15010"
+      ],
+      "search_term": "FlexMol",
+      "metadata_sources": [
+        "fB1Bvw0cd6",
+        "raOYixthlY",
+        "0jFJYgHFX8"
+      ],
+      "authors": [
+        "Sizhe Liu",
+        "Jun Xia",
+        "Lecheng Zhang",
+        "Yuchen Liu",
+        "Yue Liu",
+        "Wenjie Du",
+        "Zhangyang Gao",
+        "Bozhen Hu",
+        "Cheng Tan",
+        "hongxin xiang",
+        "Stan Z. Li"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "raOYixthlY",
+          "venue": "NeurIPS 2024 Track Datasets and Benchmarks Poster",
+          "venueid": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "number": 1106,
+          "title": "FlexMol: A Flexible Toolkit for Benchmarking Molecular Relational Learning",
+          "venue_root": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission1106/-/Supplementary_Material",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission1106/-/Camera_Ready_Revision"
+          ]
+        }
+      ],
+      "arxiv_id": "2410.15010"
+    },
+    {
+      "title": "WelQrate: Defining the Gold Standard in Small Molecule Drug Discovery Benchmarking",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/5f2f8305cd1c5be7e8319aea306388ce-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n24-welqrate",
+      "year": 2024,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 1,
+      "relevance": "expert data curation and assay semantics",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2024/file/5f2f8305cd1c5be7e8319aea306388ce-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://arxiv.org/pdf/2411.09820v1",
+        "https://arxiv.org/pdf/2411.09820",
+        "https://openreview.net/pdf/4264daaa2427ee12cf0757b42eb3732e36217d41.pdf"
+      ],
+      "search_term": "WelQrate",
+      "metadata_sources": [
+        "E7cIDlpt6W",
+        "yXWrN6giIF",
+        "5cEwJxXNsc",
+        "PmNfuXaKlP",
+        "RgUcvs6ssu"
+      ],
+      "authors": [
+        "Yunchao Liu",
+        "Ha Dong",
+        "Xin Wang",
+        "Rocco Moretti",
+        "Yu Wang",
+        "Zhaoqian Su",
+        "Jiawei Gu",
+        "Bobby Bodenheimer",
+        "Charles Weaver",
+        "Jens Meiler",
+        "Tyler Derr"
+      ],
+      "arxiv_id": "2411.09820",
+      "review_forums": [
+        {
+          "forum_id": "RgUcvs6ssu",
+          "venue": "NeurIPS 2024 Track Datasets and Benchmarks Poster",
+          "venueid": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "number": 2251,
+          "title": "WelQrate: Defining the Gold Standard in Small Molecule Drug Discovery Benchmarking",
+          "venue_root": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission2251/-/Supplementary_Material",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission2251/-/Camera_Ready_Revision"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MassSpecGym: A benchmark for the discovery and identification of molecules",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/c6c31413d5c53b7d1c343c1498734b0f-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n24-massspecgym",
+      "year": 2024,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 1,
+      "relevance": "chemical structured prediction benchmark",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2024/file/c6c31413d5c53b7d1c343c1498734b0f-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://arxiv.org/pdf/2410.23326v3",
+        "https://arxiv.org/pdf/2410.23326",
+        "https://openreview.net/pdf/8f6255a46b104e6087b04f06e3b1afb165771084.pdf"
+      ],
+      "search_term": "MassSpecGym",
+      "metadata_sources": [
+        "C8cEYwOFxs",
+        "INmjXsykX1",
+        "AAo8zAShX3"
+      ],
+      "authors": [
+        "Roman Bushuiev",
+        "Anton Bushuiev",
+        "Niek F. de Jonge",
+        "Adamo Young",
+        "Fleming Kretschmer",
+        "Raman Samusevich",
+        "Janne Heirman",
+        "Fei Wang",
+        "Luke Zhang",
+        "Kai Dührkop",
+        "Marcus Ludwig",
+        "Nils A. Haupt",
+        "Apurva Kalia",
+        "Corinna Brungs",
+        "Robin Schmid",
+        "Russell Greiner",
+        "BO WANG",
+        "David Wishart",
+        "Liping Liu",
+        "Juho Rousu",
+        "Wout Bittremieux",
+        "Hannes Rost",
+        "Tytus D. Mak",
+        "Soha Hassoun",
+        "Florian Huber",
+        "Justin J.J. van der Hooft",
+        "Michael A. Stravs",
+        "Sebastian Böcker",
+        "Josef Sivic",
+        "Tomas Pluskal"
+      ],
+      "arxiv_id": "2410.23326",
+      "review_forums": [
+        {
+          "forum_id": "AAo8zAShX3",
+          "venue": "NeurIPS 2024 Track Datasets and Benchmarks Spotlight",
+          "venueid": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "number": 2132,
+          "title": "MassSpecGym: A benchmark for the discovery and identification of molecules",
+          "venue_root": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission2132/-/Supplementary_Material",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission2132/-/Camera_Ready_Revision"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Unraveling Molecular Structure: A Multimodal Spectroscopic Dataset for Chemistry",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/e38e60b33bb2c6993e0865160cdb5cf1-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n24-spectra",
+      "year": 2024,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 1,
+      "relevance": "heterogeneous chemical modalities",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2024/file/e38e60b33bb2c6993e0865160cdb5cf1-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/1744d54611fa0efa495098434112d6726ef49b90.pdf"
+      ],
+      "search_term": "Unraveling Molecular Structure",
+      "authors": [
+        "Marvin Alberts",
+        "Oliver Schilter",
+        "Federico Zipoli",
+        "Nina Hartrampf",
+        "Teodoro Laino"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "xjxqWYyTfR",
+          "venue": "NeurIPS 2024 Track Datasets and Benchmarks Poster",
+          "venueid": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "number": 2418,
+          "title": "Unraveling Molecular Structure: A Multimodal Spectroscopic Dataset for Chemistry",
+          "invitations": [
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission2418/-/Camera_Ready_Revision"
+          ],
+          "venue_root": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track"
+        }
+      ],
+      "metadata_sources": [
+        "xjxqWYyTfR"
+      ]
+    },
+    {
+      "title": "Can LLMs Solve Molecule Puzzles? A Multimodal Benchmark for Molecular Structure Elucidation",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/f2b9e8e7a36d43ddfd3d55113d56b1e0-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n24-moleculepuzzles",
+      "year": 2024,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 2,
+      "relevance": "chemical evaluation and reference validity",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2024/file/f2b9e8e7a36d43ddfd3d55113d56b1e0-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/363f4306cc57125ec68a9efe3620ecd707b2a893.pdf"
+      ],
+      "search_term": "\"Can LLMs Solve Molecule Puzzles? A Multimodal Benchmark for Molecular Structure Elucidation\"",
+      "metadata_sources": [
+        "KgS34hpeYt",
+        "t1mAXb4Cop"
+      ],
+      "authors": [
+        "Kehan Guo",
+        "Bozhao Nan",
+        "Yujun Zhou",
+        "Taicheng Guo",
+        "Zhichun Guo",
+        "Mihir Surve",
+        "Zhenwen Liang",
+        "Nitesh V Chawla",
+        "Olaf Wiest",
+        "Xiangliang Zhang"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "t1mAXb4Cop",
+          "venue": "NeurIPS 2024 Track Datasets and Benchmarks Spotlight",
+          "venueid": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "number": 1416,
+          "title": "Can LLMs Solve Molecule Puzzles? A Multimodal Benchmark for Molecular Structure Elucidation",
+          "venue_root": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission1416/-/Supplementary_Material",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission1416/-/Camera_Ready_Revision"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The State of Data Curation at NeurIPS: An Assessment of Dataset Development Practices in the Datasets and Benchmarks Track",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/605bbd006beee7e0589a51d6a50dcae1-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n24-curation",
+      "year": 2024,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 1,
+      "relevance": "dataset quality evidence and review practices",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2024/file/605bbd006beee7e0589a51d6a50dcae1-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/4b5322087d012f459c84fec3273ec20256ce7ed8.pdf"
+      ],
+      "search_term": "The State of Data Curation at NeurIPS",
+      "metadata_sources": [
+        "MsCSn0rlpP"
+      ],
+      "authors": [
+        "Eshta Bhardwaj",
+        "Harshit Gujral",
+        "Siyi Wu",
+        "Ciara Zogheib",
+        "Tegan Maharaj",
+        "Christoph Becker"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "MsCSn0rlpP",
+          "venue": "NeurIPS 2024 Track Datasets and Benchmarks Spotlight",
+          "venueid": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "number": 2140,
+          "title": "The State of Data Curation at NeurIPS: An Assessment of Dataset Development Practices in the Datasets and Benchmarks Track",
+          "venue_root": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission2140/-/Revision",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission2140/-/Supplementary_Material",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission2140/-/Camera_Ready_Revision"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GeSS: Benchmarking Geometric Deep Learning under Scientific Applications with Distribution Shifts",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/a8063075b00168dc39bc81683619f1a8-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n24-gess",
+      "year": 2024,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 1,
+      "relevance": "scientific distribution shifts",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2024/file/a8063075b00168dc39bc81683619f1a8-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/3c600780194cebfec8518ad61d3b454f41d67d3c.pdf"
+      ],
+      "search_term": "\"GeSS: Benchmarking Geometric Deep Learning under Scientific Applications with Distribution Shifts\"",
+      "metadata_sources": [
+        "BZxtiElo0c"
+      ],
+      "authors": [
+        "Deyu Zou",
+        "Shikun Liu",
+        "Siqi Miao",
+        "Victor Fung",
+        "Shiyu Chang",
+        "Pan Li"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "BZxtiElo0c",
+          "venue": "NeurIPS 2024 Track Datasets and Benchmarks Poster",
+          "venueid": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "number": 835,
+          "title": "GeSS: Benchmarking Geometric Deep Learning under Scientific Applications with Distribution Shifts",
+          "venue_root": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission835/-/Revision",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission835/-/Supplementary_Material",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission835/-/Camera_Ready_Revision"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Intrinsic Self-Supervision for Data Quality Audits",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/a7ce9b6a4db012cdaac28dd48989a17d-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n24-audits",
+      "year": 2024,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 2,
+      "relevance": "data auditing",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2024/file/a7ce9b6a4db012cdaac28dd48989a17d-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/96b89d1c717cf898f629574ca3543c367e7492b8.pdf"
+      ],
+      "search_term": "\"Intrinsic Self-Supervision for Data Quality Audits\"",
+      "metadata_sources": [
+        "ldHdSt8DXu",
+        "ixyZ0KRlBC",
+        "vvyUa3CDwt"
+      ],
+      "authors": [
+        "Fabian Gröger",
+        "Simone Lionetti",
+        "Philippe Gottfrois",
+        "Alvaro Gonzalez-Jimenez",
+        "Ludovic Amruthalingam",
+        "Matthew Groh",
+        "Alexander A. Navarini",
+        "Marc Pouly"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "vvyUa3CDwt",
+          "venue": "NeurIPS 2024 Track Datasets and Benchmarks Poster",
+          "venueid": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "number": 343,
+          "title": "Intrinsic Self-Supervision for Data Quality Audits",
+          "venue_root": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission343/-/Add_Authors",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission343/-/Supplementary_Material",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Ethics_Review_Flag",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission343/-/Camera_Ready_Revision"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "A Data-Centric Perspective on Evaluating Machine Learning Models for Tabular Data",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/ae00e5ce7142d02e30a8235ede1ec6fc-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n24-datacentric",
+      "year": 2024,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 2,
+      "relevance": "evaluation beyond pooled accuracy",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2024/file/ae00e5ce7142d02e30a8235ede1ec6fc-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/ad4a25be25713bf4acc80ae2aff9422dae35b95a.pdf",
+        "https://arxiv.org/pdf/2407.02112v1",
+        "https://arxiv.org/pdf/2407.02112"
+      ],
+      "search_term": "\"A Data-Centric Perspective on Evaluating Machine Learning Models for Tabular Data\"",
+      "metadata_sources": [
+        "kWTvdSSH5W",
+        "in4xb7bHWL"
+      ],
+      "authors": [
+        "Andrej Tschalzev",
+        "Sascha Marton",
+        "Stefan Lüdtke",
+        "Christian Bartelt",
+        "Heiner Stuckenschmidt"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "kWTvdSSH5W",
+          "venue": "NeurIPS 2024 Track Datasets and Benchmarks Poster",
+          "venueid": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "number": 1671,
+          "title": "A Data-Centric Perspective on Evaluating Machine Learning Models for Tabular Data",
+          "venue_root": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission1671/-/Supplementary_Material",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission1671/-/Camera_Ready_Revision"
+          ]
+        }
+      ],
+      "arxiv_id": "2407.02112"
+    },
+    {
+      "title": "SELECT: A Large-Scale Benchmark of Data Curation Strategies for Image Classification",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/f6de5ed486b1802874fe9c70b50277e4-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n24-select",
+      "year": 2024,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 2,
+      "relevance": "empirical curation evaluation",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2024/file/f6de5ed486b1802874fe9c70b50277e4-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://arxiv.org/pdf/2410.05057v1",
+        "https://arxiv.org/pdf/2410.05057",
+        "https://openreview.net/pdf/0c1d3ddecbd24d59d9b970b8bc999686820914fd.pdf"
+      ],
+      "search_term": "\"SELECT: A Large-Scale Benchmark of Data Curation Strategies for Image Classification\"",
+      "metadata_sources": [
+        "pecjKLxtcO",
+        "c8KLUnWYZm",
+        "rIHx6puY5b"
+      ],
+      "authors": [
+        "Benjamin Feuer",
+        "Jiawei Xu",
+        "Niv Cohen",
+        "Patrick Yubeaton",
+        "Govind Mittal",
+        "Chinmay Hegde"
+      ],
+      "arxiv_id": "2410.05057",
+      "review_forums": [
+        {
+          "forum_id": "rIHx6puY5b",
+          "venue": "NeurIPS 2024 Track Datasets and Benchmarks Poster",
+          "venueid": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "number": 1276,
+          "title": "SELECT: A Large-Scale Benchmark of Data Curation Strategies for Image Classification",
+          "venue_root": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission1276/-/Supplementary_Material",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission1276/-/Camera_Ready_Revision"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "$\\nabla^2$DFT: A Universal Quantum Chemistry Dataset of Drug-Like Molecules and a Benchmark for Neural Network Potentials",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/40d45b1e23d00d5895e65778e85cf8ee-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n24-dft",
+      "year": 2024,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 2,
+      "relevance": "energetic targets and quantum reference scope",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2024/file/40d45b1e23d00d5895e65778e85cf8ee-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/be4da6c570513abf4cda5b72a1995e8edac1d737.pdf",
+        "https://arxiv.org/pdf/2406.14347v1",
+        "https://arxiv.org/pdf/2406.14347",
+        "https://arxiv.org/pdf/2406.14347v2"
+      ],
+      "search_term": "$\\nabla^2$DFT",
+      "metadata_sources": [
+        "ElUrNM9U8c",
+        "ZoKeo27Tq1",
+        "Tbgm3fOyPq",
+        "tev3oraAUy",
+        "COFNeaAFAQ",
+        "pbanshTkRX",
+        "o8ZE2DasAa"
+      ],
+      "authors": [
+        "Kuzma Khrabrov",
+        "Anton Ber",
+        "Artem Tsypin",
+        "Konstantin Ushenin",
+        "Egor Rumiantsev",
+        "Alexander Telepov",
+        "Dmitry Protasov",
+        "Ilya Shenbin",
+        "Anton M. Alekseev",
+        "Mikhail Shirokikh",
+        "Sergey Nikolenko",
+        "Elena Tutubalina",
+        "Artur Kadurin"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "ElUrNM9U8c",
+          "venue": "NeurIPS 2024 Track Datasets and Benchmarks Poster",
+          "venueid": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "number": 1630,
+          "title": "$\\nabla^2$DFT: A Universal Quantum Chemistry Dataset of Drug-Like Molecules and a Benchmark for Neural Network Potentials",
+          "venue_root": "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission1630/-/Supplementary_Material",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2024/Datasets_and_Benchmarks_Track/Submission1630/-/Camera_Ready_Revision"
+          ]
+        }
+      ],
+      "arxiv_id": "2406.14347"
+    },
+    {
+      "title": "CheMixHub: Datasets and Benchmarks for Chemical Mixture Property Prediction",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/2f803abdcad9de35b45d5a656dade45c-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n25-chemix",
+      "year": 2025,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 1,
+      "relevance": "chemical mixture aggregation and tasks",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2025/file/2f803abdcad9de35b45d5a656dade45c-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/c522834a8f58166a83da250df5b6a3a9a93684ad.pdf"
+      ],
+      "search_term": "CheMixHub",
+      "metadata_sources": [
+        "8HUnx0rJNq"
+      ],
+      "authors": [
+        "Ella Miray Rajaonson",
+        "Mahyar Rajabi Kochi",
+        "Luis M. Mejía-Mendoza",
+        "Seyed Mohamad Moosavi",
+        "Benjamin Manuel Sanchez"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "8HUnx0rJNq",
+          "venue": "NeurIPS 2025 Datasets and Benchmarks Track poster",
+          "venueid": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "number": 2062,
+          "title": "CheMixHub: Datasets and Benchmarks for Chemical Mixture Property Prediction",
+          "venue_root": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission2062/-/Full_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission2062/-/Supplementary_Material",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission2062/-/Camera_Ready_Revision"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ChemPile: A 250 GB Diverse and Curated Dataset for Chemical Foundation Models",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/505dc6a661fe8dcffaac4c3621eea69d-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n25-chempile",
+      "year": 2025,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 2,
+      "relevance": "chemical data curation and release",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2025/file/505dc6a661fe8dcffaac4c3621eea69d-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/0391f82b8e801446d34a6a3263b09c6653fc2cf2.pdf"
+      ],
+      "search_term": "ChemPile",
+      "metadata_sources": [
+        "l8Mz3dcK1S"
+      ],
+      "authors": [
+        "Adrian Mirza",
+        "Nawaf Alampara",
+        "Martiño Ríos-García",
+        "Mohamed Abdelalim",
+        "Jack Butler",
+        "Bethany Connolly",
+        "Tunca Dogan",
+        "Marianna Nezhurina",
+        "Bünyamin Şen",
+        "Santosh Tirunagari",
+        "Mark Worrall",
+        "Adamo Young",
+        "Philippe Schwaller",
+        "Michael Martin Pieler",
+        "Kevin Maik Jablonka"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "l8Mz3dcK1S",
+          "venue": "NeurIPS 2025 Datasets and Benchmarks Track poster",
+          "venueid": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "number": 1845,
+          "title": "ChemPile: A 250 GB Diverse and Curated Dataset for Chemical Foundation Models",
+          "venue_root": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1845/-/Full_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1845/-/Supplementary_Material",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1845/-/Camera_Ready_Revision"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ChemX: A Collection of Chemistry Datasets for Benchmarking Automated Information Extraction",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9e08a1db869a9646418e3371b24c6ae6-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n25-chemx",
+      "year": 2025,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 1,
+      "relevance": "human curated chemical references",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2025/file/9e08a1db869a9646418e3371b24c6ae6-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/8402c7d02ceaeeac16c119b2f2f3cdce8d071ad5.pdf"
+      ],
+      "search_term": "\"ChemX: A Collection of Chemistry Datasets for Benchmarking Automated Information Extraction\"",
+      "metadata_sources": [
+        "6TuaWWfkYm",
+        "PU4AcbqKp4"
+      ],
+      "authors": [
+        "Anastasia Vepreva",
+        "Julia Razlivina",
+        "Mariia Eremeyeva",
+        "Nina Gubina",
+        "Anastasia Orlova",
+        "Aleksei Dmitrenko",
+        "Kapranova Xenia",
+        "Susan Jyakhwo",
+        "Nikita A. Vasilev",
+        "Arsen Sarkisyan",
+        "Ivan Yu. Chernyshov",
+        "Vladimir Vinogradov",
+        "Andrei Dmitrenko"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "PU4AcbqKp4",
+          "venue": "NeurIPS 2025 Datasets and Benchmarks Track poster",
+          "venueid": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "number": 1719,
+          "title": "ChemX: A Collection of Chemistry Datasets for Benchmarking Automated Information Extraction",
+          "venue_root": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1719/-/Full_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1719/-/Supplementary_Material",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1719/-/Camera_Ready_Revision"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "BOOM: Benchmarking Out-Of-distribution Molecular Property Predictions of Machine Learning Models",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/b94263f7f98c9766ea9a09761ddd88ee-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n25-boom",
+      "year": 2025,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 1,
+      "relevance": "molecular out-of-distribution benchmark",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2025/file/b94263f7f98c9766ea9a09761ddd88ee-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/a6cb3c7b79b89787c6ac0563312f0967cd73a531.pdf",
+        "https://arxiv.org/pdf/2505.01912v2",
+        "https://arxiv.org/pdf/2505.01912"
+      ],
+      "search_term": "\"BOOM: Benchmarking Out-Of-distribution Molecular Property Predictions of Machine Learning Models\"",
+      "metadata_sources": [
+        "QoBxQrvFRd",
+        "sqvzZhtiNx"
+      ],
+      "authors": [
+        "Evan R Antoniuk",
+        "Shehtab Zaman",
+        "Tal Ben-Nun",
+        "Peggy Li",
+        "James Diffenderfer",
+        "Busra Sahin",
+        "Obadiah Hersh Smolenski",
+        "Everett Grethel",
+        "Tim Hsu",
+        "Anna Hiszpanski",
+        "Kenneth Chiu",
+        "Bhavya Kailkhura",
+        "Brian Van Essen"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "QoBxQrvFRd",
+          "venue": "NeurIPS 2025 Datasets and Benchmarks Track poster",
+          "venueid": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "number": 1090,
+          "title": "BOOM: Benchmarking Out-Of-distribution Molecular Property Predictions of Machine Learning Models",
+          "venue_root": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1090/-/Full_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1090/-/Supplementary_Material",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1090/-/Camera_Ready_Revision"
+          ]
+        }
+      ],
+      "arxiv_id": "2505.01912"
+    },
+    {
+      "title": "RoFt-Mol: Benchmarking Robust Fine-tuning with Molecular Graph Foundation Models",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/013acf7d59f4333131fc8581e86148b1-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n25-roft",
+      "year": 2025,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 2,
+      "relevance": "molecular foundation-model evaluation",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2025/file/013acf7d59f4333131fc8581e86148b1-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/5a351ca9e19eac86cbbfb45a526bc9893920be49.pdf",
+        "https://openreview.net/pdf/198c6b2fd383c96f2b6f362b62a0103e4deff510.pdf"
+      ],
+      "search_term": "RoFt-Mol",
+      "metadata_sources": [
+        "S8EnwROlYj",
+        "IbCvnpJ4py"
+      ],
+      "authors": [
+        "Shikun Liu",
+        "Deyu Zou",
+        "Nima Shoghi",
+        "Victor Fung",
+        "Kai Liu",
+        "Pan Li"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "S8EnwROlYj",
+          "venue": "NeurIPS 2025 Datasets and Benchmarks Track spotlight",
+          "venueid": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "number": 1552,
+          "title": "RoFt-Mol: Benchmarking Robust Fine-tuning with Molecular Graph Foundation Models",
+          "venue_root": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1552/-/Full_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1552/-/Supplementary_Material",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1552/-/Camera_Ready_Revision"
+          ]
+        },
+        {
+          "forum_id": "IbCvnpJ4py",
+          "venue": "Submitted to ICLR 2025",
+          "venueid": "ICLR.cc/2025/Conference/Rejected_Submission",
+          "number": 13432,
+          "title": "RoFt-Mol: Benchmarking Robust Fine-tuning with Molecular Graph Foundation Models",
+          "venue_root": "ICLR.cc/2025/Conference",
+          "invitations": [
+            "ICLR.cc/2025/Conference/-/Submission",
+            "ICLR.cc/2025/Conference/-/Post_Submission",
+            "ICLR.cc/2025/Conference/Submission13432/-/Full_Submission",
+            "ICLR.cc/2025/Conference/Submission13432/-/Rebuttal_Revision",
+            "ICLR.cc/2025/Conference/-/Edit"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ModuLM: Enabling Modular and Multimodal Molecular Relational Learning with Large Language Models",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9d71f47d4f1d240b02bb173936e5bf01-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n25-modulm",
+      "year": 2025,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 2,
+      "relevance": "molecular modular benchmark software",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2025/file/9d71f47d4f1d240b02bb173936e5bf01-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/a4232002966eb8aaa88d2c9ee320127275675ee7.pdf"
+      ],
+      "search_term": "\"ModuLM: Enabling Modular and Multimodal Molecular Relational Learning with Large Language Models\"",
+      "metadata_sources": [
+        "NsikAkJFCA"
+      ],
+      "authors": [
+        "Zhuo Chen",
+        "YIZHEN ZHENG",
+        "Huan Yee Koh",
+        "hongxin xiang",
+        "Linjiang Chen",
+        "Wenjie Du",
+        "Yang Wang"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "NsikAkJFCA",
+          "venue": "NeurIPS 2025 Datasets and Benchmarks Track poster",
+          "venueid": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "number": 2276,
+          "title": "ModuLM: Enabling Modular and Multimodal Molecular Relational Learning with Large Language Models",
+          "venue_root": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission2276/-/Full_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission2276/-/Camera_Ready_Revision"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/bcaa0c3f644f580857a56f38e305867e-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n25-fg",
+      "year": 2025,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 2,
+      "relevance": "functional group reasoning references",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2025/file/bcaa0c3f644f580857a56f38e305867e-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/e4b5852d4c6aab9063d34ca1a0d41540429052e5.pdf"
+      ],
+      "search_term": "FGBench",
+      "metadata_sources": [
+        "VIsPHMMiW8"
+      ],
+      "authors": [
+        "Xuan Liu",
+        "Siru Ouyang",
+        "Xianrui Zhong",
+        "Jiawei Han",
+        "Huimin Zhao"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "VIsPHMMiW8",
+          "venue": "NeurIPS 2025 Datasets and Benchmarks Track poster",
+          "venueid": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "number": 1617,
+          "title": "FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models",
+          "venue_root": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1617/-/Full_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Ethics_Review_Flag",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1617/-/Camera_Ready_Revision"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MolVision: Molecular Property Prediction with Vision Language Models",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/c52d78d2776e3760405f054afbeb525f-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n25-molvision",
+      "year": 2025,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 2,
+      "relevance": "multi-dataset chemistry prediction",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2025/file/c52d78d2776e3760405f054afbeb525f-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/c8e7dc10345256988440f2db2bad2ca347d772ff.pdf",
+        "https://openreview.net/pdf/647c97e598711879eba76be5c03ff9d0dc3b4695.pdf"
+      ],
+      "search_term": "MolVision",
+      "metadata_sources": [
+        "6vI3OOYddm",
+        "8M04oZgMkt"
+      ],
+      "authors": [
+        "Deepan Adak",
+        "Yogesh S Rawat",
+        "Shruti Vyas"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "6vI3OOYddm",
+          "venue": "NeurIPS 2025 Datasets and Benchmarks Track poster",
+          "venueid": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "number": 1412,
+          "title": "MolVision: Molecular Property Prediction with Vision Language Models",
+          "venue_root": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1412/-/Full_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1412/-/Supplementary_Material",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1412/-/Camera_Ready_Revision"
+          ]
+        },
+        {
+          "forum_id": "8M04oZgMkt",
+          "venue": "NeurIPS 2025 2nd Workshop FM4LS Poster",
+          "venueid": "NeurIPS.cc/2025/Workshop/FM4LS",
+          "number": 71,
+          "title": "MolVision: Molecular Property Prediction with Vision Language Models",
+          "venue_root": "NeurIPS.cc/2025/Workshop/FM4LS",
+          "invitations": [
+            "NeurIPS.cc/2025/Workshop/FM4LS/-/Submission",
+            "NeurIPS.cc/2025/Workshop/FM4LS/-/Post_Submission",
+            "NeurIPS.cc/2025/Workshop/FM4LS/Submission71/-/Revision",
+            "NeurIPS.cc/2025/Workshop/FM4LS/-/Edit"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "EDBench: Large-Scale Electron Density Data for Molecular Modeling",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/d412ba5c76774f921762644e82515da3-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n25-edbench",
+      "year": 2025,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 2,
+      "relevance": "electron density reference evaluation",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2025/file/d412ba5c76774f921762644e82515da3-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://arxiv.org/pdf/2505.09262v1",
+        "https://arxiv.org/pdf/2505.09262",
+        "https://openreview.net/pdf/d79553ae0566c7ee0377b93b4164f9dabd1570f5.pdf"
+      ],
+      "search_term": "EDBench",
+      "metadata_sources": [
+        "CdeWDXDN3g",
+        "pAd7qVrYPG",
+        "Umvp9i5rVT"
+      ],
+      "authors": [
+        "hongxin xiang",
+        "Ke Li",
+        "Mingquan Liu",
+        "Zhixiang Cheng",
+        "Bin Yao",
+        "Wenjie Du",
+        "Jun Xia",
+        "Li Zeng",
+        "Xin Jin",
+        "xiangxiang Zeng"
+      ],
+      "arxiv_id": "2505.09262",
+      "review_forums": [
+        {
+          "forum_id": "pAd7qVrYPG",
+          "venue": "NeurIPS 2025 Datasets and Benchmarks Track poster",
+          "venueid": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "number": 405,
+          "title": "EDBench: Large-Scale Electron Density Data for Molecular Modeling",
+          "venue_root": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission405/-/Full_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission405/-/Camera_Ready_Revision"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Beyond Chemical QA: Evaluating LLM's Chemical Reasoning with Modular Chemical Operations",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/e0ed6d6c2ec6df05f929b8a67b78513a-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n25-operations",
+      "year": 2025,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 1,
+      "relevance": "chemical operations and evaluation granularity",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2025/file/e0ed6d6c2ec6df05f929b8a67b78513a-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/fc655e2005072174c12c3e6f49e1c77498459f50.pdf",
+        "https://arxiv.org/pdf/2505.21318v3",
+        "https://arxiv.org/pdf/2505.21318"
+      ],
+      "search_term": "Beyond Chemical QA",
+      "metadata_sources": [
+        "mvahXacGWg",
+        "vz9m42noD0",
+        "ijH0gDWvlk"
+      ],
+      "authors": [
+        "Li Hao",
+        "He CAO",
+        "Bin Feng",
+        "Daniel Shao",
+        "Xiangru Tang",
+        "Zhiyuan Yan",
+        "Yonghong Tian",
+        "Li Yuan",
+        "Yu Li"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "mvahXacGWg",
+          "venue": "NeurIPS 2025 Datasets and Benchmarks Track poster",
+          "venueid": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "number": 566,
+          "title": "Beyond Chemical QA: Evaluating LLM's Chemical Reasoning with Modular Chemical Operations",
+          "venue_root": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission566/-/Full_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission566/-/Supplementary_Material",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Ethics_Review_Flag",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission566/-/Camera_Ready_Revision"
+          ]
+        }
+      ],
+      "arxiv_id": "2505.21318"
+    },
+    {
+      "title": "Torch-Uncertainty: Deep Learning Uncertainty Quantification",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9e27bc7e3946992376f2a0c401a2e6db-Abstract-Datasets_and_Benchmarks_Track.html",
+      "id": "n25-uncertainty",
+      "year": 2025,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "cohort": "adjacent_db",
+      "priority": 2,
+      "relevance": "uncertainty benchmarking software",
+      "pdf_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2025/file/9e27bc7e3946992376f2a0c401a2e6db-Paper-Datasets_and_Benchmarks_Track.pdf",
+        "https://openreview.net/pdf/e444de2b8dac6187d8ffb401d031b52768ac0e7e.pdf"
+      ],
+      "search_term": "Torch-Uncertainty",
+      "metadata_sources": [
+        "oYfRRQr9uK"
+      ],
+      "authors": [
+        "Adrien Lafage",
+        "Olivier Laurent",
+        "Firas Gabetni",
+        "Gianni Franchi"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "oYfRRQr9uK",
+          "venue": "NeurIPS 2025 Datasets and Benchmarks Track spotlight",
+          "venueid": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "number": 1834,
+          "title": "Torch-Uncertainty: Deep Learning Uncertainty Quantification",
+          "venue_root": "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track",
+          "invitations": [
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Post_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1834/-/Full_Submission",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/-/Edit",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1834/-/Supplementary_Material",
+            "NeurIPS.cc/2025/Datasets_and_Benchmarks_Track/Submission1834/-/Camera_Ready_Revision"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "r24-orderly",
+      "year": 2024,
+      "title": "ORDerly: Data Sets and Benchmarks for Chemical Reaction Data",
+      "venue": "Journal of Chemical Information and Modeling",
+      "cohort": "reaction_prior",
+      "url": "https://doi.org/10.1021/acs.jcim.4c00292",
+      "arxiv_id": null,
+      "priority": 1,
+      "relevance": "closest reaction data and condition benchmark; novelty boundary",
+      "pdf_urls": [
+        "https://europepmc.org/articles/PMC11094788?pdf=render",
+        "https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.4c00292",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11094788/pdf/ci4c00292.pdf"
+      ],
+      "search_term": "\"ORDerly: Data Sets and Benchmarks for Chemical Reaction Data\"",
+      "full_text_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11094788/fullTextXML"
+      ],
+      "review_forums": [],
+      "authors": [
+        "Wigh, Daniel S.",
+        "Arrowsmith, Joe",
+        "Pomberger, Alexander",
+        "Felton, Kobi C.",
+        "Lapkin, Alexei A."
+      ]
+    },
+    {
+      "id": "r24-chemprop",
+      "year": 2024,
+      "title": "Chemprop: A Machine Learning Package for Chemical Property Prediction",
+      "venue": "Journal of Chemical Information and Modeling",
+      "cohort": "reaction_prior",
+      "url": "https://doi.org/10.1021/acs.jcim.3c01250",
+      "arxiv_id": null,
+      "priority": 1,
+      "relevance": "reaction prediction software and baseline reproduction",
+      "pdf_urls": [
+        "https://europepmc.org/articles/PMC10777403?pdf=render",
+        "https://chemrxiv.org/engage/api-gateway/chemrxiv/assets/orp/resource/item/64d1f13d4a3f7d0c0dcd836b/original/chemprop-a-machine-learning-package-for-chemical-property-prediction.pdf",
+        "https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.3c01250",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10777403/pdf/ci3c01250.pdf"
+      ],
+      "search_term": "\"Chemprop: A Machine Learning Package for Chemical Property Prediction\"",
+      "metadata_sources": [
+        "uPEOVhivn5"
+      ],
+      "authors": [
+        "Heid, Esther",
+        "Greenman, Kevin P.",
+        "Chung, Yunsie",
+        "Li, Shih-Cheng",
+        "Graff, David E.",
+        "Vermeire, Florence H.",
+        "Wu, Haoyang",
+        "Green, William H.",
+        "McGill, Charles J."
+      ],
+      "full_text_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10777403/fullTextXML"
+      ],
+      "review_forums": []
+    },
+    {
+      "id": "r24-mechfinder",
+      "year": 2024,
+      "title": "A large-scale reaction dataset of mechanistic pathways of organic reactions",
+      "venue": "Scientific Data",
+      "cohort": "reaction_prior",
+      "url": "https://www.nature.com/articles/s41597-024-03709-y",
+      "arxiv_id": null,
+      "priority": 1,
+      "relevance": "mechanistic reference generation and annotation provenance",
+      "pdf_urls": [
+        "https://www.nature.com/articles/s41597-024-03709-y.pdf"
+      ],
+      "search_term": "\"A large-scale reaction dataset of mechanistic pathways of organic reactions\"",
+      "review_forums": [],
+      "authors": []
+    },
+    {
+      "id": "r24-hitea",
+      "year": 2024,
+      "title": "Probing the chemical reactome with high-throughput experimentation data",
+      "venue": "Nature Chemistry",
+      "cohort": "reaction_prior",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10997498/",
+      "arxiv_id": null,
+      "priority": 1,
+      "relevance": "experimental conditions and yield landscape; journal volume year 2024",
+      "pdf_urls": [
+        "https://api.repository.cam.ac.uk/server/api/core/bitstreams/d6e60ce7-5387-4132-bc5e-2e85f0e98a31/content"
+      ],
+      "search_term": "\"Probing the chemical reactome with high-throughput experimentation data\"",
+      "review_forums": [],
+      "authors": []
+    },
+    {
+      "id": "r24-misato",
+      "year": 2024,
+      "title": "MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery",
+      "venue": "Nature Computational Science",
+      "cohort": "resource_prior",
+      "url": "https://doi.org/10.1038/s43588-024-00627-2",
+      "arxiv_id": null,
+      "priority": 1,
+      "relevance": "scientific resource utility and reference validation",
+      "pdf_urls": [
+        "https://europepmc.org/articles/PMC11136668?pdf=render",
+        "https://www.nature.com/articles/s43588-024-00627-2.pdf"
+      ],
+      "search_term": "\"MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery\"",
+      "metadata_sources": [
+        "GGcaP0EmSx",
+        "jEREm9PS8e",
+        "RdNYJW5dRT"
+      ],
+      "authors": [
+        "Siebenmorgen, Till",
+        "Menezes, Filipe",
+        "Benassou, Sabrina",
+        "Merdivan, Erinc",
+        "Didi, Kieran",
+        "Mourão, André Santos Dias",
+        "Kitel, Radosław",
+        "Liò, Pietro",
+        "Kesselheim, Stefan",
+        "Piraud, Marie",
+        "Theis, Fabian J.",
+        "Sattler, Michael",
+        "Popowicz, Grzegorz M."
+      ],
+      "full_text_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11136668/fullTextXML"
+      ],
+      "review_forums": []
+    },
+    {
+      "id": "r25-flower",
+      "year": 2025,
+      "title": "Electron flow matching for generative reaction mechanism prediction",
+      "venue": "Nature",
+      "cohort": "reaction_prior",
+      "url": "https://www.nature.com/articles/s41586-025-09426-9",
+      "arxiv_id": "2502.12979",
+      "priority": 1,
+      "relevance": "mechanistic predictor and benchmark exposure; published title shortened from preprint",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2502.12979"
+      ],
+      "search_term": "\"Electron flow matching for generative reaction mechanism prediction\"",
+      "metadata_sources": [
+        "2pnyajRGJo"
+      ],
+      "authors": [
+        "Joonyoung F. Joung",
+        "Mun Hong Fong",
+        "Nicholas Casetti",
+        "Jordan P. Liles",
+        "Ne S. Dassanayake",
+        "Connor W. Coley"
+      ],
+      "review_forums": []
+    },
+    {
+      "id": "r25-omebench",
+      "year": 2025,
+      "title": "oMeBench: Towards Robust Benchmarking of LLMs in Organic Mechanism Elucidation and Reasoning",
+      "venue": "arXiv preprint",
+      "cohort": "reaction_prior",
+      "url": "https://arxiv.org/abs/2510.07731",
+      "arxiv_id": "2510.07731",
+      "priority": 1,
+      "relevance": "direct mechanism benchmark competitor",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2510.07731",
+        "https://openreview.net/pdf/bad5c3547508c6e5b46eba578f5bb4309238ce12.pdf",
+        "https://arxiv.org/pdf/2510.07731v2"
+      ],
+      "search_term": "\"oMeBench: Towards Robust Benchmarking of LLMs in Organic Mechanism Elucidation and Reasoning\"",
+      "metadata_sources": [
+        "E9BhPTNIG1",
+        "C794aWdeXu"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "E9BhPTNIG1",
+          "venue": "ACL ARR 2026 May Submission",
+          "venueid": "aclweb.org/ACL/ARR/2026/May/Submission",
+          "number": 16362,
+          "title": "oMeBench: Towards Robust Benchmarking of LLMs in Organic Mechanism Elucidation and Reasoning",
+          "venue_root": "aclweb.org/ACL/ARR/2026/May",
+          "invitations": [
+            "aclweb.org/ACL/ARR/2026/May/-/Submission",
+            "aclweb.org/ACL/ARR/2026/May/-/Edit",
+            "aclweb.org/ACL/ARR/2026/May/-/Post_Submission",
+            "aclweb.org/ACL/ARR/2026/May/-/Preprint_Post_Submission"
+          ]
+        }
+      ],
+      "authors": [
+        "Ruiling Xu",
+        "Yifan Zhang",
+        "Qingyun Wang",
+        "Carl Edwards",
+        "Heng Ji"
+      ]
+    },
+    {
+      "id": "r26-frea",
+      "year": 2026,
+      "title": "FREA: A Multi-Source Expert Benchmark for Reaction Feasibility Verification",
+      "venue": "arXiv preprint",
+      "cohort": "reaction_prior",
+      "url": "https://arxiv.org/abs/2610.06614",
+      "arxiv_id": "2610.06614",
+      "priority": 1,
+      "relevance": "direct feasibility benchmark already supplying expert labels",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2610.06614",
+        "https://openreview.net/pdf/8e96cae696c034e4f2eff58f7267e1c10e7e5412.pdf"
+      ],
+      "search_term": "\"FREA: A Multi-Source Expert Benchmark for Reaction Feasibility Verification\"",
+      "metadata_sources": [
+        "SBDxMjBKdp"
+      ],
+      "review_forums": [],
+      "authors": []
+    },
+    {
+      "id": "r26-tsbench",
+      "year": 2026,
+      "title": "TSBench: A physics-grounded benchmark for evaluating LLM understanding of chemical reaction mechanisms",
+      "venue": "arXiv preprint",
+      "cohort": "reaction_prior",
+      "url": "https://arxiv.org/abs/2609.08503",
+      "arxiv_id": "2609.08503",
+      "priority": 1,
+      "relevance": "mechanism validity evaluation competitor",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2609.08503"
+      ],
+      "search_term": "\"TSBench: A physics-grounded benchmark for evaluating LLM understanding of chemical reaction mechanisms\"",
+      "review_forums": [],
+      "authors": []
+    },
+    {
+      "id": "r26-fukuyama",
+      "year": 2026,
+      "title": "Learning Mechanistic Reasoning for Chemical Reactions with Large Language Models",
+      "venue": "arXiv preprint",
+      "cohort": "reaction_prior",
+      "url": "https://arxiv.org/abs/2607.12771",
+      "arxiv_id": "2607.12771",
+      "priority": 1,
+      "relevance": "FukuyamaBench and hierarchical pathway prediction",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2607.12771"
+      ],
+      "search_term": "\"Learning Mechanistic Reasoning for Chemical Reactions with Large Language Models\"",
+      "review_forums": [],
+      "authors": []
+    },
+    {
+      "id": "r26-mechbench",
+      "year": 2026,
+      "title": "Learning Transferable Reaction Mechanisms from Visual Chemical Knowledge",
+      "venue": "arXiv preprint",
+      "cohort": "reaction_prior",
+      "url": "https://arxiv.org/abs/2609.33608",
+      "arxiv_id": "2609.33608",
+      "priority": 1,
+      "relevance": "MechBench; literature mechanism coverage and evaluation",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2609.33608",
+        "https://openreview.net/pdf/9c8f7147eb3fc3fe222b0ba1d58da25969fad3e0.pdf"
+      ],
+      "search_term": "\"Learning Transferable Reaction Mechanisms from Visual Chemical Knowledge\"",
+      "metadata_sources": [
+        "7EkDxCbiuO"
+      ],
+      "review_forums": [],
+      "authors": []
+    },
+    {
+      "id": "r26-mechfind",
+      "year": 2026,
+      "title": "MechFind: a computational framework for de novo prediction of enzyme mechanisms",
+      "venue": "Nature Communications",
+      "cohort": "reaction_prior",
+      "url": "https://www.nature.com/articles/s41467-026-71957-0",
+      "arxiv_id": null,
+      "priority": 1,
+      "relevance": "enzyme mechanism prediction using M-CSA; source dependence",
+      "pdf_urls": [
+        "https://www.nature.com/articles/s41467-026-71957-0.pdf"
+      ],
+      "search_term": "\"MechFind: a computational framework for de novo prediction of enzyme mechanisms\"",
+      "review_forums": [],
+      "authors": []
+    },
+    {
+      "id": "r26-omat",
+      "year": 2026,
+      "title": "The Open Materials 2024 (OMat24) inorganic materials dataset and models",
+      "venue": "Nature Computational Science",
+      "cohort": "resource_prior",
+      "url": "https://doi.org/10.1038/s43588-026-00996-w",
+      "arxiv_id": "2410.12771",
+      "priority": 1,
+      "relevance": "scientific dataset and baseline release; 2024 preprint, 2026 journal article",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2410.12771"
+      ],
+      "search_term": "\"The Open Materials 2024 (OMat24) inorganic materials dataset and models\"",
+      "review_forums": [],
+      "authors": [
+        "Barros-Luque, Luis",
+        "Shuaibi, Muhammed",
+        "Fu, Xiang",
+        "Wood, Brandon M.",
+        "Dzamba, Misko",
+        "Gao, Meng",
+        "Rizvi, Ammar",
+        "Uyttendaele, Matt",
+        "Zitnick, C. Lawrence",
+        "Ulissi, Zachary W."
+      ]
+    },
+    {
+      "id": "r26-synrxn",
+      "year": 2026,
+      "title": "SynRXN: An Open Benchmark and Curated Dataset for Computational Reaction Modeling",
+      "venue": "Scientific Data",
+      "cohort": "reaction_prior",
+      "url": "https://www.nature.com/articles/s41597-026-07260-w",
+      "arxiv_id": "2601.01943",
+      "priority": 1,
+      "relevance": "published baseline that bounds the next paper novelty",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2601.01943"
+      ],
+      "search_term": "\"SynRXN: An Open Benchmark and Curated Dataset for Computational Reaction Modeling\"",
+      "review_forums": [],
+      "authors": []
+    },
+    {
+      "id": "r26-venusrx",
+      "year": 2026,
+      "title": "Elucidating the Space of Enzymatic Reaction: A Unified Benchmark and Pretrained Model",
+      "venue": "arXiv preprint",
+      "cohort": "reaction_prior",
+      "url": "https://arxiv.org/abs/2610.11694",
+      "arxiv_id": "2610.11694",
+      "priority": 1,
+      "relevance": "new direct multi-task reaction benchmark competitor",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2610.11694",
+        "https://openreview.net/pdf/a6696e6c0654a2a758c2751a39a1a206683f26d9.pdf"
+      ],
+      "search_term": "\"Elucidating the Space of Enzymatic Reaction: A Unified Benchmark and Pretrained Model\"",
+      "metadata_sources": [
+        "B9a221JXqo"
+      ],
+      "review_forums": [],
+      "authors": []
+    },
+    {
+      "id": "r26-multipleanswers",
+      "year": 2026,
+      "title": "When Single Answer Is Not Enough: Rethinking Single-Step Retrosynthesis Benchmarks for LLMs",
+      "venue": "arXiv preprint",
+      "cohort": "reaction_prior",
+      "url": "https://arxiv.org/abs/2602.03554",
+      "arxiv_id": "2602.03554",
+      "priority": 1,
+      "relevance": "multiple valid retrosynthesis answers; limits of exact-match evaluation",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2602.03554",
+        "https://openreview.net/pdf/66040cb2d03f23ec653a9b54ea4166383de2db7a.pdf",
+        "https://arxiv.org/pdf/2602.03554v2"
+      ],
+      "search_term": "\"When Single Answer Is Not Enough: Rethinking Single-Step Retrosynthesis Benchmarks for LLMs\"",
+      "metadata_sources": [
+        "ABhGgV7pov",
+        "K9pmbWi5v2"
+      ],
+      "authors": [
+        "Bogdan Zagribelnyy",
+        "Ivan Ilin",
+        "Maksim Kuznetsov",
+        "Nikita Bondarev",
+        "Roman Schutski",
+        "Thomas MacDougall",
+        "Rim Shayakhmetov",
+        "Zulfat Miftahutdinov",
+        "Mikolaj Mizera",
+        "Vladimir Aladinskiy",
+        "Alex Aliper",
+        "Alex Zhavoronkov"
+      ],
+      "review_forums": [
+        {
+          "forum_id": "ABhGgV7pov",
+          "venue": "ICML 2026 regular",
+          "venueid": "ICML.cc/2026/Conference",
+          "number": 22555,
+          "title": "When Single Answer Is Not Enough: Rethinking Single-Step Retrosynthesis Benchmarks for LLMs",
+          "venue_root": "ICML.cc/2026/Conference",
+          "invitations": [
+            "ICML.cc/2026/Conference/-/Submission",
+            "ICML.cc/2026/Conference/-/Post_Submission",
+            "ICML.cc/2026/Conference/Submission22555/-/Full_Submission",
+            "ICML.cc/2026/Conference/-/Edit",
+            "ICML.cc/2026/Conference/Submission22555/-/Camera_Ready_Revision"
+          ]
+        }
+      ],
+      "publication_status": "ICML 2026 regular, verified in public submission metadata; downloaded author version"
+    },
+    {
+      "id": "r24-syntheseus",
+      "year": 2024,
+      "title": "Re-evaluating Retrosynthesis Algorithms with Syntheseus",
+      "venue": "Faraday Discussions",
+      "cohort": "reaction_prior",
+      "priority": 1,
+      "relevance": "direct fair-evaluation software precedent; single-step and planning protocol effects",
+      "url": "https://doi.org/10.1039/D4FD00093E",
+      "arxiv_id": "2310.19796",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2310.19796",
+        "https://openreview.net/pdf/98704a036ed5d47898ef875ee80ddb7596c0ba09.pdf",
+        "https://openreview.net/pdf/412146484eb17299b676b609fcd6f48ab5f699ea.pdf",
+        "https://openreview.net/pdf/0eee17f5bdf320c1e5db5e834ecab65dc2246a09.pdf",
+        "https://openreview.net/pdf/58fb3628fd20021e0c5b4e906c5db3660a6f2a5f.pdf"
+      ],
+      "search_term": "\"Re-evaluating Retrosynthesis Algorithms with Syntheseus\"",
+      "review_forums": [
+        {
+          "forum_id": "I9huj1zxRj",
+          "venue": "DMLR @ ICLR 2024",
+          "venueid": "ICLR.cc/2024/Workshop/DMLR",
+          "number": 57,
+          "title": "Re-evaluating Retrosynthesis Algorithms with Syntheseus",
+          "venue_root": "ICLR.cc/2024/Workshop/DMLR",
+          "invitations": [
+            "ICLR.cc/2024/Workshop/DMLR/-/Submission",
+            "ICLR.cc/2024/Workshop/DMLR/-/Post_Submission",
+            "ICLR.cc/2024/Workshop/DMLR/-/Edit",
+            "ICLR.cc/2024/Workshop/DMLR/Submission57/-/Revision"
+          ]
+        },
+        {
+          "forum_id": "mbWFGYUnzI",
+          "venue": "GEM Poster",
+          "venueid": "ICLR.cc/2024/Workshop/GEM",
+          "number": 33,
+          "title": "Re-evaluating Retrosynthesis Algorithms with Syntheseus",
+          "venue_root": "ICLR.cc/2024/Workshop/GEM",
+          "invitations": [
+            "ICLR.cc/2024/Workshop/GEM/-/Submission",
+            "ICLR.cc/2024/Workshop/GEM/-/Post_Submission",
+            "ICLR.cc/2024/Workshop/GEM/-/Edit",
+            "ICLR.cc/2024/Workshop/GEM/Submission33/-/Camera_Ready"
+          ]
+        },
+        {
+          "forum_id": "8jKuUHsndT",
+          "venue": "Submitted to ICLR 2024",
+          "venueid": "ICLR.cc/2024/Conference/Rejected_Submission",
+          "number": 6538,
+          "title": "Re-evaluating Retrosynthesis Algorithms with Syntheseus",
+          "venue_root": "ICLR.cc/2024/Conference",
+          "invitations": [
+            "ICLR.cc/2024/Conference/-/Submission",
+            "ICLR.cc/2024/Conference/-/Post_Submission",
+            "ICLR.cc/2024/Conference/Submission6538/-/Revision",
+            "ICLR.cc/2024/Conference/-/Edit"
+          ]
+        }
+      ],
+      "metadata_sources": [
+        "I9huj1zxRj",
+        "mbWFGYUnzI",
+        "8jKuUHsndT",
+        "W5U18rgtpg"
+      ],
+      "authors": [
+        "Krzysztof Maziarz",
+        "Austin Tripp",
+        "Guoqing Liu",
+        "Megan Stanley",
+        "Shufang Xie",
+        "Piotr Gaiński",
+        "Philipp Seidl",
+        "Marwin Segler"
+      ]
+    },
+    {
+      "id": "k26-tsarena",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "TS-Arena -- A Live Forecast Pre-Registration Platform",
+      "doi": "10.1145/3770855.3817515",
+      "url": "https://doi.org/10.1145/3770855.3817515",
+      "official_source": "https://kdd2026.kdd.org/papers/",
+      "inventory_id": "kdd2026-ts-arena-a-live-forecast-pre-registration-platform",
+      "cohort": "kdd_track",
+      "priority": 2,
+      "relevance": "prospective evaluation; forecast registration and contamination control",
+      "pdf_urls": [
+        "https://arxiv.org/pdf/2512.20761"
+      ],
+      "search_term": "\"TS-Arena\"",
+      "arxiv_id": "2512.20761",
+      "review_forums": [],
+      "authors": [
+        "Marcel Meyer",
+        "Sascha Kaltenpoth",
+        "Henrik Albers",
+        "Kevin Zalipski",
+        "Oliver Müller"
+      ]
+    },
+    {
+      "id": "r26-bh-ood",
+      "year": 2026,
+      "venue": "Nature Computational Science",
+      "title": "Robust out-of-distribution prediction of Buchwald–Hartwig reactions",
+      "doi": "10.1038/s43588-026-01017-6",
+      "url": "https://doi.org/10.1038/s43588-026-01017-6",
+      "official_source": "https://github.com/schwallergroup/bh-hte-ood",
+      "cohort": "reaction_prior",
+      "priority": 1,
+      "relevance": "Direct source benchmark already combines BH cohorts, OOD substrate/condition evaluation and experimental recommendation validation; novelty boundary for SynRXN planning.",
+      "pdf_urls": [],
+      "full_text_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13593570/fullTextXML"
+      ],
+      "authors": [
+        "Paulo Neves",
+        "Bo Hao",
+        "Santeri Aikonen",
+        "Justin B Diccianni",
+        "Jörg K Wegner",
+        "Philippe Schwaller",
+        "Iulia I Strambeanu"
+      ],
+      "review_forums": [],
+      "metadata_sources": [
+        "Europe PMC PMC13593570"
+      ]
+    }
+  ]
+}

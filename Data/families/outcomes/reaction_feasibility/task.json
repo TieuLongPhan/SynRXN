@@ -1,0 +1,96 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 2,
+    "data_links": 2,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 2,
+    "stored_rows_across_unique_views": 14115808,
+    "task_table_bindings": 2,
+    "tasks": 1,
+    "unique_table_views": 2
+  },
+  "tables": [
+    {
+      "data_link": "canonical/feasibility/frea_corpus/data.csv.gz",
+      "key": "feasibility/frea_corpus",
+      "metadata": "canonical/feasibility/frea_corpus/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/feasibility/frea_expert/data.csv.gz",
+      "key": "feasibility/frea_expert",
+      "metadata": "canonical/feasibility/frea_expert/table.json",
+      "namespace": "canonical"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "feasibility/frea_corpus",
+        "legacy_field_eligible_rows": {
+          "feasibility": 14115057
+        },
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 14115057
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "feasibility/frea_expert",
+        "legacy_field_eligible_rows": {
+          "feasibility": 751
+        },
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 751
+      }
+    ],
+    "canonical_keys": [
+      "feasibility/frea_corpus",
+      "feasibility/frea_expert"
+    ],
+    "counting_units": [
+      "source-table row"
+    ],
+    "extension_adapter_ids": [],
+    "family_id": "outcomes",
+    "id": "reaction_feasibility",
+    "legacy_view_ids": [
+      "feasibility"
+    ],
+    "metrics": [
+      "AUPRC",
+      "AUROC",
+      "balanced_accuracy",
+      "MCC",
+      "calibration"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 14115808,
+    "primary_table_count": 2,
+    "qualification": "Expert judgments and generated supervision are separate. FREA already supplies these labels and source-dependent evaluations; do not claim new labels.",
+    "question": "Reactants and proposed products -> source feasibility judgment",
+    "readiness": "legacy_export_variants_available",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 2,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Proposal feasibility"
+  }
+}

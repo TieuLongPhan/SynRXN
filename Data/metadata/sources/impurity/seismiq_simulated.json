@@ -1,0 +1,14 @@
+{
+  "dataset": "seismiq_simulated",
+  "decision": "excluded_generated_candidates_not_experimental",
+  "downloaded_file": "simulated_impurities.zip",
+  "license_evidence": "Zenodo record 16438770 declares Creative Commons Attribution 4.0 International for the deposited dataset.",
+  "license_spdx": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "release_status": "audit_only_excluded_from_synrxn_release",
+  "retrieved_at": "2026-08-22",
+  "source_doi": "10.5281/zenodo.16438770",
+  "source_file_size": 11730,
+  "source_sha256": "4063cb914b07e7ab3239a3be878cfd1debf0dfa2a94d1bef3fb0aa9700b88fd5",
+  "source_url": "https://zenodo.org/records/16438770/files/simulated_impurities.zip?download=1"
+}

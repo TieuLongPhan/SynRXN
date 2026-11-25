@@ -1,0 +1,983 @@
+<?xml version="1.0" encoding="UTF-8"?><article xml:lang="en" article-type="research-article"><front><journal-meta><journal-id journal-id-type="pmc-domain-id">822</journal-id><journal-id journal-id-type="pmc-domain">acssd</journal-id><journal-title-group><journal-title>Journal of Chemical Information and Modeling</journal-title><abbrev-journal-title>J Chem Inf Model</abbrev-journal-title></journal-title-group></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC11938280</article-id><article-id pub-id-type="pmcaid">11938280</article-id><article-id pub-id-type="pmcaiid">11938280</article-id><article-id pub-id-type="pmid">40019281</article-id><article-id pub-id-type="doi">10.1021/acs.jcim.4c01795</article-id><title-group><article-title><monospace>SynTemp</monospace>: Efficient Extraction
+of Graph-Based Reaction Rules from Large-Scale Reaction Databases</article-title></title-group><contrib-group content-type="author"><contrib><name name-style="western"><surname>Phan</surname><given-names initials="TL">Tieu-Long</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref><xref rid="cor1" ref-type="author-notes">*</xref></contrib><contrib><name name-style="western"><surname>Weinbauer</surname><given-names initials="K">Klaus</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff3">§</xref></contrib><contrib><name name-style="western"><surname>Laffitte</surname><given-names initials="MEG">Marcos E González</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff4">∥</xref></contrib><contrib><name name-style="western"><surname>Pan</surname><given-names initials="Y">Yingjie</given-names></name><xref ref-type="aff" rid="aff5">⊥</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Merkle</surname><given-names initials="D">Daniel</given-names></name><xref ref-type="aff" rid="aff6">#</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Andersen</surname><given-names initials="JL">Jakob L</given-names></name><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Fagerberg</surname><given-names initials="R">Rolf</given-names></name><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Flamm</surname><given-names initials="C">Christoph</given-names></name><xref ref-type="aff" rid="aff5">⊥</xref></contrib><contrib><name name-style="western"><surname>Stadler</surname><given-names initials="PF">Peter F</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff7">∇</xref><xref ref-type="aff" rid="aff8">°</xref><xref ref-type="aff" rid="aff9">◆</xref><xref ref-type="aff" rid="aff10">¶</xref></contrib></contrib-group><aff id="aff1"><label>†</label>Bioinformatics
+Group, Department of Computer Science &amp;Interdisciplinary Center
+for Bioinformatics &amp;School for Embedded and Composite Artificial
+Intelligence (SECAI), Leipzig University, Härtelstraße 16-18, D-04107 Leipzig, Germany</aff><aff id="aff2"><label>‡</label>Department
+of Mathematics and Computer Science, University
+of Southern Denmark, DK-5230 Odense M, Denmark</aff><aff id="aff3"><label>§</label>Machine
+Learning Research Unit, TU Wien Informatics, A-1040 Wien, Austria</aff><aff id="aff4"><label>∥</label>Center
+for Scalable Data Analytics and Artificial Intelligence (ScaDS.AI), Leipzig University, D-04103 Leipzig, Germany</aff><aff id="aff5"><label>⊥</label>Department
+of Theoretical Chemistry, University of
+Vienna, Währingerstraße 17, A-1090 Vienna, Austria</aff><aff id="aff6"><label>#</label>Faculty of
+Technology, Bielefeld University, Postfach 10 01 31, D-33501 Bielefeld, Germany</aff><aff id="aff7"><label>∇</label>Max
+Planck Institute for Mathematics in the Sciences, Inselstraße 22, D-04103 Leipzig, Germany</aff><aff id="aff8"><label>°</label>Facultad
+de Ciencias, Universidad National de Colombia, Bogotá CO-111321, Colombia</aff><aff id="aff9"><label>◆</label>Center
+for non-coding RNA in Technology and Health, University of Copenhagen, Ridebanevej 9, DK-1870 Frederiksberg, Denmark</aff><aff id="aff10"><label>¶</label>Santa
+Fe Institute, 1399 Hyde
+Park Rd., Santa Fe, New Mexico 87501, United States</aff><author-notes><fn id="cor1"><label>*</label><p>Email: <email>tieu@bioinf.uni-leipzig.de</email>.</p></fn></author-notes><pub-date><day>28</day><month>2</month><year>2025</year></pub-date><volume>65</volume><issue>6</issue><fpage>2882</fpage><page-range>2882–2896</page-range><pub-history><event event-type="pmc-release"><date><day>27</day><month>3</month><year>2025</year></date></event></pub-history><permissions><copyright-statement>© 2025 The Authors. Published by American Chemical Society</copyright-statement><license><license-p>Permits the broadest form of re-use including for commercial purposes, provided that author attribution and integrity are maintained (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://creativecommons.org/licenses/by/4.0/" ext-link-type="uri">https://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795.pdf" content-type="pmc-pdf"><?cloudpmc-path bd82/11938280/11fa9db3d782/ci4c01795.pdf?><?cloudpmc-bucket app?><?size 2994426?></self-uri><abstract id="abstract1"><title>Abstract</title><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="ab-tgr1" xlink:href="ci4c01795_0012.jpg"><?cloudpmc-path blobs/bd82/11938280/abf6565897f2/ci4c01795_0012.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 1302?><?original-width 2400?><?scaled-height 419?><?scaled-width 773?></graphic><p>Reaction templates are graphs that represent the reaction
+center
+as well as the surrounding context in order to specify salient features
+of chemical reactions. They are subgraphs of <italic>imaginary transition
+states</italic>, which are equivalent to double pushout graph rewriting
+rules and thus can be applied directly to predict reaction outcomes
+at the structural formula level. We introduce here <monospace>SynTemp</monospace>, a framework designed to extract and hierarchically cluster reaction
+templates from large-scale reaction data repositories. Rule inference
+is implemented as a robust graph-theoretic approach, which first computes
+an atom–atom mapping (AAM) as a consensus over partial predictions
+from multiple state-of-the-art tools and then augments the raw AAM
+by mechanistically relevant hydrogen atoms and extracts the reactions
+center extended by relevant context. <monospace>SynTemp</monospace> achieves an exceptional accuracy of 99.5% and a success rate of
+71.23% in obtaining AAMs on the <italic>chemical reaction dataset</italic>. Hierarchical clustering of the extended reaction centers based
+on topological features results in a library of 311 transformation
+rules explaining 86% of the reaction dataset.</p></abstract><custom-meta-group><custom-meta><meta-name>status</meta-name><meta-value>released</meta-value></custom-meta><custom-meta><meta-name>display-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>is-in-collection-domain</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>is-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-journal-matter</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-scanned</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-retracted</meta-name><meta-value>no</meta-value></custom-meta></custom-meta-group></article-meta><notes notes-type="article-notes"><sec id="historyarticle-meta1" sec-type="history" disp-level="2"><p>Received 2024 Sep 30; Accepted 2025 Feb 17; Revised 2025 Feb 12; Collection date 2025 Mar 24.</p></sec></notes></front><body><sec id="sec1" disp-level="1"><label>1.</label><title>Introduction</title><p>Recent advancements in
+Artificial Intelligence (AI) and data-driven
+methods have markedly accelerated the molecular design of drug candidates
+and materials. The development of recipes to construct a target compound
+from available starting materials by orchestrating a sequence of chemically
+viable reaction steps, i.e., <italic>synthesis planning</italic>,
+thus also is increasingly treated as a computational problem. Traditionally,
+it is most commonly approached by retrosynthetic analysis, formalized
+by E. J. Corey<sup><xref rid="ref1" ref-type="bibr">1</xref>,<xref rid="ref2" ref-type="bibr">2</xref></sup> in the 1960s as the recursive
+decomposition of the product considering the reverse of synthetic
+reactions. This calls for the exploration of a vast array of potential
+chemical reactions that have not yet been observed for a specific
+set of reactants but are analogous to known chemical transformations.
+Modern synthesis planning therefore crucially relies on <italic>reaction
+patterns</italic> that summarize the accumulated knowledge about feasible
+chemical reactions. Here, we describe a computational framework, <monospace>SynTemp</monospace>, designed to extract such reaction patterns from
+large-scale repositories of chemical reactions and to make them available
+in the form of explicit transformation rules.</p><p>Significant data
+resources for chemical reactions include the United
+States Patent and Trademark Office (<monospace>USPTO</monospace>)
+database<sup><xref rid="ref3" ref-type="bibr">3</xref></sup> and the commercial platform <monospace>Reaxys</monospace>.<sup><xref rid="ref4" ref-type="bibr">4</xref></sup> In particular, the
+latter, with its collection of over 55 million manually curated reactions,
+has become a pivotal resource for implementing deep learning models
+in retrosynthesis.<sup><xref rid="ref5" ref-type="bibr">5</xref></sup> Efficient synthesis
+planning for novel compounds, by its very nature, requires reasoning
+by analogy. This can be greatly facilitated by a representation of
+reactions that provides transformation rules applicable to novel compounds
+and novel combinations of reactants. A very transparent, explicit
+model of chemical reactions is provided by graph grammars, implemented,
+e.g., in <monospace>MØD</monospace>.<sup><xref rid="ref6" ref-type="bibr">6</xref></sup> Here, molecules are encoded as graphs and reactions are defined
+by transformation rules that rewrite local patterns of chemical bonds.<sup><xref rid="ref7" ref-type="bibr">7</xref></sup> Specific transformation rules, e.g., for well-known <italic>named reactions</italic>, are not challenging to write manually;
+for instance, <monospace>Synthia</monospace> (or <monospace>Chematica</monospace>(<xref rid="ref8" ref-type="bibr">8</xref>)) successfully applies this approach,
+in its complex synthesis planning utilizing a database of approximately
+70,000 expert-encoded rules.<sup><xref rid="ref9" ref-type="bibr">9</xref>,<xref rid="ref10" ref-type="bibr">10</xref></sup> This level of effort,
+however, is unlikely to scale to the entirety of present-day chemical
+knowledge<sup><xref rid="ref5" ref-type="bibr">5</xref></sup> and cannot keep pace with the
+continuing exponential increase in the number of reported reactions.<sup><xref rid="ref11" ref-type="bibr">11</xref></sup></p><p>Hence, automatic methods to mine comprehensive
+data repositories
+for transformation rules are urgently needed. Recent efforts in this
+direction include the study by Shuan Chen et al.,<sup><xref rid="ref12" ref-type="bibr">12</xref></sup> which utilizes a generalized-template-based graph neural
+network, and research by Lung-Yi Chen,<sup><xref rid="ref13" ref-type="bibr">13</xref></sup> focusing on extraction and curation of reaction templates. <monospace>SynTemp</monospace> aims to produce explicit, interpretable patterns.
+The graph-theoretical approach pursued here yields a representation
+that not only has an equivalent interpretation as a computationally
+operational reaction rule but also can form the basis for a mechanistic
+reaction classification.</p><p>Reaction rules, by definition, describe
+bond changes and thus establish
+a one-to-one mapping between the atoms of the reactants and the products
+in the reaction center. The inference of such rules, therefore, requires
+reaction data endowed with atom–atom maps (AAMs). Sizable repositories
+of reaction data, such as <monospace>Reaxys</monospace>(<xref rid="ref4" ref-type="bibr">4</xref>) or the United States Patent and Trademark Office
+(<monospace>USPTO</monospace>) database,<sup><xref rid="ref3" ref-type="bibr">3</xref></sup> however, provide reaction data only as sets of reactant and product
+molecules without AAM information. AAM inference, therefore, is the
+crucial first step toward accurate reaction patterns.</p><p>Methods
+for computing AAMs can be divided into rule-based and machine
+learning-based (ML-based) approaches. Rule-based techniques, such
+as <monospace>Automapper</monospace>,<sup><xref rid="ref14" ref-type="bibr">14</xref></sup><monospace>Indigo</monospace>,<sup><xref rid="ref15" ref-type="bibr">15</xref></sup><monospace>NameRXN</monospace>,<sup><xref rid="ref16" ref-type="bibr">16</xref></sup><monospace>RDTool</monospace>,<sup><xref rid="ref17" ref-type="bibr">17</xref></sup> and a complex tool described by Jaworski,<sup><xref rid="ref18" ref-type="bibr">18</xref></sup> rely on combinatorial optimization criteria
+such as minimal chemical distance (MCD)<sup><xref rid="ref19" ref-type="bibr">19</xref></sup> or maximum-common subgraph (MCS).<sup><xref rid="ref20" ref-type="bibr">20</xref></sup> These
+rule-based solutions face challenges in practice. Most importantly,
+the optimization objectives of MCD and MCS only approximate the inference
+of the actual chemical mechanism. Therefore, even exact solutions
+of the corresponding combinatorial optimization problem may yield
+a chemically incorrect AAM.<sup><xref rid="ref18" ref-type="bibr">18</xref>,<xref rid="ref21" ref-type="bibr">21</xref></sup> Computational cost,
+moreover, may become an issue since various variants of MCS are well-known
+NP-complete problems.<sup><xref rid="ref22" ref-type="bibr">22</xref></sup> As an alternative,
+several ML-based tools have become available in recent years, most
+prominently <monospace>AMLGAM</monospace>,<sup><xref rid="ref23" ref-type="bibr">23</xref></sup><monospace>RXNMapper</monospace>,<sup><xref rid="ref24" ref-type="bibr">24</xref></sup><monospace>GraphormerMapper</monospace>,<sup><xref rid="ref25" ref-type="bibr">25</xref></sup> and <monospace>LocalMapper</monospace>.<sup><xref rid="ref26" ref-type="bibr">26</xref></sup> These methods
+bypass the formulation of the task as a combinatorial optimization
+problem and avoid the computationally expensive subgraph matching
+process by utilizing data-driven methods. Despite significant progress,
+AAMs obtained from machine learning approaches are not perfect either,
+as demonstrated both by recent benchmarking efforts<sup><xref rid="ref21" ref-type="bibr">21</xref></sup> and the performance data provided in the publications that
+describe the individual tools.</p><p>The comparison of AAM predictions
+generated by different tools
+is not trivial. One practical issue is that each tool describes AAMs
+using its own atom numbering. It was only proved recently that the
+equivalence of AAMs could be reduced to isomorphism of certain auxiliary
+graphs,<sup><xref rid="ref27" ref-type="bibr">27</xref></sup> notably including the Condensed
+Graph of a Reaction (CGR),<sup><xref rid="ref28" ref-type="bibr">28</xref></sup> which was
+introduced much earlier under the name <italic>Imaginary Transition
+State</italic> (ITS) as a graph theoretical description of a chemical
+reaction.<sup><xref rid="ref29" ref-type="bibr">29</xref></sup> The ITS graph provides a faithful
+representation of a chemical reaction and thus contains the necessary
+information to identify the reaction center. More precisely, the reaction
+center corresponds to a subgraph of the ITS containing at least all
+atoms incident to bonds that change during the transition from reactants
+to products.<sup><xref rid="ref30" ref-type="bibr">30</xref></sup> These subgraphs of the ITS
+are equivalent to the Double Pushout (DPO) graph rewriting rules used
+by the <monospace>MØD</monospace> package.<sup><xref rid="ref6" ref-type="bibr">6</xref></sup> Reaction centers embedded in ITS graphs therefore provide
+a source of reaction rules that can be used directly in large-scale
+computational applications. A final technical challenge arises from
+the fact that the comparison of AAMs requires that they are completely
+specified.<sup><xref rid="ref27" ref-type="bibr">27</xref></sup> This is only possible if the
+reaction data entry is balanced, i.e., if all participating molecules
+are represented on both sides of the reaction. For the majority of
+the data in the major repositories, however, this is not the case. <monospace>SynTemp</monospace> therefore greatly profits from recent advances
+in reaction rebalancing.<sup><xref rid="ref31" ref-type="bibr">31</xref></sup></p><p>The <monospace>SynTemp</monospace> framework, introduced in this
+paper, utilizes the equivalence of ITS graphs and AAMs, as well as
+the fact that reaction patterns turn out to be equivalent to subgraphs
+of the ITS graph, as the basis for its chemical reaction modeling.
+The purpose of <monospace>SynTemp</monospace> is to extract a limited
+number of explicit reaction rules from a large collection of reaction
+data. In the following section, we describe in detail how this is
+achieved. Two key ingredients are (1) to consider a hierarchy of partial
+ITS graphs that contain the reaction centers as well as additional
+structural contexts of different sizes and (2) to leverage clustering
+to extract reaction patterns that are consistently observed in a large
+collection of reaction data.</p><p>Other methods for template extraction,
+such as <monospace>RDChiral</monospace>(<xref rid="ref32" ref-type="bibr">32</xref>) which employs SMARTS strings, have
+been proposed. These methods, however, usually ignore critical components,
+in particular hydrogen atoms and byproducts. In contrast, <monospace>SynTemp</monospace> incorporates these elements and thus provides
+a more comprehensive and accurate framework for understanding and
+modeling reaction mechanisms. Moreover, <monospace>SynTemp</monospace> utilizes an explicit graph representation instead of operating on
+strings and thus completely avoids the well-known problems associated
+with such linear encodings.<sup><xref rid="ref33" ref-type="bibr">33</xref>−<xref rid="ref35" ref-type="bibr">35</xref></sup></p></sec><sec id="sec2" disp-level="1"><label>2.</label><title>Theory and Methods</title><sec id="sec2.1" disp-level="2"><label>2.1.</label><title>General Framework</title><p>The notation adopted
+in this study is derived from previous studies.<sup><xref rid="ref27" ref-type="bibr">27</xref>,<xref rid="ref36" ref-type="bibr">36</xref></sup> In order to make the presentation easier to read, we relegate the
+full mathematical details to <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Supporting Section A.1</ext-link> and restrict ourselves here to a high-level description
+of the framework.</p><p><monospace>SynTemp</monospace> operates through
+four main stages, as outlined in <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>. The process initiates with a chemical reaction
+input in SMILES format, from which an AAM is inferred. Formally, we
+treat a chemical reaction as a map between two graphs <italic>G</italic> and <italic>H</italic> whose connected components are the reactant
+and product molecules, respectively. The AAM is simply an invertible
+map α : <italic>V</italic>(G) → <italic>V</italic>(<italic>H</italic>) between their vertex sets that preserves the atom types.
+A reaction, therefore, corresponds to a rearrangement of edges, i.e.,
+of chemical bonds. As discussed in the introduction, no perfect solution
+exists for this task. We therefore leverage the agreement of multiple
+state-of-the-art AAM tools (<monospace>RXNMapper</monospace>, <monospace>GraphormerMapper</monospace>, <monospace>LocalMapper</monospace>, <monospace>RDT</monospace>) to determine trustworthy AAMs. Comparison of AAMs
+utilizes the theoretical framework developed in <xref rid="sec2.3" ref-type="sec">Section <xref rid="sec2.3" ref-type="sec">2.3</xref></xref> as well as ensemble learning.
+Experimental procedures for the latter are described in more detail
+in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Supporting Section A.2</ext-link>.</p><fig id="fig1" position="float"><?disp-level 3?><label>Figure 1</label><caption><p>Procedure for extracting
+reaction rules in <monospace>SynTemp</monospace>. (A) Reaction with
+accurate atom–atom mapping between reactants
+and products. (B) Complete ITS graph. (C) Extracted reaction center.
+(D) Hierarchical clustering around the reaction center. Red edges
+signify breaking bonds; green edges show forming bonds.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr1" xlink:href="ci4c01795_0001.jpg"><?cloudpmc-path blobs/bd82/11938280/9f1750a1dd75/ci4c01795_0001.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 799?><?original-width 840?><?scaled-height 3329?><?scaled-width 3500?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="ci4c01795_0001.gif"><?cloudpmc-path blobs/bd82/11938280/00372dc113cb/ci4c01795_0001.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>Once the AAM is defined, it dictates the construction
+of the ITS
+graph Υ(<italic>G</italic>,<italic>H</italic>,α), which
+combines the reactant and product structures. The vertices of <italic>G</italic> and <italic>H</italic> are identified in accordance with
+the bijection α and the edge set of the ITS graph contains the
+edges of both the reactant and product graphs <italic>G</italic> and <italic>H</italic>. Edge labels in the ITS graph distinguish between bonds
+that are modified or deleted from reactants, bonds introduced in products,
+or altered in bond type, and bonds that remain unchanged between <italic>G</italic> and <italic>H</italic>, see <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>B. An important practical complication is
+introduced by the fact that AAM tools typically do not map hydrogen
+atoms. However, the mechanisms of many important reactions involve
+the forming and breaking of bonds to hydrogen atoms. This situation
+can result in either a complete or partial ITS. In the case of a partial
+ITS, implicit hydrogens are inferred to accurately depict the reaction
+mechanism, as further elaborated on in <xref rid="sec2.4.1" ref-type="sec">Section <xref rid="sec2.4.1" ref-type="sec">2.4.1</xref></xref>.</p><p>The next phase involves identifying
+the reaction center within
+the ITS, consisting of the modified bonds and their adjacent atoms,
+and capturing the transformation core. However, this minimal reaction
+center alone is insufficient to describe all the preconditions necessary
+for the reaction. Thus, we extend this subgraph by adding additional
+vertices and bonds to obtain <italic>extended reaction centers</italic> as partial ITS graphs encoding the reaction rule, as discussed in <xref rid="sec2.4.2" ref-type="sec">Section <xref rid="sec2.4.2" ref-type="sec">2.4.2</xref></xref>.</p><p>Finally, these extended reaction centers are systematically classified
+into clusters using a hierarchical clustering approach. We utilize
+hierarchical clustering because it leads to a significant reduction
+of the computational cost associated with the iterative isomorphism
+checks required in graph clustering. By confining isomorphism checks
+to subgroups within the same reaction center, hierarchical clustering
+enhances the efficiency as the reaction center expands. For the details
+of this methodology, see <xref rid="sec2.5" ref-type="sec">Section <xref rid="sec2.5" ref-type="sec">2.5</xref></xref>. The resulting clusters form a library of template
+ITS graphs, which are converted into DPO rules in GML format for graph
+transformation systems such as <monospace>MØD</monospace>. The
+efficacy of these reaction rules is comprehensively evaluated in <xref rid="sec2.6" ref-type="sec">Section <xref rid="sec2.6" ref-type="sec">2.6</xref></xref>.</p></sec><sec id="sec2.2" disp-level="2"><label>2.2.</label><title>DPO Graph Rewriting and ITS Graphs</title><p>Chemical reactions can be modeled and studied through systems of
+rule-based rewriting of molecular graphs.<sup><xref rid="ref7" ref-type="bibr">7</xref>,<xref rid="ref37" ref-type="bibr">37</xref>,<xref rid="ref38" ref-type="bibr">38</xref></sup> These graph transformation systems require
+(1) rules that prescribe how a pattern in the input graph is to be
+changed within a larger substrate graph and (2) a definition of a
+pattern match. In DPO graph rewriting,<sup><xref rid="ref39" ref-type="bibr">39</xref></sup> both facets are expressed in terms of morphisms, i.e., maps, between
+graphs, providing a sound mathematical foundation in category theory.
+A rule is specified as a so-called span, <inline-formula id="d34e522"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m001.gif"><?cloudpmc-path blobs/bd82/11938280/a226c20b5344/ci4c01795_m001.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 46?><?scaled-width 200?></inline-graphic></inline-formula>, where <italic>L</italic>, <italic>K</italic>, and <italic>R</italic> are graphs and the arrows represent maps <italic>l</italic> : <italic>V</italic>(<italic>K</italic>) → <italic>V</italic>(<italic>L</italic>) and <italic>r</italic> : <italic>V</italic>(<italic>K</italic>) → <italic>V</italic>(<italic>R</italic>) which describe the embedding of <italic>K</italic> into <italic>L</italic> and <italic>R</italic> as a subgraph. The graph <italic>L</italic> describes the pattern in the reactants that is transformed
+into a product pattern <italic>R</italic>. The “context graph” <italic>K</italic> and the maps <italic>l</italic> and <italic>r</italic> establish the correspondence of vertices and edges that remain unchanged
+during the transformation from <italic>L</italic> to <italic>R</italic>. Since atoms do not change in the course of a chemical reaction,
+the maps <italic>l</italic> and <italic>r</italic> together define
+the AAM of the reaction. The edges of <italic>E</italic>(<italic>K</italic>) specify the chemical bonds that remain unchanged during the reaction,
+i.e., <italic>xy</italic> ∈ <italic>E</italic>(<italic>K</italic>) implies <italic>l</italic>(<italic>xy</italic>) ∈ <italic>E</italic>(<italic>L</italic>) and <italic>r</italic>(<italic>xy</italic>) ∈ <italic>E</italic>(<italic>R</italic>). From a chemical
+point of view, therefore, the DPO rule is a condensed representation
+of the reaction mechanism. It specifies which bonds change, and how,
+in the local vicinity of the reaction center. It is more general than
+the reaction center because the context graph <italic>K</italic> can
+also contain atoms and bonds that are not part of the reaction center.</p><p>Application of a rule <inline-formula id="d34e612"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m002.gif"><?cloudpmc-path blobs/bd82/11938280/a226c20b5344/ci4c01795_m002.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 46?><?scaled-width 200?></inline-graphic></inline-formula> to a substrate <italic>G</italic> amounts
+to finding a position of the pattern <italic>L</italic> in the graph <italic>G</italic> and then replacing <italic>L</italic> by <italic>R</italic> at this position. This yields the graph <italic>H</italic> representing
+the reaction products. A graphical summary is presented in <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>. For a detailed
+mathematical explanation of the application of rules, we refer to
+the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Supporting Section B</ext-link>.</p><fig id="fig2" position="float"><?disp-level 3?><label>Figure 2</label><caption><p>Illustration of the DPO
+graph rewriting technique. This diagram
+also shows the corresponding ITS and the reaction center of the DPO
+rule. <italic>L</italic>, <italic>K</italic>, <italic>R</italic> are
+the graphs, and <italic>l</italic> and <italic>r</italic> are the
+mappings, of the rule <italic>p</italic>. The maps <italic>m</italic> and <italic>m</italic>″ are bijections into the molecular
+graphs of the reaction <italic>G</italic> → <italic>H. D</italic> is the unchanged subgraph of the ITS, i.e., it contains the edges
+that are present in both <italic>G</italic> and <italic>H</italic>. It can be seen as the difference between the ITS and the reaction
+center.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr2" xlink:href="ci4c01795_0002.jpg"><?cloudpmc-path blobs/bd82/11938280/a3a5210620f0/ci4c01795_0002.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 329?><?original-width 1002?><?scaled-height 1371?><?scaled-width 4175?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="ci4c01795_0002.gif"><?cloudpmc-path blobs/bd82/11938280/f023acfae229/ci4c01795_0002.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig></sec><sec id="sec2.3" disp-level="2"><label>2.3.</label><title>Incomplete AAMs</title><p>The inference of
+reaction rules crucially depends on the accuracy of the ITS and thus
+on the underlying AAMs. While recent machine learning-based methods
+have been reported to yield improvement over older methods which solve
+combinatorial optimization problems, they are still subject to a non-negligible
+degree of uncertainty which may result in unequivalent AAMs and very
+different reaction centers. <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref> shows an example of a reaction for which the results
+of <monospace>RXNMapper</monospace>, <monospace>GraphormerMapper</monospace>, and <monospace>LocalMapper</monospace> are different.</p><fig id="fig3" position="float"><?disp-level 3?><label>Figure 3</label><caption><p>Differences
+in predicted AAMs and ITS graphs. (A) <monospace>RXNMapper</monospace> suggests a reaction center with two cycles of size four. (B) <monospace>GraphormerMapper</monospace> suggests a reaction center with two
+cycles of size three and six, respectively. (C) <monospace>LocalMapper</monospace> suggest a reaction center with a single cycle of size six.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr3" xlink:href="ci4c01795_0003.jpg"><?cloudpmc-path blobs/bd82/11938280/259cdca36d26/ci4c01795_0003.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 485?><?original-width 1002?><?scaled-height 2021?><?scaled-width 4175?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="ci4c01795_0003.gif"><?cloudpmc-path blobs/bd82/11938280/55d85c96cfb5/ci4c01795_0003.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>The comparison of AAMs produced by two different
+tools is a nontrivial
+task. The reason is that each tool describes reactants and products
+in its own way. The same reaction thus appears as α : <italic>V</italic>(<italic>G</italic>) → <italic>V</italic>(<italic>H</italic>) for one tool and as β : <italic>V</italic>(<italic>G</italic>′) → <italic>V</italic>(<italic>H</italic>′) for another. For both, we can construct the ITS graphs
+Υ(<italic>G</italic>, <italic>H</italic>, α) and Υ(<italic>G</italic>′, <italic>H</italic>′, β), as well
+as the reaction center subgraphs Γ(<italic>G</italic>, <italic>H</italic>′, α) and Γ(<italic>G</italic>′, <italic>H</italic>′, β), as described in <xref rid="sec2.4" ref-type="sec">Section <xref rid="sec2.4" ref-type="sec">2.4</xref></xref>. The AAMs are equivalent
+if and only if the ITS graphs are isomorphic.<sup><xref rid="ref40" ref-type="bibr">40</xref></sup> In scenarios where reactions are balanced with complete atom–atom
+maps, the isomorphism between Υ(<italic>G</italic>, <italic>H</italic>, α) and Υ(<italic>G</italic>′, <italic>H</italic>′, β) can be evaluated, for example using
+the VF2 algorithm<sup><xref rid="ref41" ref-type="bibr">41</xref></sup> implemented in <monospace>NetworkX</monospace>, in order to determine their equivalence.</p><p>The situation is more complicated if a tool produces only a partial
+AAM, which in particular is the case for unbalanced reactions. A formal
+framework for partial AAMs has been described in our previous work.<sup><xref rid="ref36" ref-type="bibr">36</xref></sup> In general, the comparison of partial AAMs is
+a difficult problem. We therefore consider here only the special case
+that the AAMs cover the reaction center, i.e., that partial AAMs are
+“good” in the sense of Def. Six in our previous work.<sup><xref rid="ref36" ref-type="bibr">36</xref></sup> Some mathematical results that are directly
+relevant to our discussion are provided in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Supporting Section A.2.1</ext-link> since the complete formal statements require
+extensive notation borrowed from our previous work that we refrain
+from introducing in the main text for ease of presentation.</p><p>In cases of incomplete atom–atom mappings, the <italic>sets</italic> of atoms mapped by different tools will in general also be different
+and may vary substantially. This is in particular the case for tools
+like <monospace>LocalMapper</monospace> that focus primarily on the
+reaction center. The consistency of partial AAMs is formally defined
+in Def. Nine of our previous work.<sup><xref rid="ref36" ref-type="bibr">36</xref></sup> Here
+we will be content with a much simpler condition:</p><p>For two different
+reactions <italic>G</italic> → <italic>H</italic> and <italic>G</italic>′ → <italic>H</italic>′, the idea
+from<sup><xref rid="ref27" ref-type="bibr">27</xref>,<xref rid="ref36" ref-type="bibr">36</xref></sup> can be used to compare <italic>extended
+reaction centers</italic>. We define these as subgraphs
+Ψ and Ψ′ of the ITS graphs Υ(<italic>G</italic>, <italic>H</italic>, α) and Υ(<italic>G</italic>′, <italic>H</italic>′, β) that contain the reaction centers Γ(<italic>G</italic>, <italic>H</italic>, α) and Γ(<italic>G</italic>′, <italic>H</italic>′, β) as well as all vertices
+in both reactant and product graphs within a distance at most <italic>r</italic> from a vertex in the reaction centers. If the two (complete)
+AAMs α and β are consistent, then Ψ and Ψ′
+must be isomorphic (for proof of this statement, see Proposition 3
+in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Supporting Section A.2.1</ext-link>). It is important
+to note that the converse is <italic>not</italic> true, i.e., isomorphism
+of extended reaction centers does not imply consistency of the reaction
+maps. Counterexamples such as the one in <xref rid="fig9" ref-type="fig">Figure <xref rid="fig9" ref-type="fig">9</xref></xref> of our previous work,<sup><xref rid="ref36" ref-type="bibr">36</xref></sup> however, turn out to be very rare for chemical reaction
+data. We therefore use Ψ ≅ Ψ′ as an efficiently
+testable condition. For the comparison of AAMs, we employed this <italic>approximate condition</italic>, as detailed in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Supporting Section A.2.2.</ext-link> This condition for AAMs comparison
+facilitated the development of ensemble atom mappings.</p><fig id="fig9" position="float"><?disp-level 3?><label>Figure 9</label><caption><p>Cycle length analysis for <italic>Elementary</italic> reactions
+(panels A and B) and <italic>Complicated</italic> reactions (panels
+C and D).</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr9" xlink:href="ci4c01795_0009.jpg"><?cloudpmc-path blobs/bd82/11938280/e46b1ec88ab1/ci4c01795_0009.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 744?><?original-width 1000?><?scaled-height 3101?><?scaled-width 4167?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="ci4c01795_0009.gif"><?cloudpmc-path blobs/bd82/11938280/35e0a3fbadc6/ci4c01795_0009.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig></sec><sec id="sec2.4" disp-level="2"><label>2.4.</label><title>Reaction Centers</title><p>Starting from a
+(partial) AAM α, a (partial) ITS is readily constructed in linear
+time. In practice, one can start with an edgeless graph comprising
+the vertices of <italic>G</italic> endowed with the double labels
+(<italic>a</italic><sub><italic>G</italic></sub>(<italic>x</italic>), <italic>a</italic><sub><italic>H</italic></sub>(α(<italic>x</italic>))) for all <italic>x</italic> ∈ <italic>V</italic>(<italic>G</italic>) and insert edges by iterating over the edge
+lists of <italic>G</italic> and <italic>H</italic>, at the same time
+recording the edge labels—see also.<sup><xref rid="ref27" ref-type="bibr">27</xref></sup> In the same manner, the reaction center Γ can be obtained
+directly from the (partial) AAM restricted to the reaction vertices,
+inserting reaction edges only.</p><sec id="sec2.4.1" disp-level="3"><label>2.4.1.</label><title>Completing the Reaction Center</title><p>Computational tools may return only partial AAMs, in particular ones
+which do not represent hydrogen atoms. While hydrogens can usually
+be suppressed safely in structural formula because simple valency
+rules imply the missing hydrogens, this is no longer true for subgraphs
+of the ITS. In particular, if only the reaction center extracted from
+a partial AAM is known, the reattachment of hydrogens cannot be unambiguously
+determined. As a consequence, without a complete representation of
+the reaction mechanism, deriving comprehensive mechanistic insights
+from “hydrogen-deficient” fragments of the ITS becomes
+challenging. Moreover, hydrogens that take part in the reaction must
+be present in reactant molecules, necessitating their inclusion in
+the reaction rules of a chemical rewriting system such as <monospace>MØD</monospace>. We therefore strive to extract the most information-rich
+representation of the ITS patterns.</p><p>Consider the example in <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>.1. Here, either
+hydrogen atom H<sup>1</sup> or H<sup>2</sup> is transferred to the
+hydroxy group. From a chemical point of view, hydrogen atoms H<sup>1</sup> and H<sup>2</sup> are equivalent, even though this equivalence
+is not readily apparent to computational methods tasked with inserting
+hydrogens. Such methods may yield two alternative reaction centers
+depicted in <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>.1A,B. In this case, these graphs are isomorphic, indicating that
+the reaction centers in A and B are interchangeable. The reaction
+in <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>.2 shows,
+however, that there is not always a unique hydrogen completion of
+the ITS. In this particular example, the resulting reaction center
+graphs, <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>.2A,B,
+are not isomorphic, highlighting the complexity and ambiguity inherent
+in achieving hydrogen completeness.</p><fig id="fig4" position="float"><?disp-level 4?><label>Figure 4</label><caption><p>First row shows an unambiguous hydrogen
+insertion resulting in
+identical reaction center (RC) graphs (1A) and (1B). The second row
+illustrates an ambiguous hydrogen transfer in two scenarios with opposite
+transfer directions. In (2A), hydrogen moves from OH to CN and from
+a benzene ring to N–OH. Scenario (2B) demonstrates the reverse,
+with hydrogen transferring from the benzene ring to CN and from OH
+to N–OH. Instance (2A) is chemically accurate, leading to the
+formation of RC characterized by four- and six-membered cycles.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr4" xlink:href="ci4c01795_0004.jpg"><?cloudpmc-path blobs/bd82/11938280/b2783a4e76a3/ci4c01795_0004.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 310?><?original-width 1004?><?scaled-height 1291?><?scaled-width 4175?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="ci4c01795_0004.gif"><?cloudpmc-path blobs/bd82/11938280/fdd619bc83af/ci4c01795_0004.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>In practice, the precise mapping of hydrogen atoms
+may not always
+be possible. The insertion of hydrogen can thus be regarded as a special
+case within the extension of the reaction center, which is detailed
+in <xref rid="sec2.4.2" ref-type="sec">Section <xref rid="sec2.4.2" ref-type="sec">2.4.2</xref></xref>. Here, we augment the vertex labels by the attribute <monospace>number_of_hydrogens</monospace> in <italic>G</italic>, <italic>H</italic>, and Υ ≔Υ(<italic>G</italic>, <italic>H</italic>, α), and include atoms with a change in the number of attached
+hydrogens as part of the reaction center. If the changes in Υ
+involve a single pair of hydrogens, there exists a unique solution.
+However, if multiple pairs are involved, the situation escalates in
+complexity, yielding a number of combinations that grows exponentially
+with the number of pairs of hydrogens that undergo change. In cases
+where multiple potential solutions exist, we handle hydrogen reattachment
+by considering multiple AAMs in the subsequent analysis steps. If
+all AAMs α are identical, or if all extended ITS graphs Υ(<italic>G</italic>′, <italic>H</italic>′, α′)
+are isomorphic for all the possible extensions α′, <italic>G</italic>′, and <italic>H</italic>′ of, respectively,
+α, <italic>G</italic>, and <italic>H</italic>, due to addition
+of hydrogens, then we adopt a single representative as the complete
+ITS.</p><p>Hydrogen atoms may furthermore be problematic by originating
+from
+environmental sources such as solvents. Ideally, this would be explicit
+in the reaction data that we use as input. Usually, however, this
+is not the case. To manage this, we decompose reactions into sequences
+that account for “borrowed” environmental hydrogens.
+For a more detailed discussion, we refer to our recent study.<sup><xref rid="ref36" ref-type="bibr">36</xref></sup> In <monospace>SynTemp</monospace>, we initially
+exclude external hydrogen atom in the construction of the ITS database
+and add relevant hydrogen later for each mechanistic step.</p></sec><sec id="sec2.4.2" disp-level="3"><label>2.4.2.</label><title>Extended Reaction Centers</title><p>Reaction
+mechanisms are oftentimes not only influenced by reaction vertices
+and edges but also by adjacent structural components such as functional
+groups that determine the local chemical environment. It is desirable,
+therefore, to consider patterns <italic>L</italic> in DPO rules that
+also include features that are not altered during the reaction. Formally
+this can be achieved by considering subgraphs <italic>Q</italic> of
+the ITS Υ(<italic>G</italic>, <italic>H</italic>, α) containing
+the reaction center as a proper subgraph, Γ ⊂ <italic>Q</italic> ⊆ Υ(<italic>G</italic>, <italic>H</italic>, α). The choice of the graph <italic>Q</italic> is the difficult
+issue here.</p><p>It stands to reason that the necessary context around
+the reaction center cannot be determined from a single reaction. Such
+information can be inferred by considering a set of reactions with
+the same reaction mechanism. A (mechanistically defined) reaction
+type or <italic>named reaction</italic>, such as the Diels–Alder
+reaction in <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>C above, however, is usually not annotated in most reaction data
+records. We therefore start from a (large) collection <inline-formula id="d34e961"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m003.gif"><?cloudpmc-path blobs/bd82/11938280/9456323e6d84/ci4c01795_m003.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 9?></inline-graphic></inline-formula> of reactions and use a clustering approach
+to at least approximate a classification into mechanistically equivalent
+classes. Following ideas from Hendrickson’s seminal publication,<sup><xref rid="ref42" ref-type="bibr">42</xref></sup> we first subdivide <inline-formula id="d34e966"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m004.gif"><?cloudpmc-path blobs/bd82/11938280/9456323e6d84/ci4c01795_m004.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 9?></inline-graphic></inline-formula> into classes determined by isomorphic reaction
+centers. That is, we set ρ′ ∼ ρ″
+for two reactions <inline-formula id="d34e970"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m005.gif"><?cloudpmc-path blobs/bd82/11938280/49459b4f9bee/ci4c01795_m005.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 16?><?scaled-width 48?></inline-graphic></inline-formula> if and only if Γ(ρ′)
+≅ Γ(ρ″).</p><p>The computation of the equivalence
+classes is straightforward:
+iterating over <inline-formula id="d34e975"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m006.gif"><?cloudpmc-path blobs/bd82/11938280/d5ad5e62c3da/ci4c01795_m006.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 13?><?scaled-width 30?></inline-graphic></inline-formula>, one checks whether Γ(ρ) is
+isomorphic to a reaction center Γ′ previously obtained.
+If so, ρ is added to set <inline-formula id="d34e978"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m007.gif"><?cloudpmc-path blobs/bd82/11938280/be951d19e802/ci4c01795_m007.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 16?><?scaled-width 26?></inline-graphic></inline-formula>. Otherwise, Γ(ρ) defines a
+new class and ρ is inserted into the new set <inline-formula id="d34e981"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m008.gif"><?cloudpmc-path blobs/bd82/11938280/33a3819e4876/ci4c01795_m008.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 14?><?scaled-width 40?></inline-graphic></inline-formula>. As a result, we obtain a collection of
+subsets <inline-formula id="d34e984"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m009.gif"><?cloudpmc-path blobs/bd82/11938280/baad7cf0f70e/ci4c01795_m009.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 14?><?scaled-width 24?></inline-graphic></inline-formula> of <inline-formula id="d34e987"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m010.gif"><?cloudpmc-path blobs/bd82/11938280/9456323e6d84/ci4c01795_m010.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 9?></inline-graphic></inline-formula> whose members share a common reaction center
+Γ. For a detailed mathematical explanation, we refer to <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Supporting Section A.4</ext-link>.</p></sec></sec><sec id="sec2.5" disp-level="2"><label>2.5.</label><title>Clustering of Partial ITS graphs</title><p>For a set of reactions <inline-formula id="d34e999"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m011.gif"><?cloudpmc-path blobs/bd82/11938280/9456323e6d84/ci4c01795_m011.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 9?></inline-graphic></inline-formula>, we compute the partial ITS graphs <italic>Q</italic><sub arrange="stack"><italic>r</italic></sub><sup arrange="stack">(<italic>i</italic>)</sup> for each reaction <inline-formula id="d34e1010"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m012.gif"><?cloudpmc-path blobs/bd82/11938280/1d54a18e00bc/ci4c01795_m012.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 26?></inline-graphic></inline-formula>, where <italic>r</italic> = 0, 1, 2,...
+denotes the <italic>expansion radius</italic>, i.e., the maximal number
+of bonds that an atom in the graph <italic>Q</italic><sub arrange="stack"><italic>r</italic></sub><sup arrange="stack">(<italic>i</italic>)</sup> is away from the reaction center. Thus, Γ<sub><italic>i</italic></sub> = <italic>Q</italic><sub arrange="stack">0</sub><sup arrange="stack">(<italic>i</italic>)</sup> coincides
+with the reaction center. This collection of partial ITS graphs can
+be partitioned further into sets of unique reaction patterns by verifying
+isomorphisms (see <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Alg. S1</ext-link>). Our clustering
+method, which is illustrated in <xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>, does not employ machine learning but categorizes
+reaction centers based on isomorphism. For larger values of <italic>r</italic>, however, this becomes computationally demanding for large
+data sets. We therefore make use of the fact that these partial ITS
+graphs of the extended reaction centers form a hierarchical structure,
+which is an immediate consequence of Cor. Six in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Supporting Section B</ext-link>.</p><fig id="fig5" position="float"><?disp-level 3?><label>Figure 5</label><caption><p>Process of rule extraction and clustering. <monospace>SynTemp</monospace> constructs high-confidence ITS graphs based on
+the congruence of
+multiple existing AAM tools for a given set of input reactions. Different
+reactions might have the same underlying mechanism and hence yield
+isomorphic reaction centers. Further, depending on the desired contexts,
+a reaction can yield multiple rules of various sizes but with isomorphic
+reaction centers. These rules can be clustered according to reaction
+center isomorphisms. The example shows the extracted ITS and reaction
+center (RC) of two different Diels–Alder reactions with an
+ortho and para product and of two hydrogenation reactions. The mechanisms
+in each pair are isomorphic and can be clustered. However, the Diels–Alder
+RC and the hydrogenation RC are nonisomorphic and belong to different
+clusters.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr5" xlink:href="ci4c01795_0005.jpg"><?cloudpmc-path blobs/bd82/11938280/548f2ae3cba0/ci4c01795_0005.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 629?><?original-width 840?><?scaled-height 2622?><?scaled-width 3500?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="ci4c01795_0005.gif"><?cloudpmc-path blobs/bd82/11938280/f6d9a9693990/ci4c01795_0005.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>In order to construct this hierarchy <inline-formula id="d34e1060"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m013.gif"><?cloudpmc-path blobs/bd82/11938280/0ccf9322826b/ci4c01795_m013.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 10?></inline-graphic></inline-formula>, we add a formal root as a parent of the
+nonisomorphic reaction centers. For each reaction <italic>p</italic>, we check whether RC <italic>Q</italic><sub arrange="stack">0</sub><sup arrange="stack">(<italic>p</italic>)</sup> is isomorphic to
+a child of the root. If so, we proceed to the children of the root
+and check for isomorphism <italic>Q</italic><sub arrange="stack">1</sub><sup arrange="stack">(<italic>p</italic>)</sup>, and so on. If the
+isomorphism tests fail, the pattern <italic>Q</italic><sub arrange="stack"><italic>r</italic></sub><sup arrange="stack">(<italic>p</italic>)</sup> is new and is inserted as a new child of the node
+in <inline-formula id="d34e1090"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m014.gif"><?cloudpmc-path blobs/bd82/11938280/0ccf9322826b/ci4c01795_m014.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 10?></inline-graphic></inline-formula> for which the isomorphism test of its parent,
+i.e., <italic>Q</italic><sub arrange="stack"><italic>r</italic>–1</sub><sup arrange="stack">(<italic>p</italic>)</sup>, succeeded. Novel
+reaction centers are correspondingly inserted as children of the formal
+root. In practice, the insertion into <inline-formula id="d34e1103"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m015.gif"><?cloudpmc-path blobs/bd82/11938280/0ccf9322826b/ci4c01795_m015.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 10?></inline-graphic></inline-formula> is interleaved with the construction of
+graphs <italic>Q</italic><sub arrange="stack"><italic>r</italic></sub><sup arrange="stack">(<italic>p</italic>)</sup>. For details, we
+refer to <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Alg. S2,</ext-link> further elucidated by
+the illustrative example in <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>D. We show in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Supporting Section B</ext-link> that the hierarchical approach substantially reduces computational
+cost.</p></sec><sec id="sec2.6" disp-level="2"><label>2.6.</label><title>Application of Reaction Rules</title><p>The
+final result of the <monospace>SynTemp</monospace> pipeline is a collection
+of partial ITS graphs which describe reaction rules at different resolutions
+depending on the extent to which the reaction centers have been expanded.
+We refer to these partial ITS graphs as <italic>reaction templates</italic>, while reserving the term <italic>reaction rules</italic> for encoding
+of these data as DPO rewriting rules.</p><p>The template graphs are
+transformed into DPO rules, encoded in GML format for direct use with <monospace>MØD</monospace>. In order to check the validity and usefulness
+of the extracted rules, we apply a rule to a set of reactants of a
+known reaction and check whether the application of the graph rewriting
+rule recovers the expected products. ITS graphs also implicitly encode
+the reverse of a reaction. To this end, it suffices to exchange the
+first and second entry in the tuple of edge labels. Making use of
+this symmetry, we also tested whether the application of the reverse
+rule to a set of product molecules could recover the reactants.</p><p>The performance of rule application is quantified as the <italic>coverage</italic><inline-formula id="d34e1142"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m016.gif"><?cloudpmc-path blobs/bd82/11938280/2db7f7abbf33/ci4c01795_m016.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 8?></inline-graphic></inline-formula>, defined as the fraction of reactions correctly
+recovered by applying a rule to a set of reactants. However, in many
+cases, templates also match with a set of reactants other than the
+one from the rule extracted. In these cases, we obtain predictions
+for novel reactions. We quantify this as the <italic>novelty rate</italic><inline-formula id="d34e1146"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m017.gif"><?cloudpmc-path blobs/bd82/11938280/db93aeb19c69/ci4c01795_m017.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 18?></inline-graphic></inline-formula>, defined as the fraction of successful
+applications of the rule that results in a novel reaction.</p></sec><sec id="sec2.7" disp-level="2"><label>2.7.</label><title>Dataset</title><p>We compare AAM methods and
+ensemble learning techniques using two subsets. Their reaction type
+distributions are illustrated in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Figure S5</ext-link>.</p><list list-type="bullet"><list-item><p><italic>Chemical reaction data sets</italic>: <monospace>Golden</monospace> (1785 reactions),<sup><xref rid="ref21" ref-type="bibr">21</xref></sup><monospace>NatComm</monospace> (491 reactions), and <monospace>USPTO_3K</monospace> (3000 reactions).<sup><xref rid="ref26" ref-type="bibr">26</xref></sup></p></list-item><list-item><p><italic>Biochemical reaction data sets</italic>: <monospace>Recon3D</monospace> (382 reactions)<sup><xref rid="ref23" ref-type="bibr">23</xref></sup> and <monospace>EColi</monospace> (273 reactions).</p></list-item></list><p>To enhance comparison, we assess <italic>success rate</italic>, which is the proportion of reactions achieving atom mapping, and <italic>accuracy</italic>, which compares generated atom maps against ground
+truth in the reported database.</p><p>We inferred partial ITS graphs
+from a subset of the <monospace>USPTO_50K</monospace> dataset, categorized
+into ten classes by Schneider et al.<sup><xref rid="ref43" ref-type="bibr">43</xref></sup> Following
+the approach of Coley et al.,<sup><xref rid="ref44" ref-type="bibr">44</xref></sup> we split
+the dataset in an 8:1:1 ratio, allocating 80% for reaction template
+extraction. With no learning in rule extraction, validation (10%)
+and test (10%) sets serve for direct <monospace>SynTemp</monospace> evaluation. We reduced unbalanced reactions by using <monospace>SynRBL</monospace>(<xref rid="ref31" ref-type="bibr">31</xref>) to suggest missing
+compounds.</p></sec></sec><sec id="sec3" disp-level="1"><label>3.</label><title>Computational Results</title><p>In this section,
+we report on our computational results. Our experiments
+can be summarized as follows. <monospace>SynTemp</monospace> processes
+reaction SMILES for ensemble atom mapping and ITS graph completion,
+including hydrogen inference. We verify <monospace>SynTemp</monospace>’s robustness through theoretical and computational analyses
+in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Supporting Section A.2</ext-link>. Optimal AAM
+tools selection is based on comprehensive benchmarking in <xref rid="sec3.1" ref-type="sec">Section <xref rid="sec3.1" ref-type="sec">3.1</xref></xref>. Hierarchical
+clustering and reaction center extension generate <italic>reaction
+templates</italic>, which are analyzed using topological descriptors
+(<xref rid="sec3.2" ref-type="sec">Section <xref rid="sec3.2" ref-type="sec">3.2</xref></xref>). These
+templates are converted into DPO rules or <italic>reaction rules</italic> in GML format, with efficacy assessed through additional benchmarking
+(<xref rid="sec3.3" ref-type="sec">Section <xref rid="sec3.3" ref-type="sec">3.3</xref></xref>) across
+various radii.</p><p>All experiments were conducted using Python 3.11
+on an Intel(R)
+Core(TM) i7–8700 CPU @ 3.20 GHz with 12 cores, running Fedora
+37.</p><sec id="sec3.1" disp-level="2"><label>3.1.</label><title>Ensemble Atom Mapping</title><p>As evidenced
+in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Supporting Section A.2.3</ext-link>, <monospace>SynTemp</monospace> exhibited superior robustness compared to <monospace>CGRTools</monospace>(<xref rid="ref28" ref-type="bibr">28</xref>) in AAMs comparison.
+Notably, <monospace>CGRTools</monospace> employs the Condensed Graph
+of Reaction for comparing AAMs. We then utilized <monospace>SynTemp</monospace> to integrate state-of-the-art tools utilizing partial ITS graphs
+comparison to refine the accuracy and reliability of AAMs. This evaluation
+involved an assessment of four state-of-the-art tools (<monospace>RXNMapper 0.3.0</monospace>, <monospace>GraphormerMapper 1.75</monospace>, <monospace>LocalMapper 0.1.4</monospace>, and <monospace>RDTool
+2.4.1</monospace>) alongside two ensemble strategies, applied across
+five distinct data sets. For technical details on the benchmarking
+procedure and the choice of tools, we refer to <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Supporting Section A.2</ext-link>. The results are summarized in <xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>.</p><fig id="fig6" position="float"><?disp-level 3?><label>Figure 6</label><caption><p>(A) and (B) present the
+benchmarking results for the chemical and
+biochemical data sets, respectively, using accuracy and success rate
+as evaluation metrics.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr6" xlink:href="ci4c01795_0006.jpg"><?cloudpmc-path blobs/bd82/11938280/9a37fcfb1fa1/ci4c01795_0006.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 401?><?original-width 1002?><?scaled-height 1672?><?scaled-width 4175?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="ci4c01795_0006.gif"><?cloudpmc-path blobs/bd82/11938280/12b852a07c00/ci4c01795_0006.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p><monospace>RXNMapper</monospace> was the fastest
+tool (14 ms per
+reaction), followed by <monospace>GraphormerMapper</monospace> (78
+ms per reaction) and <monospace>LocalMapper</monospace> (105 ms per
+reaction) while <monospace>RDTool</monospace> was the slowest (4.5
+s) due to its extensive computations of maximum-common subgraphs between
+reactants and products for mapping. More detailed timing data are
+compiled in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Table S2</ext-link>. To enhance accuracy,
+we utilized two ensemble strategies: <italic>Ensemble_1</italic> with <monospace>RXNMapper</monospace>, <monospace>GraphormerMapper</monospace>, and <monospace>LocalMapper</monospace>, and <italic>Ensemble_2</italic>, which extends <italic>Ensemble_1</italic> by including <monospace>RDTool</monospace>.</p><p><monospace>RDTool</monospace> was the only tool that could not
+complete all reactions in the <monospace>Golden</monospace> and <monospace>NatComm</monospace> data sets, see <xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>A,B. These results suggest that <italic>Ensemble_2</italic>, which includes <monospace>RDTool</monospace>, may not be efficient
+for processing large-scale databases. Additionally, the <italic>Biochemical
+Reaction Dataset</italic> posed more challenges compared to the <italic>Chemical Reaction Dataset</italic>, with processing times more than
+doubling.</p><p>Machine learning-based techniques were highly effective
+with the <italic>Chemical Reaction Dataset</italic>, achieving accuracies
+over 90%,
+see <xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>A. Conversely,
+their performance was less impressive on the <italic>Biochemical Reaction
+Dataset</italic>, with accuracies falling below 60%, as shown in <xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>B. Notably, <monospace>RDTool</monospace> outperforms the other machine learning-based tools
+on the <italic>Biochemical Reaction Dataset</italic>, attaining an
+accuracy of approximately 64.58%. This discrepancy may be attributed
+to the training focus of most machine learning tools on organic rather
+than biochemical reactions, which adversely affects their performance
+on the <italic>Biochemical Reaction Dataset</italic>. In both data
+sets, ensemble methods achieved the highest accuracies. In the <italic>Chemical Reaction Dataset</italic>, the difference in performance
+between <italic>Ensemble_1</italic> and <italic>Ensemble_2</italic> is marginal, at 99.47 and 99.69%, respectively. However, employing <italic>Ensemble_2</italic> decreased the success rate from 71.23 to 67.14%
+and increased computational expenses due to the integration of <monospace>RDTool</monospace>. Ensemble strategies were effective on the <italic>Biochemical Reaction Dataset</italic>, yielding accuracies of 76.10%
+for <italic>Ensemble_1</italic> and 80.16% for <italic>Ensemble</italic>_2, but the overall success rate was still below 45%, indicating
+that <italic>Ensemble_1</italic> is particularly beneficial for the <italic>Chemical Reaction Dataset</italic>.</p><p><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Figure S7</ext-link>A compares the performance
+of the alternative AAM inference methods with respect to varying numbers
+of bond changes. As the number of bond changes increases, the accuracy
+of single AAM techniques diminishes. Notably, <monospace>LocalMapper</monospace> is most effective among single techniques for fewer bond changes
+(1–2), <monospace>RXNMapper</monospace> excels at medium bond
+changes (3–4), and <monospace>RDTool</monospace> dominates
+with higher bond changes (6–8). Conversely, ensemble techniques
+consistently maintain an accuracy above 90%, with a significant negative
+impact only when an AAM tool’s performance severely declines.
+Further analysis of cycle descriptors within the reaction center (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Figure S7</ext-link>B) reveals that <monospace>LocalMapper</monospace> outperforms other single techniques at lower cycle counts (1), while <monospace>GraphormerMapper</monospace> surpasses others as the number of cycle
+descriptors increases. Ensemble techniques continue to outperform
+single options.</p><p>When analyzing the trade-off between success
+rate and accuracy
+in the <monospace>Golden</monospace> dataset, a standard benchmark, <monospace>LocalMapper</monospace> achieved an accuracy of 100% at a high confidence
+level, corresponding to a success rate of 53.3%. In contrast, <monospace>RXNMapper</monospace> reached an accuracy of 95.1% with a success
+rate of only 19.7%.<sup><xref rid="ref26" ref-type="bibr">26</xref></sup> Our ensemble strategies
+on the <monospace>Golden</monospace> dataset, <italic>Ensemble_1</italic> and <italic>Ensemble_2</italic>, attained accuracies of 99.47 and
+99.69%, with success rates of 71.23 and 67.14%, respectively. The
+trade-off between success rate and accuracy was more favorable in <italic>Ensemble_1</italic> compared to <italic>Ensemble_2</italic>, <monospace>LocalMapper</monospace>, and <monospace>RXNMapper</monospace>.</p><p>At present, <italic>Ensemble_1</italic> constitutes the base choice
+for predicting AAMs with near-perfect accuracy. Moreover, we note
+that the methods provided by <monospace>SynTemp</monospace> for comparing
+AAMs yield an improvement in efficacy compared to <monospace>CGRTools</monospace>. Taken together, this allows <monospace>SynTemp</monospace> to process
+a large fraction of the available reaction bases with near-perfect
+accuracy.</p></sec><sec id="sec3.2" disp-level="2"><label>3.2.</label><title>Template Analysis</title><p>The initial dataset
+from which we extracted reaction patterns consisted of 40,012 reactions
+(see <xref rid="sec2.7" ref-type="sec">Section <xref rid="sec2.7" ref-type="sec">2.7</xref></xref> for
+details on the dataset). About 86% (34,395) of reactions were successfully
+identified by consensus according to <italic>Ensemble_1</italic> and
+subsequent reinsertion of missing hydrogens in the reaction center.
+The hierarchical clustering of the partial ITS graphs with different
+expansion radii, as described in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Supporting Section B.2</ext-link>, significantly reduced the computational efforts required
+for template extraction. It reduces the processing time for the entire
+data from approximately 1.5 h to 1.7 min for a maximal expansion radius
+of <italic>r</italic> = 3. In the end, we obtained 313 <italic>raw
+templates</italic> (<italic>Q</italic><sub>raw</sub>) omitting hydrogen
+atoms, and 311 <italic>complete templates</italic> (<italic>Q</italic><sub>complete</sub>) incorporating hydrogen atoms. These data are
+compiled in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Table S3</ext-link>.</p><p>These reaction
+templates were then classified based on the topology of the reaction
+center, detailed in <xref rid="tbl1" ref-type="table">Table <xref rid="tbl1" ref-type="table">1</xref></xref>. The most relevant topological feature for our purposes is
+the cycle structure. We made use of the well-known fact that every
+graph can be decomposed into 2-connected components (where any two
+vertices are located on a common cycle), and a tree-like remainder
+that may in turn consist of several mutually disconnected parts. Each
+of the 2-connected components can be represented by a minimal cycle
+basis (MCB). Even though the MCB of a graph is not unique in general,
+it can be shown that all MCBs have the same number of cycles with
+the same length.<sup><xref rid="ref45" ref-type="bibr">45</xref>,<xref rid="ref46" ref-type="bibr">46</xref></sup> Thus, we could characterize the
+reaction center by the list of cycle lengths of any of its MCBs, augmented
+by a zero for every tree-like component. To obtain a uniquely defined
+descriptor, we stipulated that the list of cycle lengths is sorted
+in ascending order.</p><table-wrap id="tbl1" position="float"><?disp-level 3?><label>Table 1</label><caption><title>Classification of Reaction Templates</title></caption><table frame="hsides" rules="groups" border="0"><colgroup span="1"><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/></colgroup><thead><tr><th style="border:none;" align="center" colspan="1" rowspan="1"><bold>descriptor</bold></th><th style="border:none;" align="center" colspan="1" rowspan="1"><bold>category</bold></th><th style="border:none;" align="center" colspan="1" rowspan="1"><bold>description</bold></th></tr></thead><tbody><tr><td rowspan="2" style="border:none;" align="left" colspan="1">reaction type</td><td style="border:none;" align="left" colspan="1" rowspan="1">elementary (simple)</td><td style="border:none;" align="left" colspan="1" rowspan="1">single-step reactions, involving acyclic or simple cyclic structures.</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">non-elementary (complicated)</td><td style="border:none;" align="left" colspan="1" rowspan="1">multistep
+reactions, involving combinatorial or complex cyclic
+structures.</td></tr><tr><td rowspan="4" style="border:none;" align="left" colspan="1">topological type</td><td style="border:none;" align="left" colspan="1" rowspan="1">acyclic graph</td><td style="border:none;" align="left" colspan="1" rowspan="1">structures without cyclic elements.</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">single cyclic</td><td style="border:none;" align="left" colspan="1" rowspan="1">structures with a single
+cyclic component.</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">combinatorial cyclic</td><td style="border:none;" align="left" colspan="1" rowspan="1">structures with multiple cycles.</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">hybrid
+graph</td><td style="border:none;" align="left" colspan="1" rowspan="1">hybrid structures combining cyclic and acyclic
+elements.</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">cycle length</td><td colspan="2" align="left" rowspan="1">measures the minimal cycle basis
+in the reaction center graph, assigning a value of zero to acyclic
+centers.</td></tr></tbody></table></table-wrap><p>The reaction center in <xref rid="fig7" ref-type="fig">Figure <xref rid="fig7" ref-type="fig">7</xref></xref>A is <italic>Acyclic</italic>, consisting
+of a single
+tree, here just a path of length 2. The correponding descriptor is
+[0]. <xref rid="fig7" ref-type="fig">Figure <xref rid="fig7" ref-type="fig">7</xref></xref>B shows
+an <italic>Elementary</italic> reaction, classified as <italic>Single
+Cyclic</italic> in the terminology of <xref rid="tbl1" ref-type="table">Table <xref rid="tbl1" ref-type="table">1</xref></xref>. Since the reaction center consists of a
+single cycle of length 4, its descriptor is [4]. In <xref rid="fig7" ref-type="fig">Figure <xref rid="fig7" ref-type="fig">7</xref></xref>C, a <italic>Complicated</italic> reaction is presented, featuring a <italic>Combinatorial Cyclic</italic> topology. In this example, there is a unique MCB comprising two
+4-cycles, corresponding to the descriptor [4,4]. Finally, <xref rid="fig7" ref-type="fig">Figure <xref rid="fig7" ref-type="fig">7</xref></xref>D depicts a <italic>Complicated</italic> reaction with a <italic>Hybrid Graph</italic> topology, which integrates acyclic and cyclic elements with cycle
+lengths of [0,4].</p><fig id="fig7" position="float"><?disp-level 3?><label>Figure 7</label><caption><p>Examples of reaction patterns cataloged in the database,
+showcasing
+different topological structures with (A) <italic>Acyclic Graph</italic> [0], (B) <italic>Single Cyclic</italic> [4], (C) <italic>Combinatorial
+Cyclic</italic> [4,4], and (D) <italic>Hybrid Graph</italic> [0,4].</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr7" xlink:href="ci4c01795_0007.jpg"><?cloudpmc-path blobs/bd82/11938280/4c6210ad93b1/ci4c01795_0007.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 510?><?original-width 840?><?scaled-height 2126?><?scaled-width 3500?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="ci4c01795_0007.gif"><?cloudpmc-path blobs/bd82/11938280/d3c730b35e7b/ci4c01795_0007.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>We conducted an analysis of these descriptors,
+evaluating them
+both within the context of the entire database consisting of 34,395
+reactions for which we identified the reaction centers (hereafter
+referred to as the “database”), and our template library,
+which comprised 311 distinct templates. The overwhelming majority
+of the database, 87.0%, was categorized as elementary (and thus single-step)
+reactions, see <xref rid="fig8" ref-type="fig">Figure <xref rid="fig8" ref-type="fig">8</xref></xref>A. This percentage decreased to 54.3% of the 311 templates collected
+in the template library, <xref rid="fig8" ref-type="fig">Figure <xref rid="fig8" ref-type="fig">8</xref></xref>B. More detailed statistics can be found in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Table S4</ext-link>.</p><fig id="fig8" position="float"><?disp-level 3?><label>Figure 8</label><caption><p>Pie charts display analysis of reaction
+types (Panels A and B),
+topological types (panels C and D), for the ”database”
+and the ”template library”, respectively.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr8" xlink:href="ci4c01795_0008.jpg"><?cloudpmc-path blobs/bd82/11938280/4102833e0e95/ci4c01795_0008.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 311?><?original-width 1002?><?scaled-height 1295?><?scaled-width 4175?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="ci4c01795_0008.gif"><?cloudpmc-path blobs/bd82/11938280/6a8a302c34d9/ci4c01795_0008.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>Further analysis of the topological configurations
+revealed that
+the <italic>Single Cyclic</italic> type was by far the most abundant
+reaction type, comprising 86.6% of the reaction centers across the
+“database” as depicted in <xref rid="fig8" ref-type="fig">Figure <xref rid="fig8" ref-type="fig">8</xref></xref>C. This dominance persisted in the template
+library, where <italic>Single Cyclic</italic> remained the most common
+configuration, accounting for 48.6%.</p><p>We further analyzed the
+cycle length in the reaction center of
+both elementary and complex reactions, as shown in <xref rid="fig9" ref-type="fig">Figure <xref rid="fig9" ref-type="fig">9</xref></xref> and summarized in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Table S5</ext-link>. In
+the subset of elementary reactions, comprising both <italic>Acyclic
+Graphs</italic> with a single connected component and <italic>Single
+Cyclic</italic> types, we found that more than 98% of the entire “database”
+was of type [4], i.e., the reaction center was formed by a single
+cycle of length 4. Six-membered cycles, i.e., type [6], account for
+1.4% of the reactions. Similar patterns were observed in our “template
+library”, with four-membered cycles at 64.5% and six-membered
+cycles at 17.2%, see <xref rid="fig9" ref-type="fig">Figure <xref rid="fig9" ref-type="fig">9</xref></xref>B. Four-membered cycles are typically associated with transition
+states in 1,2-addition reactions or nonconjugated reactions, whereas
+six-membered cycles are common in 1,4-addition reactions, where conjugated
+effects play a significant role.</p><p>For more intricate templates, such as <italic>Combinatorial
+Cyclic</italic> and <italic>Hybrid Graph</italic>, similar patterns
+were observed,
+as shown in <xref rid="fig9" ref-type="fig">Figure <xref rid="fig9" ref-type="fig">9</xref></xref>C,D. Notably, more than 66.1% of these feature combinations involve
+two four-membered cycles in the “database”, making it
+the most prevalent structural configuration. In the template library,
+this arrangement is similarly dominant, accounting for 21.8% of all
+templates. This is followed by condensed systems of four- and six-membered
+cycles, which constitute 11.2% of the structures in the “database”
+and 15.5% in the “template library”, respectively.</p><p>Analyzing the cycle lengths of the reaction center could provide
+insights into the reaction steps involved. To this end, we took the
+number of entries in the list of cycle length as an estimate for the
+number of steps. We verified on a subset of 100 reactions that this
+estimator is plausible from a chemical point of view. See <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_002.pdf" ext-link-type="uri">Supporting File 2</ext-link>. In the database, 87.0% of
+reactions were single-step, similar to the proportion of elementary
+reactions. Only 10.98% were two-step, and less than 2% were more than
+two-step. The “template library” showed a slightly different
+from “database”, with 54.34% single-step, 33.12% two-step,
+and less than 13% more than two-step reactions. More detailed statistics
+can be found in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Table S4</ext-link>.</p><p>A more
+detailed inspection of the 311 <italic>Q</italic><sub>complete</sub> entries in the library of reaction patterns revealed that a subset
+of 20 rules disproportionately accounts for 80% of all cataloged reactions,
+as depicted in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Figure S8</ext-link>A. The two most
+prominent rules are <italic>amide formation</italic> (<italic>Rule
+8</italic>) and <italic>amine alkylation</italic> (<italic>Rule 2</italic>), as illustrated in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Figure S8B and S8C</ext-link>, respectively. Detailed descriptions of these 20 rules are provided
+in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Table S6</ext-link>. The entire library of rules
+is available in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_003.pdf" ext-link-type="uri">Supporting File 3</ext-link>.</p><p>The processing of 40,012 reactions, including ITS graph extraction,
+clustering, and conversion to DPO rules, required approximately 23
+min on a system equipped with an Intel(R) Core(TM) i7–8700
+CPU @ 3.20 GHz, featuring 12 CPU and 96 GB of RAM, averaging 34 ms
+per reaction. While this rate is efficient for medium-sized data sets,
+scaling up to millions of reactions poses significant computational
+challenges.</p></sec><sec id="sec3.3" disp-level="2"><label>3.3.</label><title>Application of Reaction Rules and Benchmarking
+Study</title><p>In this section, we executed a series of rule application
+experiments across varying radii of templates to analyze the quality
+of the <italic>reaction templates/rules</italic> based on two metrics: <italic>novelty rate</italic> (<inline-formula id="d34e1659"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m018.gif"><?cloudpmc-path blobs/bd82/11938280/c949524eaf51/ci4c01795_m018.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 28?></inline-graphic></inline-formula>) and <italic>coverage</italic> (<inline-formula id="d34e1664"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m019.gif"><?cloudpmc-path blobs/bd82/11938280/e007ab55af64/ci4c01795_m019.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 18?></inline-graphic></inline-formula>). We observed a distinct inverse relationship
+between the radius of templates and these two metrics. This relationship
+is demonstrated in <xref rid="fig10" ref-type="fig">Figure <xref rid="fig10" ref-type="fig">10</xref></xref> (validation set) and <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Figure S9</ext-link> (test set). An increase in the radius leads to the expansion of
+template rules, significantly reducing the likelihood of subgraph
+morphisms with input molecules, as reported in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Table S3</ext-link>. Consequently, this results in a lower number of
+generated solutions, illustrating a practical trade-off between <inline-formula id="d34e1678"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m020.gif"><?cloudpmc-path blobs/bd82/11938280/e007ab55af64/ci4c01795_m020.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 18?></inline-graphic></inline-formula> and <inline-formula id="d34e1681"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m021.gif"><?cloudpmc-path blobs/bd82/11938280/c949524eaf51/ci4c01795_m021.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 28?></inline-graphic></inline-formula>. While a decrease in <inline-formula id="d34e1684"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m022.gif"><?cloudpmc-path blobs/bd82/11938280/c949524eaf51/ci4c01795_m022.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 28?></inline-graphic></inline-formula> can simplify the search for optimal solutions,
+it may concurrently diminish <inline-formula id="d34e1688"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m023.gif"><?cloudpmc-path blobs/bd82/11938280/e007ab55af64/ci4c01795_m023.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 18?></inline-graphic></inline-formula> and thereby restrict potential exploratory
+pathways within chemical reaction networks.</p><fig id="fig10" position="float"><?disp-level 3?><label>Figure 10</label><caption><p>Performance of rule
+applications on the validation set of three
+different template types (<italic>Q</italic><sub>raw</sub>, <italic>Q</italic><sub>complete</sub>, <italic>Q</italic><sub>hier</sub>)
+across varying radii. Panels (A) and (B) depict the <inline-formula id="d34e1705"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m029.gif"><?cloudpmc-path blobs/bd82/11938280/e007ab55af64/ci4c01795_m029.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 18?></inline-graphic></inline-formula> for forward and backward predictions, respectively.
+Panels (C) and (D) illustrate the <inline-formula id="d34e1709"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m030.gif"><?cloudpmc-path blobs/bd82/11938280/c949524eaf51/ci4c01795_m030.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 28?></inline-graphic></inline-formula> for forward and backward predictions.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr10" xlink:href="ci4c01795_0010.jpg"><?cloudpmc-path blobs/bd82/11938280/c99d471d697a/ci4c01795_0010.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 599?><?original-width 1000?><?scaled-height 2495?><?scaled-width 4167?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="ci4c01795_0010.gif"><?cloudpmc-path blobs/bd82/11938280/31d8c342d3e9/ci4c01795_0010.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>As shown in <xref rid="fig10" ref-type="fig">Figure <xref rid="fig10" ref-type="fig">10</xref></xref>, the performance of <italic>Q</italic><sub>raw</sub> is notably
+inferior, evidenced by the high <inline-formula id="d34e1722"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m024.gif"><?cloudpmc-path blobs/bd82/11938280/c949524eaf51/ci4c01795_m024.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 28?></inline-graphic></inline-formula> and a <inline-formula id="d34e1725"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m025.gif"><?cloudpmc-path blobs/bd82/11938280/e007ab55af64/ci4c01795_m025.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 18?></inline-graphic></inline-formula> below 10% across all tested radii. This
+is a consequence of ignoring bond changes that involve hydrogens.
+Since <italic>Q</italic><sub>raw</sub> does not capture them, the
+corresponding rewriting rule is not sufficient to describe the transformation
+completely, i.e., the application of the rule to the reactants does
+not lead to product molecule(s) but to graphs that leave hydrogens
+attached to their original neighbors in the reactants and thus may
+result in an abnormal increase in valence bonds for certain atoms.
+We conclude, therefore, that most reactions involve hydrogens, and
+thus <italic>Q</italic><sub>raw</sub> rules, in general, are not applicable
+to complete representations of the molecules. In contrast, other template
+types significantly improve effectiveness, with <inline-formula id="d34e1735"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m026.gif"><?cloudpmc-path blobs/bd82/11938280/e007ab55af64/ci4c01795_m026.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 18?></inline-graphic></inline-formula> ranging from 78 to 94.5%.</p><p>An interesting
+finding was the relative consistency in <inline-formula id="d34e1740"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m027.gif"><?cloudpmc-path blobs/bd82/11938280/e007ab55af64/ci4c01795_m027.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 18?></inline-graphic></inline-formula> observed for both forward and backward
+predictions, as evidenced in <xref rid="fig10" ref-type="fig">Figure <xref rid="fig10" ref-type="fig">10</xref></xref>A,B, where the values exhibit only slight variations.
+In contrast, the <inline-formula id="d34e1747"><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_m028.gif"><?cloudpmc-path blobs/bd82/11938280/c949524eaf51/ci4c01795_m028.gif?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?scaled-height 11?><?scaled-width 28?></inline-graphic></inline-formula> showed a marked disparity between forward
+and backward predictions, as depicted in <xref rid="fig10" ref-type="fig">Figure <xref rid="fig10" ref-type="fig">10</xref></xref>C,D, respectively. This significant difference
+could be attributed to the generally smaller number of molecules involved
+in backward predictions compared to forward predictions, simplifying
+the subgraph isomorphism and potentially leading to a higher number
+of solutions. This observation is further elaborated upon in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Tables S7 and S8</ext-link> for validation and test set,
+respectively. These findings highlight the complexities inherent in
+backward prediction tasks, making them notably more challenging than
+their forward counterparts.</p><p>The computational cost for rule
+application increases with expansion
+radius <italic>r</italic> used in the templates <italic>Q</italic><sub><italic>r</italic></sub>. As illustrated in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Figure S10</ext-link>, the progression <italic>R</italic><sub>0</sub> to <italic>R</italic><sub>1</sub> of <italic>Q</italic><sub>complete</sub> incurs a 2.5-fold increase in processing time. This increase becomes
+more pronounced, surging to a 20-fold rise at <italic>R</italic><sub>2</sub> and escalating further to a 50-fold increase at <italic>R</italic><sub>3</sub>. Such exponential growth in computational demand underscores
+the need for more efficient processing strategies. In response, we
+have implemented a hierarchical rule application, denoted as <italic>Q</italic><sub>hier</sub>, making use of the hierarchical structure
+of the templates. The processing time for <italic>Q</italic><sub>hier</sub> is significantly lower than that of <italic>Q</italic><sub>complete</sub>, with only a 60% increase in processing time from <italic>R</italic><sub>0</sub> to <italic>R</italic><sub>3</sub> compared to the 50-fold
+increase observed with <italic>Q</italic><sub>complete</sub>. Despite
+these differences in processing time, both approaches maintain consistent <italic>coverage</italic> and <italic>novelty</italic> across all choices
+of the extension radius <italic>r</italic>, see <xref rid="fig10" ref-type="fig">Figure <xref rid="fig10" ref-type="fig">10</xref></xref>A,B. Consequently, <italic>Q</italic><sub>hier</sub> emerges as the more efficient choice, enabling
+equal outcomes with reduced resource expenditure.</p><p>We finally
+compared the graph-theoretical approach described here
+with SMARTS-based templates, which are typically used in machine learning-driven
+retrosynthetic models.<sup><xref rid="ref47" ref-type="bibr">47</xref>−<xref rid="ref49" ref-type="bibr">49</xref></sup> To extract reaction SMARTS from the training dataset
+covering 80% of the <monospace>USPTO_50K</monospace> we employed the <monospace>RDChiral</monospace> toolkit.<sup><xref rid="ref32" ref-type="bibr">32</xref></sup> We obtained
+11,647 templates that were successfully applied to 93.3% of the entries
+in the 10% test set. In a comparative analysis, while <monospace>SynTemp</monospace> extracted only 311 reaction rules from the same dataset, it achieved
+remarkable <italic>coverage</italic> of 94.5% for forward prediction
+and 93.5% for backward prediction. The reactions that were not covered
+by our rules can be attributed to the presence of 194 ambiguous hydrogen
+atoms and 5423 nonequivalent AAMs, which together constitute 14.04%
+of the training set.</p><p>The application of coarse-grained rules
+or templates in <xref rid="fig11" ref-type="fig">Figure <xref rid="fig11" ref-type="fig">11</xref></xref> using <monospace>RDChiral</monospace> leads to two potential
+products. Extending the
+context graphs, i.e., using the hierarchy of templates in <monospace>SynTemp</monospace>, successfully eliminates the less viable synthesis
+route. This refined approach holds promise in synthesis planning,
+in particular, if the context is effectively and precisely expanded
+beyond the current arbitrary extensions.</p><fig id="fig11" position="float"><?disp-level 3?><label>Figure 11</label><caption><p>Comparison of template
+application differences between the standard <monospace>RDChiral</monospace> implementation and <monospace>SynTemp</monospace> across various
+cases: (A) Etherification; (B) Hydrobromide addition;
+(C) Asymmetric Diels–Alder reaction; (D) Elimination reaction.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr11" xlink:href="ci4c01795_0011.jpg"><?cloudpmc-path blobs/bd82/11938280/c9fb5129894d/ci4c01795_0011.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 308?><?original-width 840?><?scaled-height 1283?><?scaled-width 3500?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="ci4c01795_0011.gif"><?cloudpmc-path blobs/bd82/11938280/86fa01640a2d/ci4c01795_0011.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>About one-eighth of the <monospace>USPTO</monospace> reaction data
+are composite reactions. It is of interest, therefore, to investigate
+whether their ITS graphs can be derived as the consecutive application
+of two or more single-step reactions. To this end, we used the 169
+single-step rules from <italic>Q</italic><sub>complete</sub> and combined
+them into more than 16,000 two-step rules. Somewhat surprisingly,
+only three of the rules in the template library are composites of
+rules for single-step reactions observed in the same data. These three
+cases are shown in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">Figure S11</ext-link>. We suspect
+that the direct rule composition fails because (a) the composite reactions
+take place in different parts of the molecule, and hence there is
+little or no overlap of the reaction centers of the individual steps,
+and (b) the templates used for the consecutive steps may involve inconsistent
+extended contexts. Given a library of patterns for single-step reactions,
+it is also possible to ask whether a given reaction can be explained
+by a sequence of single-step reactions.<sup><xref rid="ref50" ref-type="bibr">50</xref></sup> In contrast to rule composition, this approach does not require
+a substantial overlap of the reaction centers of consecutive rules.</p></sec></sec><sec id="sec4" disp-level="1"><label>4.</label><title>Discussion and Conclusions</title><p>This contribution
+presents <monospace>SynTemp</monospace>, a framework
+for automatic reaction template/rule extraction. <monospace>SynTemp</monospace> supplies reaction rules as ITS subgraphs, equivalent to DPO graph
+rewriting rules, for immediate application to new substrates via <monospace>M</monospace>ØD. The graphs contain the reaction center as a
+subgraph and thus describe a classification of reaction that refines
+e.g., the classification proposed in ref (<xref rid="ref42" ref-type="bibr">42</xref>). <monospace>SynTemp</monospace> successfully
+tackles key technical problems associated with the inference of interpretable
+reaction patterns, namely the large-scale computation of reliable
+AAMs, the comparison of AAMs based on information, and the efficient
+clustering of pattern graphs with varying detail levels beyond the
+reaction center.</p><p>The present implementation uses an approximation
+for AAMs comparison
+on partial ITS graphs that delivers accuracies well above 90% on benchmark
+sets, but may occasionally return false positives. Computationally
+inferred AAMs form the basis of our approach to extract reaction templates.
+To this end, we integrated multiple state-of-the-art AAM tools to
+enhance accuracy. Specifically, we combined <monospace>RXNMapper</monospace>, <monospace>GraphormerMapper</monospace>, and <monospace>LocalMapper</monospace>, achieving an accuracy of 99.47% with a success rate of 71.23% on
+the <italic>Chemical Reaction Dataset</italic>. The ensemble approach
+of extracted templates to atom–atom mapping exhibits high confidence
+in correctly representing the underlying chemical mechanisms.</p><p>In the absence of extensive collections of reaction rules against
+which our results could be compared, we opted to maximize accuracy
+and confidence in the rule sets at the expense of <italic>coverage</italic>. We ignore nonequivalent AAMs and ambiguous hydrogens, which account
+for approximately 14% of the database. The <italic>coverage</italic> results in rule application within radii zero being limited to 93.5–94.5%,
+which is only slightly better than the 93.3% <italic>coverage</italic> achieved by <monospace>RDChiral</monospace> using SMARTS templates.
+However, this is achieved by a library of reaction patterns that,
+at present, contains only 311 entries, compared to more than 10,000
+SMARTS, indicating a drastic difference in generalization ability.</p><p>In the present implementation, the context around the reaction
+center is simply defined by an expansion radius, i.e., it includes
+all atoms within a given graph-theoretical distance. Refining this
+context part of the rules remains an interesting research question.
+One promising approach is graph alignments, for which methods have
+recently become available.<sup><xref rid="ref40" ref-type="bibr">40</xref></sup> These could
+be used to distinguish common from variable parts of the context.</p><p><monospace>SynTemp</monospace> can efficiently process 50,000 reactions
+within minutes on personal hardware. The effectiveness of <monospace>SynTemp</monospace> – and all similar tools–heavily
+depends on the accuracy and efficiency of the AAM inference process.
+The performance is therefore tied to the quality of the reaction data
+that are used as input. Unbalanced reactions in general compromise
+the reliability of results and complicate the inference process. The
+success rate of <monospace>SynRBL</monospace> in imputing missing
+compounds in the <monospace>Reaxys</monospace> database is approximately
+76%.<sup><xref rid="ref31" ref-type="bibr">31</xref></sup> Reaction patterns inferred by <monospace>SynTemp</monospace> may contribute to future improvements of tools
+for correcting reaction data since they can help improve the coverage
+of reaction types in machine learning classifiers<sup><xref rid="ref51" ref-type="bibr">51</xref>,<xref rid="ref52" ref-type="bibr">52</xref></sup> and improve the voting process among AAM tools with new methods
+such as the cycle descriptor for classifying reaction center topologies.</p><p>Given the prevalence of multistep reactions in the dataset, <monospace>SynTemp</monospace> leverages <monospace>MØD</monospace>’s
+rule composition features to explain these reactions as constituting
+single-step components.<sup><xref rid="ref50" ref-type="bibr">50</xref>,<xref rid="ref53" ref-type="bibr">53</xref></sup> Reactions involving
+fewer steps are generally more chemically plausible, suggesting lower
+energy barriers and streamlined processes. This adds credibility to
+combinatorial AAM mapping approaches that seek reaction centers composed
+of few cycles, as advocated in the study of Mann et al.<sup><xref rid="ref54" ref-type="bibr">54</xref></sup> Nevertheless, there is no guarantee that the
+true mechanism minimizes descriptor lengths. Complex mechanisms may
+also form bonds that are broken again in subsequent steps and thus
+do not appear at all in the ITS and reaction center graphs. To address
+this issue at least in part, overlay graphs that extend the ITS have
+been introduced by.<sup><xref rid="ref55" ref-type="bibr">55</xref></sup> These graphs detail
+both the imaginary transition states and transient bonds within multistep
+reactions. Integrating this with recent insights into partial ITS
+graphs<sup><xref rid="ref36" ref-type="bibr">36</xref></sup> could significantly advance both
+our understanding and computational capabilities of multistep reaction
+mechanisms. Notably, a formal framework for rule composition is absent
+in SMARTS, highlighting the benefits of explicit graph transformations
+for modeling reactions. Finally, the correct and unambiguous completion
+of hydrogens in the ITS graphs, as a special issue in the context
+of AAM inference, also remains a topic for future improvements.</p></sec><sec id="ack1" sec-type="ack" disp-level="1"><title>Acknowledgments</title><p>This project has received funding from the European
+Unions
+Horizon Europe Doctoral Network programme under the Marie-Skłodowska-Curie
+grant agreement No 101072930 (TACsy – Training Alliance for
+Computational systems chemistry). M.E.G.L. acknowledges financial
+support by the Federal Ministry of Education and Research of Germany
+and by the Sächsische Staatsministerium für Wissenschaft
+Kultur und Tourismus in the program Center of Excellence for AI-research
+”Center for Scalable Data Analytics and Artificial Intelligence
+Dresden/Leipzig”, project identification number: ScaDS.AI.</p></sec><sec id="notes-3" disp-level="1"><title>Data Availability Statement</title><p>The data sets
+supporting the conclusions of this article are available in the <monospace>SynTemp</monospace> repository: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/TieuLongPhan/SynTemp/tree/main/Data" ext-link-type="uri">https://github.com/TieuLongPhan/SynTemp/tree/main/Data</ext-link>. The source code is available at: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/TieuLongPhan/SynTemp" ext-link-type="uri">https://github.com/TieuLongPhan/SynTemp</ext-link>.</p></sec><sec id="notes-5" disp-level="1"><title>Supporting Information Available</title><p>The Supporting Information
+is available free of charge at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/10.1021/acs.jcim.4c01795?goto=supporting-info" ext-link-type="uri">https://pubs.acs.org/doi/10.1021/acs.jcim.4c01795</ext-link>.</p><list list-type="simple" id="silist"><list-item><p>Contains detailed methodologies, mathematical explanations,
+and additional tables and figures that support the manuscript (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_001.pdf" ext-link-type="uri">PDF</ext-link>)</p></list-item><list-item><p>Detail of 100
+reactions with reaction steps and cycle
+length (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_002.pdf" ext-link-type="uri">PDF</ext-link>)</p></list-item><list-item><p>Rules library extracted from the training set using
+the SynTemp package (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/doi/suppl/10.1021/acs.jcim.4c01795/suppl_file/ci4c01795_si_003.pdf" ext-link-type="uri">PDF</ext-link>)</p></list-item></list></sec><sec id="notes-4" disp-level="1"><title>Author Contributions</title><p>T.-L.P. and
+P.F.S. contributed to the design of the study. T.-L.P. conceptualized
+the methodologies, developed codebase, executed the experimental procedures,
+and composed the primary text of the manuscript. K.W. was primarily
+responsible for figure design and writing manuscript. M.E.G.L. contributed
+to the mathematical proofs and the pseudocode. P.F.S. was involved
+in drafting, writing mathematical proofs and revising the initial
+manuscript. Y.P., C.F., D.M., J.L.A., and R.F. contributed to the
+manuscript by providing substantial revisions. All authors contributed
+to the revision after peer review.</p></sec><sec id="notes-2" disp-level="1"><p>Views and opinions
+expressed are however those of the author(s) only and do not necessarily
+reflect those of the European Union. Neither the European Union nor
+the granting authority can be held responsible for them.</p></sec><sec id="notes-1" disp-level="1"><p>The
+authors
+declare no competing financial interest.</p></sec><sec id="spn1" disp-level="1"><title>Special Issue</title><p>Published
+as part of <italic>Journal of Chemical Information and Modeling</italic><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubs.acs.org/curated-content?journal=jcisd8&amp;ref=feature" ext-link-type="uri">special issue</ext-link> “Modeling Reactions from Chemical
+Theories to Machine Learning”.</p></sec><sec id="sec17" disp-level="1"><title>Supplementary Material</title><supplementary-material id="sifile1" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_si_001.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path bd82/11938280/312811c1d554/ci4c01795_si_001.pdf?><?cloudpmc-bucket app?><?size 2298224?><caption><p>ci4c01795_si_001.pdf</p></caption></media></supplementary-material><supplementary-material id="sifile2" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_si_002.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path bd82/11938280/ff62e697249c/ci4c01795_si_002.pdf?><?cloudpmc-bucket app?><?size 3270887?><caption><p>ci4c01795_si_002.pdf</p></caption></media></supplementary-material><supplementary-material id="sifile3" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_si_003.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path bd82/11938280/be99ab33f71e/ci4c01795_si_003.pdf?><?cloudpmc-bucket app?><?size 1989314?><caption><p>ci4c01795_si_003.pdf</p></caption></media></supplementary-material></sec><sec id="ref-list1" sec-type="ref-list" disp-level="1"><title>References</title><sec id="ref-list1_sec2" disp-level="2"><ref-list><ref id="ref1"><mixed-citation id="cit1"><named-content content-type="citation-string">Corey E. J.
+General
+methods for the construction of complex molecules. Pure Appl. Chem.
+1967, 14, 19–38. 10.1351/pac196714010019.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1351/pac196714010019"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Pure Appl. Chem.&amp;title=General methods for the construction of complex molecules&amp;author=E. J. Corey&amp;volume=14&amp;publication_year=1967&amp;pages=19-38&amp;doi=10.1351/pac196714010019&amp;"/></mixed-citation></ref><ref id="ref2"><mixed-citation id="cit2"><named-content content-type="citation-string">Corey E. J.; Long A. K.; Rubenstein S. D.
+Computer-assisted analysis in organic
+synthesis. Science
+1985, 228, 408–418. 10.1126/science.3838594.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1126/science.3838594"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="3838594"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Science&amp;title=Computer-assisted analysis in organic synthesis&amp;author=E. J. Corey&amp;author=A. K. Long&amp;author=S. D. Rubenstein&amp;volume=228&amp;publication_year=1985&amp;pages=408-418&amp;pmid=3838594&amp;doi=10.1126/science.3838594&amp;"/></mixed-citation></ref><ref id="ref3"><mixed-citation id="cit3"><named-content content-type="citation-string">Lowe D. M.Extraction of Chemical
+Structures and Reactions from the Literature 2012.</named-content></mixed-citation></ref><ref id="ref4"><mixed-citation id="cit4"><named-content content-type="citation-string">Goodman J.
+Computer software
+review: Reaxys. J. Chem. Inf. Model.
+2009, 49, 2897–2898. 10.1021/ci900437n.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/ci900437n"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Inf. Model.&amp;title=Computer software review: Reaxys&amp;author=J. Goodman&amp;volume=49&amp;publication_year=2009&amp;pages=2897-2898&amp;doi=10.1021/ci900437n&amp;"/></mixed-citation></ref><ref id="ref5"><mixed-citation id="cit5"><named-content content-type="citation-string">Thakkar A.; Kogej T.; Reymond J.-L.; Engkvist O.; Bjerrum E. J.
+Datasets
+and their influence on the development of computer assisted synthesis
+planning tools in the pharmaceutical domain. Chem. Sci.
+2020, 11, 154–168. 10.1039/C9SC04944D.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/C9SC04944D"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7012039"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32110367"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. Sci.&amp;title=Datasets and their influence on the development of computer assisted synthesis planning tools in the pharmaceutical domain&amp;author=A. Thakkar&amp;author=T. Kogej&amp;author=J.-L. Reymond&amp;author=O. Engkvist&amp;author=E. J. Bjerrum&amp;volume=11&amp;publication_year=2020&amp;pages=154-168&amp;pmid=32110367&amp;doi=10.1039/C9SC04944D&amp;"/></mixed-citation></ref><ref id="ref6"><mixed-citation id="cit6"><named-content content-type="citation-string">Andersen J. L.; Flamm C.; Merkle D.; Stadler P. F. In A software package
+for chemically inspired graph transformation, Graph Transformation:
+9th International Conference, ICGT 2016, in Memory of Hartmut Ehrig,
+Held as Part of STAF 2016, Vienna, Austria, July 5–6, 2016,
+Proceedings 9, 2016; pp 73–88.</named-content></mixed-citation></ref><ref id="ref7"><mixed-citation id="cit7"><named-content content-type="citation-string">Benkö G.; Flamm C.; Stadler P. F.
+A Graph-Based
+Toy Model of Chemistry. J. Chem. Inf. Comput.
+Sci.
+2003, 43, 1085–1093. 10.1021/ci0200570.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/ci0200570"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="12870897"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Inf. Comput. Sci.&amp;title=A Graph-Based Toy Model of Chemistry&amp;author=G. Benkö&amp;author=C. Flamm&amp;author=P. F. Stadler&amp;volume=43&amp;publication_year=2003&amp;pages=1085-1093&amp;pmid=12870897&amp;doi=10.1021/ci0200570&amp;"/></mixed-citation></ref><ref id="ref8"><mixed-citation id="cit8"><named-content content-type="citation-string">Grzybowski B. A.
+Chematica:
+An automatic chemist for the 21st century. Chemistry
+2006, 45, 5348.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chemistry&amp;title=Chematica: An automatic chemist for the 21st century&amp;author=B. A. Grzybowski&amp;volume=45&amp;publication_year=2006&amp;pages=5348&amp;"/></mixed-citation></ref><ref id="ref9"><mixed-citation id="cit9"><named-content content-type="citation-string">Molga K.; Dittwald P.; Grzybowski B. A.
+Computational
+design of syntheses
+leading to compound libraries or isotopically labelled targets. Chem. Sci.
+2019, 10, 9219–9232. 10.1039/C9SC02678A.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/C9SC02678A"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6979321"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32055308"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. Sci.&amp;title=Computational design of syntheses leading to compound libraries or isotopically labelled targets&amp;author=K. Molga&amp;author=P. Dittwald&amp;author=B. A. Grzybowski&amp;volume=10&amp;publication_year=2019&amp;pages=9219-9232&amp;pmid=32055308&amp;doi=10.1039/C9SC02678A&amp;"/></mixed-citation></ref><ref id="ref10"><mixed-citation id="cit10"><named-content content-type="citation-string">Molga K.; Dittwald P.; Grzybowski B. A.
+Navigating around patented routes
+by preserving specific motifs along computer-planned retrosynthetic
+pathways. Chem.
+2019, 5, 460–473. 10.1016/j.chempr.2018.12.004.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.chempr.2018.12.004"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem.&amp;title=Navigating around patented routes by preserving specific motifs along computer-planned retrosynthetic pathways&amp;author=K. Molga&amp;author=P. Dittwald&amp;author=B. A. Grzybowski&amp;volume=5&amp;publication_year=2019&amp;pages=460-473&amp;doi=10.1016/j.chempr.2018.12.004&amp;"/></mixed-citation></ref><ref id="ref11"><mixed-citation id="cit11"><named-content content-type="citation-string">Llanos E. J.; Leal W.; Luu D. H.; Jost J.; Stadler P. F.; Restrepo G.
+The exploration of
+the chemical space and its three
+historical regimes. Proc. Natl. Acad. Sci. U.S.A.
+2019, 116, 12660–12665. 10.1073/pnas.1816039116.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1073/pnas.1816039116"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6600933"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31186353"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Proc. Natl. Acad. Sci. U.S.A.&amp;title=The exploration of the chemical space and its three historical regimes&amp;author=E. J. Llanos&amp;author=W. Leal&amp;author=D. H. Luu&amp;author=J. Jost&amp;author=P. F. Stadler&amp;volume=116&amp;publication_year=2019&amp;pages=12660-12665&amp;pmid=31186353&amp;doi=10.1073/pnas.1816039116&amp;"/></mixed-citation></ref><ref id="ref12"><mixed-citation id="cit12"><named-content content-type="citation-string">Chen S.; Jung Y.
+A generalized-template-based
+graph neural network for accurate organic
+reactivity prediction. Nat. Machi. Intell.
+2022, 4, 772–780. 10.1038/s42256-022-00526-z.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s42256-022-00526-z"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Machi. Intell.&amp;title=A generalized-template-based graph neural network for accurate organic reactivity prediction&amp;author=S. Chen&amp;author=Y. Jung&amp;volume=4&amp;publication_year=2022&amp;pages=772-780&amp;doi=10.1038/s42256-022-00526-z&amp;"/></mixed-citation></ref><ref id="ref13"><mixed-citation id="cit13"><named-content content-type="citation-string">Chen L.-Y.; Li Y.-P.
+AutoTemplate: enhancing
+chemical reaction datasets for machine learning
+applications in organic chemistry. J. Cheminf.
+2024, 16, 74 10.1186/s13321-024-00869-2.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s13321-024-00869-2"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC11212196"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="38937840"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Cheminf.&amp;title=AutoTemplate: enhancing chemical reaction datasets for machine learning applications in organic chemistry&amp;author=L.-Y. Chen&amp;author=Y.-P. Li&amp;volume=16&amp;publication_year=2024&amp;pages=74&amp;pmid=38937840&amp;doi=10.1186/s13321-024-00869-2&amp;"/></mixed-citation></ref><ref id="ref14"><mixed-citation id="cit14"><named-content content-type="citation-string">Chemaxon Docs AutoMapper User’s Guide. <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.chemaxon.com/display/docs/automapper-user-s-guide" ext-link-type="uri">https://docs.chemaxon.com/display/docs/automapper-user-s-guide</ext-link> (accessed 2024).</named-content></mixed-citation></ref><ref id="ref15"><mixed-citation id="cit15"><named-content content-type="citation-string">Indigo Indigo Toolkit
+Home Page. <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://lifescience.opensource.epam.com/indigo/" ext-link-type="uri">https://lifescience.opensource.epam.com/indigo/</ext-link> (accessed 2024).</named-content></mixed-citation></ref><ref id="ref16"><mixed-citation id="cit16"><named-content content-type="citation-string">NextMove
+Software NameRXN. <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.nextmovesoftware.com" ext-link-type="uri">www.nextmovesoftware.com</ext-link> (accessed 2024).</named-content></mixed-citation></ref><ref id="ref17"><mixed-citation id="cit17"><named-content content-type="citation-string">Rahman S. A.; Torrance G.; Baldacci L.; Martinez Cuesta S.; Fenninger F.; Gopal N.; Choudhary S.; May J. W.; Holliday G. L.; Steinbeck C.
+others Reaction
+Decoder Tool (RDT): extracting features from chemical reactions. Bioinformatics
+2016, 32, 2065–2066. 10.1093/bioinformatics/btw096.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/bioinformatics/btw096"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4920114"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27153692"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Bioinformatics&amp;title=others Reaction Decoder Tool (RDT): extracting features from chemical reactions&amp;author=S. A. Rahman&amp;author=G. Torrance&amp;author=L. Baldacci&amp;author=S. Martinez Cuesta&amp;author=F. Fenninger&amp;volume=32&amp;publication_year=2016&amp;pages=2065-2066&amp;pmid=27153692&amp;doi=10.1093/bioinformatics/btw096&amp;"/></mixed-citation></ref><ref id="ref18"><mixed-citation id="cit18"><named-content content-type="citation-string">Jaworski W.; Szymkuć S.; Mikulak-Klucznik B.; Piecuch K.; Klucznik T.; Kaźmierowski M.; Rydzewski J.; Gambin A.; Grzybowski B. A.
+Automatic
+mapping of atoms across both simple and complex chemical reactions. Nat. Commun.
+2019, 10, 1434 10.1038/s41467-019-09440-2.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41467-019-09440-2"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6441094"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30926819"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Commun.&amp;title=Automatic mapping of atoms across both simple and complex chemical reactions&amp;author=W. Jaworski&amp;author=S. Szymkuć&amp;author=B. Mikulak-Klucznik&amp;author=K. Piecuch&amp;author=T. Klucznik&amp;volume=10&amp;publication_year=2019&amp;pages=1434&amp;pmid=30926819&amp;doi=10.1038/s41467-019-09440-2&amp;"/></mixed-citation></ref><ref id="ref19"><mixed-citation id="cit19"><named-content content-type="citation-string">Jochum C.; Gasteiger J.; Ugi I.
+The principle of minimum chemical
+distance (PMCD). Angew. Chem., Int. Ed.
+1980, 19, 495–505. 10.1002/anie.198004953.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/anie.198004953"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Angew. Chem., Int. Ed.&amp;title=The principle of minimum chemical distance (PMCD)&amp;author=C. Jochum&amp;author=J. Gasteiger&amp;author=I. Ugi&amp;volume=19&amp;publication_year=1980&amp;pages=495-505&amp;doi=10.1002/anie.198004953&amp;"/></mixed-citation></ref><ref id="ref20"><mixed-citation id="cit20"><named-content content-type="citation-string">Ehrlich H.-C.; Rarey M.
+Maximum common subgraph
+isomorphism algorithms and their applications
+in molecular science: a review. WIREs Comput.
+Mol. Sci.
+2011, 1, 68–79. 10.1002/wcms.5.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/wcms.5"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=WIREs Comput. Mol. Sci.&amp;title=Maximum common subgraph isomorphism algorithms and their applications in molecular science: a review&amp;author=H.-C. Ehrlich&amp;author=M. Rarey&amp;volume=1&amp;publication_year=2011&amp;pages=68-79&amp;doi=10.1002/wcms.5&amp;"/></mixed-citation></ref><ref id="ref21"><mixed-citation id="cit21"><named-content content-type="citation-string">Lin A.; Dyubankova N.; Madzhidov T. I.; Nugmanov R. I.; Verhoeven J.; Gimadiev T. R.; Afonina V. A.; Ibragimova Z.; Rakhimbekova A.; Sidorov P.; et al. Atom-to-atom mapping:
+a benchmarking study of popular mapping algorithms and consensus strategies. Mol. Inf.
+2022, 41, 2100138 10.1002/minf.202100138.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/minf.202100138"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34726834"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol. Inf.&amp;title=Atom-to-atom mapping: a benchmarking study of popular mapping algorithms and consensus strategies&amp;author=A. Lin&amp;author=N. Dyubankova&amp;author=T. I. Madzhidov&amp;author=R. I. Nugmanov&amp;author=J. Verhoeven&amp;volume=41&amp;publication_year=2022&amp;pages=2100138&amp;pmid=34726834&amp;doi=10.1002/minf.202100138&amp;"/></mixed-citation></ref><ref id="ref22"><mixed-citation id="cit22"><named-content content-type="citation-string">Garey M. R.; Johnson D. S.. Computers and Intractability.
+A Guide to the Theory of NP Completeness; Freeman: San Francisco, 1979.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Computers and Intractability. A Guide to the Theory of NP Completeness&amp;publication_year=1979&amp;"/></mixed-citation></ref><ref id="ref23"><mixed-citation id="cit23"><named-content content-type="citation-string">Litsa E. E.; Pena M. I.; Moll M.; Giannakopoulos G.; Bennett G. N.; Kavraki L. E.
+Machine learning
+guided atom mapping
+of metabolic reactions. J. Chem. Inf. Model.
+2019, 59, 1121–1135. 10.1021/acs.jcim.8b00434.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jcim.8b00434"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30500191"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Inf. Model.&amp;title=Machine learning guided atom mapping of metabolic reactions&amp;author=E. E. Litsa&amp;author=M. I. Pena&amp;author=M. Moll&amp;author=G. Giannakopoulos&amp;author=G. N. Bennett&amp;volume=59&amp;publication_year=2019&amp;pages=1121-1135&amp;pmid=30500191&amp;doi=10.1021/acs.jcim.8b00434&amp;"/></mixed-citation></ref><ref id="ref24"><mixed-citation id="cit24"><named-content content-type="citation-string">Schwaller P.; Hoover B.; Reymond J.-L.; Strobelt H.; Laino T.
+Extraction
+of organic chemistry grammar from unsupervised learning of chemical
+reactions. Sci. Adv.
+2021, 7, eabe4166 10.1126/sciadv.abe4166.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1126/sciadv.abe4166"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8026122"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33827815"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Sci. Adv.&amp;title=Extraction of organic chemistry grammar from unsupervised learning of chemical reactions&amp;author=P. Schwaller&amp;author=B. Hoover&amp;author=J.-L. Reymond&amp;author=H. Strobelt&amp;author=T. Laino&amp;volume=7&amp;publication_year=2021&amp;pages=eabe4166&amp;pmid=33827815&amp;doi=10.1126/sciadv.abe4166&amp;"/></mixed-citation></ref><ref id="ref25"><mixed-citation id="cit25"><named-content content-type="citation-string">Nugmanov R.; Dyubankova N.; Gedich A.; Wegner J. K.
+Bidirectional graphormer
+for reactivity understanding: neural network trained to reaction atom-to-atom
+mapping task. J. Chem. Inf. Model.
+2022, 62, 3307–3315. 10.1021/acs.jcim.2c00344.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jcim.2c00344"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35792579"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Inf. Model.&amp;title=Bidirectional graphormer for reactivity understanding: neural network trained to reaction atom-to-atom mapping task&amp;author=R. Nugmanov&amp;author=N. Dyubankova&amp;author=A. Gedich&amp;author=J. K. Wegner&amp;volume=62&amp;publication_year=2022&amp;pages=3307-3315&amp;pmid=35792579&amp;doi=10.1021/acs.jcim.2c00344&amp;"/></mixed-citation></ref><ref id="ref26"><mixed-citation id="cit26"><named-content content-type="citation-string">Chen S.; An S.; Babazade R.; Jung Y.
+Precise atom-to-atom mapping for
+organic reactions via human-in-the-loop machine learning. Nat. Commun.
+2024, 15, 2250 10.1038/s41467-024-46364-y.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41467-024-46364-y"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC10937625"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="38480709"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Commun.&amp;title=Precise atom-to-atom mapping for organic reactions via human-in-the-loop machine learning&amp;author=S. Chen&amp;author=S. An&amp;author=R. Babazade&amp;author=Y. Jung&amp;volume=15&amp;publication_year=2024&amp;pages=2250&amp;pmid=38480709&amp;doi=10.1038/s41467-024-46364-y&amp;"/></mixed-citation></ref><ref id="ref27"><mixed-citation id="cit27"><named-content content-type="citation-string">Gonzalez
+Laffitte M. E.; Beier N.; Domschke N.; Stadler P. F.
+Comparison
+of atom maps. MATCH: Comm. Math. Comp. Chem.
+2023, 90, 75–102. 10.46793/match.90-1.075G.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.46793/match.90-1.075G"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=MATCH: Comm. Math. Comp. Chem.&amp;title=Comparison of atom maps&amp;author=M. E. Gonzalez Laffitte&amp;author=N. Beier&amp;author=N. Domschke&amp;author=P. F. Stadler&amp;volume=90&amp;publication_year=2023&amp;pages=75-102&amp;doi=10.46793/match.90-1.075G&amp;"/></mixed-citation></ref><ref id="ref28"><mixed-citation id="cit28"><named-content content-type="citation-string">Nugmanov R. I.; Mukhametgaleev R. N.; Akhmetshin T.; Gimadiev T. R.; Afonina V. A.; Madzhidov T. I.; Varnek A.
+CGRtools: Python library for molecule,
+reaction, and condensed graph of reaction processing. J. Chem. Inf. Model.
+2019, 59, 2516–2521. 10.1021/acs.jcim.9b00102.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jcim.9b00102"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31063394"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Inf. Model.&amp;title=CGRtools: Python library for molecule, reaction, and condensed graph of reaction processing&amp;author=R. I. Nugmanov&amp;author=R. N. Mukhametgaleev&amp;author=T. Akhmetshin&amp;author=T. R. Gimadiev&amp;author=V. A. Afonina&amp;volume=59&amp;publication_year=2019&amp;pages=2516-2521&amp;pmid=31063394&amp;doi=10.1021/acs.jcim.9b00102&amp;"/></mixed-citation></ref><ref id="ref29"><mixed-citation id="cit29"><named-content content-type="citation-string">Fujita S.
+Description
+of organic reactions based on imaginary transition structures. 1.
+Introduction of new concepts. J. Chem. Inf.
+Comput. Sci.
+1986, 26, 205–212. 10.1021/ci00052a009.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/ci00052a009"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Inf. Comput. Sci.&amp;title=Description of organic reactions based on imaginary transition structures. 1. Introduction of new concepts&amp;author=S. Fujita&amp;volume=26&amp;publication_year=1986&amp;pages=205-212&amp;doi=10.1021/ci00052a009&amp;"/></mixed-citation></ref><ref id="ref30"><mixed-citation id="cit30"><named-content content-type="citation-string">Chen W. L.; Chen D. Z.; Taylor K. T.
+Automatic reaction mapping and reaction
+center detection. WIREs Comput. Mol. Sci.
+2013, 3, 560. 10.1002/wcms.1140.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/wcms.1140"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=WIREs Comput. Mol. Sci.&amp;title=Automatic reaction mapping and reaction center detection&amp;author=W. L. Chen&amp;author=D. Z. Chen&amp;author=K. T. Taylor&amp;volume=3&amp;publication_year=2013&amp;pages=560&amp;doi=10.1002/wcms.1140&amp;"/></mixed-citation></ref><ref id="ref31"><mixed-citation id="cit31"><named-content content-type="citation-string">Phan T.-L.; Weinbauer K.; Gärtner T.; Merkle D.; Andersen J. L.; Fagerberg R.; Stadler P. F.
+Reaction rebalancing: a novel approach
+to curating reaction databases. J. Cheminf.
+2024, 16, 82 10.1186/s13321-024-00875-4.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s13321-024-00875-4"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC11264917"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="39030583"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Cheminf.&amp;title=Reaction rebalancing: a novel approach to curating reaction databases&amp;author=T.-L. Phan&amp;author=K. Weinbauer&amp;author=T. Gärtner&amp;author=D. Merkle&amp;author=J. L. Andersen&amp;volume=16&amp;publication_year=2024&amp;pages=82&amp;pmid=39030583&amp;doi=10.1186/s13321-024-00875-4&amp;"/></mixed-citation></ref><ref id="ref32"><mixed-citation id="cit32"><named-content content-type="citation-string">Coley C. W.; Green W. H.; Jensen K. F.
+RDChiral: An RDKit
+wrapper for handling
+stereochemistry in retrosynthetic template extraction and application. J. Chem. Inf. Model.
+2019, 59, 2529–2537. 10.1021/acs.jcim.9b00286.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jcim.9b00286"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31190540"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Inf. Model.&amp;title=RDChiral: An RDKit wrapper for handling stereochemistry in retrosynthetic template extraction and application&amp;author=C. W. Coley&amp;author=W. H. Green&amp;author=K. F. Jensen&amp;volume=59&amp;publication_year=2019&amp;pages=2529-2537&amp;pmid=31190540&amp;doi=10.1021/acs.jcim.9b00286&amp;"/></mixed-citation></ref><ref id="ref33"><mixed-citation id="cit33"><named-content content-type="citation-string">Kosonocky C. W.; Feller A. L.; Wilke C. O.; Ellington A. D.
+Using alternative
+SMILES representations to identify novel functional analogues in chemical
+similarity vector searches. Patterns
+2023, 4, 100865 10.1016/j.patter.2023.100865.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.patter.2023.100865"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC10724362"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="38106612"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Patterns&amp;title=Using alternative SMILES representations to identify novel functional analogues in chemical similarity vector searches&amp;author=C. W. Kosonocky&amp;author=A. L. Feller&amp;author=C. O. Wilke&amp;author=A. D. Ellington&amp;volume=4&amp;publication_year=2023&amp;pages=100865&amp;pmid=38106612&amp;doi=10.1016/j.patter.2023.100865&amp;"/></mixed-citation></ref><ref id="ref34"><mixed-citation id="cit34"><named-content content-type="citation-string">Zhong Z.; Song J.; Feng Z.; Liu T.; Jia L.; Yao S.; Wu M.; Hou T.; Song M.
+Root-aligned SMILES:
+a tight representation for chemical reaction prediction. Chem. Sci.
+2022, 13, 9023–9034. 10.1039/D2SC02763A.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/D2SC02763A"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9365080"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36091202"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. Sci.&amp;title=Root-aligned SMILES: a tight representation for chemical reaction prediction&amp;author=Z. Zhong&amp;author=J. Song&amp;author=Z. Feng&amp;author=T. Liu&amp;author=L. Jia&amp;volume=13&amp;publication_year=2022&amp;pages=9023-9034&amp;pmid=36091202&amp;doi=10.1039/D2SC02763A&amp;"/></mixed-citation></ref><ref id="ref35"><mixed-citation id="cit35"><named-content content-type="citation-string">Tu Z.; Coley C. W.
+Permutation invariant graph-to-sequence model for template-free
+retrosynthesis and reaction prediction. J. Chem.
+Inf. Model.
+2022, 62, 3503–3513. 10.1021/acs.jcim.2c00321.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jcim.2c00321"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35881916"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Inf. Model.&amp;title=Permutation invariant graph-to-sequence model for template-free retrosynthesis and reaction prediction&amp;author=Z. Tu&amp;author=C. W. Coley&amp;volume=62&amp;publication_year=2022&amp;pages=3503-3513&amp;pmid=35881916&amp;doi=10.1021/acs.jcim.2c00321&amp;"/></mixed-citation></ref><ref id="ref36"><mixed-citation id="cit36"><named-content content-type="citation-string">González
+Laffitte M. E.; Weibauer K.; Phan T.-L.; Beier N.; Domschke N.; Flamm C.; Gatter T.; Merkle D.; Stadler P. F.
+Partial Imaginary Transition State (ITS) Graphs: A
+Formal Framework for Research and Analysis of Atom-to-Atom Maps of
+Unbalanced Chemical Reactions and Their Completions. Symmetry
+2024, 16, 1217. 10.3390/sym16091217.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3390/sym16091217"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Symmetry&amp;title=Partial Imaginary Transition State (ITS) Graphs: A Formal Framework for Research and Analysis of Atom-to-Atom Maps of Unbalanced Chemical Reactions and Their Completions&amp;author=M. E. González Laffitte&amp;author=K. Weibauer&amp;author=T.-L. Phan&amp;author=N. Beier&amp;author=N. Domschke&amp;volume=16&amp;publication_year=2024&amp;pages=1217&amp;doi=10.3390/sym16091217&amp;"/></mixed-citation></ref><ref id="ref37"><mixed-citation id="cit37"><named-content content-type="citation-string">Yadav M. K.; Kelley B. P.; Silverman S. M.. The Potential
+of a Chemical Graph Transformation System. In Graph Transformations, ICGT 2004; Berlin,
+Heidelberg, 2004; Vol. 3256, pp 83–95 10.1007/978-3-540-30203-2_8.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/978-3-540-30203-2_8"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Graph Transformations&amp;publication_year=2004&amp;"/></mixed-citation></ref><ref id="ref38"><mixed-citation id="cit38"><named-content content-type="citation-string">Rosselló F.; Valiente G.
+Chemical Graphs, Chemical
+Reaction Graphs, and Chemical
+Graph Transformation. Electr. Notes Theor. Comp.
+Sci.
+2005, 127, 157–166. 10.1016/j.entcs.2004.12.033.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.entcs.2004.12.033"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Electr. Notes Theor. Comp. Sci.&amp;title=Chemical Graphs, Chemical Reaction Graphs, and Chemical Graph Transformation&amp;author=F. Rosselló&amp;author=G. Valiente&amp;volume=127&amp;publication_year=2005&amp;pages=157-166&amp;doi=10.1016/j.entcs.2004.12.033&amp;"/></mixed-citation></ref><ref id="ref39"><mixed-citation id="cit39"><named-content content-type="citation-string">Corradini A.; Montanari U.; Rossi F.; Ehrig H.; Heckel R.; Löwe M.. Handbook Of Graph Grammars And Computing
+By Graph Transformation: Vol. 1: Foundations; World Scientific, 1997; pp 163–245.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Handbook Of Graph Grammars And Computing By Graph Transformation: Vol. 1: Foundations&amp;publication_year=1997&amp;"/></mixed-citation></ref><ref id="ref40"><mixed-citation id="cit40"><named-content content-type="citation-string">González
+Laffitte M. E.; Stadler P. F.
+Progressive Multiple Alignment of
+Graphs. Algorithms
+2024, 17, 116. 10.3390/a17030116.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3390/a17030116"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Algorithms&amp;title=Progressive Multiple Alignment of Graphs&amp;author=M. E. González Laffitte&amp;author=P. F. Stadler&amp;volume=17&amp;publication_year=2024&amp;pages=116&amp;doi=10.3390/a17030116&amp;"/></mixed-citation></ref><ref id="ref41"><mixed-citation id="cit41"><named-content content-type="citation-string">Cordella L. P.; Foggia P.; Sansone C.; Vento M.
+A (sub) graph isomorphism
+algorithm for matching large graphs. IEEE Trans.
+Pattern Anal. Mach. Intell.
+2004, 26, 1367–1372. 10.1109/TPAMI.2004.75.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1109/TPAMI.2004.75"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="15641723"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=IEEE Trans. Pattern Anal. Mach. Intell.&amp;title=A (sub) graph isomorphism algorithm for matching large graphs&amp;author=L. P. Cordella&amp;author=P. Foggia&amp;author=C. Sansone&amp;author=M. Vento&amp;volume=26&amp;publication_year=2004&amp;pages=1367-1372&amp;pmid=15641723&amp;doi=10.1109/TPAMI.2004.75&amp;"/></mixed-citation></ref><ref id="ref42"><mixed-citation id="cit42"><named-content content-type="citation-string">Hendrickson J. B.
+Comprehensive
+System for Classification and Nomenclature of Organic Reactions. J. Chem. Inf. Comput. Sci.
+1997, 37, 852–860. 10.1021/ci970040v.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/ci970040v"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Inf. Comput. Sci.&amp;title=Comprehensive System for Classification and Nomenclature of Organic Reactions&amp;author=J. B. Hendrickson&amp;volume=37&amp;publication_year=1997&amp;pages=852-860&amp;doi=10.1021/ci970040v&amp;"/></mixed-citation></ref><ref id="ref43"><mixed-citation id="cit43"><named-content content-type="citation-string">Schneider N.; Stiefl N.; Landrum G. A.
+What’s
+what: The (nearly)
+definitive guide to reaction role assignment. J. Chem. Inf. Model.
+2016, 56, 2336–2346. 10.1021/acs.jcim.6b00564.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jcim.6b00564"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28024398"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Inf. Model.&amp;title=What’s what: The (nearly) definitive guide to reaction role assignment&amp;author=N. Schneider&amp;author=N. Stiefl&amp;author=G. A. Landrum&amp;volume=56&amp;publication_year=2016&amp;pages=2336-2346&amp;pmid=28024398&amp;doi=10.1021/acs.jcim.6b00564&amp;"/></mixed-citation></ref><ref id="ref44"><mixed-citation id="cit44"><named-content content-type="citation-string">Coley C. W.; Rogers L.; Green W. H.; Jensen K. F.
+Computer-assisted
+retrosynthesis based on molecular similarity. ACS Cent. Sci.
+2017, 3, 1237–1245. 10.1021/acscentsci.7b00355.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acscentsci.7b00355"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5746854"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29296663"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ACS Cent. Sci.&amp;title=Computer-assisted retrosynthesis based on molecular similarity&amp;author=C. W. Coley&amp;author=L. Rogers&amp;author=W. H. Green&amp;author=K. F. Jensen&amp;volume=3&amp;publication_year=2017&amp;pages=1237-1245&amp;pmid=29296663&amp;doi=10.1021/acscentsci.7b00355&amp;"/></mixed-citation></ref><ref id="ref45"><mixed-citation id="cit45"><named-content content-type="citation-string">Horton J. D.
+A polynomial-time
+algorithm to find the shortest cycle basis of a graph. SIAM J. Comput.
+1987, 16, 358–366. 10.1137/0216026.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1137/0216026"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=SIAM J. Comput.&amp;title=A polynomial-time algorithm to find the shortest cycle basis of a graph&amp;author=J. D. Horton&amp;volume=16&amp;publication_year=1987&amp;pages=358-366&amp;doi=10.1137/0216026&amp;"/></mixed-citation></ref><ref id="ref46"><mixed-citation id="cit46"><named-content content-type="citation-string">Chickering D. M.; Geiger D.; Heckerman D.
+On finding a cycle basis with a shortest
+maximal cycle. Inf. Process. Lett.
+1995, 54, 55–58. 10.1016/0020-0190(94)00231-M.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/0020-0190(94)00231-M"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Inf. Process. Lett.&amp;title=On finding a cycle basis with a shortest maximal cycle&amp;author=D. M. Chickering&amp;author=D. Geiger&amp;author=D. Heckerman&amp;volume=54&amp;publication_year=1995&amp;pages=55-58&amp;doi=10.1016/0020-0190(94)00231-M&amp;"/></mixed-citation></ref><ref id="ref47"><mixed-citation id="cit47"><named-content content-type="citation-string">Dai H.; Li C.; Coley C.; Dai B.; Song L.. Retrosynthesis prediction with conditional graph
+logic network Advances in Neural Information
+Processing Systems, 2019; Vol. 32.</named-content></mixed-citation></ref><ref id="ref48"><mixed-citation id="cit48"><named-content content-type="citation-string">Genheden S.; Thakkar A.; Chadimová V.; Reymond J.-L.; Engkvist O.; Bjerrum E.
+AiZynthFinder: a fast,
+robust and flexible open-source
+software for retrosynthetic planning. J. Cheminf.
+2020, 12, 70 10.1186/s13321-020-00472-1.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s13321-020-00472-1"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7672904"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33292482"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Cheminf.&amp;title=AiZynthFinder: a fast, robust and flexible open-source software for retrosynthetic planning&amp;author=S. Genheden&amp;author=A. Thakkar&amp;author=V. Chadimová&amp;author=J.-L. Reymond&amp;author=O. Engkvist&amp;volume=12&amp;publication_year=2020&amp;pages=70&amp;pmid=33292482&amp;doi=10.1186/s13321-020-00472-1&amp;"/></mixed-citation></ref><ref id="ref49"><mixed-citation id="cit49"><named-content content-type="citation-string">Seidl P.; Renz P.; Dyubankova N.; Neves P.; Verhoeven J.; Wegner J. K.; Segler M.; Hochreiter S.; Klambauer G.
+Improving few-and zero-shot reaction
+template prediction
+using modern hopfield networks. J. Chem. Inf.
+Model.
+2022, 62, 2111–2120. 10.1021/acs.jcim.1c01065.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jcim.1c01065"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9092346"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35034452"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Inf. Model.&amp;title=Improving few-and zero-shot reaction template prediction using modern hopfield networks&amp;author=P. Seidl&amp;author=P. Renz&amp;author=N. Dyubankova&amp;author=P. Neves&amp;author=J. Verhoeven&amp;volume=62&amp;publication_year=2022&amp;pages=2111-2120&amp;pmid=35034452&amp;doi=10.1021/acs.jcim.1c01065&amp;"/></mixed-citation></ref><ref id="ref50"><mixed-citation id="cit50"><named-content content-type="citation-string">Andersen J. L.; Flamm C.; Merkle D.; Stadler P. F.. 50 shades of rule composition:
+From chemical reactions to higher levels of abstraction: First International
+Conference, FMMB 2014, Nouméa, New Caledonia, September 22–24,
+2014. Proceedings 1. 2014; pp 117–135.</named-content></mixed-citation></ref><ref id="ref51"><mixed-citation id="cit51"><named-content content-type="citation-string">Schwaller P.; Probst D.; Vaucher A. C.; Nair V. H.; Kreutter D.; Laino T.; Reymond J.-L.
+Mapping the space of chemical reactions
+using attention-based neural networks. Nat.
+Mach. Intell.
+2021, 3, 144–152. 10.1038/s42256-020-00284-w.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s42256-020-00284-w"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Mach. Intell.&amp;title=Mapping the space of chemical reactions using attention-based neural networks&amp;author=P. Schwaller&amp;author=D. Probst&amp;author=A. C. Vaucher&amp;author=V. H. Nair&amp;author=D. Kreutter&amp;volume=3&amp;publication_year=2021&amp;pages=144-152&amp;doi=10.1038/s42256-020-00284-w&amp;"/></mixed-citation></ref><ref id="ref52"><mixed-citation id="cit52"><named-content content-type="citation-string">Probst D.; Schwaller P.; Reymond J.-L.
+Reaction classification and yield
+prediction using the differential reaction fingerprint DRFP. Digital Discovery
+2022, 1, 91–97. 10.1039/D1DD00006C.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/D1DD00006C"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8996827"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35515081"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Digital Discovery&amp;title=Reaction classification and yield prediction using the differential reaction fingerprint DRFP&amp;author=D. Probst&amp;author=P. Schwaller&amp;author=J.-L. Reymond&amp;volume=1&amp;publication_year=2022&amp;pages=91-97&amp;pmid=35515081&amp;doi=10.1039/D1DD00006C&amp;"/></mixed-citation></ref><ref id="ref53"><mixed-citation id="cit53"><named-content content-type="citation-string">Andersen J. L.; Flamm C.; Merkle D.; Stadler P. F.
+Inferring Chemical
+Reaction Patterns Using Graph Grammar Rule Composition. J. Syst. Chem.
+2013, 4, 4.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Syst. Chem.&amp;title=Inferring Chemical Reaction Patterns Using Graph Grammar Rule Composition&amp;author=J. L. Andersen&amp;author=C. Flamm&amp;author=D. Merkle&amp;author=P. F. Stadler&amp;volume=4&amp;publication_year=2013&amp;pages=4&amp;"/></mixed-citation></ref><ref id="ref54"><mixed-citation id="cit54"><named-content content-type="citation-string">Mann M.; Nahar F.; Schnorr N.; Backofen R.; Stadler P. F.; Flamm C.
+Atom Mapping with Constraint
+Programming. Alg. Mol. Biol.
+2014, 9, 23.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s13015-014-0023-3"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4256833"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="25484913"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol. Biol.&amp;title=Atom Mapping with Constraint Programming. Alg&amp;author=M. Mann&amp;author=F. Nahar&amp;author=N. Schnorr&amp;author=R. Backofen&amp;author=P. F. Stadler&amp;volume=9&amp;publication_year=2014&amp;pages=23&amp;pmid=25484913&amp;doi=10.1186/s13015-014-0023-3&amp;"/></mixed-citation></ref><ref id="ref55"><mixed-citation id="cit55"><named-content content-type="citation-string">Andersen J. L.; Fagerberg R.; Flamm C.; Fontana W.; Kolčák J.; Laurent C. V. F. P.; Merkle D.; Nøjgaard N.
+Representing
+Catalytic Mechanisms with Rule Composition. J. Chem. Inf. Model.
+2022, 62, 5513–5552. 10.1021/acs.jcim.2c00426.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.jcim.2c00426"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36326605"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Inf. Model.&amp;title=Representing Catalytic Mechanisms with Rule Composition&amp;author=J. L. Andersen&amp;author=R. Fagerberg&amp;author=C. Flamm&amp;author=W. Fontana&amp;author=J. Kolčák&amp;volume=62&amp;publication_year=2022&amp;pages=5513-5552&amp;pmid=36326605&amp;doi=10.1021/acs.jcim.2c00426&amp;"/></mixed-citation></ref></ref-list></sec></sec><sec id="_ad93_" xml:lang="en" sec-type="associated-data" disp-level="1"><title>Associated Data</title><sec id="_adsm93_" xml:lang="en" sec-type="supplementary-materials" disp-level="2"><title>Supplementary Materials</title><supplementary-material id="db_ds_supplementary-material1_reqid_" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_si_001.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path bd82/11938280/312811c1d554/ci4c01795_si_001.pdf?><?cloudpmc-bucket app?><?size 2298224?><caption><p>ci4c01795_si_001.pdf</p></caption></media></supplementary-material><supplementary-material id="db_ds_supplementary-material2_reqid_" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_si_002.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path bd82/11938280/ff62e697249c/ci4c01795_si_002.pdf?><?cloudpmc-bucket app?><?size 3270887?><caption><p>ci4c01795_si_002.pdf</p></caption></media></supplementary-material><supplementary-material id="db_ds_supplementary-material3_reqid_" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ci4c01795_si_003.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path bd82/11938280/be99ab33f71e/ci4c01795_si_003.pdf?><?cloudpmc-bucket app?><?size 1989314?><caption><p>ci4c01795_si_003.pdf</p></caption></media></supplementary-material></sec><sec id="_adda93_" xml:lang="en" sec-type="data-availability-statement" disp-level="2"><title>Data Availability Statement</title><p>The data sets
+supporting the conclusions of this article are available in the <monospace>SynTemp</monospace> repository: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/TieuLongPhan/SynTemp/tree/main/Data" ext-link-type="uri">https://github.com/TieuLongPhan/SynTemp/tree/main/Data</ext-link>. The source code is available at: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/TieuLongPhan/SynTemp" ext-link-type="uri">https://github.com/TieuLongPhan/SynTemp</ext-link>.</p></sec></sec></body></article>

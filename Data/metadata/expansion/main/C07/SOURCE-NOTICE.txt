@@ -1,0 +1,7 @@
+C07: RDB19-Rad
+Data license: CC-BY-4.0
+Zenodo data-record grant; preserve directions, solvents and resonance parent IDs.
+
+Primary source and attribution:
+https://doi.org/10.1021/acs.jpca.4c04121
+https://zenodo.org/records/11493786

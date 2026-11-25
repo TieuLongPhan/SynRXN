@@ -1,0 +1,121 @@
+{
+  "counting_unit": "complete derived simulated trajectory with known native-example parameters",
+  "data_link": "data.csv",
+  "family_id": "mechanisms",
+  "format": "csv",
+  "key": "physics/chemsindy_reference_trajectories",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/physics/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "complete derived simulated trajectory with known native-example parameters",
+    "coverage_branch": "physics",
+    "distinct_mechanism_families": 2,
+    "key": "physics/chemsindy_reference_trajectories",
+    "license": "MIT",
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/physics/chemsindy_reference_trajectories.csv",
+    "qualification": "14 derived simulated trajectories from two published native example mechanisms; 580 observations. Parameter inference conditional on declared known stoichiometry has full-rank sensitivity design. Network graph recovery can remain nonunique; score dynamical equivalence separately. No experimental-identification or broad out-of-family generalization claim.",
+    "reference_evidence": "Derived simulation: published M1/M20 mass-action mechanisms and saved notebook example parameters; solve_ivp integration is performed by this adapter. These are not acquired experimental trajectories.",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 14,
+    "sha256": "322bf8b9d3792d0a75ec1c1775cfff76cb1c9532f1fcb8644aa1f0eb4da7db52",
+    "source_id": "ChemSINDy2026",
+    "source_sha256": "0035b000a877aded91b34f0ad02f6d1fbe56dca89e4d37599ffdf514fa428999",
+    "source_url": "https://github.com/nla-group/ChemSINDy/tree/9aa3f8adb997348bd1e85c1b61fa8a835a91c759",
+    "task_fields": {
+      "reaction_network_modeling": {
+        "group_fields": [
+          "mechanism_id",
+          "trajectory_id"
+        ],
+        "inputs": [
+          "species",
+          "initial_concentrations",
+          "time_values",
+          "concentration_trajectories",
+          "units"
+        ],
+        "metrics": [
+          "directed_stoichiometric_edge_precision_recall",
+          "dynamical_equivalence",
+          "held_out_species_time_RMSE"
+        ],
+        "targets": [
+          "reactant_stoichiometry",
+          "product_stoichiometry",
+          "rate_constants"
+        ]
+      }
+    },
+    "task_ids": [
+      "kinetic_parameter_inference",
+      "reaction_network_modeling"
+    ],
+    "time_points": 580
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "complete derived simulated trajectory with known native-example parameters",
+    "expected_bytes": null,
+    "expected_rows": 14,
+    "expected_sha256": "322bf8b9d3792d0a75ec1c1775cfff76cb1c9532f1fcb8644aa1f0eb4da7db52",
+    "format": "csv",
+    "key": "physics/chemsindy_reference_trajectories",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/physics/chemsindy_reference_trajectories.csv",
+    "qualification": "14 derived simulated trajectories from two published native example mechanisms; 580 observations. Parameter inference conditional on declared known stoichiometry has full-rank sensitivity design. Network graph recovery can remain nonunique; score dynamical equivalence separately. No experimental-identification or broad out-of-family generalization claim.",
+    "reasons": [],
+    "reference_evidence": "Derived simulation: published M1/M20 mass-action mechanisms and saved notebook example parameters; solve_ivp integration is performed by this adapter. These are not acquired experimental trajectories.",
+    "release_eligible": true,
+    "source_id": "ChemSINDy2026",
+    "source_url": "https://github.com/nla-group/ChemSINDy/tree/9aa3f8adb997348bd1e85c1b61fa8a835a91c759",
+    "task_ids": [
+      "kinetic_parameter_inference",
+      "reaction_network_modeling"
+    ]
+  },
+  "role": "primary",
+  "rows": 14,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/physics/chemsindy_reference_trajectories.csv",
+    "sha256": "322bf8b9d3792d0a75ec1c1775cfff76cb1c9532f1fcb8644aa1f0eb4da7db52",
+    "source_catalogue": "Data/coverage_expansion/physics/catalog.json",
+    "source_id": "ChemSINDy2026",
+    "source_urls": [
+      "https://github.com/nla-group/ChemSINDy/tree/9aa3f8adb997348bd1e85c1b61fa8a835a91c759"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "complete derived simulated trajectory with known native-example parameters",
+    "distinct_mechanism_families": 2,
+    "key": "physics/chemsindy_reference_trajectories",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/physics/chemsindy_reference_trajectories.csv",
+    "qualification": "14 derived simulated trajectories from two published native example mechanisms; 580 observations. Parameter inference conditional on declared known stoichiometry has full-rank sensitivity design. Network graph recovery can remain nonunique; score dynamical equivalence separately. No experimental-identification or broad out-of-family generalization claim.",
+    "role": "primary",
+    "rows": 14,
+    "sha256": "322bf8b9d3792d0a75ec1c1775cfff76cb1c9532f1fcb8644aa1f0eb4da7db52",
+    "source_catalogue": "Data/coverage_expansion/physics/catalog.json",
+    "source_id": "ChemSINDy2026",
+    "source_urls": [
+      "https://github.com/nla-group/ChemSINDy/tree/9aa3f8adb997348bd1e85c1b61fa8a835a91c759"
+    ],
+    "time_points": 580,
+    "title": "ChemSINDy reference trajectories"
+  },
+  "stored_path": "Data/families/physics/kinetic_parameter_inference/coverage/physics/chemsindy_reference_trajectories/data.csv",
+  "task_id": "reaction_network_modeling",
+  "title": "ChemSINDy reference trajectories"
+}

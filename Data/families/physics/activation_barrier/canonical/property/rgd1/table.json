@@ -1,0 +1,77 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "physics",
+  "format": "csv.gz",
+  "key": "property/rgd1",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "property/rgd1",
+    "legacy_field_eligible_rows": {
+      "energy_barrier": 353984
+    },
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 353984
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "chemprop_barriers_data_grant"
+    ],
+    "expected_bytes": 13199958,
+    "expected_rows": 353984,
+    "expected_sha256": "74c5fbfd38b24409c17ddf2d8dc105ad728479df8a17b2bcf65c51a3ed8bed30",
+    "format": "csv.gz",
+    "key": "property/rgd1",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/property/rgd1.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 353984,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "heid2023benchmark_chemprop"
+    ],
+    "path": "Data/property/rgd1.csv.gz",
+    "sha256": "74c5fbfd38b24409c17ddf2d8dc105ad728479df8a17b2bcf65c51a3ed8bed30",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "heid2023benchmark_chemprop"
+    ],
+    "counting_unit": "source-table row",
+    "key": "property/rgd1",
+    "legacy_field_eligible_rows": {
+      "energy_barrier": 353984
+    },
+    "namespace": "canonical",
+    "path": "Data/property/rgd1.csv.gz",
+    "role": "primary",
+    "rows": 353984,
+    "sha256": "74c5fbfd38b24409c17ddf2d8dc105ad728479df8a17b2bcf65c51a3ed8bed30",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "RGD1 activation energies"
+  },
+  "stored_path": "Data/families/physics/activation_barrier/canonical/property/rgd1/data.csv.gz",
+  "task_id": "activation_barrier",
+  "title": "RGD1 activation energies"
+}

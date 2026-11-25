@@ -1,0 +1,15 @@
+# Minimal preparation stack recorded from synrxn (Linux x86_64).
+# Run from the SynRXN checkout; the builder imports only these third-party packages.
+# Recreating this environment was not needed for the verified synrxn rebuild.
+name: sihumix-rebuild
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11.0=he550d4f_1_cpython
+  - libzlib=1.3.1=hb9d3cd8_2
+  - pip=25.2
+  - pip:
+      - rdkit==2026.3.4
+      - networkx==3.5
+      - numpy==2.4.6
+      - Pillow==11.3.0

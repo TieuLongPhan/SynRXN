@@ -1,0 +1,2517 @@
+{
+  "as_of": "2026-10-20",
+  "records": [
+    {
+      "id": "kdd2025-batterylife-a-comprehensive-dataset-and-benchmark-for-battery-life-prediction",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "BatteryLife: A Comprehensive Dataset and Benchmark for Battery Life Prediction",
+      "doi": "10.1145/3711896.3737372",
+      "url": "https://doi.org/10.1145/3711896.3737372",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-bridging-the-binary-analysis-gap-a-cross-compiler-dataset-and-neural-framework-for-industrial-contro",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Bridging the Binary Analysis Gap: A Cross-Compiler Dataset and Neural Framework for Industrial Control Systems",
+      "doi": "10.1145/3711896.3737373",
+      "url": "https://doi.org/10.1145/3711896.3737373",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-chineseecomqa-a-scalable-e-commerce-concept-evaluation-benchmark-for-large-language-models",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "ChineseEcomQA: A Scalable E-commerce Concept Evaluation Benchmark for Large Language Models",
+      "doi": "10.1145/3711896.3737374",
+      "url": "https://doi.org/10.1145/3711896.3737374",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-citybench-evaluating-the-capabilities-of-large-language-models-for-urban-tasks",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "CityBench: Evaluating the Capabilities of Large Language Models for Urban Tasks",
+      "doi": "10.1145/3711896.3737375",
+      "url": "https://doi.org/10.1145/3711896.3737375",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-delving-into-instance-dependent-label-noise-in-graph-data-a-comprehensive-study-and-benchmark",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Delving into Instance-Dependent Label Noise in Graph Data: A Comprehensive Study and Benchmark",
+      "doi": "10.1145/3711896.3737376",
+      "url": "https://doi.org/10.1145/3711896.3737376",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-hibench-benchmarking-llms-capability-on-hierarchical-structure-reasoning",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "HiBench: Benchmarking LLMs Capability on Hierarchical Structure Reasoning",
+      "doi": "10.1145/3711896.3737378",
+      "url": "https://doi.org/10.1145/3711896.3737378",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-htfllib-a-comprehensive-heterogeneous-federated-learning-library-and-benchmark",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "HtFLlib: A Comprehensive Heterogeneous Federated Learning Library and Benchmark",
+      "doi": "10.1145/3711896.3737379",
+      "url": "https://doi.org/10.1145/3711896.3737379",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-irrmap-a-large-scale-comprehensive-dataset-for-irrigation-method-mapping",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "IrrMap: A Large-Scale Comprehensive Dataset for Irrigation Method Mapping",
+      "doi": "10.1145/3711896.3737380",
+      "url": "https://doi.org/10.1145/3711896.3737380",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-ivmr-suite-an-industrial-scale-virtual-machine-rescheduling-dataset-and-benchmark-for-elastic-cloud-",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "IVMR suite: An Industrial-scale Virtual Machine Rescheduling Dataset and Benchmark for Elastic Cloud Service",
+      "doi": "10.1145/3711896.3737381",
+      "url": "https://doi.org/10.1145/3711896.3737381",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-computagebench-epigenetic-aging-clocks-benchmark",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "ComputAgeBench: Epigenetic Aging Clocks Benchmark",
+      "doi": "10.1145/3711896.3737382",
+      "url": "https://doi.org/10.1145/3711896.3737382",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-evaluating-and-generating-query-workloads-for-high-dimensional-vector-similarity-search",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Evaluating and Generating Query Workloads for High Dimensional Vector Similarity Search",
+      "doi": "10.1145/3711896.3737383",
+      "url": "https://doi.org/10.1145/3711896.3737383",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-foodpuzzle-toward-developing-large-language-models-as-autonomous-flavor-scientists",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "FoodPuzzle: Toward Developing Large Language Models as Autonomous Flavor Scientists",
+      "doi": "10.1145/3711896.3737384",
+      "url": "https://doi.org/10.1145/3711896.3737384",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-uqabench-evaluating-user-embedding-for-prompting-llms-in-personalized-question-answering",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "UQABench: Evaluating User Embedding for Prompting LLMs in Personalized Question Answering",
+      "doi": "10.1145/3711896.3737385",
+      "url": "https://doi.org/10.1145/3711896.3737385",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-a-framework-for-evaluating-ai-agents-in-open-ended-conversations-via-scripted-simulation",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "A Framework for Evaluating AI Agents in Open-Ended Conversations via Scripted Simulation",
+      "doi": "10.1145/3711896.3737390",
+      "url": "https://doi.org/10.1145/3711896.3737390",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-differentially-private-synthetic-data-release-for-topics-api-outputs",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Differentially Private Synthetic Data Release for Topics API Outputs",
+      "doi": "10.1145/3711896.3737391",
+      "url": "https://doi.org/10.1145/3711896.3737391",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-fairness-aware-graph-learning-a-benchmark",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Fairness-Aware Graph Learning: A Benchmark",
+      "doi": "10.1145/3711896.3737392",
+      "url": "https://doi.org/10.1145/3711896.3737392",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-mentalchat16k-a-benchmark-dataset-for-conversational-mental-health-assistance",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "MentalChat16K: A Benchmark Dataset for Conversational Mental Health Assistance",
+      "doi": "10.1145/3711896.3737393",
+      "url": "https://doi.org/10.1145/3711896.3737393",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-monodemb-comprehensive-monocular-depthmap-benchmark",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "MonoDeMB: Comprehensive Monocular DepthMap Benchmark",
+      "doi": "10.1145/3711896.3737394",
+      "url": "https://doi.org/10.1145/3711896.3737394",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-zooplanktonbench-a-geo-aware-zooplankton-recognition-and-classification-dataset-from-marine-observat",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "ZooplanktonBench: A Geo-Aware Zooplankton Recognition and Classification Dataset from Marine Observations",
+      "doi": "10.1145/3711896.3737395",
+      "url": "https://doi.org/10.1145/3711896.3737395",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-are-vision-llms-road-ready-a-comprehensive-benchmark-for-safety-critical-driving-video-understanding",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Are Vision LLMs Road-Ready? A Comprehensive Benchmark for Safety-Critical Driving Video Understanding",
+      "doi": "10.1145/3711896.3737396",
+      "url": "https://doi.org/10.1145/3711896.3737396",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-neurophysiologically-realistic-environment-for-comparing-adaptive-deep-brain-stimulation-algorithms-",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Neurophysiologically Realistic Environment for Comparing Adaptive Deep Brain Stimulation Algorithms in Parkinson’s Disease",
+      "doi": "10.1145/3711896.3737397",
+      "url": "https://doi.org/10.1145/3711896.3737397",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-flexible-generation-of-preference-data-for-recommendation-analysis",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Flexible Generation of Preference Data for Recommendation Analysis",
+      "doi": "10.1145/3711896.3737398",
+      "url": "https://doi.org/10.1145/3711896.3737398",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-hidf-a-human-indistinguishable-deepfake-dataset",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "HiDF: A Human-Indistinguishable Deepfake Dataset",
+      "doi": "10.1145/3711896.3737399",
+      "url": "https://doi.org/10.1145/3711896.3737399",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-simulated-infectious-diseases-datasets-with-controlled-data-bias",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Simulated Infectious Diseases Datasets with Controlled Data Bias",
+      "doi": "10.1145/3711896.3737401",
+      "url": "https://doi.org/10.1145/3711896.3737401",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-scihorizon-benchmarking-ai-for-science-readiness-from-scientific-data-to-large-language-models",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "SciHorizon: Benchmarking AI-for-Science Readiness from Scientific Data to Large Language Models",
+      "doi": "10.1145/3711896.3737403",
+      "url": "https://doi.org/10.1145/3711896.3737403",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-when-graph-meets-multimodal-benchmarking-and-meditating-on-multimodal-attributed-graph-learning",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "When Graph Meets Multimodal: Benchmarking and Meditating on Multimodal Attributed Graph Learning",
+      "doi": "10.1145/3711896.3737404",
+      "url": "https://doi.org/10.1145/3711896.3737404",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-revolutionizing-database-qa-with-large-language-models-comprehensive-benchmark-and-evaluation",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Revolutionizing Database QA with Large Language Models: Comprehensive Benchmark and Evaluation",
+      "doi": "10.1145/3711896.3737405",
+      "url": "https://doi.org/10.1145/3711896.3737405",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-climateiqa-a-new-dataset-and-benchmark-to-advance-vision-language-models-in-meteorology-anomalies-an",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "ClimateIQA: A New Dataset and Benchmark to Advance Vision-Language Models in Meteorology Anomalies Analysis",
+      "doi": "10.1145/3711896.3737406",
+      "url": "https://doi.org/10.1145/3711896.3737406",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-t3set-a-multimodal-dataset-with-targeted-suggestions-for-llm-based-virtual-coach-in-table-tennis-tra",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "T3Set: A Multimodal Dataset with Targeted Suggestions for LLM-based Virtual Coach in Table Tennis Training",
+      "doi": "10.1145/3711896.3737407",
+      "url": "https://doi.org/10.1145/3711896.3737407",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-on-the-generalization-and-adaptation-ability-of-machine-generated-text-detectors-in-academic-writing",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "On the Generalization and Adaptation Ability of Machine-Generated Text Detectors in Academic Writing",
+      "doi": "10.1145/3711896.3737408",
+      "url": "https://doi.org/10.1145/3711896.3737408",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-judge-anything-mllm-as-a-judge-across-any-modality",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Judge Anything: MLLM as a Judge Across Any Modality",
+      "doi": "10.1145/3711896.3737409",
+      "url": "https://doi.org/10.1145/3711896.3737409",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-benchmarking-graph-foundation-models",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Benchmarking Graph Foundation Models",
+      "doi": "10.1145/3711896.3737410",
+      "url": "https://doi.org/10.1145/3711896.3737410",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-vflair-llm-a-comprehensive-framework-and-benchmark-for-split-learning-of-llms",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "VFLAIR-LLM: A Comprehensive Framework and Benchmark for Split Learning of LLMs",
+      "doi": "10.1145/3711896.3737411",
+      "url": "https://doi.org/10.1145/3711896.3737411",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-burstgpt-a-real-world-workload-dataset-to-optimize-llm-serving-systems",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "BurstGPT: A Real-World Workload Dataset to Optimize LLM Serving Systems",
+      "doi": "10.1145/3711896.3737413",
+      "url": "https://doi.org/10.1145/3711896.3737413",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-saliency-bench-a-comprehensive-benchmark-for-evaluating-visual-explanations",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Saliency-Bench: A Comprehensive Benchmark for Evaluating Visual Explanations",
+      "doi": "10.1145/3711896.3737414",
+      "url": "https://doi.org/10.1145/3711896.3737414",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-methanes2cm-a-dataset-for-multispectral-deep-methane-emission-detection",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "MethaneS2CM: A Dataset for Multispectral Deep Methane Emission Detection",
+      "doi": "10.1145/3711896.3737415",
+      "url": "https://doi.org/10.1145/3711896.3737415",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-metamatbench-integrating-heterogeneous-data-computational-tools-and-visual-interface-for-metamateria",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "MetamatBench: Integrating Heterogeneous Data, Computational Tools, and Visual Interface for Metamaterial Discovery",
+      "doi": "10.1145/3711896.3737416",
+      "url": "https://doi.org/10.1145/3711896.3737416",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-videoconviction-a-multimodal-benchmark-for-human-conviction-and-stock-market-recommendations",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "VideoConviction: A Multimodal Benchmark for Human Conviction and Stock Market Recommendations",
+      "doi": "10.1145/3711896.3737417",
+      "url": "https://doi.org/10.1145/3711896.3737417",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-th-bench-evaluating-evading-attacks-via-humanizing-ai-text-on-machine-generated-text-detectors",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "TH-Bench: Evaluating Evading Attacks via Humanizing AI Text on Machine-Generated Text Detectors",
+      "doi": "10.1145/3711896.3737418",
+      "url": "https://doi.org/10.1145/3711896.3737418",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-ideabench-benchmarking-large-language-models-for-research-idea-generation",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "IdeaBench: Benchmarking Large Language Models for Research Idea Generation",
+      "doi": "10.1145/3711896.3737419",
+      "url": "https://doi.org/10.1145/3711896.3737419",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-exploring-the-potential-of-foundation-models-as-reliable-ai-contact-centers",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Exploring the Potential of Foundation Models as Reliable AI Contact Centers",
+      "doi": "10.1145/3711896.3737420",
+      "url": "https://doi.org/10.1145/3711896.3737420",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-when-heterophily-meets-heterogeneity-challenges-and-a-new-large-scale-graph-benchmark",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "When Heterophily Meets Heterogeneity: Challenges and a New Large-Scale Graph Benchmark",
+      "doi": "10.1145/3711896.3737421",
+      "url": "https://doi.org/10.1145/3711896.3737421",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-dca-bench-a-benchmark-for-dataset-curation-agents",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "DCA-Bench: A Benchmark for Dataset Curation Agents",
+      "doi": "10.1145/3711896.3737422",
+      "url": "https://doi.org/10.1145/3711896.3737422",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-up-bench-a-benchmark-for-underwater-path-planning-algorithms",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "UP-Bench: A Benchmark for Underwater Path Planning Algorithms",
+      "doi": "10.1145/3711896.3737424",
+      "url": "https://doi.org/10.1145/3711896.3737424",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-capillary-dataset-a-dataset-of-nail-fold-capillaries-captured-by-microscopy-for-diabetes-detection",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Capillary Dataset: A Dataset of Nail-fold Capillaries Captured by Microscopy for Diabetes Detection",
+      "doi": "10.1145/3711896.3737425",
+      "url": "https://doi.org/10.1145/3711896.3737425",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-efo-k-cqa-towards-knowledge-graph-complex-query-answering-beyond-set-operation",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "$EFO_{k}$-CQA: Towards Knowledge Graph Complex Query Answering beyond Set Operation",
+      "doi": "10.1145/3711896.3737426",
+      "url": "https://doi.org/10.1145/3711896.3737426",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-nl2sql-bugs-a-benchmark-for-detecting-semantic-errors-in-nl2sql-translation",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "NL2SQL-BUGs: A Benchmark for Detecting Semantic Errors in NL2SQL Translation",
+      "doi": "10.1145/3711896.3737427",
+      "url": "https://doi.org/10.1145/3711896.3737427",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-ebes-easy-benchmarking-for-event-sequences",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "EBES: Easy Benchmarking for Event Sequences",
+      "doi": "10.1145/3711896.3737428",
+      "url": "https://doi.org/10.1145/3711896.3737428",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-trustglm-evaluating-the-robustness-of-graphllms-against-prompt-text-and-structure-attacks",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "TrustGLM: Evaluating the Robustness of GraphLLMs Against Prompt, Text, and Structure Attacks",
+      "doi": "10.1145/3711896.3737429",
+      "url": "https://doi.org/10.1145/3711896.3737429",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-pove-a-preoptimized-vault-of-expressions-for-symbolic-regression-research-and-benchmarking",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "POVE: A Preoptimized Vault of Expressions for Symbolic Regression Research and Benchmarking",
+      "doi": "10.1145/3711896.3737430",
+      "url": "https://doi.org/10.1145/3711896.3737430",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-ember2024-a-benchmark-dataset-for-holistic-evaluation-of-malware-classifiers",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "EMBER2024 — A Benchmark Dataset for Holistic Evaluation of Malware Classifiers",
+      "doi": "10.1145/3711896.3737431",
+      "url": "https://doi.org/10.1145/3711896.3737431",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-scirgen-synthesize-realistic-and-large-scale-rag-dataset-for-scientific-research",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "ScIRGen: Synthesize Realistic and Large-Scale RAG Dataset for Scientific Research",
+      "doi": "10.1145/3711896.3737432",
+      "url": "https://doi.org/10.1145/3711896.3737432",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "RL4CO: An Extensive Reinforcement Learning for Combinatorial Optimization Benchmark",
+      "doi": "10.1145/3711896.3737433",
+      "url": "https://doi.org/10.1145/3711896.3737433",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-towards-understanding-link-predictor-generalizability-under-distribution-shifts",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Towards Understanding Link Predictor Generalizability Under Distribution Shifts",
+      "doi": "10.1145/3711896.3737434",
+      "url": "https://doi.org/10.1145/3711896.3737434",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-cure-a-dataset-for-clinical-understanding-retrieval-evaluation",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "CURE: A dataset for Clinical Understanding & Retrieval Evaluation",
+      "doi": "10.1145/3711896.3737435",
+      "url": "https://doi.org/10.1145/3711896.3737435",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-mathwriting-a-dataset-for-handwritten-mathematical-expression-recognition",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "MathWriting: A Dataset For Handwritten Mathematical Expression Recognition",
+      "doi": "10.1145/3711896.3737436",
+      "url": "https://doi.org/10.1145/3711896.3737436",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-a-guide-to-misinformation-detection-data-and-evaluation",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "A Guide to Misinformation Detection Data and Evaluation",
+      "doi": "10.1145/3711896.3737437",
+      "url": "https://doi.org/10.1145/3711896.3737437",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-towards-better-benchmark-datasets-for-inductive-knowledge-graph-completion",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "Towards Better Benchmark Datasets for Inductive Knowledge Graph Completion",
+      "doi": "10.1145/3711896.3737438",
+      "url": "https://doi.org/10.1145/3711896.3737438",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-timegraph-synthetic-benchmark-datasets-for-robust-time-series-causal-discovery",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "TimeGraph: Synthetic Benchmark Datasets for Robust Time-Series Causal Discovery",
+      "doi": "10.1145/3711896.3737439",
+      "url": "https://doi.org/10.1145/3711896.3737439",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-sathealth-a-multimodal-public-health-dataset-with-satellite-based-environmental-factors",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "SatHealth: A Multimodal Public Health Dataset with Satellite-based Environmental Factors",
+      "doi": "10.1145/3711896.3737440",
+      "url": "https://doi.org/10.1145/3711896.3737440",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-bts-a-comprehensive-benchmark-for-tie-strength-prediction",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "BTS: A Comprehensive Benchmark for Tie Strength Prediction",
+      "doi": "10.1145/3711896.3737441",
+      "url": "https://doi.org/10.1145/3711896.3737441",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-tsfm-bench-a-comprehensive-and-unified-benchmark-of-foundation-models-for-time-series-forecasting",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "TSFM-Bench: A Comprehensive and Unified Benchmark of Foundation Models for Time Series Forecasting",
+      "doi": "10.1145/3711896.3737442",
+      "url": "https://doi.org/10.1145/3711896.3737442",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-fultr-a-large-scale-fusion-learning-to-rank-dataset-and-its-application-for-satisfaction-oriented-ra",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "FULTR: A Large-scale Fusion Learning to Rank Dataset and its application for Satisfaction-Oriented Ranking",
+      "doi": "10.1145/3711896.3737443",
+      "url": "https://doi.org/10.1145/3711896.3737443",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2025-wikirag-revisiting-wikidata-kgc-datasets-with-community-updates-and-retrieval-augmented-generation",
+      "year": 2025,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "February",
+      "title": "WikiRAG:  Revisiting Wikidata KGC Datasets with Community Updates and Retrieval-Augmented Generation",
+      "doi": "10.1145/3711896.3737444",
+      "url": "https://doi.org/10.1145/3711896.3737444",
+      "official_source": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/"
+    },
+    {
+      "id": "kdd2026-reliance-curating-and-evaluating-reproductive-health-information-on-social-media",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "RELIANCE: Curating and Evaluating Reproductive Health Information on Social Media",
+      "doi": "10.1145/3770855.3817447",
+      "url": "https://doi.org/10.1145/3770855.3817447",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-mlb-a-scenario-driven-benchmark-for-evaluating-large-language-models-in-clinical-applications",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "MLB: A Scenario-Driven Benchmark for Evaluating Large Language Models in Clinical Applications",
+      "doi": "10.1145/3770855.3817448",
+      "url": "https://doi.org/10.1145/3770855.3817448",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-pipemfl-240k-a-large-scale-dataset-and-benchmark-for-object-detection-in-pipeline-magnetic-flux-leak",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "PipeMFL-240K: A Large-scale Dataset and Benchmark for Object Detection in Pipeline Magnetic Flux Leakage Imaging",
+      "doi": "10.1145/3770855.3817449",
+      "url": "https://doi.org/10.1145/3770855.3817449",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-machine-unlearning-on-trajectory-data-an-experimental-analysis",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Machine Unlearning on Trajectory Data: An Experimental Analysis",
+      "doi": "10.1145/3770855.3817450",
+      "url": "https://doi.org/10.1145/3770855.3817450",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-investigating-reasoning-in-large-language-models-with-counterfactual-knowledge-graphs",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Investigating Reasoning in Large Language Models with Counterfactual Knowledge Graphs",
+      "doi": "10.1145/3770855.3817451",
+      "url": "https://doi.org/10.1145/3770855.3817451",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-nmrgym-a-comprehensive-benchmark-for-nuclear-magnetic-resonance-based-molecular-structure-elucidatio",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "NMRGym: A Comprehensive Benchmark for Nuclear Magnetic Resonance Based Molecular Structure Elucidation",
+      "doi": "10.1145/3770855.3817452",
+      "url": "https://doi.org/10.1145/3770855.3817452",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-fusep-a-multi-center-benchmark-for-diverse-tasks-in-early-pregnancy-fetal-ultrasound-screening",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "FUSEP: A Multi-Center Benchmark for Diverse Tasks in Early Pregnancy Fetal Ultrasound Screening",
+      "doi": "10.1145/3770855.3817453",
+      "url": "https://doi.org/10.1145/3770855.3817453",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-fdabench-a-benchmark-for-data-agents-on-analytical-queries-over-heterogeneous-data",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "FDABench: A Benchmark for Data Agents on Analytical Queries over Heterogeneous Data",
+      "doi": "10.1145/3770855.3817454",
+      "url": "https://doi.org/10.1145/3770855.3817454",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-multitab-a-comprehensive-benchmark-suite-for-multi-dimensional-evaluation-in-tabular-domains",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "MultiTab: A Comprehensive Benchmark Suite for Multi-Dimensional Evaluation in Tabular Domains",
+      "doi": "10.1145/3770855.3817455",
+      "url": "https://doi.org/10.1145/3770855.3817455",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-realistic-simulation-and-evaluation-of-e-cny-lifecycle-transactions-for-anti-money-laundering",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Realistic Simulation and Evaluation of E-CNY Lifecycle Transactions for Anti-Money Laundering",
+      "doi": "10.1145/3770855.3817456",
+      "url": "https://doi.org/10.1145/3770855.3817456",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-mm-bright-a-multi-task-multimodal-benchmark-for-reasoning-intensive-retrieval",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "MM-BRIGHT: A Multi-Task Multimodal Benchmark for Reasoning-Intensive Retrieval",
+      "doi": "10.1145/3770855.3817457",
+      "url": "https://doi.org/10.1145/3770855.3817457",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-urbangraphembeddings-learning-and-evaluating-spatially-grounded-multimodal-embeddings-for-urban-envi",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "UrbanGraphEmbeddings: Learning and Evaluating Spatially Grounded Multimodal Embeddings for Urban Environments",
+      "doi": "10.1145/3770855.3817458",
+      "url": "https://doi.org/10.1145/3770855.3817458",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-saasbench-a-synthetic-antibodyantigen-specificity-benchmark",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "SAASBench: A synthetic antibody–antigen specificity benchmark",
+      "doi": "10.1145/3770855.3817459",
+      "url": "https://doi.org/10.1145/3770855.3817459",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-backtestbench-benchmarking-large-language-models-for-automated-quantitative-strategy-backtesting",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "BacktestBench: Benchmarking Large Language Models for Automated Quantitative Strategy Backtesting",
+      "doi": "10.1145/3770855.3817460",
+      "url": "https://doi.org/10.1145/3770855.3817460",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-enhancing-biomedical-ai-foundations-genomic-literature-knowledge-base-boosts-llms-mastery-of-biomedi",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Enhancing Biomedical AI Foundations: Genomic Literature Knowledge Base Boosts LLMs' Mastery of Biomedical Literature",
+      "doi": "10.1145/3770855.3817461",
+      "url": "https://doi.org/10.1145/3770855.3817461",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-benchmarking-table-extraction-from-heterogeneous-scientific-pdf-documents",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Benchmarking Table Extraction from Heterogeneous Scientific PDF Documents",
+      "doi": "10.1145/3770855.3817462",
+      "url": "https://doi.org/10.1145/3770855.3817462",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-repomod-bench-a-benchmark-for-code-repository-modernization-via-implementation-agnostic-testing",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "RepoMod-Bench: A Benchmark for Code Repository Modernization via Implementation-Agnostic Testing",
+      "doi": "10.1145/3770855.3817463",
+      "url": "https://doi.org/10.1145/3770855.3817463",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-sctranslation-a-comprehensive-benchmark-for-single-cell-multi-omics-modality-translation",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "scTranslation: A Comprehensive Benchmark for Single-Cell Multi-Omics Modality Translation",
+      "doi": "10.1145/3770855.3817464",
+      "url": "https://doi.org/10.1145/3770855.3817464",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-evaluating-uplift-modeling-under-structural-biases-insights-into-metric-stability-and-model-robustne",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Evaluating Uplift Modeling under Structural Biases: Insights into Metric Stability and Model Robustness",
+      "doi": "10.1145/3770855.3817465",
+      "url": "https://doi.org/10.1145/3770855.3817465",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-localsearchbench-benchmarking-agentic-search-in-real-world-local-life-services",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "LocalSearchBench: Benchmarking Agentic Search in Real-World Local Life Services",
+      "doi": "10.1145/3770855.3817466",
+      "url": "https://doi.org/10.1145/3770855.3817466",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-omniearth-a-benchmark-for-evaluating-visionlanguage-models-in-geospatial-tasks",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "OmniEarth: A Benchmark for Evaluating Vision–Language Models in Geospatial Tasks",
+      "doi": "10.1145/3770855.3817467",
+      "url": "https://doi.org/10.1145/3770855.3817467",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-fintexts-financial-text-paired-time-series-dataset-via-semantic-based-and-multi-level-pairing",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "FinTexTS: Financial Text-Paired Time-Series Dataset via Semantic-Based and Multi-Level Pairing",
+      "doi": "10.1145/3770855.3817468",
+      "url": "https://doi.org/10.1145/3770855.3817468",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-thermeval-a-structured-benchmark-for-evaluation-of-vision-language-models-on-thermal-imagery",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "ThermEval: A Structured Benchmark for Evaluation of Vision-Language Models on Thermal Imagery",
+      "doi": "10.1145/3770855.3817469",
+      "url": "https://doi.org/10.1145/3770855.3817469",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-a-comprehensive-benchmark-for-graph-textual-summarization",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "A Comprehensive Benchmark for Graph Textual Summarization",
+      "doi": "10.1145/3770855.3817470",
+      "url": "https://doi.org/10.1145/3770855.3817470",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-passing-the-turing-test-on-screen-a-benchmark-for-mobile-gui-agent-humanization",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Passing the Turing Test on Screen: A Benchmark for Mobile GUI Agent Humanization",
+      "doi": "10.1145/3770855.3817471",
+      "url": "https://doi.org/10.1145/3770855.3817471",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-sata-bench-select-all-that-apply-benchmark-for-multiple-choice-questions",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "SATA-BENCH: Select All That Apply Benchmark For Multiple Choice Questions",
+      "doi": "10.1145/3770855.3817472",
+      "url": "https://doi.org/10.1145/3770855.3817472",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-speak-to-structure-evaluating-llms-in-open-domain-natural-language-driven-molecule-generation",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Speak-to-Structure: Evaluating LLMs in Open-domain Natural Language-Driven Molecule Generation",
+      "doi": "10.1145/3770855.3817473",
+      "url": "https://doi.org/10.1145/3770855.3817473",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-gem-bench-a-benchmark-for-ad-injected-response-generation-within-generative-engine-marketing",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "GEM-Bench: A Benchmark for Ad-Injected Response Generation within Generative Engine Marketing",
+      "doi": "10.1145/3770855.3817474",
+      "url": "https://doi.org/10.1145/3770855.3817474",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-omnivul-a-holistic-multi-turn-conversational-benchmark-for-llm-based-vulnerability-assessment",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "OmniVul: A Holistic, Multi-Turn Conversational Benchmark for LLM-Based Vulnerability Assessment",
+      "doi": "10.1145/3770855.3817475",
+      "url": "https://doi.org/10.1145/3770855.3817475",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-credibench-web-scale-network-data-for-credibility-prediction",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "CrediBench: Web-Scale Network Data for Credibility Prediction",
+      "doi": "10.1145/3770855.3817476",
+      "url": "https://doi.org/10.1145/3770855.3817476",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-forge-forming-semantic-identifiers-for-generative-retrieval-in-industrial-datasets",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "FORGE: Forming Semantic Identifiers for Generative Retrieval in Industrial Datasets",
+      "doi": "10.1145/3770855.3817477",
+      "url": "https://doi.org/10.1145/3770855.3817477",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-livemcpbench-can-agents-navigate-an-ocean-of-mcp-tools",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "LiveMCPBench: Can Agents Navigate an Ocean of MCP Tools?",
+      "doi": "10.1145/3770855.3817478",
+      "url": "https://doi.org/10.1145/3770855.3817478",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-ravig-bench-a-benchmark-for-retrieval-augmented-visually-rich-generation-with-multi-modal-automated-",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "RAViG-Bench: A Benchmark for Retrieval-Augmented Visually-Rich Generation with Multi-Modal Automated Evaluation",
+      "doi": "10.1145/3770855.3817479",
+      "url": "https://doi.org/10.1145/3770855.3817479",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-telecom-bench-how-far-are-large-language-models-from-industrial-telecommunication-applications",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "TeleCom-Bench: How Far Are Large Language Models from Industrial Telecommunication Applications?",
+      "doi": "10.1145/3770855.3817480",
+      "url": "https://doi.org/10.1145/3770855.3817480",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-how-much-reasoning-do-retrieval-augmented-models-add-beyond-llms-a-benchmarking-framework-for-multi-",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "How Much Reasoning Do Retrieval-Augmented Models Add beyond LLMs? A Benchmarking Framework for Multi-Hop Inference over Hybrid Knowledge",
+      "doi": "10.1145/3770855.3817481",
+      "url": "https://doi.org/10.1145/3770855.3817481",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-beyond-knowledge-to-agency-evaluating-expertise-autonomy-and-integrity-in-finance-with-cnfinbench",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Beyond Knowledge to Agency: Evaluating Expertise, Autonomy, and Integrity in Finance with CNFinBench",
+      "doi": "10.1145/3770855.3817482",
+      "url": "https://doi.org/10.1145/3770855.3817482",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-clubench-a-clustering-benchmark",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "CLUBench: A Clustering Benchmark",
+      "doi": "10.1145/3770855.3817483",
+      "url": "https://doi.org/10.1145/3770855.3817483",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-step-tp-a-grounded-step-level-dataset-with-chain-of-thought-reasoning-for-llm-guided-tensor-program-",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Step-TP: A Grounded, Step-Level Dataset with Chain-of-Thought Reasoning for LLM-Guided Tensor Program Optimization",
+      "doi": "10.1145/3770855.3817484",
+      "url": "https://doi.org/10.1145/3770855.3817484",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-temporalbench-a-benchmark-for-evaluating-llm-based-agents-on-contextual-and-event-informed-time-seri",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "TemporalBench: A Benchmark for Evaluating LLM-Based Agents on Contextual and Event-Informed Time Series Tasks",
+      "doi": "10.1145/3770855.3817485",
+      "url": "https://doi.org/10.1145/3770855.3817485",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-webgen-v-bench-structured-representation-for-enhancing-visual-design-in-llm-based-web-generation-and",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "WebGen-V Bench: Structured Representation for Enhancing Visual Design in LLM-based Web Generation and Evaluation",
+      "doi": "10.1145/3770855.3817486",
+      "url": "https://doi.org/10.1145/3770855.3817486",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-automating-end-to-end-hybrid-query-processing-benchmark-solution-and-insights",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Automating End-to-End Hybrid Query Processing: Benchmark, Solution, and Insights",
+      "doi": "10.1145/3770855.3817487",
+      "url": "https://doi.org/10.1145/3770855.3817487",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-mac-a-conversion-rate-prediction-benchmark-featuring-labels-under-multiple-attribution-mechanisms",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "MAC: A Conversion Rate Prediction Benchmark Featuring Labels Under Multiple Attribution Mechanisms",
+      "doi": "10.1145/3770855.3817488",
+      "url": "https://doi.org/10.1145/3770855.3817488",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-scihorizon-gene-benchmarking-llm-for-life-sciences-inference-from-gene-knowledge-to-functional-under",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "SciHorizon-Gene: Benchmarking LLM for Life Sciences Inference from Gene Knowledge to Functional Understanding",
+      "doi": "10.1145/3770855.3817489",
+      "url": "https://doi.org/10.1145/3770855.3817489",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-causalflip-a-benchmark-for-llm-causal-judgment-beyond-semantic-matching",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "CausalFlip: A Benchmark for LLM Causal Judgment Beyond Semantic Matching",
+      "doi": "10.1145/3770855.3817490",
+      "url": "https://doi.org/10.1145/3770855.3817490",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-from-statute-to-control-flow-span-grounded-deontic-trees-for-defeasible-scope-parsing",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "From Statute to Control Flow: Span-Grounded Deontic Trees for Defeasible Scope Parsing",
+      "doi": "10.1145/3770855.3817491",
+      "url": "https://doi.org/10.1145/3770855.3817491",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-aise-bench-a-full-cycle-curated-benchmark-for-information-seeking-on-academic-knowledge-graphs",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "AISE-Bench: A Full-Cycle Curated Benchmark for Information Seeking on Academic Knowledge Graphs",
+      "doi": "10.1145/3770855.3817492",
+      "url": "https://doi.org/10.1145/3770855.3817492",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-afabench-a-generic-framework-for-benchmarking-active-feature-acquisition",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "AFABench: A Generic Framework for Benchmarking Active Feature Acquisition",
+      "doi": "10.1145/3770855.3817493",
+      "url": "https://doi.org/10.1145/3770855.3817493",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-agentprocessbench-diagnosing-step-level-process-quality-in-tool-using-agents",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "AgentProcessBench: Diagnosing Step-Level Process Quality in Tool-Using Agents",
+      "doi": "10.1145/3770855.3817494",
+      "url": "https://doi.org/10.1145/3770855.3817494",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-in-a-streaming-world-should-you-stand-still-a-comprehensive-benchmark-of-anomaly-detection-in-stream",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "In a Streaming World, Should You Stand Still? A Comprehensive Benchmark of Anomaly Detection in Streams",
+      "doi": "10.1145/3770855.3817495",
+      "url": "https://doi.org/10.1145/3770855.3817495",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-mirrorbench-a-benchmark-to-evaluate-conversational-user-proxy-agents-for-human-likeness",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "MirrorBench: A Benchmark to Evaluate Conversational User-Proxy Agents for Human-Likeness",
+      "doi": "10.1145/3770855.3817496",
+      "url": "https://doi.org/10.1145/3770855.3817496",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-fd-bench-a-modular-and-fair-benchmark-for-data-driven-fluid-simulation",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "FD-Bench: A Modular and Fair Benchmark for Data-driven Fluid Simulation",
+      "doi": "10.1145/3770855.3817497",
+      "url": "https://doi.org/10.1145/3770855.3817497",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-mobilitybench-a-benchmark-for-evaluating-route-planning-agents-in-real-world-mobility-scenarios",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "MobilityBench: A Benchmark for Evaluating Route-Planning Agents in Real-World Mobility Scenarios",
+      "doi": "10.1145/3770855.3817498",
+      "url": "https://doi.org/10.1145/3770855.3817498",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-accelerating-mhc-ii-epitope-discovery-via-multi-scale-prediction-in-antigen-presentation",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Accelerating MHC-II Epitope Discovery via Multi-Scale Prediction in Antigen Presentation",
+      "doi": "10.1145/3770855.3817499",
+      "url": "https://doi.org/10.1145/3770855.3817499",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-alphaforgebench-benchmarking-end-to-end-trading-strategy-design-with-large-language-models",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "AlphaForgeBench: Benchmarking End-to-End Trading Strategy Design with Large Language Models",
+      "doi": "10.1145/3770855.3817500",
+      "url": "https://doi.org/10.1145/3770855.3817500",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-how-far-are-large-multimodal-models-from-human-level-spatial-action-a-benchmark-for-goal-oriented-em",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "How Far Are Large Multimodal Models from Human-Level Spatial Action? A Benchmark for Goal-Oriented Embodied Navigation in Urban Airspace",
+      "doi": "10.1145/3770855.3817501",
+      "url": "https://doi.org/10.1145/3770855.3817501",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-towards-event-aware-forecasting-in-defi-insights-from-on-chain-automated-market-maker-protocols",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Towards Event-Aware Forecasting in DeFi: Insights from On-chain Automated Market Maker Protocols",
+      "doi": "10.1145/3770855.3817502",
+      "url": "https://doi.org/10.1145/3770855.3817502",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-edu-eval-a-large-scale-multimodal-benchmark-for-mllms-in-authentic-educational-scenarios",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Edu-Eval: A Large-Scale Multimodal Benchmark for MLLMs in Authentic Educational Scenarios",
+      "doi": "10.1145/3770855.3817503",
+      "url": "https://doi.org/10.1145/3770855.3817503",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-ca-del-an-open-multi-target-multi-modal-benchmark-for-learning-from-dna-encoded-library-screens",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "CA-DEL: An Open Multi-Target, Multi-Modal Benchmark for Learning from DNA-Encoded Library Screens",
+      "doi": "10.1145/3770855.3817504",
+      "url": "https://doi.org/10.1145/3770855.3817504",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-surveyreview-a-reviewer-aligned-benchmark-for-survey-evaluators",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "SurveyReview: A Reviewer-Aligned Benchmark for Survey Evaluators",
+      "doi": "10.1145/3770855.3817505",
+      "url": "https://doi.org/10.1145/3770855.3817505",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-autodavis-automatic-and-dynamic-evaluation-protocol-of-large-vision-language-models-on-visual-questi",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "AutoDavis: Automatic and Dynamic Evaluation Protocol of Large Vision-Language Models on Visual Question-Answering",
+      "doi": "10.1145/3770855.3817506",
+      "url": "https://doi.org/10.1145/3770855.3817506",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-productwebgen-benchmarking-multimodal-product-webpage-generation",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "ProductWebGen: Benchmarking Multimodal Product Webpage Generation",
+      "doi": "10.1145/3770855.3817507",
+      "url": "https://doi.org/10.1145/3770855.3817507",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-tefd-a-benchmark-for-natural-language-to-flux-query-generation-in-time-series-databases",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "TEFD: A Benchmark for Natural Language to Flux Query Generation in Time-Series Databases",
+      "doi": "10.1145/3770855.3817508",
+      "url": "https://doi.org/10.1145/3770855.3817508",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-fakei2v-bench-benchmarking-the-applicability-of-image-level-deepfake-detectors-for-deepfake-video-de",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "FakeI2V-Bench: Benchmarking the Applicability of Image-level Deepfake Detectors for Deepfake Video Detection",
+      "doi": "10.1145/3770855.3817509",
+      "url": "https://doi.org/10.1145/3770855.3817509",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-omniscience-a-large-scale-multi-modal-dataset-for-scientific-image-understanding",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "OmniScience: A Large-scale Multi-modal Dataset for Scientific Image Understanding",
+      "doi": "10.1145/3770855.3817510",
+      "url": "https://doi.org/10.1145/3770855.3817510",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-photobench-beyond-visual-matching-towards-personalized-intent-driven-photo-retrieval",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "PhotoBench: Beyond Visual Matching Towards Personalized Intent-Driven Photo Retrieval",
+      "doi": "10.1145/3770855.3817511",
+      "url": "https://doi.org/10.1145/3770855.3817511",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-dmind-benchmark-toward-a-holistic-assessment-of-llm-capabilities-across-the-web3-domain",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "DMind Benchmark: Toward a Holistic Assessment of LLM Capabilities across the Web3 Domain",
+      "doi": "10.1145/3770855.3817512",
+      "url": "https://doi.org/10.1145/3770855.3817512",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-from-outcomes-to-mechanisms-a-benchmark-for-diagnosing-llm-s-mechanism-hallucination-on-data-inferen",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "From Outcomes to Mechanisms: A Benchmark for Diagnosing LLM's Mechanism Hallucination on Data Inference Externalities",
+      "doi": "10.1145/3770855.3817513",
+      "url": "https://doi.org/10.1145/3770855.3817513",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-pidsmaker-building-and-evaluating-provenance-based-intrusion-detection-systems",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "PIDSMaker: Building and Evaluating Provenance-based Intrusion Detection Systems",
+      "doi": "10.1145/3770855.3817514",
+      "url": "https://doi.org/10.1145/3770855.3817514",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-ts-arena-a-live-forecast-pre-registration-platform",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "TS-Arena -- A Live Forecast Pre-Registration Platform",
+      "doi": "10.1145/3770855.3817515",
+      "url": "https://doi.org/10.1145/3770855.3817515",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-dtbench-a-synthetic-benchmark-for-document-to-table-extraction",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "DTBench: A Synthetic Benchmark for Document-to-Table Extraction",
+      "doi": "10.1145/3770855.3817516",
+      "url": "https://doi.org/10.1145/3770855.3817516",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-simcoachcorpus-a-naturalistic-dataset-with-language-and-trajectories-for-embodied-teaching",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "SimCoachCorpus: A Naturalistic Dataset with Language and Trajectories for Embodied Teaching",
+      "doi": "10.1145/3770855.3817517",
+      "url": "https://doi.org/10.1145/3770855.3817517",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-prbench-a-standardized-probabilistic-robustness-benchmark",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "PRBench: A Standardized Probabilistic Robustness Benchmark",
+      "doi": "10.1145/3770855.3817518",
+      "url": "https://doi.org/10.1145/3770855.3817518",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-causality-for-tabular-data-synthesis-a-high-order-structure-causal-benchmark-framework",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Causality for Tabular Data Synthesis: A High-Order Structure Causal Benchmark Framework",
+      "doi": "10.1145/3770855.3817519",
+      "url": "https://doi.org/10.1145/3770855.3817519",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-macrodata-new-benchmarks-of-thousands-of-datasets-for-tabular-outlier-detection",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "MacrOData: New Benchmarks of Thousands of Datasets for Tabular Outlier Detection",
+      "doi": "10.1145/3770855.3817520",
+      "url": "https://doi.org/10.1145/3770855.3817520",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-an-empirical-study-of-synthetic-data-generators-for-sequences",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "An Empirical Study of Synthetic Data Generators for Sequences",
+      "doi": "10.1145/3770855.3817521",
+      "url": "https://doi.org/10.1145/3770855.3817521",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-benchmarking-counterfactual-prediction-in-epidemic-time-series-with-time-varying-interventions",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Benchmarking Counterfactual Prediction in Epidemic Time Series with Time-Varying Interventions",
+      "doi": "10.1145/3770855.3817522",
+      "url": "https://doi.org/10.1145/3770855.3817522",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-benchmark-datasets-for-lead-lag-forecasting-on-social-platforms",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Benchmark Datasets for Lead-Lag Forecasting on Social Platforms",
+      "doi": "10.1145/3770855.3817523",
+      "url": "https://doi.org/10.1145/3770855.3817523",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-benchmarking-knowledge-extraction-attack-and-defense-on-retrieval-augmented-generation-rag",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Benchmarking Knowledge-Extraction Attack and Defense on Retrieval-Augmented Generation (RAG)",
+      "doi": "10.1145/3770855.3817524",
+      "url": "https://doi.org/10.1145/3770855.3817524",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-deckbench-benchmarking-multi-agent-frameworks-for-academic-slide-generation-and-editing",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "DECKBench: Benchmarking Multi-Agent Frameworks for Academic Slide Generation and Editing",
+      "doi": "10.1145/3770855.3817525",
+      "url": "https://doi.org/10.1145/3770855.3817525",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-migrationbench-repository-level-code-migration-benchmark-from-java-8",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "MigrationBench: Repository-Level Code Migration Benchmark from Java 8",
+      "doi": "10.1145/3770855.3817526",
+      "url": "https://doi.org/10.1145/3770855.3817526",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-cticonnect-a-benchmark-for-retrieval-augmented-llms-over-heterogeneous-cyber-threat-intelligence",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "CTIConnect: A Benchmark for Retrieval-Augmented LLMs over Heterogeneous Cyber Threat Intelligence",
+      "doi": "10.1145/3770855.3817527",
+      "url": "https://doi.org/10.1145/3770855.3817527",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-fin-rate-a-real-world-financial-analytics-and-tracking-evaluation-benchmark-for-llms-on-sec-filings",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Fin-RATE: A Real-world Financial Analytics and Tracking Evaluation Benchmark for LLMs on SEC Filings",
+      "doi": "10.1145/3770855.3817528",
+      "url": "https://doi.org/10.1145/3770855.3817528",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-grepo-a-benchmark-for-graph-neural-networks-on-repository-level-bug-localization",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "GREPO: A Benchmark for Graph Neural Networks on Repository-Level Bug Localization",
+      "doi": "10.1145/3770855.3817529",
+      "url": "https://doi.org/10.1145/3770855.3817529",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-general-protein-pretraining-or-domain-specific-designs-benchmarking-protein-modeling-on-realistic-ap",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "General Protein Pretraining or Domain-Specific Designs? Benchmarking Protein Modeling on Realistic Applications",
+      "doi": "10.1145/3770855.3817530",
+      "url": "https://doi.org/10.1145/3770855.3817530",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-uniham-a-large-scale-soc-complete-dataset-and-benchmark-for-hamiltonian-learning-in-materials",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "UniHam: A Large-Scale SOC-Complete Dataset and Benchmark for Hamiltonian Learning in Materials",
+      "doi": "10.1145/3770855.3817531",
+      "url": "https://doi.org/10.1145/3770855.3817531",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-euragovexam-a-multilingual-multimodal-benchmark-from-real-world-civil-service-exams",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "EuraGovExam: A Multilingual Multimodal Benchmark from Real-World Civil Service Exams",
+      "doi": "10.1145/3770855.3817532",
+      "url": "https://doi.org/10.1145/3770855.3817532",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-traveleval-a-comprehensive-benchmarking-framework-for-evaluating-llm-powered-travel-planning-agents",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "TravelEval: A Comprehensive Benchmarking Framework for Evaluating LLM-Powered Travel Planning Agents",
+      "doi": "10.1145/3770855.3817533",
+      "url": "https://doi.org/10.1145/3770855.3817533",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-oceanverse-evaluable-4d-ocean-element-reconstruction-dataset-under-realistic-sparsity",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "OceanVerse: Evaluable 4D Ocean Element Reconstruction Dataset under Realistic Sparsity",
+      "doi": "10.1145/3770855.3817534",
+      "url": "https://doi.org/10.1145/3770855.3817534",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-openaqua-a-large-scale-fine-grained-dataset-and-benchmark-for-open-underwater-visual-perception",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "OpenAqua: A Large-Scale Fine-Grained Dataset and Benchmark for Open Underwater Visual Perception",
+      "doi": "10.1145/3770855.3817535",
+      "url": "https://doi.org/10.1145/3770855.3817535",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-rethinking-weak-supervision-in-anomaly-detection-a-comprehensive-benchmark",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Rethinking Weak Supervision in Anomaly Detection: A Comprehensive Benchmark",
+      "doi": "10.1145/3770855.3817536",
+      "url": "https://doi.org/10.1145/3770855.3817536",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-microbequest-a-context-aware-multimodal-benchmark-for-microbiology-information-extraction",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "MicrobeQuest: A Context-Aware Multimodal Benchmark for Microbiology Information Extraction",
+      "doi": "10.1145/3770855.3817537",
+      "url": "https://doi.org/10.1145/3770855.3817537",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-sop-bench-complex-industrial-sops-for-evaluating-llm-agents",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "SOP-Bench: Complex Industrial SOPs for Evaluating LLM Agents",
+      "doi": "10.1145/3770855.3817538",
+      "url": "https://doi.org/10.1145/3770855.3817538",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-lingxidiagbench-a-multi-agent-framework-for-benchmarking-llms-in-chinese-psychiatric-consultation-an",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "LingxiDiagBench: A Multi-Agent Framework for Benchmarking LLMs in Chinese Psychiatric Consultation and Diagnosis",
+      "doi": "10.1145/3770855.3817539",
+      "url": "https://doi.org/10.1145/3770855.3817539",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-graphchase-a-platform-and-benchmark-for-urban-network-security-games",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "GraphChase: A Platform and Benchmark for Urban Network Security Games",
+      "doi": "10.1145/3770855.3817540",
+      "url": "https://doi.org/10.1145/3770855.3817540",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-opbench-a-graph-benchmark-to-combat-the-opioid-crisis",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "OPBench: A Graph Benchmark to Combat the Opioid Crisis",
+      "doi": "10.1145/3770855.3817541",
+      "url": "https://doi.org/10.1145/3770855.3817541",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-perturbed-public-voices-p-2v-a-dataset-for-robust-audio-deepfake-detection",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Perturbed Public Voices (P^2V): A Dataset for Robust Audio Deepfake Detection",
+      "doi": "10.1145/3770855.3817542",
+      "url": "https://doi.org/10.1145/3770855.3817542",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-whose-name-comes-up-ii-benchmarking-and-intervention-based-auditing-of-llm-based-scholar-recommendat",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Whose Name Comes Up? II: Benchmarking and Intervention-Based Auditing of LLM-Based Scholar Recommendation",
+      "doi": "10.1145/3770855.3817543",
+      "url": "https://doi.org/10.1145/3770855.3817543",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-crag-mm-multi-modal-multi-turn-comprehensive-rag-benchmark",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "CRAG-MM: Multi-modal Multi-turn Comprehensive RAG Benchmark",
+      "doi": "10.1145/3770855.3817544",
+      "url": "https://doi.org/10.1145/3770855.3817544",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-can-large-language-models-derive-new-knowledge-a-dynamic-benchmark-for-biological-knowledge-discover",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Can Large Language Models Derive New Knowledge? A Dynamic Benchmark for Biological Knowledge Discovery",
+      "doi": "10.1145/3770855.3817545",
+      "url": "https://doi.org/10.1145/3770855.3817545",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-bluff-benchmarking-the-detection-of-false-and-synthetic-content-across-58-low-resource-languages",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "BLUFF: Benchmarking the Detection of False and Synthetic Content across 58 Low-Resource Languages",
+      "doi": "10.1145/3770855.3817546",
+      "url": "https://doi.org/10.1145/3770855.3817546",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-agentcity-an-ai-maintained-continuous-benchmark-for-traffic-prediction",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "AgentCity: An AI-Maintained Continuous Benchmark for Traffic Prediction",
+      "doi": "10.1145/3770855.3817547",
+      "url": "https://doi.org/10.1145/3770855.3817547",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-cecombench-benchmarking-large-language-models-performance-on-chinese-e-commerce-tasks",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "CEComBench: Benchmarking Large Language Models' performance on Chinese E-commerce tasks",
+      "doi": "10.1145/3770855.3817548",
+      "url": "https://doi.org/10.1145/3770855.3817548",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-sp-rank-a-dataset-for-ranked-preferences-with-secondary-information",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "SP-Rank: A Dataset for Ranked Preferences with Secondary Information",
+      "doi": "10.1145/3770855.3817549",
+      "url": "https://doi.org/10.1145/3770855.3817549",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-transxion-a-high-fidelity-graph-benchmark-for-realistic-anti-money-laundering",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "TransXion: A High-Fidelity Graph Benchmark for Realistic Anti-Money Laundering",
+      "doi": "10.1145/3770855.3817550",
+      "url": "https://doi.org/10.1145/3770855.3817550",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-beyond-holistic-models-systematic-component-level-benchmarking-of-deep-multivariate-time-series-fore",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Beyond Holistic Models: Systematic Component-level Benchmarking of Deep Multivariate Time-Series Forecasting",
+      "doi": "10.1145/3770855.3817551",
+      "url": "https://doi.org/10.1145/3770855.3817551",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-omniphys-knowledge-graph-driven-benchmarking-and-collective-optimization-for-physical-commonsense-in",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "OmniPhys: Knowledge-Graph-Driven Benchmarking and Collective Optimization for Physical Commonsense in Text-to-Image Generation",
+      "doi": "10.1145/3770855.3817552",
+      "url": "https://doi.org/10.1145/3770855.3817552",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-dlt-corpus-a-large-scale-text-collection-for-the-distributed-ledger-technology-domain",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "DLT-Corpus: A Large-Scale Text Collection for the Distributed Ledger Technology Domain",
+      "doi": "10.1145/3770855.3817553",
+      "url": "https://doi.org/10.1145/3770855.3817553",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-mmid-multi-turn-multimodal-interactive-dialogue-benchmark",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "MMID: Multi-turn Multimodal Interactive Dialogue Benchmark",
+      "doi": "10.1145/3770855.3817554",
+      "url": "https://doi.org/10.1145/3770855.3817554",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-agent-diff-benchmarking-llm-agents-on-enterprise-api-tasks-via-code-execution-with-state-diff-based-",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Agent-Diff: Benchmarking LLM Agents on Enterprise API Tasks via Code Execution with State-Diff-Based Evaluation",
+      "doi": "10.1145/3770855.3817555",
+      "url": "https://doi.org/10.1145/3770855.3817555",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-benchmarking-llm-agents-on-real-world-biological-database-curation-for-data-driven-scientific-discov",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Benchmarking LLM Agents on Real-World Biological Database Curation for Data-Driven Scientific Discovery",
+      "doi": "10.1145/3770855.3817556",
+      "url": "https://doi.org/10.1145/3770855.3817556",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-tamperbench-systematically-stress-testing-llm-safety-under-fine-tuning-and-tampering",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "TamperBench: Systematically Stress-Testing LLM Safety Under Fine-Tuning and Tampering",
+      "doi": "10.1145/3770855.3817557",
+      "url": "https://doi.org/10.1145/3770855.3817557",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-sqchip-em-a-qiskit-metal-based-layout-to-em-simulation-dataset-for-superconducting-quantum-chips",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "SQChip-EM: A Qiskit-Metal-Based Layout-to-EM Simulation Dataset for Superconducting Quantum Chips",
+      "doi": "10.1145/3770855.3817558",
+      "url": "https://doi.org/10.1145/3770855.3817558",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-cloudcons-a-comprehensive-end-to-end-benchmark-for-cloud-resource-consolidation",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "CloudCons: A Comprehensive End-to-End Benchmark for Cloud Resource Consolidation",
+      "doi": "10.1145/3770855.3817559",
+      "url": "https://doi.org/10.1145/3770855.3817559",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-towards-quantum-program-bug-datasets-and-benchmarking",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Towards Quantum Program Bug Datasets and Benchmarking",
+      "doi": "10.1145/3770855.3817560",
+      "url": "https://doi.org/10.1145/3770855.3817560",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-polyspeech-100-a-large-scale-benchmark-for-speech-understanding-across-100-languages-and-dialects",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "PolySpeech-100: A Large-Scale Benchmark for Speech Understanding Across 100+ Languages and Dialects",
+      "doi": "10.1145/3770855.3817561",
+      "url": "https://doi.org/10.1145/3770855.3817561",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-assetopsbench-a-real-world-evaluation-benchmark-for-ai-driven-task-automation-in-industrial-asset-ma",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "AssetOpsBench: A Real-World Evaluation Benchmark for AI-Driven Task Automation in Industrial Asset Management",
+      "doi": "10.1145/3770855.3817562",
+      "url": "https://doi.org/10.1145/3770855.3817562",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-synthetic-interaction-data-for-scalable-personalization-in-large-language-models",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Synthetic Interaction Data for Scalable Personalization in Large Language Models",
+      "doi": "10.1145/3770855.3817563",
+      "url": "https://doi.org/10.1145/3770855.3817563",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-svhighlights-towards-extremely-long-sport-video-highlight-detection",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "SVHighlights: Towards Extremely Long Sport Video Highlight Detection",
+      "doi": "10.1145/3770855.3817564",
+      "url": "https://doi.org/10.1145/3770855.3817564",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-pause-a-user-centric-benchmark-for-personal-ai-assistants-in-unified-service-environments",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "PAUSE: A User-Centric Benchmark for Personal AI Assistants in Unified Service Environments",
+      "doi": "10.1145/3770855.3817565",
+      "url": "https://doi.org/10.1145/3770855.3817565",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-carbonfluxbench-a-global-benchmark-for-upscaling-of-carbon-fluxes-using-zero-shot-learning",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "CarbonFluxBench: A Global Benchmark for Upscaling of Carbon Fluxes Using Zero-Shot Learning",
+      "doi": "10.1145/3770855.3817566",
+      "url": "https://doi.org/10.1145/3770855.3817566",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-causalt5k-diagnosing-refusal-and-failure-modes-in-trustworthy-causal-reasoning-across-causal-rungs",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "CausalT5k: Diagnosing Refusal and Failure Modes in Trustworthy Causal Reasoning Across Causal Rungs",
+      "doi": "10.1145/3770855.3817567",
+      "url": "https://doi.org/10.1145/3770855.3817567",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-synapse-simulation-benchmark-of-neuro-adaptive-patient-specific-evaluation-for-episodic-decision-mak",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "SYNAPSE: Simulation Benchmark of Neuro-Adaptive Patient-Specific Evaluation for Episodic Decision-Making",
+      "doi": "10.1145/3770855.3817568",
+      "url": "https://doi.org/10.1145/3770855.3817568",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-benchmarking-on-tasks-that-matter-dataset-selection-for-preserving-model-rankings",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Benchmarking on Tasks That Matter: Dataset Selection for Preserving Model Rankings",
+      "doi": "10.1145/3770855.3817569",
+      "url": "https://doi.org/10.1145/3770855.3817569",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-mkg-rag-bench-benchmarking-retrieval-in-multimodal-knowledge-graphaugmented-generation",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "MKG-RAG-Bench: Benchmarking Retrieval in Multimodal Knowledge Graph–Augmented Generation",
+      "doi": "10.1145/3770855.3817570",
+      "url": "https://doi.org/10.1145/3770855.3817570",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-ehrbench-an-automated-and-reliable-ehr-based-benchmark-for-clinical-decision-making-with-llms",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "EHRBench: An Automated and Reliable EHR-based Benchmark for Clinical Decision Making with LLMs",
+      "doi": "10.1145/3770855.3817571",
+      "url": "https://doi.org/10.1145/3770855.3817571",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-eventglucose-a-benchmark-for-continuous-glucose-monitoring-forecasting-with-behavioral-event-context",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "EventGlucose: A Benchmark for Continuous Glucose Monitoring Forecasting with Behavioral Event Context",
+      "doi": "10.1145/3770855.3817572",
+      "url": "https://doi.org/10.1145/3770855.3817572",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-platformbid-an-auto-bidding-benchmark-from-a-unified-advertising-platform-s-perspective",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "PlatformBid: An Auto-Bidding Benchmark from a Unified Advertising Platform's Perspective",
+      "doi": "10.1145/3770855.3817573",
+      "url": "https://doi.org/10.1145/3770855.3817573",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-mpceval-a-benchmark-for-multi-party-conversation-generation",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "MPCEval: A Benchmark for Multi-Party Conversation Generation",
+      "doi": "10.1145/3770855.3817574",
+      "url": "https://doi.org/10.1145/3770855.3817574",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-rag-vs-graphrag-a-systematic-evaluation-and-key-insights",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "RAG vs. GraphRAG: A Systematic Evaluation and Key Insights",
+      "doi": "10.1145/3770855.3817575",
+      "url": "https://doi.org/10.1145/3770855.3817575",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-bioflowbench-a-comprehensive-benchmark-for-evaluating-bioinformatics-tool-use-capabilities-of-llms-a",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "BioFlowBench: A Comprehensive Benchmark for Evaluating Bioinformatics Tool-use Capabilities of LLMs and Agents",
+      "doi": "10.1145/3770855.3817576",
+      "url": "https://doi.org/10.1145/3770855.3817576",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-who-s-adam-benchmarking-hallucinations-in-scientific-dialogue",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Who's Adam? Benchmarking Hallucinations in Scientific Dialogue",
+      "doi": "10.1145/3770855.3817577",
+      "url": "https://doi.org/10.1145/3770855.3817577",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-finstressts-a-parametric-synthetic-benchmark-for-time-series-forecasting-in-finance",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "FinStressTS: A Parametric Synthetic Benchmark for Time-Series Forecasting in Finance",
+      "doi": "10.1145/3770855.3817578",
+      "url": "https://doi.org/10.1145/3770855.3817578",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-livemedbench-a-contamination-limited-medical-benchmark-for-llms-with-automated-rubric-evaluation",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "LiveMedBench: A Contamination-Limited Medical Benchmark for LLMs with Automated Rubric Evaluation",
+      "doi": "10.1145/3770855.3817579",
+      "url": "https://doi.org/10.1145/3770855.3817579",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-ipo-mine-a-toolkit-and-dataset-for-section-structured-analysis-of-long-multimodal-ipo-documents",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "IPO-Mine: A Toolkit and Dataset for Section-Structured Analysis of Long, Multimodal IPO Documents",
+      "doi": "10.1145/3770855.3817580",
+      "url": "https://doi.org/10.1145/3770855.3817580",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-safebuild-bench-a-temporal-robust-construction-safety-benchmark-with-graph-enhanced-data-mining",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "SafeBuild-Bench: A Temporal-Robust Construction Safety Benchmark with Graph-Enhanced Data Mining",
+      "doi": "10.1145/3770855.3817581",
+      "url": "https://doi.org/10.1145/3770855.3817581",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-causal-scaffolding-for-physical-reasoning-a-benchmark-for-causally-informed-physical-world-understan",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Causal Scaffolding for Physical Reasoning: A Benchmark for Causally-Informed Physical World Understanding in VLMs",
+      "doi": "10.1145/3770855.3817582",
+      "url": "https://doi.org/10.1145/3770855.3817582",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-audeter-a-large-scale-dataset-for-deepfake-audio-detection-in-open-worlds",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "AUDETER: A Large-scale Dataset for Deepfake Audio Detection in Open Worlds",
+      "doi": "10.1145/3770855.3817583",
+      "url": "https://doi.org/10.1145/3770855.3817583",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-urbanwell-benchmarking-multimodal-large-language-models-for-spatio-temporal-urban-wellbeing-analytic",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "UrbanWell: Benchmarking Multimodal Large Language Models for Spatio-Temporal Urban Wellbeing Analytics",
+      "doi": "10.1145/3770855.3817584",
+      "url": "https://doi.org/10.1145/3770855.3817584",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-cryptoanalystbench-failures-in-multi-tool-long-form-llm-analysis",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "CryptoAnalystBench: Failures in Multi-Tool Long-Form LLM Analysis",
+      "doi": "10.1145/3770855.3817585",
+      "url": "https://doi.org/10.1145/3770855.3817585",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-clarify-then-search-a-clarification-benchmark-for-deep-search-with-end-to-end-nugget-restoration",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Clarify-Then-Search: A Clarification Benchmark for Deep Search with End-to-End Nugget Restoration",
+      "doi": "10.1145/3770855.3817586",
+      "url": "https://doi.org/10.1145/3770855.3817586",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-chessfraud-exploring-the-capabilities-of-human-aligned-models-for-cheating-detection-in-online-chess",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "ChessFraud: Exploring the Capabilities of Human-Aligned Models for Cheating Detection in Online Chess",
+      "doi": "10.1145/3770855.3817587",
+      "url": "https://doi.org/10.1145/3770855.3817587",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-t-ecd-a-large-scale-cross-domain-e-commerce-dataset-for-industrial-recommender-systems",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "T-ECD: A Large-Scale Cross-Domain E-Commerce Dataset for Industrial Recommender Systems",
+      "doi": "10.1145/3770855.3817588",
+      "url": "https://doi.org/10.1145/3770855.3817588",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-evaluating-long-horizon-memory-for-multi-party-collaborative-dialogues",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Evaluating Long-Horizon Memory for Multi-Party Collaborative Dialogues",
+      "doi": "10.1145/3770855.3817589",
+      "url": "https://doi.org/10.1145/3770855.3817589",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-beyond-goodhart-s-law-a-dynamic-benchmark-for-evaluating-compliance-in-multi-agent-systems",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "Beyond Goodhart's Law: A Dynamic Benchmark for Evaluating Compliance in Multi-Agent Systems",
+      "doi": "10.1145/3770855.3817590",
+      "url": "https://doi.org/10.1145/3770855.3817590",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-grapharc-a-comprehensive-benchmark-for-graph-based-abstract-reasoning",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "GraphARC: A Comprehensive Benchmark for Graph-Based Abstract Reasoning",
+      "doi": "10.1145/3770855.3817591",
+      "url": "https://doi.org/10.1145/3770855.3817591",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-codecad-a-parametric-cad-dataset-for-programmatic-3d-model-generation",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "CodeCAD: A Parametric CAD Dataset for Programmatic 3D Model Generation",
+      "doi": "10.1145/3770855.3817592",
+      "url": "https://doi.org/10.1145/3770855.3817592",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-rmeval-bridging-reward-model-evaluation-and-policy-evaluation-through-ranking-consistency",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "RMEval: Bridging Reward Model Evaluation and Policy Evaluation through Ranking Consistency",
+      "doi": "10.1145/3770855.3817593",
+      "url": "https://doi.org/10.1145/3770855.3817593",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-dygadbench-a-comprehensive-benchmark-for-anomaly-detection-in-dynamic-graphs",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "DyGADBench: A Comprehensive Benchmark for Anomaly Detection in Dynamic Graphs",
+      "doi": "10.1145/3770855.3817594",
+      "url": "https://doi.org/10.1145/3770855.3817594",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-finbench-a-benchmarking-framework-for-stock-market-prediction-and-portfolio-allocation",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "FinBench: A Benchmarking Framework for Stock Market Prediction and Portfolio Allocation",
+      "doi": "10.1145/3770855.3817595",
+      "url": "https://doi.org/10.1145/3770855.3817595",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-arc-tgi-human-validated-task-generators-with-reasoning-chain-templates-for-arc-agi",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "ARC-TGI: Human-Validated Task Generators with Reasoning Chain Templates for ARC-AGI",
+      "doi": "10.1145/3770855.3817596",
+      "url": "https://doi.org/10.1145/3770855.3817596",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-dcha-ungd-a-dataset-and-benchmarks-for-directed-climate-health-attribution-in-un-general-debate-spee",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "DCHA-UNGD: A Dataset and Benchmarks for Directed Climate--Health Attribution in UN General Debate Speeches, 1989--2024",
+      "doi": "10.1145/3770855.3817597",
+      "url": "https://doi.org/10.1145/3770855.3817597",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-tsrbench-benchmarking-time-series-retrieval",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "TSRBench: Benchmarking Time-Series Retrieval",
+      "doi": "10.1145/3770855.3817598",
+      "url": "https://doi.org/10.1145/3770855.3817598",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-a-framework-for-evaluating-and-benchmarking-concept-drift-detection-methods",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle2Papers",
+      "title": "A Framework for Evaluating and Benchmarking Concept Drift Detection Methods",
+      "doi": "10.1145/3770855.3819070",
+      "url": "https://doi.org/10.1145/3770855.3819070",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-cntext2sign-and-cnsign-unified-chinese-sign-language-datasets-for-bidirectional-accessibility",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "CNText2Sign and CNSign: Unified Chinese Sign Language Datasets for Bidirectional Accessibility",
+      "doi": "10.1145/3770854.3785676",
+      "url": "https://doi.org/10.1145/3770854.3785676",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-learning-multimodal-embeddings-for-traffic-accident-prediction-and-causal-estimation",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "Learning Multimodal Embeddings for Traffic Accident Prediction and Causal Estimation",
+      "doi": "10.1145/3770854.3785677",
+      "url": "https://doi.org/10.1145/3770854.3785677",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-mm-spubench-towards-better-understanding-of-spurious-biases-in-multimodal-llms",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "MM-SpuBench: Towards Better Understanding of Spurious Biases in Multimodal LLMs",
+      "doi": "10.1145/3770854.3785678",
+      "url": "https://doi.org/10.1145/3770854.3785678",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-litbench-a-graph-centric-large-language-model-benchmarking-tool-for-literature-tasks",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "LitBench: A Graph-Centric Large Language Model Benchmarking Tool For Literature Tasks",
+      "doi": "10.1145/3770854.3785679",
+      "url": "https://doi.org/10.1145/3770854.3785679",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-automated-annotation-of-privacy-information-in-user-interactions-with-large-language-models",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "Automated Annotation of Privacy Information in User Interactions with Large Language Models",
+      "doi": "10.1145/3770854.3785680",
+      "url": "https://doi.org/10.1145/3770854.3785680",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-harood-a-benchmark-for-out-of-distribution-generalization-in-sensor-based-human-activity-recognition",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "HAROOD: A Benchmark for Out-of-distribution Generalization in Sensor-based Human Activity Recognition",
+      "doi": "10.1145/3770854.3785681",
+      "url": "https://doi.org/10.1145/3770854.3785681",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-x-methanewet-a-cross-scale-global-wetland-methane-emission-benchmark-dataset-for-advancing-science-d",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "X-MethaneWet: A Cross-scale Global Wetland Methane Emission Benchmark Dataset for Advancing Science Discovery with AI",
+      "doi": "10.1145/3770854.3785682",
+      "url": "https://doi.org/10.1145/3770854.3785682",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-arctraj-a-dataset-and-benchmark-of-human-reasoning-trajectories-for-abstract-problem-solving",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "ARCTraj: A Dataset and Benchmark of Human Reasoning Trajectories for Abstract Problem Solving",
+      "doi": "10.1145/3770854.3785683",
+      "url": "https://doi.org/10.1145/3770854.3785683",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-lmid-a-comprehensive-multimodal-dataset-for-failure-prediction-in-cloud-computing-systems",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "LMID: A Comprehensive Multimodal Dataset for Failure Prediction in Cloud Computing Systems",
+      "doi": "10.1145/3770854.3785684",
+      "url": "https://doi.org/10.1145/3770854.3785684",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-generating-realistic-human-mobility-data-with-hybrid-large-language-model-agent",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "Generating Realistic Human Mobility Data with Hybrid Large Language Model Agent",
+      "doi": "10.1145/3770854.3785685",
+      "url": "https://doi.org/10.1145/3770854.3785685",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-from-memorization-to-creation-evaluating-the-cognitive-depth-of-llmgenerated-educational-questions",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "From Memorization to Creation: Evaluating the Cognitive Depth of LLM‑Generated Educational Questions",
+      "doi": "10.1145/3770854.3785686",
+      "url": "https://doi.org/10.1145/3770854.3785686",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-voxlect-a-speech-foundation-model-benchmark-for-modeling-dialects-and-regional-languages-around-the-",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "Voxlect: A Speech Foundation Model Benchmark for Modeling Dialects and Regional Languages Around the Globe",
+      "doi": "10.1145/3770854.3785687",
+      "url": "https://doi.org/10.1145/3770854.3785687",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-exploring-recommender-system-evaluation-a-multi-modal-llm-agent-framework-for-a-b-testing",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "Exploring Recommender System Evaluation: A Multi-Modal LLM Agent Framework for A/B Testing",
+      "doi": "10.1145/3770854.3785688",
+      "url": "https://doi.org/10.1145/3770854.3785688",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-finworld-an-all-in-one-open-source-platform-for-end-to-end-financial-ai-research-and-deployment",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "FinWorld: An All-in-One Open-Source Platform for End-to-End Financial AI Research and Deployment",
+      "doi": "10.1145/3770854.3785689",
+      "url": "https://doi.org/10.1145/3770854.3785689",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-vqflow-a-benchmark-dataset-for-encrypted-video-streaming-traffic-across-qos-configurations",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "VQFlow: A Benchmark Dataset for Encrypted Video Streaming Traffic across QoS Configurations",
+      "doi": "10.1145/3770854.3785690",
+      "url": "https://doi.org/10.1145/3770854.3785690",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-memebridge-a-dataset-for-benchmarking-and-mitigating-the-bidirectional-cultural-gap-in-meme-interpre",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "MemeBridge: A Dataset for Benchmarking and Mitigating the Bidirectional Cultural Gap in Meme Interpretation",
+      "doi": "10.1145/3770854.3785691",
+      "url": "https://doi.org/10.1145/3770854.3785691",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-realm-bench-a-benchmark-for-evaluating-multi-agent-systems-on-real-world-dynamic-planning-and-schedu",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "REALM-Bench: A Benchmark for Evaluating Multi-Agent Systems on Real-world, Dynamic Planning and Scheduling Tasks",
+      "doi": "10.1145/3770854.3785692",
+      "url": "https://doi.org/10.1145/3770854.3785692",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-irlbench-a-multi-modal-culturally-grounded-parallel-irish-english-benchmark-for-open-ended-llm-reaso",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "IRLBench: A Multi-modal, Culturally Grounded, Parallel Irish-English Benchmark for Open-Ended LLM Reasoning Evaluation",
+      "doi": "10.1145/3770854.3785693",
+      "url": "https://doi.org/10.1145/3770854.3785693",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-itdr-an-instruction-tuning-dataset-for-enhancing-large-language-models-in-recommendations",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "ITDR: An Instruction Tuning Dataset for Enhancing Large Language Models in Recommendations",
+      "doi": "10.1145/3770854.3785694",
+      "url": "https://doi.org/10.1145/3770854.3785694",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-gui-robust-a-comprehensive-dataset-for-testing-gui-agent-robustness-in-real-world-anomalies",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "GUI-Robust: A Comprehensive Dataset for Testing GUI Agent Robustness in Real-World Anomalies",
+      "doi": "10.1145/3770854.3785695",
+      "url": "https://doi.org/10.1145/3770854.3785695",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-firesentry-a-multi-modal-spatio-temporal-benchmark-dataset-for-fine-grained-wildfire-spread-forecast",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "FireSentry: A Multi-Modal Spatio-temporal Benchmark Dataset for Fine-Grained Wildfire Spread Forecasting",
+      "doi": "10.1145/3770854.3785696",
+      "url": "https://doi.org/10.1145/3770854.3785696",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-quamap-a-multi-backend-benchmark-dataset-for-quantum-circuit-mapping-and-learning-based-compiler-eva",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "QuaMap: A Multi-Backend Benchmark Dataset for Quantum Circuit Mapping and Learning-Based Compiler Evaluation",
+      "doi": "10.1145/3770854.3785697",
+      "url": "https://doi.org/10.1145/3770854.3785697",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-synsym-a-synthetic-data-generation-framework-for-psychiatric-symptom-identification",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "SynSym: A Synthetic Data Generation Framework for Psychiatric Symptom Identification",
+      "doi": "10.1145/3770854.3785698",
+      "url": "https://doi.org/10.1145/3770854.3785698",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-t-grab-a-synthetic-diagnostic-benchmark-for-learning-on-temporal-graphs",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "T-GRAB: A Synthetic Diagnostic Benchmark for Learning on Temporal Graphs",
+      "doi": "10.1145/3770854.3785699",
+      "url": "https://doi.org/10.1145/3770854.3785699",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-let-s-verify-math-questions-step-by-step",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "Let's Verify Math Questions Step by Step",
+      "doi": "10.1145/3770854.3785700",
+      "url": "https://doi.org/10.1145/3770854.3785700",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-benchmarking-positional-encodings-for-gnns-and-graph-transformers",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "Benchmarking Positional Encodings for GNNs and Graph Transformers",
+      "doi": "10.1145/3770854.3785701",
+      "url": "https://doi.org/10.1145/3770854.3785701",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-can-llm-based-financial-investing-strategies-outperform-the-market-in-long-run",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "Can LLM-based Financial Investing Strategies Outperform the Market in Long Run?",
+      "doi": "10.1145/3770854.3785702",
+      "url": "https://doi.org/10.1145/3770854.3785702",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-compliance-to-code-enhancing-financial-compliance-checking-via-code-generation",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "Compliance-to-Code: Enhancing Financial Compliance Checking via Code Generation",
+      "doi": "10.1145/3770854.3785703",
+      "url": "https://doi.org/10.1145/3770854.3785703",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    },
+    {
+      "id": "kdd2026-heaven-sent-or-hell-bent-benchmarking-the-intelligence-and-defectiveness-of-llm-hallucinations",
+      "year": 2026,
+      "venue": "KDD Datasets and Benchmarks",
+      "cycle": "cycle1Papers",
+      "title": "Heaven-Sent or Hell-Bent? Benchmarking the Intelligence and Defectiveness of LLM Hallucinations",
+      "doi": "10.1145/3770854.3785704",
+      "url": "https://doi.org/10.1145/3770854.3785704",
+      "official_source": "https://kdd2026.kdd.org/papers/"
+    }
+  ],
+  "counts": {
+    "kdd2025": 64,
+    "cycle2Papers": 153,
+    "cycle1Papers": 29
+  },
+  "sources": {
+    "kdd2027_faq": {
+      "url": "https://kdd2027.kdd.org/frequently-asked-questions/",
+      "resolved_url": "https://kdd2027.kdd.org/frequently-asked-questions/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieved_on": "2026-10-20",
+      "bytes": 85170,
+      "sha256": "7efab781e9d84864ccf3230478f0595fd25443e54e2af5ceb3cec48e672584e2"
+    },
+    "kdd2027_call": {
+      "url": "https://kdd2027.kdd.org/datasets-and-benchmarks-track-call-for-papers/",
+      "resolved_url": "https://kdd2027.kdd.org/datasets-and-benchmarks-track-call-for-papers/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieved_on": "2026-10-20",
+      "bytes": 89233,
+      "sha256": "b89fdc1ab414404abe0121cdd4539e1dab0e990cb27cb40e4ff5e9a4189c088e"
+    },
+    "kdd2025": {
+      "url": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "resolved_url": "https://kdd.org/kdd2025/datasets-and-benchmarks-track-papers-2/",
+      "status": 200,
+      "content_type": "text/html",
+      "retrieved_on": "2026-10-20",
+      "bytes": 90455,
+      "sha256": "0fab1e5345cc419571447c01187ac4784e7ae480ff34f244d78ea0c2ac01c207"
+    },
+    "kdd2025_call": {
+      "url": "https://kdd.org/kdd2025/call-for-datasets-and-benchmarks-track-papers/",
+      "resolved_url": "https://kdd.org/kdd2025/call-for-datasets-and-benchmarks-track-papers/",
+      "status": 200,
+      "content_type": "text/html",
+      "retrieved_on": "2026-10-20",
+      "bytes": 65439,
+      "sha256": "f0e2e49bef338f19f9697c95dcaf15f2c79ea4efd9ab6ca99fb4d63545c18fe3"
+    },
+    "kdd2026": {
+      "url": "https://kdd2026.kdd.org/papers/",
+      "resolved_url": "https://kdd2026.kdd.org/papers/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieved_on": "2026-10-20",
+      "bytes": 903727,
+      "sha256": "9f40734b507bb8d74e62288da7ea502637fb431729fdc5d5f121b81fe9848dda"
+    }
+  }
+}

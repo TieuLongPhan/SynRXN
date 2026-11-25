@@ -1,0 +1,28 @@
+{
+  "artifact_count": 2,
+  "artifacts": {
+    "openexp.csv.gz": {
+      "license_spdx": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "path": "condition_sharealike/openexp.csv.gz",
+      "rows": 274439,
+      "sha256": "f38c6bf858aa6d6d983c15199fc90f28e999ba6ea670229ab0307e70e919edc2",
+      "size_bytes": 128234586
+    },
+    "ord_hte_condition.csv.gz": {
+      "license_spdx": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "path": "condition_sharealike/ord_hte_condition.csv.gz",
+      "rows": 123720,
+      "sha256": "9d77cb0ef9233dd7922e4a65ea89e046051581c9200dd3eb7c85d3ae06514c5c",
+      "size_bytes": 24004331
+    }
+  },
+  "description": "Physically separate SynRXN ShareAlike release partition. Artifacts here are adaptations of CC BY-SA 4.0 sources and must be redistributed under CC BY-SA 4.0. They must never be merged into the main partition manifest.",
+  "generated_at": "2026-08-22",
+  "license_text": "condition_sharealike/LICENSE",
+  "partition": "sharealike",
+  "partition_license_spdx": "CC-BY-SA-4.0",
+  "partition_license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "total_rows": 398159
+}

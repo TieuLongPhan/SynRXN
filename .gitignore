@@ -70,6 +70,7 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+doc/_build/
 
 # PyBuilder
 .pybuilder/
@@ -206,26 +207,45 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# Data/*
-test.ipynb
-Data/property/uspto_yield.csv.gz
-Data/property/suzuki_miyaura.csv.gz
-manifest.json
-CITATION.cff
+# Local notebooks, experiments and generated site
 *.ipynb
-Data/Benchmark/drfp/*
-Data/Benchmark/rxnfp/*
-Data/results_benchmark/runs/*
-results_benchmark/summary_metrics_classification.csv
-results_benchmark/summary.csv
-results_benchmark/*
-
-reports/*
-chemprop_zenodo/*
-script/notebook/*
-docs/*
 *.npz
-Data/raw/*
-test1.py
-test2.py
-sprint/*
+/test1.py
+/test2.py
+/chemprop_zenodo/
+/docs/
+/sprint/
+/results_benchmark/
+
+# Raw downloads, query caches and generated databases
+/.cache/
+/Data/raw/
+*.duckdb
+*.duckdb.wal
+
+# Generated payloads and older checkout layouts.
+Data/tables/
+Data/families/**/data.*
+Data/metadata/coverage/physics/chemsindy_reference_timepoints.csv
+Data/synthesis/da.csv.gz
+doc/_static/catalog-reactions/synthesis-da.svg
+
+
+# Local historical sources and artifacts
+archive/*
+
+# Rebuildable case-study joins and reference exports
+Data/metadata/reconstruction/case_studies/ncs_yield/native_splits.csv
+Data/metadata/reconstruction/case_studies/ncs_yield/success_targets.csv
+Data/metadata/reconstruction/case_studies/classic_yield/bh_classic.csv.gz
+Data/metadata/reconstruction/case_studies/classic_yield/bh_outer_assignments.csv.gz
+Data/metadata/reconstruction/case_studies/classic_yield/suzuki_native_reference.csv.gz
+Data/metadata/reconstruction/case_studies/classic_yield/suzuki_outer_assignments.csv.gz
+
+# Local manuscript sources and build products
+paper/*
+
+# Original curated FlowER text inputs; assumed local data for the one-command builder.
+Data/raw/flower/curated-2026-10-26/train.txt
+Data/raw/flower/curated-2026-10-26/valid.txt
+Data/raw/flower/curated-2026-10-26/test.txt

@@ -1,0 +1,158 @@
+{
+  "examples": [
+    {
+      "kind": "different_recorded_intermediates_same_net_mapping",
+      "raw_stream_check": {
+        "8499": {
+          "intermediate_negative_carbon_map": 5,
+          "lines": [
+            476611,
+            476613
+          ]
+        },
+        "8500": {
+          "intermediate_negative_carbon_map": 2,
+          "lines": [
+            476612,
+            476614
+          ]
+        },
+        "member": "inputs/train.txt.gz",
+        "parent_group": "66022"
+      },
+      "records": [
+        {
+          "center_cluster_id": "center-008497",
+          "center_type": "MC",
+          "ground_truth": "[C:1]([c:2]1[c:3]([F:4])[cH:5][cH:6][cH:7][n:8]1)#[N:9].[CH3:10][S-:11]>>[C:1]([c:2]1[c:3]([S:11][CH3:10])[cH:5][cH:6][cH:7][n:8]1)#[N:9].[F-:4]",
+          "r_id": "8499",
+          "role": "train",
+          "rxn": "C[S-].N#Cc1ncccc1F>>CSc1cccnc1C#N.[F-]",
+          "source_lines": "[476611,476613]",
+          "source_parent_group": "66022",
+          "source_seed_id": "80e666909d3135ddd4c04acc09d04799c09bb3b468fb78c6faf8962c6106e8a9",
+          "steps": "2"
+        },
+        {
+          "center_cluster_id": "center-008498",
+          "center_type": "MC",
+          "ground_truth": "[C:1]([c:2]1[c:3]([F:4])[cH:5][cH:6][cH:7][n:8]1)#[N:9].[CH3:10][S-:11]>>[C:1]([c:2]1[c:3]([S:11][CH3:10])[cH:5][cH:6][cH:7][n:8]1)#[N:9].[F-:4]",
+          "r_id": "8500",
+          "role": "train",
+          "rxn": "C[S-].N#Cc1ncccc1F>>CSc1cccnc1C#N.[F-]",
+          "source_lines": "[476612,476614]",
+          "source_parent_group": "66022",
+          "source_seed_id": "9c2c395c26c351adc1a5b7696377c7c2e4e31f8aaa77ec4d097d4133c0c55cdb",
+          "steps": "2"
+        }
+      ]
+    },
+    {
+      "kind": "one_and_two_steps_across_native_roles",
+      "records": [
+        {
+          "center_cluster_id": "center-000472",
+          "center_type": "RC",
+          "ground_truth": "[CH3:15][N:16]([CH3:17])[CH:18]=[O:19].[Cl:20][S:21]([Cl:22])=[O:23]>>[CH3:15][N+:16]([CH3:17])=[CH:18][O:19][S:21]([Cl:22])=[O:23].[Cl-:20]",
+          "r_id": "472",
+          "role": "train",
+          "rxn": "CN(C)C=O.O=S(Cl)Cl>>C[N+](C)=COS(=O)Cl.[Cl-]",
+          "source_lines": "[1052278]",
+          "source_parent_group": "146064",
+          "source_seed_id": "",
+          "steps": "1"
+        },
+        {
+          "center_cluster_id": "center-006852",
+          "center_type": "MC",
+          "ground_truth": "[CH3:6][N:7]([CH:8]=[O:9])[CH3:10].[Cl:11][S:12]([Cl:13])=[O:14]>>[CH3:6][N+:7](=[CH:8][O:9][S:12]([Cl:13])=[O:14])[CH3:10].[Cl-:11]",
+          "r_id": "6852",
+          "role": "train",
+          "rxn": "CN(C)C=O.O=S(Cl)Cl>>C[N+](C)=COS(=O)Cl.[Cl-]",
+          "source_lines": "[201578,201579]",
+          "source_parent_group": "27830",
+          "source_seed_id": "81dee08e2791cda9bc598afff7a927fee1853982075b343ad67e4c661d4f6218",
+          "steps": "2"
+        },
+        {
+          "center_cluster_id": "center-000472",
+          "center_type": "RC",
+          "ground_truth": "[CH3:26][N:27]([CH3:28])[CH:29]=[O:30].[Cl:22][S:23]([Cl:24])=[O:25]>>[Cl-:22].[S:23]([Cl:24])(=[O:25])[O:30][CH:29]=[N+:27]([CH3:26])[CH3:28]",
+          "r_id": "23618",
+          "role": "val",
+          "rxn": "CN(C)C=O.O=S(Cl)Cl>>C[N+](C)=COS(=O)Cl.[Cl-]",
+          "source_lines": "[1231]",
+          "source_parent_group": "187",
+          "source_seed_id": "",
+          "steps": "1"
+        },
+        {
+          "center_cluster_id": "center-006852",
+          "center_type": "MC",
+          "ground_truth": "[CH3:1][N:2]([CH3:3])[CH:4]=[O:5].[Cl:21][S:22]([Cl:23])=[O:24]>>[CH3:1][N+:2]([CH3:3])=[CH:4][O:5][S:22]([Cl:23])=[O:24].[Cl-:21]",
+          "r_id": "24687",
+          "role": "val",
+          "rxn": "CN(C)C=O.O=S(Cl)Cl>>C[N+](C)=COS(=O)Cl.[Cl-]",
+          "source_lines": "[20735,20736]",
+          "source_parent_group": "2835",
+          "source_seed_id": "fdc791139cd5cade384ccca412667790b67476a1a847cad37e88aa2ba80914b3",
+          "steps": "2"
+        },
+        {
+          "center_cluster_id": "center-000472",
+          "center_type": "RC",
+          "ground_truth": "[CH3:29][N:30]([CH3:31])[CH:32]=[O:33].[Cl:1][S:2]([Cl:3])=[O:4]>>[Cl-:1].[S:2]([Cl:3])(=[O:4])[O:33][CH:32]=[N+:30]([CH3:29])[CH3:31]",
+          "r_id": "26481",
+          "role": "test",
+          "rxn": "CN(C)C=O.O=S(Cl)Cl>>C[N+](C)=COS(=O)Cl.[Cl-]",
+          "source_lines": "[163345]",
+          "source_parent_group": "22319",
+          "source_seed_id": "",
+          "steps": "1"
+        },
+        {
+          "center_cluster_id": "center-006852",
+          "center_type": "MC",
+          "ground_truth": "[CH3:1][N:2]([CH:3]=[O:4])[CH3:5].[Cl:6][S:7](=[O:8])[Cl:9]>>[CH3:1][N+:2](=[CH:3][O:4][S:7](=[O:8])[Cl:9])[CH3:5].[Cl-:6]",
+          "r_id": "28733",
+          "role": "test",
+          "rxn": "CN(C)C=O.O=S(Cl)Cl>>C[N+](C)=COS(=O)Cl.[Cl-]",
+          "source_lines": "[100337,100338]",
+          "source_parent_group": "13685",
+          "source_seed_id": "b3054cb791f3b28e4013610678010d9191fac7947d34a5f518e912fdd27dd9d4",
+          "steps": "2"
+        }
+      ]
+    }
+  ],
+  "group_property_counts_overlap": true,
+  "interpretation": "FlowER source selection uses native role, step count and RC/MC class. The pooled AAM identity uses net endpoints. Distinct recorded paths can therefore share an AAM target. All original FlowER source rows remain intact.",
+  "pooled_manifest_sha256": "c72f2efa9b8e2702cad5f256991de02bfe0c7f09ad80fde100a0944d8a25c68c",
+  "record_date": "2026-10-27",
+  "schema": "synrxn.flower-aam-duplicate-inspection.v1",
+  "source_pool_changed": false,
+  "source_table_sha256": "7f39c66ac2d7aec0a5fa333bf6f6e9ebb0b15328dc698785c17991d2291d76d0",
+  "statistics": {
+    "active_source_rows": 34796,
+    "additional_merges_when_stereo_ignored": 0,
+    "duplicate_merges_with_stereo_distinguished": 1680,
+    "extra_rows_under_global_role_steps_center_key": 0,
+    "group_size_distribution": {
+      "2": 1403,
+      "3": 90,
+      "4": 29,
+      "6": 2
+    },
+    "groups_with_different_centers": 1256,
+    "groups_with_different_parents": 423,
+    "groups_with_different_roles": 282,
+    "groups_with_different_step_counts": 126,
+    "groups_with_identical_mapped_strings": 1214,
+    "merged_duplicate_rows": 1680,
+    "original_source_rows": 34815,
+    "repeated_reaction_groups": 1524,
+    "retained_unique_reactions": 33116,
+    "rows_in_repeated_groups": 3204
+  },
+  "stereo_sensitive_baseline_manifest_sha256": "e28cfb2fd0b0d25ab7f35bc39bb27bd3e61e45385a506aa4e597bf9fe326d880"
+}

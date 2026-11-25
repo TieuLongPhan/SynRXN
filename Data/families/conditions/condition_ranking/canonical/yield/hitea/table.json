@@ -1,0 +1,74 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "conditions",
+  "format": "csv.gz",
+  "key": "yield/hitea",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "yield/hitea",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 39546
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "hitea_license",
+      "hitea_readme"
+    ],
+    "expected_bytes": 2929498,
+    "expected_rows": 39546,
+    "expected_sha256": "f0e0d0db9f37643bcebb5c9b6a29a9a6a950f7e92c05fc4541a07d9ca3d1d0e9",
+    "format": "csv.gz",
+    "key": "yield/hitea",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/yield/hitea.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 39546,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "kingsmith2024reactome"
+    ],
+    "path": "Data/yield/hitea.csv.gz",
+    "sha256": "f0e0d0db9f37643bcebb5c9b6a29a9a6a950f7e92c05fc4541a07d9ca3d1d0e9",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "kingsmith2024reactome"
+    ],
+    "counting_unit": "source-table row",
+    "key": "yield/hitea",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/yield/hitea.csv.gz",
+    "role": "primary",
+    "rows": 39546,
+    "sha256": "f0e0d0db9f37643bcebb5c9b6a29a9a6a950f7e92c05fc4541a07d9ca3d1d0e9",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "HiTEA assay responses"
+  },
+  "stored_path": "Data/families/outcomes/yield_conversion/canonical/yield/hitea/data.csv.gz",
+  "task_id": "condition_ranking",
+  "title": "HiTEA assay responses"
+}

@@ -1,0 +1,85 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "representation",
+  "format": "csv.gz",
+  "key": "rbl/complex",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "rbl/complex",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "lgpl",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0 AND MIT AND LGPL-2.1-only",
+    "rights_status": "verified_repository_dataset_grant",
+    "role": "primary",
+    "rows": 1748
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "lowe_original_data_grant",
+      "recheck_property_synrxn_product_notice",
+      "recheck_property_property_recheck_synrbl_pinned_license",
+      "recheck_property_property_recheck_synrbl_pinned_readme",
+      "recheck_property_property_recheck_synrbl_native_validation",
+      "recheck_property_property_recheck_synrbl_article",
+      "recheck_property_property_recheck_synrbl_commit",
+      "recheck_property_mapping_golden_native_license",
+      "recheck_property_mapping_golden_native_readme",
+      "recheck_property_mapping_golden_native_zip"
+    ],
+    "expected_bytes": 54517,
+    "expected_rows": 1748,
+    "expected_sha256": "a2a2d887a65806fbd27596147f6209213cb3eedfbafd428370ec68586827db4c",
+    "format": "csv.gz",
+    "key": "rbl/complex",
+    "license_expression": "CC-BY-4.0 AND MIT AND LGPL-2.1-only",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes.",
+      "Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it."
+    ],
+    "namespace": "canonical",
+    "partition": "lgpl",
+    "path": "Data/rbl/complex.csv.gz",
+    "qualification": "All 1,748 curated reaction/ground-truth pairs join the actual author SynRBL validation CSV (1,282 Golden and 466 Jaworski records). Preserve the pinned SynRBL MIT author repository notice and original Golden author data repository LGPL-2.1-only notice. The latter is a supplied hand-curated dataset, not merely an atom-mapping executable. The SynRXN compilation retains CC BY 4.0. The SynRBL paper CC0 data waiver is recorded for author contributions but does not remove borrowed Golden obligations.",
+    "rights_status": "verified_repository_dataset_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 1748,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "jaworski2019automatic",
+      "lin2022atom"
+    ],
+    "path": "Data/rbl/complex.csv.gz",
+    "sha256": "a2a2d887a65806fbd27596147f6209213cb3eedfbafd428370ec68586827db4c",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "jaworski2019automatic",
+      "lin2022atom"
+    ],
+    "counting_unit": "source-table row",
+    "key": "rbl/complex",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/rbl/complex.csv.gz",
+    "role": "primary",
+    "rows": 1748,
+    "sha256": "a2a2d887a65806fbd27596147f6209213cb3eedfbafd428370ec68586827db4c",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "Complex reaction rebalancing"
+  },
+  "stored_path": "Data/families/representation/reaction_balancing/canonical/rbl/complex/data.csv.gz",
+  "task_id": "reaction_balancing",
+  "title": "Complex reaction rebalancing"
+}

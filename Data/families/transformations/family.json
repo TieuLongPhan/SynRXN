@@ -1,0 +1,55 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "family": {
+    "counting_units": [
+      "source-table row"
+    ],
+    "data_counting_policy": "Deduplicated by namespace/source-table key within this family only; row units can differ, source views can overlap and rows are not unique reactions. Inspect each binding's counting_unit and physical configuration counts.",
+    "data_status": "local task references present; qualification varies",
+    "future_task_ids": [],
+    "gaps": "Standardized endpoint-isolated contracts and source-index qualification are pending. One recorded precursor set is not exhaustive acceptable chemistry. Multi-step target-to-stock route search is excluded.",
+    "id": "transformations",
+    "overlapping_view_count": 0,
+    "primary_source_rows": 540062,
+    "primary_table_count": 3,
+    "release_eligible_table_count": 2,
+    "scope": "Forward products, one-step precursor sets, reaction centers and bond edits; recorded or permissible alternatives require explicit reference semantics.",
+    "task_ids": [
+      "forward_prediction",
+      "retrosynthesis",
+      "reaction_center"
+    ],
+    "title": "Single-step reaction transformation"
+  },
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 2,
+    "data_links": 5,
+    "families": 1,
+    "held_bindings": 2,
+    "held_table_views": 1,
+    "overlapping_table_views": 0,
+    "primary_table_views": 3,
+    "stored_rows_across_unique_views": 540062,
+    "task_table_bindings": 7,
+    "tasks": 3,
+    "unique_table_views": 3
+  },
+  "tasks": [
+    {
+      "id": "forward_prediction",
+      "metadata": "forward_prediction/task.json",
+      "title": "Forward product prediction"
+    },
+    {
+      "id": "retrosynthesis",
+      "metadata": "retrosynthesis/task.json",
+      "title": "Single-step retrosynthesis"
+    },
+    {
+      "id": "reaction_center",
+      "metadata": "reaction_center/task.json",
+      "title": "Reaction-center prediction"
+    }
+  ]
+}

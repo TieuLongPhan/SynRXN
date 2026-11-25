@@ -1,0 +1,89 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "representation",
+  "format": "csv.gz",
+  "key": "aam/golden",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "aam/golden",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "copyleft",
+    "release_eligible": true,
+    "release_license_expression": "GPL-3.0-only AND LGPL-2.1-only AND MIT",
+    "rights_status": "verified_redistributable",
+    "role": "primary",
+    "rows": 1758
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "syntemp_license",
+      "syntemp_readme",
+      "recheck_mapping_mapping_syntemp_native_license",
+      "recheck_mapping_mapping_syntemp_tree",
+      "recheck_mapping_mapping_syntemp_paper_xml",
+      "recheck_mapping_mapping_syntemp_commit",
+      "recheck_mapping_mapping_localmapper_2024_license",
+      "recheck_mapping_mapping_localmapper_2024_readme",
+      "recheck_mapping_mapping_localmapper_2024_tree",
+      "recheck_mapping_mapping_localmapper_2024_golden",
+      "recheck_mapping_mapping_golden_native_license",
+      "recheck_mapping_mapping_golden_native_readme",
+      "recheck_mapping_mapping_golden_native_zip",
+      "recheck_mapping_mapping_golden_clean_tree"
+    ],
+    "expected_bytes": 528456,
+    "expected_rows": 1758,
+    "expected_sha256": "ccce1ab8a18a45559cdbf87bcd3ecd838fc6e1cd1e3ad8d5815e39af5ddd49d9",
+    "format": "csv.gz",
+    "key": "aam/golden",
+    "license_expression": "GPL-3.0-only AND LGPL-2.1-only AND MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes.",
+      "Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it."
+    ],
+    "namespace": "canonical",
+    "partition": "copyleft",
+    "path": "Data/aam/golden.csv.gz",
+    "qualification": "Exact1758reaction and reference-label rows match historical LocalMapper comparison under GPL3; original Golden author repository explicitly distributes hand-curated data under repository LGPL2.1.",
+    "rights_status": "verified_redistributable",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 1758,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "chen2024precise",
+      "lin2022atom"
+    ],
+    "path": "Data/aam/golden.csv.gz",
+    "sha256": "ccce1ab8a18a45559cdbf87bcd3ecd838fc6e1cd1e3ad8d5815e39af5ddd49d9",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "chen2024precise",
+      "lin2022atom"
+    ],
+    "counting_unit": "source-table row",
+    "key": "aam/golden",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/aam/golden.csv.gz",
+    "role": "primary",
+    "rows": 1758,
+    "sha256": "ccce1ab8a18a45559cdbf87bcd3ecd838fc6e1cd1e3ad8d5815e39af5ddd49d9",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "Golden atom-mapping set"
+  },
+  "stored_path": "Data/families/representation/atom_mapping/canonical/aam/golden/data.csv.gz",
+  "task_id": "atom_mapping",
+  "title": "Golden atom-mapping set"
+}

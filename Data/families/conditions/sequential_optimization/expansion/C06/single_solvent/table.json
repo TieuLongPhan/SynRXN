@@ -1,0 +1,81 @@
+{
+  "counting_unit": "flow-condition observation",
+  "data_link": "data.parquet",
+  "family_id": "conditions",
+  "format": "parquet",
+  "key": "C06/single_solvent",
+  "namespace": "expansion",
+  "registry_binding": {
+    "adapter_ids": [
+      "sequential_optimization"
+    ],
+    "commercial_use_allowed": true,
+    "counted_under": "expansion:C06/catechol",
+    "counting_unit": "flow-condition observation",
+    "key": "C06/single_solvent",
+    "namespace": "expansion",
+    "partition": "main",
+    "qualification": "Single-solvent observations overlap the complete panel. Residence time is an input, not an observed time trajectory. Missing mass is not renormalized.",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "verified_upstream_grant",
+    "role": "overlapping_view",
+    "rows": 656
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "catechol_dataset_metadata",
+      "catechol_license"
+    ],
+    "expected_bytes": 57554,
+    "expected_rows": 656,
+    "expected_sha256": "9567764950291fd19115fc4fe05d44ef1975207b23c06c7a04b021b405455964",
+    "format": "parquet",
+    "key": "C06/single_solvent",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "expansion",
+    "partition": "main",
+    "path": "Data/expansion/main/C06/single_solvent.parquet",
+    "qualification": "Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.",
+    "rights_status": "verified_upstream_grant",
+    "role": "overlapping_view"
+  },
+  "role": "overlapping_view",
+  "rows": 656,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/expansion/main/C06/single_solvent.parquet",
+    "sha256": "9567764950291fd19115fc4fe05d44ef1975207b23c06c7a04b021b405455964",
+    "source_catalogue": "Data/expansion/catalog.json",
+    "source_id": "C06",
+    "source_urls": [
+      "https://github.com/jpfolch/catechol_solvent_selection",
+      "https://proceedings.neurips.cc/paper_files/paper/2025/file/ad61e68e2c4208d5d092b3ecd6064b46-Paper-Datasets_and_Benchmarks_Track.pdf"
+    ]
+  },
+  "source_table_metadata": {
+    "counted_under": "expansion:C06/catechol",
+    "counting_unit": "flow-condition observation",
+    "key": "C06/single_solvent",
+    "namespace": "expansion",
+    "path": "Data/expansion/main/C06/single_solvent.parquet",
+    "role": "overlapping_view",
+    "rows": 656,
+    "sha256": "9567764950291fd19115fc4fe05d44ef1975207b23c06c7a04b021b405455964",
+    "source_catalogue": "Data/expansion/catalog.json",
+    "source_id": "C06",
+    "source_urls": [
+      "https://github.com/jpfolch/catechol_solvent_selection",
+      "https://proceedings.neurips.cc/paper_files/paper/2025/file/ad61e68e2c4208d5d092b3ecd6064b46-Paper-Datasets_and_Benchmarks_Track.pdf"
+    ],
+    "title": "Single-solvent subset (overlapping view)"
+  },
+  "stored_path": "Data/families/selectivity/product_distribution/expansion/C06/single_solvent/data.parquet",
+  "task_id": "sequential_optimization",
+  "title": "Single-solvent subset (overlapping view)"
+}

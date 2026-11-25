@@ -1,0 +1,74 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "conditions",
+  "format": "csv.gz",
+  "key": "condition_sharealike/openexp",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "condition_sharealike/openexp",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "sharealike",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-SA-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 274439
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "openexp_paper"
+    ],
+    "expected_bytes": 128234586,
+    "expected_rows": 274439,
+    "expected_sha256": "f38c6bf858aa6d6d983c15199fc90f28e999ba6ea670229ab0307e70e919edc2",
+    "format": "csv.gz",
+    "key": "condition_sharealike/openexp",
+    "license_expression": "CC-BY-SA-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes.",
+      "Comply with the applicable ShareAlike requirements for adapted material."
+    ],
+    "namespace": "canonical",
+    "partition": "sharealike",
+    "path": "Data/condition_sharealike/openexp.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 274439,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "liu2024reactxt"
+    ],
+    "path": "Data/condition_sharealike/openexp.csv.gz",
+    "sha256": "f38c6bf858aa6d6d983c15199fc90f28e999ba6ea670229ab0307e70e919edc2",
+    "source_catalogue": "doc/_static/catalog-sharealike-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "liu2024reactxt"
+    ],
+    "counting_unit": "source-table row",
+    "key": "condition_sharealike/openexp",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/condition_sharealike/openexp.csv.gz",
+    "role": "primary",
+    "rows": 274439,
+    "sha256": "f38c6bf858aa6d6d983c15199fc90f28e999ba6ea670229ab0307e70e919edc2",
+    "source_catalogue": "doc/_static/catalog-sharealike-data.json",
+    "title": "OpenExp experimental procedure benchmark"
+  },
+  "stored_path": "Data/families/conditions/procedure_generation/canonical/condition_sharealike/openexp/data.csv.gz",
+  "task_id": "procedure_generation",
+  "title": "OpenExp experimental procedure benchmark"
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "dataset_key": "condition/orderly_condition.csv.gz",
+  "source_url": "https://figshare.com/ndownloader/files/44413040",
+  "source_doi": "10.6084/m9.figshare.23298467.v4",
+  "source_commit_or_version": "4",
+  "source_file": "orderly_condition_test.parquet",
+  "source_file_id": 44413040,
+  "source_rows": 65445,
+  "source_bytes": 37584777,
+  "source_md5": "8951deb64a746d7ff20e9cea12a96910",
+  "source_sha256": "d9b2b8a34960db23904c06965113969c051565eb7379973f40a544f592897c55",
+  "source_partition": "test",
+  "upstream_license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "required_attribution": [
+    "10.1021/acs.jcim.4c00292",
+    "10.6084/m9.figshare.23298467.v4"
+  ],
+  "redistribution_partition": "main",
+  "retrieved_at": "2026-08-21"
+}

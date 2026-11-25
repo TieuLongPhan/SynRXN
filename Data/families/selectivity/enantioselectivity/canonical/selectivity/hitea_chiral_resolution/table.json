@@ -1,0 +1,74 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "selectivity",
+  "format": "csv.gz",
+  "key": "selectivity/hitea_chiral_resolution",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "selectivity/hitea_chiral_resolution",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 50
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "hitea_license",
+      "hitea_readme"
+    ],
+    "expected_bytes": 5842,
+    "expected_rows": 50,
+    "expected_sha256": "deffeb88f4a3d9e1f1ea98ece7cdcda2f42ba8edaae899771df2aab5f1ddd8b7",
+    "format": "csv.gz",
+    "key": "selectivity/hitea_chiral_resolution",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/selectivity/hitea_chiral_resolution.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 50,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "kingsmith2024reactome"
+    ],
+    "path": "Data/selectivity/hitea_chiral_resolution.csv.gz",
+    "sha256": "deffeb88f4a3d9e1f1ea98ece7cdcda2f42ba8edaae899771df2aab5f1ddd8b7",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "kingsmith2024reactome"
+    ],
+    "counting_unit": "source-table row",
+    "key": "selectivity/hitea_chiral_resolution",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/selectivity/hitea_chiral_resolution.csv.gz",
+    "role": "primary",
+    "rows": 50,
+    "sha256": "deffeb88f4a3d9e1f1ea98ece7cdcda2f42ba8edaae899771df2aab5f1ddd8b7",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "HiTEA chiral-resolution enantiomeric excess"
+  },
+  "stored_path": "Data/families/selectivity/enantioselectivity/canonical/selectivity/hitea_chiral_resolution/data.csv.gz",
+  "task_id": "enantioselectivity",
+  "title": "HiTEA chiral-resolution enantiomeric excess"
+}

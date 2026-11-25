@@ -1,0 +1,66 @@
+{
+  "id": "C02",
+  "name": "Borylation HTE and regioselectivity",
+  "priority": "1 Integrate first",
+  "survey_license_note": "CC BY 4.0 on the Zenodo data record.",
+  "paper_urls": [
+    "https://www.nature.com/articles/s43588-026-01063-0"
+  ],
+  "data_urls": [
+    "https://zenodo.org/records/20773622"
+  ],
+  "project_urls": [],
+  "license_urls": [
+    "https://zenodo.org/api/records/20773622"
+  ],
+  "license_verified": true,
+  "files": [
+    {
+      "name": "Minot_AL2_Data.csv",
+      "bytes": 370564,
+      "checksum": "md5:7de21d6809d4039a11bd19477bb44df8",
+      "url": "https://zenodo.org/api/records/20773622/files/Minot_AL2_Data.csv/content"
+    },
+    {
+      "name": "Minot_AL1_Data.csv",
+      "bytes": 1140015,
+      "checksum": "md5:4f7d2d265ac5b5c7c1ffe46a27ec20e0",
+      "url": "https://zenodo.org/api/records/20773622/files/Minot_AL1_Data.csv/content"
+    },
+    {
+      "name": "Minot_AL3_Data.csv",
+      "bytes": 382624,
+      "checksum": "md5:8a0eed2ea6a8defd57e78f5b4ba9a70f",
+      "url": "https://zenodo.org/api/records/20773622/files/Minot_AL3_Data.csv/content"
+    },
+    {
+      "name": "Regio_Data.csv",
+      "bytes": 74184,
+      "checksum": "md5:104aec4259da735026543317bafbae58",
+      "url": "https://zenodo.org/api/records/20773622/files/Regio_Data.csv/content"
+    },
+    {
+      "name": "Minot_preAL_Data.csv",
+      "bytes": 824834,
+      "checksum": "md5:2ddbc7badbe9ed3e832ba4fe5cbab3df",
+      "url": "https://zenodo.org/api/records/20773622/files/Minot_preAL_Data.csv/content"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://zenodo.org/api/records/20773622",
+      "status": 200,
+      "sha256": "492ce96244448cffe0b39d034a78c18ec8208e1365c7149724c58322217524b4",
+      "bytes": 6022,
+      "retrieved_at": "2026-10-20T15:34:13.846055+00:00"
+    }
+  ],
+  "record_id": "20773622",
+  "doi": "10.5281/zenodo.20773622",
+  "title": "Advancing chemical reaction prediction in data-scarce drug discovery with active and geometric deep learning",
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "publication_date": "2026-06-20",
+  "description": "<p>Dataset for the manuscript Advancing chemical reaction prediction in data-scarce drug discovery with active and geometric deep learning</p>"
+}

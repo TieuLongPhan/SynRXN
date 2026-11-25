@@ -1,0 +1,117 @@
+{
+  "counting_unit": "reference record; task views can overlap native experiments",
+  "data_link": "data.jsonl.gz",
+  "family_id": "process",
+  "format": "jsonl.gz",
+  "key": "process/reac_discovery_cs2",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/process/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "reference record; task views can overlap native experiments",
+    "coverage_branch": "process",
+    "key": "process/reac_discovery_cs2",
+    "license": "MIT",
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/process/reac_discovery_cs2.jsonl.gz",
+    "qualification": "Experimental reactor geometry and operating conditions predict NMR-derived yield and reported space–time yield. These are fixed reactor-scale experiments, not matched laboratory/pilot scale-up pairs. M1 is an overlapping representation of the same campaign and is deliberately not counted again. Source geometry symbols/units retained; source methods required before cross-source unit conversion.",
+    "reference_evidence": "Author repository M2 workbook Hoja1; article Figures4–6 describe experimental yield/STY measurements and M1/M2 geometry views.",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 58,
+    "sha256": "49764a1137e6e8622c635373da75f4f440eca08ebd86fef2457393f05747469d",
+    "source_id": "REACDISCOVERY2025",
+    "source_sha256": "4a21f718eb924b4c1685e7069d384bf5197a0f47e1dbef181265e141dd682c63",
+    "source_url": "https://doi.org/10.1038/s41467-025-64127-1",
+    "task_fields": {
+      "reactor_scale_modeling": {
+        "group_fields": [
+          "reaction_system",
+          "reactor_geometry_id"
+        ],
+        "inputs": [
+          "reaction_system",
+          "SA",
+          "PP",
+          "FV",
+          "t",
+          "Qg",
+          "Ql",
+          "C",
+          "T"
+        ],
+        "metrics": [
+          "MAE per endpoint",
+          "held-out-geometry MAE"
+        ],
+        "targets": [
+          "Yield",
+          "STY"
+        ]
+      }
+    },
+    "task_ids": [
+      "reactor_scale_modeling"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "reference record; task views can overlap native experiments",
+    "expected_bytes": null,
+    "expected_rows": 58,
+    "expected_sha256": "49764a1137e6e8622c635373da75f4f440eca08ebd86fef2457393f05747469d",
+    "format": "jsonl.gz",
+    "key": "process/reac_discovery_cs2",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/process/reac_discovery_cs2.jsonl.gz",
+    "qualification": "Experimental reactor geometry and operating conditions predict NMR-derived yield and reported space–time yield. These are fixed reactor-scale experiments, not matched laboratory/pilot scale-up pairs. M1 is an overlapping representation of the same campaign and is deliberately not counted again. Source geometry symbols/units retained; source methods required before cross-source unit conversion.",
+    "reasons": [],
+    "reference_evidence": "Author repository M2 workbook Hoja1; article Figures4–6 describe experimental yield/STY measurements and M1/M2 geometry views.",
+    "release_eligible": true,
+    "source_id": "REACDISCOVERY2025",
+    "source_url": "https://doi.org/10.1038/s41467-025-64127-1",
+    "task_ids": [
+      "reactor_scale_modeling"
+    ]
+  },
+  "role": "primary",
+  "rows": 58,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/process/reac_discovery_cs2.jsonl.gz",
+    "sha256": "49764a1137e6e8622c635373da75f4f440eca08ebd86fef2457393f05747469d",
+    "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+    "source_id": "REACDISCOVERY2025",
+    "source_urls": [
+      "https://doi.org/10.1038/s41467-025-64127-1"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "reference record; task views can overlap native experiments",
+    "key": "process/reac_discovery_cs2",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/process/reac_discovery_cs2.jsonl.gz",
+    "qualification": "Experimental reactor geometry and operating conditions predict NMR-derived yield and reported space–time yield. These are fixed reactor-scale experiments, not matched laboratory/pilot scale-up pairs. M1 is an overlapping representation of the same campaign and is deliberately not counted again. Source geometry symbols/units retained; source methods required before cross-source unit conversion.",
+    "role": "primary",
+    "rows": 58,
+    "sha256": "49764a1137e6e8622c635373da75f4f440eca08ebd86fef2457393f05747469d",
+    "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+    "source_id": "REACDISCOVERY2025",
+    "source_urls": [
+      "https://doi.org/10.1038/s41467-025-64127-1"
+    ],
+    "title": "Reac-Discovery case study 2"
+  },
+  "stored_path": "Data/families/process/reactor_scale_modeling/coverage/process/reac_discovery_cs2/data.jsonl.gz",
+  "task_id": "reactor_scale_modeling",
+  "title": "Reac-Discovery case study 2"
+}

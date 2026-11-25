@@ -1,0 +1,225 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 8,
+    "data_links": 8,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 8,
+    "stored_rows_across_unique_views": 22874,
+    "task_table_bindings": 8,
+    "tasks": 1,
+    "unique_table_views": 8
+  },
+  "tables": [
+    {
+      "data_link": "canonical/selectivity/hitea_chiral_resolution/data.csv.gz",
+      "key": "selectivity/hitea_chiral_resolution",
+      "metadata": "canonical/selectivity/hitea_chiral_resolution/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "expansion/C16/aldol_reaction_dataset/data.parquet",
+      "key": "C16/aldol_reaction_dataset",
+      "metadata": "expansion/C16/aldol_reaction_dataset/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C16/michael_addition_dataset/data.parquet",
+      "key": "C16/michael_addition_dataset",
+      "metadata": "expansion/C16/michael_addition_dataset/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C16/validation_in_house_acetone/data.parquet",
+      "key": "C16/validation_in_house_acetone",
+      "metadata": "expansion/C16/validation_in_house_acetone/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C16/validation_in_house_hydroxyacetone/data.parquet",
+      "key": "C16/validation_in_house_hydroxyacetone",
+      "metadata": "expansion/C16/validation_in_house_hydroxyacetone/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C16/validation_new_literature_aldol/data.parquet",
+      "key": "C16/validation_new_literature_aldol",
+      "metadata": "expansion/C16/validation_new_literature_aldol/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C16/validation_new_literature_michael/data.parquet",
+      "key": "C16/validation_new_literature_michael",
+      "metadata": "expansion/C16/validation_new_literature_michael/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C16/validation_virtual_chemist/data.parquet",
+      "key": "C16/validation_virtual_chemist",
+      "metadata": "expansion/C16/validation_virtual_chemist/table.json",
+      "namespace": "expansion"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "selectivity/hitea_chiral_resolution",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 50
+      },
+      {
+        "adapter_ids": [
+          "enantioselectivity"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "literature or validation observation",
+        "key": "C16/aldol_reaction_dataset",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 13360
+      },
+      {
+        "adapter_ids": [
+          "enantioselectivity"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "literature or validation observation",
+        "key": "C16/michael_addition_dataset",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 9194
+      },
+      {
+        "adapter_ids": [
+          "enantioselectivity"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "literature or validation observation",
+        "key": "C16/validation_in_house_acetone",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 24
+      },
+      {
+        "adapter_ids": [
+          "enantioselectivity"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "literature or validation observation",
+        "key": "C16/validation_in_house_hydroxyacetone",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 17
+      },
+      {
+        "adapter_ids": [
+          "enantioselectivity"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "literature or validation observation",
+        "key": "C16/validation_new_literature_aldol",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 81
+      },
+      {
+        "adapter_ids": [
+          "enantioselectivity"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "literature or validation observation",
+        "key": "C16/validation_new_literature_michael",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 109
+      },
+      {
+        "adapter_ids": [
+          "enantioselectivity"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "literature or validation observation",
+        "key": "C16/validation_virtual_chemist",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 39
+      }
+    ],
+    "canonical_keys": [
+      "selectivity/hitea_chiral_resolution"
+    ],
+    "counting_units": [
+      "literature or validation observation",
+      "source-table row"
+    ],
+    "extension_adapter_ids": [
+      "enantioselectivity"
+    ],
+    "family_id": "selectivity",
+    "id": "enantioselectivity",
+    "legacy_view_ids": [],
+    "metrics": [
+      "native_unit_MAE",
+      "orientation_accuracy_when_defined",
+      "coverage"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 22874,
+    "primary_table_count": 8,
+    "qualification": "Signed ee, absolute ee and derived energy differences are distinct; do not infer a favored stereoisomer when its convention is unresolved.",
+    "question": "Substrates, catalyst and recorded conditions -> source selectivity endpoint",
+    "readiness": "extension_adapter_available; standardized_contract_and_qualification_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 8,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Enantioselectivity"
+  }
+}

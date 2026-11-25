@@ -1,0 +1,131 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 1,
+    "data_links": 1,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 1,
+    "stored_rows_across_unique_views": 6865,
+    "task_table_bindings": 1,
+    "tasks": 1,
+    "unique_table_views": 1
+  },
+  "tables": [
+    {
+      "data_link": "coverage/knowledge/MinotScope2026/scope_campaigns/data.parquet",
+      "key": "knowledge/MinotScope2026/scope_campaigns",
+      "metadata": "coverage/knowledge/MinotScope2026/scope_campaigns/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "catalog_path": "Data/coverage_expansion/knowledge/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "attempted substrate-scope experiment",
+        "coverage_branch": "knowledge",
+        "key": "knowledge/MinotScope2026/scope_campaigns",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "parent_groups": 568,
+        "partition": "main",
+        "path": "Data/coverage_expansion/knowledge/scope_campaigns.parquet",
+        "qualification": "Bounded retrospective substrate-scope discovery variant from native adaptive rounds, preserving failed attempts and dates. Source success labels and conversion are references; no claim of new transformations, exhaustive product characterization or prospective discovery. These same observations already support other Minot tasks and are not additional independent experiments.",
+        "reference_evidence": "reported_experimental_hit_labels_and_conversion",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 6865,
+        "sha256": "a7b517e03bc29b8bc789d86d3d7ca72318014938ba9e3637d7de2b7b9e6486ac",
+        "source_id": "MinotScope2026",
+        "source_sha256": "56b5e6a470bef65f5d2d392fc458df0d2fc9c33360f6cc34673986074ba8f023",
+        "source_url": "https://doi.org/10.5281/zenodo.20773622",
+        "task_fields": {
+          "new_reactivity_discovery": {
+            "group_fields": [
+              "parent_group"
+            ],
+            "input_keys": [
+              "additive_1_eq",
+              "additive_1_smiles",
+              "atmosphere",
+              "catalyst_1_eq",
+              "catalyst_1_smiles",
+              "concentration_mol_l",
+              "ligand_1_eq",
+              "ligand_1_smiles",
+              "ligand_2_eq",
+              "ligand_2_smiles",
+              "reagent_1_eq",
+              "reagent_1_smiles",
+              "reagent_2_eq",
+              "reagent_2_smiles",
+              "scale_mol",
+              "solvent_1_fraction",
+              "solvent_1_smiles",
+              "solvent_2_fraction",
+              "solvent_2_smiles",
+              "startingmat_1_eq",
+              "startingmat_1_smiles",
+              "temperature_deg_c",
+              "time_h"
+            ],
+            "inputs": [
+              "inputs_json"
+            ],
+            "metrics": [
+              "source_hit_recovery_vs_budget",
+              "substrate_scope_coverage",
+              "failure_accounting"
+            ],
+            "split_policy": "SHA-256 parent-group 80/10/10 seed 2027; native split retained separately",
+            "target_keys": [
+              "native_hit_label",
+              "conversion_fraction"
+            ],
+            "targets": [
+              "targets_json"
+            ]
+          }
+        },
+        "task_ids": [
+          "new_reactivity_discovery"
+        ]
+      }
+    ],
+    "candidate_ids": [],
+    "candidate_status": "Source acquisition and qualification required",
+    "canonical_keys": [],
+    "counting_units": [
+      "attempted substrate-scope experiment"
+    ],
+    "evaluation": "Verified novel hits and useful scope coverage versus experiment budget; distinguish from scoring a fixed feasibility label",
+    "extension_adapter_ids": [],
+    "family_id": "design",
+    "id": "new_reactivity_discovery",
+    "legacy_view_ids": [],
+    "metrics": [
+      "failure_accounting",
+      "source_hit_recovery_vs_budget",
+      "substrate_scope_coverage"
+    ],
+    "origin": "promoted_from_initial_19_roadmap_definitions",
+    "primary_source_rows": 6865,
+    "primary_table_count": 1,
+    "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance.",
+    "question": "Allowed chemical space and prior observations -> novel experimentally verified transformations or scope expansion",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 1,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "required_data": "Time-resolved discovery campaigns, attempted failures, novelty definitions and independently verified products; an untested proposal is not a discovery",
+    "title": "New reactivity and substrate-scope discovery"
+  }
+}

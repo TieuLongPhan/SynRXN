@@ -1,0 +1,55 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "family": {
+    "counting_units": [
+      "reference record; task views can overlap native experiments"
+    ],
+    "data_counting_policy": "Deduplicated by namespace/source-table key within this family only; row units can differ, source views can overlap and rows are not unique reactions. Inspect each binding's counting_unit and physical configuration counts.",
+    "data_status": "local task references present; qualification varies",
+    "future_task_ids": [],
+    "gaps": "Measured reactor geometry/response, pilot-scale observations, published CSTR simulations and coke-yield quantities are acquired. Some scale-up descendants are interpolations; process impact is a narrow coke quantity, without complete energy/cost/LCA/hazard coverage.",
+    "id": "process",
+    "overlapping_view_count": 0,
+    "primary_source_rows": 10788,
+    "primary_table_count": 7,
+    "release_eligible_table_count": 7,
+    "scope": "Reactor and scale-dependent behaviour, mixing/transport, dynamic operation and control, materials/energy/cost/waste and operational hazard assessment for a reaction process.",
+    "task_ids": [
+      "reactor_scale_modeling",
+      "process_control",
+      "process_impact_assessment"
+    ],
+    "title": "Reaction engineering and process assessment"
+  },
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 7,
+    "data_links": 10,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 7,
+    "stored_rows_across_unique_views": 10788,
+    "task_table_bindings": 10,
+    "tasks": 3,
+    "unique_table_views": 7
+  },
+  "tasks": [
+    {
+      "id": "reactor_scale_modeling",
+      "metadata": "reactor_scale_modeling/task.json",
+      "title": "Reactor and scale-dependent prediction"
+    },
+    {
+      "id": "process_control",
+      "metadata": "process_control/task.json",
+      "title": "Dynamic reaction-process operation and control"
+    },
+    {
+      "id": "process_impact_assessment",
+      "metadata": "process_impact_assessment/task.json",
+      "title": "Reaction-process resource and impact assessment"
+    }
+  ]
+}

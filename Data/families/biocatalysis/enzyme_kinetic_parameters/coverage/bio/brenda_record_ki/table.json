@@ -1,0 +1,116 @@
+{
+  "counting_unit": "source-derived qualified task row",
+  "data_link": "data.parquet",
+  "family_id": "biocatalysis",
+  "format": "parquet",
+  "key": "bio/brenda_record_ki",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/bio/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "source-derived qualified task row",
+    "coverage_branch": "bio",
+    "key": "bio/brenda_record_ki",
+    "license": "MIT AND CC-BY-4.0; CatPred contribution MIT; underlying BRENDA/UniProt data CC-BY-4.0",
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/bio/brenda_record_ki.parquet",
+    "qualification": "Release subset contains only native rows explicitly labeled brenda, using each retained row's value/log10_value. All pooled max/mean target columns, sabio rows and ambiguous uniprot_search origins are excluded. This changes the prediction target from CatPred's aggregate benchmark to a retained BRENDA-record response. Source preprocessing capped extreme values; no claim of uncensored raw laboratory measurements. Intended source units retained, no independent experimental unit audit. Derived 40%-cluster split is not the original random split. Native combined source assets must not be redistributed as part of this cleared subset.",
+    "reference_evidence": "Identifiable BRENDA retained record, established by pinned source-specific processors and merge.py; mathematical log10/value consistency checked.",
+    "release_eligible": true,
+    "release_license_expression": "MIT AND CC-BY-4.0",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 5517,
+    "sha256": "6c0d260b601df0ac8bca895a759ed0c8dc8b9eac5048deffe34c9071186ef704",
+    "source_id": "C15",
+    "source_sha256": "ba3bbddc54743298214d643206d6bc0c5e068fb01656f3f0d6e7bcba16456180",
+    "source_url": "https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/ki-random_trainvaltest.csv",
+    "task_fields": {
+      "enzyme_kinetic_parameters": {
+        "group_fields": [
+          "sequence_group",
+          "native_pair_group",
+          "native_cluster_40",
+          "native_cluster_80",
+          "derived_split"
+        ],
+        "inputs": [
+          "enzyme_sequence",
+          "substrate_smiles",
+          "parameter",
+          "temperature_native",
+          "ph"
+        ],
+        "metrics": [
+          "parameter-specific log10 MAE",
+          "RMSE",
+          "R2"
+        ],
+        "targets": [
+          "target_log10_brenda_record"
+        ]
+      }
+    },
+    "task_ids": [
+      "enzyme_kinetic_parameters"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-derived qualified task row",
+    "expected_bytes": null,
+    "expected_rows": 5517,
+    "expected_sha256": "6c0d260b601df0ac8bca895a759ed0c8dc8b9eac5048deffe34c9071186ef704",
+    "format": "parquet",
+    "key": "bio/brenda_record_ki",
+    "license_expression": "MIT AND CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/bio/brenda_record_ki.parquet",
+    "qualification": "Release subset contains only native rows explicitly labeled brenda, using each retained row's value/log10_value. All pooled max/mean target columns, sabio rows and ambiguous uniprot_search origins are excluded. This changes the prediction target from CatPred's aggregate benchmark to a retained BRENDA-record response. Source preprocessing capped extreme values; no claim of uncensored raw laboratory measurements. Intended source units retained, no independent experimental unit audit. Derived 40%-cluster split is not the original random split. Native combined source assets must not be redistributed as part of this cleared subset.",
+    "reasons": [],
+    "reference_evidence": "Identifiable BRENDA retained record, established by pinned source-specific processors and merge.py; mathematical log10/value consistency checked.",
+    "release_eligible": true,
+    "source_id": "C15",
+    "source_url": "https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/ki-random_trainvaltest.csv",
+    "task_ids": [
+      "enzyme_kinetic_parameters"
+    ]
+  },
+  "role": "primary",
+  "rows": 5517,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/bio/brenda_record_ki.parquet",
+    "sha256": "6c0d260b601df0ac8bca895a759ed0c8dc8b9eac5048deffe34c9071186ef704",
+    "source_catalogue": "Data/coverage_expansion/bio/catalog.json",
+    "source_id": "C15",
+    "source_urls": [
+      "https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/ki-random_trainvaltest.csv"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "source-derived qualified task row",
+    "key": "bio/brenda_record_ki",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/bio/brenda_record_ki.parquet",
+    "qualification": "Release subset contains only native rows explicitly labeled brenda, using each retained row's value/log10_value. All pooled max/mean target columns, sabio rows and ambiguous uniprot_search origins are excluded. This changes the prediction target from CatPred's aggregate benchmark to a retained BRENDA-record response. Source preprocessing capped extreme values; no claim of uncensored raw laboratory measurements. Intended source units retained, no independent experimental unit audit. Derived 40%-cluster split is not the original random split. Native combined source assets must not be redistributed as part of this cleared subset.",
+    "role": "primary",
+    "rows": 5517,
+    "sha256": "6c0d260b601df0ac8bca895a759ed0c8dc8b9eac5048deffe34c9071186ef704",
+    "source_catalogue": "Data/coverage_expansion/bio/catalog.json",
+    "source_id": "C15",
+    "source_urls": [
+      "https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/ki-random_trainvaltest.csv"
+    ],
+    "title": "BRENDA Ki records"
+  },
+  "stored_path": "Data/families/biocatalysis/enzyme_kinetic_parameters/coverage/bio/brenda_record_ki/data.parquet",
+  "task_id": "enzyme_kinetic_parameters",
+  "title": "BRENDA Ki records"
+}

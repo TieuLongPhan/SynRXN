@@ -1,0 +1,94 @@
+{
+  "schema": "synrxn.metambd-cyclic-processing.v3",
+  "dataset": "metambd_cyclic",
+  "task": "aam",
+  "source_archive": "Data/raw/metambd_cyclic/ringreactions.zip",
+  "archive_sha256": "cc5cb4dfbf5f830f7da369ffc250cc1323b88963193969b63216d8f5e7a5b237",
+  "source_members": {
+    "train": {
+      "member": "ringreactions/train_ringreactions.csv",
+      "bytes": 1023948,
+      "sha256": "0081d71fafd05833d66f93a451fea0e5b80810fd4971a388d5c88bb7ba12ea63"
+    },
+    "test": {
+      "member": "ringreactions/test_ringreactions.csv",
+      "bytes": 303615,
+      "sha256": "c0b5f4ef03c037d46f25f9b0e2b0aa7dcffed51ae1df89dad05f886f2bec01a1"
+    }
+  },
+  "canonical_aam_table": "Data/tables/canonical/aam/metambd_cyclic.csv.gz",
+  "canonical_rows": 177,
+  "fields": [
+    "r_id",
+    "ground_truth",
+    "rxn",
+    "original_id",
+    "split",
+    "ground_truth_variants"
+  ],
+  "counts": {
+    "train": {
+      "source_rows": 141,
+      "source_cells": 3472,
+      "accepted_cells": 3470,
+      "hydrogen_map_mismatch_cells": 638,
+      "spectator_component_pairs_removed": 0,
+      "mapping_references": 141,
+      "rejected_cells": 2,
+      "distinct_inputs": 137
+    },
+    "test": {
+      "source_rows": 36,
+      "source_cells": 1141,
+      "accepted_cells": 1140,
+      "hydrogen_map_mismatch_cells": 340,
+      "spectator_component_pairs_removed": 0,
+      "mapping_references": 719,
+      "rejected_cells": 1,
+      "distinct_inputs": 35
+    }
+  },
+  "train_policy": "first candidate per original source row; one selected reference",
+  "test_policy": "one case per source row; full ITS deduplication within each case",
+  "rxn_policy": "first candidate only; spectator removal; clear maps; canonical isomeric SMILES",
+  "mapping_scope": "heavy atoms; preserve proton participants; clear unmatched H map labels",
+  "its_policy": "full heavy-atom ITS; absolute paired attributes, isotopes and stereo; exact iso after WL",
+  "proton_policy": "hydrogen-only component signatures supplement heavy-atom ITS comparison",
+  "reference_tier": "source candidates; no positive/negative correctness labels inferred",
+  "raw_candidates": "all original strings and order preserved in candidate provenance",
+  "candidate_provenance": "Data/metadata/reconstruction/metambd_cyclic/candidates.jsonl.gz",
+  "report": "Data/metadata/reconstruction/metambd_cyclic/processing-summary.json",
+  "rejected_cells": [
+    {
+      "split": "train",
+      "source_row": 33,
+      "source_column": 124,
+      "reason": "ValueError: invalid_or_truncated_smiles"
+    },
+    {
+      "split": "train",
+      "source_row": 126,
+      "source_column": 125,
+      "reason": "ValueError: invalid_or_truncated_smiles"
+    },
+    {
+      "split": "test",
+      "source_row": 19,
+      "source_column": 120,
+      "reason": "ValueError: not_a_reaction"
+    }
+  ],
+  "exact_first_input_overlap": 0,
+  "source_license": "not supplied in archive",
+  "redistribution_partition": "excluded",
+  "runtime_versions": {
+    "rdkit": "2026.3.1",
+    "synkit": "1.6.2",
+    "networkx": "3.6.1"
+  },
+  "processing_script_sha256": "d8cc65fa3c66de418792c79c22a48f9649a80052310bf76e014c37cfd6963090",
+  "output_sha256": {
+    "Data/tables/canonical/aam/metambd_cyclic.csv.gz": "e83f6ff5f6c30291780c66a77a5b4a5cdda100fdd53973642c30f5ef6451eecb",
+    "Data/metadata/reconstruction/metambd_cyclic/candidates.jsonl.gz": "adecdcad9ad5c53aad14d04741b8772eda0d8a65ec18ba941e32e69ffbaabd58"
+  }
+}

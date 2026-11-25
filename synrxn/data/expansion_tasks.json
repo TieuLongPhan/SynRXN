@@ -1,0 +1,293 @@
+{
+  "schema": "synrxn.expansion-tasks.v1",
+  "tasks": [
+    {
+      "title": "Yield / conversion",
+      "inputs": "Reactants, catalyst and conditions",
+      "target": "Continuous measured yield or conversion",
+      "candidate_ids": [
+        "C01",
+        "C03",
+        "C18"
+      ],
+      "recommended_split": "Substrate-pair and source/campaign holdouts",
+      "metrics": "MAE/RMSE in percentage points; Spearman rank",
+      "qualification": "Keep analytical yield, isolated yield and conversion separate.",
+      "id": "yield_conversion",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "measurement_endpoint_and_unit"
+    },
+    {
+      "title": "Reaction success",
+      "inputs": "A fully specified attempted reaction",
+      "target": "Observed success at a declared assay threshold",
+      "candidate_ids": [
+        "C01",
+        "C02"
+      ],
+      "recommended_split": "Substrate and source holdouts; retain failed attempts",
+      "metrics": "AUPRC, balanced accuracy, MCC; calibration",
+      "qualification": "A thresholded measured yield is an operational label. Missing data and sampled decoys are not failed experiments.",
+      "id": "reaction_success",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "attempted_experiment_and_declared_threshold"
+    },
+    {
+      "title": "Recorded-condition recovery",
+      "inputs": "Reactants and desired product",
+      "target": "Solvent/reagent/catalyst set, and conditions where available",
+      "candidate_ids": [
+        "C04",
+        "C19"
+      ],
+      "recommended_split": "Patent/time and reaction-family holdouts",
+      "metrics": "Top-k set recall; component F1; valid condition sets",
+      "qualification": "Extends existing SynRXN reagent/catalyst inference. A reported recipe is one acceptable answer, not a complete success set.",
+      "id": "recorded_condition_recovery",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "reported_recipe_only"
+    },
+    {
+      "title": "Measured condition ranking",
+      "inputs": "Fixed substrate pair and measured candidate conditions",
+      "target": "Ranked catalyst/condition choices by observed response",
+      "candidate_ids": [
+        "C01",
+        "C03",
+        "C18"
+      ],
+      "recommended_split": "Entire substrate-pair and campaign holdouts",
+      "metrics": "NDCG; Spearman rank; top-k yield regret",
+      "qualification": "Use measured comparable panels. Recorded-condition recovery alone cannot establish which condition is best.",
+      "id": "condition_ranking",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "comparable_measured_panel"
+    },
+    {
+      "title": "Regioselectivity",
+      "inputs": "Substrate, catalyst and conditions",
+      "target": "Reactive atom/site or ranked product sites",
+      "candidate_ids": [
+        "C02",
+        "C17"
+      ],
+      "recommended_split": "Substrate-scaffold and reaction-family holdouts",
+      "metrics": "Top-k site accuracy; symmetry-aware atom equivalence",
+      "qualification": "Product annotations do not establish complete product ratios or selectivity magnitudes.",
+      "id": "regioselectivity",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "product_annotation_or_validated_site_label"
+    },
+    {
+      "title": "Enantioselectivity",
+      "inputs": "Reactants, chiral catalyst and conditions",
+      "target": "ee, enantiomer ratio or ΔΔG‡",
+      "candidate_ids": [
+        "C05",
+        "C16",
+        "C13"
+      ],
+      "recommended_split": "Catalyst-family, substrate-family and paper holdouts",
+      "metrics": "MAE in native units; sign/dominant-enantiomer accuracy",
+      "qualification": "Preserve signed/absolute ee, temperature and target definition. ΔΔG‡ derived from ratios is not a directly measured barrier.",
+      "id": "enantioselectivity",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "unit_orientation_and_temperature"
+    },
+    {
+      "title": "Sequential optimization",
+      "inputs": "History of attempted conditions and responses",
+      "target": "Next condition or catalyst experiment",
+      "candidate_ids": [
+        "C02",
+        "C03",
+        "C06",
+        "C18"
+      ],
+      "recommended_split": "Hold out complete campaigns or substrate pairs",
+      "metrics": "Best response versus experiment budget; regret; hit count",
+      "qualification": "Use only observed candidate points for tabular replay. Label surrogate-based simulations separately.",
+      "id": "sequential_optimization",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "observed_candidate_pool_and_budget"
+    },
+    {
+      "title": "Condition-dependent product distribution",
+      "inputs": "Substrate, solvent composition, temperature and residence time",
+      "target": "Starting-material and product yields under each condition",
+      "candidate_ids": [
+        "C06"
+      ],
+      "recommended_split": "Group complete campaigns; hold out solvent mixtures or condition regions",
+      "metrics": "Per-product MAE; composition error; selectivity ranking",
+      "qualification": "These are condition-dependent outcomes, not physical trajectories or direct rate constants.",
+      "id": "product_distribution",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "per_product_measurement_units"
+    },
+    {
+      "title": "Solvent effects",
+      "inputs": "Reaction and specified solvent",
+      "target": "ΔΔG‡, ΔΔH‡ or solvent-dependent ΔG‡",
+      "candidate_ids": [
+        "C07",
+        "C10",
+        "C21"
+      ],
+      "recommended_split": "Group all solvents/methods for each reaction",
+      "metrics": "MAE/RMSE by energy type; per-reaction solvent ranking",
+      "qualification": "Relative solvent corrections and absolute free-energy barriers are different endpoints.",
+      "id": "solvent_effects",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "energy_type_unit_and_parent_reaction"
+    },
+    {
+      "title": "Rate constants / rate laws",
+      "inputs": "Reaction, catalyst where relevant, temperature and pressure",
+      "target": "log rate, Arrhenius parameters or enzyme kcat",
+      "candidate_ids": [
+        "C11",
+        "C15",
+        "C22"
+      ],
+      "recommended_split": "Reaction family; enzyme homology; source laboratory",
+      "metrics": "Log-space MAE/RMSE; rate-curve error over valid range",
+      "qualification": "Preserve units, valid T/p ranges, assay aggregation and measured/computed/estimated provenance.",
+      "id": "rate_constants",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "rate_type_units_temperature_pressure_evidence"
+    },
+    {
+      "title": "Transition-state geometry",
+      "inputs": "Reactant/product structures or reaction graph",
+      "target": "TS coordinates and verified saddle-point structure",
+      "candidate_ids": [
+        "C08",
+        "C12",
+        "C20"
+      ],
+      "recommended_split": "Reaction/pathway grouping with parent-source deduplication",
+      "metrics": "Aligned geometry error; connectivity; TS validation success",
+      "qualification": "Geometry RMSD alone is not proof of a first-order saddle point connecting the specified endpoints.",
+      "id": "ts_geometry",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "native_coordinates_and_saddle_validation"
+    },
+    {
+      "title": "Reactive energies and forces",
+      "inputs": "Atomic configuration with composition and context",
+      "target": "Potential energy and atomic forces",
+      "candidate_ids": [
+        "C08"
+      ],
+      "recommended_split": "Group all configurations from each NEB reaction pathway",
+      "metrics": "Energy MAE; force MAE; pathway/barrier consistency",
+      "qualification": "NEB pathways are not physical time trajectories. Keep parent pathways and shared chemistry out of different splits.",
+      "id": "reactive_potential",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "energy_force_units_and_entire_pathway_groups"
+    },
+    {
+      "title": "Multistep planning",
+      "inputs": "Target molecule and fixed starting-material stock",
+      "target": "Complete synthesis route",
+      "candidate_ids": [
+        "C09"
+      ],
+      "recommended_split": "Reference-route reaction/patent exclusion",
+      "metrics": "Solved fraction; reference top-k; diversity; model-call budget",
+      "qualification": "Reference recovery is one metric. Alternative valid routes should remain admissible.",
+      "id": "multistep_planning",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "stock_and_reference_exclusion_set"
+    },
+    {
+      "title": "Enzyme–reaction retrieval",
+      "inputs": "Reaction or enzyme sequence",
+      "target": "Ranked enzymes or ranked reactions",
+      "candidate_ids": [
+        "C14"
+      ],
+      "recommended_split": "Enzyme-homology, reaction and joint holdouts",
+      "metrics": "Recall@k, MRR, per-query enrichment",
+      "qualification": "Unannotated pairs are decoys rather than experimentally established negatives.",
+      "id": "enzyme_retrieval",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "annotated_positive_pairs_and_grouped_distractors"
+    },
+    {
+      "title": "Enzyme mutation effects",
+      "inputs": "Parent/variant sequence, reaction and assay context",
+      "target": "Change in yield, turnover or selectivity",
+      "candidate_ids": [
+        "C13"
+      ],
+      "recommended_split": "Entire campaign, lineage and protein-scaffold holdouts",
+      "metrics": "Within-campaign rank; MAE of normalized change",
+      "qualification": "Only compare measurements with compatible assay conditions and normalization.",
+      "id": "mutation_effects",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "parent_lineage_and_compatible_assays"
+    },
+    {
+      "title": "Reaction-conditioned active sites",
+      "inputs": "Reaction and enzyme sequence/structure",
+      "target": "Residue labels and site types",
+      "candidate_ids": [
+        "C23"
+      ],
+      "recommended_split": "Protein clusters plus reaction-family grouping",
+      "metrics": "Residue AUPRC, F1 and MCC",
+      "qualification": "Retain EC-inferred pairing evidence and overlap with ECREACT/M-CSA.",
+      "id": "active_sites",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "residue_labels_and_pairing_evidence"
+    },
+    {
+      "title": "Literature reaction extraction",
+      "inputs": "Abstract or source text",
+      "target": "Chemical conversions, enzymes and evidence links",
+      "candidate_ids": [
+        "C24"
+      ],
+      "recommended_split": "Article-level splits; entity and source holdouts",
+      "metrics": "Entity/relation F1; identifier-normalization accuracy",
+      "qualification": "This task concerns information extraction, not a large balanced reaction collection.",
+      "id": "literature_extraction",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "article_level_annotations"
+    },
+    {
+      "title": "Reaction completion / balancing",
+      "inputs": "Incomplete reaction equation",
+      "target": "Missing species and balanced completed equation",
+      "candidate_ids": [
+        "C25"
+      ],
+      "recommended_split": "Parent reaction, patent and template-family grouping",
+      "metrics": "Exact/set match; atom/charge balance; accepted alternatives",
+      "qualification": "Preserve template-derived provenance. Several chemically plausible completions may exist.",
+      "id": "reaction_completion",
+      "status": "protocol_specification",
+      "implementation_note": "Consult catalog.table.task_fields for an implemented, target-isolated adapter. A contract alone is not a completed model benchmark.",
+      "required_evidence": "source_equation_and_template_provenance"
+    }
+  ]
+}

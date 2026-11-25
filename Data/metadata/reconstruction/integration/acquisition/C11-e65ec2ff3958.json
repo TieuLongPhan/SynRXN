@@ -1,0 +1,12 @@
+{
+  "source_id": "C11",
+  "name": "SCHEMA.md",
+  "bytes": 12318,
+  "checksum": "md5:d0e7f364ac456c5fadf062636d6bbbcb",
+  "url": "https://zenodo.org/api/records/20060606/files/SCHEMA.md/content",
+  "path": "Data/raw/synrxn2/C11/SCHEMA.md",
+  "bytes_observed": 12318,
+  "sha256": "992eb13db2db0c6fb5add0b36cf0c2d0179a527999e22f2016611d8df297df54",
+  "md5": "d0e7f364ac456c5fadf062636d6bbbcb",
+  "status": "verified"
+}

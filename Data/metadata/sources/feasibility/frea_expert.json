@@ -1,0 +1,81 @@
+{
+  "build_report": {
+    "chemical_parsing_performed": false,
+    "columns": [
+      "sample_id",
+      "dataset",
+      "reaction_smiles",
+      "reactants",
+      "products",
+      "feasible",
+      "evidence_tier",
+      "label_method",
+      "negative_method",
+      "upstream_split",
+      "source_record_id",
+      "source_index",
+      "exact_reaction_group",
+      "additional_note",
+      "failure_reasons",
+      "difficulty"
+    ],
+    "dataset": "frea_expert",
+    "evidence_tiers": {
+      "expert_judgment": 751
+    },
+    "grouping": "SHA-256 of exact recorded reaction text; no claim of chemical/source independence",
+    "label_counts": {
+      "0": 410,
+      "1": 341
+    },
+    "membership": "Complete upstream expert test or corpus train/test, without custom benchmark subsampling",
+    "quarantined_rows": 0,
+    "rows": 751,
+    "sha256": "e9495a288e404d1ef6ff188f28809e9946e153d1ba6d67175ca13763d107507f",
+    "source_files": [
+      {
+        "rows": 751,
+        "sha256": "8a8dc6448e59578babe78c991cc04d0e91d95ddb4e09ee276486491e5437187d",
+        "source_file": "test.csv",
+        "upstream_split": "test"
+      }
+    ],
+    "source_methods": {
+      "not_recorded": 751
+    },
+    "upstream_splits": {
+      "test": 751
+    }
+  },
+  "dataset_key": "feasibility/frea_expert.csv.gz",
+  "document_sha256": {
+    "README.md": "835f3f7d88a86e05a882c6a6b6333da6ab874776385f85473798769d767c2fca"
+  },
+  "license_url": "https://huggingface.co/datasets/FREA-benchmark/FREA-benchmark/blob/526c8c99e1b3fff809984a337eaea2d156b861c3/README.md",
+  "limits": [
+    "Expert judgments of proposal feasibility, not experimental yield/success. The released CSV has no per-row candidate-source field; source grouping needs additional provenance.",
+    "Generated labels and expert judgments are separate evidence tiers.",
+    "No declaration that these labels are experimental success/failure measurements."
+  ],
+  "normalized_input_file": "frea_expert.csv.gz",
+  "normalized_input_sha256": "e9495a288e404d1ef6ff188f28809e9946e153d1ba6d67175ca13763d107507f",
+  "recorded_at": "2026-10-14T11:11:32.017951+00:00",
+  "redistribution_partition": "main",
+  "required_attribution": [
+    "FREA benchmark authors",
+    "https://arxiv.org/abs/2610.06614"
+  ],
+  "retrieved_at": "2026-10-14",
+  "schema_version": "1.0",
+  "source_commit_or_version": "526c8c99e1b3fff809984a337eaea2d156b861c3",
+  "source_file": [
+    "test.csv"
+  ],
+  "source_files": {
+    "test.csv": "8a8dc6448e59578babe78c991cc04d0e91d95ddb4e09ee276486491e5437187d"
+  },
+  "source_sha256": "8a8dc6448e59578babe78c991cc04d0e91d95ddb4e09ee276486491e5437187d",
+  "source_url": "https://huggingface.co/datasets/FREA-benchmark/FREA-benchmark",
+  "terms_evidence": "Dataset card explicitly declares CC-BY-4.0; paper-linked expert benchmark.",
+  "upstream_license": "CC-BY-4.0"
+}

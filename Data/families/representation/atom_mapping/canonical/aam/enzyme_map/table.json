@@ -1,0 +1,73 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "representation",
+  "format": "csv.gz",
+  "key": "aam/enzyme_map",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "aam/enzyme_map",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 47974
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "enzymemap_data_grant"
+    ],
+    "expected_bytes": 3818594,
+    "expected_rows": 47974,
+    "expected_sha256": "303e6638819a008f1442291443459795e9bb40b3cdea9e9da01732d05f20b807",
+    "format": "csv.gz",
+    "key": "aam/enzyme_map",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/aam/enzyme_map.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 47974,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "heid2023enzymemap"
+    ],
+    "path": "Data/aam/enzyme_map.csv.gz",
+    "sha256": "303e6638819a008f1442291443459795e9bb40b3cdea9e9da01732d05f20b807",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "heid2023enzymemap"
+    ],
+    "counting_unit": "source-table row",
+    "key": "aam/enzyme_map",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/aam/enzyme_map.csv.gz",
+    "role": "primary",
+    "rows": 47974,
+    "sha256": "303e6638819a008f1442291443459795e9bb40b3cdea9e9da01732d05f20b807",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "EnzymeMap atom mapping"
+  },
+  "stored_path": "Data/families/representation/atom_mapping/canonical/aam/enzyme_map/data.csv.gz",
+  "task_id": "atom_mapping",
+  "title": "EnzymeMap atom mapping"
+}

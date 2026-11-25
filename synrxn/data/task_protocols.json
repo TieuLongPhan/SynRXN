@@ -1,0 +1,432 @@
+{
+  "schema": "synrxn.task-views.v1",
+  "recorded_on": "2026-10-14",
+  "tasks": [
+    {
+      "id": "classification",
+      "name": "Reaction classification",
+      "selectors": [
+        {
+          "prefix": "classification/",
+          "exclude": [
+            "classification/ehreact_activity.csv.gz"
+          ]
+        }
+      ],
+      "targets": [
+        "label",
+        "label_0",
+        "label_1",
+        "label_2",
+        "ec1",
+        "ec2",
+        "ec3"
+      ],
+      "version": "1.0",
+      "require_product": true,
+      "metrics": [
+        "macro_F1",
+        "accuracy"
+      ],
+      "group_priority": [
+        "overall_reaction_group",
+        "chemical_split_group",
+        "exact_reaction_group"
+      ],
+      "permitted_inputs": "Recorded reactant and product strings; class labels withheld.",
+      "withheld": [
+        "targets",
+        "target_masks",
+        "names",
+        "taxonomy",
+        "source_generation_method",
+        "reference_certificates",
+        "split_assignments"
+      ],
+      "failure_policy": "Freeze source-field eligibility before prediction. Report attempted, valid and failed predictions against all eligible records. Classification/set/mechanism recovery counts missing or invalid outputs as misses. Regression and probability metrics require finite valid outputs; report their paired denominator and failure fraction explicitly rather than silently assigning failures a numeric value.",
+      "grouping_scope": "Recorded source chemical keys where provided, exact reaction-text keys otherwise. No universal chemical or source independence claim.",
+      "proposed_split": {
+        "seed": 42,
+        "train": 0.8,
+        "validation": 0.1,
+        "test": 0.1,
+        "meaning": "Candidate deterministic allocation by group key; not claimed as a published benchmark protocol."
+      },
+      "source_split_policy": "Retain recorded source split separately; expert feasibility labels remain held out.",
+      "units": "Source-native categorical labels or recorded molecular fragment sets; no physical energy units apply.",
+      "execution_scope": "Data export only; benchmark execution deferred"
+    },
+    {
+      "id": "clustering",
+      "name": "Reaction clustering",
+      "selectors": [
+        {
+          "prefix": "classification/",
+          "exclude": [
+            "classification/ehreact_activity.csv.gz"
+          ]
+        }
+      ],
+      "targets": [
+        "label",
+        "label_0",
+        "ec1",
+        "ec2",
+        "ec3"
+      ],
+      "version": "1.0",
+      "require_product": true,
+      "metrics": [
+        "ARI",
+        "NMI"
+      ],
+      "group_priority": [
+        "overall_reaction_group",
+        "chemical_split_group",
+        "exact_reaction_group"
+      ],
+      "permitted_inputs": "Recorded reactant and product strings; reference labels withheld from fitting and tuning.",
+      "withheld": [
+        "targets",
+        "target_masks",
+        "names",
+        "taxonomy",
+        "source_generation_method",
+        "reference_certificates",
+        "split_assignments"
+      ],
+      "failure_policy": "Freeze source-field eligibility before prediction. Report attempted, valid and failed predictions against all eligible records. Classification/set/mechanism recovery counts missing or invalid outputs as misses. Regression and probability metrics require finite valid outputs; report their paired denominator and failure fraction explicitly rather than silently assigning failures a numeric value.",
+      "grouping_scope": "Recorded source chemical keys where provided, exact reaction-text keys otherwise. No universal chemical or source independence claim.",
+      "proposed_split": {
+        "seed": 42,
+        "train": 0.8,
+        "validation": 0.1,
+        "test": 0.1,
+        "meaning": "Candidate deterministic allocation by group key; not claimed as a published benchmark protocol."
+      },
+      "source_split_policy": "Retain recorded source split separately; expert feasibility labels remain held out.",
+      "units": "Source-native categorical labels or recorded molecular fragment sets; no physical energy units apply.",
+      "execution_scope": "Data export only; benchmark execution deferred",
+      "label_policy": "Reference labels are withheld from model input and used only for declared external evaluation; label-informed hyperparameter selection must be disclosed."
+    },
+    {
+      "id": "yield",
+      "name": "Yield prediction",
+      "selectors": [
+        {
+          "prefix": "yield/"
+        }
+      ],
+      "targets": [
+        "yield_pct"
+      ],
+      "version": "1.0",
+      "require_product": false,
+      "metrics": [
+        "MAE",
+        "RMSE",
+        "R2"
+      ],
+      "group_priority": [
+        "overall_reaction_group",
+        "chemical_split_group",
+        "exact_reaction_group"
+      ],
+      "permitted_inputs": "Recorded reactants, optional recorded products and the explicit flat context whitelist; no yield, provenance rationale or reaction-name features.",
+      "withheld": [
+        "targets",
+        "target_masks",
+        "names",
+        "taxonomy",
+        "source_generation_method",
+        "reference_certificates",
+        "split_assignments"
+      ],
+      "failure_policy": "Freeze source-field eligibility before prediction. Report attempted, valid and failed predictions against all eligible records. Classification/set/mechanism recovery counts missing or invalid outputs as misses. Regression and probability metrics require finite valid outputs; report their paired denominator and failure fraction explicitly rather than silently assigning failures a numeric value.",
+      "grouping_scope": "Recorded source chemical keys where provided, exact reaction-text keys otherwise. No universal chemical or source independence claim.",
+      "proposed_split": {
+        "seed": 42,
+        "train": 0.8,
+        "validation": 0.1,
+        "test": 0.1,
+        "meaning": "Candidate deterministic allocation by group key; not claimed as a published benchmark protocol."
+      },
+      "source_split_policy": "Retain recorded source split separately; expert feasibility labels remain held out.",
+      "units": "Yield percent, 0–100; zero yield remains valid and recorded product is optional.",
+      "execution_scope": "Data export only; benchmark execution deferred",
+      "context_fields": [
+        "reagents",
+        "catalyst",
+        "base",
+        "solvent",
+        "temperature_c",
+        "time_hours"
+      ]
+    },
+    {
+      "id": "energy_barrier",
+      "name": "Energy-barrier prediction",
+      "selectors": [
+        {
+          "prefix": "property/",
+          "require_targets": [
+            "ea",
+            "G_act"
+          ]
+        }
+      ],
+      "targets": [
+        "ea",
+        "G_act"
+      ],
+      "version": "1.1",
+      "require_product": true,
+      "metrics": [
+        "MAE",
+        "RMSE"
+      ],
+      "group_priority": [
+        "overall_reaction_group",
+        "chemical_split_group",
+        "exact_reaction_group"
+      ],
+      "permitted_inputs": "Recorded reactant and product strings; source-specific energy labels and auxiliary reaction-energy targets withheld.",
+      "withheld": [
+        "targets",
+        "target_masks",
+        "names",
+        "taxonomy",
+        "source_generation_method",
+        "reference_certificates",
+        "split_assignments"
+      ],
+      "failure_policy": "Freeze source-field eligibility before prediction. Report attempted, valid and failed predictions against all eligible records. Classification/set/mechanism recovery counts missing or invalid outputs as misses. Regression and probability metrics require finite valid outputs; report their paired denominator and failure fraction explicitly rather than silently assigning failures a numeric value.",
+      "grouping_scope": "Use recorded source groups where supplied; otherwise group the unordered pair of recorded endpoint strings. This keeps exact forward/reverse text records together. It does not certify chemical or source independence across encodings.",
+      "proposed_split": {
+        "seed": 42,
+        "train": 0.8,
+        "validation": 0.1,
+        "test": 0.1,
+        "meaning": "Candidate deterministic allocation by group key; not claimed as a published benchmark protocol."
+      },
+      "source_split_policy": "Retain recorded source split separately; expert feasibility labels remain held out.",
+      "units": "Dataset-specific reported units and quantity kinds are attached to catalog and exported provenance. Equal target names or equal units do not establish equal physical quantities or reference conditions.",
+      "execution_scope": "Data export only; benchmark execution deferred",
+      "grouping_rule": "directionless_exact_endpoints"
+    },
+    {
+      "id": "feasibility",
+      "name": "Reaction-feasibility prediction",
+      "selectors": [
+        {
+          "prefix": "feasibility/"
+        }
+      ],
+      "targets": [
+        "feasible"
+      ],
+      "version": "1.0",
+      "require_product": true,
+      "metrics": [
+        "AUROC",
+        "AUPRC",
+        "balanced_accuracy",
+        "calibration"
+      ],
+      "group_priority": [
+        "overall_reaction_group",
+        "chemical_split_group",
+        "exact_reaction_group"
+      ],
+      "permitted_inputs": "Recorded reactant and proposed product strings; source evidence tier, negative-generation method and expert rationale withheld.",
+      "withheld": [
+        "targets",
+        "target_masks",
+        "names",
+        "taxonomy",
+        "source_generation_method",
+        "reference_certificates",
+        "split_assignments"
+      ],
+      "failure_policy": "Freeze source-field eligibility before prediction. Report attempted, valid and failed predictions against all eligible records. Classification/set/mechanism recovery counts missing or invalid outputs as misses. Regression and probability metrics require finite valid outputs; report their paired denominator and failure fraction explicitly rather than silently assigning failures a numeric value.",
+      "grouping_scope": "Recorded source chemical keys where provided, exact reaction-text keys otherwise. No universal chemical or source independence claim.",
+      "proposed_split": {
+        "seed": 42,
+        "train": 0.8,
+        "validation": 0.1,
+        "test": 0.1,
+        "meaning": "Candidate deterministic allocation by group key; not claimed as a published benchmark protocol."
+      },
+      "source_split_policy": "Preserve original source membership separately. Expert rows remain test-only; corpus records with exactly matching expert reaction-text groups are assigned test in the proposed view. Canonical chemical and source overlap remain unclaimed.",
+      "units": "Binary source labels, with expert, upstream-positive and generated-negative evidence tiers kept explicit.",
+      "execution_scope": "Data export only; benchmark execution deferred"
+    },
+    {
+      "id": "reagent_set",
+      "name": "Reagent-set prediction",
+      "selectors": [
+        {
+          "key": "synthesis/uspto_500.csv.gz"
+        }
+      ],
+      "targets": [
+        "reagent"
+      ],
+      "version": "1.0",
+      "require_product": false,
+      "metrics": [
+        "exact_fragment_set_match",
+        "micro_F1",
+        "macro_F1"
+      ],
+      "group_priority": [
+        "overall_reaction_group",
+        "chemical_split_group",
+        "exact_reaction_group"
+      ],
+      "permitted_inputs": "Recorded reactants and optional products; the middle reaction field and reagent targets withheld.",
+      "withheld": [
+        "targets",
+        "target_masks",
+        "names",
+        "taxonomy",
+        "source_generation_method",
+        "reference_certificates",
+        "split_assignments"
+      ],
+      "failure_policy": "Freeze source-field eligibility before prediction. Report attempted, valid and failed predictions against all eligible records. Classification/set/mechanism recovery counts missing or invalid outputs as misses. Regression and probability metrics require finite valid outputs; report their paired denominator and failure fraction explicitly rather than silently assigning failures a numeric value.",
+      "grouping_scope": "Recorded source chemical keys where provided, exact reaction-text keys otherwise. No universal chemical or source independence claim.",
+      "proposed_split": {
+        "seed": 42,
+        "train": 0.8,
+        "validation": 0.1,
+        "test": 0.1,
+        "meaning": "Candidate deterministic allocation by group key; not claimed as a published benchmark protocol."
+      },
+      "source_split_policy": "Retain recorded source split separately; expert feasibility labels remain held out.",
+      "units": "Source-native categorical labels or recorded molecular fragment sets; no physical energy units apply.",
+      "execution_scope": "Data export only; benchmark execution deferred"
+    },
+    {
+      "id": "role_aware_condition",
+      "name": "Role-aware condition prediction",
+      "selectors": [
+        {
+          "key": "condition_sharealike/ord_hte_condition.csv.gz"
+        }
+      ],
+      "targets": [
+        "reagents",
+        "catalysts",
+        "ligands",
+        "bases",
+        "additives",
+        "solvents",
+        "temperature_c",
+        "time_hours",
+        "pressure_bar"
+      ],
+      "version": "1.0",
+      "require_product": false,
+      "metrics": [
+        "per_role_set_F1",
+        "joint_observed_role_match"
+      ],
+      "group_priority": [
+        "overall_reaction_group",
+        "chemical_split_group",
+        "exact_reaction_group"
+      ],
+      "permitted_inputs": "Recorded reactants and optional products; generic middle-field agents and all role/operating-condition targets withheld.",
+      "withheld": [
+        "targets",
+        "target_masks",
+        "names",
+        "taxonomy",
+        "source_generation_method",
+        "reference_certificates",
+        "split_assignments"
+      ],
+      "failure_policy": "Freeze source-field eligibility before prediction. Report attempted, valid and failed predictions against all eligible records. Classification/set/mechanism recovery counts missing or invalid outputs as misses. Regression and probability metrics require finite valid outputs; report their paired denominator and failure fraction explicitly rather than silently assigning failures a numeric value.",
+      "grouping_scope": "Recorded source chemical keys where provided, exact reaction-text keys otherwise. No universal chemical or source independence claim.",
+      "proposed_split": {
+        "seed": 42,
+        "train": 0.8,
+        "validation": 0.1,
+        "test": 0.1,
+        "meaning": "Candidate deterministic allocation by group key; not claimed as a published benchmark protocol."
+      },
+      "source_split_policy": "Retain recorded source split separately; expert feasibility labels remain held out.",
+      "units": "Role sets in recorded source encoding; temperature Celsius, time hours, pressure bar. Unknown targets are masked, not interpreted as known-empty sets.",
+      "execution_scope": "Data export only; benchmark execution deferred",
+      "primary_role_targets": [
+        "reagents",
+        "catalysts",
+        "ligands",
+        "bases",
+        "additives",
+        "solvents"
+      ]
+    },
+    {
+      "id": "mechanistic_prediction",
+      "name": "Mechanistic prediction — electron pushing",
+      "selectors": [
+        {
+          "key": "mechanism/synepd_polar.csv.gz"
+        }
+      ],
+      "targets": [
+        "electron_path_json",
+        "mechanism_record_json"
+      ],
+      "version": "1.0",
+      "require_product": true,
+      "metrics": [
+        "event_recovery_top_k",
+        "trajectory_recovery_top_k",
+        "strict_validity",
+        "prediction_coverage"
+      ],
+      "group_priority": [
+        "overall_reaction_group",
+        "chemical_split_group",
+        "exact_reaction_group"
+      ],
+      "permitted_inputs": "Supplied atom-mapped reactants and products only, joined as R>>P; reference arrows, names, taxonomy and RC/MC hashes withheld.",
+      "withheld": [
+        "targets",
+        "target_masks",
+        "names",
+        "taxonomy",
+        "source_generation_method",
+        "reference_certificates",
+        "split_assignments"
+      ],
+      "failure_policy": "Freeze source-field eligibility before prediction. Report attempted, valid and failed predictions against all eligible records. Classification/set/mechanism recovery counts missing or invalid outputs as misses. Regression and probability metrics require finite valid outputs; report their paired denominator and failure fraction explicitly rather than silently assigning failures a numeric value.",
+      "grouping_scope": "Recorded source chemical keys where provided, exact reaction-text keys otherwise. No universal chemical or source independence claim.",
+      "proposed_split": {
+        "seed": 42,
+        "train": 0.8,
+        "validation": 0.1,
+        "test": 0.1,
+        "meaning": "Candidate deterministic allocation by group key; not claimed as a published benchmark protocol."
+      },
+      "source_split_policy": "Retain recorded source split separately; expert feasibility labels remain held out.",
+      "units": "Paired-electron loci and source event ordering; curated annotations rather than uniquely established physical mechanisms.",
+      "execution_scope": "Data export only; benchmark execution deferred",
+      "allowed_verification_levels": [
+        "EXACT",
+        "NORMALIZED"
+      ]
+    }
+  ],
+  "metric_reporting": {
+    "classification": "Accuracy and macro F1 are computed per recorded label field; no averaging across incompatible hierarchies. B/U refers to balanced/unbalanced reaction equations, not class proportions.",
+    "clustering": "ARI and NMI use external reference labels only after assignments are fixed. Any label-informed cluster count or tuning must be disclosed.",
+    "regression": "MAE and RMSE use source-specific target scales; yield R2 additionally requires nonzero reference variance. Missing/invalid outputs have a separate failure rate and paired denominator.",
+    "feasibility": "Positive label is 1. AUROC/AUPRC require both classes and finite probabilities. Balanced accuracy uses a predeclared threshold (default 0.5); calibration uses Brier score with the probability denominator and evidence tier reported separately.",
+    "sets": "Split recorded molecular-set labels on dot separators, remove exact duplicate fragments, retain recorded spelling. No implicit chemical canonicalization or stereochemical equivalence is claimed. Exact-match and F1 calculations require a declared tokenization; unknown roles are masked.",
+    "mechanism": "Use synrxn.metrics.mechanism with the frozen typed records and allowed EXACT/NORMALIZED primary tiers. Top-k 1,3,5; supplied endpoints make net agreement diagnostic. DELTA_CONSISTENT remains diagnostic-only."
+  }
+}

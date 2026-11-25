@@ -38,8 +38,7 @@ def _norm_value(v: Any) -> Any:
 
 
 class ECFP:
-    """
-    ECFP (Morgan-style) fingerprint generator for NetworkX graphs (suitable for ITS graphs).
+    """ECFP (Morgan-style) fingerprint generator for NetworkX graphs (suitable for ITS graphs).
 
     This implementation is deterministic, configurable via node_attrs and edge_attrs,
     and returns folded bit-vectors (dense) or sparse/indexed outputs. It uses truncated
@@ -57,14 +56,14 @@ class ECFP:
     :param hash_bits: Number of bits to keep from SHA-1 truncation (32,64,128,160,256).
                       Recommended: 64.
     :raises ValueError: for invalid parameters (negative radius or invalid hash_bits).
-    :returns: See `fingerprint` method for concrete return types.
+    :return: See `fingerprint` method for concrete return types.
 
-    Example
-    -------
+    .. rubric:: Example
+
     .. code-block:: python
 
        import networkx as nx
-       from synrxn.fps.ecfp import ECFP
+       from synrxn.cluster.ecfp import ECFP
 
        # Build a tiny ITS-like graph
        G = nx.Graph()
@@ -88,7 +87,6 @@ class ECFP:
        print("bits on:", int(vec.sum()))
        print("sparse:", indices.tolist(), values.tolist())
        print("feature map items (sample):", list(fmap.items())[:3])
-
     """
 
     DEFAULT_NODE_ATTRS = ["element", "aromatic", "hcount", "charge"]
@@ -134,15 +132,14 @@ class ECFP:
         Tuple[np.ndarray, np.ndarray],
         Tuple[np.ndarray, Dict[int, Tuple[int, int]]],
     ]:
-        """
-        Compute the ECFP fingerprint from NetworkX graph `G`.
+        """Compute the ECFP fingerprint from NetworkX graph `G`.
 
         :param G: networkx.Graph or networkx.MultiGraph with node/edge attributes.
         :param return_sparse: If True, return tuple (indices, values) where indices are bit positions
                               (np.int32) and values are counts (if use_counts) or 1s (if not).
         :param return_feature_map: If True, return (dense_vector, feature_map) where feature_map is a
                                    dict mapping feature_hash -> (radius_layer, count).
-        :returns:
+        :return:
             - If return_sparse=False and return_feature_map=False:
                 dense folded vector (numpy.ndarray). dtype: np.uint8 if use_counts=False else np.int32.
             - If return_sparse=True:

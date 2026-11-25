@@ -1,0 +1,12 @@
+{
+  "source_id": "C24",
+  "name": "README.txt",
+  "bytes": 3042,
+  "checksum": "md5:6ebe65cb0fab187909281694796f19c7",
+  "url": "https://zenodo.org/api/records/11067998/files/README.txt/content",
+  "path": "Data/raw/synrxn2/C24/README.txt",
+  "bytes_observed": 3042,
+  "sha256": "d7cfc88bb9dc29208d2e869b993f7bc214a959d77438142d3ba31f4db1357f47",
+  "md5": "6ebe65cb0fab187909281694796f19c7",
+  "status": "verified"
+}

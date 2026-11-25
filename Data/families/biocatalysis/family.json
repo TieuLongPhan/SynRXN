@@ -1,0 +1,68 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "family": {
+    "counting_units": [
+      "source-derived qualified task row",
+      "source-table row"
+    ],
+    "data_counting_policy": "Deduplicated by namespace/source-table key within this family only; row units can differ, source views can overlap and rows are not unique reactions. Inspect each binding's counting_unit and physical configuration counts.",
+    "data_status": "local task references present; qualification varies",
+    "future_task_ids": [],
+    "gaps": "Native enzyme/reaction associations, explicit assay mutation effects, direct M-CSA catalytic residues and BRENDA-record kinetic references are acquired. DMS proxies are separately tagged; native reaction retrieval still needs homology-aware evaluation and reaction-specific catalytic-site claims need qualification.",
+    "id": "biocatalysis",
+    "overlapping_view_count": 0,
+    "primary_source_rows": 628220,
+    "primary_table_count": 7,
+    "release_eligible_table_count": 7,
+    "scope": "Assay activity, reaction-conditioned enzyme retrieval, sequence/structure function, mutation effects, catalytic sites and enzyme kinetic parameters; enzyme design can also carry the design tag.",
+    "task_ids": [
+      "enzyme_activity",
+      "enzyme_retrieval",
+      "mutation_effects",
+      "active_sites",
+      "enzyme_kinetic_parameters"
+    ],
+    "title": "Biocatalysis and enzyme–reaction function"
+  },
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 7,
+    "data_links": 7,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 7,
+    "stored_rows_across_unique_views": 628220,
+    "task_table_bindings": 7,
+    "tasks": 5,
+    "unique_table_views": 7
+  },
+  "tasks": [
+    {
+      "id": "enzyme_activity",
+      "metadata": "enzyme_activity/task.json",
+      "title": "Enzyme or assay activity"
+    },
+    {
+      "id": "enzyme_retrieval",
+      "metadata": "enzyme_retrieval/task.json",
+      "title": "Enzyme–reaction retrieval"
+    },
+    {
+      "id": "mutation_effects",
+      "metadata": "mutation_effects/task.json",
+      "title": "Enzyme mutation effects"
+    },
+    {
+      "id": "active_sites",
+      "metadata": "active_sites/task.json",
+      "title": "Reaction-conditioned active sites"
+    },
+    {
+      "id": "enzyme_kinetic_parameters",
+      "metadata": "enzyme_kinetic_parameters/task.json",
+      "title": "Enzyme kinetic-parameter prediction"
+    }
+  ]
+}

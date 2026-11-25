@@ -1,0 +1,2900 @@
+{
+  "schema": "synrxn.catalogue-hierarchy.v1",
+  "registry_as_of": "2026-10-21",
+  "scope": "Reaction informatics excluding multistep synthesis planning. All catalogue views are represented; held entries are metadata only and source-specific redistribution decisions remain in the release manifest.",
+  "counting_policy": "Row counts are stored table records in their stated units, not necessarily task-eligible rows or unique reactions. Primary family/task totals exclude explicitly overlapping views. Tables are deduplicated within a family, but reused across families and tasks.",
+  "summary": {
+    "families": 12,
+    "tasks": 41,
+    "catalogue_tables": 105,
+    "catalogue_rows": 19611896,
+    "unique_primary_tables": 98,
+    "unique_primary_rows": 19601171,
+    "overlapping_views": 7,
+    "primary_task_table_bindings": 137,
+    "all_task_table_bindings": 146
+  },
+  "case_study_populations": {
+    "hitea_source_rows": 39546,
+    "hitea_response_eligible_rows": 39354,
+    "hitea_ranking_panels": 429,
+    "hitea_ranking_rows": 38424,
+    "bh_source_rows": 27438,
+    "bh_rows_after_overlap_exclusion": 24806
+  },
+  "input_sha256": {
+    "kdd/task_registry.json": "e31269aeb229f985cb67714b334942029f66088fcc3b51dfe3cd912cf31d6762",
+    "kdd/coverage/release_manifest.json": "aa4559d20e9e310ddc71436118505602da1398dbcd0d7157f26764f995639a6b",
+    "synrxn/reconstruction/catalogue/hierarchy.py": "fe580f3ea892fc014b6472a2dd945320ed8c0033e6ec399cf1dfd36bfc176a18",
+    "doc/_static/catalog-data.json": "1ce686f57fe1fa6f8f98725dc894ec9748ef10dd53e7ba7b015936699a531a6f",
+    "doc/_static/catalog-sharealike-data.json": "d0e0a03a439f96e0d5dd310f0b92d4a159a940ba05fb7ace0d7059cfbf0583ba",
+    "Data/expansion/catalog.json": "db2968791c6a0fc0ad70a6b17ce2d0e9f3c60a90b1859243cc7214031de2d262",
+    "Data/coverage_expansion/bio/catalog.json": "afd7d49e746f5bf90c4b355c5bff5e145fd559c45e30026376b41b766878a469",
+    "Data/coverage_expansion/impurity/catalog.json": "fe7756461e5888bc13f70d228c289fa23f0fb464b5d1e75e360e99087429f58f",
+    "Data/coverage_expansion/knowledge/catalog.json": "082111637e3d76107df3528aa44f9b70346ab1f810454654d3cd5ff4b904b2c7",
+    "Data/coverage_expansion/mechanisms/catalog.json": "4edf518a7284e8d205d5bc7eeffbfae5624f6a0b4842730e6868f691491cb03f",
+    "Data/coverage_expansion/physics/catalog.json": "70b2db505fe15cfa2cd3dd24abd2027e48257843b1ade7ffb51b11542e08a96e",
+    "Data/coverage_expansion/physics_rates/catalog.json": "70130770cc9026937b78e419c117b90b495b2dcf25398cfab5d4e0dae35722d3",
+    "Data/coverage_expansion/process/catalog.json": "004f9aa00345645a68b82c8ccc456489324fe1109a0676fedd0a7f0829bda3fc",
+    "Data/coverage_expansion/solution_barriers/catalog.json": "b89e156e27abece3f747d67ee746769dc948e2e2d46dfc3aea7dc5ad310a8601",
+    "Data/coverage_expansion/solution_context/catalog.json": "56523d881c6676f61b53b570d7385160aa930aef8e2df2f0bbe1bfcc57de9cce",
+    "kdd/preparation/audit.json": "ad1d068dd39e9b819018b53b8fec3c1e20eddad0af9827d9855e113f58216763"
+  },
+  "families": [
+    {
+      "id": "data",
+      "title": "Reaction data acquisition and curation",
+      "tasks": [
+        {
+          "id": "literature_extraction",
+          "title": "Literature reaction extraction",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "knowledge/EnzChemRED2024/documents",
+              "title": "EnzChemRED source documents",
+              "rows": 1210,
+              "role": "primary",
+              "counting_unit": "expert-annotated source document",
+              "path": "Data/coverage_expansion/knowledge/documents.parquet",
+              "sha256": "1aeb1adbe4b50434acf2dcc0756894f4b22be0a9757d5a59b0d9692243a1b9d4",
+              "source_catalogue": "Data/coverage_expansion/knowledge/catalog.json",
+              "source_id": "EnzChemRED2024",
+              "source_urls": [
+                "https://doi.org/10.5281/zenodo.11067998"
+              ],
+              "qualification": "Native expert BioC entities/conversions from title/abstract text. Not full-paper multimodal extraction; offsets retain native passage coordinates."
+            }
+          ],
+          "primary_table_count": 1,
+          "primary_source_rows": 1210,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        },
+        {
+          "id": "reaction_record_curation",
+          "title": "Reaction record validation and correction",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "knowledge/EnzChemRED2024/curation",
+              "title": "EnzChemRED controlled curation cases",
+              "rows": 2267,
+              "role": "primary",
+              "counting_unit": "controlled record-curation case",
+              "path": "Data/coverage_expansion/knowledge/curation.parquet",
+              "sha256": "55373a6d80a8e2c76f2472100936ce6209c463df76571c34e905be67a3fe5506",
+              "source_catalogue": "Data/coverage_expansion/knowledge/catalog.json",
+              "source_id": "EnzChemRED2024",
+              "source_urls": [
+                "https://doi.org/10.5281/zenodo.11067998"
+              ],
+              "qualification": "Clean controls and deterministic single-relation deletions reuse independent expert annotations. This is a controlled corruption variant, not a dataset of naturally observed database errors. Keep both cases of each document together."
+            }
+          ],
+          "primary_table_count": 1,
+          "primary_source_rows": 2267,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        }
+      ],
+      "primary_table_count": 2,
+      "primary_source_rows": 3477,
+      "overlapping_view_count": 0
+    },
+    {
+      "id": "representation",
+      "title": "Reaction representation, organisation and search",
+      "tasks": [
+        {
+          "id": "atom_mapping",
+          "title": "Atom mapping",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "aam/brenda",
+              "title": "BRENDA balanced atom mappings",
+              "rows": 3138,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/aam/brenda.csv.gz",
+              "sha256": "dad050fba14ab6160480e6802cf81fc82ea3a70e1ccb1af9d251796cd7374580",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "hauenstein2026brenda"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "aam/ecoli",
+              "title": "E. coli atom mapping",
+              "rows": 273,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/aam/ecoli.csv.gz",
+              "sha256": "d38436457c5f5d82149981005a2c39d289d56467fb45ffdeb294f0c62b631866",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "beier2026computing"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "aam/ehreact",
+              "title": "EHreact atom mappings",
+              "rows": 939,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/aam/ehreact.csv.gz",
+              "sha256": "e085217180f396ad519eeaadf7602d39c7c374e5591b95bde85c0d8b57402124",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "heid2021ehreact"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "aam/enzyme_map",
+              "title": "EnzymeMap atom mapping",
+              "rows": 47974,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/aam/enzyme_map.csv.gz",
+              "sha256": "303e6638819a008f1442291443459795e9bb40b3cdea9e9da01732d05f20b807",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "heid2023enzymemap"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "aam/flower_c",
+              "title": "FlowER composite atom mappings",
+              "rows": 38745,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/aam/flower_c.csv.gz",
+              "sha256": "75f34235813ce9accff59134536f6e1f0f6af5c9a16a381e7a75e96b0f52d203",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "joung2025electron",
+                "fong2026flower_data"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "aam/flower_e",
+              "title": "FlowER elementary atom mappings",
+              "rows": 179345,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/aam/flower_e.csv.gz",
+              "sha256": "696f0a08fa7872309918c0bc1de7cfe3a32ba862e4d732775e12844894159d8d",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "joung2025electron",
+                "fong2026flower_data"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "aam/golden",
+              "title": "Golden atom-mapping set",
+              "rows": 1758,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/aam/golden.csv.gz",
+              "sha256": "ccce1ab8a18a45559cdbf87bcd3ecd838fc6e1cd1e3ad8d5815e39af5ddd49d9",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "chen2024precise",
+                "lin2022atom"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "aam/natcomm",
+              "title": "NatComm subset of Golden",
+              "rows": 491,
+              "role": "overlapping_view",
+              "counting_unit": "source-table row",
+              "path": "Data/aam/natcomm.csv.gz",
+              "sha256": "c62f4084990533d36bd9ba706cd78a80de0bad14ee139cdf1fb3c00422da2343",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "jaworski2019automatic"
+              ],
+              "counted_under": "canonical:aam/golden",
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "aam/recon3d",
+              "title": "Recon3D atom mapping",
+              "rows": 382,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/aam/recon3d.csv.gz",
+              "sha256": "a5dc370de65eb8efde9ecd703ef1f2a021d5713b850944530092798628dea45e",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "litsa2018machine"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "aam/uspto_3k",
+              "title": "USPTO 3K atom mapping",
+              "rows": 3000,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/aam/uspto_3k.csv.gz",
+              "sha256": "7d46de323ec918550fd742ea5e839fc976cd451058eca061b1e2023354698145",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "chen2024precise"
+              ],
+              "legacy_field_eligible_rows": {}
+            }
+          ],
+          "primary_table_count": 9,
+          "primary_source_rows": 275554,
+          "qualification": "Compare by reference tier and symmetry; computational mapping QC is not independent chemical validation."
+        },
+        {
+          "id": "reaction_balancing",
+          "title": "Reaction completion and balancing",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "rbl/complex",
+              "title": "Complex reaction rebalancing",
+              "rows": 1748,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/rbl/complex.csv.gz",
+              "sha256": "a2a2d887a65806fbd27596147f6209213cb3eedfbafd428370ec68586827db4c",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "jaworski2019automatic",
+                "lin2022atom"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "rbl/mbs",
+              "title": "Missing both sides rebalancing",
+              "rows": 491,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/rbl/mbs.csv.gz",
+              "sha256": "d7cb14f9604328dcc86bd0ab10503d7649ff50a3d823a45cb02fb874bca1bd1d",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "liu2017retrosynthetic"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "rbl/mnc",
+              "title": "Missing non-carbon rebalancing",
+              "rows": 33147,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/rbl/mnc.csv.gz",
+              "sha256": "ed66cd15303b63fd9e0e6ea0f0ad396bada423a36d5f290dec5ee7cdf447c6cf",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "liu2017retrosynthetic"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "rbl/mos",
+              "title": "Missing one side rebalancing",
+              "rows": 12781,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/rbl/mos.csv.gz",
+              "sha256": "d8c6d663ad21cafba9dc64259ba435924926305af2b87a785795c289da39fc31",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "liu2017retrosynthetic"
+              ],
+              "legacy_field_eligible_rows": {}
+            }
+          ],
+          "primary_table_count": 4,
+          "primary_source_rows": 48167,
+          "qualification": "Missing-species variants reuse observations; a recovered source reference is not proof of a unique physical reaction."
+        },
+        {
+          "id": "reaction_classification",
+          "title": "Reaction classification",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "classification/ecreact",
+              "title": "ECReact classification",
+              "rows": 185734,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/ecreact.csv.gz",
+              "sha256": "c730e5bd196dc69b5ebc421cce37010162f7e129f149b28196f0069ee242bdcd",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "zeng2025claire"
+              ],
+              "legacy_field_eligible_rows": {
+                "classification": 185734
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "classification/schneider_b",
+              "title": "Schneider balanced classification",
+              "rows": 50000,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/schneider_b.csv.gz",
+              "sha256": "72c6560f458c3777f1e0f1e73c3a35ac7974cc4a49e3ae6441421d4e91bf86b2",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "schneider2015development",
+                "vannguyen2025syncat"
+              ],
+              "legacy_field_eligible_rows": {
+                "classification": 50000
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "classification/schneider_u",
+              "title": "Schneider unbalanced classification",
+              "rows": 50000,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/schneider_u.csv.gz",
+              "sha256": "fbd6e409459354ade4a6d15aeaf2206694f7df335a315384ca7dbcf06d2ee5b4",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "schneider2015development"
+              ],
+              "legacy_field_eligible_rows": {
+                "classification": 50000
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "classification/syntemp",
+              "title": "SynTemp hierarchical classification",
+              "rows": 43441,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/syntemp.csv.gz",
+              "sha256": "5ace42ff5d956a4c5180ca854bbbd441bdbac5b71903a6bcd4684bb77320c1ed",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "phan2025syntemp",
+                "liu2017retrosynthetic"
+              ],
+              "legacy_field_eligible_rows": {
+                "classification": 43441
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "classification/tpl_b",
+              "title": "Balanced template classification",
+              "rows": 445115,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/tpl_b.csv.gz",
+              "sha256": "106cec5db1b37757483d7d99f2d9dde34e89315af54fdb9aa2e3cf0770fb4dbc",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "vannguyen2025syncat",
+                "schwaller2021mapping"
+              ],
+              "legacy_field_eligible_rows": {
+                "classification": 445113
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "classification/tpl_u",
+              "title": "Unbalanced template classification",
+              "rows": 445115,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/tpl_u.csv.gz",
+              "sha256": "6b6a649e1cc13f17418a4ce3a8b63663a7f66c1777abfc66c16bce8e0efa2912",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "schwaller2021mapping"
+              ],
+              "legacy_field_eligible_rows": {
+                "classification": 445115
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "classification/uspto_50k_b",
+              "title": "USPTO-50K balanced classification",
+              "rows": 50016,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/uspto_50k_b.csv.gz",
+              "sha256": "098f85a386e25742791e5b87b8be8a7a090e920b6eca5f2b85452aa913ddba51",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "vannguyen2025syncat",
+                "liu2017retrosynthetic"
+              ],
+              "legacy_field_eligible_rows": {
+                "classification": 50016
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "classification/uspto_50k_u",
+              "title": "USPTO-50K unbalanced classification",
+              "rows": 50016,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/uspto_50k_u.csv.gz",
+              "sha256": "355d38f0ef86b6546bfd24bbee97ebfe09d16c9ffed8b13282dc336734421fdb",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "liu2017retrosynthetic"
+              ],
+              "legacy_field_eligible_rows": {
+                "classification": 50016
+              }
+            }
+          ],
+          "primary_table_count": 8,
+          "primary_source_rows": 1319437,
+          "qualification": "Different taxonomies remain source-specific; balanced/unbalanced variants are related data."
+        },
+        {
+          "id": "reaction_clustering",
+          "title": "Reaction clustering",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "classification/ecreact",
+              "title": "ECReact classification",
+              "rows": 185734,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/ecreact.csv.gz",
+              "sha256": "c730e5bd196dc69b5ebc421cce37010162f7e129f149b28196f0069ee242bdcd",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "zeng2025claire"
+              ],
+              "legacy_field_eligible_rows": {
+                "clustering": 185734
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "classification/schneider_b",
+              "title": "Schneider balanced classification",
+              "rows": 50000,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/schneider_b.csv.gz",
+              "sha256": "72c6560f458c3777f1e0f1e73c3a35ac7974cc4a49e3ae6441421d4e91bf86b2",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "schneider2015development",
+                "vannguyen2025syncat"
+              ],
+              "legacy_field_eligible_rows": {
+                "clustering": 50000
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "classification/schneider_u",
+              "title": "Schneider unbalanced classification",
+              "rows": 50000,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/schneider_u.csv.gz",
+              "sha256": "fbd6e409459354ade4a6d15aeaf2206694f7df335a315384ca7dbcf06d2ee5b4",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "schneider2015development"
+              ],
+              "legacy_field_eligible_rows": {
+                "clustering": 50000
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "classification/syntemp",
+              "title": "SynTemp hierarchical classification",
+              "rows": 43441,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/syntemp.csv.gz",
+              "sha256": "5ace42ff5d956a4c5180ca854bbbd441bdbac5b71903a6bcd4684bb77320c1ed",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "phan2025syntemp",
+                "liu2017retrosynthetic"
+              ],
+              "legacy_field_eligible_rows": {
+                "clustering": 43441
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "classification/tpl_b",
+              "title": "Balanced template classification",
+              "rows": 445115,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/tpl_b.csv.gz",
+              "sha256": "106cec5db1b37757483d7d99f2d9dde34e89315af54fdb9aa2e3cf0770fb4dbc",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "vannguyen2025syncat",
+                "schwaller2021mapping"
+              ],
+              "legacy_field_eligible_rows": {
+                "clustering": 445113
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "classification/tpl_u",
+              "title": "Unbalanced template classification",
+              "rows": 445115,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/tpl_u.csv.gz",
+              "sha256": "6b6a649e1cc13f17418a4ce3a8b63663a7f66c1777abfc66c16bce8e0efa2912",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "schwaller2021mapping"
+              ],
+              "legacy_field_eligible_rows": {
+                "clustering": 445115
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "classification/uspto_50k_b",
+              "title": "USPTO-50K balanced classification",
+              "rows": 50016,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/uspto_50k_b.csv.gz",
+              "sha256": "098f85a386e25742791e5b87b8be8a7a090e920b6eca5f2b85452aa913ddba51",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "vannguyen2025syncat",
+                "liu2017retrosynthetic"
+              ],
+              "legacy_field_eligible_rows": {
+                "clustering": 50016
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "classification/uspto_50k_u",
+              "title": "USPTO-50K unbalanced classification",
+              "rows": 50016,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/uspto_50k_u.csv.gz",
+              "sha256": "355d38f0ef86b6546bfd24bbee97ebfe09d16c9ffed8b13282dc336734421fdb",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "liu2017retrosynthetic"
+              ],
+              "legacy_field_eligible_rows": {
+                "clustering": 50016
+              }
+            }
+          ],
+          "primary_table_count": 8,
+          "primary_source_rows": 1319437,
+          "qualification": "Withhold reference labels from fitting and selection; any label-informed k policy is a separately declared diagnostic."
+        },
+        {
+          "id": "reaction_retrieval",
+          "title": "Reaction similarity and retrieval",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "knowledge/EnzChemRED2024/retrieval",
+              "title": "EnzChemRED precedent queries",
+              "rows": 2419,
+              "role": "primary",
+              "counting_unit": "annotated chemical-conversion precedent query",
+              "path": "Data/coverage_expansion/knowledge/retrieval.parquet",
+              "sha256": "92a65a8155800d2ab88eef695530051a81a2b82fa55f1bea790b8db0304fa6a5",
+              "source_catalogue": "Data/coverage_expansion/knowledge/catalog.json",
+              "source_id": "EnzChemRED2024",
+              "source_urls": [
+                "https://doi.org/10.5281/zenodo.11067998"
+              ],
+              "qualification": "Query-to-literature-precedent retrieval with expert linked conversion references, not graded mechanistic similarity. Gallery exposes only document IDs/text; gold entities and relation labels are withheld. Unannotated documents are unknown relevance, not confirmed negatives. Document text can be shared across query splits; no unseen-paper claim."
+            }
+          ],
+          "primary_table_count": 1,
+          "primary_source_rows": 2419,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        }
+      ],
+      "primary_table_count": 22,
+      "primary_source_rows": 1645577,
+      "overlapping_view_count": 1
+    },
+    {
+      "id": "transformations",
+      "title": "Single-step reaction transformation",
+      "tasks": [
+        {
+          "id": "forward_prediction",
+          "title": "Forward product prediction",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "synthesis/da",
+              "title": "Diels–Alder synthesis",
+              "rows": 11011,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/synthesis/da.csv.gz",
+              "sha256": "ddfb98a997ef53161ee43743dbd7431a31c5c674c172f5034e637eaad562afe0",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "lam2024every"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "synthesis/uspto_50k",
+              "title": "USPTO-50K synthesis",
+              "rows": 50016,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/synthesis/uspto_50k.csv.gz",
+              "sha256": "a23d355405f037cc4ecc751cf094003f3b64c115dd212f20d99015bc9ba05ac4",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "chen2024precise",
+                "liu2017retrosynthetic"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "synthesis/uspto_mit",
+              "title": "USPTO-MIT synthesis",
+              "rows": 479035,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/synthesis/uspto_mit.csv.gz",
+              "sha256": "74dffc5bb8e5fdfb41c11676deb5fedb9bb63d28325bdfc719ea68d8b8d9f33b",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "jin2017predicting_outcomes"
+              ],
+              "legacy_field_eligible_rows": {}
+            }
+          ],
+          "primary_table_count": 3,
+          "primary_source_rows": 540062,
+          "qualification": "Derive a target-isolated view from endpoints; remove product-derived mappings, reaction centers and identifiers from inputs."
+        },
+        {
+          "id": "retrosynthesis",
+          "title": "Single-step retrosynthesis",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "synthesis/da",
+              "title": "Diels–Alder synthesis",
+              "rows": 11011,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/synthesis/da.csv.gz",
+              "sha256": "ddfb98a997ef53161ee43743dbd7431a31c5c674c172f5034e637eaad562afe0",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "lam2024every"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "synthesis/uspto_50k",
+              "title": "USPTO-50K synthesis",
+              "rows": 50016,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/synthesis/uspto_50k.csv.gz",
+              "sha256": "a23d355405f037cc4ecc751cf094003f3b64c115dd212f20d99015bc9ba05ac4",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "chen2024precise",
+                "liu2017retrosynthetic"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "synthesis/uspto_mit",
+              "title": "USPTO-MIT synthesis",
+              "rows": 479035,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/synthesis/uspto_mit.csv.gz",
+              "sha256": "74dffc5bb8e5fdfb41c11676deb5fedb9bb63d28325bdfc719ea68d8b8d9f33b",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "jin2017predicting_outcomes"
+              ],
+              "legacy_field_eligible_rows": {}
+            }
+          ],
+          "primary_table_count": 3,
+          "primary_source_rows": 540062,
+          "qualification": "A single recorded precursor set is not exhaustive acceptable chemistry; preserve source groups and alternatives. No multi-step route search is included."
+        },
+        {
+          "id": "reaction_center",
+          "title": "Reaction-center prediction",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "synthesis/uspto_mit",
+              "title": "USPTO-MIT synthesis",
+              "rows": 479035,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/synthesis/uspto_mit.csv.gz",
+              "sha256": "74dffc5bb8e5fdfb41c11676deb5fedb9bb63d28325bdfc719ea68d8b8d9f33b",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "jin2017predicting_outcomes"
+              ],
+              "legacy_field_eligible_rows": {}
+            }
+          ],
+          "primary_table_count": 1,
+          "primary_source_rows": 479035,
+          "qualification": "The rc target exists, but its source index basis and label derivation must be qualified before a new benchmark view is advertised."
+        }
+      ],
+      "primary_table_count": 3,
+      "primary_source_rows": 540062,
+      "overlapping_view_count": 0
+    },
+    {
+      "id": "outcomes",
+      "title": "Reaction outcomes, feasibility and robustness",
+      "tasks": [
+        {
+          "id": "yield_conversion",
+          "title": "Yield, assay response and conversion",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "yield/buchwald_hartwig_ood",
+              "title": "NCS 2026 / BH-HTE-OOD yield collection",
+              "rows": 27438,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/yield/buchwald_hartwig_ood.csv.gz",
+              "sha256": "1cae5ff9010813e242f6de2dc6bd3e33342f759be79c5d88ac4f3f46dc4ec409",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "neves2026bh"
+              ],
+              "legacy_field_eligible_rows": {
+                "yield": 27438
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "yield/hitea",
+              "title": "HiTEA assay responses",
+              "rows": 39546,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/yield/hitea.csv.gz",
+              "sha256": "f0e0d0db9f37643bcebb5c9b6a29a9a6a950f7e92c05fc4541a07d9ca3d1d0e9",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "kingsmith2024reactome"
+              ],
+              "legacy_field_eligible_rows": {
+                "yield": 39354
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "yield/uspto_yield",
+              "title": "USPTO patent yield benchmark",
+              "rows": 526468,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/yield/uspto_yield.csv.gz",
+              "sha256": "a95706078ebba47315a91f853f27a3a3494e344b8ce782d53df0a5e5d5aa6f5b",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "minidis2021uspto_yield",
+                "lowe2017uspto"
+              ],
+              "legacy_field_eligible_rows": {
+                "yield": 526468
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "property/phosphatase",
+              "title": "Phosphatase assay responses",
+              "rows": 33354,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/property/phosphatase.csv.gz",
+              "sha256": "aca656158cb5b96cfa3378234641796e5becdf6647d7af0ae9f91b9e53639917",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "heid2022machine",
+                "huang2015panoramic"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_al1_data",
+              "title": "Minot borylation AL1",
+              "rows": 2907,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_al1_data.parquet",
+              "sha256": "1a4593001f6dbf52487f50ff6efcbfef6b52cd0488dc5f0b001de04117faf780",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_al2_data",
+              "title": "Minot borylation AL2",
+              "rows": 954,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_al2_data.parquet",
+              "sha256": "8b26a87c9577d85d2e913a1a9c0d5096777e41ad765b0fc4b7f9bb80c0db751c",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_al3_data",
+              "title": "Minot borylation AL3",
+              "rows": 960,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_al3_data.parquet",
+              "sha256": "08f73be1d8027531abfdda1f26007fee8f2411221de95fcf1093e957f7364715",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_preal_data",
+              "title": "Minot borylation pre-AL",
+              "rows": 2044,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_preal_data.parquet",
+              "sha256": "d46814951744663fc94cade06f30cd4e3f13e52bc5d13c5a0bcf43bf51793092",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C03/cn_screen",
+              "title": "Cernak C–N coupling screen",
+              "rows": 50688,
+              "role": "primary",
+              "counting_unit": "HTE experiment",
+              "path": "Data/expansion/sharealike/C03/cn_screen.parquet",
+              "sha256": "534d2d7bc8cbed7f694694c0db65e9b34fd4cfe471878e0a37395767415bc5a0",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C03",
+              "source_urls": [
+                "https://open-reaction-database.org/dataset/ord_dataset-805ad863feef48579d95d86a728035f4",
+                "https://doi.org/10.1021/jacs.6c05959"
+              ]
+            }
+          ],
+          "primary_table_count": 9,
+          "primary_source_rows": 684359,
+          "qualification": "Yield, UV response and conversion are distinct endpoints within this task family. Keep units, measurement methods and source-specific scores separate."
+        },
+        {
+          "id": "reaction_success",
+          "title": "Experimental reaction success",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "yield/buchwald_hartwig_ood",
+              "title": "NCS 2026 / BH-HTE-OOD yield collection",
+              "rows": 27438,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/yield/buchwald_hartwig_ood.csv.gz",
+              "sha256": "1cae5ff9010813e242f6de2dc6bd3e33342f759be79c5d88ac4f3f46dc4ec409",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "neves2026bh"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_al1_data",
+              "title": "Minot borylation AL1",
+              "rows": 2907,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_al1_data.parquet",
+              "sha256": "1a4593001f6dbf52487f50ff6efcbfef6b52cd0488dc5f0b001de04117faf780",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_al2_data",
+              "title": "Minot borylation AL2",
+              "rows": 954,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_al2_data.parquet",
+              "sha256": "8b26a87c9577d85d2e913a1a9c0d5096777e41ad765b0fc4b7f9bb80c0db751c",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_al3_data",
+              "title": "Minot borylation AL3",
+              "rows": 960,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_al3_data.parquet",
+              "sha256": "08f73be1d8027531abfdda1f26007fee8f2411221de95fcf1093e957f7364715",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_preal_data",
+              "title": "Minot borylation pre-AL",
+              "rows": 2044,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_preal_data.parquet",
+              "sha256": "d46814951744663fc94cade06f30cd4e3f13e52bc5d13c5a0bcf43bf51793092",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            }
+          ],
+          "primary_table_count": 5,
+          "primary_source_rows": 34303,
+          "qualification": "Preserve the native label and establish its threshold definition; missing observations and generated distractors are not failed experiments."
+        },
+        {
+          "id": "reaction_feasibility",
+          "title": "Proposal feasibility",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "feasibility/frea_corpus",
+              "title": "FREA generated-label supervision",
+              "rows": 14115057,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/feasibility/frea_corpus.csv.gz",
+              "sha256": "b7128dd8911c51f55b6740504710e621f736997a1b9c8a42594d7540ca25d8d3",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "frea2026"
+              ],
+              "legacy_field_eligible_rows": {
+                "feasibility": 14115057
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "feasibility/frea_expert",
+              "title": "FREA expert feasibility judgments",
+              "rows": 751,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/feasibility/frea_expert.csv.gz",
+              "sha256": "e9495a288e404d1ef6ff188f28809e9946e153d1ba6d67175ca13763d107507f",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "frea2026"
+              ],
+              "legacy_field_eligible_rows": {
+                "feasibility": 751
+              }
+            }
+          ],
+          "primary_table_count": 2,
+          "primary_source_rows": 14115808,
+          "qualification": "Expert judgments and generated supervision are separate. FREA already supplies these labels and source-dependent evaluations; do not claim new labels."
+        }
+      ],
+      "primary_table_count": 11,
+      "primary_source_rows": 14800167,
+      "overlapping_view_count": 0
+    },
+    {
+      "id": "selectivity",
+      "title": "Selectivity, mixtures and side products",
+      "tasks": [
+        {
+          "id": "regioselectivity",
+          "title": "Regioselectivity",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "selectivity/regiosqm_eas",
+              "title": "RegioSQM experimental EAS sites",
+              "rows": 535,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/selectivity/regiosqm_eas.csv.gz",
+              "sha256": "c156301e943612c5b04db9216e5fa0c173539c966933bcd489e87d7691acd9ae",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "kromann2018regiosqm"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/regio",
+              "title": "Minot borylation regioselectivity",
+              "rows": 1030,
+              "role": "primary",
+              "counting_unit": "substrate-product annotation",
+              "path": "Data/expansion/main/C02/regio.parquet",
+              "sha256": "2c672296e347ecef0af88921a10c8849e9fd8a2892538b79b82acf8ecb97e485",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            }
+          ],
+          "primary_table_count": 2,
+          "primary_source_rows": 1565,
+          "qualification": "Native atom sites and product-only annotations are separate variants. Minot has 1030 rows and 924 nonempty product annotations, not 1030 validated site labels."
+        },
+        {
+          "id": "enantioselectivity",
+          "title": "Enantioselectivity",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "selectivity/hitea_chiral_resolution",
+              "title": "HiTEA chiral-resolution enantiomeric excess",
+              "rows": 50,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/selectivity/hitea_chiral_resolution.csv.gz",
+              "sha256": "deffeb88f4a3d9e1f1ea98ece7cdcda2f42ba8edaae899771df2aab5f1ddd8b7",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "kingsmith2024reactome"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "expansion",
+              "key": "C16/aldol_reaction_dataset",
+              "title": "OrgAIcat aldol reactions",
+              "rows": 13360,
+              "role": "primary",
+              "counting_unit": "literature or validation observation",
+              "path": "Data/expansion/main/C16/aldol_reaction_dataset.parquet",
+              "sha256": "727fecc820664a12bcf5656784e246872f9cae9eedc14129487032c05d167848",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C16",
+              "source_urls": [
+                "https://github.com/DeepSynthesis/orgaicat/tree/main/data",
+                "https://github.com/DeepSynthesis/orgaicat"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C16/michael_addition_dataset",
+              "title": "OrgAIcat Michael additions",
+              "rows": 9194,
+              "role": "primary",
+              "counting_unit": "literature or validation observation",
+              "path": "Data/expansion/main/C16/michael_addition_dataset.parquet",
+              "sha256": "3ebcd00fcf67e6fe004d94e1ea4e9a0c6a68e174001bbddfcfb99ef8a8ec035c",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C16",
+              "source_urls": [
+                "https://github.com/DeepSynthesis/orgaicat/tree/main/data",
+                "https://github.com/DeepSynthesis/orgaicat"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C16/validation_in_house_acetone",
+              "title": "OrgAIcat in-house acetone validation",
+              "rows": 24,
+              "role": "primary",
+              "counting_unit": "literature or validation observation",
+              "path": "Data/expansion/main/C16/validation_in_house_acetone.parquet",
+              "sha256": "a78c786545763bc1a4af9b67258c85c99a249c13022fa4e88c6aa9f360139e44",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C16",
+              "source_urls": [
+                "https://github.com/DeepSynthesis/orgaicat/tree/main/data",
+                "https://github.com/DeepSynthesis/orgaicat"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C16/validation_in_house_hydroxyacetone",
+              "title": "OrgAIcat in-house hydroxyacetone validation",
+              "rows": 17,
+              "role": "primary",
+              "counting_unit": "literature or validation observation",
+              "path": "Data/expansion/main/C16/validation_in_house_hydroxyacetone.parquet",
+              "sha256": "c5902553914c1d3718ccb551fba622475381e36ec6282c53e1e70b57dfb9cc4d",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C16",
+              "source_urls": [
+                "https://github.com/DeepSynthesis/orgaicat/tree/main/data",
+                "https://github.com/DeepSynthesis/orgaicat"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C16/validation_new_literature_aldol",
+              "title": "OrgAIcat literature aldol validation",
+              "rows": 81,
+              "role": "primary",
+              "counting_unit": "literature or validation observation",
+              "path": "Data/expansion/main/C16/validation_new_literature_aldol.parquet",
+              "sha256": "538b7824377d0a526ea8a6ff7d3837d26fbb22cda611bfa9f8fefb9ec8d2e87d",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C16",
+              "source_urls": [
+                "https://github.com/DeepSynthesis/orgaicat/tree/main/data",
+                "https://github.com/DeepSynthesis/orgaicat"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C16/validation_new_literature_michael",
+              "title": "OrgAIcat literature Michael validation",
+              "rows": 109,
+              "role": "primary",
+              "counting_unit": "literature or validation observation",
+              "path": "Data/expansion/main/C16/validation_new_literature_michael.parquet",
+              "sha256": "41639b6a17b7b092b38a0f1ef59c53256d2f40c7ed27357c189fec55a6d00441",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C16",
+              "source_urls": [
+                "https://github.com/DeepSynthesis/orgaicat/tree/main/data",
+                "https://github.com/DeepSynthesis/orgaicat"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C16/validation_virtual_chemist",
+              "title": "OrgAIcat Virtual Chemist validation",
+              "rows": 39,
+              "role": "primary",
+              "counting_unit": "literature or validation observation",
+              "path": "Data/expansion/main/C16/validation_virtual_chemist.parquet",
+              "sha256": "30c9b286d0668cddbc0ee4203eafb0f8b83b269c6d5620433d8d6e880a0eb50c",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C16",
+              "source_urls": [
+                "https://github.com/DeepSynthesis/orgaicat/tree/main/data",
+                "https://github.com/DeepSynthesis/orgaicat"
+              ]
+            }
+          ],
+          "primary_table_count": 8,
+          "primary_source_rows": 22874,
+          "qualification": "Signed ee, absolute ee and derived energy differences are distinct; do not infer a favored stereoisomer when its convention is unresolved."
+        },
+        {
+          "id": "product_distribution",
+          "title": "Condition-dependent product distributions",
+          "tables": [
+            {
+              "namespace": "expansion",
+              "key": "C06/catechol",
+              "title": "Catechol flow conditions",
+              "rows": 1227,
+              "role": "primary",
+              "counting_unit": "flow-condition observation",
+              "path": "Data/expansion/main/C06/catechol.parquet",
+              "sha256": "579b186784c74a5164718c79d8abbf7fa13e26015bece574ab99164e1b50cec6",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C06",
+              "source_urls": [
+                "https://github.com/jpfolch/catechol_solvent_selection",
+                "https://proceedings.neurips.cc/paper_files/paper/2025/file/ad61e68e2c4208d5d092b3ecd6064b46-Paper-Datasets_and_Benchmarks_Track.pdf"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C06/claisen",
+              "title": "Claisen flow conditions",
+              "rows": 283,
+              "role": "primary",
+              "counting_unit": "flow-condition observation",
+              "path": "Data/expansion/main/C06/claisen.parquet",
+              "sha256": "6890901862e080d0c2f59b0bc2127ddfc638babf3eb23f7c07ca86490593c4af",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C06",
+              "source_urls": [
+                "https://github.com/jpfolch/catechol_solvent_selection",
+                "https://proceedings.neurips.cc/paper_files/paper/2025/file/ad61e68e2c4208d5d092b3ecd6064b46-Paper-Datasets_and_Benchmarks_Track.pdf"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C06/single_solvent",
+              "title": "Single-solvent subset (overlapping view)",
+              "rows": 656,
+              "role": "overlapping_view",
+              "counting_unit": "flow-condition observation",
+              "path": "Data/expansion/main/C06/single_solvent.parquet",
+              "sha256": "9567764950291fd19115fc4fe05d44ef1975207b23c06c7a04b021b405455964",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C06",
+              "source_urls": [
+                "https://github.com/jpfolch/catechol_solvent_selection",
+                "https://proceedings.neurips.cc/paper_files/paper/2025/file/ad61e68e2c4208d5d092b3ecd6064b46-Paper-Datasets_and_Benchmarks_Track.pdf"
+              ],
+              "counted_under": "expansion:C06/catechol"
+            }
+          ],
+          "primary_table_count": 2,
+          "primary_source_rows": 1510,
+          "qualification": "Residence time is an input, not a physical time trajectory. Missing mass is not silently renormalized."
+        },
+        {
+          "id": "impurity_prediction",
+          "title": "Side-product and impurity identification",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "impurity/pba_benzaldehyde_side_product",
+              "title": "PBA benzaldehyde side products",
+              "rows": 756,
+              "role": "primary",
+              "counting_unit": "experimental reaction condition",
+              "path": "Data/coverage_expansion/impurity/pba_benzaldehyde_side_product.jsonl.gz",
+              "sha256": "b73a356906112988e8d1782f298d52ae73e45dd63054224ee84d0be30815ae35",
+              "source_catalogue": "Data/coverage_expansion/impurity/catalog.json",
+              "source_id": "ROBOWSKI_IMPURITY2025",
+              "source_urls": [
+                "https://doi.org/10.1038/s41586-025-09490-1"
+              ],
+              "qualification": "756 native experimental conditions; benzaldehyde is explicitly identified by the source as the main undesired by-product of styrene epoxidation. The task predicts its measured-spectrum-derived yield for a known candidate. Native fitted zero values are preserved as quantitative estimates and are not relabelled absence/not-detected. Desired-product yield and selectivity columns are excluded from model inputs. No generated candidates or interpolated viewer tables are used. One chemical transformation with a catalyst-composition panel; grouping must prevent repeated compositions crossing splits."
+            },
+            {
+              "namespace": "coverage",
+              "key": "impurity/solid_state_reported_impurity_phases",
+              "title": "Solid-state reported impurity phases",
+              "rows": 7261,
+              "role": "primary",
+              "counting_unit": "literature-extracted synthesis recipe with explicit impurity phase identity",
+              "path": "Data/coverage_expansion/impurity/solid_state_reported_impurity_phases.jsonl.gz",
+              "sha256": "8e0de53371c07b2197e827cd4e43f6020179e8d502371348d7173aaefcbdf510",
+              "source_catalogue": "Data/coverage_expansion/impurity/catalog.json",
+              "source_id": "SOLIDSTATE_IMPURITY2025",
+              "source_urls": [
+                "https://doi.org/10.1038/s41597-025-06222-y"
+              ],
+              "qualification": "Selects source records with an explicitly identified impurity phase, balanced target reaction, concrete precursor and target compositions and original DOI. Native unknown/variable identities are excluded; partial known subsets are flagged. The61937 no-impurity-report cohort is never used as negative evidence. Source labels are extracted literature observations, not computationally generated candidate phases. Materials Project most-stable-entry assignments/energies are omitted from all features and references. Native synthesis operations are DOI-level context and may not map uniquely to a particular recipe, so exact condition-specific causal claims are unsupported. Original publication and reaction identity must be grouped in eventual benchmark splits."
+            }
+          ],
+          "primary_table_count": 2,
+          "primary_source_rows": 8017,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        }
+      ],
+      "primary_table_count": 14,
+      "primary_source_rows": 33966,
+      "overlapping_view_count": 1
+    },
+    {
+      "id": "conditions",
+      "title": "Conditions, procedures and experimental design",
+      "tasks": [
+        {
+          "id": "condition_recovery",
+          "title": "Recorded reagent and condition recovery",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "synthesis/uspto_500",
+              "title": "USPTO-500 reagent prediction",
+              "rows": 143535,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/synthesis/uspto_500.csv.gz",
+              "sha256": "fad362c125f8fc6195d49748bbd9f381ca4c9d3f03935d82f457b350ab46bef1",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "lu2022unified"
+              ],
+              "legacy_field_eligible_rows": {
+                "reagent_set": 143535
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "condition/orderly_condition",
+              "title": "ORDerly condition-prediction benchmark",
+              "rows": 691105,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/condition/orderly_condition.csv.gz",
+              "sha256": "789e1c41f6dcc00cff2600aa21d034db327428b2df29427721f2ba103ca91e57",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "wigh2024orderly"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "condition_sharealike/ord_hte_condition",
+              "title": "ORD high-throughput condition benchmark",
+              "rows": 123720,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/condition_sharealike/ord_hte_condition.csv.gz",
+              "sha256": "9d77cb0ef9233dd7922e4a65ea89e046051581c9200dd3eb7c85d3ae06514c5c",
+              "source_catalogue": "doc/_static/catalog-sharealike-data.json",
+              "citations": [
+                "kearnes2021ord"
+              ],
+              "legacy_field_eligible_rows": {
+                "role_aware_condition": 122050
+              }
+            }
+          ],
+          "primary_table_count": 3,
+          "primary_source_rows": 958360,
+          "qualification": "Keep generic-agent and role-aware outputs as named task variants; missing roles are unknown and a recorded recipe is not uniquely correct."
+        },
+        {
+          "id": "condition_ranking",
+          "title": "Ranking measured conditions",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "yield/hitea",
+              "title": "HiTEA assay responses",
+              "rows": 39546,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/yield/hitea.csv.gz",
+              "sha256": "f0e0d0db9f37643bcebb5c9b6a29a9a6a950f7e92c05fc4541a07d9ca3d1d0e9",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "kingsmith2024reactome"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "yield/buchwald_hartwig_ood",
+              "title": "NCS 2026 / BH-HTE-OOD yield collection",
+              "rows": 27438,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/yield/buchwald_hartwig_ood.csv.gz",
+              "sha256": "1cae5ff9010813e242f6de2dc6bd3e33342f759be79c5d88ac4f3f46dc4ec409",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "neves2026bh"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_al1_data",
+              "title": "Minot borylation AL1",
+              "rows": 2907,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_al1_data.parquet",
+              "sha256": "1a4593001f6dbf52487f50ff6efcbfef6b52cd0488dc5f0b001de04117faf780",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_al2_data",
+              "title": "Minot borylation AL2",
+              "rows": 954,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_al2_data.parquet",
+              "sha256": "8b26a87c9577d85d2e913a1a9c0d5096777e41ad765b0fc4b7f9bb80c0db751c",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_al3_data",
+              "title": "Minot borylation AL3",
+              "rows": 960,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_al3_data.parquet",
+              "sha256": "08f73be1d8027531abfdda1f26007fee8f2411221de95fcf1093e957f7364715",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_preal_data",
+              "title": "Minot borylation pre-AL",
+              "rows": 2044,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_preal_data.parquet",
+              "sha256": "d46814951744663fc94cade06f30cd4e3f13e52bc5d13c5a0bcf43bf51793092",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C03/cn_screen",
+              "title": "Cernak C–N coupling screen",
+              "rows": 50688,
+              "role": "primary",
+              "counting_unit": "HTE experiment",
+              "path": "Data/expansion/sharealike/C03/cn_screen.parquet",
+              "sha256": "534d2d7bc8cbed7f694694c0db65e9b34fd4cfe471878e0a37395767415bc5a0",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C03",
+              "source_urls": [
+                "https://open-reaction-database.org/dataset/ord_dataset-805ad863feef48579d95d86a728035f4",
+                "https://doi.org/10.1021/jacs.6c05959"
+              ]
+            }
+          ],
+          "primary_table_count": 7,
+          "primary_source_rows": 124537,
+          "qualification": "Requires comparable observed panels; the initial HiTEA design has 429. Other source rows are candidates, not already qualified panels."
+        },
+        {
+          "id": "sequential_optimization",
+          "title": "Sequential experiment selection",
+          "tables": [
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_al1_data",
+              "title": "Minot borylation AL1",
+              "rows": 2907,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_al1_data.parquet",
+              "sha256": "1a4593001f6dbf52487f50ff6efcbfef6b52cd0488dc5f0b001de04117faf780",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_al2_data",
+              "title": "Minot borylation AL2",
+              "rows": 954,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_al2_data.parquet",
+              "sha256": "8b26a87c9577d85d2e913a1a9c0d5096777e41ad765b0fc4b7f9bb80c0db751c",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_al3_data",
+              "title": "Minot borylation AL3",
+              "rows": 960,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_al3_data.parquet",
+              "sha256": "08f73be1d8027531abfdda1f26007fee8f2411221de95fcf1093e957f7364715",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C02/minot_preal_data",
+              "title": "Minot borylation pre-AL",
+              "rows": 2044,
+              "role": "primary",
+              "counting_unit": "HTE observation",
+              "path": "Data/expansion/main/C02/minot_preal_data.parquet",
+              "sha256": "d46814951744663fc94cade06f30cd4e3f13e52bc5d13c5a0bcf43bf51793092",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C02",
+              "source_urls": [
+                "https://zenodo.org/records/20773622",
+                "https://www.nature.com/articles/s43588-026-01063-0"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C03/cn_screen",
+              "title": "Cernak C–N coupling screen",
+              "rows": 50688,
+              "role": "primary",
+              "counting_unit": "HTE experiment",
+              "path": "Data/expansion/sharealike/C03/cn_screen.parquet",
+              "sha256": "534d2d7bc8cbed7f694694c0db65e9b34fd4cfe471878e0a37395767415bc5a0",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C03",
+              "source_urls": [
+                "https://open-reaction-database.org/dataset/ord_dataset-805ad863feef48579d95d86a728035f4",
+                "https://doi.org/10.1021/jacs.6c05959"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C06/catechol",
+              "title": "Catechol flow conditions",
+              "rows": 1227,
+              "role": "primary",
+              "counting_unit": "flow-condition observation",
+              "path": "Data/expansion/main/C06/catechol.parquet",
+              "sha256": "579b186784c74a5164718c79d8abbf7fa13e26015bece574ab99164e1b50cec6",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C06",
+              "source_urls": [
+                "https://github.com/jpfolch/catechol_solvent_selection",
+                "https://proceedings.neurips.cc/paper_files/paper/2025/file/ad61e68e2c4208d5d092b3ecd6064b46-Paper-Datasets_and_Benchmarks_Track.pdf"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C06/claisen",
+              "title": "Claisen flow conditions",
+              "rows": 283,
+              "role": "primary",
+              "counting_unit": "flow-condition observation",
+              "path": "Data/expansion/main/C06/claisen.parquet",
+              "sha256": "6890901862e080d0c2f59b0bc2127ddfc638babf3eb23f7c07ca86490593c4af",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C06",
+              "source_urls": [
+                "https://github.com/jpfolch/catechol_solvent_selection",
+                "https://proceedings.neurips.cc/paper_files/paper/2025/file/ad61e68e2c4208d5d092b3ecd6064b46-Paper-Datasets_and_Benchmarks_Track.pdf"
+              ]
+            },
+            {
+              "namespace": "expansion",
+              "key": "C06/single_solvent",
+              "title": "Single-solvent subset (overlapping view)",
+              "rows": 656,
+              "role": "overlapping_view",
+              "counting_unit": "flow-condition observation",
+              "path": "Data/expansion/main/C06/single_solvent.parquet",
+              "sha256": "9567764950291fd19115fc4fe05d44ef1975207b23c06c7a04b021b405455964",
+              "source_catalogue": "Data/expansion/catalog.json",
+              "source_id": "C06",
+              "source_urls": [
+                "https://github.com/jpfolch/catechol_solvent_selection",
+                "https://proceedings.neurips.cc/paper_files/paper/2025/file/ad61e68e2c4208d5d092b3ecd6064b46-Paper-Datasets_and_Benchmarks_Track.pdf"
+              ],
+              "counted_under": "expansion:C06/catechol"
+            }
+          ],
+          "primary_table_count": 7,
+          "primary_source_rows": 59063,
+          "qualification": "Offline replay uses measured candidate points. It does not establish prospective laboratory performance or infer unmeasured outcomes."
+        },
+        {
+          "id": "procedure_generation",
+          "title": "Experimental procedure generation",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "condition_sharealike/openexp",
+              "title": "OpenExp experimental procedure benchmark",
+              "rows": 274439,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/condition_sharealike/openexp.csv.gz",
+              "sha256": "f38c6bf858aa6d6d983c15199fc90f28e999ba6ea670229ab0307e70e919edc2",
+              "source_catalogue": "doc/_static/catalog-sharealike-data.json",
+              "citations": [
+                "liu2024reactxt"
+              ],
+              "legacy_field_eligible_rows": {}
+            }
+          ],
+          "primary_table_count": 1,
+          "primary_source_rows": 274439,
+          "qualification": "Withhold procedure text and actions from inputs; action/reference agreement is not validation of laboratory execution."
+        }
+      ],
+      "primary_table_count": 13,
+      "primary_source_rows": 1358846,
+      "overlapping_view_count": 1
+    },
+    {
+      "id": "physics",
+      "title": "Reaction physics, energetics and kinetics",
+      "tasks": [
+        {
+          "id": "activation_barrier",
+          "title": "Activation-barrier prediction",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "property/b97xd3",
+              "title": "B97-D3 activation and reaction energies (legacy b97xd3 key)",
+              "rows": 16365,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/property/b97xd3.csv.gz",
+              "sha256": "33f881612842378a6cff97b2db0c99b1c4877a7e81a318129a26dd58e9702d73",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "grambow2020scientificdata",
+                "grambow2020zenodo"
+              ],
+              "legacy_field_eligible_rows": {
+                "energy_barrier": 16365
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "property/cycloadd",
+              "title": "Cycloaddition original source format",
+              "rows": 5269,
+              "role": "overlapping_view",
+              "counting_unit": "source-table row",
+              "path": "Data/property/cycloadd.csv.gz",
+              "sha256": "afd03a88ef6268350f2c176b70a67396ff1902b85e6742bb2ac3ef0d9ca84004",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "heid2023benchmark_chemprop"
+              ],
+              "counted_under": "coverage:solution_context/cycloadd_solution_context",
+              "legacy_field_eligible_rows": {
+                "energy_barrier": 5269
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "property/e2",
+              "title": "E2 activation energies",
+              "rows": 1264,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/property/e2.csv.gz",
+              "sha256": "2b2177235aeddf06b9fa29abe9836e6a3c520ccdbd1530b9757f8e8c4c23d99e",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "heid2023benchmark_chemprop"
+              ],
+              "legacy_field_eligible_rows": {
+                "energy_barrier": 1264
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "property/e2sn2",
+              "title": "E2/SN2 activation energies",
+              "rows": 3625,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/property/e2sn2.csv.gz",
+              "sha256": "d3b27039841da7ea9bb18e511271fbaddfcb61d826ec1c5e31b50f71c1d3e044",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "heid2022machine",
+                "vonrudorff2020thousands"
+              ],
+              "legacy_field_eligible_rows": {
+                "energy_barrier": 3625
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "property/rdb7",
+              "title": "RDB7 activation energies",
+              "rows": 23852,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/property/rdb7.csv.gz",
+              "sha256": "5980529ee8cf8ab0922df24048c69ba131d2f7ad623f5cdf9d7fb67b6466849e",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "heid2023benchmark_chemprop"
+              ],
+              "legacy_field_eligible_rows": {
+                "energy_barrier": 23852
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "property/rgd1",
+              "title": "RGD1 activation energies",
+              "rows": 353984,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/property/rgd1.csv.gz",
+              "sha256": "74c5fbfd38b24409c17ddf2d8dc105ad728479df8a17b2bcf65c51a3ed8bed30",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "heid2023benchmark_chemprop"
+              ],
+              "legacy_field_eligible_rows": {
+                "energy_barrier": 353984
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "property/sn2",
+              "title": "SN2 activation energies",
+              "rows": 2361,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/property/sn2.csv.gz",
+              "sha256": "2e3c58220e44dbf7597088861d642378abead0048f1a6c12f99771a0719db2ac",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "heid2023benchmark_chemprop"
+              ],
+              "legacy_field_eligible_rows": {
+                "energy_barrier": 2361
+              }
+            },
+            {
+              "namespace": "canonical",
+              "key": "property/snar",
+              "title": "SNAr original source format",
+              "rows": 503,
+              "role": "overlapping_view",
+              "counting_unit": "source-table row",
+              "path": "Data/property/snar.csv.gz",
+              "sha256": "df8df5b8bc8b74910c7fe9960a8dd200182c5ef1bf91de906286cb71bfe60bcd",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "jorner2021machine"
+              ],
+              "counted_under": "coverage:solution_context/snar_solution_context",
+              "legacy_field_eligible_rows": {
+                "energy_barrier": 503
+              }
+            },
+            {
+              "namespace": "coverage",
+              "key": "physics_rates/quantumpioneer_hAT_kinetics",
+              "title": "QuantumPioneer HAT kinetics",
+              "rows": 166158,
+              "role": "primary",
+              "counting_unit": "native computed HAT reaction with k298 and thermo-kinetic references",
+              "path": "Data/coverage_expansion/physics_rates/quantumpioneer_kinetics.csv",
+              "sha256": "e81aa5f9158564e64356a524c046469e2a13e471469ff641713ded3c37ff1520",
+              "source_catalogue": "Data/coverage_expansion/physics_rates/catalog.json",
+              "source_id": "QuantumPioneer2026",
+              "source_urls": [
+                "https://doi.org/10.5281/zenodo.20060606"
+              ],
+              "qualification": "Full166158 native positive finitek298 references. Native rates/TST are computed; no conversion to lograte legacy sourceunits. Exactrecorded-reactant groups keep candidateH-abstractionsites of same source reactants together; proposed split is new and does not establish scaffold independence. KineticCSVhasgasreferenceTST/thermo; no per-solvent correction inferred from separate solvationassets. No independent physical recomputation."
+            },
+            {
+              "namespace": "coverage",
+              "key": "solution_barriers/lipred_solution_activation_gibbs",
+              "title": "LiPRED solution activation Gibbs free energies",
+              "rows": 4514,
+              "role": "primary",
+              "counting_unit": "computed method-specific solution activation Gibbs reference",
+              "path": "Data/coverage_expansion/solution_barriers/lipred_solution_activation_gibbs.csv",
+              "sha256": "d028ede06408041185f2d3a583ae203bbd965b61d64fb5e4357b2315947b0cf9",
+              "source_catalogue": "Data/coverage_expansion/solution_barriers/catalog.json",
+              "source_id": "LiPRED2026",
+              "source_urls": [
+                "https://doi.org/10.5281/zenodo.16358189"
+              ],
+              "qualification": "Native computed solution-phase activation Gibbs free energies, not Arrhenius Ea or electronic barriers. 4514 method-specific references come from 970 workbook context rows, 30 unordered native-name/channel groups and 542 native solvent tokens. These are not 4514 independent reactions. Paper states 4513 values/28 reactions; the pinned broader thesis workbook includes two Fmoc groups and differs in count. No exact paper-subset claim. Seven published methods are selected; two additional native AVGof6 variants are omitted. No reaction or solvent SMILES are supplied in this workbook; retain native names and codes without inference. Hypothetical hypo1-9 tokens lack descriptors here and require exclusion from physical-solvent evaluation. Native entries 408 and 531 repeat the same named Menschutkin context with different cached values and are flagged. Group all methods/solvents by reaction_group; no train/test split has been qualified. Source cached formulas are read without recalculation; original standard-state corrections are already in targets.",
+              "native_context_rows": 970
+            },
+            {
+              "namespace": "coverage",
+              "key": "solution_context/snar_solution_context",
+              "title": "SNAr activation free energies with solvent and temperature",
+              "rows": 503,
+              "role": "primary",
+              "counting_unit": "existing canonical reaction-condition observation",
+              "path": "Data/coverage_expansion/solution_context/snar_solution_context.csv",
+              "sha256": "00133eda15cf7f07ba3bd13f4b51c4fb95f2c44f915af104a21d9d608186777d",
+              "source_catalogue": "Data/coverage_expansion/solution_context/catalog.json",
+              "source_id": "SNArSolution2021",
+              "source_urls": [
+                "https://doi.org/10.1039/D0SC04896H"
+              ],
+              "qualification": "503 unchanged observations;41 literal solvent strings (including mixtures/aliases) and13 temperatures. Exact normalized reaction endpoints remain grouped across conditions. Proposed splits are new group splits, not source evaluation splits or scaffold/solvent extrapolation guarantees. Parent canonical rows must never be used as independent train/test data. Preserve raw solvent labels;41 strings does not mean41 chemically distinct pure solvents.",
+              "derived_view_of": "property/snar"
+            },
+            {
+              "namespace": "coverage",
+              "key": "solution_context/cycloadd_solution_context",
+              "title": "Cycloaddition activation and reaction free energies in water",
+              "rows": 5269,
+              "role": "primary",
+              "counting_unit": "existing canonical reaction-condition observation",
+              "path": "Data/coverage_expansion/solution_context/cycloadd_solution_context.csv",
+              "sha256": "7e140a55f4c94d0250a9b742b3dbaed1901d4d061b370f5cee145505cf1a4bba",
+              "source_catalogue": "Data/coverage_expansion/solution_context/catalog.json",
+              "source_id": "CycloaddSolution2023",
+              "source_urls": [
+                "https://doi.org/10.6084/m9.figshare.21707888.v5"
+              ],
+              "qualification": "5269 unchanged observations, all water/298.15K. Solvent and temperature are constant context: this table cannot establish solvent-effect or temperature generalization. Original Chemprop source splits retained as metadata; use proposed reaction-group split for this overlapping view and apply same groups to canonical parent rows. Not physically recalculated.",
+              "derived_view_of": "property/cycloadd"
+            }
+          ],
+          "primary_table_count": 10,
+          "primary_source_rows": 577895,
+          "qualification": "Electronic barriers, Arrhenius activation energies and activation Gibbs free energies retain their units, theory, phase, solvent, temperature and standard state. Experimental and computed references are scored separately; do not pool numerical values. Solvent-aware views of existing rows are overlapping context variants."
+        },
+        {
+          "id": "reaction_energetics",
+          "title": "Reaction energy and thermochemistry",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "property/b97xd3",
+              "title": "B97-D3 activation and reaction energies (legacy b97xd3 key)",
+              "rows": 16365,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/property/b97xd3.csv.gz",
+              "sha256": "33f881612842378a6cff97b2db0c99b1c4877a7e81a318129a26dd58e9702d73",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "grambow2020scientificdata",
+                "grambow2020zenodo"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "property/cycloadd",
+              "title": "Cycloaddition original source format",
+              "rows": 5269,
+              "role": "overlapping_view",
+              "counting_unit": "source-table row",
+              "path": "Data/property/cycloadd.csv.gz",
+              "sha256": "afd03a88ef6268350f2c176b70a67396ff1902b85e6742bb2ac3ef0d9ca84004",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "heid2023benchmark_chemprop"
+              ],
+              "counted_under": "coverage:solution_context/cycloadd_solution_context",
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "canonical",
+              "key": "property/rad6re",
+              "title": "RAD-6 reaction enthalpies",
+              "rows": 31923,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/property/rad6re.csv.gz",
+              "sha256": "fd78145b61bf50e0267f61ae5e45681020a7de7d3fe552da26feabc3096db1d5",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "heid2022machine",
+                "stocker2020machine"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "coverage",
+              "key": "physics_rates/quantumpioneer_hAT_kinetics",
+              "title": "QuantumPioneer HAT kinetics",
+              "rows": 166158,
+              "role": "primary",
+              "counting_unit": "native computed HAT reaction with k298 and thermo-kinetic references",
+              "path": "Data/coverage_expansion/physics_rates/quantumpioneer_kinetics.csv",
+              "sha256": "e81aa5f9158564e64356a524c046469e2a13e471469ff641713ded3c37ff1520",
+              "source_catalogue": "Data/coverage_expansion/physics_rates/catalog.json",
+              "source_id": "QuantumPioneer2026",
+              "source_urls": [
+                "https://doi.org/10.5281/zenodo.20060606"
+              ],
+              "qualification": "Full166158 native positive finitek298 references. Native rates/TST are computed; no conversion to lograte legacy sourceunits. Exactrecorded-reactant groups keep candidateH-abstractionsites of same source reactants together; proposed split is new and does not establish scaffold independence. KineticCSVhasgasreferenceTST/thermo; no per-solvent correction inferred from separate solvationassets. No independent physical recomputation."
+            },
+            {
+              "namespace": "coverage",
+              "key": "solution_context/cycloadd_solution_context",
+              "title": "Cycloaddition activation and reaction free energies in water",
+              "rows": 5269,
+              "role": "primary",
+              "counting_unit": "existing canonical reaction-condition observation",
+              "path": "Data/coverage_expansion/solution_context/cycloadd_solution_context.csv",
+              "sha256": "7e140a55f4c94d0250a9b742b3dbaed1901d4d061b370f5cee145505cf1a4bba",
+              "source_catalogue": "Data/coverage_expansion/solution_context/catalog.json",
+              "source_id": "CycloaddSolution2023",
+              "source_urls": [
+                "https://doi.org/10.6084/m9.figshare.21707888.v5"
+              ],
+              "qualification": "5269 unchanged observations, all water/298.15K. Solvent and temperature are constant context: this table cannot establish solvent-effect or temperature generalization. Original Chemprop source splits retained as metadata; use proposed reaction-group split for this overlapping view and apply same groups to canonical parent rows. Not physically recalculated.",
+              "derived_view_of": "property/cycloadd"
+            }
+          ],
+          "primary_table_count": 4,
+          "primary_source_rows": 219715,
+          "qualification": "Reaction energy differs from an activation barrier. Preserve direction, quantity, units and theory; shared source rows do not become new reactions."
+        },
+        {
+          "id": "reaction_rates",
+          "title": "Reaction-rate prediction",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "property/lograte",
+              "title": "Reaction log rates",
+              "rows": 778,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/property/lograte.csv.gz",
+              "sha256": "ca79d7de36fde44961dd093a53c999356ac9aacf3aee524eb18bf90219f120f0",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "heid2022machine",
+                "bhoorasingh2017automated"
+              ],
+              "legacy_field_eligible_rows": {}
+            },
+            {
+              "namespace": "coverage",
+              "key": "physics_rates/quantumpioneer_hAT_kinetics",
+              "title": "QuantumPioneer HAT kinetics",
+              "rows": 166158,
+              "role": "primary",
+              "counting_unit": "native computed HAT reaction with k298 and thermo-kinetic references",
+              "path": "Data/coverage_expansion/physics_rates/quantumpioneer_kinetics.csv",
+              "sha256": "e81aa5f9158564e64356a524c046469e2a13e471469ff641713ded3c37ff1520",
+              "source_catalogue": "Data/coverage_expansion/physics_rates/catalog.json",
+              "source_id": "QuantumPioneer2026",
+              "source_urls": [
+                "https://doi.org/10.5281/zenodo.20060606"
+              ],
+              "qualification": "Full166158 native positive finitek298 references. Native rates/TST are computed; no conversion to lograte legacy sourceunits. Exactrecorded-reactant groups keep candidateH-abstractionsites of same source reactants together; proposed split is new and does not establish scaffold independence. KineticCSVhasgasreferenceTST/thermo; no per-solvent correction inferred from separate solvationassets. No independent physical recomputation."
+            }
+          ],
+          "primary_table_count": 2,
+          "primary_source_rows": 166936,
+          "qualification": "Preserve log base, rate units, temperature and computed-versus-measured evidence. Arrhenius parameters are reference labels, not hidden inputs. Enzyme kcat needs enzyme context; Km and Ki are distinct parameters, not rate constants."
+        },
+        {
+          "id": "reactive_potential",
+          "title": "Reactive energies and forces",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "physics/transition1x_reactive_trajectories",
+              "title": "Transition1x reactive trajectories",
+              "rows": 10073,
+              "role": "primary",
+              "counting_unit": "complete native reaction trajectory; configuration_count gives individual atomic configurations",
+              "path": "Data/coverage_expansion/physics/transition1x_reactive_trajectories.csv",
+              "sha256": "b809b5dc199bfd49624995119b8a65b1d598d3ede438f4cee1f16b504ea461f9",
+              "source_catalogue": "Data/coverage_expansion/physics/catalog.json",
+              "source_id": "Transition1x2022",
+              "source_urls": [
+                "https://doi.org/10.6084/m9.figshare.19614657.v4"
+              ],
+              "qualification": "CSV indexes full native trajectory tensors: rows count reaction trajectories, configuration_count sums molecular configurations. Native formula train/val/test retained; adjacent frames stay together. Per-row charge/spin are not supplied in native HDF5.",
+              "atomic_configurations": 9624594
+            }
+          ],
+          "primary_table_count": 1,
+          "primary_source_rows": 10073,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        },
+        {
+          "id": "kinetic_parameter_inference",
+          "title": "Kinetic parameter and rate-law inference",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "physics/chemsindy_reference_trajectories",
+              "title": "ChemSINDy reference trajectories",
+              "rows": 14,
+              "role": "primary",
+              "counting_unit": "complete derived simulated trajectory with known native-example parameters",
+              "path": "Data/coverage_expansion/physics/chemsindy_reference_trajectories.csv",
+              "sha256": "322bf8b9d3792d0a75ec1c1775cfff76cb1c9532f1fcb8644aa1f0eb4da7db52",
+              "source_catalogue": "Data/coverage_expansion/physics/catalog.json",
+              "source_id": "ChemSINDy2026",
+              "source_urls": [
+                "https://github.com/nla-group/ChemSINDy/tree/9aa3f8adb997348bd1e85c1b61fa8a835a91c759"
+              ],
+              "qualification": "14 derived simulated trajectories from two published native example mechanisms; 580 observations. Parameter inference conditional on declared known stoichiometry has full-rank sensitivity design. Network graph recovery can remain nonunique; score dynamical equivalence separately. No experimental-identification or broad out-of-family generalization claim.",
+              "time_points": 580,
+              "distinct_mechanism_families": 2
+            }
+          ],
+          "primary_table_count": 1,
+          "primary_source_rows": 14,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        }
+      ],
+      "primary_table_count": 14,
+      "primary_source_rows": 620683,
+      "overlapping_view_count": 2
+    },
+    {
+      "id": "mechanisms",
+      "title": "Mechanisms, reactive pathways and networks",
+      "tasks": [
+        {
+          "id": "mechanistic_prediction",
+          "title": "Electron-pushing mechanism prediction",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "mechanism/synepd_polar",
+              "title": "SynEPD polar mechanism annotations",
+              "rows": 1926,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/mechanism/synepd_polar.csv.gz",
+              "sha256": "bc31c8764b13cde89540c763d94691f64c1b460458a759ea6a757a9d0967a7ba",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "synepd2026"
+              ],
+              "legacy_field_eligible_rows": {
+                "mechanistic_prediction": 1924
+              }
+            },
+            {
+              "namespace": "coverage",
+              "key": "mechanisms/mcsa_observed_mechanisms",
+              "title": "M-CSA observed-start complete mechanisms",
+              "rows": 278,
+              "role": "primary",
+              "counting_unit": "complete mechanism proposal with native initial participants",
+              "path": "Data/coverage_expansion/mechanisms/mcsa_observed_mechanisms.parquet",
+              "sha256": "76b81eb7054d6df673178e9bc11779d609d52da66f0fefac85936998534cde9f",
+              "source_catalogue": "Data/coverage_expansion/mechanisms/catalog.json",
+              "source_id": "MCSA",
+              "source_urls": [
+                "https://www.ebi.ac.uk/thornton-srv/m-csa/"
+              ],
+              "qualification": "Frozen M-CSA v5 source references: 278 stored records; 192 EXACT strict replay references, 86 DELTA_CONSISTENT references retained for diagnostics. Preferred whole-route view uses observed initial participants; only the 192 EXACT records are preferred primary references. Reconstructed initial components, when flagged, use mechanism-derived preconditions and are not independently observed endpoint inputs. Source transitions are ordered; arrows within a native drawing are one atomic group, not physical chronology. Native splits remain unassigned and development-exposure flags are preserved; replay consistency does not establish benchmark blindness or physical truth. Unsupported fishhooks, radical and covalent-metal cases remain outside the accepted conversion. All source identities, certificates, context and arrows are reference-only metadata, withheld from model inputs.",
+              "strict_replay_eligible_rows": 192,
+              "preferred_primary_rows": 192
+            },
+            {
+              "namespace": "coverage",
+              "key": "mechanisms/mcsa_full_mechanisms",
+              "title": "M-CSA full mechanisms (overlapping)",
+              "rows": 479,
+              "role": "overlapping_view",
+              "counting_unit": "complete mechanism proposal",
+              "path": "Data/coverage_expansion/mechanisms/mcsa_full_mechanisms.parquet",
+              "sha256": "dfdb96211e35ea5ce6660f875173e2827f34a8961e5f10db146b52fbfc32acd3",
+              "source_catalogue": "Data/coverage_expansion/mechanisms/catalog.json",
+              "source_id": "MCSA",
+              "source_urls": [
+                "https://www.ebi.ac.uk/thornton-srv/m-csa/"
+              ],
+              "qualification": "Frozen M-CSA v5 source references: 479 stored records; 312 EXACT strict replay references, 167 DELTA_CONSISTENT references retained for diagnostics. Overlapping supporting/diagnostic view of the same native enzyme proposals; not independent data or extra tasks. Reconstructed initial components, when flagged, use mechanism-derived preconditions and are not independently observed endpoint inputs. Source transitions are ordered; arrows within a native drawing are one atomic group, not physical chronology. Native splits remain unassigned and development-exposure flags are preserved; replay consistency does not establish benchmark blindness or physical truth. Unsupported fishhooks, radical and covalent-metal cases remain outside the accepted conversion. All source identities, certificates, context and arrows are reference-only metadata, withheld from model inputs.",
+              "strict_replay_eligible_rows": 312,
+              "preferred_primary_rows": 0
+            },
+            {
+              "namespace": "coverage",
+              "key": "mechanisms/mcsa_continuous_chains",
+              "title": "M-CSA continuous chains (overlapping)",
+              "rows": 934,
+              "role": "overlapping_view",
+              "counting_unit": "continuous complete or partial native mechanism chain",
+              "path": "Data/coverage_expansion/mechanisms/mcsa_continuous_chains.parquet",
+              "sha256": "633eb4d7a20fe81ce8a98c05e4e476a4569490878117c069a4bd2fe8393e75c2",
+              "source_catalogue": "Data/coverage_expansion/mechanisms/catalog.json",
+              "source_id": "MCSA",
+              "source_urls": [
+                "https://www.ebi.ac.uk/thornton-srv/m-csa/"
+              ],
+              "qualification": "Frozen M-CSA v5 source references: 934 stored records; 650 EXACT strict replay references, 284 DELTA_CONSISTENT references retained for diagnostics. Overlapping supporting/diagnostic view of the same native enzyme proposals; not independent data or extra tasks. Reconstructed initial components, when flagged, use mechanism-derived preconditions and are not independently observed endpoint inputs. Source transitions are ordered; arrows within a native drawing are one atomic group, not physical chronology. Native splits remain unassigned and development-exposure flags are preserved; replay consistency does not establish benchmark blindness or physical truth. Unsupported fishhooks, radical and covalent-metal cases remain outside the accepted conversion. All source identities, certificates, context and arrows are reference-only metadata, withheld from model inputs.",
+              "strict_replay_eligible_rows": 650,
+              "preferred_primary_rows": 0
+            },
+            {
+              "namespace": "coverage",
+              "key": "mechanisms/mcsa_elementary_steps",
+              "title": "M-CSA elementary steps (overlapping)",
+              "rows": 2393,
+              "role": "overlapping_view",
+              "counting_unit": "accepted native drawing transition",
+              "path": "Data/coverage_expansion/mechanisms/mcsa_elementary_steps.parquet",
+              "sha256": "f8f9b70c4db8015325f4420306b6a586f76d19dc8a6772a6f356d5f5cd0c5826",
+              "source_catalogue": "Data/coverage_expansion/mechanisms/catalog.json",
+              "source_id": "MCSA",
+              "source_urls": [
+                "https://www.ebi.ac.uk/thornton-srv/m-csa/"
+              ],
+              "qualification": "Frozen M-CSA v5 source references: 2393 stored records; 1657 EXACT strict replay references, 736 DELTA_CONSISTENT references retained for diagnostics. Overlapping supporting/diagnostic view of the same native enzyme proposals; not independent data or extra tasks. Reconstructed initial components, when flagged, use mechanism-derived preconditions and are not independently observed endpoint inputs. Source transitions are ordered; arrows within a native drawing are one atomic group, not physical chronology. Native splits remain unassigned and development-exposure flags are preserved; replay consistency does not establish benchmark blindness or physical truth. Unsupported fishhooks, radical and covalent-metal cases remain outside the accepted conversion. All source identities, certificates, context and arrows are reference-only metadata, withheld from model inputs.",
+              "strict_replay_eligible_rows": 1657,
+              "preferred_primary_rows": 0
+            }
+          ],
+          "primary_table_count": 2,
+          "primary_source_rows": 2204,
+          "qualification": "Endpoints are supplied; endpoint agreement is not event recovery. SynEPD has 1924 primary-tier records. M-CSA variants retain observed/reconstructed input flags, replay/reference tiers, native entry/proposal groups and development exposure."
+        },
+        {
+          "id": "ts_geometry",
+          "title": "Transition-state geometry",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "physics/orgreact_ts_geometry",
+              "title": "OrgReact endpoint / TS triplets",
+              "rows": 9649,
+              "role": "primary",
+              "counting_unit": "reaction endpoint/transition-state triplet",
+              "path": "Data/coverage_expansion/physics/orgreact_ts_geometry.csv",
+              "sha256": "154424ff6277b1e8f199022a67758ff438083cedd02974ab690b2f7b89938059",
+              "source_catalogue": "Data/coverage_expansion/physics/catalog.json",
+              "source_id": "OrgReact2026",
+              "source_urls": [
+                "https://doi.org/10.6084/m9.figshare.31668682.v3"
+              ],
+              "qualification": "Complete published XYZ endpoint/TS reference set; retain native atom order. Geometry-only target qualified; charge/spin and per-row IRC logs are absent from these released assets. No reverified saddle claim, no ready-made independent split."
+            },
+            {
+              "namespace": "coverage",
+              "key": "physics/transition1x_final_ts_geometry",
+              "title": "Transition1x endpoint / TS triplets",
+              "rows": 10073,
+              "role": "primary",
+              "counting_unit": "native reaction endpoint/transition-state triplet",
+              "path": "Data/coverage_expansion/physics/transition1x_final_ts_geometry.csv",
+              "sha256": "6c7512bb38663731d30e49bb9037d5b73ded283c1ffa8301b3d21ab5d437db82",
+              "source_catalogue": "Data/coverage_expansion/physics/catalog.json",
+              "source_id": "Transition1x2022",
+              "source_urls": [
+                "https://doi.org/10.6084/m9.figshare.19614657.v4"
+              ],
+              "qualification": "Source final NEB structures only; no intermediate-frame maximum substituted for TS. Missing final groups explicitly excluded; source-reported computational reference, independently recomputed saddle validation pending."
+            }
+          ],
+          "primary_table_count": 2,
+          "primary_source_rows": 19722,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        },
+        {
+          "id": "reaction_network_modeling",
+          "title": "Elementary reaction networks and microkinetics",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "physics/chemsindy_reference_trajectories",
+              "title": "ChemSINDy reference trajectories",
+              "rows": 14,
+              "role": "primary",
+              "counting_unit": "complete derived simulated trajectory with known native-example parameters",
+              "path": "Data/coverage_expansion/physics/chemsindy_reference_trajectories.csv",
+              "sha256": "322bf8b9d3792d0a75ec1c1775cfff76cb1c9532f1fcb8644aa1f0eb4da7db52",
+              "source_catalogue": "Data/coverage_expansion/physics/catalog.json",
+              "source_id": "ChemSINDy2026",
+              "source_urls": [
+                "https://github.com/nla-group/ChemSINDy/tree/9aa3f8adb997348bd1e85c1b61fa8a835a91c759"
+              ],
+              "qualification": "14 derived simulated trajectories from two published native example mechanisms; 580 observations. Parameter inference conditional on declared known stoichiometry has full-rank sensitivity design. Network graph recovery can remain nonunique; score dynamical equivalence separately. No experimental-identification or broad out-of-family generalization claim.",
+              "time_points": 580,
+              "distinct_mechanism_families": 2
+            }
+          ],
+          "primary_table_count": 1,
+          "primary_source_rows": 14,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        }
+      ],
+      "primary_table_count": 5,
+      "primary_source_rows": 21940,
+      "overlapping_view_count": 3
+    },
+    {
+      "id": "analysis",
+      "title": "Analytical characterization and reaction monitoring",
+      "tasks": [
+        {
+          "id": "analytical_interpretation",
+          "title": "Reaction-mixture analytical interpretation",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "process/nmr_saccharose_hydrolysis_snapshots",
+              "title": "Sucrose hydrolysis NMR spectra",
+              "rows": 1023,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/nmr_saccharose_hydrolysis_snapshots.jsonl.gz",
+              "sha256": "18f370c5b06f1203a934ad6845e175109da47670968cfc1519aa1aaecbc2ddda",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "MAGNETSTEIN2025",
+              "source_urls": [
+                "https://doi.org/10.1021/acs.analchem.5c00800"
+              ],
+              "qualification": "Measured NMR signal columns paired with independently computed trapezoidal component-window integrals. Targets are explicitly DERIVED analytical estimates from the same spectra, not independent concentration ground truth. Negative component integrals clipped only for derived area fractions; signed integrals preserved. NaNs are excluded within each integration window, never filled as measured zeros. Future-extracted component templates are forbidden inputs. SourcePMG284 contains999 native snapshots versus1000 nativeMnova rows, and noMnova labels are used. Three underlying measured trajectories; no random-snapshot independence claim. Numerical integration is the primary deterministic baseline; this task view is a reproducible analytical-processing contract, not evidence of a difficult concentration-estimation benchmark."
+            },
+            {
+              "namespace": "coverage",
+              "key": "process/nmr_pmg_284_snapshots",
+              "title": "PMG-284 NMR spectra",
+              "rows": 999,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/nmr_pmg_284_snapshots.jsonl.gz",
+              "sha256": "e46212c9a1e38d19ca26a234ca2c01b81e5d0ddca06f4a2cbf6a7f5e6f49e4c6",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "MAGNETSTEIN2025",
+              "source_urls": [
+                "https://doi.org/10.1021/acs.analchem.5c00800"
+              ],
+              "qualification": "Measured NMR signal columns paired with independently computed trapezoidal component-window integrals. Targets are explicitly DERIVED analytical estimates from the same spectra, not independent concentration ground truth. Negative component integrals clipped only for derived area fractions; signed integrals preserved. NaNs are excluded within each integration window, never filled as measured zeros. Future-extracted component templates are forbidden inputs. SourcePMG284 contains999 native snapshots versus1000 nativeMnova rows, and noMnova labels are used. Three underlying measured trajectories; no random-snapshot independence claim. Numerical integration is the primary deterministic baseline; this task view is a reproducible analytical-processing contract, not evidence of a difficult concentration-estimation benchmark."
+            },
+            {
+              "namespace": "coverage",
+              "key": "process/nmr_pmg_287_snapshots",
+              "title": "PMG-287 NMR spectra",
+              "rows": 1000,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/nmr_pmg_287_snapshots.jsonl.gz",
+              "sha256": "9f7c39f16588728a5592f5dc7ed7ad49e339d283ba7cb6c9238f77d3c6f1909b",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "MAGNETSTEIN2025",
+              "source_urls": [
+                "https://doi.org/10.1021/acs.analchem.5c00800"
+              ],
+              "qualification": "Measured NMR signal columns paired with independently computed trapezoidal component-window integrals. Targets are explicitly DERIVED analytical estimates from the same spectra, not independent concentration ground truth. Negative component integrals clipped only for derived area fractions; signed integrals preserved. NaNs are excluded within each integration window, never filled as measured zeros. Future-extracted component templates are forbidden inputs. SourcePMG284 contains999 native snapshots versus1000 nativeMnova rows, and noMnova labels are used. Three underlying measured trajectories; no random-snapshot independence claim. Numerical integration is the primary deterministic baseline; this task view is a reproducible analytical-processing contract, not evidence of a difficult concentration-estimation benchmark."
+            }
+          ],
+          "primary_table_count": 3,
+          "primary_source_rows": 3022,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        },
+        {
+          "id": "reaction_progress_monitoring",
+          "title": "Reaction progress, endpoint and anomaly monitoring",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "process/nmr_saccharose_hydrolysis_progress",
+              "title": "NMR saccharose hydrolysis progress",
+              "rows": 1022,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/nmr_saccharose_hydrolysis_progress.jsonl.gz",
+              "sha256": "631acde06a722bb3b01418ab35594af0dc4614de6d893b7890ed9b73d0d84477",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "MAGNETSTEIN2025",
+              "source_urls": [
+                "https://doi.org/10.1021/acs.analchem.5c00800"
+              ],
+              "qualification": "Forecasting view of the same native measured trajectories; overlaps analytical snapshot records and is not an additional physical experiment. Native time ordering preserved. Target is next measured-spectrum DERIVED relative integrated area, not a new independent chemical label."
+            },
+            {
+              "namespace": "coverage",
+              "key": "process/nmr_pmg_284_progress",
+              "title": "NMR PMG-284 progress",
+              "rows": 998,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/nmr_pmg_284_progress.jsonl.gz",
+              "sha256": "f36765c40bdeb20a2d14e80c98cacae4b74b66f9b10c3e05f5e22ca3306c8a56",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "MAGNETSTEIN2025",
+              "source_urls": [
+                "https://doi.org/10.1021/acs.analchem.5c00800"
+              ],
+              "qualification": "Forecasting view of the same native measured trajectories; overlaps analytical snapshot records and is not an additional physical experiment. Native time ordering preserved. Target is next measured-spectrum DERIVED relative integrated area, not a new independent chemical label."
+            },
+            {
+              "namespace": "coverage",
+              "key": "process/nmr_pmg_287_progress",
+              "title": "NMR PMG-287 progress",
+              "rows": 999,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/nmr_pmg_287_progress.jsonl.gz",
+              "sha256": "dd6da290d3921bd80bb2d3a38ddf579ab070a3814ea8d049646acbf851d21850",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "MAGNETSTEIN2025",
+              "source_urls": [
+                "https://doi.org/10.1021/acs.analchem.5c00800"
+              ],
+              "qualification": "Forecasting view of the same native measured trajectories; overlaps analytical snapshot records and is not an additional physical experiment. Native time ordering preserved. Target is next measured-spectrum DERIVED relative integrated area, not a new independent chemical label."
+            },
+            {
+              "namespace": "coverage",
+              "key": "process/lowfield_nmr_yield_progress",
+              "title": "Low-field NMR yield progress",
+              "rows": 236,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/lowfield_nmr_yield_progress.jsonl.gz",
+              "sha256": "ed0bb5e7f6d10dff29786a927e5c64fe5f9ddc10370a1a03a072927c81ba8fa1",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "LOWFIELDNMR2026",
+              "source_urls": [
+                "https://doi.org/10.26434/chemrxiv.15005188/v1"
+              ],
+              "qualification": "Four measured yield profiles,60 observations per reaction,236 adjacent forecast pairs. Measurements from the same reaction remain one group. Processed yield observations, not raw-FID-to-yield calibration. Native MATLAB plotting script labels x-axis Time[min] and y-axis Yield[%]. Raw FIDs76GB are indexed upstream but were not downloaded because no verified trajectory-specific rawFID association was required for this narrower view."
+            }
+          ],
+          "primary_table_count": 4,
+          "primary_source_rows": 3255,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        }
+      ],
+      "primary_table_count": 7,
+      "primary_source_rows": 6277,
+      "overlapping_view_count": 0
+    },
+    {
+      "id": "design",
+      "title": "Catalyst/reagent design and new reactivity",
+      "tasks": [
+        {
+          "id": "reaction_component_design",
+          "title": "Reaction-conditioned component design",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "bio/enzeng_inverse_biocatalyst_design",
+              "title": "EnzEng inverse biocatalyst design",
+              "rows": 488,
+              "role": "primary",
+              "counting_unit": "source-derived qualified task row",
+              "path": "Data/coverage_expansion/bio/enzeng_inverse_biocatalyst_design.parquet",
+              "sha256": "b7c1872fbd663be05ba2c887894ed1afaf0a993e596aae2a3c1a151573dd74ad",
+              "source_catalogue": "Data/coverage_expansion/bio/catalog.json",
+              "source_id": "C13",
+              "source_urls": [
+                "https://zenodo.org/api/records/17310823/files/Data.zip/content"
+              ],
+              "qualification": "Inverse biocatalyst-sequence design subtype, not general small-molecule catalyst generation. Only ARNLD curated campaigns with explicit finite nonnegative TTN/reaction-activity-percent labels and qualified parent/variant sequence context. All DMSDB and LLMDB rows excluded. Desired response is an explicit design goal, not an outcome-prediction input. Each native variant is a demonstrated solution rather than the only correct output. Oracle values exist only for exact observed variant/context/endpoint tuples; unseen generated sequences require experiments and receive no fabricated response. Activity-percent is retained as reported, not automatically equated with isolated yield. Views overlap the mutation-effect source rows."
+            },
+            {
+              "namespace": "coverage",
+              "key": "knowledge/CatDRX_ORD2025/inverse_components",
+              "title": "CatDRX / ORD component design",
+              "rows": 49876,
+              "role": "primary",
+              "counting_unit": "recorded component-performance reference",
+              "path": "Data/coverage_expansion/knowledge/inverse_components.parquet",
+              "sha256": "430f23c5527312d8cdf84a036f5d60d49f20010db9f96be658d12dbc2bd887a7",
+              "source_catalogue": "Data/coverage_expansion/knowledge/catalog.json",
+              "source_id": "CatDRX_ORD2025",
+              "source_urls": [
+                "https://github.com/ohuelab/CatDRX/tree/f8952497761b0bf44cde4b48f8df3a8d40098f91"
+              ],
+              "qualification": "Retrospective reaction-conditioned component generation/recovery with catalyst-identity holdout. Input does not list candidates; evaluation has a finite measured lookup oracle. No prospective de novo performance is inferred for off-dataset structures. Yield measurements, native candidate identities and upstream ORD reuse remain explicit."
+            }
+          ],
+          "primary_table_count": 2,
+          "primary_source_rows": 50364,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        },
+        {
+          "id": "new_reactivity_discovery",
+          "title": "New reactivity and substrate-scope discovery",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "knowledge/MinotScope2026/scope_campaigns",
+              "title": "Minot substrate-scope campaigns",
+              "rows": 6865,
+              "role": "primary",
+              "counting_unit": "attempted substrate-scope experiment",
+              "path": "Data/coverage_expansion/knowledge/scope_campaigns.parquet",
+              "sha256": "a7b517e03bc29b8bc789d86d3d7ca72318014938ba9e3637d7de2b7b9e6486ac",
+              "source_catalogue": "Data/coverage_expansion/knowledge/catalog.json",
+              "source_id": "MinotScope2026",
+              "source_urls": [
+                "https://doi.org/10.5281/zenodo.20773622"
+              ],
+              "qualification": "Bounded retrospective substrate-scope discovery variant from native adaptive rounds, preserving failed attempts and dates. Source success labels and conversion are references; no claim of new transformations, exhaustive product characterization or prospective discovery. These same observations already support other Minot tasks and are not additional independent experiments."
+            }
+          ],
+          "primary_table_count": 1,
+          "primary_source_rows": 6865,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        }
+      ],
+      "primary_table_count": 3,
+      "primary_source_rows": 57229,
+      "overlapping_view_count": 0
+    },
+    {
+      "id": "process",
+      "title": "Reaction engineering and process assessment",
+      "tasks": [
+        {
+          "id": "reactor_scale_modeling",
+          "title": "Reactor and scale-dependent prediction",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "process/reac_discovery_cs1",
+              "title": "Reac-Discovery case study 1",
+              "rows": 55,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/reac_discovery_cs1.jsonl.gz",
+              "sha256": "c347354b19579663e6da260621491a9a714e01d7813fe5ae0f043c7e0c8cfadc",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "REACDISCOVERY2025",
+              "source_urls": [
+                "https://doi.org/10.1038/s41467-025-64127-1"
+              ],
+              "qualification": "Experimental reactor geometry and operating conditions predict NMR-derived yield and reported space–time yield. These are fixed reactor-scale experiments, not matched laboratory/pilot scale-up pairs. M1 is an overlapping representation of the same campaign and is deliberately not counted again. Source geometry symbols/units retained; source methods required before cross-source unit conversion."
+            },
+            {
+              "namespace": "coverage",
+              "key": "process/reac_discovery_cs2",
+              "title": "Reac-Discovery case study 2",
+              "rows": 58,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/reac_discovery_cs2.jsonl.gz",
+              "sha256": "49764a1137e6e8622c635373da75f4f440eca08ebd86fef2457393f05747469d",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "REACDISCOVERY2025",
+              "source_urls": [
+                "https://doi.org/10.1038/s41467-025-64127-1"
+              ],
+              "qualification": "Experimental reactor geometry and operating conditions predict NMR-derived yield and reported space–time yield. These are fixed reactor-scale experiments, not matched laboratory/pilot scale-up pairs. M1 is an overlapping representation of the same campaign and is deliberately not counted again. Source geometry symbols/units retained; source methods required before cross-source unit conversion."
+            },
+            {
+              "namespace": "coverage",
+              "key": "process/fcc_lab_source_full",
+              "title": "FCC laboratory source data",
+              "rows": 10000,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/fcc_lab_source_full.jsonl.gz",
+              "sha256": "7dee3a628dd58bb80250ef6752a290063edc2097788fcd879cbd2ff3ecd58a38",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "FCCSCALEUP2025",
+              "source_urls": [
+                "https://doi.org/10.1038/s41467-025-63982-2"
+              ],
+              "qualification": "Reference kind is native_mechanistic_simulation. All native CSVs are headerless. Lab has10000 simulated compositions; pilot test has15 physical experiments, while train/validation have48/12 interpolated rows. Repeated pilot measurements underpin interpolation and cannot establish independence. Native source-full pilot files have1016/982 rows and are excluded from joining. Lab/pilot target spaces differ (129 molecular components versus10 bulk properties); no artificial matched cross-scale pairing."
+            },
+            {
+              "namespace": "coverage",
+              "key": "process/fcc_pilot_train",
+              "title": "FCC pilot training data",
+              "rows": 48,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/fcc_pilot_train.jsonl.gz",
+              "sha256": "9e753460982c68355cf602c92f9ecb5a3464ee0ac9dc987eb3860a7fc35fbd47",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "FCCSCALEUP2025",
+              "source_urls": [
+                "https://doi.org/10.1038/s41467-025-63982-2"
+              ],
+              "qualification": "Reference kind is native_interpolation_of_pilot_experiments. All native CSVs are headerless. Lab has10000 simulated compositions; pilot test has15 physical experiments, while train/validation have48/12 interpolated rows. Repeated pilot measurements underpin interpolation and cannot establish independence. Native source-full pilot files have1016/982 rows and are excluded from joining. Lab/pilot target spaces differ (129 molecular components versus10 bulk properties); no artificial matched cross-scale pairing."
+            },
+            {
+              "namespace": "coverage",
+              "key": "process/fcc_pilot_validation",
+              "title": "FCC pilot validation data",
+              "rows": 12,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/fcc_pilot_validation.jsonl.gz",
+              "sha256": "dc9257e64b3ce06c3c219db87d21f27cde21768f6e5a02784988fab0cc8c1c6c",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "FCCSCALEUP2025",
+              "source_urls": [
+                "https://doi.org/10.1038/s41467-025-63982-2"
+              ],
+              "qualification": "Reference kind is native_interpolation_of_pilot_experiments. All native CSVs are headerless. Lab has10000 simulated compositions; pilot test has15 physical experiments, while train/validation have48/12 interpolated rows. Repeated pilot measurements underpin interpolation and cannot establish independence. Native source-full pilot files have1016/982 rows and are excluded from joining. Lab/pilot target spaces differ (129 molecular components versus10 bulk properties); no artificial matched cross-scale pairing."
+            },
+            {
+              "namespace": "coverage",
+              "key": "process/fcc_pilot_test",
+              "title": "FCC pilot test data",
+              "rows": 15,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/fcc_pilot_test.jsonl.gz",
+              "sha256": "764e6e23504c46e4c1c4ba93eaa09f50767006827c7a8ed6cfa8ee60c6a0049c",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "FCCSCALEUP2025",
+              "source_urls": [
+                "https://doi.org/10.1038/s41467-025-63982-2"
+              ],
+              "qualification": "Reference kind is measured_pilot_experiment. All native CSVs are headerless. Lab has10000 simulated compositions; pilot test has15 physical experiments, while train/validation have48/12 interpolated rows. Repeated pilot measurements underpin interpolation and cannot establish independence. Native source-full pilot files have1016/982 rows and are excluded from joining. Lab/pilot target spaces differ (129 molecular components versus10 bulk properties); no artificial matched cross-scale pairing."
+            }
+          ],
+          "primary_table_count": 6,
+          "primary_source_rows": 10188,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        },
+        {
+          "id": "process_control",
+          "title": "Dynamic reaction-process operation and control",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "process/cstr_control_transitions",
+              "title": "CSTR control transitions",
+              "rows": 600,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/cstr_control_transitions.jsonl.gz",
+              "sha256": "f027ddcfd313234ca9fb3b448d2767f7f190807732f441fc6e522b86fe3b511a",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "DOMPCCSTR",
+              "source_urls": [
+                "https://github.com/do-mpc/do-mpc/tree/9d5a8df0e4d6acac899bf0a65ffd4c30a6e2e4cc/examples/CSTR"
+              ],
+              "qualification": "Derived simulation:12 seeded excitation episodes,50 transitions each,not600 experimental reactor runs. Native model usesA→B→C plus competing2A→D. Source equations, kinetics, heat-transfer constants, action bounds,0.005h sampling andC_b=0.6 objective retained. Integrator changed to deterministicSciPyDOP853; dynamic control evaluates a proposed policy with the explicit transition oracle. No claim of matching native robustMPC or proving plant safety."
+            }
+          ],
+          "primary_table_count": 1,
+          "primary_source_rows": 600,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        },
+        {
+          "id": "process_impact_assessment",
+          "title": "Reaction-process resource and impact assessment",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "process/fcc_pilot_train",
+              "title": "FCC pilot training data",
+              "rows": 48,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/fcc_pilot_train.jsonl.gz",
+              "sha256": "9e753460982c68355cf602c92f9ecb5a3464ee0ac9dc987eb3860a7fc35fbd47",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "FCCSCALEUP2025",
+              "source_urls": [
+                "https://doi.org/10.1038/s41467-025-63982-2"
+              ],
+              "qualification": "Reference kind is native_interpolation_of_pilot_experiments. All native CSVs are headerless. Lab has10000 simulated compositions; pilot test has15 physical experiments, while train/validation have48/12 interpolated rows. Repeated pilot measurements underpin interpolation and cannot establish independence. Native source-full pilot files have1016/982 rows and are excluded from joining. Lab/pilot target spaces differ (129 molecular components versus10 bulk properties); no artificial matched cross-scale pairing."
+            },
+            {
+              "namespace": "coverage",
+              "key": "process/fcc_pilot_validation",
+              "title": "FCC pilot validation data",
+              "rows": 12,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/fcc_pilot_validation.jsonl.gz",
+              "sha256": "dc9257e64b3ce06c3c219db87d21f27cde21768f6e5a02784988fab0cc8c1c6c",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "FCCSCALEUP2025",
+              "source_urls": [
+                "https://doi.org/10.1038/s41467-025-63982-2"
+              ],
+              "qualification": "Reference kind is native_interpolation_of_pilot_experiments. All native CSVs are headerless. Lab has10000 simulated compositions; pilot test has15 physical experiments, while train/validation have48/12 interpolated rows. Repeated pilot measurements underpin interpolation and cannot establish independence. Native source-full pilot files have1016/982 rows and are excluded from joining. Lab/pilot target spaces differ (129 molecular components versus10 bulk properties); no artificial matched cross-scale pairing."
+            },
+            {
+              "namespace": "coverage",
+              "key": "process/fcc_pilot_test",
+              "title": "FCC pilot test data",
+              "rows": 15,
+              "role": "primary",
+              "counting_unit": "reference record; task views can overlap native experiments",
+              "path": "Data/coverage_expansion/process/fcc_pilot_test.jsonl.gz",
+              "sha256": "764e6e23504c46e4c1c4ba93eaa09f50767006827c7a8ed6cfa8ee60c6a0049c",
+              "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+              "source_id": "FCCSCALEUP2025",
+              "source_urls": [
+                "https://doi.org/10.1038/s41467-025-63982-2"
+              ],
+              "qualification": "Reference kind is measured_pilot_experiment. All native CSVs are headerless. Lab has10000 simulated compositions; pilot test has15 physical experiments, while train/validation have48/12 interpolated rows. Repeated pilot measurements underpin interpolation and cannot establish independence. Native source-full pilot files have1016/982 rows and are excluded from joining. Lab/pilot target spaces differ (129 molecular components versus10 bulk properties); no artificial matched cross-scale pairing."
+            }
+          ],
+          "primary_table_count": 3,
+          "primary_source_rows": 75,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        }
+      ],
+      "primary_table_count": 7,
+      "primary_source_rows": 10788,
+      "overlapping_view_count": 0
+    },
+    {
+      "id": "biocatalysis",
+      "title": "Biocatalysis and enzyme–reaction function",
+      "tasks": [
+        {
+          "id": "enzyme_activity",
+          "title": "Enzyme or assay activity",
+          "tables": [
+            {
+              "namespace": "canonical",
+              "key": "classification/ehreact_activity",
+              "title": "EHreact reaction activity",
+              "rows": 1943,
+              "role": "primary",
+              "counting_unit": "source-table row",
+              "path": "Data/classification/ehreact_activity.csv.gz",
+              "sha256": "eb38c0a10358fff35a616c6ae4255efd2a6bb00b8f02cc6e2dde00943fba8192",
+              "source_catalogue": "doc/_static/catalog-data.json",
+              "citations": [
+                "heid2021ehreact"
+              ],
+              "legacy_field_eligible_rows": {}
+            }
+          ],
+          "primary_table_count": 1,
+          "primary_source_rows": 1943,
+          "qualification": "This tests the supplied assay setting, not generic feasibility or transfer to unseen enzyme sequences; sequences are not provided by this table."
+        },
+        {
+          "id": "enzyme_retrieval",
+          "title": "Enzyme–reaction retrieval",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "bio/reactzyme_retrieval",
+              "title": "ReactZyme enzyme–reaction retrieval",
+              "rows": 178463,
+              "role": "primary",
+              "counting_unit": "source-derived qualified task row",
+              "path": "Data/coverage_expansion/bio/reactzyme_retrieval.parquet",
+              "sha256": "14ed9679a1974a95c2b02098a08bcabe3c38c3834ef5ab2bd30634e61f48ba8d",
+              "source_catalogue": "Data/coverage_expansion/bio/catalog.json",
+              "source_id": "C14",
+              "source_urls": [
+                "https://zenodo.org/api/records/13635807/files/enzyme_smi_split.zip/content"
+              ],
+              "qualification": "Native positive pairs only; no manufactured negatives. Native reaction input concatenates substrate/product molecule SMILES without a reaction arrow; preserve this upstream representation. Original train+validation pool is not silently relabeled as training. No new homology audit or model evaluation claimed."
+            }
+          ],
+          "primary_table_count": 1,
+          "primary_source_rows": 178463,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        },
+        {
+          "id": "mutation_effects",
+          "title": "Enzyme mutation effects",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "bio/enzeng_mutation_effects",
+              "title": "EnzEng mutation effects",
+              "rows": 409877,
+              "role": "primary",
+              "counting_unit": "source-derived qualified task row",
+              "path": "Data/coverage_expansion/bio/enzeng_mutation_effects.parquet",
+              "sha256": "607b451c674aabbc80e1f35aa8d6ded8c16e9881a7e3edac6892d929ab21e52c",
+              "source_catalogue": "Data/coverage_expansion/bio/catalog.json",
+              "source_id": "C13",
+              "source_urls": [
+                "https://zenodo.org/api/records/17310823/files/Data.zip/content"
+              ],
+              "qualification": "Only explicit native parent rows (#PARENT#), identical recorded assay context, nonidentical valid parent/variant sequences, finite native fitness and resolved campaign reference/assay metadata. Parent replicates aggregate by median with every reference ID retained. Native fitness and derived change are assay-specific, not universal kcat/yield. Source collection/evidence separates LLM-extracted literature from the other experimental collections. DOI fields can reference a compiled data deposit, not an individual primary paper. Mutation strings preserved without claiming independently validated residue numbering. Derived partitions close reference-DOI and exact-parent-sequence components; this is not an independent homology holdout. Missing assay conditions remain unknown; within-source comparisons require audit before a frozen benchmark."
+            }
+          ],
+          "primary_table_count": 1,
+          "primary_source_rows": 409877,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        },
+        {
+          "id": "active_sites",
+          "title": "Reaction-conditioned active sites",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "bio/mcsa_reference_active_sites",
+              "title": "M-CSA reference active sites",
+              "rows": 969,
+              "role": "primary",
+              "counting_unit": "source-derived qualified task row",
+              "path": "Data/coverage_expansion/bio/mcsa_reference_active_sites.parquet",
+              "sha256": "c9ee5321b3a876f5b8f755d4e15ac50ab5aaf6004889adbddde00a54d3892511",
+              "source_catalogue": "Data/coverage_expansion/bio/catalog.json",
+              "source_id": "MCSA",
+              "source_urls": [
+                "https://www.ebi.ac.uk/thornton-srv/m-csa/api/entries/?format=json"
+              ],
+              "qualification": "Native M-CSA reaction-associated reference catalytic residues, joined to frozen UniProt FASTA and checked for exact amino-acid identity at every labeled position. Reaction representation retains ChEBI/name/stoichiometry participants, not invented SMILES. Binary zeros are unannotated residues, not experimentally proven nonfunctional sites. Only reference annotations retained; homology-transferred labels excluded. Derived partitions close native-entry and exact-sequence connected components; they remain development-exposed, not a new independent homology holdout. Previously inspected M-CSA data overlap the existing mechanism companion."
+            }
+          ],
+          "primary_table_count": 1,
+          "primary_source_rows": 969,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        },
+        {
+          "id": "enzyme_kinetic_parameters",
+          "title": "Enzyme kinetic-parameter prediction",
+          "tables": [
+            {
+              "namespace": "coverage",
+              "key": "bio/brenda_record_kcat",
+              "title": "BRENDA kcat records",
+              "rows": 11775,
+              "role": "primary",
+              "counting_unit": "source-derived qualified task row",
+              "path": "Data/coverage_expansion/bio/brenda_record_kcat.parquet",
+              "sha256": "83583d5eee84fc0c0469375743c2c6088c6f0e01ce8531e21c684a042be4d33f",
+              "source_catalogue": "Data/coverage_expansion/bio/catalog.json",
+              "source_id": "C15",
+              "source_urls": [
+                "https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/kcat-random_trainvaltest.csv"
+              ],
+              "qualification": "Release subset contains only native rows explicitly labeled brenda, using each retained row's value/log10_value. All pooled max/mean target columns, sabio rows and ambiguous uniprot_search origins are excluded. This changes the prediction target from CatPred's aggregate benchmark to a retained BRENDA-record response. Source preprocessing capped extreme values; no claim of uncensored raw laboratory measurements. Intended source units retained, no independent experimental unit audit. Derived 40%-cluster split is not the original random split. Native combined source assets must not be redistributed as part of this cleared subset."
+            },
+            {
+              "namespace": "coverage",
+              "key": "bio/brenda_record_km",
+              "title": "BRENDA Km records",
+              "rows": 19676,
+              "role": "primary",
+              "counting_unit": "source-derived qualified task row",
+              "path": "Data/coverage_expansion/bio/brenda_record_km.parquet",
+              "sha256": "254de537b9178e0dde95a650bfe7775767a18c864fbd5973af938751ee8f8af5",
+              "source_catalogue": "Data/coverage_expansion/bio/catalog.json",
+              "source_id": "C15",
+              "source_urls": [
+                "https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/km-random_trainvaltest.csv"
+              ],
+              "qualification": "Release subset contains only native rows explicitly labeled brenda, using each retained row's value/log10_value. All pooled max/mean target columns, sabio rows and ambiguous uniprot_search origins are excluded. This changes the prediction target from CatPred's aggregate benchmark to a retained BRENDA-record response. Source preprocessing capped extreme values; no claim of uncensored raw laboratory measurements. Intended source units retained, no independent experimental unit audit. Derived 40%-cluster split is not the original random split. Native combined source assets must not be redistributed as part of this cleared subset."
+            },
+            {
+              "namespace": "coverage",
+              "key": "bio/brenda_record_ki",
+              "title": "BRENDA Ki records",
+              "rows": 5517,
+              "role": "primary",
+              "counting_unit": "source-derived qualified task row",
+              "path": "Data/coverage_expansion/bio/brenda_record_ki.parquet",
+              "sha256": "6c0d260b601df0ac8bca895a759ed0c8dc8b9eac5048deffe34c9071186ef704",
+              "source_catalogue": "Data/coverage_expansion/bio/catalog.json",
+              "source_id": "C15",
+              "source_urls": [
+                "https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/ki-random_trainvaltest.csv"
+              ],
+              "qualification": "Release subset contains only native rows explicitly labeled brenda, using each retained row's value/log10_value. All pooled max/mean target columns, sabio rows and ambiguous uniprot_search origins are excluded. This changes the prediction target from CatPred's aggregate benchmark to a retained BRENDA-record response. Source preprocessing capped extreme values; no claim of uncensored raw laboratory measurements. Intended source units retained, no independent experimental unit audit. Derived 40%-cluster split is not the original random split. Native combined source assets must not be redistributed as part of this cleared subset."
+            }
+          ],
+          "primary_table_count": 3,
+          "primary_source_rows": 36968,
+          "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance."
+        }
+      ],
+      "primary_table_count": 7,
+      "primary_source_rows": 628220,
+      "overlapping_view_count": 0
+    }
+  ]
+}

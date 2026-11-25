@@ -1,0 +1,159 @@
+{
+  "schema": "synrxn.coverage-solution-barriers.v1",
+  "sources": [
+    {
+      "id": "LiPRED2026",
+      "name": "LiPRED-associated native multi-solvent activation Gibbs free energies",
+      "url": "https://doi.org/10.5281/zenodo.16358189",
+      "paper_url": "https://doi.org/10.1039/D6CP00088F",
+      "license": "CC-BY-4.0",
+      "data_license_spdx": "CC-BY-4.0",
+      "redistribution_allowed": true,
+      "release_status": "redistributable_with_attribution_and_source_notices",
+      "source_sha256": "3d84b89a4bca4cd989cf3f58001fe29179ebbba30061b8a4c4205e4960a834a0",
+      "files": [
+        {
+          "path": "Data/raw/coverage/solution_barriers/LiPRED2026/QM_dataset.xlsx",
+          "sha256": "3d84b89a4bca4cd989cf3f58001fe29179ebbba30061b8a4c4205e4960a834a0",
+          "bytes": 1034381
+        },
+        {
+          "path": "Data/raw/coverage/solution_barriers/LiPRED2026/README.md",
+          "sha256": "3b909fbafad61a87751608440d319917a70fb060a2326db486792fd61a36d375",
+          "bytes": 1619
+        },
+        {
+          "path": "Data/raw/coverage/solution_barriers/LiPRED2026/metadata.json",
+          "sha256": "a334a26499c09ffdf511a3ad4dc54482066ca17751f700045b06baa9f85b0918",
+          "bytes": 5344
+        }
+      ],
+      "rights": {
+        "scope": "actual native chapter5 workbook in the CC BY4 Zenodo dataset deposit",
+        "grant_url": "https://zenodo.org/api/records/16358189",
+        "grant_snapshot": {
+          "path": "Data/raw/coverage/solution_barriers/LiPRED2026/metadata.json",
+          "sha256": "a334a26499c09ffdf511a3ad4dc54482066ca17751f700045b06baa9f85b0918"
+        },
+        "license_terms_url": "https://creativecommons.org/licenses/by/4.0/",
+        "license_snapshot": {
+          "path": "Data/coverage_expansion/solution_barriers/CC-BY-4.0.txt",
+          "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+        },
+        "notice": {
+          "path": "Data/coverage_expansion/solution_barriers/LiPRED2026.NOTICE.txt",
+          "sha256": "5a617949cbb32e679afa608c208f327f25b711ab9da90a5da93a56aa695d5644"
+        }
+      },
+      "upstream_assets": [
+        {
+          "name": "supplementary_material_v3.zip",
+          "url": "https://zenodo.org/api/records/16358189/files/supplementary_material_v3.zip/content",
+          "bytes": 36346814,
+          "md5": "7934b25adb63b520ac504db615874bb3",
+          "sha256": "cf7181ee147caa5dff45aa2a1fa1d33f027db8842b62d65a4d74d5d992e15a58",
+          "member": "supplementary_material_v3/chapter5/QM_dataset.xlsx"
+        },
+        {
+          "name": "README.md",
+          "url": "https://zenodo.org/api/records/16358189/files/README.md/content",
+          "bytes": 1619,
+          "sha256": "3b909fbafad61a87751608440d319917a70fb060a2326db486792fd61a36d375"
+        }
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "id": "lipred_solution_activation_gibbs",
+      "path": "Data/coverage_expansion/solution_barriers/lipred_solution_activation_gibbs.csv",
+      "rows": 4514,
+      "role": "primary",
+      "task_ids": [
+        "activation_barrier"
+      ],
+      "counting_unit": "computed method-specific solution activation Gibbs reference",
+      "source_id": "LiPRED2026",
+      "source_url": "https://doi.org/10.5281/zenodo.16358189",
+      "source_sha256": "3d84b89a4bca4cd989cf3f58001fe29179ebbba30061b8a4c4205e4960a834a0",
+      "license": "CC-BY-4.0",
+      "sha256": "d028ede06408041185f2d3a583ae203bbd965b61d64fb5e4357b2315947b0cf9",
+      "columns": [
+        "source_record_id",
+        "source_entry",
+        "source_sheet",
+        "source_excel_row",
+        "source_excel_column",
+        "reaction_class",
+        "substrate_1_name",
+        "substrate_2_name",
+        "reaction_group",
+        "solvent_name",
+        "hypothetical_solvent",
+        "solvent_identity_qualified",
+        "duplicate_context",
+        "temperature_K",
+        "low_level_native",
+        "high_level_native",
+        "method",
+        "native_method_column",
+        "phase",
+        "solvation_model",
+        "reference_kind",
+        "target_quantity",
+        "standard_state",
+        "reference_state_correction_kcal_per_mol",
+        "activation_gibbs_kcal_per_mol"
+      ],
+      "release_status": "redistributable_with_attribution_and_source_notices",
+      "reference_evidence": "Exact native cached absolute Delta G dagger cells in both workbook sheets.",
+      "parent_groups": 30,
+      "native_context_rows": 970,
+      "native_solvent_tokens": 542,
+      "target_units": {
+        "activation_gibbs_kcal_per_mol": "kcal/mol"
+      },
+      "qualification": "Native computed solution-phase activation Gibbs free energies, not Arrhenius Ea or electronic barriers. 4514 method-specific references come from 970 workbook context rows, 30 unordered native-name/channel groups and 542 native solvent tokens. These are not 4514 independent reactions. Paper states 4513 values/28 reactions; the pinned broader thesis workbook includes two Fmoc groups and differs in count. No exact paper-subset claim. Seven published methods are selected; two additional native AVGof6 variants are omitted. No reaction or solvent SMILES are supplied in this workbook; retain native names and codes without inference. Hypothetical hypo1-9 tokens lack descriptors here and require exclusion from physical-solvent evaluation. Native entries 408 and 531 repeat the same named Menschutkin context with different cached values and are flagged. Group all methods/solvents by reaction_group; no train/test split has been qualified. Source cached formulas are read without recalculation; original standard-state corrections are already in targets.",
+      "qualification_report": {
+        "path": "Data/coverage_expansion/solution_barriers/qualification.json",
+        "sha256": "e76778f5e348a1204dbd81baf52df47683df70280c6f99a9632b183ce30ffa9d"
+      },
+      "task_fields": {
+        "activation_barrier": {
+          "inputs": [
+            "reaction_class",
+            "substrate_1_name",
+            "substrate_2_name",
+            "solvent_name",
+            "temperature_K",
+            "low_level_native",
+            "high_level_native",
+            "method",
+            "solvation_model"
+          ],
+          "targets": [
+            "activation_gibbs_kcal_per_mol"
+          ],
+          "group_fields": [
+            "reaction_group",
+            "source_entry"
+          ],
+          "metrics": [
+            "MAE_kcal_per_mol_by_method",
+            "RMSE_kcal_per_mol_by_method",
+            "coverage"
+          ],
+          "qualification": "Names-only native identities; no invented SMILES. Exclude hypothetical_solvent=True for physical-solvent evaluation. Group all method/solvent variants of each named reaction/channel. Report unresolved native duplicate contexts separately."
+        }
+      }
+    }
+  ],
+  "adapter": "kdd/coverage/adapters/solution_barriers.py",
+  "adapter_sha256": "c551fc6fd316ae6e7abecf865eac00b7244490faba8f757ddb598cec51ea2447",
+  "source_lock": "kdd/coverage/solution_barriers_sources.json",
+  "source_lock_sha256": "abbd45def02ad019e6e963eb81d63d306e184c8f5080387aeb6aecff9a7021fe",
+  "reproduction": {
+    "offline_command": "python kdd/coverage/adapters/solution_barriers.py",
+    "acquisition_command": "python kdd/coverage/adapters/solution_barriers.py --fetch"
+  }
+}

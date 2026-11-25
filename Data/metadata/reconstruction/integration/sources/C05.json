@@ -1,0 +1,17 @@
+{
+  "id": "C05",
+  "name": "Denmark CPA thiol addition",
+  "priority": "1 Integrate first",
+  "survey_license_note": "Published SI is accessible. Separate data reuse terms require verification.",
+  "paper_urls": [
+    "https://doi.org/10.1126/science.aau5631"
+  ],
+  "data_urls": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6417887/"
+  ],
+  "project_urls": [],
+  "license_urls": [],
+  "license_verified": false,
+  "files": [],
+  "requests": []
+}

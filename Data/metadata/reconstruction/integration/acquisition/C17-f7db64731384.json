@@ -1,0 +1,10 @@
+{
+  "source_id": "C17",
+  "name": "splits_choriso.tar.gz",
+  "bytes": 280021031,
+  "checksum": "md5:59360a503d3ab92c11627a6b523e6088",
+  "url": "https://ndownloader.figshare.com/files/43622058",
+  "path": "Data/raw/synrxn2/C17/splits_choriso.tar.gz",
+  "status": "unavailable",
+  "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+}

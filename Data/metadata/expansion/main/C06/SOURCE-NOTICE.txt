@@ -1,0 +1,7 @@
+C06: Catechol solvent-selection benchmark
+Data license: MIT
+Author-provided Croissant dataset metadata explicitly declares MIT; README covers code and data.
+
+Primary source and attribution:
+https://proceedings.neurips.cc/paper_files/paper/2025/file/ad61e68e2c4208d5d092b3ecd6064b46-Paper-Datasets_and_Benchmarks_Track.pdf
+https://github.com/jpfolch/catechol_solvent_selection

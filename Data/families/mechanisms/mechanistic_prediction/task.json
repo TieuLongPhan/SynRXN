@@ -1,0 +1,426 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 5,
+    "data_links": 5,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 3,
+    "primary_table_views": 2,
+    "stored_rows_across_unique_views": 6010,
+    "task_table_bindings": 5,
+    "tasks": 1,
+    "unique_table_views": 5
+  },
+  "tables": [
+    {
+      "data_link": "canonical/mechanism/synepd_polar/data.csv.gz",
+      "key": "mechanism/synepd_polar",
+      "metadata": "canonical/mechanism/synepd_polar/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "coverage/mechanisms/mcsa_observed_mechanisms/data.parquet",
+      "key": "mechanisms/mcsa_observed_mechanisms",
+      "metadata": "coverage/mechanisms/mcsa_observed_mechanisms/table.json",
+      "namespace": "coverage"
+    },
+    {
+      "data_link": "coverage/mechanisms/mcsa_full_mechanisms/data.parquet",
+      "key": "mechanisms/mcsa_full_mechanisms",
+      "metadata": "coverage/mechanisms/mcsa_full_mechanisms/table.json",
+      "namespace": "coverage"
+    },
+    {
+      "data_link": "coverage/mechanisms/mcsa_continuous_chains/data.parquet",
+      "key": "mechanisms/mcsa_continuous_chains",
+      "metadata": "coverage/mechanisms/mcsa_continuous_chains/table.json",
+      "namespace": "coverage"
+    },
+    {
+      "data_link": "coverage/mechanisms/mcsa_elementary_steps/data.parquet",
+      "key": "mechanisms/mcsa_elementary_steps",
+      "metadata": "coverage/mechanisms/mcsa_elementary_steps/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "mechanism/synepd_polar",
+        "legacy_field_eligible_rows": {
+          "mechanistic_prediction": 1924
+        },
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 1926
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/mechanisms/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "complete mechanism proposal with native initial participants",
+        "coverage_branch": "mechanisms",
+        "key": "mechanisms/mcsa_observed_mechanisms",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/mechanisms/mcsa_observed_mechanisms.parquet",
+        "preferred_primary_rows": 192,
+        "qualification": "Frozen M-CSA v5 source references: 278 stored records; 192 EXACT strict replay references, 86 DELTA_CONSISTENT references retained for diagnostics. Preferred whole-route view uses observed initial participants; only the 192 EXACT records are preferred primary references. Reconstructed initial components, when flagged, use mechanism-derived preconditions and are not independently observed endpoint inputs. Source transitions are ordered; arrows within a native drawing are one atomic group, not physical chronology. Native splits remain unassigned and development-exposure flags are preserved; replay consistency does not establish benchmark blindness or physical truth. Unsupported fishhooks, radical and covalent-metal cases remain outside the accepted conversion. All source identities, certificates, context and arrows are reference-only metadata, withheld from model inputs.",
+        "reference_evidence": "Direct native M-CSA MRV electron-flow proposals; frozen SynDART v5 conversion and SynRXN typed replay tiers. No EasIFA labels or predictor-generated mechanisms.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 278,
+        "sha256": "76b81eb7054d6df673178e9bc11779d609d52da66f0fefac85936998534cde9f",
+        "source_id": "MCSA",
+        "source_sha256": "2312938b3abfc820b0a70e7752533a188168413aac415e4099b4e0d0d12caf99",
+        "source_url": "https://www.ebi.ac.uk/thornton-srv/m-csa/",
+        "strict_replay_eligible_rows": 192,
+        "task_fields": {
+          "mechanistic_prediction": {
+            "eligibility_field": "preferred_primary_reference",
+            "group_fields": [
+              "enzyme_group",
+              "mechanism_group",
+              "native_transition_groups_json"
+            ],
+            "inputs": [
+              "reaction_smiles"
+            ],
+            "metrics": [
+              "strict_valid_event_recovery_top_k",
+              "ordered_grouped_trajectory_recovery_top_k",
+              "strict_validity",
+              "prediction_coverage"
+            ],
+            "qualification": "Frozen M-CSA v5 source references: 278 stored records; 192 EXACT strict replay references, 86 DELTA_CONSISTENT references retained for diagnostics. Preferred whole-route view uses observed initial participants; only the 192 EXACT records are preferred primary references. Reconstructed initial components, when flagged, use mechanism-derived preconditions and are not independently observed endpoint inputs. Source transitions are ordered; arrows within a native drawing are one atomic group, not physical chronology. Native splits remain unassigned and development-exposure flags are preserved; replay consistency does not establish benchmark blindness or physical truth. Unsupported fishhooks, radical and covalent-metal cases remain outside the accepted conversion. All source identities, certificates, context and arrows are reference-only metadata, withheld from model inputs.",
+            "split_status": "unassigned; no independent evaluation cohort claimed",
+            "targets": [
+              "electron_path_json",
+              "mechanism_record_json"
+            ],
+            "withheld_reference_columns": [
+              "sample_id",
+              "source_record_id",
+              "source_ids_json",
+              "electron_path_json",
+              "mechanism_record_json",
+              "entry_id",
+              "mechanism_id",
+              "enzyme_group",
+              "native_index_json",
+              "source_context_json",
+              "initial_participant_context",
+              "development_exposed",
+              "source_development_exposed",
+              "reference_replay_status",
+              "verification_level",
+              "source_version",
+              "license_spdx",
+              "mechanism_group",
+              "native_transition_groups_json",
+              "source_sha256",
+              "source_locator",
+              "source_family",
+              "native_split",
+              "split_role",
+              "primary_replay_eligible",
+              "preferred_primary_reference",
+              "view_role",
+              "reference_kind"
+            ]
+          }
+        },
+        "task_ids": [
+          "mechanistic_prediction"
+        ]
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/mechanisms/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "complete mechanism proposal",
+        "coverage_branch": "mechanisms",
+        "key": "mechanisms/mcsa_full_mechanisms",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/mechanisms/mcsa_full_mechanisms.parquet",
+        "preferred_primary_rows": 0,
+        "qualification": "Frozen M-CSA v5 source references: 479 stored records; 312 EXACT strict replay references, 167 DELTA_CONSISTENT references retained for diagnostics. Overlapping supporting/diagnostic view of the same native enzyme proposals; not independent data or extra tasks. Reconstructed initial components, when flagged, use mechanism-derived preconditions and are not independently observed endpoint inputs. Source transitions are ordered; arrows within a native drawing are one atomic group, not physical chronology. Native splits remain unassigned and development-exposure flags are preserved; replay consistency does not establish benchmark blindness or physical truth. Unsupported fishhooks, radical and covalent-metal cases remain outside the accepted conversion. All source identities, certificates, context and arrows are reference-only metadata, withheld from model inputs.",
+        "reference_evidence": "Direct native M-CSA MRV electron-flow proposals; frozen SynDART v5 conversion and SynRXN typed replay tiers. No EasIFA labels or predictor-generated mechanisms.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "overlapping_view",
+        "rows": 479,
+        "sha256": "dfdb96211e35ea5ce6660f875173e2827f34a8961e5f10db146b52fbfc32acd3",
+        "source_id": "MCSA",
+        "source_sha256": "4e3f9db039f35faf3d1cf67a6f284356f3209f126a2c443c6f84c24e21fbb1ae",
+        "source_url": "https://www.ebi.ac.uk/thornton-srv/m-csa/",
+        "strict_replay_eligible_rows": 312,
+        "task_fields": {
+          "mechanistic_prediction": {
+            "eligibility_field": "primary_replay_eligible",
+            "group_fields": [
+              "enzyme_group",
+              "mechanism_group",
+              "native_transition_groups_json"
+            ],
+            "inputs": [
+              "reaction_smiles"
+            ],
+            "metrics": [
+              "strict_valid_event_recovery_top_k",
+              "ordered_grouped_trajectory_recovery_top_k",
+              "strict_validity",
+              "prediction_coverage"
+            ],
+            "qualification": "Frozen M-CSA v5 source references: 479 stored records; 312 EXACT strict replay references, 167 DELTA_CONSISTENT references retained for diagnostics. Overlapping supporting/diagnostic view of the same native enzyme proposals; not independent data or extra tasks. Reconstructed initial components, when flagged, use mechanism-derived preconditions and are not independently observed endpoint inputs. Source transitions are ordered; arrows within a native drawing are one atomic group, not physical chronology. Native splits remain unassigned and development-exposure flags are preserved; replay consistency does not establish benchmark blindness or physical truth. Unsupported fishhooks, radical and covalent-metal cases remain outside the accepted conversion. All source identities, certificates, context and arrows are reference-only metadata, withheld from model inputs.",
+            "split_status": "unassigned; no independent evaluation cohort claimed",
+            "targets": [
+              "electron_path_json",
+              "mechanism_record_json"
+            ],
+            "withheld_reference_columns": [
+              "sample_id",
+              "source_record_id",
+              "source_ids_json",
+              "electron_path_json",
+              "mechanism_record_json",
+              "entry_id",
+              "mechanism_id",
+              "enzyme_group",
+              "native_index_json",
+              "source_context_json",
+              "initial_participant_context",
+              "development_exposed",
+              "source_development_exposed",
+              "reference_replay_status",
+              "verification_level",
+              "source_version",
+              "license_spdx",
+              "mechanism_group",
+              "native_transition_groups_json",
+              "source_sha256",
+              "source_locator",
+              "source_family",
+              "native_split",
+              "split_role",
+              "primary_replay_eligible",
+              "preferred_primary_reference",
+              "view_role",
+              "reference_kind"
+            ]
+          }
+        },
+        "task_ids": [
+          "mechanistic_prediction"
+        ]
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/mechanisms/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "continuous complete or partial native mechanism chain",
+        "coverage_branch": "mechanisms",
+        "key": "mechanisms/mcsa_continuous_chains",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/mechanisms/mcsa_continuous_chains.parquet",
+        "preferred_primary_rows": 0,
+        "qualification": "Frozen M-CSA v5 source references: 934 stored records; 650 EXACT strict replay references, 284 DELTA_CONSISTENT references retained for diagnostics. Overlapping supporting/diagnostic view of the same native enzyme proposals; not independent data or extra tasks. Reconstructed initial components, when flagged, use mechanism-derived preconditions and are not independently observed endpoint inputs. Source transitions are ordered; arrows within a native drawing are one atomic group, not physical chronology. Native splits remain unassigned and development-exposure flags are preserved; replay consistency does not establish benchmark blindness or physical truth. Unsupported fishhooks, radical and covalent-metal cases remain outside the accepted conversion. All source identities, certificates, context and arrows are reference-only metadata, withheld from model inputs.",
+        "reference_evidence": "Direct native M-CSA MRV electron-flow proposals; frozen SynDART v5 conversion and SynRXN typed replay tiers. No EasIFA labels or predictor-generated mechanisms.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "overlapping_view",
+        "rows": 934,
+        "sha256": "633eb4d7a20fe81ce8a98c05e4e476a4569490878117c069a4bd2fe8393e75c2",
+        "source_id": "MCSA",
+        "source_sha256": "daf61815090c65cbddca36a53b537bd1c5000707cf9bd925693ea9416561c078",
+        "source_url": "https://www.ebi.ac.uk/thornton-srv/m-csa/",
+        "strict_replay_eligible_rows": 650,
+        "task_fields": {
+          "mechanistic_prediction": {
+            "eligibility_field": "primary_replay_eligible",
+            "group_fields": [
+              "enzyme_group",
+              "mechanism_group",
+              "native_transition_groups_json"
+            ],
+            "inputs": [
+              "reaction_smiles"
+            ],
+            "metrics": [
+              "strict_valid_event_recovery_top_k",
+              "ordered_grouped_trajectory_recovery_top_k",
+              "strict_validity",
+              "prediction_coverage"
+            ],
+            "qualification": "Frozen M-CSA v5 source references: 934 stored records; 650 EXACT strict replay references, 284 DELTA_CONSISTENT references retained for diagnostics. Overlapping supporting/diagnostic view of the same native enzyme proposals; not independent data or extra tasks. Reconstructed initial components, when flagged, use mechanism-derived preconditions and are not independently observed endpoint inputs. Source transitions are ordered; arrows within a native drawing are one atomic group, not physical chronology. Native splits remain unassigned and development-exposure flags are preserved; replay consistency does not establish benchmark blindness or physical truth. Unsupported fishhooks, radical and covalent-metal cases remain outside the accepted conversion. All source identities, certificates, context and arrows are reference-only metadata, withheld from model inputs.",
+            "split_status": "unassigned; no independent evaluation cohort claimed",
+            "targets": [
+              "electron_path_json",
+              "mechanism_record_json"
+            ],
+            "withheld_reference_columns": [
+              "sample_id",
+              "source_record_id",
+              "source_ids_json",
+              "electron_path_json",
+              "mechanism_record_json",
+              "entry_id",
+              "mechanism_id",
+              "enzyme_group",
+              "native_index_json",
+              "source_context_json",
+              "initial_participant_context",
+              "development_exposed",
+              "source_development_exposed",
+              "reference_replay_status",
+              "verification_level",
+              "source_version",
+              "license_spdx",
+              "mechanism_group",
+              "native_transition_groups_json",
+              "source_sha256",
+              "source_locator",
+              "source_family",
+              "native_split",
+              "split_role",
+              "primary_replay_eligible",
+              "preferred_primary_reference",
+              "view_role",
+              "reference_kind"
+            ]
+          }
+        },
+        "task_ids": [
+          "mechanistic_prediction"
+        ]
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/mechanisms/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "accepted native drawing transition",
+        "coverage_branch": "mechanisms",
+        "key": "mechanisms/mcsa_elementary_steps",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/mechanisms/mcsa_elementary_steps.parquet",
+        "preferred_primary_rows": 0,
+        "qualification": "Frozen M-CSA v5 source references: 2393 stored records; 1657 EXACT strict replay references, 736 DELTA_CONSISTENT references retained for diagnostics. Overlapping supporting/diagnostic view of the same native enzyme proposals; not independent data or extra tasks. Reconstructed initial components, when flagged, use mechanism-derived preconditions and are not independently observed endpoint inputs. Source transitions are ordered; arrows within a native drawing are one atomic group, not physical chronology. Native splits remain unassigned and development-exposure flags are preserved; replay consistency does not establish benchmark blindness or physical truth. Unsupported fishhooks, radical and covalent-metal cases remain outside the accepted conversion. All source identities, certificates, context and arrows are reference-only metadata, withheld from model inputs.",
+        "reference_evidence": "Direct native M-CSA MRV electron-flow proposals; frozen SynDART v5 conversion and SynRXN typed replay tiers. No EasIFA labels or predictor-generated mechanisms.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "overlapping_view",
+        "rows": 2393,
+        "sha256": "f8f9b70c4db8015325f4420306b6a586f76d19dc8a6772a6f356d5f5cd0c5826",
+        "source_id": "MCSA",
+        "source_sha256": "c0753a617b9143bd13b0f7284a975c6ebff0bd2b38a0042438bd0918f4c8bce2",
+        "source_url": "https://www.ebi.ac.uk/thornton-srv/m-csa/",
+        "strict_replay_eligible_rows": 1657,
+        "task_fields": {
+          "mechanistic_prediction": {
+            "eligibility_field": "primary_replay_eligible",
+            "group_fields": [
+              "enzyme_group",
+              "mechanism_group",
+              "native_transition_groups_json"
+            ],
+            "inputs": [
+              "reaction_smiles"
+            ],
+            "metrics": [
+              "strict_valid_event_recovery_top_k",
+              "ordered_grouped_trajectory_recovery_top_k",
+              "strict_validity",
+              "prediction_coverage"
+            ],
+            "qualification": "Frozen M-CSA v5 source references: 2393 stored records; 1657 EXACT strict replay references, 736 DELTA_CONSISTENT references retained for diagnostics. Overlapping supporting/diagnostic view of the same native enzyme proposals; not independent data or extra tasks. Reconstructed initial components, when flagged, use mechanism-derived preconditions and are not independently observed endpoint inputs. Source transitions are ordered; arrows within a native drawing are one atomic group, not physical chronology. Native splits remain unassigned and development-exposure flags are preserved; replay consistency does not establish benchmark blindness or physical truth. Unsupported fishhooks, radical and covalent-metal cases remain outside the accepted conversion. All source identities, certificates, context and arrows are reference-only metadata, withheld from model inputs.",
+            "split_status": "unassigned; no independent evaluation cohort claimed",
+            "targets": [
+              "electron_path_json",
+              "mechanism_record_json"
+            ],
+            "withheld_reference_columns": [
+              "sample_id",
+              "source_record_id",
+              "source_ids_json",
+              "electron_path_json",
+              "mechanism_record_json",
+              "entry_id",
+              "mechanism_id",
+              "enzyme_group",
+              "native_index_json",
+              "source_context_json",
+              "initial_participant_context",
+              "development_exposed",
+              "source_development_exposed",
+              "reference_replay_status",
+              "verification_level",
+              "source_version",
+              "license_spdx",
+              "mechanism_group",
+              "native_transition_groups_json",
+              "source_sha256",
+              "source_locator",
+              "source_family",
+              "native_split",
+              "split_role",
+              "primary_replay_eligible",
+              "preferred_primary_reference",
+              "view_role",
+              "reference_kind"
+            ]
+          }
+        },
+        "task_ids": [
+          "mechanistic_prediction"
+        ]
+      }
+    ],
+    "canonical_keys": [
+      "mechanism/synepd_polar"
+    ],
+    "counting_units": [
+      "complete mechanism proposal with native initial participants",
+      "source-table row"
+    ],
+    "extension_adapter_ids": [],
+    "family_id": "mechanisms",
+    "id": "mechanistic_prediction",
+    "legacy_view_ids": [
+      "mechanistic_prediction"
+    ],
+    "metrics": [
+      "event_recovery_top_k",
+      "trajectory_recovery_top_k",
+      "strict_replay_validity",
+      "coverage"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 2204,
+    "primary_table_count": 2,
+    "qualification": "Endpoints are supplied; endpoint agreement is not event recovery. SynEPD has 1924 primary-tier records. M-CSA variants retain observed/reconstructed input flags, replay/reference tiers, native entry/proposal groups and development exposure.",
+    "question": "Supplied mapped reactants and products -> electron-event and ordered-mechanism annotations",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 2,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Electron-pushing mechanism prediction"
+  }
+}

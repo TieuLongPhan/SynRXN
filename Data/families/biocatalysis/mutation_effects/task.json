@@ -1,0 +1,114 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 1,
+    "data_links": 1,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 1,
+    "stored_rows_across_unique_views": 409877,
+    "task_table_bindings": 1,
+    "tasks": 1,
+    "unique_table_views": 1
+  },
+  "tables": [
+    {
+      "data_link": "coverage/bio/enzeng_mutation_effects/data.parquet",
+      "key": "bio/enzeng_mutation_effects",
+      "metadata": "coverage/bio/enzeng_mutation_effects/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "catalog_path": "Data/coverage_expansion/bio/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "source-derived qualified task row",
+        "coverage_branch": "bio",
+        "key": "bio/enzeng_mutation_effects",
+        "license": "CC-BY-4.0 on Zenodo17310823 Data.zip; preserve per-paper provenance and attribution",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/bio/enzeng_mutation_effects.parquet",
+        "qualification": "Only explicit native parent rows (#PARENT#), identical recorded assay context, nonidentical valid parent/variant sequences, finite native fitness and resolved campaign reference/assay metadata. Parent replicates aggregate by median with every reference ID retained. Native fitness and derived change are assay-specific, not universal kcat/yield. Source collection/evidence separates LLM-extracted literature from the other experimental collections. DOI fields can reference a compiled data deposit, not an individual primary paper. Mutation strings preserved without claiming independently validated residue numbering. Derived partitions close reference-DOI and exact-parent-sequence components; this is not an independent homology holdout. Missing assay conditions remain unknown; within-source comparisons require audit before a frozen benchmark.",
+        "reference_evidence": "Source EnzEngDB release experiments and metadata; no fabricated fitness labels. Delta is explicitly derived from native variant measurement and compatible parent reference(s).",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 409877,
+        "sha256": "607b451c674aabbc80e1f35aa8d6ded8c16e9881a7e3edac6892d929ab21e52c",
+        "source_id": "C13",
+        "source_sha256": "8013ad81586db2187162aada0709c1cabc7e7d69f03dd5c199776aaf000dd6ea",
+        "source_url": "https://zenodo.org/api/records/17310823/files/Data.zip/content",
+        "task_fields": {
+          "mutation_effects": {
+            "group_fields": [
+              "reference_doi",
+              "campaign_id",
+              "campaign_assay_group",
+              "parent_sequence_group",
+              "reaction_group",
+              "split_component",
+              "derived_split"
+            ],
+            "inputs": [
+              "parent_sequence",
+              "variant_sequence",
+              "reaction_smiles",
+              "fitness_type"
+            ],
+            "metrics": [
+              "within-campaign Spearman",
+              "within-assay native delta MAE",
+              "direction accuracy"
+            ],
+            "targets": [
+              "fitness_delta_native"
+            ]
+          }
+        },
+        "task_ids": [
+          "mutation_effects"
+        ]
+      }
+    ],
+    "candidate_ids": [
+      "C13"
+    ],
+    "candidate_status": "Inherited acquisition candidates; integration and suitability are unverified",
+    "canonical_keys": [],
+    "counting_units": [
+      "source-derived qualified task row"
+    ],
+    "evaluation": "Native-quantity error and within-assay ordering; sequence or assay overlap disclosed",
+    "extension_adapter_ids": [
+      "mutation_effects"
+    ],
+    "extension_id": "mutation_effects",
+    "family_id": "biocatalysis",
+    "id": "mutation_effects",
+    "legacy_view_ids": [],
+    "metrics": [
+      "direction accuracy",
+      "within-assay native delta MAE",
+      "within-campaign Spearman"
+    ],
+    "origin": "promoted_from_initial_19_roadmap_definitions",
+    "primary_source_rows": 409877,
+    "primary_table_count": 1,
+    "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance.",
+    "question": "Enzyme sequence, mutation and reaction/assay context -> measured change in function",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 1,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "required_data": "Linked wild-type/mutant measurements with assay conditions, units and sequence-family groups",
+    "title": "Enzyme mutation effects"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "citations": [
+    {
+      "citation_key": "heid2023benchmark_chemprop",
+      "doi": "10.5281/zenodo.10078142",
+      "entry_type": "misc",
+      "title": "Benchmark Data for Chemprop",
+      "url": "https://zenodo.org/records/10078142"
+    }
+  ],
+  "dataset_key": "property/rgd1.csv.gz",
+  "license_spdx": "CC-BY-4.0",
+  "license_url": "https://github.com/TieuLongPhan/SynRXN/blob/v1.2.1/Data/LICENSE",
+  "lock_status": "pinned_published_synrxn_product",
+  "outstanding_fields": [
+    "ultimate_original_observation_lineage"
+  ],
+  "published_release_origin": {
+    "archive_member": "Data/property/rgd1.csv.gz",
+    "archive_sha256": "32a9036318da1a5ef27fc417027fc1c6ca561a9e12896ed636f21f17d956bdbe",
+    "bytes_identical_to_published_release": true,
+    "data_license_sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+    "data_terms": "CC BY 4.0",
+    "doi": "10.5281/zenodo.22045145",
+    "license_evidence": "ncs/baselines/v1.2.1/Data/LICENSE",
+    "member_sha256": "74c5fbfd38b24409c17ddf2d8dc105ad728479df8a17b2bcf65c51a3ed8bed30",
+    "version": "v1.2.1"
+  },
+  "qualification": "This pins the exact previously published curated SynRXN product and its explicit dataset-specific redistribution declaration. It does not recover original experimental document accessions or certify ultimate source lineage.",
+  "redistribution_partition": "main",
+  "release_checksum_recorded_in": "manifest.json",
+  "required_attribution": [
+    "10.5281/zenodo.8174268",
+    "10.5281/zenodo.10078142"
+  ],
+  "retrieved_at": "2026-10-14",
+  "retrofit_note": "Retrofitted for a task family released before source locks were required. License, partition, and attribution are verified against the catalog and bibliography. The listed outstanding fields must be filled by a human upstream audit before this dataset is cited as reproducibly pinned. Release-side size, checksum, and row count are in manifest.json.",
+  "schema_version": "1.0",
+  "source_commit_or_version": "v1.2.1",
+  "source_doi": "10.5281/zenodo.22045145",
+  "source_file": "Data/property/rgd1.csv.gz",
+  "source_sha256": "74c5fbfd38b24409c17ddf2d8dc105ad728479df8a17b2bcf65c51a3ed8bed30",
+  "source_url": "https://zenodo.org/records/22045145",
+  "upstream_license": "CC BY 4.0",
+  "partial_native_comparison": {
+    "dataset": "property/rgd1.csv.gz",
+    "source_url": "https://figshare.com/articles/dataset/model_reaction_database/21066901",
+    "native_file": "rgd1-original.csv",
+    "native_sha256": "7b0ecae0a7f7b2439a03bed4bfbf80fbc9b647b0823e5a8e7b1e3be96d0ad05e",
+    "retrieved_native_parent_records": 176898,
+    "candidate_directional_rows": 353984,
+    "exact_directional_DE_matches": 267150,
+    "unmatched_candidate_rows": 86834,
+    "unmatched_native_directional_rows": 86646,
+    "numeric_comparison_decimals": 8,
+    "full_native_match": false,
+    "candidate_provenance_resolved": true,
+    "qualification": "The complete candidate matches the checksum-verified Chemprop v2 product, including split and target values. The retrieved RGD1 Figshare product still has different endpoint/energy orientations and membership; exact benchmark-product recovery does not resolve these original-source differences or certify physical labels."
+  },
+  "native_audit": "ncs/audit/property-native-lineage.json",
+  "native_source_checks": [
+    {
+      "dataset": "property/rgd1.csv.gz",
+      "native_files": {
+        "chemprop-v2/data/barriers_rgd1/test.csv": "202bf3dcef826f269364cd12b810a4f798cbe1106f04ed98b3d62c2b139b64c4",
+        "chemprop-v2/data/barriers_rgd1/val.csv": "37f5b148bf477ba4e57a8d81a9567f7c73ae560cf5a83e868b2c8a921bc152e2",
+        "chemprop-v2/data/barriers_rgd1/train.csv": "0caf1ebc35d2e33a26dd42cb65cbcda7d0d780bf8754e6e2077847703839a075"
+      },
+      "rows_verified": 353984,
+      "source_version": "Chemprop benchmark v2, DOI 10.5281/zenodo.10078142",
+      "split_and_target_multiset_matches": true
+    }
+  ],
+  "native_verified_on": "2026-10-15",
+  "historical_catalog_citations": [
+    {
+      "citation_key": "heid2023benchmark_chemprop",
+      "doi": "10.5281/zenodo.8174268",
+      "entry_type": "misc",
+      "title": "Benchmark Data for Chemprop",
+      "url": ""
+    }
+  ],
+  "catalog_citation_correction": "The builder and exact source members use Chemprop record 10078142; the earlier 8174268 catalog citation is preserved as history.",
+  "historical_catalog_citation_snapshot": "1f40671"
+}

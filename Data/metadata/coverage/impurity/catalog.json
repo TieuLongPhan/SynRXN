@@ -1,0 +1,260 @@
+{
+  "schema": "synrxn.coverage-impurity.v1",
+  "adapter": "kdd/coverage/adapters/impurity.py",
+  "adapter_sha256": "f9ba4279479db5f47b62b68167ab3b143f04ada6a1298eb26dbbbdfc630acd28",
+  "tables": [
+    {
+      "id": "pba_benzaldehyde_side_product",
+      "path": "Data/coverage_expansion/impurity/pba_benzaldehyde_side_product.jsonl.gz",
+      "rows": 756,
+      "task_ids": [
+        "impurity_prediction"
+      ],
+      "source_id": "ROBOWSKI_IMPURITY2025",
+      "source_url": "https://doi.org/10.1038/s41586-025-09490-1",
+      "license": "MIT",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/impurity/extracted/robowski-maps-main/summary_of_reaction_yield_data/PBA/Dataset_PBA_composition.csv",
+          "sha256": "a67407ff9c3218f99fa41ad3714b3bc4dcc2176d253df2c67302761871fac640",
+          "bytes": 44177,
+          "url": "https://zenodo.org/api/records/14880579/files/github-code-repository.zip/content#member=robowski-maps-main/summary_of_reaction_yield_data/PBA/Dataset_PBA_composition.csv",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/impurity/extracted/robowski-maps-main/summary_of_reaction_yield_data/README.md",
+          "sha256": "751058829951aa3b74b8f9f2d30308844312899d5750386230b6854d708539d0",
+          "bytes": 6367,
+          "url": "https://zenodo.org/api/records/14880579/files/github-code-repository.zip/content#member=robowski-maps-main/summary_of_reaction_yield_data/README.md",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/impurity/extracted/robowski-maps-main/LICENSE",
+          "sha256": "4ac6e3d4beb53f1b992bb314a3d73f0f51c3854e646175217eaf550e7097e2ba",
+          "bytes": 1076,
+          "url": "https://zenodo.org/api/records/14880579/files/github-code-repository.zip/content#member=robowski-maps-main/LICENSE",
+          "license": "MIT",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/impurity/14880579_metadata.json",
+          "sha256": "3657467118d87c974215662a3c5e9b2370cbc923289d79c0d9caf27776450c81",
+          "bytes": 11538,
+          "url": "https://zenodo.org/api/records/14880579",
+          "license": "MIT",
+          "redistribution_allowed": true
+        }
+      ],
+      "source_sha256": "4e5a6660698a5aaf5d9aff1e39f3cf8386005bf9cdf17715970cd01a7fd3abf4",
+      "sha256": "b73a356906112988e8d1782f298d52ae73e45dd63054224ee84d0be30815ae35",
+      "columns": [
+        "candidate_side_product_smiles",
+        "catalyst_composition_group",
+        "catalyst_metal_fractions",
+        "duration_hours",
+        "fixed_context",
+        "intended_product_smiles",
+        "native_index",
+        "reactant_smiles",
+        "reaction_system",
+        "record_id",
+        "reference_kind",
+        "reference_units",
+        "side_product_yield_percent",
+        "source_product_codes",
+        "temperature_C"
+      ],
+      "task_fields": {
+        "impurity_prediction": {
+          "inputs": [
+            "reactant_smiles",
+            "intended_product_smiles",
+            "candidate_side_product_smiles",
+            "catalyst_metal_fractions",
+            "temperature_C",
+            "duration_hours",
+            "fixed_context"
+          ],
+          "targets": [
+            "side_product_yield_percent"
+          ],
+          "group_fields": [
+            "reaction_system",
+            "catalyst_composition_group"
+          ],
+          "metrics": [
+            "MAE benzaldehyde yield percentage points",
+            "RMSE benzaldehyde yield percentage points"
+          ],
+          "variant": "closed-candidate experimental side-product profile",
+          "scope": "One source-identified benzaldehyde side product; not an open-world impurity structure-discovery benchmark."
+        }
+      },
+      "counting_unit": "experimental reaction condition",
+      "qualification": "756 native experimental conditions; benzaldehyde is explicitly identified by the source as the main undesired by-product of styrene epoxidation. The task predicts its measured-spectrum-derived yield for a known candidate. Native fitted zero values are preserved as quantitative estimates and are not relabelled absence/not-detected. Desired-product yield and selectivity columns are excluded from model inputs. No generated candidates or interpolated viewer tables are used. One chemical transformation with a catalyst-composition panel; grouping must prevent repeated compositions crossing splits.",
+      "reference_evidence": "Primary paper Figure6c–d and the 'Five-dimensional compositional space' section explicitly distinguish desired styrene oxide from benzaldehyde20b, the main by-product. Methods specify72°C/6h and UV–Vis spectral unmixing. Native summary README defines units and source CSV contains756 indexed catalyst-composition assays.",
+      "readiness": "source_backed_task_view"
+    },
+    {
+      "id": "solid_state_reported_impurity_phases",
+      "path": "Data/coverage_expansion/impurity/solid_state_reported_impurity_phases.jsonl.gz",
+      "rows": 7261,
+      "task_ids": [
+        "impurity_prediction"
+      ],
+      "source_id": "SOLIDSTATE_IMPURITY2025",
+      "source_url": "https://doi.org/10.1038/s41597-025-06222-y",
+      "license": "CC-BY-4.0",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/impurity/SS_rxns_80806.json.gz",
+          "sha256": "59fb0608e594721a4055fb6a623f180651f2d7aef737a5d4e13db63595b039c0",
+          "bytes": 33577326,
+          "url": "https://ndownloader.figshare.com/files/58973674",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        },
+        {
+          "path": "Data/raw/coverage/impurity/30423274_metadata.json",
+          "sha256": "1f194f14ac4d2fd9f9aae835f4f4c969e085fc6b67452ede3746fcd88218efd4",
+          "bytes": 4138,
+          "url": "https://api.figshare.com/v2/articles/30423274/versions/1",
+          "license": "CC-BY-4.0",
+          "redistribution_allowed": true
+        }
+      ],
+      "source_sha256": "96dc02bc154ff89eff2d738281fca3ab40387e72aff303930e73506b88f2c57e",
+      "sha256": "8e0de53371c07b2197e827cd4e43f6020179e8d502371348d7173aaefcbdf510",
+      "columns": [
+        "condition_linkage",
+        "domain",
+        "intended_target_formulas",
+        "label_completeness",
+        "native_index",
+        "precursor_formulas",
+        "reaction_identity_group",
+        "record_id",
+        "reference_kind",
+        "reported_impurity_formulas",
+        "source_publication_doi",
+        "synthesis_condition_context",
+        "target_identity_kind"
+      ],
+      "task_fields": {
+        "impurity_prediction": {
+          "inputs": [
+            "precursor_formulas",
+            "intended_target_formulas",
+            "synthesis_condition_context"
+          ],
+          "targets": [
+            "reported_impurity_formulas"
+          ],
+          "group_fields": [
+            "source_publication_doi",
+            "reaction_identity_group"
+          ],
+          "metrics": [
+            "recall@k of reported concrete impurity formulas",
+            "multilabel recall over observed identities",
+            "exact reported-set match for complete-native-identity subset"
+          ],
+          "variant": "literature-extracted inorganic impurity-phase identity prediction",
+          "scope": "Positive reported-phase identities; no unreported impurity is treated as absent. Formula labels do not establish measured polymorph/crystal structure or organic impurity identity.",
+          "forbidden_inputs": [
+            "impurity_phase",
+            "impurity_reaction",
+            "reported_impurity_formulas",
+            "mp_id",
+            "mp_eabovehull",
+            "free-text result subjects"
+          ]
+        }
+      },
+      "counting_unit": "literature-extracted synthesis recipe with explicit impurity phase identity",
+      "qualification": "Selects source records with an explicitly identified impurity phase, balanced target reaction, concrete precursor and target compositions and original DOI. Native unknown/variable identities are excluded; partial known subsets are flagged. The61937 no-impurity-report cohort is never used as negative evidence. Source labels are extracted literature observations, not computationally generated candidate phases. Materials Project most-stable-entry assignments/energies are omitted from all features and references. Native synthesis operations are DOI-level context and may not map uniquely to a particular recipe, so exact condition-specific causal claims are unsupported. Original publication and reaction identity must be grouped in eventual benchmark splits.",
+      "reference_evidence": "Source Data Records explicitly distinguish intended target from impurity_phase entities and retain original publication DOI. Primary Technical Validation describes source extraction, balancing and thermodynamic validation. Figsharev1 grantsCC-BY4.0 for the native80806-record structured data file.",
+      "readiness": "source_backed_task_view",
+      "qualification_audit": "Data/coverage_expansion/impurity/solid_state_qualification.json",
+      "qualification_audit_sha256": "af03f36be79b1019947cc0464f2ae27bc478a8641c0b99dddc173818ce395f9e"
+    }
+  ],
+  "sources": [
+    {
+      "id": "ROBOWSKI_IMPURITY2025",
+      "title": "Robot-assisted mapping of chemical reaction hyperspaces and networks",
+      "url": "https://doi.org/10.1038/s41586-025-09490-1",
+      "archive": "https://doi.org/10.5281/zenodo.14880579",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "license_evidence": "Data/raw/coverage/impurity/14880579_metadata.json",
+      "license_evidence_url": "https://zenodo.org/api/records/14880579",
+      "qualification": "Separately MIT-licensed author data deposit; publisher article CC-BY-NC-ND assets are not redistributed. Organic assay references are source spectral-unmixing estimates from measured UV–Vis spectra.",
+      "license_evidence_sha256": "3657467118d87c974215662a3c5e9b2370cbc923289d79c0d9caf27776450c81",
+      "used_by_tables": [
+        "pba_benzaldehyde_side_product"
+      ],
+      "authors": [
+        "Jia, Yankai",
+        "Frydrych, Rafał",
+        "Sobolev, Yaroslav I.",
+        "Wong, Wai-Shing",
+        "Prajapati, Bibek",
+        "Matuszczyk, Daniel",
+        "Bilgi, Yasemin",
+        "Gadina, Louis",
+        "Ahumada, Juan Carlos",
+        "Moldagulov, Galymzhan",
+        "Kim, Namhun",
+        "Larsen, Eric S.",
+        "Deschamps, Maxence",
+        "Jiang, Yanqiu",
+        "Grzybowski, Bartosz"
+      ],
+      "required_attribution": [
+        "https://doi.org/10.1038/s41586-025-09490-1",
+        "https://doi.org/10.5281/zenodo.14880579",
+        "https://opensource.org/license/mit"
+      ],
+      "redistribution_allowed": true,
+      "license_notice": "Data/raw/coverage/impurity/extracted/robowski-maps-main/LICENSE",
+      "license_notice_sha256": "4ac6e3d4beb53f1b992bb314a3d73f0f51c3854e646175217eaf550e7097e2ba"
+    },
+    {
+      "id": "SOLIDSTATE_IMPURITY2025",
+      "title": "Text-mined dataset of solid-state syntheses with impurity phases using Large Language Model",
+      "url": "https://doi.org/10.1038/s41597-025-06222-y",
+      "archive": "https://doi.org/10.6084/m9.figshare.30423274.v1",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_evidence": "Data/raw/coverage/impurity/30423274_metadata.json",
+      "license_evidence_url": "https://api.figshare.com/v2/articles/30423274/versions/1",
+      "qualification": "Literature-reported experimental impurity phases extracted with an LLM and parsed by source authors. Labels are extracted observations, not new experiments or predicted thermodynamic phases. Per-record original publication DOI retained.",
+      "license_evidence_sha256": "1f194f14ac4d2fd9f9aae835f4f4c969e085fc6b67452ede3746fcd88218efd4",
+      "used_by_tables": [
+        "solid_state_reported_impurity_phases"
+      ],
+      "authors": [
+        "Sanghoon Lee",
+        "Kevin Cruse",
+        "Viktoriia Baibakova",
+        "Gerbrand Ceder",
+        "Anubhav Jain"
+      ],
+      "required_attribution": [
+        "https://doi.org/10.1038/s41597-025-06222-y",
+        "https://doi.org/10.6084/m9.figshare.30423274.v1",
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "redistribution_allowed": true
+    }
+  ],
+  "task_ids": [
+    "impurity_prediction"
+  ],
+  "scope_note": "Two real-source narrow variants: known organic side-product profile and reported inorganic impurity-phase identity. They do not establish broad open-world organic impurity discovery or completed benchmark results.",
+  "attribution_path": "Data/coverage_expansion/impurity/ATTRIBUTION.txt",
+  "attribution_sha256": "6a14039ac525078cc0edbac01618f3b9e203943dd26793d33bda8c478ed757ab"
+}

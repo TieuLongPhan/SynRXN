@@ -15,12 +15,11 @@ import pandas as pd
 
 
 def ensure_dir(path: str) -> str:
-    """
-    Ensure a directory exists.
+    """Ensure a directory exists.
 
     :param path: Directory path to create.
     :type path: str
-    :returns: The input path.
+    :return: The input path.
     :rtype: str
     """
     os.makedirs(path, exist_ok=True)
@@ -28,26 +27,24 @@ def ensure_dir(path: str) -> str:
 
 
 def safe_name(s: Union[str, int, float]) -> str:
-    """
-    Convert a string/number to a filesystem-safe, lowercase name.
+    """Convert a string/number to a filesystem-safe, lowercase name.
 
     :param s: Input value to sanitize.
     :type s: Union[str,int,float]
-    :returns: Sanitized lowercase string safe for filenames.
+    :return: Sanitized lowercase string safe for filenames.
     :rtype: str
     """
     return re.sub(r"[^A-Za-z0-9_.-]+", "_", str(s).lower())
 
 
 def detect_long_format(df: pd.DataFrame) -> bool:
-    """
-    Heuristic for detecting long-format scoring tables.
+    """Heuristic for detecting long-format scoring tables.
 
     Long format is assumed when columns 'method' and 'value' exist.
 
     :param df: DataFrame to inspect.
     :type df: pandas.DataFrame
-    :returns: True if table appears long-format.
+    :return: True if table appears long-format.
     :rtype: bool
     """
     cols = set(c.lower() for c in df.columns.astype(str))
@@ -60,8 +57,7 @@ def extract_scoring_dfs(
     method_list: Optional[Union[List[str], str]] = None,
     melt: bool = True,
 ) -> Tuple[pd.DataFrame, List[str], List[str]]:
-    """
-    Normalize an input scoring DataFrame (wide or long) to a predictable structure.
+    """Normalize an input scoring DataFrame (wide or long) to a predictable structure.
 
     Accepts:
     - wide format: columns ['scoring','cv_cycle', <method1>, <method2>, ...]
@@ -75,13 +71,13 @@ def extract_scoring_dfs(
     :type method_list: Optional[Union[list,str]]
     :param melt: If True, return long-format DataFrame (with columns 'scoring','cv_cycle','method','value').
     :type melt: bool
-    :returns: (normalized_df, metrics, methods)
+    :return: (normalized_df, metrics, methods)
     :rtype: Tuple[pandas.DataFrame, List[str], List[str]]
 
     .. code-block:: python
 
         >>> import pandas as pd
-        >>> from statistics_pipeline.common import extract_scoring_dfs
+        >>> from synrxn.statistics.common import extract_scoring_dfs
         >>> df = pd.DataFrame({
         ...     "scoring": ["acc","acc","mcc","mcc"],
         ...     "cv_cycle": [1,2,1,2],

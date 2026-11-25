@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "dataset_key": "aam/metamdb.csv.gz",
+  "lock_status": "awaiting_exact_paper_subset",
+  "source_file": null,
+  "source_sha256": null,
+  "source_url": "https://ssrn.com/abstract=7404606",
+  "expected_rows": 4456,
+  "qualification": "The released CSV has 49,928 rows and no selection/validation flags. No 4,456-row subset or selected-ID list was found in the repository, its history, branches, releases or relevant local downloads.",
+  "license_spdx": "LicenseRef-Unknown",
+  "redistribution_partition": "excluded"
+}

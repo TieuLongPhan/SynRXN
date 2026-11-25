@@ -1,0 +1,68 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 1,
+    "data_links": 1,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 1,
+    "stored_rows_across_unique_views": 274439,
+    "task_table_bindings": 1,
+    "tasks": 1,
+    "unique_table_views": 1
+  },
+  "tables": [
+    {
+      "data_link": "canonical/condition_sharealike/openexp/data.csv.gz",
+      "key": "condition_sharealike/openexp",
+      "metadata": "canonical/condition_sharealike/openexp/table.json",
+      "namespace": "canonical"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "condition_sharealike/openexp",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "sharealike",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-SA-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 274439
+      }
+    ],
+    "canonical_keys": [
+      "condition_sharealike/openexp"
+    ],
+    "counting_units": [
+      "source-table row"
+    ],
+    "extension_adapter_ids": [],
+    "family_id": "conditions",
+    "id": "procedure_generation",
+    "legacy_view_ids": [],
+    "metrics": [
+      "action_sequence_recovery",
+      "sequence_edit_distance",
+      "coverage"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 274439,
+    "primary_table_count": 1,
+    "qualification": "Withhold procedure text and actions from inputs; action/reference agreement is not validation of laboratory execution.",
+    "question": "Recorded reaction and allowed recipe fields -> supplied experimental action sequence",
+    "readiness": "local_source_data; standardized_task_contract_needed",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 1,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Experimental procedure generation"
+  }
+}

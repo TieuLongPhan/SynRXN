@@ -1,0 +1,66 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "family": {
+    "counting_units": [
+      "experimental reaction condition",
+      "flow-condition observation",
+      "literature or validation observation",
+      "literature-extracted synthesis recipe with explicit impurity phase identity",
+      "source-table row",
+      "substrate-product annotation"
+    ],
+    "data_counting_policy": "Deduplicated by namespace/source-table key within this family only; row units can differ, source views can overlap and rows are not unique reactions. Inspect each binding's counting_unit and physical configuration counts.",
+    "data_status": "local task references present; qualification varies",
+    "future_task_ids": [],
+    "gaps": "Identified benzaldehyde side-product profiles and explicitly reported solid-state impurity phases are acquired. Missing impurity reports are unknown. Organic open-world impurity identities and general chemo/diastereoselectivity remain gaps.",
+    "id": "selectivity",
+    "overlapping_view_count": 1,
+    "primary_source_rows": 33966,
+    "primary_table_count": 14,
+    "release_eligible_table_count": 14,
+    "scope": "Regio-, chemo- and stereoselectivity, per-product compositions, competing pathways, side products and impurities.",
+    "task_ids": [
+      "regioselectivity",
+      "enantioselectivity",
+      "product_distribution",
+      "impurity_prediction"
+    ],
+    "title": "Selectivity, mixtures and side products"
+  },
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 15,
+    "data_links": 15,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 1,
+    "primary_table_views": 14,
+    "stored_rows_across_unique_views": 34622,
+    "task_table_bindings": 15,
+    "tasks": 4,
+    "unique_table_views": 15
+  },
+  "tasks": [
+    {
+      "id": "regioselectivity",
+      "metadata": "regioselectivity/task.json",
+      "title": "Regioselectivity"
+    },
+    {
+      "id": "enantioselectivity",
+      "metadata": "enantioselectivity/task.json",
+      "title": "Enantioselectivity"
+    },
+    {
+      "id": "product_distribution",
+      "metadata": "product_distribution/task.json",
+      "title": "Condition-dependent product distributions"
+    },
+    {
+      "id": "impurity_prediction",
+      "metadata": "impurity_prediction/task.json",
+      "title": "Side-product and impurity identification"
+    }
+  ]
+}

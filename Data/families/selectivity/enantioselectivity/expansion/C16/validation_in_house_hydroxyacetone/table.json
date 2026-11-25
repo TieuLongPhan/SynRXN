@@ -1,0 +1,79 @@
+{
+  "counting_unit": "literature or validation observation",
+  "data_link": "data.parquet",
+  "family_id": "selectivity",
+  "format": "parquet",
+  "key": "C16/validation_in_house_hydroxyacetone",
+  "namespace": "expansion",
+  "registry_binding": {
+    "adapter_ids": [
+      "enantioselectivity"
+    ],
+    "commercial_use_allowed": true,
+    "counting_unit": "literature or validation observation",
+    "key": "C16/validation_in_house_hydroxyacetone",
+    "namespace": "expansion",
+    "partition": "main",
+    "qualification": "Absolute and source-defined ee remain distinct endpoints. Predictions present in validation workbooks are retained only in native provenance and cannot enter task inputs.",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 17
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "orgaicat_readme",
+      "orgaicat_license"
+    ],
+    "expected_bytes": 9693,
+    "expected_rows": 17,
+    "expected_sha256": "c5902553914c1d3718ccb551fba622475381e36ec6282c53e1e70b57dfb9cc4d",
+    "format": "parquet",
+    "key": "C16/validation_in_house_hydroxyacetone",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "expansion",
+    "partition": "main",
+    "path": "Data/expansion/main/C16/validation_in_house_hydroxyacetone.parquet",
+    "qualification": "Pinned official dataset metadata or explicit code-and-data repository declaration grants the recorded redistributable license.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 17,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/expansion/main/C16/validation_in_house_hydroxyacetone.parquet",
+    "sha256": "c5902553914c1d3718ccb551fba622475381e36ec6282c53e1e70b57dfb9cc4d",
+    "source_catalogue": "Data/expansion/catalog.json",
+    "source_id": "C16",
+    "source_urls": [
+      "https://github.com/DeepSynthesis/orgaicat/tree/main/data",
+      "https://github.com/DeepSynthesis/orgaicat"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "literature or validation observation",
+    "key": "C16/validation_in_house_hydroxyacetone",
+    "namespace": "expansion",
+    "path": "Data/expansion/main/C16/validation_in_house_hydroxyacetone.parquet",
+    "role": "primary",
+    "rows": 17,
+    "sha256": "c5902553914c1d3718ccb551fba622475381e36ec6282c53e1e70b57dfb9cc4d",
+    "source_catalogue": "Data/expansion/catalog.json",
+    "source_id": "C16",
+    "source_urls": [
+      "https://github.com/DeepSynthesis/orgaicat/tree/main/data",
+      "https://github.com/DeepSynthesis/orgaicat"
+    ],
+    "title": "OrgAIcat in-house hydroxyacetone validation"
+  },
+  "stored_path": "Data/families/selectivity/enantioselectivity/expansion/C16/validation_in_house_hydroxyacetone/data.parquet",
+  "task_id": "enantioselectivity",
+  "title": "OrgAIcat in-house hydroxyacetone validation"
+}

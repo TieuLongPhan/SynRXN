@@ -1,0 +1,34 @@
+{
+  "schema": "synrxn.identifier-namespace-audit.v1",
+  "source_quality_report_sha256": "870d670d8e1526eaaf0225335ffe9eb383eb5459d8fe5cc404502308a76c089e",
+  "auditor_sha256": "7de93bd07f749653fbe2eef794146223228add1ceae3e1d3bfebef9a8d72281c",
+  "tables": [
+    {
+      "namespace": "canonical",
+      "key": "classification/ecreact",
+      "path": "Data/classification/ecreact.csv.gz",
+      "source_sha256": "c730e5bd196dc69b5ebc421cce37010162f7e129f149b28196f0069ee242bdcd",
+      "rows": 185734,
+      "identifier_field": "r_id",
+      "native_namespace_field": "split",
+      "bare_identifier_repetitions": 18816,
+      "within_namespace_duplicate_occurrences": 0,
+      "missing_identity_components": 0,
+      "interpretation": "Native identifier is partition-local; use the native partition plus identifier as the source-record key. This is not evidence of chemical train/test independence."
+    },
+    {
+      "namespace": "canonical",
+      "key": "yield/uspto_yield",
+      "path": "Data/yield/uspto_yield.csv.gz",
+      "source_sha256": "a95706078ebba47315a91f853f27a3a3494e344b8ce782d53df0a5e5d5aa6f5b",
+      "rows": 526468,
+      "identifier_field": "source_record_id",
+      "native_namespace_field": "upstream_split",
+      "bare_identifier_repetitions": 25146,
+      "within_namespace_duplicate_occurrences": 0,
+      "missing_identity_components": 0,
+      "interpretation": "Native identifier is partition-local; use the native partition plus identifier as the source-record key. This is not evidence of chemical train/test independence."
+    }
+  ],
+  "status": "verified"
+}

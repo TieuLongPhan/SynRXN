@@ -1,0 +1,86 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "representation",
+  "format": "csv.gz",
+  "key": "aam/natcomm",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counted_under": "canonical:aam/golden",
+    "counting_unit": "source-table row",
+    "key": "aam/natcomm",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "copyleft",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0 AND GPL-3.0-only AND MIT",
+    "rights_status": "verified_redistributable",
+    "role": "overlapping_view",
+    "rows": 491
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "syntemp_license",
+      "syntemp_readme",
+      "recheck_mapping_mapping_syntemp_native_license",
+      "recheck_mapping_mapping_syntemp_tree",
+      "recheck_mapping_mapping_syntemp_paper_xml",
+      "recheck_mapping_mapping_syntemp_commit",
+      "recheck_mapping_mapping_localmapper_2024_license",
+      "recheck_mapping_mapping_localmapper_2024_readme",
+      "recheck_mapping_mapping_localmapper_2024_tree",
+      "recheck_mapping_mapping_localmapper_2024_natcomm",
+      "recheck_mapping_mapping_natcomm_xml"
+    ],
+    "expected_bytes": 132874,
+    "expected_rows": 491,
+    "expected_sha256": "c62f4084990533d36bd9ba706cd78a80de0bad14ee139cdf1fb3c00422da2343",
+    "format": "csv.gz",
+    "key": "aam/natcomm",
+    "license_expression": "CC-BY-4.0 AND GPL-3.0-only AND MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes.",
+      "Retain the applicable GNU license and provide corresponding source/preferred editable material where its terms require it."
+    ],
+    "namespace": "canonical",
+    "partition": "copyleft",
+    "path": "Data/aam/natcomm.csv.gz",
+    "qualification": "Original Jaworski article and included source supplement are CC BY4; exact491reaction/reference rows also match historical GPL3 LocalMapper comparison.",
+    "rights_status": "verified_redistributable",
+    "role": "primary"
+  },
+  "role": "overlapping_view",
+  "rows": 491,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "jaworski2019automatic"
+    ],
+    "path": "Data/aam/natcomm.csv.gz",
+    "sha256": "c62f4084990533d36bd9ba706cd78a80de0bad14ee139cdf1fb3c00422da2343",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "jaworski2019automatic"
+    ],
+    "counted_under": "canonical:aam/golden",
+    "counting_unit": "source-table row",
+    "key": "aam/natcomm",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/aam/natcomm.csv.gz",
+    "role": "overlapping_view",
+    "rows": 491,
+    "sha256": "c62f4084990533d36bd9ba706cd78a80de0bad14ee139cdf1fb3c00422da2343",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "NatComm subset of Golden"
+  },
+  "stored_path": "Data/families/representation/atom_mapping/canonical/aam/natcomm/data.csv.gz",
+  "task_id": "atom_mapping",
+  "title": "NatComm subset of Golden"
+}

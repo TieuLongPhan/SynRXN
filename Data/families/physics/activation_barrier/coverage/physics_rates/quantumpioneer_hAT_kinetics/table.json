@@ -1,0 +1,129 @@
+{
+  "counting_unit": "native computed HAT reaction with k298 and thermo-kinetic references",
+  "data_link": "data.csv",
+  "family_id": "physics",
+  "format": "csv",
+  "key": "physics_rates/quantumpioneer_hAT_kinetics",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/physics_rates/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "native computed HAT reaction with k298 and thermo-kinetic references",
+    "coverage_branch": "physics_rates",
+    "key": "physics_rates/quantumpioneer_hAT_kinetics",
+    "license": "CC-BY-4.0",
+    "namespace": "coverage",
+    "parent_groups": 135993,
+    "partition": "main",
+    "path": "Data/coverage_expansion/physics_rates/quantumpioneer_kinetics.csv",
+    "qualification": "Full166158 native positive finitek298 references. Native rates/TST are computed; no conversion to lograte legacy sourceunits. Exactrecorded-reactant groups keep candidateH-abstractionsites of same source reactants together; proposed split is new and does not establish scaffold independence. KineticCSVhasgasreferenceTST/thermo; no per-solvent correction inferred from separate solvationassets. No independent physical recomputation.",
+    "reference_evidence": "Computed native transition-state-theory rate coefficients and source Arrhenius fits; DLPNO+scaledDFTZPE barrier and reaction thermo references. Not experimental measurements.",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 166158,
+    "sha256": "e81aa5f9158564e64356a524c046469e2a13e471469ff641713ded3c37ff1520",
+    "source_id": "QuantumPioneer2026",
+    "source_sha256": "1c1a836d371248cc47689450476c8cccfabd50bf9058cedad430e2a9a9ede213",
+    "source_url": "https://doi.org/10.5281/zenodo.20060606",
+    "target_units": {
+      "A_high": "m^3/(mol*s)",
+      "A_low": "m^3/(mol*s)",
+      "Ea_high": "kcal/mol;1000-2000Kfit",
+      "Ea_low": "kcal/mol;300-1000Kfit",
+      "P2M": "kcal/mol;sourcePetersson-to-Melius298K",
+      "barrier": "kcal/mol;DLPNO+scaledDFTZPE",
+      "deltaGrxn298": "kcal/mol;298K",
+      "deltaHrxn": "kcal/mol;DLPNO+scaledDFTZPE",
+      "deltaHrxn298": "kcal/mol;298K",
+      "k_298": "m^3/(mol*s)",
+      "log10_k_298": "log10 of rate expressed in m^3/(mol*s)"
+    },
+    "task_fields": {
+      "activation_barrier": {
+        "group_fields": [
+          "reactant_pair_group",
+          "source_record_id",
+          "proposed_split"
+        ],
+        "inputs": [
+          "reaction_smiles",
+          "theory"
+        ],
+        "metrics": [
+          "MAE_kcal_per_mol",
+          "RMSE_kcal_per_mol"
+        ],
+        "qualification": "DLPNO+scaledDFTZPE forward potential-energy barrier; notEa_low/Ea_high and notGibbsactivationfreeenergy.",
+        "targets": [
+          "barrier"
+        ]
+      }
+    },
+    "task_ids": [
+      "reaction_rates",
+      "activation_barrier",
+      "reaction_energetics"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "native computed HAT reaction with k298 and thermo-kinetic references",
+    "expected_bytes": null,
+    "expected_rows": 166158,
+    "expected_sha256": "e81aa5f9158564e64356a524c046469e2a13e471469ff641713ded3c37ff1520",
+    "format": "csv",
+    "key": "physics_rates/quantumpioneer_hAT_kinetics",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/physics_rates/quantumpioneer_kinetics.csv",
+    "qualification": "Full166158 native positive finitek298 references. Native rates/TST are computed; no conversion to lograte legacy sourceunits. Exactrecorded-reactant groups keep candidateH-abstractionsites of same source reactants together; proposed split is new and does not establish scaffold independence. KineticCSVhasgasreferenceTST/thermo; no per-solvent correction inferred from separate solvationassets. No independent physical recomputation.",
+    "reasons": [],
+    "reference_evidence": "Computed native transition-state-theory rate coefficients and source Arrhenius fits; DLPNO+scaledDFTZPE barrier and reaction thermo references. Not experimental measurements.",
+    "release_eligible": true,
+    "source_id": "QuantumPioneer2026",
+    "source_url": "https://doi.org/10.5281/zenodo.20060606",
+    "task_ids": [
+      "reaction_rates",
+      "activation_barrier",
+      "reaction_energetics"
+    ]
+  },
+  "role": "primary",
+  "rows": 166158,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/physics_rates/quantumpioneer_kinetics.csv",
+    "sha256": "e81aa5f9158564e64356a524c046469e2a13e471469ff641713ded3c37ff1520",
+    "source_catalogue": "Data/coverage_expansion/physics_rates/catalog.json",
+    "source_id": "QuantumPioneer2026",
+    "source_urls": [
+      "https://doi.org/10.5281/zenodo.20060606"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "native computed HAT reaction with k298 and thermo-kinetic references",
+    "key": "physics_rates/quantumpioneer_hAT_kinetics",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/physics_rates/quantumpioneer_kinetics.csv",
+    "qualification": "Full166158 native positive finitek298 references. Native rates/TST are computed; no conversion to lograte legacy sourceunits. Exactrecorded-reactant groups keep candidateH-abstractionsites of same source reactants together; proposed split is new and does not establish scaffold independence. KineticCSVhasgasreferenceTST/thermo; no per-solvent correction inferred from separate solvationassets. No independent physical recomputation.",
+    "role": "primary",
+    "rows": 166158,
+    "sha256": "e81aa5f9158564e64356a524c046469e2a13e471469ff641713ded3c37ff1520",
+    "source_catalogue": "Data/coverage_expansion/physics_rates/catalog.json",
+    "source_id": "QuantumPioneer2026",
+    "source_urls": [
+      "https://doi.org/10.5281/zenodo.20060606"
+    ],
+    "title": "QuantumPioneer HAT kinetics"
+  },
+  "stored_path": "Data/families/physics/activation_barrier/coverage/physics_rates/quantumpioneer_hAT_kinetics/data.csv",
+  "task_id": "activation_barrier",
+  "title": "QuantumPioneer HAT kinetics"
+}

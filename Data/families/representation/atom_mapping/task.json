@@ -1,0 +1,248 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 10,
+    "data_links": 10,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 1,
+    "primary_table_views": 9,
+    "stored_rows_across_unique_views": 276045,
+    "task_table_bindings": 10,
+    "tasks": 1,
+    "unique_table_views": 10
+  },
+  "tables": [
+    {
+      "data_link": "canonical/aam/brenda/data.csv.gz",
+      "key": "aam/brenda",
+      "metadata": "canonical/aam/brenda/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/aam/ecoli/data.csv.gz",
+      "key": "aam/ecoli",
+      "metadata": "canonical/aam/ecoli/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/aam/ehreact/data.csv.gz",
+      "key": "aam/ehreact",
+      "metadata": "canonical/aam/ehreact/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/aam/enzyme_map/data.csv.gz",
+      "key": "aam/enzyme_map",
+      "metadata": "canonical/aam/enzyme_map/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/aam/flower_c/data.csv.gz",
+      "key": "aam/flower_c",
+      "metadata": "canonical/aam/flower_c/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/aam/flower_e/data.csv.gz",
+      "key": "aam/flower_e",
+      "metadata": "canonical/aam/flower_e/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/aam/golden/data.csv.gz",
+      "key": "aam/golden",
+      "metadata": "canonical/aam/golden/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/aam/natcomm/data.csv.gz",
+      "key": "aam/natcomm",
+      "metadata": "canonical/aam/natcomm/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/aam/recon3d/data.csv.gz",
+      "key": "aam/recon3d",
+      "metadata": "canonical/aam/recon3d/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/aam/uspto_3k/data.csv.gz",
+      "key": "aam/uspto_3k",
+      "metadata": "canonical/aam/uspto_3k/table.json",
+      "namespace": "canonical"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "aam/brenda",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 3138
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "aam/ecoli",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_redistributable",
+        "role": "primary",
+        "rows": 273
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "aam/ehreact",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "BSD-3-Clause",
+        "rights_status": "verified_repository_dataset_grant",
+        "role": "primary",
+        "rows": 939
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "aam/enzyme_map",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 47974
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "aam/flower_c",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 38745
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "aam/flower_e",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 179345
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "aam/golden",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "copyleft",
+        "release_eligible": true,
+        "release_license_expression": "GPL-3.0-only AND LGPL-2.1-only AND MIT",
+        "rights_status": "verified_redistributable",
+        "role": "primary",
+        "rows": 1758
+      },
+      {
+        "commercial_use_allowed": true,
+        "counted_under": "canonical:aam/golden",
+        "counting_unit": "source-table row",
+        "key": "aam/natcomm",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "copyleft",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0 AND GPL-3.0-only AND MIT",
+        "rights_status": "verified_redistributable",
+        "role": "overlapping_view",
+        "rows": 491
+      },
+      {
+        "commercial_use_allowed": false,
+        "counting_unit": "source-table row",
+        "key": "aam/recon3d",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "noncommercial",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-NC-4.0 AND MIT",
+        "rights_status": "verified_redistributable",
+        "role": "primary",
+        "rows": 382
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "aam/uspto_3k",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "copyleft",
+        "release_eligible": true,
+        "release_license_expression": "GPL-3.0-only AND CC-BY-SA-4.0 AND MIT",
+        "rights_status": "verified_redistributable",
+        "role": "primary",
+        "rows": 3000
+      }
+    ],
+    "canonical_keys": [
+      "aam/brenda",
+      "aam/ecoli",
+      "aam/ehreact",
+      "aam/enzyme_map",
+      "aam/flower_c",
+      "aam/flower_e",
+      "aam/golden",
+      "aam/natcomm",
+      "aam/recon3d",
+      "aam/uspto_3k"
+    ],
+    "counting_units": [
+      "source-table row"
+    ],
+    "extension_adapter_ids": [],
+    "family_id": "representation",
+    "id": "atom_mapping",
+    "legacy_view_ids": [],
+    "metrics": [
+      "reference_mapping_agreement",
+      "valid_mapping_coverage"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 275554,
+    "primary_table_count": 9,
+    "qualification": "Compare by reference tier and symmetry; computational mapping QC is not independent chemical validation.",
+    "question": "Unmapped reaction -> correspondence between reactant and product atoms",
+    "readiness": "local_source_data; standardized_task_contract_needed",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 9,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Atom mapping"
+  }
+}

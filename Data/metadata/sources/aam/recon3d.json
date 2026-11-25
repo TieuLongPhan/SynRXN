@@ -1,0 +1,52 @@
+{
+  "citations": [
+    {
+      "citation_key": "litsa2018machine",
+      "doi": "10.1021/acs.jcim.8b00434",
+      "entry_type": "article",
+      "title": "Machine Learning Guided Atom Mapping of Metabolic Reactions",
+      "url": ""
+    }
+  ],
+  "dataset_key": "aam/recon3d.csv.gz",
+  "license_spdx": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "lock_status": "retrofit_pinned_proximate_source_terms_pending",
+  "outstanding_fields": [
+    "ultimate_collection_lineage",
+    "exact_data_product_redistribution_terms"
+  ],
+  "published_release_origin": {
+    "archive_member": "Data/aam/recon3d.csv.gz",
+    "archive_sha256": "32a9036318da1a5ef27fc417027fc1c6ca561a9e12896ed636f21f17d956bdbe",
+    "bytes_identical_to_published_release": true,
+    "data_license_sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+    "data_terms": "CC BY 4.0",
+    "doi": "10.5281/zenodo.22045145",
+    "license_evidence": "ncs/baselines/v1.2.1/Data/LICENSE",
+    "member_sha256": "a5dc370de65eb8efde9ecd703ef1f2a021d5713b850944530092798628dea45e",
+    "version": "v1.2.1"
+  },
+  "redistribution_partition": "main",
+  "redistribution_terms_verification": {
+    "limitation": "SynTemp's MIT software licence is insufficient to establish CC-BY-4.0 for the source data.",
+    "status": "ultimate_data_product_terms_not_yet_verified"
+  },
+  "release_checksum_recorded_in": "manifest.json",
+  "required_attribution": [
+    "10.1021/acs.jcim.8b00434"
+  ],
+  "retrieved_at": "2026-10-13",
+  "retrofit_note": "The five retrieval fields were verified by a full native-identifier/payload audit. Catalog CC-BY-4.0 is a declared tag; SynTemp MIT software terms do not establish the ultimate data product licence. Ultimate lineage and exact product terms remain open.",
+  "schema_version": "1.0",
+  "source_commit_or_version": "fb9f7948abb0090f8d530287517591f8407f2c89",
+  "source_doi": null,
+  "source_file": "Data/AAM/results_benchmark/recon3d/recon3d_aam_reactions.json.gz",
+  "source_pin_scope": "Exact proximate SynTemp annotation payload; ultimate collection lineage is incomplete.",
+  "source_relation": "native_identifier_join_with_six_exact_annotation_fields",
+  "source_relation_audit": "ncs/audit/mapping-source-audit.json",
+  "source_rows_verified": 382,
+  "source_sha256": "0e61b350157eb074a9cfc4f1586e07af6f8a625e625b3846697a6f3d29ad70b7",
+  "source_url": "https://raw.githubusercontent.com/TieuLongPhan/SynTemp/fb9f7948abb0090f8d530287517591f8407f2c89/Data/AAM/results_benchmark/recon3d/recon3d_aam_reactions.json.gz",
+  "upstream_license": "CC BY 4.0"
+}

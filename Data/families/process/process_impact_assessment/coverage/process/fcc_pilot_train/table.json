@@ -1,0 +1,115 @@
+{
+  "counting_unit": "reference record; task views can overlap native experiments",
+  "data_link": "data.jsonl.gz",
+  "family_id": "process",
+  "format": "jsonl.gz",
+  "key": "process/fcc_pilot_train",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/process/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "reference record; task views can overlap native experiments",
+    "coverage_branch": "process",
+    "key": "process/fcc_pilot_train",
+    "license": "MIT",
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/process/fcc_pilot_train.jsonl.gz",
+    "qualification": "Reference kind is native_interpolation_of_pilot_experiments. All native CSVs are headerless. Lab has10000 simulated compositions; pilot test has15 physical experiments, while train/validation have48/12 interpolated rows. Repeated pilot measurements underpin interpolation and cannot establish independence. Native source-full pilot files have1016/982 rows and are excluded from joining. Lab/pilot target spaces differ (129 molecular components versus10 bulk properties); no artificial matched cross-scale pairing.",
+    "reference_evidence": "Author README defines first4 process columns and129 feed components. Native Bulk_prop.py returns dry gas,LPG,gasoline,diesel,coke in that order, then5 gasoline PIONA endpoints. Article methods identify infrared carbon-sulfur analysis of coke; original15 pilot experiments reserved for testing and interpolation used for training/validation.",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 48,
+    "sha256": "9e753460982c68355cf602c92f9ecb5a3464ee0ac9dc987eb3860a7fc35fbd47",
+    "source_id": "FCCSCALEUP2025",
+    "source_sha256": "0917224db9bc7c92d8aba7cc1f6647839e377cd5142ec9569c27329080b8bebe",
+    "source_url": "https://doi.org/10.1038/s41467-025-63982-2",
+    "task_fields": {
+      "process_impact_assessment": {
+        "group_fields": [
+          "feedstock_family",
+          "scale"
+        ],
+        "inputs": [
+          "scale",
+          "feed_temperature_C",
+          "reaction_temperature_C",
+          "WHSV_per_hour",
+          "catalyst_to_oil_ratio",
+          "feed_molecular_composition"
+        ],
+        "metrics": [
+          "MAE in coke mass percentage points"
+        ],
+        "scope": "Narrow process deposition/material-loss endpoint; not life-cycle impact, cost, energy consumption or hazard assessment.",
+        "targets": [
+          "coke_mass_percent"
+        ]
+      }
+    },
+    "task_ids": [
+      "reactor_scale_modeling",
+      "process_impact_assessment"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "reference record; task views can overlap native experiments",
+    "expected_bytes": null,
+    "expected_rows": 48,
+    "expected_sha256": "9e753460982c68355cf602c92f9ecb5a3464ee0ac9dc987eb3860a7fc35fbd47",
+    "format": "jsonl.gz",
+    "key": "process/fcc_pilot_train",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/process/fcc_pilot_train.jsonl.gz",
+    "qualification": "Reference kind is native_interpolation_of_pilot_experiments. All native CSVs are headerless. Lab has10000 simulated compositions; pilot test has15 physical experiments, while train/validation have48/12 interpolated rows. Repeated pilot measurements underpin interpolation and cannot establish independence. Native source-full pilot files have1016/982 rows and are excluded from joining. Lab/pilot target spaces differ (129 molecular components versus10 bulk properties); no artificial matched cross-scale pairing.",
+    "reasons": [],
+    "reference_evidence": "Author README defines first4 process columns and129 feed components. Native Bulk_prop.py returns dry gas,LPG,gasoline,diesel,coke in that order, then5 gasoline PIONA endpoints. Article methods identify infrared carbon-sulfur analysis of coke; original15 pilot experiments reserved for testing and interpolation used for training/validation.",
+    "release_eligible": true,
+    "source_id": "FCCSCALEUP2025",
+    "source_url": "https://doi.org/10.1038/s41467-025-63982-2",
+    "task_ids": [
+      "reactor_scale_modeling",
+      "process_impact_assessment"
+    ]
+  },
+  "role": "primary",
+  "rows": 48,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/process/fcc_pilot_train.jsonl.gz",
+    "sha256": "9e753460982c68355cf602c92f9ecb5a3464ee0ac9dc987eb3860a7fc35fbd47",
+    "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+    "source_id": "FCCSCALEUP2025",
+    "source_urls": [
+      "https://doi.org/10.1038/s41467-025-63982-2"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "reference record; task views can overlap native experiments",
+    "key": "process/fcc_pilot_train",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/process/fcc_pilot_train.jsonl.gz",
+    "qualification": "Reference kind is native_interpolation_of_pilot_experiments. All native CSVs are headerless. Lab has10000 simulated compositions; pilot test has15 physical experiments, while train/validation have48/12 interpolated rows. Repeated pilot measurements underpin interpolation and cannot establish independence. Native source-full pilot files have1016/982 rows and are excluded from joining. Lab/pilot target spaces differ (129 molecular components versus10 bulk properties); no artificial matched cross-scale pairing.",
+    "role": "primary",
+    "rows": 48,
+    "sha256": "9e753460982c68355cf602c92f9ecb5a3464ee0ac9dc987eb3860a7fc35fbd47",
+    "source_catalogue": "Data/coverage_expansion/process/catalog.json",
+    "source_id": "FCCSCALEUP2025",
+    "source_urls": [
+      "https://doi.org/10.1038/s41467-025-63982-2"
+    ],
+    "title": "FCC pilot training data"
+  },
+  "stored_path": "Data/families/process/reactor_scale_modeling/coverage/process/fcc_pilot_train/data.jsonl.gz",
+  "task_id": "process_impact_assessment",
+  "title": "FCC pilot training data"
+}

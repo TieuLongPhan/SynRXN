@@ -1,0 +1,33 @@
+{
+  "schema": "synrxn.solution-barrier-source-lock.v1",
+  "record_id": 16358189,
+  "record_api": "https://zenodo.org/api/records/16358189",
+  "data_doi": "https://doi.org/10.5281/zenodo.16358189",
+  "concept_doi_cited_by_paper": "https://doi.org/10.5281/zenodo.8396100",
+  "paper_url": "https://doi.org/10.1039/D6CP00088F",
+  "data_license_spdx": "CC-BY-4.0",
+  "archive": {
+    "name": "supplementary_material_v3.zip",
+    "url": "https://zenodo.org/api/records/16358189/files/supplementary_material_v3.zip/content",
+    "bytes": 36346814,
+    "md5": "7934b25adb63b520ac504db615874bb3",
+    "sha256": "cf7181ee147caa5dff45aa2a1fa1d33f027db8842b62d65a4d74d5d992e15a58",
+    "member": "supplementary_material_v3/chapter5/QM_dataset.xlsx"
+  },
+  "workbook": {
+    "name": "QM_dataset.xlsx",
+    "bytes": 1034381,
+    "sha256": "3d84b89a4bca4cd989cf3f58001fe29179ebbba30061b8a4c4205e4960a834a0"
+  },
+  "readme": {
+    "name": "README.md",
+    "url": "https://zenodo.org/api/records/16358189/files/README.md/content",
+    "bytes": 1619,
+    "sha256": "3b909fbafad61a87751608440d319917a70fb060a2326db486792fd61a36d375"
+  },
+  "metadata_snapshot_sha256": "a334a26499c09ffdf511a3ad4dc54482066ca17751f700045b06baa9f85b0918",
+  "paper_reported_reactions": 28,
+  "paper_reported_computed_values": 4513,
+  "native_workbook_context_rows": 970,
+  "seven_method_native_finite_values": 4514
+}

@@ -1,13 +1,176 @@
 window.SYNRXN_CATALOG = {
   "schema_version": "1.0",
   "release": {
-    "version": "1.2.1",
-    "doi": "10.5281/zenodo.17297258",
-    "generated_at": "2026-07-16T10:59:56Z",
-    "dataset_count": 33,
+    "version": "1.5.0",
+    "doi": null,
+    "partition": "main",
+    "release_status": "candidate",
+    "generated_at": "2026-10-15T18:48:20Z",
+    "dataset_count": 47,
     "integrity": "verified"
   },
   "datasets": [
+    {
+      "id": "aam/brenda",
+      "task": "aam",
+      "name": "brenda",
+      "title": "BRENDA balanced atom mappings",
+      "description": "IUBMB-marked, structure-complete, atom- and charge-balanced BRENDA reactions mapped with SynKit.",
+      "benchmark_role": "Evaluate mapping methods on a conservative biochemical reaction subset with computational mapping quality control.",
+      "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
+      "citations": [
+        "hauenstein2026brenda"
+      ],
+      "targets": [
+        "ground_truth"
+      ],
+      "row_identifier": "r_id",
+      "row_identifier_unique": true,
+      "rows": 3138,
+      "size": 385458,
+      "sha256": "dad050fba14ab6160480e6802cf81fc82ea3a70e1ccb1af9d251796cd7374580",
+      "columns": [
+        "r_id",
+        "ground_truth",
+        "rxn",
+        "original_id",
+        "pubmed_ids"
+      ],
+      "column_metadata": {
+        "r_id": {
+          "role": "identifier",
+          "description": "Stable row identifier supplied by SynRXN.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "ground_truth": {
+          "role": "reference",
+          "description": "Curated reference reaction or atom mapping.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "rxn": {
+          "role": "reaction",
+          "description": "Reaction SMILES string.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "original_id": {
+          "role": "source_identifier",
+          "description": "Identifier in the upstream dataset.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "pubmed_ids": {
+          "role": "provenance",
+          "description": "JSON array of PubMed identifiers linked by the upstream source.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        }
+      },
+      "sample": [
+        {
+          "r_id": "0",
+          "ground_truth": "[CH2:1]=[CH:2][CH2:3][C:4](=[O:5])[S:6][CH2:7][CH2:8][N:9]=[C:10]([OH:11])[CH2:12][CH2:13][N:14]=[C:15]([OH:16])[C@H:17]([OH:18])[C:19]([CH3:20])([CH3:21])[CH2:22][O:23][P:24](=[O:25])([OH:26])[O:27][P:28](=[O:29])([OH:30])[O:31][CH2:32][C@H:33]1[O:34][C@@H:35]([n:36]2[cH:37][n:38][c:39]3[c:40]([NH2:41])[n:42][cH:43][…",
+          "rxn": "C=CCC(=O)SCCN=C(O)CCN=C(O)[C@H](O)C(C)(C)COP(=O)(O)OP(=O)(O)OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@H](O)[C@@H]1OP(=O)(O)O\u003e\u003eC/C=C/C(=O)SCCN=C(O)CCN=C(O)[C@H](O)C(C)(C)COP(=O)(O)OP(=O)(O)OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@H](O)[C@@H]1OP(=O)(O)O",
+          "original_id": "I/1",
+          "pubmed_ids": "[\"9349\"]"
+        },
+        {
+          "r_id": "1",
+          "ground_truth": "[CH3:1][C:2]([CH3:3])([CH2:4][OH:5])[C@@H:6]([OH:7])[C:8](=[O:9])[OH:10].[NH2:11][CH2:12][CH2:13][C:14](=[O:15])[OH:16].[NH2:17][c:18]1[n:19][cH:20][n:21][c:22]2[c:23]1[n:24][cH:25][n:26]2[C@@H:27]1[O:28][C@H:29]([CH2:30][O:31][P:32](=[O:33])([OH:34])[O:35][P:36](=[O:37])([OH:38])[O:39][P:40](=[O:41])([OH:42])[OH:43])…",
+          "rxn": "CC(C)(CO)[C@@H](O)C(=O)O.NCCC(=O)O.Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)OP(=O)(O)OP(=O)(O)O)[C@@H](O)[C@H]1O\u003e\u003eCC(C)(CO)[C@@H](O)C(O)=NCCC(=O)O.Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)O)[C@@H](O)[C@H]1O.O=P(O)(O)OP(=O)(O)O",
+          "original_id": "I/101",
+          "pubmed_ids": "[\"29343701\",\"357689\"]"
+        },
+        {
+          "r_id": "2",
+          "ground_truth": "[CH3:1][C:2]([OH:3])=[N:4][C@H:5]1[C@@H:6]([O:7][P:8](=[O:9])([OH:10])[O:11][P:12](=[O:13])([OH:14])[O:15][CH2:16][C@H:17]2[O:18][C@@H:19]([n:20]3[cH:21][cH:22][c:23]([OH:24])[n:25][c:26]3=[O:27])[C@H:28]([OH:29])[C@@H:30]2[OH:31])[O:32][C@H:33]([CH2:34][OH:35])[C@@H:36]([OH:37])[C@@H:38]1[O:39][C@H:40]([CH3:41])[C:42…",
+          "rxn": "CC(O)=N[C@H]1[C@@H](OP(=O)(O)OP(=O)(O)OC[C@H]2O[C@@H](n3ccc(O)nc3=O)[C@H](O)[C@@H]2O)O[C@H](CO)[C@@H](O)[C@@H]1O[C@H](C)C(O)=N[C@@H](C)C(O)=N[C@H](CCC(O)=N[C@@H](CCCCN)C(=O)O)C(=O)O.C[C@@H](N)C(O)=N[C@H](C)C(=O)O.Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)OP(=O)(O)OP(=O)(O)O)[C@@H](O)[C@H]1O\u003e\u003eCC(O)=N[C@H]1[C@@H](OP(=O)(O)O…",
+          "original_id": "I/102",
+          "pubmed_ids": "[\"9166795\"]"
+        },
+        {
+          "r_id": "3",
+          "ground_truth": "[NH2:1][CH2:2][CH2:3][C:4](=[O:5])[OH:6].[NH2:7][C@@H:8]([CH2:9][c:10]1[cH:11][n:12][cH:13][nH:14]1)[C:15](=[O:16])[OH:17].[NH2:18][c:19]1[n:20][cH:21][n:22][c:23]2[c:24]1[n:25][cH:26][n:27]2[C@@H:28]1[O:29][C@H:30]([CH2:31][O:32][P:33](=[O:34])([OH:35])[O:36][P:37](=[O:38])([OH:39])[O:40][P:41](=[O:42])([OH:43])[OH:4…",
+          "rxn": "NCCC(=O)O.N[C@@H](Cc1cnc[nH]1)C(=O)O.Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)OP(=O)(O)OP(=O)(O)O)[C@@H](O)[C@H]1O\u003e\u003eNCCC(O)=N[C@@H](Cc1cnc[nH]1)C(=O)O.Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)OP(=O)(O)O)[C@@H](O)[C@H]1O.O=P(O)(O)O",
+          "original_id": "I/103",
+          "pubmed_ids": "[\"14404206\",\"6052438\"]"
+        },
+        {
+          "r_id": "4",
+          "ground_truth": "[O:1]=[C:2]1[O:3][C@H:4]([CH2:5][OH:6])[C@@H:7]([OH:8])[C@@H:9]1[OH:10].[O:11]=[O:12]\u003e\u003e[O:1]=[C:2]1[O:3][C@H:4]([CH2:5][OH:6])[C:7]([OH:8])=[C:9]1[OH:10].[OH:11][OH:12]",
+          "rxn": "O=C1O[C@H](CO)[C@@H](O)[C@@H]1O.O=O\u003e\u003eO=C1O[C@H](CO)C(O)=C1O.OO",
+          "original_id": "I/1036",
+          "pubmed_ids": "[]"
+        }
+      ],
+      "split_counts": {},
+      "null_counts": {
+        "r_id": 0,
+        "ground_truth": 0,
+        "rxn": 0,
+        "original_id": 0,
+        "pubmed_ids": 0
+      },
+      "target_summaries": {
+        "ground_truth": {
+          "kind": "categorical",
+          "count": 3138,
+          "unique": 3138,
+          "top": [
+            {
+              "value": "[CH2:1]=[CH:2][CH2:3][C:4](=[O:5])[S:6][CH2:7][CH2:8][N:9]=[C:10]([OH:11])[CH2:12][CH2:13][N:14]=[C:15]([OH:16])[C@H:17]([OH:18])[C:19]([CH3:20])([CH3:21])[CH2:22][O:23][P:24](=[O:25])([OH:26])[O:27][P:28](=[O:29])([OH:30])[O:31][CH2:32][C@H:33]1[O:34][C@@H:35]([n:36]2[cH:37][n:38][c:39]3[c:40]([NH2:41])[n:42][cH:43][n:44][c:45]23)[C@H:46]([OH:47])[C@@H:48]1[O:49][P:50](=[O:51])([OH:52])[OH:53]\u003e\u003e[CH3:1]/[CH:2]=[CH:3]/[C:4](=[O:5])[S:6][CH2:7][CH2:8][N:9]=[C:10]([OH:11])[CH2:12][CH2:13][N:14]=[C:15]([OH:16])[C@H:17]([OH:18])[C:19]([CH3:20])([CH3:21])[CH2:22][O:23][P:24](=[O:25])([OH:26])[O:27][P:28](=[O:29])([OH:30])[O:31][CH2:32][C@H:33]1[O:34][C@@H:35]([n:36]2[cH:37][n:38][c:39]3[c:40]([NH2:41])[n:42][cH:43][n:44][c:45]23)[C@H:46]([OH:47])[C@@H:48]1[O:49][P:50](=[O:51])([OH:52])[OH:53]",
+              "count": 1
+            },
+            {
+              "value": "[CH3:1][C:2]([CH3:3])([CH2:4][OH:5])[C@@H:6]([OH:7])[C:8](=[O:9])[OH:10].[NH2:11][CH2:12][CH2:13][C:14](=[O:15])[OH:16].[NH2:17][c:18]1[n:19][cH:20][n:21][c:22]2[c:23]1[n:24][cH:25][n:26]2[C@@H:27]1[O:28][C@H:29]([CH2:30][O:31][P:32](=[O:33])([OH:34])[O:35][P:36](=[O:37])([OH:38])[O:39][P:40](=[O:41])([OH:42])[OH:43])[C@@H:44]([OH:45])[C@H:46]1[OH:47]\u003e\u003e[CH3:1][C:2]([CH3:3])([CH2:4][OH:5])[C@@H:6]([OH:7])[C:8]([OH:9])=[N:11][CH2:12][CH2:13][C:14](=[O:15])[OH:16].[NH2:17][c:18]1[n:19][cH:20][n:21][c:22]2[c:23]1[n:24][cH:25][n:26]2[C@@H:27]1[O:28][C@H:29]([CH2:30][O:31][P:32](=[O:10])([OH:33])[OH:34])[C@@H:44]([OH:45])[C@H:46]1[OH:47].[O:35]=[P:36]([OH:37])([OH:38])[O:39][P:40](=[O:41])([OH:42])[OH:43]",
+              "count": 1
+            },
+            {
+              "value": "[CH3:1][C:2]([OH:3])=[N:4][C@H:5]1[C@@H:6]([O:7][P:8](=[O:9])([OH:10])[O:11][P:12](=[O:13])([OH:14])[O:15][CH2:16][C@H:17]2[O:18][C@@H:19]([n:20]3[cH:21][cH:22][c:23]([OH:24])[n:25][c:26]3=[O:27])[C@H:28]([OH:29])[C@@H:30]2[OH:31])[O:32][C@H:33]([CH2:34][OH:35])[C@@H:36]([OH:37])[C@@H:38]1[O:39][C@H:40]([CH3:41])[C:42]([OH:43])=[N:44][C@@H:45]([CH3:46])[C:47]([OH:48])=[N:49][C@H:50]([CH2:51][CH2:52][C:53]([OH:54])=[N:55][C@@H:56]([CH2:57][CH2:58][CH2:59][CH2:60][NH2:61])[C:62](=[O:63])[OH:64])[C:65](=[O:66])[OH:67].[CH3:68][C@@H:69]([NH2:70])[C:71]([OH:72])=[N:73][C@H:74]([CH3:75])[C:76](=[O:77])[OH:78].[NH2:79][c:80]1[n:81][cH:82][n:83][c:84]2[c:85]1[n:86][cH:87][n:88]2[C@@H:89]1[O:90][C@H:91]([CH2:92][O:93][P:94](=[O:95])([OH:96])[O:97][P:98](=[O:99])([OH:100])[O:101][P:102](=[O:103])([OH:104])[OH:105])[C@@H:106]([OH:107])[C@H:108]1[OH:109]\u003e\u003e[CH3:1][C:2]([OH:3])=[N:4][C@H:5]1[C@@H:6]([O:7][P:8](=[O:9])([OH:10])[O:11][P:12](=[O:13])([OH:14])[O:15][CH2:16][C@H:17]2[O:18][C@@H:19]([n:20]3[cH:21][cH:22][c:23]([OH:24])[n:25][c:26]3=[O:27])[C@H:28]([OH:29])[C@@H:30]2[OH:31])[O:32][C@H:33]([CH2:34][OH:35])[C@@H:36]([OH:37])[C@@H:38]1[O:39][C@H:40]([CH3:41])[C:42]([OH:43])=[N:44][C@@H:45]([CH3:46])[C:47]([OH:48])=[N:49][C@H:50]([CH2:51][CH2:52][C:53]([OH:54])=[N:55][C@@H:56]([CH2:57][CH2:58][CH2:59][CH2:60][NH2:61])[C:62]([OH:63])=[N:70][C@H:69]([CH3:68])[C:71]([OH:72])=[N:73][C@H:74]([CH3:75])[C:76](=[O:77])[OH:78])[C:65](=[O:66])[OH:67].[NH2:79][c:80]1[n:81][cH:82][n:83][c:84]2[c:85]1[n:86][cH:87][n:88]2[C@@H:89]1[O:90][C@H:91]([CH2:92][O:93][P:94](=[O:95])([OH:96])[O:97][P:98](=[O:64])([OH:99])[OH:100])[C@@H:106]([OH:107])[C@H:108]1[OH:109].[O:101]=[P:102]([OH:103])([OH:104])[OH:105]",
+              "count": 1
+            },
+            {
+              "value": "[NH2:1][CH2:2][CH2:3][C:4](=[O:5])[OH:6].[NH2:7][C@@H:8]([CH2:9][c:10]1[cH:11][n:12][cH:13][nH:14]1)[C:15](=[O:16])[OH:17].[NH2:18][c:19]1[n:20][cH:21][n:22][c:23]2[c:24]1[n:25][cH:26][n:27]2[C@@H:28]1[O:29][C@H:30]([CH2:31][O:32][P:33](=[O:34])([OH:35])[O:36][P:37](=[O:38])([OH:39])[O:40][P:41](=[O:42])([OH:43])[OH:44])[C@@H:45]([OH:46])[C@H:47]1[OH:48]\u003e\u003e[NH2:1][CH2:2][CH2:3][C:4]([OH:5])=[N:7][C@@H:8]([CH2:9][c:10]1[cH:11][n:12][cH:13][nH:14]1)[C:15](=[O:16])[OH:17].[NH2:18][c:19]1[n:20][cH:21][n:22][c:23]2[c:24]1[n:25][cH:26][n:27]2[C@@H:28]1[O:29][C@H:30]([CH2:31][O:32][P:33](=[O:34])([OH:35])[O:36][P:37](=[O:6])([OH:38])[OH:39])[C@@H:45]([OH:46])[C@H:47]1[OH:48].[O:40]=[P:41]([OH:42])([OH:43])[OH:44]",
+              "count": 1
+            },
+            {
+              "value": "[O:1]=[C:2]1[O:3][C@H:4]([CH2:5][OH:6])[C@@H:7]([OH:8])[C@@H:9]1[OH:10].[O:11]=[O:12]\u003e\u003e[O:1]=[C:2]1[O:3][C@H:4]([CH2:5][OH:6])[C:7]([OH:8])=[C:9]1[OH:10].[OH:11][OH:12]",
+              "count": 1
+            },
+            {
+              "value": "[CH3:1][O:2][c:3]1[cH:4][c:5]([CH2:6][OH:7])[cH:8][cH:9][c:10]1[OH:11].[O:12]=[O:13]\u003e\u003e[CH3:1][O:2][c:3]1[cH:4][c:5]([CH:6]=[O:7])[cH:8][cH:9][c:10]1[OH:11].[OH:12][OH:13]",
+              "count": 1
+            },
+            {
+              "value": "[NH:1]=[c:2]1[n:3][c:4]([OH:5])[c:6]2[c:7]([nH:8]1)[NH:9][CH2:10][C:11]([CH2:12][NH:13][c:14]1[cH:15][cH:16][c:17]([C:18](=[O:19])[OH:20])[cH:21][cH:22]1)=[N:23]2.[NH2:24][C@@H:25]([CH2:26][CH2:27][C:28](=[O:29])[OH:30])[C:31](=[O:32])[OH:33].[NH2:34][c:35]1[n:36][cH:37][n:38][c:39]2[c:40]1[n:41][cH:42][n:43]2[C@@H:44]1[O:45][C@H:46]([CH2:47][O:48][P:49](=[O:50])([OH:51])[O:52][P:53](=[O:54])([OH:55])[O:56][P:57](=[O:58])([OH:59])[OH:60])[C@@H:61]([OH:62])[C@H:63]1[OH:64]\u003e\u003e[NH:1]=[c:2]1[n:3][c:4]([OH:5])[c:6]2[c:7]([nH:8]1)[NH:9][CH2:10][C:11]([CH2:12][NH:13][c:14]1[cH:15][cH:16][c:17]([C:18](=[O:19])[NH:24][C@@H:25]([CH2:26][CH2:27][C:28](=[O:29])[OH:30])[C:31](=[O:32])[OH:33])[cH:21][cH:22]1)=[N:23]2.[NH2:34][c:35]1[n:36][cH:37][n:38][c:39]2[c:40]1[n:41][cH:42][n:43]2[C@@H:44]1[O:45][C@H:46]([CH2:47][O:48][P:49](=[O:50])([OH:51])[O:52][P:53](=[O:20])([OH:54])[OH:55])[C@@H:61]([OH:62])[C@H:63]1[OH:64].[O:56]=[P:57]([OH:58])([OH:59])[OH:60]",
+              "count": 1
+            },
+            {
+              "value": "[CH3:1][C:2]([OH:3])=[N:4][C@H:5]1[C@@H:6]([O:7][P:8](=[O:9])([OH:10])[O:11][P:12](=[O:13])([OH:14])[O:15][CH2:16][C@H:17]2[O:18][C@@H:19]([n:20]3[cH:21][cH:22][c:23]([OH:24])[n:25][c:26]3=[O:27])[C@H:28]([OH:29])[C@@H:30]2[OH:31])[O:32][C@H:33]([CH2:34][OH:35])[C@@H:36]([OH:37])[C@@H:38]1[O:39][C@H:40]([CH3:41])[C:42]([OH:43])=[N:44][C@@H:45]([CH3:46])[C:47]([OH:48])=[N:49][C@H:50]([CH2:51][CH2:52][C:53](=[O:54])[OH:55])[C:56](=[O:57])[OH:58].[NH2:59][C@H:60]([CH2:61][CH2:62][CH2:63][C@H:64]([NH2:65])[C:66](=[O:67])[OH:68])[C:69](=[O:70])[OH:71].[NH2:72][c:73]1[n:74][cH:75][n:76][c:77]2[c:78]1[n:79][cH:80][n:81]2[C@@H:82]1[O:83][C@H:84]([CH2:85][O:86][P:87](=[O:88])([OH:89])[O:90][P:91](=[O:92])([OH:93])[O:94][P:95](=[O:96])([OH:97])[OH:98])[C@@H:99]([OH:100])[C@H:101]1[OH:102]\u003e\u003e[CH3:1][C:2]([OH:3])=[N:4][C@H:5]1[C@@H:6]([O:7][P:8](=[O:9])([OH:10])[O:11][P:12](=[O:13])([OH:14])[O:15][CH2:16][C@H:17]2[O:18][C@@H:19]([n:20]3[cH:21][cH:22][c:23]([OH:24])[n:25][c:26]3=[O:27])[C@H:28]([OH:29])[C@@H:30]2[OH:31])[O:32][C@H:33]([CH2:34][OH:35])[C@@H:36]([OH:37])[C@@H:38]1[O:39][C@H:40]([CH3:41])[C:42]([OH:43])=[N:44][C@@H:45]([CH3:46])[C:47]([OH:48])=[N:49][C@H:50]([CH2:51][CH2:52][C:53]([OH:54])=[N:59][C@@H:60]([CH2:61][CH2:62][CH2:63][C@@H:64]([NH2:65])[C:66](=[O:67])[OH:68])[C:69](=[O:70])[OH:71])[C:56](=[O:57])[OH:58].[NH2:72][c:73]1[n:74][cH:75][n:76][c:77]2[c:78]1[n:79][cH:80][n:81]2[C@@H:82]1[O:83][C@H:84]([CH2:85][O:86][P:87](=[O:88])([OH:89])[O:90][P:91](=[O:55])([OH:92])[OH:93])[C@@H:99]([OH:100])[C@H:101]1[OH:102].[O:94]=[P:95]([OH:96])([OH:97])[OH:98]",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "reaction_column": "rxn",
+      "reaction_text": "C=CCC(=O)SCCN=C(O)CCN=C(O)[C@H](O)C(C)(C)COP(=O)(O)OP(=O)(O)OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@H](O)[C@@H]1OP(=O)(O)O\u003e\u003eC/C=C/C(=O)SCCN=C(O)CCN=C(O)[C@H](O)C(C)(C)COP(=O)(O)OP(=O)(O)OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@H](O)[C@@H]1OP(=O)(O)O",
+      "depiction": "_static/catalog-reactions/aam-brenda.svg"
+    },
     {
       "id": "aam/ecoli",
       "task": "aam",
@@ -16,6 +179,9 @@ window.SYNRXN_CATALOG = {
       "description": "Biochemical atom-mapping benchmark derived from E. coli reactions.",
       "benchmark_role": "Compare mapper outputs with curated biochemical reference mappings.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "beier2026computing"
       ],
@@ -43,56 +209,64 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ground_truth": {
           "role": "reference",
           "description": "Curated reference reaction or atom mapping.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "reactions": {
           "role": "reaction",
           "description": "Reaction SMILES string retained under the upstream plural field name.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn_mapper": {
           "role": "prediction",
           "description": "Mapping predicted by RXNMapper.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "graphormer": {
           "role": "prediction",
           "description": "Mapping predicted by Graphormer.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "local_mapper": {
           "role": "prediction",
           "description": "Mapping predicted by LocalMapper.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rdt": {
           "role": "prediction",
           "description": "Mapping predicted by RDT.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "original_id": {
           "role": "source_identifier",
           "description": "Identifier in the upstream dataset.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -204,6 +378,272 @@ window.SYNRXN_CATALOG = {
       "depiction": "_static/catalog-reactions/aam-ecoli.svg"
     },
     {
+      "id": "aam/ehreact",
+      "task": "aam",
+      "name": "ehreact",
+      "title": "EHreact atom mappings",
+      "description": "Manually corrected atom-mapped reactions from the EHreact manuscript assay collection.",
+      "benchmark_role": "Evaluate atom mapping and reaction-template methods across nine enzymatic and synthetic systems.",
+      "license": "BSD-3-Clause",
+      "license_spdx": "BSD-3-Clause",
+      "license_url": "https://spdx.org/licenses/BSD-3-Clause.html",
+      "redistribution_partition": "main",
+      "citations": [
+        "heid2021ehreact"
+      ],
+      "targets": [
+        "ground_truth"
+      ],
+      "row_identifier": "r_id",
+      "row_identifier_unique": true,
+      "rows": 939,
+      "size": 73805,
+      "sha256": "e085217180f396ad519eeaadf7602d39c7c374e5591b95bde85c0d8b57402124",
+      "columns": [
+        "r_id",
+        "ground_truth",
+        "rxn",
+        "original_id",
+        "system",
+        "input",
+        "input_type",
+        "assay_labels",
+        "n_assays",
+        "n_active",
+        "mapping_curated",
+        "validated"
+      ],
+      "column_metadata": {
+        "r_id": {
+          "role": "identifier",
+          "description": "Stable row identifier supplied by SynRXN.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "ground_truth": {
+          "role": "reference",
+          "description": "Curated reference reaction or atom mapping.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "rxn": {
+          "role": "reaction",
+          "description": "Reaction SMILES string.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "original_id": {
+          "role": "source_identifier",
+          "description": "Identifier in the upstream dataset.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "system": {
+          "role": "partition",
+          "description": "EHreact enzyme or reaction system.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "input": {
+          "role": "feature",
+          "description": "Upstream query substrate or product representation.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "input_type": {
+          "role": "provenance",
+          "description": "Whether the upstream query represents a substrate or product.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "assay_labels": {
+          "role": "target",
+          "description": "JSON object containing all binary assay labels for a reaction.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "n_assays": {
+          "role": "summary",
+          "description": "Number of assay labels associated with the reaction.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "n_active": {
+          "role": "summary",
+          "description": "Number of positive assay labels associated with the reaction.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "mapping_curated": {
+          "role": "provenance",
+          "description": "Dataset-level indicator that the atom mapping underwent upstream manual curation.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "validated": {
+          "role": "provenance",
+          "description": "Row-level independent-validation status when provided by the upstream source.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        }
+      },
+      "sample": [
+        {
+          "r_id": "0",
+          "ground_truth": "[At:10][H:20].[H+:19].[c:1]1([H:21])[c:3]([C:4](=[O:5])[C:7]([H:24])([H:25])[H:26])[c:2]([H:22])[c:9]([H:28])[c:8]([H:27])[c:6]1[H:23]\u003e\u003e[At+:10].[c:1]1([H:21])[c:3]([C:4]([O:5][H:19])([C:7]([H:24])([H:25])[H:26])[H:20])[c:2]([H:22])[c:9]([H:28])[c:8]([H:27])[c:6]1[H:23]",
+          "rxn": "CC(=O)c1ccccc1.[AtH].[H+]\u003e\u003eCC(O)c1ccccc1.[At+]",
+          "original_id": "0",
+          "system": "alcoholdehydrogenase",
+          "input": "C1=CC=CC=C1C(C)=O",
+          "input_type": "substrate",
+          "assay_labels": "{\"E-1\": 0, \"E-2\": 0}",
+          "n_assays": "2",
+          "n_active": "0",
+          "mapping_curated": "True",
+          "validated": ""
+        },
+        {
+          "r_id": "1",
+          "ground_truth": "[At:11][H:20].[H+:19].[O:1]=[C:10]([C:5]([H:22])([H:23])[H:24])[c:8]1[c:7]([H:26])[c:6]([H:25])[c:3]([F:4])[c:2]([H:21])[c:9]1[H:27]\u003e\u003e[At+:11].[O:1]([C:10]([C:5]([H:22])([H:23])[H:24])([c:8]1[c:7]([H:26])[c:6]([H:25])[c:3]([F:4])[c:2]([H:21])[c:9]1[H:27])[H:20])[H:19]",
+          "rxn": "CC(=O)c1ccc(F)cc1.[AtH].[H+]\u003e\u003eCC(O)c1ccc(F)cc1.[At+]",
+          "original_id": "1",
+          "system": "alcoholdehydrogenase",
+          "input": "C1=CC(=CC=C1C(C)=O)F",
+          "input_type": "substrate",
+          "assay_labels": "{\"E-1\": 0, \"E-2\": 1}",
+          "n_assays": "2",
+          "n_active": "1",
+          "mapping_curated": "True",
+          "validated": ""
+        },
+        {
+          "r_id": "2",
+          "ground_truth": "[At:11][H:20].[H+:19].[c:1]1([C:5](=[O:7])[C:8]([H:23])([H:24])[H:25])[c:2]([H:21])[c:3]([Br:4])[c:6]([H:22])[c:9]([H:26])[c:10]1[H:27]\u003e\u003e[At+:11].[c:1]1([C:5]([O:7][H:19])([C:8]([H:23])([H:24])[H:25])[H:20])[c:2]([H:21])[c:3]([Br:4])[c:6]([H:22])[c:9]([H:26])[c:10]1[H:27]",
+          "rxn": "CC(=O)c1cccc(Br)c1.[AtH].[H+]\u003e\u003eCC(O)c1cccc(Br)c1.[At+]",
+          "original_id": "2",
+          "system": "alcoholdehydrogenase",
+          "input": "C1=C(C=CC=C1C(C)=O)Br",
+          "input_type": "substrate",
+          "assay_labels": "{\"E-1\": 0, \"E-2\": 1}",
+          "n_assays": "2",
+          "n_active": "1",
+          "mapping_curated": "True",
+          "validated": ""
+        },
+        {
+          "r_id": "3",
+          "ground_truth": "[At:11][H:20].[H+:19].[c:1]1([H:21])[c:2]([Br:3])[c:4]([C:5](=[O:6])[C:9]([H:24])([H:25])[H:26])[c:7]([H:22])[c:8]([H:23])[c:10]1[H:27]\u003e\u003e[At+:11].[c:1]1([H:21])[c:2]([Br:3])[c:4]([C:5]([O:6][H:19])([C:9]([H:24])([H:25])[H:26])[H:20])[c:7]([H:22])[c:8]([H:23])[c:10]1[H:27]",
+          "rxn": "CC(=O)c1ccccc1Br.[AtH].[H+]\u003e\u003eCC(O)c1ccccc1Br.[At+]",
+          "original_id": "3",
+          "system": "alcoholdehydrogenase",
+          "input": "C1(=CC=CC=C1C(C)=O)Br",
+          "input_type": "substrate",
+          "assay_labels": "{\"E-1\": 0, \"E-2\": 0}",
+          "n_assays": "2",
+          "n_active": "0",
+          "mapping_curated": "True",
+          "validated": ""
+        },
+        {
+          "r_id": "4",
+          "ground_truth": "[At:11][H:20].[H+:19].[O:1]=[C:10]([C:5]([H:22])([H:23])[H:24])[c:8]1[c:7]([H:26])[c:6]([H:25])[c:3]([Br:4])[c:2]([H:21])[c:9]1[H:27]\u003e\u003e[At+:11].[O:1]([C:10]([C:5]([H:22])([H:23])[H:24])([c:8]1[c:7]([H:26])[c:6]([H:25])[c:3]([Br:4])[c:2]([H:21])[c:9]1[H:27])[H:20])[H:19]",
+          "rxn": "CC(=O)c1ccc(Br)cc1.[AtH].[H+]\u003e\u003eCC(O)c1ccc(Br)cc1.[At+]",
+          "original_id": "4",
+          "system": "alcoholdehydrogenase",
+          "input": "C1=CC(=CC=C1C(C)=O)Br",
+          "input_type": "substrate",
+          "assay_labels": "{\"E-1\": 0, \"E-2\": 1}",
+          "n_assays": "2",
+          "n_active": "1",
+          "mapping_curated": "True",
+          "validated": ""
+        }
+      ],
+      "split_counts": {},
+      "null_counts": {
+        "r_id": 0,
+        "ground_truth": 0,
+        "rxn": 0,
+        "original_id": 0,
+        "system": 0,
+        "input": 0,
+        "input_type": 0,
+        "assay_labels": 0,
+        "n_assays": 0,
+        "n_active": 0,
+        "mapping_curated": 0,
+        "validated": 939
+      },
+      "target_summaries": {
+        "ground_truth": {
+          "kind": "categorical",
+          "count": 939,
+          "unique": 741,
+          "top": [
+            {
+              "value": "[F:13][B-:17]([F:14])([F:15])[C:16]([H:26])([H:27])[H:28].[n:1]1[c:5]([H:20])[c:7]([H:22])[c:11]([H:25])[n:12]1-[c:10]1[c:2]([H:19])[c:3]([Br:4])[c:6]([H:21])[c:8]([H:23])[c:9]1[H:24]\u003e\u003e[Br:4][B-:17]([F:13])([F:14])[F:15].[n:1]1[c:5]([H:20])[c:7]([H:22])[c:11]([H:25])[n:12]1-[c:10]1[c:2]([H:19])[c:3]([C:16]([H:26])([H:27])[H:28])[c:6]([H:21])[c:8]([H:23])[c:9]1[H:24]",
+              "count": 2
+            },
+            {
+              "value": "[C:1]1([H:22])([H:23])[C:7]([H:27])([H:28])[N:10]([C:14]([H:36])([H:37])[H:38])[C:11]([H:30])([H:31])[C:13]([H:34])([H:35])[N:15]1[C:12]([c:8]1[c:6]([H:26])[c:5]([H:25])[c:3]([Br:4])[c:2]([H:24])[c:9]1[H:29])([H:32])[H:33].[F:16][B-:20]([F:17])([F:18])[C:19]([H:39])([H:40])[H:41]\u003e\u003e[Br:4][B-:20]([F:16])([F:17])[F:18].[C:1]1([H:22])([H:23])[C:7]([H:27])([H:28])[N:10]([C:14]([H:36])([H:37])[H:38])[C:11]([H:30])([H:31])[C:13]([H:34])([H:35])[N:15]1[C:12]([c:8]1[c:6]([H:26])[c:5]([H:25])[c:3]([C:19]([H:39])([H:40])[H:41])[c:2]([H:24])[c:9]1[H:29])([H:32])[H:33]",
+              "count": 2
+            },
+            {
+              "value": "[C:1]([C:6]([H:30])([H:31])[H:32])([C:13]([H:37])([H:38])[H:39])([C:16]([H:40])([H:41])[H:42])[O:22][C:18]([C:15]([N:14]1[C:12]([H:35])([H:36])[C:11]([C:21]([H:49])([H:50])[H:51])([H:34])[N:10]([c:4]2[n:3][c:2]([H:29])[c:8]([Br:9])[c:7]([H:33])[n:5]2)[C:20]([H:47])([H:48])[C:19]1([H:45])[H:46])=[O:17])([H:43])[H:44].[F:23][B-:27]([F:24])([F:25])[C:26]([H:52])([H:53])[H:54]\u003e\u003e[Br:9][B-:27]([F:23])([F:24])[F:25].[C:1]([C:6]([H:30])([H:31])[H:32])([C:13]([H:37])([H:38])[H:39])([C:16]([H:40])([H:41])[H:42])[O:22][C:18]([C:15]([N:14]1[C:12]([H:35])([H:36])[C:11]([C:21]([H:49])([H:50])[H:51])([H:34])[N:10]([c:4]2[n:3][c:2]([H:29])[c:8]([C:26]([H:52])([H:53])[H:54])[c:7]([H:33])[n:5]2)[C:20]([H:47])([H:48])[C:19]1([H:45])[H:46])=[O:17])([H:43])[H:44]",
+              "count": 2
+            },
+            {
+              "value": "[F:16][B-:20]([F:17])([F:18])[C:19]([H:29])([H:30])[H:31].[c:1]1([H:22])[c:2]([Br:3])[c:4]([H:23])[n:5]2[c:6]3[c:8]([n:9][c:12]2[c:13]1[H:26])[C:15]([H:27])([H:28])[O:14][C:11]([H:24])([H:25])[C:7]3=[O:10]\u003e\u003e[Br:3][B-:20]([F:16])([F:17])[F:18].[c:1]1([H:22])[c:2]([C:19]([H:29])([H:30])[H:31])[c:4]([H:23])[n:5]2[c:6]3[c:8]([n:9][c:12]2[c:13]1[H:26])[C:15]([H:27])([H:28])[O:14][C:11]([H:24])([H:25])[C:7]3=[O:10]",
+              "count": 2
+            },
+            {
+              "value": "[C:13]([B-:14]([F:15])([F:16])[F:17])([C:18]([H:29])([H:30])[H:31])([C:19]([H:32])([H:33])[H:34])[H:28].[n:1]1[c:5]([H:22])[c:7]([H:24])[c:11]([H:27])[n:12]1-[c:10]1[c:2]([H:21])[c:3]([Br:4])[c:6]([H:23])[c:8]([H:25])[c:9]1[H:26]\u003e\u003e[Br:4][B-:14]([F:15])([F:16])[F:17].[n:1]1[c:5]([H:22])[c:7]([H:24])[c:11]([H:27])[n:12]1-[c:10]1[c:2]([H:21])[c:3]([C:13]([C:18]([H:29])([H:30])[H:31])([C:19]([H:32])([H:33])[H:34])[H:28])[c:6]([H:23])[c:8]([H:25])[c:9]1[H:26]",
+              "count": 2
+            },
+            {
+              "value": "[C:13]([Br:14])([C:15]([H:25])([H:26])[H:27])([C:16]([H:28])([H:29])[H:30])[H:24].[n:1]1[c:5]([H:18])[c:7]([H:20])[c:11]([H:23])[n:12]1-[c:10]1[c:2]([H:17])[c:3]([Br:4])[c:6]([H:19])[c:8]([H:21])[c:9]1[H:22]\u003e\u003e[Br:4][Br:14].[n:1]1[c:5]([H:18])[c:7]([H:20])[c:11]([H:23])[n:12]1-[c:10]1[c:2]([H:17])[c:3]([C:13]([C:15]([H:25])([H:26])[H:27])([C:16]([H:28])([H:29])[H:30])[H:24])[c:6]([H:19])[c:8]([H:21])[c:9]1[H:22]",
+              "count": 2
+            },
+            {
+              "value": "[C:16]([Br:17])([C:18]([H:38])([H:39])[H:40])([C:19]([H:41])([H:42])[H:43])[H:37].[C:1]1([H:20])([H:21])[C:7]([H:25])([H:26])[N:10]([C:14]([H:34])([H:35])[H:36])[C:11]([H:28])([H:29])[C:13]([H:32])([H:33])[N:15]1[C:12]([c:8]1[c:6]([H:24])[c:5]([H:23])[c:3]([Br:4])[c:2]([H:22])[c:9]1[H:27])([H:30])[H:31]\u003e\u003e[Br:4][Br:17].[C:1]1([H:20])([H:21])[C:7]([H:25])([H:26])[N:10]([C:14]([H:34])([H:35])[H:36])[C:11]([H:28])([H:29])[C:13]([H:32])([H:33])[N:15]1[C:12]([c:8]1[c:6]([H:24])[c:5]([H:23])[c:3]([C:16]([C:18]([H:38])([H:39])[H:40])([C:19]([H:41])([H:42])[H:43])[H:37])[c:2]([H:22])[c:9]1[H:27])([H:30])[H:31]",
+              "count": 2
+            },
+            {
+              "value": "[C:16]([B-:17]([F:18])([F:19])[F:20])([C:21]([H:42])([H:43])[H:44])([C:22]([H:45])([H:46])[H:47])[H:41].[C:1]1([H:24])([H:25])[C:7]([H:29])([H:30])[N:10]([C:14]([H:38])([H:39])[H:40])[C:11]([H:32])([H:33])[C:13]([H:36])([H:37])[N:15]1[C:12]([c:8]1[c:6]([H:28])[c:5]([H:27])[c:3]([Br:4])[c:2]([H:26])[c:9]1[H:31])([H:34])[H:35]\u003e\u003e[Br:4][B-:17]([F:18])([F:19])[F:20].[C:1]1([H:24])([H:25])[C:7]([H:29])([H:30])[N:10]([C:14]([H:38])([H:39])[H:40])[C:11]([H:32])([H:33])[C:13]([H:36])([H:37])[N:15]1[C:12]([c:8]1[c:6]([H:28])[c:5]([H:27])[c:3]([C:16]([C:21]([H:42])([H:43])[H:44])([C:22]([H:45])([H:46])[H:47])[H:41])[c:2]([H:26])[c:9]1[H:31])([H:34])[H:35]",
+              "count": 2
+            }
+          ]
+        }
+      },
+      "reaction_column": "rxn",
+      "reaction_text": "CC(=O)c1ccccc1.[AtH].[H+]\u003e\u003eCC(O)c1ccccc1.[At+]",
+      "depiction": "_static/catalog-reactions/aam-ehreact.svg"
+    },
+    {
       "id": "aam/enzyme_map",
       "task": "aam",
       "name": "enzyme_map",
@@ -211,6 +651,9 @@ window.SYNRXN_CATALOG = {
       "description": "Enzymatic atom-mapping benchmark from the EnzymeMap reaction collection.",
       "benchmark_role": "Evaluate atom mapping at scale on enzymatic reactions.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "heid2023enzymemap"
       ],
@@ -234,28 +677,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ground_truth": {
           "role": "reference",
           "description": "Curated reference reaction or atom mapping.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn": {
           "role": "reaction",
           "description": "Reaction SMILES string.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "original_id": {
           "role": "source_identifier",
           "description": "Identifier in the upstream dataset.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -343,6 +790,315 @@ window.SYNRXN_CATALOG = {
       "depiction": "_static/catalog-reactions/aam-enzyme_map.svg"
     },
     {
+      "id": "aam/flower_c",
+      "task": "aam",
+      "name": "flower_c",
+      "title": "FlowER composite atom mappings",
+      "description": "Unique multi-step test-set mappings retaining only reacting explicit hydrogens; inputs are canonical unmapped SMILES with removable hydrogens made implicit.",
+      "benchmark_role": "Evaluate atom mapping on overall transformations spanning at least two elementary transitions.",
+      "license": "MIT",
+      "license_spdx": "MIT",
+      "license_url": "https://spdx.org/licenses/MIT.html",
+      "redistribution_partition": "main",
+      "citations": [
+        "joung2025electron",
+        "fong2026flower_data"
+      ],
+      "targets": [
+        "ground_truth"
+      ],
+      "row_identifier": "r_id",
+      "row_identifier_unique": true,
+      "rows": 38745,
+      "size": 6116189,
+      "sha256": "75f34235813ce9accff59134536f6e1f0f6af5c9a16a381e7a75e96b0f52d203",
+      "columns": [
+        "r_id",
+        "ground_truth",
+        "rxn",
+        "original_id",
+        "n_steps"
+      ],
+      "column_metadata": {
+        "r_id": {
+          "role": "identifier",
+          "description": "Stable row identifier supplied by SynRXN.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "ground_truth": {
+          "role": "reference",
+          "description": "Curated reference reaction or atom mapping.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "rxn": {
+          "role": "reaction",
+          "description": "Reaction SMILES string.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "original_id": {
+          "role": "source_identifier",
+          "description": "Identifier in the upstream dataset.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "n_steps": {
+          "role": "summary",
+          "description": "Minimum number of elementary transitions connecting the composite reaction states.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        }
+      },
+      "sample": [
+        {
+          "r_id": "0",
+          "ground_truth": "[CH2:19]([OH:20])[CH3:21].[CH2:1]([C:2]([O:3][CH2:4][CH3:5])=[O:6])[Br:7].[CH3:8][N:9]1[C:10](=[O:11])[N:12]([H:32])[C:13](=[O:14])[C:15]1=[O:16].[K+:17].[OH-:18]\u003e\u003e[Br-:7].[CH2:19]([OH:20])[CH3:21].[CH2:1]([C:2]([O:3][CH2:4][CH3:5])=[O:6])[N:12]1[C:10](=[O:11])[N:9]([CH3:8])[C:15](=[O:16])[C:13]1=[O:14].[K+:17].[OH:18…",
+          "rxn": "CCO.CCOC(=O)CBr.CN1C(=O)NC(=O)C1=O.[K+].[OH-]\u003e\u003eCCO.CCOC(=O)CN1C(=O)C(=O)N(C)C1=O.O.[Br-].[K+]",
+          "original_id": "1:p1",
+          "n_steps": "2"
+        },
+        {
+          "r_id": "1",
+          "ground_truth": "[CH2:28]([OH:29])[CH3:30].[ClH:31].[Na+:26].[O-:27][H:48].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][C:11](=[O:12])[CH3:13])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1\u003e\u003e[C:11](=[O:12])([CH3:13])[O-:27].[CH2:28]([OH:29])[CH3:30].[ClH:31].[Na+:26].[n:…",
+          "rxn": "CC(=O)Nc1nc(C)c(-c2ccc(S(C)(=O)=O)c(-n3ccnc3)c2)s1.CCO.Cl.[Na+].[OH-]\u003e\u003eCC(=O)[O-].CCO.Cc1nc(N)sc1-c1ccc(S(C)(=O)=O)c(-n2ccnc2)c1.Cl.[Na+]",
+          "original_id": "2:p1",
+          "n_steps": "3"
+        },
+        {
+          "r_id": "2",
+          "ground_truth": "[CH2:28]([O:29][H:51])[CH3:30].[ClH:31].[Na+:26].[OH-:27].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][C:11](=[O:12])[CH3:13])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1\u003e\u003e[C:11](=[O:12])([CH3:13])[OH:27].[CH2:28]([O-:29])[CH3:30].[ClH:31].[Na+:26].[n:…",
+          "rxn": "CC(=O)Nc1nc(C)c(-c2ccc(S(C)(=O)=O)c(-n3ccnc3)c2)s1.CCO.Cl.[Na+].[OH-]\u003e\u003eCC(=O)O.CC[O-].Cc1nc(N)sc1-c1ccc(S(C)(=O)=O)c(-n2ccnc2)c1.Cl.[Na+]",
+          "original_id": "2:p2",
+          "n_steps": "3"
+        },
+        {
+          "r_id": "3",
+          "ground_truth": "[CH2:28]([OH:29])[CH3:30].[Cl:31][H:55].[Na+:26].[OH-:27].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][C:11](=[O:12])[CH3:13])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1\u003e\u003e[C:11](=[O:12])([CH3:13])[OH:27].[CH2:28]([OH:29])[CH3:30].[Cl-:31].[Na+:26].[n:…",
+          "rxn": "CC(=O)Nc1nc(C)c(-c2ccc(S(C)(=O)=O)c(-n3ccnc3)c2)s1.CCO.Cl.[Na+].[OH-]\u003e\u003eCC(=O)O.CCO.Cc1nc(N)sc1-c1ccc(S(C)(=O)=O)c(-n2ccnc2)c1.[Cl-].[Na+]",
+          "original_id": "2:p3",
+          "n_steps": "3"
+        },
+        {
+          "r_id": "4",
+          "ground_truth": "[C:1](=[O:2])([O-:3])[O-:4].[CH2:5]([c:6]1[cH:7][cH:8][cH:9][cH:10][cH:11]1)[Br:12].[CH3:28][N:29]([CH:30]=[O:31])[CH3:32].[K+:13].[K+:14].[O:15]([c:16]1[cH:17][c:18]([C:19]([F:20])([F:21])[F:22])[cH:23][cH:24][c:25]1[CH:26]=[O:27])[H:40]\u003e\u003e[Br-:12].[C:1](=[O:2])([O-:3])[O-:4].[CH2:5]([c:6]1[cH:7][cH:8][cH:9][cH:10][cH…",
+          "rxn": "BrCc1ccccc1.CN(C)C=O.O=C([O-])[O-].O=Cc1ccc(C(F)(F)F)cc1O.[K+].[K+]\u003e\u003eC[NH+](C)C=O.O=C([O-])[O-].O=Cc1ccc(C(F)(F)F)cc1OCc1ccccc1.[Br-].[K+].[K+]",
+          "original_id": "3:p1",
+          "n_steps": "2"
+        }
+      ],
+      "split_counts": {},
+      "null_counts": {
+        "r_id": 0,
+        "ground_truth": 0,
+        "rxn": 0,
+        "original_id": 0,
+        "n_steps": 0
+      },
+      "target_summaries": {
+        "ground_truth": {
+          "kind": "categorical",
+          "count": 38745,
+          "unique": 38745,
+          "top": [
+            {
+              "value": "[CH2:19]([OH:20])[CH3:21].[CH2:1]([C:2]([O:3][CH2:4][CH3:5])=[O:6])[Br:7].[CH3:8][N:9]1[C:10](=[O:11])[N:12]([H:32])[C:13](=[O:14])[C:15]1=[O:16].[K+:17].[OH-:18]\u003e\u003e[Br-:7].[CH2:19]([OH:20])[CH3:21].[CH2:1]([C:2]([O:3][CH2:4][CH3:5])=[O:6])[N:12]1[C:10](=[O:11])[N:9]([CH3:8])[C:15](=[O:16])[C:13]1=[O:14].[K+:17].[OH:18][H:32]",
+              "count": 1
+            },
+            {
+              "value": "[CH2:28]([OH:29])[CH3:30].[ClH:31].[Na+:26].[O-:27][H:48].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][C:11](=[O:12])[CH3:13])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1\u003e\u003e[C:11](=[O:12])([CH3:13])[O-:27].[CH2:28]([OH:29])[CH3:30].[ClH:31].[Na+:26].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][H:48])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1",
+              "count": 1
+            },
+            {
+              "value": "[CH2:28]([O:29][H:51])[CH3:30].[ClH:31].[Na+:26].[OH-:27].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][C:11](=[O:12])[CH3:13])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1\u003e\u003e[C:11](=[O:12])([CH3:13])[OH:27].[CH2:28]([O-:29])[CH3:30].[ClH:31].[Na+:26].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][H:51])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1",
+              "count": 1
+            },
+            {
+              "value": "[CH2:28]([OH:29])[CH3:30].[Cl:31][H:55].[Na+:26].[OH-:27].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][C:11](=[O:12])[CH3:13])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1\u003e\u003e[C:11](=[O:12])([CH3:13])[OH:27].[CH2:28]([OH:29])[CH3:30].[Cl-:31].[Na+:26].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][H:55])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1",
+              "count": 1
+            },
+            {
+              "value": "[C:1](=[O:2])([O-:3])[O-:4].[CH2:5]([c:6]1[cH:7][cH:8][cH:9][cH:10][cH:11]1)[Br:12].[CH3:28][N:29]([CH:30]=[O:31])[CH3:32].[K+:13].[K+:14].[O:15]([c:16]1[cH:17][c:18]([C:19]([F:20])([F:21])[F:22])[cH:23][cH:24][c:25]1[CH:26]=[O:27])[H:40]\u003e\u003e[Br-:12].[C:1](=[O:2])([O-:3])[O-:4].[CH2:5]([c:6]1[cH:7][cH:8][cH:9][cH:10][cH:11]1)[O:15][c:16]1[cH:17][c:18]([C:19]([F:20])([F:21])[F:22])[cH:23][cH:24][c:25]1[CH:26]=[O:27].[CH3:28][N+:29]([CH:30]=[O:31])([CH3:32])[H:40].[K+:13].[K+:14]",
+              "count": 1
+            },
+            {
+              "value": "[C:1](=[O:2])([O-:3])[O-:4].[CH2:5]([c:6]1[cH:7][cH:8][cH:9][cH:10][cH:11]1)[Br:12].[CH3:28][N:29]([CH:30]=[O:31])[CH3:32].[K+:13].[K+:14].[O:15]([c:16]1[cH:17][c:18]([C:19]([F:20])([F:21])[F:22])[cH:23][cH:24][c:25]1[CH:26]=[O:27])[H:40]\u003e\u003e[Br-:12].[C:1](=[O:2])([O:3][H:40])[O-:4].[CH2:5]([c:6]1[cH:7][cH:8][cH:9][cH:10][cH:11]1)[O:15][c:16]1[cH:17][c:18]([C:19]([F:20])([F:21])[F:22])[cH:23][cH:24][c:25]1[CH:26]=[O:27].[CH3:28][N:29]([CH:30]=[O:31])[CH3:32].[K+:13].[K+:14]",
+              "count": 1
+            },
+            {
+              "value": "[Li+:1].[O:20]1[CH2:21][CH2:22][O:23][CH2:24][CH2:25]1.[O:2]([C:3](=[O:4])[CH:5]([O:6][c:7]1[cH:8][cH:9][cH:10][c:11](-[n:12]2[cH:13][n:14][n:15][n:16]2)[cH:17]1)[CH3:18])[CH3:19].[OH-:26]\u003e\u003e[C:3](=[O:4])([CH:5]([O:6][c:7]1[cH:8][cH:9][cH:10][c:11](-[n:12]2[cH:13][n:14][n:15][n:16]2)[cH:17]1)[CH3:18])[OH:26].[Li+:1].[O-:2][CH3:19].[O:20]1[CH2:21][CH2:22][O:23][CH2:24][CH2:25]1",
+              "count": 1
+            },
+            {
+              "value": "[CH2:1]([N:2]([CH2:3][CH3:4])[CH2:5][CH3:6])[CH3:7].[CH2:8]([C:9]([O:10][CH2:11][CH3:12])=[O:13])[Br:14].[CH:15]1([NH:16][H:50])[CH2:17][CH2:18][CH2:19][CH2:20]1.[O:21]1[CH2:22][CH2:23][CH2:24][CH2:25]1\u003e\u003e[Br-:14].[CH2:1]([N+:2]([CH2:3][CH3:4])([CH2:5][CH3:6])[H:50])[CH3:7].[CH2:8]([C:9]([O:10][CH2:11][CH3:12])=[O:13])[NH:16][CH:15]1[CH2:17][CH2:18][CH2:19][CH2:20]1.[O:21]1[CH2:22][CH2:23][CH2:24][CH2:25]1",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "reaction_column": "rxn",
+      "reaction_text": "CCO.CCOC(=O)CBr.CN1C(=O)NC(=O)C1=O.[K+].[OH-]\u003e\u003eCCO.CCOC(=O)CN1C(=O)C(=O)N(C)C1=O.O.[Br-].[K+]",
+      "depiction": "_static/catalog-reactions/aam-flower_c.svg"
+    },
+    {
+      "id": "aam/flower_e",
+      "task": "aam",
+      "name": "flower_e",
+      "title": "FlowER elementary atom mappings",
+      "description": "Unique elementary test-set mappings retaining only reacting explicit hydrogens; inputs are canonical unmapped SMILES with removable hydrogens made implicit.",
+      "benchmark_role": "Evaluate atom mapping on conserved mechanistic elementary steps from the corrected May-2026 FlowER test split.",
+      "license": "MIT",
+      "license_spdx": "MIT",
+      "license_url": "https://spdx.org/licenses/MIT.html",
+      "redistribution_partition": "main",
+      "citations": [
+        "joung2025electron",
+        "fong2026flower_data"
+      ],
+      "targets": [
+        "ground_truth"
+      ],
+      "row_identifier": "r_id",
+      "row_identifier_unique": true,
+      "rows": 179345,
+      "size": 12842463,
+      "sha256": "696f0a08fa7872309918c0bc1de7cfe3a32ba862e4d732775e12844894159d8d",
+      "columns": [
+        "r_id",
+        "ground_truth",
+        "rxn",
+        "original_id"
+      ],
+      "column_metadata": {
+        "r_id": {
+          "role": "identifier",
+          "description": "Stable row identifier supplied by SynRXN.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "ground_truth": {
+          "role": "reference",
+          "description": "Curated reference reaction or atom mapping.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "rxn": {
+          "role": "reaction",
+          "description": "Reaction SMILES string.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "original_id": {
+          "role": "source_identifier",
+          "description": "Identifier in the upstream dataset.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        }
+      },
+      "sample": [
+        {
+          "r_id": "0",
+          "ground_truth": "[CH2:19]([OH:20])[CH3:21].[CH2:1]([C:2]([O:3][CH2:4][CH3:5])=[O:6])[Br:7].[CH3:8][N:9]1[C:10](=[O:11])[NH:12][C:13](=[O:14])[C:15]1=[O:16].[K+:17].[OH-:18]\u003e\u003e[Br-:7].[CH2:19]([OH:20])[CH3:21].[CH2:1]([C:2]([O:3][CH2:4][CH3:5])=[O:6])[NH+:12]1[C:10](=[O:11])[N:9]([CH3:8])[C:15](=[O:16])[C:13]1=[O:14].[K+:17].[OH-:18]",
+          "rxn": "CCO.CCOC(=O)CBr.CN1C(=O)NC(=O)C1=O.[K+].[OH-]\u003e\u003eCCO.CCOC(=O)C[NH+]1C(=O)C(=O)N(C)C1=O.[Br-].[K+].[OH-]",
+          "original_id": "1:1"
+        },
+        {
+          "r_id": "1",
+          "ground_truth": "[Br-:7].[CH2:19]([OH:20])[CH3:21].[CH2:1]([C:2]([O:3][CH2:4][CH3:5])=[O:6])[N+:12]1([H:32])[C:10](=[O:11])[N:9]([CH3:8])[C:15](=[O:16])[C:13]1=[O:14].[K+:17].[OH-:18]\u003e\u003e[Br-:7].[CH2:19]([OH:20])[CH3:21].[CH2:1]([C:2]([O:3][CH2:4][CH3:5])=[O:6])[N:12]1[C:10](=[O:11])[N:9]([CH3:8])[C:15](=[O:16])[C:13]1=[O:14].[K+:17].[O…",
+          "rxn": "CCO.CCOC(=O)C[NH+]1C(=O)C(=O)N(C)C1=O.[Br-].[K+].[OH-]\u003e\u003eCCO.CCOC(=O)CN1C(=O)C(=O)N(C)C1=O.O.[Br-].[K+]",
+          "original_id": "1:2"
+        },
+        {
+          "r_id": "2",
+          "ground_truth": "[CH2:28]([OH:29])[CH3:30].[ClH:31].[Na+:26].[OH-:27].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][C:11](=[O:12])[CH3:13])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1\u003e\u003e[CH2:28]([OH:29])[CH3:30].[ClH:31].[Na+:26].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([C…",
+          "rxn": "CC(=O)Nc1nc(C)c(-c2ccc(S(C)(=O)=O)c(-n3ccnc3)c2)s1.CCO.Cl.[Na+].[OH-]\u003e\u003eCCO.Cc1nc(NC(C)([O-])O)sc1-c1ccc(S(C)(=O)=O)c(-n2ccnc2)c1.Cl.[Na+]",
+          "original_id": "2:1"
+        },
+        {
+          "r_id": "3",
+          "ground_truth": "[CH2:28]([OH:29])[CH3:30].[ClH:31].[Na+:26].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][C:11]([O-:12])([CH3:13])[OH:27])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1\u003e\u003e[C:11](=[O:12])([CH3:13])[OH:27].[CH2:28]([OH:29])[CH3:30].[ClH:31].[Na+:26].[n:1]1(-…",
+          "rxn": "CCO.Cc1nc(NC(C)([O-])O)sc1-c1ccc(S(C)(=O)=O)c(-n2ccnc2)c1.Cl.[Na+]\u003e\u003eCC(=O)O.CCO.Cc1nc([NH-])sc1-c1ccc(S(C)(=O)=O)c(-n2ccnc2)c1.Cl.[Na+]",
+          "original_id": "2:2"
+        },
+        {
+          "r_id": "4",
+          "ground_truth": "[C:11](=[O:12])([CH3:13])[OH:27].[CH2:28]([OH:29])[CH3:30].[Cl:31][H:55].[Na+:26].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH-:10])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1\u003e\u003e[C:11](=[O:12])([CH3:13])[OH:27].[CH2:28]([OH:29])[CH3:30].[Cl-:31].[Na+:26].[…",
+          "rxn": "CC(=O)O.CCO.Cc1nc([NH-])sc1-c1ccc(S(C)(=O)=O)c(-n2ccnc2)c1.Cl.[Na+]\u003e\u003eCC(=O)O.CCO.Cc1nc(N)sc1-c1ccc(S(C)(=O)=O)c(-n2ccnc2)c1.[Cl-].[Na+]",
+          "original_id": "2:3"
+        }
+      ],
+      "split_counts": {},
+      "null_counts": {
+        "r_id": 0,
+        "ground_truth": 0,
+        "rxn": 0,
+        "original_id": 0
+      },
+      "target_summaries": {
+        "ground_truth": {
+          "kind": "categorical",
+          "count": 179345,
+          "unique": 179345,
+          "top": [
+            {
+              "value": "[CH2:19]([OH:20])[CH3:21].[CH2:1]([C:2]([O:3][CH2:4][CH3:5])=[O:6])[Br:7].[CH3:8][N:9]1[C:10](=[O:11])[NH:12][C:13](=[O:14])[C:15]1=[O:16].[K+:17].[OH-:18]\u003e\u003e[Br-:7].[CH2:19]([OH:20])[CH3:21].[CH2:1]([C:2]([O:3][CH2:4][CH3:5])=[O:6])[NH+:12]1[C:10](=[O:11])[N:9]([CH3:8])[C:15](=[O:16])[C:13]1=[O:14].[K+:17].[OH-:18]",
+              "count": 1
+            },
+            {
+              "value": "[Br-:7].[CH2:19]([OH:20])[CH3:21].[CH2:1]([C:2]([O:3][CH2:4][CH3:5])=[O:6])[N+:12]1([H:32])[C:10](=[O:11])[N:9]([CH3:8])[C:15](=[O:16])[C:13]1=[O:14].[K+:17].[OH-:18]\u003e\u003e[Br-:7].[CH2:19]([OH:20])[CH3:21].[CH2:1]([C:2]([O:3][CH2:4][CH3:5])=[O:6])[N:12]1[C:10](=[O:11])[N:9]([CH3:8])[C:15](=[O:16])[C:13]1=[O:14].[K+:17].[OH:18][H:32]",
+              "count": 1
+            },
+            {
+              "value": "[CH2:28]([OH:29])[CH3:30].[ClH:31].[Na+:26].[OH-:27].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][C:11](=[O:12])[CH3:13])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1\u003e\u003e[CH2:28]([OH:29])[CH3:30].[ClH:31].[Na+:26].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][C:11]([O-:12])([CH3:13])[OH:27])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1",
+              "count": 1
+            },
+            {
+              "value": "[CH2:28]([OH:29])[CH3:30].[ClH:31].[Na+:26].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][C:11]([O-:12])([CH3:13])[OH:27])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1\u003e\u003e[C:11](=[O:12])([CH3:13])[OH:27].[CH2:28]([OH:29])[CH3:30].[ClH:31].[Na+:26].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH-:10])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1",
+              "count": 1
+            },
+            {
+              "value": "[C:11](=[O:12])([CH3:13])[OH:27].[CH2:28]([OH:29])[CH3:30].[Cl:31][H:55].[Na+:26].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH-:10])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1\u003e\u003e[C:11](=[O:12])([CH3:13])[OH:27].[CH2:28]([OH:29])[CH3:30].[Cl-:31].[Na+:26].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][H:55])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1",
+              "count": 1
+            },
+            {
+              "value": "[C:11](=[O:12])([CH3:13])[O:27][H:48].[CH2:28]([OH:29])[CH3:30].[ClH:31].[Na+:26].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH-:10])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1\u003e\u003e[C:11](=[O:12])([CH3:13])[O-:27].[CH2:28]([OH:29])[CH3:30].[ClH:31].[Na+:26].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][H:48])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1",
+              "count": 1
+            },
+            {
+              "value": "[C:11](=[O:12])([CH3:13])[OH:27].[CH2:28]([O:29][H:51])[CH3:30].[ClH:31].[Na+:26].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH-:10])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1\u003e\u003e[C:11](=[O:12])([CH3:13])[OH:27].[CH2:28]([O-:29])[CH3:30].[ClH:31].[Na+:26].[n:1]1(-[c:2]2[cH:3][c:4](-[c:5]3[c:6]([CH3:7])[n:8][c:9]([NH:10][H:51])[s:14]3)[cH:15][cH:16][c:17]2[S:18]([CH3:19])(=[O:20])=[O:21])[cH:22][cH:23][n:24][cH:25]1",
+              "count": 1
+            },
+            {
+              "value": "[C:1](=[O:2])([O-:3])[O-:4].[CH2:5]([c:6]1[cH:7][cH:8][cH:9][cH:10][cH:11]1)[Br:12].[CH3:28][N:29]([CH:30]=[O:31])[CH3:32].[K+:13].[K+:14].[OH:15][c:16]1[cH:17][c:18]([C:19]([F:20])([F:21])[F:22])[cH:23][cH:24][c:25]1[CH:26]=[O:27]\u003e\u003e[Br-:12].[C:1](=[O:2])([O-:3])[O-:4].[CH2:5]([c:6]1[cH:7][cH:8][cH:9][cH:10][cH:11]1)[OH+:15][c:16]1[cH:17][c:18]([C:19]([F:20])([F:21])[F:22])[cH:23][cH:24][c:25]1[CH:26]=[O:27].[CH3:28][N:29]([CH:30]=[O:31])[CH3:32].[K+:13].[K+:14]",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "reaction_column": "rxn",
+      "reaction_text": "CCO.CCOC(=O)CBr.CN1C(=O)NC(=O)C1=O.[K+].[OH-]\u003e\u003eCCO.CCOC(=O)C[NH+]1C(=O)C(=O)N(C)C1=O.[Br-].[K+].[OH-]",
+      "depiction": "_static/catalog-reactions/aam-flower_e.svg"
+    },
+    {
       "id": "aam/golden",
       "task": "aam",
       "name": "golden",
@@ -350,6 +1106,9 @@ window.SYNRXN_CATALOG = {
       "description": "Curated synthetic-chemistry atom-mapping benchmark.",
       "benchmark_role": "Compare mapper outputs with a curated synthetic reference set.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "chen2024precise",
         "lin2022atom"
@@ -378,56 +1137,64 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "reactions": {
           "role": "reaction",
           "description": "Reaction SMILES string retained under the upstream plural field name.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ground_truth": {
           "role": "reference",
           "description": "Curated reference reaction or atom mapping.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn_mapper": {
           "role": "prediction",
           "description": "Mapping predicted by RXNMapper.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "graphormer": {
           "role": "prediction",
           "description": "Mapping predicted by Graphormer.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "local_mapper": {
           "role": "prediction",
           "description": "Mapping predicted by LocalMapper.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rdt": {
           "role": "prediction",
           "description": "Mapping predicted by RDT.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "original_id": {
           "role": "source_identifier",
           "description": "Identifier in the upstream dataset.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -546,6 +1313,9 @@ window.SYNRXN_CATALOG = {
       "description": "Literature-derived reference atom-mapping set.",
       "benchmark_role": "Compare mapping methods on literature-derived reactions.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "jaworski2019automatic"
       ],
@@ -573,56 +1343,64 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "reactions": {
           "role": "reaction",
           "description": "Reaction SMILES string retained under the upstream plural field name.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ground_truth": {
           "role": "reference",
           "description": "Curated reference reaction or atom mapping.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn_mapper": {
           "role": "prediction",
           "description": "Mapping predicted by RXNMapper.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "graphormer": {
           "role": "prediction",
           "description": "Mapping predicted by Graphormer.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "local_mapper": {
           "role": "prediction",
           "description": "Mapping predicted by LocalMapper.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rdt": {
           "role": "prediction",
           "description": "Mapping predicted by RDT.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "original_id": {
           "role": "source_identifier",
           "description": "Identifier in the upstream dataset.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -741,6 +1519,9 @@ window.SYNRXN_CATALOG = {
       "description": "Biochemical atom-mapping benchmark derived from Recon3D reactions.",
       "benchmark_role": "Compare atom mappers on metabolic reactions.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "litsa2018machine"
       ],
@@ -768,56 +1549,64 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ground_truth": {
           "role": "reference",
           "description": "Curated reference reaction or atom mapping.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "reactions": {
           "role": "reaction",
           "description": "Reaction SMILES string retained under the upstream plural field name.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn_mapper": {
           "role": "prediction",
           "description": "Mapping predicted by RXNMapper.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "graphormer": {
           "role": "prediction",
           "description": "Mapping predicted by Graphormer.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "local_mapper": {
           "role": "prediction",
           "description": "Mapping predicted by LocalMapper.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rdt": {
           "role": "prediction",
           "description": "Mapping predicted by RDT.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "original_id": {
           "role": "source_identifier",
           "description": "Identifier in the upstream dataset.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -936,6 +1725,9 @@ window.SYNRXN_CATALOG = {
       "description": "USPTO-derived synthetic-chemistry atom-mapping benchmark.",
       "benchmark_role": "Compare mapper accuracy on a compact patent-reaction set.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "chen2024precise"
       ],
@@ -963,56 +1755,64 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ground_truth": {
           "role": "reference",
           "description": "Curated reference reaction or atom mapping.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "reactions": {
           "role": "reaction",
           "description": "Reaction SMILES string retained under the upstream plural field name.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn_mapper": {
           "role": "prediction",
           "description": "Mapping predicted by RXNMapper.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "graphormer": {
           "role": "prediction",
           "description": "Mapping predicted by Graphormer.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "local_mapper": {
           "role": "prediction",
           "description": "Mapping predicted by LocalMapper.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rdt": {
           "role": "prediction",
           "description": "Mapping predicted by RDT.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "original_id": {
           "role": "source_identifier",
           "description": "Identifier in the upstream dataset.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -1131,6 +1931,9 @@ window.SYNRXN_CATALOG = {
       "description": "Enzyme Commission hierarchy classification benchmark.",
       "benchmark_role": "Predict hierarchical enzyme classes from reactions.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "zeng2025claire"
       ],
@@ -1163,51 +1966,56 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn": {
           "role": "reaction",
           "description": "Reaction SMILES string.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ec1": {
           "role": "target",
           "description": "First Enzyme Commission hierarchy level.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ec2": {
           "role": "target",
           "description": "Second Enzyme Commission hierarchy level.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ec3": {
           "role": "target",
           "description": "Third Enzyme Commission hierarchy level.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "split": {
           "role": "partition",
-          "description": "Published train",
-          "validation": null,
-          "or test assignment.": null,
+          "description": "Upstream training, validation, or test assignment.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "orig_index": {
           "role": "source_identifier",
           "description": "Row index in the upstream dataset.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -1298,6 +2106,240 @@ window.SYNRXN_CATALOG = {
       "depiction": "_static/catalog-reactions/classification-ecreact.svg"
     },
     {
+      "id": "classification/ehreact_activity",
+      "task": "classification",
+      "name": "ehreact_activity",
+      "title": "EHreact reaction activity",
+      "description": "Long-form binary reaction-assay activity labels from nine EHreact manuscript systems.",
+      "benchmark_role": "Predict whether a mapped reaction is active for an assay or enzyme label.",
+      "license": "BSD-3-Clause",
+      "license_spdx": "BSD-3-Clause",
+      "license_url": "https://spdx.org/licenses/BSD-3-Clause.html",
+      "redistribution_partition": "main",
+      "citations": [
+        "heid2021ehreact"
+      ],
+      "targets": [
+        "activity"
+      ],
+      "row_identifier": "r_id",
+      "row_identifier_unique": true,
+      "rows": 1943,
+      "size": 86714,
+      "sha256": "eb38c0a10358fff35a616c6ae4255efd2a6bb00b8f02cc6e2dde00943fba8192",
+      "columns": [
+        "r_id",
+        "reaction_r_id",
+        "ground_truth",
+        "rxn",
+        "original_id",
+        "system",
+        "input",
+        "input_type",
+        "assay",
+        "activity",
+        "mapping_curated",
+        "validated"
+      ],
+      "column_metadata": {
+        "r_id": {
+          "role": "identifier",
+          "description": "Stable row identifier supplied by SynRXN.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_r_id": {
+          "role": "identifier",
+          "description": "Identifier of the corresponding reaction-level record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "ground_truth": {
+          "role": "reference",
+          "description": "Curated reference reaction or atom mapping.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "rxn": {
+          "role": "reaction",
+          "description": "Reaction SMILES string.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "original_id": {
+          "role": "source_identifier",
+          "description": "Identifier in the upstream dataset.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "system": {
+          "role": "partition",
+          "description": "EHreact enzyme or reaction system.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "input": {
+          "role": "feature",
+          "description": "Upstream query substrate or product representation.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "input_type": {
+          "role": "provenance",
+          "description": "Whether the upstream query represents a substrate or product.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "assay": {
+          "role": "target",
+          "description": "Upstream assay or enzyme label.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "activity": {
+          "role": "target",
+          "description": "Binary reaction-assay activity label.",
+          "logical_type": "number",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "mapping_curated": {
+          "role": "provenance",
+          "description": "Dataset-level indicator that the atom mapping underwent upstream manual curation.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "validated": {
+          "role": "provenance",
+          "description": "Row-level independent-validation status when provided by the upstream source.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        }
+      },
+      "sample": [
+        {
+          "r_id": "0",
+          "reaction_r_id": "0",
+          "ground_truth": "[At:10][H:20].[H+:19].[c:1]1([H:21])[c:3]([C:4](=[O:5])[C:7]([H:24])([H:25])[H:26])[c:2]([H:22])[c:9]([H:28])[c:8]([H:27])[c:6]1[H:23]\u003e\u003e[At+:10].[c:1]1([H:21])[c:3]([C:4]([O:5][H:19])([C:7]([H:24])([H:25])[H:26])[H:20])[c:2]([H:22])[c:9]([H:28])[c:8]([H:27])[c:6]1[H:23]",
+          "rxn": "CC(=O)c1ccccc1.[AtH].[H+]\u003e\u003eCC(O)c1ccccc1.[At+]",
+          "original_id": "0",
+          "system": "alcoholdehydrogenase",
+          "input": "C1=CC=CC=C1C(C)=O",
+          "input_type": "substrate",
+          "assay": "E-1",
+          "activity": "0",
+          "mapping_curated": "True",
+          "validated": ""
+        },
+        {
+          "r_id": "1",
+          "reaction_r_id": "0",
+          "ground_truth": "[At:10][H:20].[H+:19].[c:1]1([H:21])[c:3]([C:4](=[O:5])[C:7]([H:24])([H:25])[H:26])[c:2]([H:22])[c:9]([H:28])[c:8]([H:27])[c:6]1[H:23]\u003e\u003e[At+:10].[c:1]1([H:21])[c:3]([C:4]([O:5][H:19])([C:7]([H:24])([H:25])[H:26])[H:20])[c:2]([H:22])[c:9]([H:28])[c:8]([H:27])[c:6]1[H:23]",
+          "rxn": "CC(=O)c1ccccc1.[AtH].[H+]\u003e\u003eCC(O)c1ccccc1.[At+]",
+          "original_id": "0",
+          "system": "alcoholdehydrogenase",
+          "input": "C1=CC=CC=C1C(C)=O",
+          "input_type": "substrate",
+          "assay": "E-2",
+          "activity": "0",
+          "mapping_curated": "True",
+          "validated": ""
+        },
+        {
+          "r_id": "2",
+          "reaction_r_id": "1",
+          "ground_truth": "[At:11][H:20].[H+:19].[O:1]=[C:10]([C:5]([H:22])([H:23])[H:24])[c:8]1[c:7]([H:26])[c:6]([H:25])[c:3]([F:4])[c:2]([H:21])[c:9]1[H:27]\u003e\u003e[At+:11].[O:1]([C:10]([C:5]([H:22])([H:23])[H:24])([c:8]1[c:7]([H:26])[c:6]([H:25])[c:3]([F:4])[c:2]([H:21])[c:9]1[H:27])[H:20])[H:19]",
+          "rxn": "CC(=O)c1ccc(F)cc1.[AtH].[H+]\u003e\u003eCC(O)c1ccc(F)cc1.[At+]",
+          "original_id": "1",
+          "system": "alcoholdehydrogenase",
+          "input": "C1=CC(=CC=C1C(C)=O)F",
+          "input_type": "substrate",
+          "assay": "E-1",
+          "activity": "0",
+          "mapping_curated": "True",
+          "validated": ""
+        },
+        {
+          "r_id": "3",
+          "reaction_r_id": "1",
+          "ground_truth": "[At:11][H:20].[H+:19].[O:1]=[C:10]([C:5]([H:22])([H:23])[H:24])[c:8]1[c:7]([H:26])[c:6]([H:25])[c:3]([F:4])[c:2]([H:21])[c:9]1[H:27]\u003e\u003e[At+:11].[O:1]([C:10]([C:5]([H:22])([H:23])[H:24])([c:8]1[c:7]([H:26])[c:6]([H:25])[c:3]([F:4])[c:2]([H:21])[c:9]1[H:27])[H:20])[H:19]",
+          "rxn": "CC(=O)c1ccc(F)cc1.[AtH].[H+]\u003e\u003eCC(O)c1ccc(F)cc1.[At+]",
+          "original_id": "1",
+          "system": "alcoholdehydrogenase",
+          "input": "C1=CC(=CC=C1C(C)=O)F",
+          "input_type": "substrate",
+          "assay": "E-2",
+          "activity": "1",
+          "mapping_curated": "True",
+          "validated": ""
+        },
+        {
+          "r_id": "4",
+          "reaction_r_id": "2",
+          "ground_truth": "[At:11][H:20].[H+:19].[c:1]1([C:5](=[O:7])[C:8]([H:23])([H:24])[H:25])[c:2]([H:21])[c:3]([Br:4])[c:6]([H:22])[c:9]([H:26])[c:10]1[H:27]\u003e\u003e[At+:11].[c:1]1([C:5]([O:7][H:19])([C:8]([H:23])([H:24])[H:25])[H:20])[c:2]([H:21])[c:3]([Br:4])[c:6]([H:22])[c:9]([H:26])[c:10]1[H:27]",
+          "rxn": "CC(=O)c1cccc(Br)c1.[AtH].[H+]\u003e\u003eCC(O)c1cccc(Br)c1.[At+]",
+          "original_id": "2",
+          "system": "alcoholdehydrogenase",
+          "input": "C1=C(C=CC=C1C(C)=O)Br",
+          "input_type": "substrate",
+          "assay": "E-1",
+          "activity": "0",
+          "mapping_curated": "True",
+          "validated": ""
+        }
+      ],
+      "split_counts": {},
+      "null_counts": {
+        "r_id": 0,
+        "reaction_r_id": 0,
+        "ground_truth": 0,
+        "rxn": 0,
+        "original_id": 0,
+        "system": 0,
+        "input": 0,
+        "input_type": 0,
+        "assay": 0,
+        "activity": 0,
+        "mapping_curated": 0,
+        "validated": 1943
+      },
+      "target_summaries": {
+        "activity": {
+          "kind": "numeric",
+          "count": 1943,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.1564590838908904
+        }
+      },
+      "reaction_column": "rxn",
+      "reaction_text": "CC(=O)c1ccccc1.[AtH].[H+]\u003e\u003eCC(O)c1ccccc1.[At+]",
+      "depiction": "_static/catalog-reactions/classification-ehreact_activity.svg"
+    },
+    {
       "id": "classification/schneider_b",
       "task": "classification",
       "name": "schneider_b",
@@ -1305,6 +2347,9 @@ window.SYNRXN_CATALOG = {
       "description": "Balanced Schneider reaction-class benchmark.",
       "benchmark_role": "Predict reaction class from balanced reactions.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "schneider2015development",
         "vannguyen2025syncat"
@@ -1333,30 +2378,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn": {
           "role": "reaction",
           "description": "Reaction SMILES string.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "label": {
           "role": "target",
           "description": "Reaction class or template label.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "split": {
           "role": "partition",
-          "description": "Published train",
-          "validation": null,
-          "or test assignment.": null,
+          "description": "Upstream training, validation, or test assignment.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -1422,6 +2469,9 @@ window.SYNRXN_CATALOG = {
       "description": "Unbalanced and product-focused Schneider reaction-class benchmark.",
       "benchmark_role": "Predict reaction class from unbalanced reactions.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "schneider2015development"
       ],
@@ -1449,30 +2499,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn": {
           "role": "reaction",
           "description": "Reaction SMILES string.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "label": {
           "role": "target",
           "description": "Reaction class or template label.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "split": {
           "role": "partition",
-          "description": "Published train",
-          "validation": null,
-          "or test assignment.": null,
+          "description": "Upstream training, validation, or test assignment.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -1538,6 +2590,9 @@ window.SYNRXN_CATALOG = {
       "description": "Reaction-template benchmark with three hierarchical label levels.",
       "benchmark_role": "Predict hierarchical reaction-template labels.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "phan2025syntemp",
         "liu2017retrosynthetic"
@@ -1566,42 +2621,48 @@ window.SYNRXN_CATALOG = {
           "description": "Row index in the upstream dataset.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "r_id": {
           "role": "identifier",
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn": {
           "role": "reaction",
           "description": "Reaction SMILES string.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "label_0": {
           "role": "target",
           "description": "Top-level hierarchical template label.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "label_1": {
           "role": "target",
           "description": "Second-level hierarchical template label.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "label_2": {
           "role": "target",
           "description": "Third-level hierarchical template label.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -1690,6 +2751,9 @@ window.SYNRXN_CATALOG = {
       "description": "Large balanced reaction-template classification benchmark.",
       "benchmark_role": "Predict template labels from balanced reactions.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "vannguyen2025syncat",
         "schwaller2021mapping"
@@ -1718,30 +2782,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn": {
           "role": "reaction",
           "description": "Reaction SMILES string.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "label": {
           "role": "target",
           "description": "Reaction class or template label.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "split": {
           "role": "partition",
-          "description": "Published train",
-          "validation": null,
-          "or test assignment.": null,
+          "description": "Upstream training, validation, or test assignment.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -1807,6 +2873,9 @@ window.SYNRXN_CATALOG = {
       "description": "Large unbalanced and product-focused template classification benchmark.",
       "benchmark_role": "Predict template labels from unbalanced reactions.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "schwaller2021mapping"
       ],
@@ -1834,30 +2903,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn": {
           "role": "reaction",
           "description": "Reaction SMILES string.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "label": {
           "role": "target",
           "description": "Reaction class or template label.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "split": {
           "role": "partition",
-          "description": "Published train",
-          "validation": null,
-          "or test assignment.": null,
+          "description": "Upstream training, validation, or test assignment.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -1923,6 +2994,9 @@ window.SYNRXN_CATALOG = {
       "description": "Balanced USPTO-50K reaction-class benchmark.",
       "benchmark_role": "Predict reaction classes from balanced patent reactions.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "vannguyen2025syncat",
         "liu2017retrosynthetic"
@@ -1951,30 +3025,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn": {
           "role": "reaction",
           "description": "Reaction SMILES string.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "label": {
           "role": "target",
           "description": "Reaction class or template label.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "split": {
           "role": "partition",
-          "description": "Published train",
-          "validation": null,
-          "or test assignment.": null,
+          "description": "Upstream training, validation, or test assignment.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -2040,6 +3116,9 @@ window.SYNRXN_CATALOG = {
       "description": "Unbalanced and product-focused USPTO-50K classification benchmark.",
       "benchmark_role": "Predict reaction classes from unbalanced patent reactions.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "liu2017retrosynthetic"
       ],
@@ -2067,30 +3146,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn": {
           "role": "reaction",
           "description": "Reaction SMILES string.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "label": {
           "role": "target",
           "description": "Reaction class or template label.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "split": {
           "role": "partition",
-          "description": "Published train",
-          "validation": null,
-          "or test assignment.": null,
+          "description": "Upstream training, validation, or test assignment.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -2149,13 +3230,1948 @@ window.SYNRXN_CATALOG = {
       "depiction": "_static/catalog-reactions/classification-uspto_50k_u.svg"
     },
     {
+      "id": "condition/orderly_condition",
+      "task": "condition",
+      "name": "orderly_condition",
+      "split_column": "upstream_split",
+      "split_status": "published",
+      "split_values": [
+        "train",
+        "test"
+      ],
+      "title": "ORDerly condition-prediction benchmark",
+      "description": "ORDerly-condition v4 train and test records normalized without reclassifying the three generic agent slots.",
+      "benchmark_role": "Predict solvent and generic-agent sets from reactants and desired products, with optional temperature and time targets and retained upstream splits.",
+      "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
+      "citations": [
+        "wigh2024orderly"
+      ],
+      "targets": [
+        "agents",
+        "solvents",
+        "temperature_c",
+        "time_hours"
+      ],
+      "row_identifier": "sample_id",
+      "row_identifier_unique": true,
+      "rows": 691105,
+      "size": 398940745,
+      "sha256": "789e1c41f6dcc00cff2600aa21d034db327428b2df29427721f2ba103ca91e57",
+      "columns": [
+        "sample_id",
+        "dataset",
+        "source_record_id",
+        "source_index",
+        "raw_reaction_smiles",
+        "reaction_smiles",
+        "canonical_reaction_smiles",
+        "reactants",
+        "products",
+        "agents",
+        "reagents",
+        "catalysts",
+        "ligands",
+        "bases",
+        "additives",
+        "agent_1",
+        "agent_2",
+        "agent_3",
+        "solvents",
+        "solvent_1",
+        "solvent_2",
+        "temperature_c",
+        "temperature_plausible",
+        "time_hours",
+        "pressure_bar",
+        "atmosphere",
+        "stirring",
+        "flow",
+        "photochemistry",
+        "electrochemistry",
+        "reported_yield",
+        "yield_valid_0_100",
+        "condition_completeness",
+        "condition_mask_json",
+        "conditions_json",
+        "action_sequence",
+        "action_score",
+        "procedure_details",
+        "date_of_experiment",
+        "grant_date",
+        "source_dataset_id",
+        "upstream_split",
+        "synrxn_split",
+        "source",
+        "citation",
+        "license_spdx",
+        "license_url",
+        "provenance",
+        "duplicate_group",
+        "chemical_split_group",
+        "condition_group",
+        "source_metadata_json"
+      ],
+      "column_metadata": {
+        "sample_id": {
+          "role": "identifier",
+          "description": "Stable SynRXN identifier for a normalized record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "dataset": {
+          "role": "provenance",
+          "description": "Normalized SynRXN dataset name.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_record_id": {
+          "role": "source_identifier",
+          "description": "Identifier retained from the upstream record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_index": {
+          "role": "source_identifier",
+          "description": "Zero-based position of the record in the upstream table.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "raw_reaction_smiles": {
+          "role": "provenance",
+          "description": "Reaction SMILES exactly as supplied by the upstream source.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_smiles": {
+          "role": "reaction",
+          "description": "Recorded or normalized reaction SMILES with reactants, optional middle-field agents, and products.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "canonical_reaction_smiles": {
+          "role": "reaction",
+          "description": "Canonicalized reaction SMILES used for chemical grouping when canonicalization succeeds.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reactants": {
+          "role": "reaction",
+          "description": "Reactant side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "products": {
+          "role": "reaction",
+          "description": "Product side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "agents": {
+          "role": "target",
+          "description": "Order-invariant dot-separated set of generic ORDerly agent molecules; no catalyst or reagent subclass is inferred.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reagents": {
+          "role": "target",
+          "description": "Order-invariant dot-separated set of molecules explicitly annotated or conservatively inferred as reagents.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "catalysts": {
+          "role": "target",
+          "description": "Order-invariant dot-separated set of explicitly annotated catalyst molecules.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "ligands": {
+          "role": "target",
+          "description": "Order-invariant dot-separated set of explicitly annotated ligand molecules.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "bases": {
+          "role": "target",
+          "description": "Order-invariant dot-separated set of explicitly annotated base molecules.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "additives": {
+          "role": "target",
+          "description": "Order-invariant dot-separated set of explicitly annotated additive molecules.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "agent_1": {
+          "role": "target",
+          "description": "First generic agent slot retained from ORDerly.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "agent_2": {
+          "role": "target",
+          "description": "Second generic agent slot retained from ORDerly when present.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "agent_3": {
+          "role": "target",
+          "description": "Third generic agent slot retained from ORDerly when present.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "solvents": {
+          "role": "target",
+          "description": "Order-invariant dot-separated set of solvent molecules.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "solvent_1": {
+          "role": "target",
+          "description": "First solvent slot retained from ORDerly.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "solvent_2": {
+          "role": "target",
+          "description": "Second solvent slot retained from ORDerly when present.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "temperature_c": {
+          "role": "feature",
+          "description": "Reaction temperature in degrees Celsius when reported.",
+          "logical_type": "number",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "temperature_plausible": {
+          "role": "quality",
+          "description": "Whether a reported temperature is within the documented pilot range of -196 to 500 degrees Celsius.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "time_hours": {
+          "role": "feature",
+          "description": "Reaction duration in hours when reported.",
+          "logical_type": "number",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "pressure_bar": {
+          "role": "target",
+          "description": "Reported reaction pressure converted to bar when the source unit is supported.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "atmosphere": {
+          "role": "target",
+          "description": "Reported reaction atmosphere.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "stirring": {
+          "role": "target",
+          "description": "Reported stirring mode.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "flow": {
+          "role": "target",
+          "description": "Reported flow-reactor mode.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "photochemistry": {
+          "role": "target",
+          "description": "Reported illumination mode for photochemical reactions.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "electrochemistry": {
+          "role": "target",
+          "description": "Indicator that structured electrochemical conditions were reported.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reported_yield": {
+          "role": "context",
+          "description": "Optional upstream yield retained as context without clipping or treating it as the condition benchmark target.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "yield_valid_0_100": {
+          "role": "quality",
+          "description": "Whether the optional upstream yield lies in the inclusive 0 to 100 range.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "condition_completeness": {
+          "role": "quality",
+          "description": "Fraction of declared reagent, solvent, temperature, and time slots that are populated.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "condition_mask_json": {
+          "role": "quality",
+          "description": "JSON presence mask distinguishing populated from missing condition slots.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "conditions_json": {
+          "role": "context",
+          "description": "Compact JSON preserving structured operating conditions beyond the normalized scalar columns.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "action_sequence": {
+          "role": "target",
+          "description": "Structured experimental action sequence for procedure prediction.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "action_score": {
+          "role": "quality",
+          "description": "Upstream confidence score for a machine-extracted experimental action sequence.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "procedure_details": {
+          "role": "provenance",
+          "description": "Upstream reaction procedure text.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "date_of_experiment": {
+          "role": "provenance",
+          "description": "Upstream experiment date when supplied.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "grant_date": {
+          "role": "partition",
+          "description": "Patent grant date retained for temporal splitting.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_dataset_id": {
+          "role": "provenance",
+          "description": "ORD dataset identifier from which the ORDerly row was extracted.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "upstream_split": {
+          "role": "partition",
+          "description": "Published upstream partition label retained without treating it as a universal SynRXN split.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "synrxn_split": {
+          "role": "partition",
+          "description": "Deterministic SynRXN split grouped by normalized chemical transformation; distinct from any upstream split.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source": {
+          "role": "provenance",
+          "description": "Upstream source or subset marker.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "citation": {
+          "role": "provenance",
+          "description": "Upstream citation label embedded in the normalized record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "license_spdx": {
+          "role": "provenance",
+          "description": "SPDX identifier for the upstream dataset license.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "license_url": {
+          "role": "provenance",
+          "description": "URL of the upstream dataset license.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "provenance": {
+          "role": "provenance",
+          "description": "Human-readable description of the pinned upstream source snapshot.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "duplicate_group": {
+          "role": "partition",
+          "description": "Stable hash grouping records with the same normalized experiment representation.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "chemical_split_group": {
+          "role": "partition",
+          "description": "Stable hash grouping records by normalized chemical transformation independently of yield.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "condition_group": {
+          "role": "partition",
+          "description": "Grouping key for reagent, solvent, temperature, and time contexts.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_metadata_json": {
+          "role": "provenance",
+          "description": "JSON object preserving additional upstream fields and unnormalized values.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        }
+      },
+      "sample": [
+        {
+          "sample_id": "orderly_condition:668036",
+          "dataset": "orderly_condition",
+          "source_record_id": "668036",
+          "source_index": "0",
+          "raw_reaction_smiles": "C1(P(C2C=CC=CC=2)C2C=CC=CC=2)C=CC=CC=1.BrN1C(=O)CCC1=O.[Cl:28][C:29]1[CH:37]=[C:36]2[C:32]([C:33]([C:41]([OH:43])=O)=[CH:34][N:35]2[CH:38]([CH3:40])[CH3:39])=[CH:31][CH:30]=1.[NH2:44][C:45]1[S:46][CH:47]=[CH:48][N:49]=1\u003eC(Cl)Cl\u003e[S:46]1[CH:47]=[CH:48][N:49]=[C:45]1[NH:44][C:41]([C:33]1[C:32]2[C:36](=[CH:37][C:29]([Cl:2…",
+          "reaction_smiles": "CC(C)n1cc(C(=O)O)c2ccc(Cl)cc21.Nc1nccs1\u003eClCCl.O=C1CCC(=O)N1Br.c1ccc(P(c2ccccc2)c2ccccc2)cc1\u003eCC(C)n1cc(C(=O)Nc2nccs2)c2ccc(Cl)cc21",
+          "canonical_reaction_smiles": "CC(C)n1cc(C(=O)O)c2ccc(Cl)cc21.Nc1nccs1\u003e\u003eCC(C)n1cc(C(=O)Nc2nccs2)c2ccc(Cl)cc21",
+          "reactants": "CC(C)n1cc(C(=O)O)c2ccc(Cl)cc21.Nc1nccs1",
+          "products": "CC(C)n1cc(C(=O)Nc2nccs2)c2ccc(Cl)cc21",
+          "agents": "O=C1CCC(=O)N1Br.c1ccc(P(c2ccccc2)c2ccccc2)cc1",
+          "reagents": "",
+          "catalysts": "",
+          "ligands": "",
+          "bases": "",
+          "additives": "",
+          "agent_1": "O=C1CCC(=O)N1Br",
+          "agent_2": "c1ccc(P(c2ccccc2)c2ccccc2)cc1",
+          "agent_3": "",
+          "solvents": "ClCCl",
+          "solvent_1": "ClCCl",
+          "solvent_2": "",
+          "temperature_c": "0",
+          "temperature_plausible": "true",
+          "time_hours": "0.25",
+          "pressure_bar": "",
+          "atmosphere": "",
+          "stirring": "",
+          "flow": "",
+          "photochemistry": "",
+          "electrochemistry": "",
+          "reported_yield": "36.6",
+          "yield_valid_0_100": "true",
+          "condition_completeness": "0.714286",
+          "condition_mask_json": "{\"agent_1\":true,\"agent_2\":true,\"agent_3\":false,\"solvent_1\":true,\"solvent_2\":false,\"temperature_c\":true,\"time_hours\":true}",
+          "conditions_json": "",
+          "action_sequence": "",
+          "action_score": "",
+          "procedure_details": "A solution of triphenylphosphine (179 mg, 0.68 mmol) in methylene chloride (3 mL) cooled to 0° C. was treated with N-bromosuccinimide (122 mg, 0.68 mmol). This solution was stirred at 0° C. for 15 min. At this time, the reaction was treated with 6-chloro-1-isopropyl-1H-indole-3-carboxylic acid (125 mg, 0.53 mmol). Thi…",
+          "date_of_experiment": "",
+          "grant_date": "2005-01-01",
+          "source_dataset_id": "ord_dataset-c5ee194443334d3e92aff17e46e33bd1",
+          "upstream_split": "train",
+          "synrxn_split": "",
+          "source": "ORDerly-condition v4",
+          "citation": "10.1021/acs.jcim.4c00292",
+          "license_spdx": "CC-BY-4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "provenance": "10.6084/m9.figshare.23298467.v4; orderly_condition_train.parquet",
+          "duplicate_group": "experiment:9443d1ecc8a5fb3d29710cea2ffe1ec2c413debfe8e38aaf9d7d6228ce80d46b",
+          "chemical_split_group": "reaction:8efc824e54968f29cba51f050e38bfa319e40fe59d10b3fe062fe1abf5443bc6",
+          "condition_group": "condition:0e6d8dec2191af575aa08504d7b2c7f68cbb95e8ae6f4050a7dcc68c8aa92067",
+          "source_metadata_json": "{\"extracted_from_file\":\"ord_dataset-c5ee194443334d3e92aff17e46e33bd1\",\"is_mapped\":\"True\"}"
+        },
+        {
+          "sample_id": "orderly_condition:467896",
+          "dataset": "orderly_condition",
+          "source_record_id": "467896",
+          "source_index": "1",
+          "raw_reaction_smiles": "C([O:3][C:4](=[O:33])[C:5]([NH:29]C(=O)C)([CH2:11][C:12]1[CH:21]=[C:20]([N+:22]([O-:24])=[O:23])[CH:19]=[C:18]2[C:13]=1[N:14]=[C:15]([O:27]C)[C:16]([O:25]C)=[N:17]2)C(OCC)=O)C\u003eCl\u003e[NH2:29][CH:5]([CH2:11][C:12]1[CH:21]=[C:20]([N+:22]([O-:24])=[O:23])[CH:19]=[C:18]2[C:13]=1[NH:14][C:15](=[O:27])[C:16](=[O:25])[NH:17]2)[C…",
+          "reaction_smiles": "CCOC(=O)C(Cc1cc([N+](=O)[O-])cc2nc(OC)c(OC)nc12)(NC(C)=O)C(=O)OCC\u003eCl\u003eNC(Cc1cc([N+](=O)[O-])cc2[nH]c(=O)c(=O)[nH]c12)C(=O)O",
+          "canonical_reaction_smiles": "CCOC(=O)C(Cc1cc([N+](=O)[O-])cc2nc(OC)c(OC)nc12)(NC(C)=O)C(=O)OCC\u003e\u003eNC(Cc1cc([N+](=O)[O-])cc2[nH]c(=O)c(=O)[nH]c12)C(=O)O",
+          "reactants": "CCOC(=O)C(Cc1cc([N+](=O)[O-])cc2nc(OC)c(OC)nc12)(NC(C)=O)C(=O)OCC",
+          "products": "NC(Cc1cc([N+](=O)[O-])cc2[nH]c(=O)c(=O)[nH]c12)C(=O)O",
+          "agents": "Cl",
+          "reagents": "",
+          "catalysts": "",
+          "ligands": "",
+          "bases": "",
+          "additives": "",
+          "agent_1": "Cl",
+          "agent_2": "",
+          "agent_3": "",
+          "solvents": "",
+          "solvent_1": "",
+          "solvent_2": "",
+          "temperature_c": "",
+          "temperature_plausible": "",
+          "time_hours": "",
+          "pressure_bar": "",
+          "atmosphere": "",
+          "stirring": "",
+          "flow": "",
+          "photochemistry": "",
+          "electrochemistry": "",
+          "reported_yield": "",
+          "yield_valid_0_100": "",
+          "condition_completeness": "0.142857",
+          "condition_mask_json": "{\"agent_1\":true,\"agent_2\":false,\"agent_3\":false,\"solvent_1\":false,\"solvent_2\":false,\"temperature_c\":false,\"time_hours\":false}",
+          "conditions_json": "",
+          "action_sequence": "",
+          "action_score": "",
+          "procedure_details": "A suspension of 0.29 g (0.62 mmol) of 2-acetylamino-2-(2,3-dimethoxy-7-nitro-quinoxalin-5-ylmethyl)-malonic acid diethyl ester in 6 ml of 6N hydrochloric acid is heated at reflux for 24 hours and then concentrated to dryness under reduced pressure. After boiling the residue up with water, centrifugation and drying, th…",
+          "date_of_experiment": "",
+          "grant_date": "2000-01-01",
+          "source_dataset_id": "ord_dataset-8cd3720738054d76b936f66e14d8cba6",
+          "upstream_split": "train",
+          "synrxn_split": "",
+          "source": "ORDerly-condition v4",
+          "citation": "10.1021/acs.jcim.4c00292",
+          "license_spdx": "CC-BY-4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "provenance": "10.6084/m9.figshare.23298467.v4; orderly_condition_train.parquet",
+          "duplicate_group": "experiment:89de37826bee82f7c4b6445f882510da0984dbd40a2095697b6d5ea3053d2ecc",
+          "chemical_split_group": "reaction:596b9050a7667cd8b9895f8f88b142426595e633a59f906fc5a9dbf3c5e185b2",
+          "condition_group": "condition:03fea1cbf8bc6ede9aaaf06ceb501eb7d6f70e0b1f4ba24b20691647cb9bb290",
+          "source_metadata_json": "{\"extracted_from_file\":\"ord_dataset-8cd3720738054d76b936f66e14d8cba6\",\"is_mapped\":\"True\"}"
+        },
+        {
+          "sample_id": "orderly_condition:1217213",
+          "dataset": "orderly_condition",
+          "source_record_id": "1217213",
+          "source_index": "2",
+          "raw_reaction_smiles": "[N:1]([C:4]1[CH:5]=[CH:6][C:7]([CH3:28])=[C:8]([C:10]([C:12]2[CH:17]=[CH:16][C:15]([NH:18][C:19]3[CH:24]=[CH:23][C:22]([F:25])=[CH:21][C:20]=3[F:26])=[CH:14][C:13]=2[Cl:27])=[O:11])[CH:9]=1)=[N+:2]=[N-:3].[CH2:29]([OH:34])[CH:30]=[CH:31][C:32]#[CH:33]\u003e\u003e[Cl:27][C:13]1[CH:14]=[C:15]([NH:18][C:19]2[CH:24]=[CH:23][C:22]([…",
+          "reaction_smiles": "C#CC=CCO.Cc1ccc(N=[N+]=[N-])cc1C(=O)c1ccc(Nc2ccc(F)cc2F)cc1Cl\u003e\u003eCc1ccc(-n2cc(C=CCO)nn2)cc1C(=O)c1ccc(Nc2ccc(F)cc2F)cc1Cl",
+          "canonical_reaction_smiles": "C#CC=CCO.Cc1ccc(N=[N+]=[N-])cc1C(=O)c1ccc(Nc2ccc(F)cc2F)cc1Cl\u003e\u003eCc1ccc(-n2cc(C=CCO)nn2)cc1C(=O)c1ccc(Nc2ccc(F)cc2F)cc1Cl",
+          "reactants": "C#CC=CCO.Cc1ccc(N=[N+]=[N-])cc1C(=O)c1ccc(Nc2ccc(F)cc2F)cc1Cl",
+          "products": "Cc1ccc(-n2cc(C=CCO)nn2)cc1C(=O)c1ccc(Nc2ccc(F)cc2F)cc1Cl",
+          "agents": "",
+          "reagents": "",
+          "catalysts": "",
+          "ligands": "",
+          "bases": "",
+          "additives": "",
+          "agent_1": "",
+          "agent_2": "",
+          "agent_3": "",
+          "solvents": "",
+          "solvent_1": "",
+          "solvent_2": "",
+          "temperature_c": "",
+          "temperature_plausible": "",
+          "time_hours": "",
+          "pressure_bar": "",
+          "atmosphere": "",
+          "stirring": "",
+          "flow": "",
+          "photochemistry": "",
+          "electrochemistry": "",
+          "reported_yield": "",
+          "yield_valid_0_100": "",
+          "condition_completeness": "0.000000",
+          "condition_mask_json": "{\"agent_1\":false,\"agent_2\":false,\"agent_3\":false,\"solvent_1\":false,\"solvent_2\":false,\"temperature_c\":false,\"time_hours\":false}",
+          "conditions_json": "",
+          "action_sequence": "",
+          "action_score": "",
+          "procedure_details": "The reaction was carried out similarly as described in the preparation of compound 116, using compound 434 (0.15 mmol) and pent-2-en-4-yn-1-ol (0.30 mmol). The crude product was purified by continuous gradient flash chromatography using EtOAc/petroleum ether (40-60) 30:70 to 50:50 as the eluent to afford the title com…",
+          "date_of_experiment": "",
+          "grant_date": "2012-01-01",
+          "source_dataset_id": "ord_dataset-dc3bb1b1ac4e4229a3fc28fb559a9777",
+          "upstream_split": "train",
+          "synrxn_split": "",
+          "source": "ORDerly-condition v4",
+          "citation": "10.1021/acs.jcim.4c00292",
+          "license_spdx": "CC-BY-4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "provenance": "10.6084/m9.figshare.23298467.v4; orderly_condition_train.parquet",
+          "duplicate_group": "experiment:785dd10e0ec3f5d55bf3260f15944cc379316f42dd008c6a7b69637f89832364",
+          "chemical_split_group": "reaction:877fca3ecf2b15c19e3af221aab6eec06b0f47d75b89fe8a5d85334ccc068ad6",
+          "condition_group": "condition:d6f7cb643a5d5e4bea3c76aa27c4790c0ba1d89ec5ab4279855e8e8b9d2a81b7",
+          "source_metadata_json": "{\"extracted_from_file\":\"ord_dataset-dc3bb1b1ac4e4229a3fc28fb559a9777\",\"is_mapped\":\"True\"}"
+        },
+        {
+          "sample_id": "orderly_condition:699925",
+          "dataset": "orderly_condition",
+          "source_record_id": "699925",
+          "source_index": "3",
+          "raw_reaction_smiles": "C[O:2][C:3](=[O:23])[C@H:4]([CH2:13][S:14][C:15]1[CH:20]=[CH:19][C:18]([Br:21])=[CH:17][C:16]=1[NH2:22])[NH:5][C:6]([O:8][C:9]([CH3:12])([CH3:11])[CH3:10])=[O:7].[OH-].[Na+]\u003eCC(OC)(C)C\u003e[C:9]([O:8][C:6]([NH:5][C@H:4]([C:3]([OH:23])=[O:2])[CH2:13][S:14][C:15]1[CH:20]=[CH:19][C:18]([Br:21])=[CH:17][C:16]=1[NH2:22])=[O:7]…",
+          "reaction_smiles": "COC(=O)[C@H](CSc1ccc(Br)cc1N)NC(=O)OC(C)(C)C\u003eCOC(C)(C)C.[Na+].[OH-]\u003eCC(C)(C)OC(=O)N[C@@H](CSc1ccc(Br)cc1N)C(=O)O",
+          "canonical_reaction_smiles": "COC(=O)[C@H](CSc1ccc(Br)cc1N)NC(=O)OC(C)(C)C\u003e\u003eCC(C)(C)OC(=O)N[C@@H](CSc1ccc(Br)cc1N)C(=O)O",
+          "reactants": "COC(=O)[C@H](CSc1ccc(Br)cc1N)NC(=O)OC(C)(C)C",
+          "products": "CC(C)(C)OC(=O)N[C@@H](CSc1ccc(Br)cc1N)C(=O)O",
+          "agents": "[Na+].[OH-]",
+          "reagents": "",
+          "catalysts": "",
+          "ligands": "",
+          "bases": "",
+          "additives": "",
+          "agent_1": "[Na+]",
+          "agent_2": "[OH-]",
+          "agent_3": "",
+          "solvents": "COC(C)(C)C",
+          "solvent_1": "COC(C)(C)C",
+          "solvent_2": "",
+          "temperature_c": "",
+          "temperature_plausible": "",
+          "time_hours": "33",
+          "pressure_bar": "",
+          "atmosphere": "",
+          "stirring": "",
+          "flow": "",
+          "photochemistry": "",
+          "electrochemistry": "",
+          "reported_yield": "99.9",
+          "yield_valid_0_100": "true",
+          "condition_completeness": "0.571429",
+          "condition_mask_json": "{\"agent_1\":true,\"agent_2\":true,\"agent_3\":false,\"solvent_1\":true,\"solvent_2\":false,\"temperature_c\":false,\"time_hours\":true}",
+          "conditions_json": "",
+          "action_sequence": "",
+          "action_score": "",
+          "procedure_details": "1.65 g (3.99 mmol) of N-tert-butoxycarbonyl-3-(2-amino-4-bromophenylthio)-L-alanine methyl ester (98%) was dissolved in 65 ml TBME and emulsified in 240 ml buffer solution (0.1M sodium chloride; 20 mM sodium phosphate pH 7.5) under vigorous stirring. 0.75 ml Alcalase 2.4 L [a subtilisin Carlsberg from Novo Nordisk] wa…",
+          "date_of_experiment": "",
+          "grant_date": "2006-01-01",
+          "source_dataset_id": "ord_dataset-bbd7e53f000345838ad4920a07a169ff",
+          "upstream_split": "train",
+          "synrxn_split": "",
+          "source": "ORDerly-condition v4",
+          "citation": "10.1021/acs.jcim.4c00292",
+          "license_spdx": "CC-BY-4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "provenance": "10.6084/m9.figshare.23298467.v4; orderly_condition_train.parquet",
+          "duplicate_group": "experiment:c93abdd1f5d2325720814ca4583b56d17b620dc2163ff254eeea7abd818a06fa",
+          "chemical_split_group": "reaction:c9106fcbad6f8a9f155892e27c76786a03e3160e9d513904524cb9adddb10ace",
+          "condition_group": "condition:15d609a98cd60b006fafa0eb8f33e0662fd453f89b8d9fcf4b95e35333f720e2",
+          "source_metadata_json": "{\"extracted_from_file\":\"ord_dataset-bbd7e53f000345838ad4920a07a169ff\",\"is_mapped\":\"True\"}"
+        },
+        {
+          "sample_id": "orderly_condition:682218",
+          "dataset": "orderly_condition",
+          "source_record_id": "682218",
+          "source_index": "4",
+          "raw_reaction_smiles": "[Br:1][C:2]1[CH:7]=[CH:6][C:5]([N:8]([CH:19]2[CH2:21][CH2:20]2)[CH2:9][CH2:10][CH2:11][C:12]([O:14]C(C)(C)C)=[O:13])=[C:4]([CH:22]=O)[CH:3]=1.CC(C)([O-])C.[K+]\u003eC1COCC1\u003e[Br:1][C:2]1[CH:7]=[CH:6][C:5]2[N:8]([CH:19]3[CH2:20][CH2:21]3)[CH2:9][CH2:10][C:11]([C:12]([OH:14])=[O:13])=[CH:22][C:4]=2[CH:3]=1",
+          "reaction_smiles": "CC(C)(C)OC(=O)CCCN(c1ccc(Br)cc1C=O)C1CC1\u003eC1CCOC1.CC(C)(C)[O-].[K+]\u003eO=C(O)C1=Cc2cc(Br)ccc2N(C2CC2)CC1",
+          "canonical_reaction_smiles": "CC(C)(C)OC(=O)CCCN(c1ccc(Br)cc1C=O)C1CC1\u003e\u003eO=C(O)C1=Cc2cc(Br)ccc2N(C2CC2)CC1",
+          "reactants": "CC(C)(C)OC(=O)CCCN(c1ccc(Br)cc1C=O)C1CC1",
+          "products": "O=C(O)C1=Cc2cc(Br)ccc2N(C2CC2)CC1",
+          "agents": "CC(C)(C)[O-].[K+]",
+          "reagents": "",
+          "catalysts": "",
+          "ligands": "",
+          "bases": "",
+          "additives": "",
+          "agent_1": "CC(C)(C)[O-]",
+          "agent_2": "[K+]",
+          "agent_3": "",
+          "solvents": "C1CCOC1",
+          "solvent_1": "C1CCOC1",
+          "solvent_2": "",
+          "temperature_c": "55",
+          "temperature_plausible": "true",
+          "time_hours": "",
+          "pressure_bar": "",
+          "atmosphere": "",
+          "stirring": "",
+          "flow": "",
+          "photochemistry": "",
+          "electrochemistry": "",
+          "reported_yield": "54.6",
+          "yield_valid_0_100": "true",
+          "condition_completeness": "0.571429",
+          "condition_mask_json": "{\"agent_1\":true,\"agent_2\":true,\"agent_3\":false,\"solvent_1\":true,\"solvent_2\":false,\"temperature_c\":true,\"time_hours\":false}",
+          "conditions_json": "",
+          "action_sequence": "",
+          "action_score": "",
+          "procedure_details": "In THF (10 ml) was dissolved t-butyl N-(4-bromo-2-formylphenyl)-N-cyclopropyl-4-aminobutyrate (1 g). To the solution was added potassium t-butoxide (0.59 g), and the mixture was heated at 55° C. for 1.5 hours. The solvent was evaporated, which was extracted with water. The aqueous layer was washed with ethyl acetate, …",
+          "date_of_experiment": "",
+          "grant_date": "2005-01-01",
+          "source_dataset_id": "ord_dataset-3947f3e1be17462c8f7c7e6ea6e57d0a",
+          "upstream_split": "train",
+          "synrxn_split": "",
+          "source": "ORDerly-condition v4",
+          "citation": "10.1021/acs.jcim.4c00292",
+          "license_spdx": "CC-BY-4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "provenance": "10.6084/m9.figshare.23298467.v4; orderly_condition_train.parquet",
+          "duplicate_group": "experiment:fbd3a6a2d4d998c9f9218799a5320c31bbdb85f98126900fc632487aaaab6890",
+          "chemical_split_group": "reaction:b6451688d2ea3d04b6c03f06f08953e61c371c7a8db8fe5de0a8bd90a793cd7c",
+          "condition_group": "condition:3a9372eb83e1eb38d2ecec44672c25b085765d99bfadbdcbc09e5eb1444b572e",
+          "source_metadata_json": "{\"extracted_from_file\":\"ord_dataset-3947f3e1be17462c8f7c7e6ea6e57d0a\",\"is_mapped\":\"True\"}"
+        }
+      ],
+      "split_counts": {
+        "test": 65441,
+        "train": 625664
+      },
+      "null_counts": {
+        "sample_id": 0,
+        "dataset": 0,
+        "source_record_id": 0,
+        "source_index": 0,
+        "raw_reaction_smiles": 0,
+        "reaction_smiles": 0,
+        "canonical_reaction_smiles": 0,
+        "reactants": 0,
+        "products": 0,
+        "agents": 264395,
+        "reagents": 691105,
+        "catalysts": 691105,
+        "ligands": 691105,
+        "bases": 691105,
+        "additives": 691105,
+        "agent_1": 264395,
+        "agent_2": 425318,
+        "agent_3": 606245,
+        "solvents": 162196,
+        "solvent_1": 162196,
+        "solvent_2": 454356,
+        "temperature_c": 367629,
+        "temperature_plausible": 367629,
+        "time_hours": 370363,
+        "pressure_bar": 691105,
+        "atmosphere": 691105,
+        "stirring": 691105,
+        "flow": 691105,
+        "photochemistry": 691105,
+        "electrochemistry": 691105,
+        "reported_yield": 326007,
+        "yield_valid_0_100": 326007,
+        "condition_completeness": 0,
+        "condition_mask_json": 0,
+        "conditions_json": 691105,
+        "action_sequence": 691105,
+        "action_score": 691105,
+        "procedure_details": 0,
+        "date_of_experiment": 691105,
+        "grant_date": 0,
+        "source_dataset_id": 0,
+        "upstream_split": 0,
+        "synrxn_split": 691105,
+        "source": 0,
+        "citation": 0,
+        "license_spdx": 0,
+        "license_url": 0,
+        "provenance": 0,
+        "duplicate_group": 0,
+        "chemical_split_group": 0,
+        "condition_group": 0,
+        "source_metadata_json": 0
+      },
+      "target_summaries": {
+        "agents": {
+          "kind": "categorical",
+          "count": 426710,
+          "unique": 7085,
+          "top": [
+            {
+              "value": "Cl",
+              "count": 48403
+            },
+            {
+              "value": "O=C([O-])[O-].[K+]",
+              "count": 24742
+            },
+            {
+              "value": "[Pd]",
+              "count": 22066
+            },
+            {
+              "value": "[H-].[Na+]",
+              "count": 20713
+            },
+            {
+              "value": "[Na+].[OH-]",
+              "count": 19918
+            },
+            {
+              "value": "Cl.[Na+].[OH-]",
+              "count": 9650
+            },
+            {
+              "value": "O=C([O-])O.[Na+]",
+              "count": 7686
+            },
+            {
+              "value": "[Na+]",
+              "count": 7662
+            }
+          ]
+        },
+        "solvents": {
+          "kind": "categorical",
+          "count": 528909,
+          "unique": 1974,
+          "top": [
+            {
+              "value": "C1CCOC1",
+              "count": 41278
+            },
+            {
+              "value": "CO",
+              "count": 34578
+            },
+            {
+              "value": "CCO",
+              "count": 30227
+            },
+            {
+              "value": "CN(C)C=O",
+              "count": 29110
+            },
+            {
+              "value": "ClCCl",
+              "count": 27273
+            },
+            {
+              "value": "O",
+              "count": 15208
+            },
+            {
+              "value": "CN(C)C=O.O",
+              "count": 14938
+            },
+            {
+              "value": "CCN(CC)CC.ClCCl",
+              "count": 11732
+            }
+          ]
+        },
+        "temperature_c": {
+          "kind": "numeric",
+          "count": 323476,
+          "min": -230.0,
+          "max": 7580.0,
+          "mean": 38.98761351692471
+        },
+        "time_hours": {
+          "kind": "numeric",
+          "count": 320742,
+          "min": 0.0,
+          "max": 2160.0,
+          "mean": 8.615734858546745
+        }
+      },
+      "reaction_column": "reaction_smiles",
+      "reaction_text": "CC(C)n1cc(C(=O)O)c2ccc(Cl)cc21.Nc1nccs1\u003eClCCl.O=C1CCC(=O)N1Br.c1ccc(P(c2ccccc2)c2ccccc2)cc1\u003eCC(C)n1cc(C(=O)Nc2nccs2)c2ccc(Cl)cc21",
+      "depiction": "_static/catalog-reactions/condition-orderly_condition.svg"
+    },
+    {
+      "id": "feasibility/frea_corpus",
+      "task": "feasibility",
+      "name": "frea_corpus",
+      "title": "FREA generated-label supervision",
+      "description": "Complete upstream corpus with recorded-positive and generated-negative labels in separate evidence tiers.",
+      "benchmark_role": "Complete upstream corpus with recorded-positive and generated-negative labels in separate evidence tiers.",
+      "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
+      "citations": [
+        "frea2026"
+      ],
+      "targets": [
+        "feasible"
+      ],
+      "row_identifier": "sample_id",
+      "row_identifier_unique": true,
+      "split_column": "upstream_split",
+      "split_values": [
+        "train",
+        "test"
+      ],
+      "split_status": "published",
+      "evidence_tiers": [
+        "upstream_positive",
+        "generated_negative"
+      ],
+      "chemical_grouping": "Exact reaction-text hash; canonical chemical/source independence is unclaimed.",
+      "rows": 14115057,
+      "size": 1294268197,
+      "sha256": "b7128dd8911c51f55b6740504710e621f736997a1b9c8a42594d7540ca25d8d3",
+      "columns": [
+        "sample_id",
+        "dataset",
+        "reaction_smiles",
+        "reactants",
+        "products",
+        "feasible",
+        "evidence_tier",
+        "label_method",
+        "negative_method",
+        "upstream_split",
+        "source_record_id",
+        "source_index",
+        "exact_reaction_group",
+        "additional_note",
+        "failure_reasons",
+        "difficulty"
+      ],
+      "column_metadata": {
+        "sample_id": {
+          "role": "identifier",
+          "description": "Stable SynRXN identifier for a normalized record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "dataset": {
+          "role": "provenance",
+          "description": "Normalized SynRXN dataset name.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_smiles": {
+          "role": "reaction",
+          "description": "Recorded or normalized reaction SMILES with reactants, optional middle-field agents, and products.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reactants": {
+          "role": "reaction",
+          "description": "Reactant side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "products": {
+          "role": "reaction",
+          "description": "Product side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "feasible": {
+          "role": "target",
+          "description": "Binary source feasibility label; consult evidence_tier for its meaning.",
+          "logical_type": "number",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "evidence_tier": {
+          "role": "provenance",
+          "description": "Expert judgment, upstream-positive record, or generated-negative supervision.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "label_method": {
+          "role": "provenance",
+          "description": "Upstream expert judgment, positive-record labeling or generated negative method; withheld from predictive input.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "negative_method": {
+          "role": "provenance",
+          "description": "Upstream generation method; withheld from feasibility model inputs.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "upstream_split": {
+          "role": "partition",
+          "description": "Published upstream partition label retained without treating it as a universal SynRXN split.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_record_id": {
+          "role": "source_identifier",
+          "description": "Identifier retained from the upstream record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_index": {
+          "role": "source_identifier",
+          "description": "Zero-based position of the record in the upstream table.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "exact_reaction_group": {
+          "role": "group",
+          "description": "SHA-256 group of exact recorded reaction text, without a chemical-independence claim.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "additional_note": {
+          "role": "provenance",
+          "description": "Source expert note or rationale; retained verbatim and withheld from predictive input.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "failure_reasons": {
+          "role": "provenance",
+          "description": "Source failure-reason annotation; not a measured experimental outcome.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "difficulty": {
+          "role": "provenance",
+          "description": "Source annotated difficulty; withheld from predictive input.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        }
+      },
+      "sample": [
+        {
+          "sample_id": "frea_corpus:dfec130795f4:train:0",
+          "dataset": "frea_corpus",
+          "reaction_smiles": "CCCCCc1ccc(/C=C/C(=O)Nc2ccccc2C(=O)OC)cc1.[Na+].[OH-]\u003e\u003eCCCCCc1ccc(/C=C/C(=O)Nc2ccccc2C(=O)O)cc1",
+          "reactants": "CCCCCc1ccc(/C=C/C(=O)Nc2ccccc2C(=O)OC)cc1.[Na+].[OH-]",
+          "products": "CCCCCc1ccc(/C=C/C(=O)Nc2ccccc2C(=O)O)cc1",
+          "feasible": "1",
+          "evidence_tier": "upstream_positive",
+          "label_method": "upstream_label",
+          "negative_method": "",
+          "upstream_split": "train",
+          "source_record_id": "train.csv:0",
+          "source_index": "0",
+          "exact_reaction_group": "raw-3e03c4aa53a6c204f6f7e2144a8c7d449841f117c0a89a2ad4cd96d9873a5b7a",
+          "additional_note": "",
+          "failure_reasons": "",
+          "difficulty": ""
+        },
+        {
+          "sample_id": "frea_corpus:dfec130795f4:train:1",
+          "dataset": "frea_corpus",
+          "reaction_smiles": "CCO.CCOC(=O)CCc1cn(Cc2ccc(OCc3ccccc3)c(OC)c2)nc1OCC\u003e\u003eCCOC(=O)CCc1cn(Cc2ccc(O)c(OC)c2)nc1OCC",
+          "reactants": "CCO.CCOC(=O)CCc1cn(Cc2ccc(OCc3ccccc3)c(OC)c2)nc1OCC",
+          "products": "CCOC(=O)CCc1cn(Cc2ccc(O)c(OC)c2)nc1OCC",
+          "feasible": "1",
+          "evidence_tier": "upstream_positive",
+          "label_method": "upstream_label",
+          "negative_method": "",
+          "upstream_split": "train",
+          "source_record_id": "train.csv:1",
+          "source_index": "1",
+          "exact_reaction_group": "raw-e33852516a24b411f6f934cdfbcef108fdd78d3c83219d4193cecdae35efd110",
+          "additional_note": "",
+          "failure_reasons": "",
+          "difficulty": ""
+        },
+        {
+          "sample_id": "frea_corpus:dfec130795f4:train:2",
+          "dataset": "frea_corpus",
+          "reaction_smiles": "Br.CC(=O)N(c1ccccc1[N+](=O)[O-])C1CCN(Cc2ccccc2)CC1.[H][H]\u003e\u003eCc1nc2ccccc2n1C1CCNCC1",
+          "reactants": "Br.CC(=O)N(c1ccccc1[N+](=O)[O-])C1CCN(Cc2ccccc2)CC1.[H][H]",
+          "products": "Cc1nc2ccccc2n1C1CCNCC1",
+          "feasible": "1",
+          "evidence_tier": "upstream_positive",
+          "label_method": "upstream_label",
+          "negative_method": "",
+          "upstream_split": "train",
+          "source_record_id": "train.csv:2",
+          "source_index": "2",
+          "exact_reaction_group": "raw-f03453acee928951c205af381c6b58622779529c1332e5a150ec39b27f15f73e",
+          "additional_note": "",
+          "failure_reasons": "",
+          "difficulty": ""
+        },
+        {
+          "sample_id": "frea_corpus:dfec130795f4:train:3",
+          "dataset": "frea_corpus",
+          "reaction_smiles": "CCCC(Br)c1cnc(-c2c(C)ccc(O)c2C)c2ccccc12.CCO\u003e\u003eCCCC(OCC)c1cnc(-c2c(C)ccc(O)c2C)c2ccccc12",
+          "reactants": "CCCC(Br)c1cnc(-c2c(C)ccc(O)c2C)c2ccccc12.CCO",
+          "products": "CCCC(OCC)c1cnc(-c2c(C)ccc(O)c2C)c2ccccc12",
+          "feasible": "1",
+          "evidence_tier": "upstream_positive",
+          "label_method": "upstream_label",
+          "negative_method": "",
+          "upstream_split": "train",
+          "source_record_id": "train.csv:3",
+          "source_index": "3",
+          "exact_reaction_group": "raw-1de2d2757eee998cb3324130a4b65508203386d8cd4ad1722c653c4390ad9de6",
+          "additional_note": "",
+          "failure_reasons": "",
+          "difficulty": ""
+        },
+        {
+          "sample_id": "frea_corpus:dfec130795f4:train:4",
+          "dataset": "frea_corpus",
+          "reaction_smiles": "CC(C)(C)[C@@H]1COC(=O)N1.Cc1ccc(N2CCN(C(=O)c3ccc(Br)cc3S(C)(=O)=O)CC2)c(C)c1\u003e\u003eCc1ccc(N2CCN(C(=O)c3ccc(N4C(=O)OCC4C(C)(C)C)cc3S(C)(=O)=O)CC2)c(C)c1",
+          "reactants": "CC(C)(C)[C@@H]1COC(=O)N1.Cc1ccc(N2CCN(C(=O)c3ccc(Br)cc3S(C)(=O)=O)CC2)c(C)c1",
+          "products": "Cc1ccc(N2CCN(C(=O)c3ccc(N4C(=O)OCC4C(C)(C)C)cc3S(C)(=O)=O)CC2)c(C)c1",
+          "feasible": "1",
+          "evidence_tier": "upstream_positive",
+          "label_method": "upstream_label",
+          "negative_method": "",
+          "upstream_split": "train",
+          "source_record_id": "train.csv:4",
+          "source_index": "4",
+          "exact_reaction_group": "raw-21a45252f30465dc421496633a5b0c858b4cba55798103921ce0035c1acb82a5",
+          "additional_note": "",
+          "failure_reasons": "",
+          "difficulty": ""
+        }
+      ],
+      "split_counts": {
+        "test": 1266624,
+        "train": 12848433
+      },
+      "null_counts": {
+        "sample_id": 0,
+        "dataset": 0,
+        "reaction_smiles": 0,
+        "reactants": 0,
+        "products": 0,
+        "feasible": 0,
+        "evidence_tier": 0,
+        "label_method": 0,
+        "negative_method": 877906,
+        "upstream_split": 0,
+        "source_record_id": 0,
+        "source_index": 0,
+        "exact_reaction_group": 0,
+        "additional_note": 14115057,
+        "failure_reasons": 14115057,
+        "difficulty": 14115057
+      },
+      "target_summaries": {
+        "feasible": {
+          "kind": "numeric",
+          "count": 14115057,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.06219641904386217
+        }
+      },
+      "reaction_column": "reaction_smiles",
+      "reaction_text": "CCCCCc1ccc(/C=C/C(=O)Nc2ccccc2C(=O)OC)cc1.[Na+].[OH-]\u003e\u003eCCCCCc1ccc(/C=C/C(=O)Nc2ccccc2C(=O)O)cc1",
+      "depiction": "_static/catalog-reactions/feasibility-frea_corpus.svg"
+    },
+    {
+      "id": "feasibility/frea_expert",
+      "task": "feasibility",
+      "name": "frea_expert",
+      "title": "FREA expert feasibility judgments",
+      "description": "751 expert-labeled reaction proposals; feasibility is distinct from experimental success or yield.",
+      "benchmark_role": "751 expert-labeled reaction proposals; feasibility is distinct from experimental success or yield.",
+      "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
+      "citations": [
+        "frea2026"
+      ],
+      "targets": [
+        "feasible"
+      ],
+      "row_identifier": "sample_id",
+      "row_identifier_unique": true,
+      "split_column": "upstream_split",
+      "split_values": [
+        "test"
+      ],
+      "split_status": "published",
+      "evidence_tiers": [
+        "expert_judgment"
+      ],
+      "chemical_grouping": "Exact reaction-text hash; canonical chemical/source independence is unclaimed.",
+      "rows": 751,
+      "size": 83907,
+      "sha256": "e9495a288e404d1ef6ff188f28809e9946e153d1ba6d67175ca13763d107507f",
+      "columns": [
+        "sample_id",
+        "dataset",
+        "reaction_smiles",
+        "reactants",
+        "products",
+        "feasible",
+        "evidence_tier",
+        "label_method",
+        "negative_method",
+        "upstream_split",
+        "source_record_id",
+        "source_index",
+        "exact_reaction_group",
+        "additional_note",
+        "failure_reasons",
+        "difficulty"
+      ],
+      "column_metadata": {
+        "sample_id": {
+          "role": "identifier",
+          "description": "Stable SynRXN identifier for a normalized record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "dataset": {
+          "role": "provenance",
+          "description": "Normalized SynRXN dataset name.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_smiles": {
+          "role": "reaction",
+          "description": "Recorded or normalized reaction SMILES with reactants, optional middle-field agents, and products.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reactants": {
+          "role": "reaction",
+          "description": "Reactant side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "products": {
+          "role": "reaction",
+          "description": "Product side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "feasible": {
+          "role": "target",
+          "description": "Binary source feasibility label; consult evidence_tier for its meaning.",
+          "logical_type": "number",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "evidence_tier": {
+          "role": "provenance",
+          "description": "Expert judgment, upstream-positive record, or generated-negative supervision.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "label_method": {
+          "role": "provenance",
+          "description": "Upstream expert judgment, positive-record labeling or generated negative method; withheld from predictive input.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "negative_method": {
+          "role": "provenance",
+          "description": "Upstream generation method; withheld from feasibility model inputs.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "upstream_split": {
+          "role": "partition",
+          "description": "Published upstream partition label retained without treating it as a universal SynRXN split.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_record_id": {
+          "role": "source_identifier",
+          "description": "Identifier retained from the upstream record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_index": {
+          "role": "source_identifier",
+          "description": "Zero-based position of the record in the upstream table.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "exact_reaction_group": {
+          "role": "group",
+          "description": "SHA-256 group of exact recorded reaction text, without a chemical-independence claim.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "additional_note": {
+          "role": "provenance",
+          "description": "Source expert note or rationale; retained verbatim and withheld from predictive input.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "failure_reasons": {
+          "role": "provenance",
+          "description": "Source failure-reason annotation; not a measured experimental outcome.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "difficulty": {
+          "role": "provenance",
+          "description": "Source annotated difficulty; withheld from predictive input.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        }
+      },
+      "sample": [
+        {
+          "sample_id": "frea_expert:8a8dc6448e59:test:0",
+          "dataset": "frea_expert",
+          "reaction_smiles": "N#C[S-].Nc1cc(I)cc(I)c1\u003e\u003eNC(=S)Nc1cc(I)cc(I)c1",
+          "reactants": "N#C[S-].Nc1cc(I)cc(I)c1",
+          "products": "NC(=S)Nc1cc(I)cc(I)c1",
+          "feasible": "1",
+          "evidence_tier": "expert_judgment",
+          "label_method": "expert_judgment",
+          "negative_method": "",
+          "upstream_split": "test",
+          "source_record_id": "test.csv:0",
+          "source_index": "0",
+          "exact_reaction_group": "raw-6c5eb81124f9abc225b48fe694ff73a5b3ef6f4c0fc988a46e09dcbb30f3642e",
+          "additional_note": "no_identified_caveat",
+          "failure_reasons": "",
+          "difficulty": "Easy"
+        },
+        {
+          "sample_id": "frea_expert:8a8dc6448e59:test:1",
+          "dataset": "frea_expert",
+          "reaction_smiles": "Nc1cc(I)cc(I)c1.S=C(n1ccnc1)n1ccnc1\u003e\u003eNC(=S)Nc1cc(I)cc(I)c1",
+          "reactants": "Nc1cc(I)cc(I)c1.S=C(n1ccnc1)n1ccnc1",
+          "products": "NC(=S)Nc1cc(I)cc(I)c1",
+          "feasible": "0",
+          "evidence_tier": "expert_judgment",
+          "label_method": "expert_judgment",
+          "negative_method": "",
+          "upstream_split": "test",
+          "source_record_id": "test.csv:1",
+          "source_index": "1",
+          "exact_reaction_group": "raw-f9f3036eee88c8f2a5f6953c018794aea9756ed625211335108583ffc4a21a5a",
+          "additional_note": "",
+          "failure_reasons": "requires_isolated_steps",
+          "difficulty": "Easy"
+        },
+        {
+          "sample_id": "frea_expert:8a8dc6448e59:test:2",
+          "dataset": "frea_expert",
+          "reaction_smiles": "CC(C)(C)OC(=O)NC(=S)Nc1cc(I)cc(I)c1\u003e\u003eNC(=S)Nc1cc(I)cc(I)c1",
+          "reactants": "CC(C)(C)OC(=O)NC(=S)Nc1cc(I)cc(I)c1",
+          "products": "NC(=S)Nc1cc(I)cc(I)c1",
+          "feasible": "1",
+          "evidence_tier": "expert_judgment",
+          "label_method": "expert_judgment",
+          "negative_method": "",
+          "upstream_split": "test",
+          "source_record_id": "test.csv:2",
+          "source_index": "2",
+          "exact_reaction_group": "raw-10922839755637d785b2f967f4e63591c026f90489c2423fe07b31e15ad89e70",
+          "additional_note": "no_identified_caveat",
+          "failure_reasons": "",
+          "difficulty": "Easy"
+        },
+        {
+          "sample_id": "frea_expert:8a8dc6448e59:test:3",
+          "dataset": "frea_expert",
+          "reaction_smiles": "CCN(CC)CC.S=C=Nc1cc(I)cc(I)c1\u003e\u003eNC(=S)Nc1cc(I)cc(I)c1",
+          "reactants": "CCN(CC)CC.S=C=Nc1cc(I)cc(I)c1",
+          "products": "NC(=S)Nc1cc(I)cc(I)c1",
+          "feasible": "1",
+          "evidence_tier": "expert_judgment",
+          "label_method": "expert_judgment",
+          "negative_method": "",
+          "upstream_split": "test",
+          "source_record_id": "test.csv:3",
+          "source_index": "3",
+          "exact_reaction_group": "raw-f94d3b78c0b53e41c2b4ecc53b3ec9ecec2620177935f6687f5542684fc6544d",
+          "additional_note": "missing_auxiliary_reagent",
+          "failure_reasons": "",
+          "difficulty": "Easy"
+        },
+        {
+          "sample_id": "frea_expert:8a8dc6448e59:test:4",
+          "dataset": "frea_expert",
+          "reaction_smiles": "CC(=O)NCCS(=O)(=O)N1CCN(S(=O)(=O)c2ccc(-c3ccc(F)cc3)s2)[C@@H](C(=O)O)C1.C[Si](C)(C)ON\u003e\u003eCC(=O)NCCS(=O)(=O)N1CCN(S(=O)(=O)c2ccc(-c3ccc(F)cc3)s2)[C@@H](C(=O)NO)C1",
+          "reactants": "CC(=O)NCCS(=O)(=O)N1CCN(S(=O)(=O)c2ccc(-c3ccc(F)cc3)s2)[C@@H](C(=O)O)C1.C[Si](C)(C)ON",
+          "products": "CC(=O)NCCS(=O)(=O)N1CCN(S(=O)(=O)c2ccc(-c3ccc(F)cc3)s2)[C@@H](C(=O)NO)C1",
+          "feasible": "1",
+          "evidence_tier": "expert_judgment",
+          "label_method": "expert_judgment",
+          "negative_method": "",
+          "upstream_split": "test",
+          "source_record_id": "test.csv:4",
+          "source_index": "4",
+          "exact_reaction_group": "raw-03202f28db445a407ff4e0f85f4df8b1f1314e63ec6f2b37fa750875a6ca08c3",
+          "additional_note": "no_identified_caveat",
+          "failure_reasons": "",
+          "difficulty": "Medium"
+        }
+      ],
+      "split_counts": {
+        "test": 751
+      },
+      "null_counts": {
+        "sample_id": 0,
+        "dataset": 0,
+        "reaction_smiles": 0,
+        "reactants": 0,
+        "products": 0,
+        "feasible": 0,
+        "evidence_tier": 0,
+        "label_method": 0,
+        "negative_method": 751,
+        "upstream_split": 0,
+        "source_record_id": 0,
+        "source_index": 0,
+        "exact_reaction_group": 0,
+        "additional_note": 410,
+        "failure_reasons": 341,
+        "difficulty": 0
+      },
+      "target_summaries": {
+        "feasible": {
+          "kind": "numeric",
+          "count": 751,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.4540612516644474
+        }
+      },
+      "reaction_column": "reaction_smiles",
+      "reaction_text": "N#C[S-].Nc1cc(I)cc(I)c1\u003e\u003eNC(=S)Nc1cc(I)cc(I)c1",
+      "depiction": "_static/catalog-reactions/feasibility-frea_expert.svg"
+    },
+    {
+      "id": "mechanism/synepd_polar",
+      "task": "mechanism",
+      "name": "synepd_polar",
+      "title": "SynEPD polar mechanism annotations",
+      "description": "Curated electron-pushing annotations preserving source order, exact and normalized representations, and diagnostic-only delta-consistent cases.",
+      "benchmark_role": "Curated electron-pushing annotations preserving source order, exact and normalized representations, and diagnostic-only delta-consistent cases.",
+      "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
+      "citations": [
+        "synepd2026"
+      ],
+      "targets": [
+        "electron_path_json",
+        "mechanism_record_json"
+      ],
+      "row_identifier": "sample_id",
+      "row_identifier_unique": true,
+      "split_column": "split",
+      "split_values": [],
+      "split_status": "none",
+      "evidence_tiers": [
+        "curated_reference_annotation"
+      ],
+      "chemical_grouping": "Source canonical overall reaction and stored RC/MC hashes; candidate holdouts require task-view qualification.",
+      "rows": 1926,
+      "size": 530952,
+      "sha256": "bc31c8764b13cde89540c763d94691f64c1b460458a759ea6a757a9d0967a7ba",
+      "columns": [
+        "sample_id",
+        "source_record_id",
+        "source_case_id",
+        "source_sqlite_id",
+        "reaction_smiles",
+        "electron_path_json",
+        "mechanism_record_json",
+        "representation_json",
+        "taxonomy_json",
+        "reaction_name",
+        "overall_reaction_group",
+        "rc_group",
+        "mc_group",
+        "reference_replay_status",
+        "verification_level",
+        "source_version",
+        "license_spdx"
+      ],
+      "column_metadata": {
+        "sample_id": {
+          "role": "identifier",
+          "description": "Stable SynRXN identifier for a normalized record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_record_id": {
+          "role": "source_identifier",
+          "description": "Identifier retained from the upstream record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_case_id": {
+          "role": "identifier",
+          "description": "Published SynEPD case identifier, joined by case ID and checked against endpoints and arrows.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_sqlite_id": {
+          "role": "identifier",
+          "description": "SynEPD SQLite primary key; distinct from the JSON source ID.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_smiles": {
+          "role": "reaction",
+          "description": "Recorded or normalized reaction SMILES with reactants, optional middle-field agents, and products.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "electron_path_json": {
+          "role": "target",
+          "description": "Original ordered paired-electron arrows serialized as JSON.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "mechanism_record_json": {
+          "role": "target",
+          "description": "Typed supplied mechanism; ordering preserves the source convention.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "representation_json": {
+          "role": "provenance",
+          "description": "Source representation and verification policy serialized as JSON.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "taxonomy_json": {
+          "role": "provenance",
+          "description": "Source reaction taxonomy serialized as JSON; withheld from mechanism inputs.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_name": {
+          "role": "provenance",
+          "description": "Source reaction name; withheld from mechanism inputs.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "overall_reaction_group": {
+          "role": "group",
+          "description": "Source canonical endpoint reaction hash; a grouping key rather than a physical-mechanism identity.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "rc_group": {
+          "role": "group",
+          "description": "Source reaction-center hash; retained outside model input.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "mc_group": {
+          "role": "group",
+          "description": "Source mechanistic-center hash; retained outside model input.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reference_replay_status": {
+          "role": "quality",
+          "description": "Strict source-arrow replay status under the recorded representation policy; not physical mechanism verification.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "verification_level": {
+          "role": "quality",
+          "description": "EXACT, NORMALIZED or diagnostic DELTA_CONSISTENT source replay tier.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_version": {
+          "role": "provenance",
+          "description": "Pinned upstream release version.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "license_spdx": {
+          "role": "provenance",
+          "description": "SPDX identifier for the upstream dataset license.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        }
+      },
+      "sample": [
+        {
+          "sample_id": "synepd-5f98aeceb2607d60cf5a",
+          "source_record_id": "1",
+          "source_case_id": "polar_000001",
+          "source_sqlite_id": "1",
+          "reaction_smiles": "[NH3+:2][H:4].[O-:1][CH3:3]\u003e\u003e[NH3:2].[O:1]([CH3:3])[H:4]",
+          "electron_path_json": "[[\"LP-/Sigma+\",[1],[1,4]],[\"Sigma-/LP+\",[2,4],[2]]]",
+          "mechanism_record_json": "{\"endpoint_stereo\":{},\"mapped_reaction\":\"[NH3+:2][H:4].[O-:1][CH3:3]\u003e\u003e[NH3:2].[O:1]([CH3:3])[H:4]\",\"metadata\":{},\"provenance\":{\"dataset\":\"SynEPD\",\"format\":\"legacy_epd\",\"source_record_id\":1,\"source_version\":\"v0.4.1\"},\"schema_version\":\"2.0.0-draft1\",\"steps\":[{\"groups\":[{\"group_id\":\"g1\",\"macro\":null,\"metadata\":{},\"moves\"…",
+          "representation_json": "{\"mode\":\"exact\"}",
+          "taxonomy_json": "[\"POLAR.01.01.001\"]",
+          "reaction_name": "Alcohol protonation / deprotonation",
+          "overall_reaction_group": "rxn-69c340870d29676acc6853a1746bde610cb2b138e63f43de786a7e9a510a2480",
+          "rc_group": "f67cb7d83c586e5e6e2ee096b74dcd8b",
+          "mc_group": "c50919932a4a2f4714c0275cdeac73dd",
+          "reference_replay_status": "VALID",
+          "verification_level": "EXACT",
+          "source_version": "v0.4.1",
+          "license_spdx": "CC-BY-4.0"
+        },
+        {
+          "sample_id": "synepd-4c572d643a7a32badf93",
+          "source_record_id": "2",
+          "source_case_id": "polar_000002",
+          "source_sqlite_id": "2",
+          "reaction_smiles": "[NH3+:5][H:9].[c:1]1([O-:4])[cH:6][cH:2][cH:8][cH:3][cH:7]1\u003e\u003e[NH3:5].[c:1]1([O:4][H:9])[cH:6][cH:2][cH:8][cH:3][cH:7]1",
+          "electron_path_json": "[[\"LP-/Sigma+\",[4],[4,9]],[\"Sigma-/LP+\",[5,9],[5]]]",
+          "mechanism_record_json": "{\"endpoint_stereo\":{},\"mapped_reaction\":\"[NH3+:5][H:9].[c:1]1([O-:4])[cH:6][cH:2][cH:8][cH:3][cH:7]1\u003e\u003e[NH3:5].[c:1]1([O:4][H:9])[cH:6][cH:2][cH:8][cH:3][cH:7]1\",\"metadata\":{},\"provenance\":{\"dataset\":\"SynEPD\",\"format\":\"legacy_epd\",\"source_record_id\":2,\"source_version\":\"v0.4.1\"},\"schema_version\":\"2.0.0-draft1\",\"steps\":[…",
+          "representation_json": "{\"mode\":\"exact\"}",
+          "taxonomy_json": "[\"POLAR.01.01.002\"]",
+          "reaction_name": "Phenol protonation / deprotonation",
+          "overall_reaction_group": "rxn-9ca3b3eca332b87d40ae8bc4df824e18f3f9ef1d148df365d2ab0536ebafc871",
+          "rc_group": "f67cb7d83c586e5e6e2ee096b74dcd8b",
+          "mc_group": "c50919932a4a2f4714c0275cdeac73dd",
+          "reference_replay_status": "VALID",
+          "verification_level": "EXACT",
+          "source_version": "v0.4.1",
+          "license_spdx": "CC-BY-4.0"
+        },
+        {
+          "sample_id": "synepd-93c5304738d95f1d717c",
+          "source_record_id": "3",
+          "source_case_id": "polar_000003",
+          "source_sqlite_id": "3",
+          "reaction_smiles": "[NH3:4].[O:1]=[C:2]([CH3:3])[O:5][H:6]\u003e\u003e[NH3+:4][H:6].[O:1]=[C:2]([CH3:3])[O-:5]",
+          "electron_path_json": "[[\"LP-/Sigma+\",[4],[4,6]],[\"Sigma-/LP+\",[5,6],[5]]]",
+          "mechanism_record_json": "{\"endpoint_stereo\":{},\"mapped_reaction\":\"[NH3:4].[O:1]=[C:2]([CH3:3])[O:5][H:6]\u003e\u003e[NH3+:4][H:6].[O:1]=[C:2]([CH3:3])[O-:5]\",\"metadata\":{},\"provenance\":{\"dataset\":\"SynEPD\",\"format\":\"legacy_epd\",\"source_record_id\":3,\"source_version\":\"v0.4.1\"},\"schema_version\":\"2.0.0-draft1\",\"steps\":[{\"groups\":[{\"group_id\":\"g1\",\"macro\":nu…",
+          "representation_json": "{\"mode\":\"exact\"}",
+          "taxonomy_json": "[\"POLAR.01.01.003\"]",
+          "reaction_name": "Carboxylic acid deprotonation",
+          "overall_reaction_group": "rxn-4eae6f7d5614c300f28b85a245b338328bc59710192cc812a62793e380018c4a",
+          "rc_group": "8e21df9e1db186f323015d2ed500cc99",
+          "mc_group": "259cd2fd5b021ba60f721f2822d80f6e",
+          "reference_replay_status": "VALID",
+          "verification_level": "EXACT",
+          "source_version": "v0.4.1",
+          "license_spdx": "CC-BY-4.0"
+        },
+        {
+          "sample_id": "synepd-d068884bbfec7cb96786",
+          "source_record_id": "4",
+          "source_case_id": "polar_000004",
+          "source_sqlite_id": "4",
+          "reaction_smiles": "[O-:1][C:3]([CH3:2])=[O:5].[OH2+:4][H:6]\u003e\u003e[O:1]([C:3]([CH3:2])=[O:5])[H:6].[OH2:4]",
+          "electron_path_json": "[[\"LP-/Sigma+\",[1],[1,6]],[\"Sigma-/LP+\",[4,6],[4]]]",
+          "mechanism_record_json": "{\"endpoint_stereo\":{},\"mapped_reaction\":\"[O-:1][C:3]([CH3:2])=[O:5].[OH2+:4][H:6]\u003e\u003e[O:1]([C:3]([CH3:2])=[O:5])[H:6].[OH2:4]\",\"metadata\":{},\"provenance\":{\"dataset\":\"SynEPD\",\"format\":\"legacy_epd\",\"source_record_id\":4,\"source_version\":\"v0.4.1\"},\"schema_version\":\"2.0.0-draft1\",\"steps\":[{\"groups\":[{\"group_id\":\"g1\",\"macro\":…",
+          "representation_json": "{\"mode\":\"exact\"}",
+          "taxonomy_json": "[\"POLAR.01.01.004\"]",
+          "reaction_name": "Carboxylate protonation",
+          "overall_reaction_group": "rxn-3098621a98f05c40c03d136313c8a395bce7b547894fffa6c9035041096ca650",
+          "rc_group": "e0c5da342c247be7444605c3f28da50f",
+          "mc_group": "19d01aa6e995ae7a4cc7bdaaa3f4002e",
+          "reference_replay_status": "VALID",
+          "verification_level": "EXACT",
+          "source_version": "v0.4.1",
+          "license_spdx": "CC-BY-4.0"
+        },
+        {
+          "sample_id": "synepd-4f602d645ee3163d68a0",
+          "source_record_id": "5",
+          "source_case_id": "polar_000005",
+          "source_sqlite_id": "5",
+          "reaction_smiles": "[NH2:1][CH3:2].[OH2+:3][H:4]\u003e\u003e[NH2+:1]([CH3:2])[H:4].[OH2:3]",
+          "electron_path_json": "[[\"LP-/Sigma+\",[1],[1,4]],[\"Sigma-/LP+\",[3,4],[3]]]",
+          "mechanism_record_json": "{\"endpoint_stereo\":{},\"mapped_reaction\":\"[NH2:1][CH3:2].[OH2+:3][H:4]\u003e\u003e[NH2+:1]([CH3:2])[H:4].[OH2:3]\",\"metadata\":{},\"provenance\":{\"dataset\":\"SynEPD\",\"format\":\"legacy_epd\",\"source_record_id\":5,\"source_version\":\"v0.4.1\"},\"schema_version\":\"2.0.0-draft1\",\"steps\":[{\"groups\":[{\"group_id\":\"g1\",\"macro\":null,\"metadata\":{},\"mo…",
+          "representation_json": "{\"mode\":\"exact\"}",
+          "taxonomy_json": "[\"POLAR.01.01.005\"]",
+          "reaction_name": "Amine protonation",
+          "overall_reaction_group": "rxn-146484a7e59c637ae34c56a53995afef262f9bc0c7506fb61d667182198ba348",
+          "rc_group": "d637adc30bab7016abdd05e8a74abfd0",
+          "mc_group": "0a54d40e35f5252c86142866b0779856",
+          "reference_replay_status": "VALID",
+          "verification_level": "EXACT",
+          "source_version": "v0.4.1",
+          "license_spdx": "CC-BY-4.0"
+        }
+      ],
+      "split_counts": {},
+      "null_counts": {
+        "sample_id": 0,
+        "source_record_id": 0,
+        "source_case_id": 0,
+        "source_sqlite_id": 0,
+        "reaction_smiles": 0,
+        "electron_path_json": 0,
+        "mechanism_record_json": 0,
+        "representation_json": 0,
+        "taxonomy_json": 0,
+        "reaction_name": 0,
+        "overall_reaction_group": 0,
+        "rc_group": 0,
+        "mc_group": 0,
+        "reference_replay_status": 0,
+        "verification_level": 0,
+        "source_version": 0,
+        "license_spdx": 0
+      },
+      "target_summaries": {
+        "electron_path_json": {
+          "kind": "categorical",
+          "count": 1926,
+          "unique": 1879,
+          "top": [
+            {
+              "value": "[[\"LP-/Sigma+\",[3],[2,3]],[\"Sigma-/LP+\",[1,2],[1]]]",
+              "count": 5
+            },
+            {
+              "value": "[[\"LP-/Sigma+\",[1],[1,4]],[\"Sigma-/LP+\",[2,4],[2]]]",
+              "count": 3
+            },
+            {
+              "value": "[[\"LP-/Sigma+\",[1],[1,4]],[\"Sigma-/LP+\",[3,4],[3]]]",
+              "count": 3
+            },
+            {
+              "value": "[[\"LP-/Sigma+\",[1],[1,3]],[\"Sigma-/LP+\",[3,4],[4]]]",
+              "count": 3
+            },
+            {
+              "value": "[[\"LP-/Sigma+\",[9],[3,9]],[\"Pi-/LP+\",[3,4],[4]],[\"Sigma-/LP+\",[9,21],[9]],[\"LP-/Sigma+\",[4],[4,21]],[\"LP-/Sigma+\",[9],[6,9]],[\"Pi-/LP+\",[6,7],[7]],[\"Sigma-/LP+\",[9,22],[9]],[\"LP-/Sigma+\",[7],[7,22]],[\"Sigma-/Pi+\",[5,24],[3,5]],[\"Sigma-/LP+\",[3,4],[4]],[\"LP-/Sigma+\",[4],[4,24]],[\"Sigma-/Pi+\",[20,25],[6,20]],[\"Sigma-/LP+\",[6,7],[7]],[\"LP-/Sigma+\",[7],[7,25]]]",
+              "count": 3
+            },
+            {
+              "value": "[[\"LP-/Sigma+\",[4],[4,6]],[\"Sigma-/LP+\",[5,6],[5]]]",
+              "count": 2
+            },
+            {
+              "value": "[[\"LP-/Sigma+\",[3],[3,4]],[\"Sigma-/LP+\",[2,4],[2]]]",
+              "count": 2
+            },
+            {
+              "value": "[[\"LP-/Sigma+\",[3],[3,5]],[\"Sigma-/LP+\",[4,5],[4]]]",
+              "count": 2
+            }
+          ]
+        },
+        "mechanism_record_json": {
+          "kind": "categorical",
+          "count": 1926,
+          "unique": 1926,
+          "top": [
+            {
+              "value": "{\"endpoint_stereo\":{},\"mapped_reaction\":\"[NH3+:2][H:4].[O-:1][CH3:3]\u003e\u003e[NH3:2].[O:1]([CH3:3])[H:4]\",\"metadata\":{},\"provenance\":{\"dataset\":\"SynEPD\",\"format\":\"legacy_epd\",\"source_record_id\":1,\"source_version\":\"v0.4.1\"},\"schema_version\":\"2.0.0-draft1\",\"steps\":[{\"groups\":[{\"group_id\":\"g1\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e1\",\"group_id\":\"g1\",\"metadata\":{\"legacy_action\":\"LP-/Sigma+\"},\"source\":{\"atom_maps\":[1],\"locus\":\"lp\"},\"target\":{\"atom_maps\":[1,4],\"locus\":\"\\u03c3\"}}]}],\"metadata\":{},\"step_id\":\"s1\",\"stereo_effects\":[],\"stereo_motions\":[]},{\"groups\":[{\"group_id\":\"g2\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e2\",\"group_id\":\"g2\",\"metadata\":{\"legacy_action\":\"Sigma-/LP+\"},\"source\":{\"atom_maps\":[2,4],\"locus\":\"\\u03c3\"},\"target\":{\"atom_maps\":[2],\"locus\":\"lp\"}}]}],\"metadata\":{},\"step_id\":\"s2\",\"stereo_effects\":[],\"stereo_motions\":[]}]}",
+              "count": 1
+            },
+            {
+              "value": "{\"endpoint_stereo\":{},\"mapped_reaction\":\"[NH3+:5][H:9].[c:1]1([O-:4])[cH:6][cH:2][cH:8][cH:3][cH:7]1\u003e\u003e[NH3:5].[c:1]1([O:4][H:9])[cH:6][cH:2][cH:8][cH:3][cH:7]1\",\"metadata\":{},\"provenance\":{\"dataset\":\"SynEPD\",\"format\":\"legacy_epd\",\"source_record_id\":2,\"source_version\":\"v0.4.1\"},\"schema_version\":\"2.0.0-draft1\",\"steps\":[{\"groups\":[{\"group_id\":\"g1\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e1\",\"group_id\":\"g1\",\"metadata\":{\"legacy_action\":\"LP-/Sigma+\"},\"source\":{\"atom_maps\":[4],\"locus\":\"lp\"},\"target\":{\"atom_maps\":[4,9],\"locus\":\"\\u03c3\"}}]}],\"metadata\":{},\"step_id\":\"s1\",\"stereo_effects\":[],\"stereo_motions\":[]},{\"groups\":[{\"group_id\":\"g2\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e2\",\"group_id\":\"g2\",\"metadata\":{\"legacy_action\":\"Sigma-/LP+\"},\"source\":{\"atom_maps\":[5,9],\"locus\":\"\\u03c3\"},\"target\":{\"atom_maps\":[5],\"locus\":\"lp\"}}]}],\"metadata\":{},\"step_id\":\"s2\",\"stereo_effects\":[],\"stereo_motions\":[]}]}",
+              "count": 1
+            },
+            {
+              "value": "{\"endpoint_stereo\":{},\"mapped_reaction\":\"[NH3:4].[O:1]=[C:2]([CH3:3])[O:5][H:6]\u003e\u003e[NH3+:4][H:6].[O:1]=[C:2]([CH3:3])[O-:5]\",\"metadata\":{},\"provenance\":{\"dataset\":\"SynEPD\",\"format\":\"legacy_epd\",\"source_record_id\":3,\"source_version\":\"v0.4.1\"},\"schema_version\":\"2.0.0-draft1\",\"steps\":[{\"groups\":[{\"group_id\":\"g1\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e1\",\"group_id\":\"g1\",\"metadata\":{\"legacy_action\":\"LP-/Sigma+\"},\"source\":{\"atom_maps\":[4],\"locus\":\"lp\"},\"target\":{\"atom_maps\":[4,6],\"locus\":\"\\u03c3\"}}]}],\"metadata\":{},\"step_id\":\"s1\",\"stereo_effects\":[],\"stereo_motions\":[]},{\"groups\":[{\"group_id\":\"g2\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e2\",\"group_id\":\"g2\",\"metadata\":{\"legacy_action\":\"Sigma-/LP+\"},\"source\":{\"atom_maps\":[5,6],\"locus\":\"\\u03c3\"},\"target\":{\"atom_maps\":[5],\"locus\":\"lp\"}}]}],\"metadata\":{},\"step_id\":\"s2\",\"stereo_effects\":[],\"stereo_motions\":[]}]}",
+              "count": 1
+            },
+            {
+              "value": "{\"endpoint_stereo\":{},\"mapped_reaction\":\"[O-:1][C:3]([CH3:2])=[O:5].[OH2+:4][H:6]\u003e\u003e[O:1]([C:3]([CH3:2])=[O:5])[H:6].[OH2:4]\",\"metadata\":{},\"provenance\":{\"dataset\":\"SynEPD\",\"format\":\"legacy_epd\",\"source_record_id\":4,\"source_version\":\"v0.4.1\"},\"schema_version\":\"2.0.0-draft1\",\"steps\":[{\"groups\":[{\"group_id\":\"g1\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e1\",\"group_id\":\"g1\",\"metadata\":{\"legacy_action\":\"LP-/Sigma+\"},\"source\":{\"atom_maps\":[1],\"locus\":\"lp\"},\"target\":{\"atom_maps\":[1,6],\"locus\":\"\\u03c3\"}}]}],\"metadata\":{},\"step_id\":\"s1\",\"stereo_effects\":[],\"stereo_motions\":[]},{\"groups\":[{\"group_id\":\"g2\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e2\",\"group_id\":\"g2\",\"metadata\":{\"legacy_action\":\"Sigma-/LP+\"},\"source\":{\"atom_maps\":[4,6],\"locus\":\"\\u03c3\"},\"target\":{\"atom_maps\":[4],\"locus\":\"lp\"}}]}],\"metadata\":{},\"step_id\":\"s2\",\"stereo_effects\":[],\"stereo_motions\":[]}]}",
+              "count": 1
+            },
+            {
+              "value": "{\"endpoint_stereo\":{},\"mapped_reaction\":\"[NH2:1][CH3:2].[OH2+:3][H:4]\u003e\u003e[NH2+:1]([CH3:2])[H:4].[OH2:3]\",\"metadata\":{},\"provenance\":{\"dataset\":\"SynEPD\",\"format\":\"legacy_epd\",\"source_record_id\":5,\"source_version\":\"v0.4.1\"},\"schema_version\":\"2.0.0-draft1\",\"steps\":[{\"groups\":[{\"group_id\":\"g1\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e1\",\"group_id\":\"g1\",\"metadata\":{\"legacy_action\":\"LP-/Sigma+\"},\"source\":{\"atom_maps\":[1],\"locus\":\"lp\"},\"target\":{\"atom_maps\":[1,4],\"locus\":\"\\u03c3\"}}]}],\"metadata\":{},\"step_id\":\"s1\",\"stereo_effects\":[],\"stereo_motions\":[]},{\"groups\":[{\"group_id\":\"g2\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e2\",\"group_id\":\"g2\",\"metadata\":{\"legacy_action\":\"Sigma-/LP+\"},\"source\":{\"atom_maps\":[3,4],\"locus\":\"\\u03c3\"},\"target\":{\"atom_maps\":[3],\"locus\":\"lp\"}}]}],\"metadata\":{},\"step_id\":\"s2\",\"stereo_effects\":[],\"stereo_motions\":[]}]}",
+              "count": 1
+            },
+            {
+              "value": "{\"endpoint_stereo\":{},\"mapped_reaction\":\"[CH:1](=[N:2][CH3:4])[CH3:3].[OH2+:5][H:6]\u003e\u003e[CH:1](=[N+:2]([CH3:4])[H:6])[CH3:3].[OH2:5]\",\"metadata\":{},\"provenance\":{\"dataset\":\"SynEPD\",\"format\":\"legacy_epd\",\"source_record_id\":6,\"source_version\":\"v0.4.1\"},\"schema_version\":\"2.0.0-draft1\",\"steps\":[{\"groups\":[{\"group_id\":\"g1\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e1\",\"group_id\":\"g1\",\"metadata\":{\"legacy_action\":\"LP-/Sigma+\"},\"source\":{\"atom_maps\":[2],\"locus\":\"lp\"},\"target\":{\"atom_maps\":[2,6],\"locus\":\"\\u03c3\"}}]}],\"metadata\":{},\"step_id\":\"s1\",\"stereo_effects\":[],\"stereo_motions\":[]},{\"groups\":[{\"group_id\":\"g2\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e2\",\"group_id\":\"g2\",\"metadata\":{\"legacy_action\":\"Sigma-/LP+\"},\"source\":{\"atom_maps\":[5,6],\"locus\":\"\\u03c3\"},\"target\":{\"atom_maps\":[5],\"locus\":\"lp\"}}]}],\"metadata\":{},\"step_id\":\"s2\",\"stereo_effects\":[],\"stereo_motions\":[]}]}",
+              "count": 1
+            },
+            {
+              "value": "{\"endpoint_stereo\":{},\"mapped_reaction\":\"[CH3:1][S-:3].[NH3+:2][H:4]\u003e\u003e[CH3:1][S:3][H:4].[NH3:2]\",\"metadata\":{},\"provenance\":{\"dataset\":\"SynEPD\",\"format\":\"legacy_epd\",\"source_record_id\":7,\"source_version\":\"v0.4.1\"},\"schema_version\":\"2.0.0-draft1\",\"steps\":[{\"groups\":[{\"group_id\":\"g1\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e1\",\"group_id\":\"g1\",\"metadata\":{\"legacy_action\":\"LP-/Sigma+\"},\"source\":{\"atom_maps\":[3],\"locus\":\"lp\"},\"target\":{\"atom_maps\":[3,4],\"locus\":\"\\u03c3\"}}]}],\"metadata\":{},\"step_id\":\"s1\",\"stereo_effects\":[],\"stereo_motions\":[]},{\"groups\":[{\"group_id\":\"g2\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e2\",\"group_id\":\"g2\",\"metadata\":{\"legacy_action\":\"Sigma-/LP+\"},\"source\":{\"atom_maps\":[2,4],\"locus\":\"\\u03c3\"},\"target\":{\"atom_maps\":[2],\"locus\":\"lp\"}}]}],\"metadata\":{},\"step_id\":\"s2\",\"stereo_effects\":[],\"stereo_motions\":[]}]}",
+              "count": 1
+            },
+            {
+              "value": "{\"endpoint_stereo\":{},\"mapped_reaction\":\"[NH3:3].[OH+:1]([CH3:2])[H:4]\u003e\u003e[NH3+:3][H:4].[OH:1][CH3:2]\",\"metadata\":{},\"provenance\":{\"dataset\":\"SynEPD\",\"format\":\"legacy_epd\",\"source_record_id\":8,\"source_version\":\"v0.4.1\"},\"schema_version\":\"2.0.0-draft1\",\"steps\":[{\"groups\":[{\"group_id\":\"g1\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e1\",\"group_id\":\"g1\",\"metadata\":{\"legacy_action\":\"LP-/Sigma+\"},\"source\":{\"atom_maps\":[3],\"locus\":\"lp\"},\"target\":{\"atom_maps\":[3,4],\"locus\":\"\\u03c3\"}}]}],\"metadata\":{},\"step_id\":\"s1\",\"stereo_effects\":[],\"stereo_motions\":[]},{\"groups\":[{\"group_id\":\"g2\",\"macro\":null,\"metadata\":{},\"moves\":[{\"arrow_type\":\"curved\",\"coupling_id\":null,\"electron_count\":2,\"event_id\":\"e2\",\"group_id\":\"g2\",\"metadata\":{\"legacy_action\":\"Sigma-/LP+\"},\"source\":{\"atom_maps\":[1,4],\"locus\":\"\\u03c3\"},\"target\":{\"atom_maps\":[1],\"locus\":\"lp\"}}]}],\"metadata\":{},\"step_id\":\"s2\",\"stereo_effects\":[],\"stereo_motions\":[]}]}",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "reaction_column": "reaction_smiles",
+      "reaction_text": "[NH3+:2][H:4].[O-:1][CH3:3]\u003e\u003e[NH3:2].[O:1]([CH3:3])[H:4]",
+      "depiction": "_static/catalog-reactions/mechanism-synepd_polar.svg"
+    },
+    {
       "id": "property/b97xd3",
       "task": "property",
       "name": "b97xd3",
-      "title": "B97-D3 reaction properties",
-      "description": "Quantum-chemistry reaction-property prediction benchmark.",
+      "title": "B97-D3 activation and reaction energies (legacy b97xd3 key)",
+      "description": "B97-D3/def2-mSVP activation energies and reaction enthalpies in kcal/mol, matched to Grambow b97d3.csv. The legacy key is retained for byte compatibility; this table is not the omega-B97X-D3 subset.",
       "benchmark_role": "Predict activation energy and reaction enthalpy.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "grambow2020scientificdata",
         "grambow2020zenodo"
@@ -2166,6 +5182,20 @@ window.SYNRXN_CATALOG = {
       ],
       "row_identifier": "r_id",
       "row_identifier_unique": true,
+      "target_kinds": {
+        "ea": "activation_energy",
+        "dh": "reaction_enthalpy"
+      },
+      "target_units": {
+        "ea": "kcal/mol",
+        "dh": "kcal/mol"
+      },
+      "unit_evidence": {
+        "primary_source": "https://www.nature.com/articles/s41597-020-0460-4",
+        "location": "Table 1",
+        "audit": "ncs/audit/property-native-lineage.json",
+        "conversion_applied": false
+      },
       "rows": 16365,
       "size": 641403,
       "sha256": "33f881612842378a6cff97b2db0c99b1c4877a7e81a318129a26dd58e9702d73",
@@ -2181,28 +5211,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "aam": {
           "role": "reaction",
           "description": "Atom-mapped reaction SMILES.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ea": {
           "role": "target",
           "description": "Activation-energy target; consult the upstream record for units.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": "kcal/mol",
+          "quantity_kind": "activation_energy"
         },
         "dh": {
           "role": "target",
           "description": "Reaction-enthalpy target; consult the upstream record for units.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": "kcal/mol",
+          "quantity_kind": "reaction_enthalpy"
         }
       },
       "sample": [
@@ -2272,6 +5306,9 @@ window.SYNRXN_CATALOG = {
       "description": "Cycloaddition activation and reaction free-energy benchmark.",
       "benchmark_role": "Predict activation and reaction free energies.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "heid2023benchmark_chemprop"
       ],
@@ -2286,6 +5323,20 @@ window.SYNRXN_CATALOG = {
       ],
       "row_identifier": "r_id",
       "row_identifier_unique": true,
+      "target_kinds": {
+        "G_act": "activation_free_energy",
+        "G_r": "reaction_free_energy"
+      },
+      "target_units": {
+        "G_act": "kcal/mol",
+        "G_r": "kcal/mol"
+      },
+      "unit_evidence": {
+        "primary_source": "https://www.nature.com/articles/s41597-023-01977-8",
+        "location": "Data Records: activation and reaction energies in kcal/mol",
+        "audit": "ncs/audit/property-native-lineage.json",
+        "conversion_applied": false
+      },
       "rows": 5269,
       "size": 381702,
       "sha256": "afd03a88ef6268350f2c176b70a67396ff1902b85e6742bb2ac3ef0d9ca84004",
@@ -2302,37 +5353,40 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "aam": {
           "role": "reaction",
           "description": "Atom-mapped reaction SMILES.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "G_act": {
           "role": "target",
           "description": "Activation free-energy target; consult the upstream record for units.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": "kcal/mol",
+          "quantity_kind": "activation_free_energy"
         },
         "G_r": {
           "role": "target",
           "description": "Reaction free-energy target; consult the upstream record for units.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": "kcal/mol",
+          "quantity_kind": "reaction_free_energy"
         },
         "split": {
           "role": "partition",
-          "description": "Published train",
-          "validation": null,
-          "or test assignment.": null,
+          "description": "Upstream training, validation, or test assignment.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -2412,6 +5466,9 @@ window.SYNRXN_CATALOG = {
       "description": "E2 reaction activation-energy benchmark.",
       "benchmark_role": "Predict activation energies for E2 reactions.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "heid2023benchmark_chemprop"
       ],
@@ -2425,6 +5482,18 @@ window.SYNRXN_CATALOG = {
       ],
       "row_identifier": "r_id",
       "row_identifier_unique": true,
+      "target_kinds": {
+        "ea": "activation_energy"
+      },
+      "target_units": {
+        "ea": "kcal/mol"
+      },
+      "unit_evidence": {
+        "primary_source": "https://pubs.acs.org/doi/10.1021/acs.jcim.3c01250",
+        "location": "Supporting Information Table S10 and source dataset descriptions",
+        "audit": "ncs/audit/property-native-lineage.json",
+        "conversion_applied": false
+      },
       "rows": 1264,
       "size": 31804,
       "sha256": "2b2177235aeddf06b9fa29abe9836e6a3c520ccdbd1530b9757f8e8c4c23d99e",
@@ -2440,30 +5509,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "aam": {
           "role": "reaction",
           "description": "Atom-mapped reaction SMILES.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ea": {
           "role": "target",
           "description": "Activation-energy target; consult the upstream record for units.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": "kcal/mol",
+          "quantity_kind": "activation_energy"
         },
         "split": {
           "role": "partition",
-          "description": "Published train",
-          "validation": null,
-          "or test assignment.": null,
+          "description": "Upstream training, validation, or test assignment.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -2530,6 +5601,9 @@ window.SYNRXN_CATALOG = {
       "description": "Combined E2 and SN2 activation-energy benchmark.",
       "benchmark_role": "Predict activation energies across E2 and SN2 mechanisms.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "heid2022machine",
         "vonrudorff2020thousands"
@@ -2539,6 +5613,18 @@ window.SYNRXN_CATALOG = {
       ],
       "row_identifier": "r_id",
       "row_identifier_unique": true,
+      "target_kinds": {
+        "ea": "activation_energy"
+      },
+      "target_units": {
+        "ea": "kcal/mol"
+      },
+      "unit_evidence": {
+        "primary_source": "https://pubs.acs.org/doi/10.1021/acs.jcim.1c00975",
+        "location": "Table 1",
+        "audit": "ncs/audit/property-native-lineage.json",
+        "conversion_applied": false
+      },
       "rows": 3625,
       "size": 79331,
       "sha256": "d3b27039841da7ea9bb18e511271fbaddfcb61d826ec1c5e31b50f71c1d3e044",
@@ -2553,21 +5639,24 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "aam": {
           "role": "reaction",
           "description": "Atom-mapped reaction SMILES.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ea": {
           "role": "target",
           "description": "Activation-energy target; consult the upstream record for units.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": "kcal/mol",
+          "quantity_kind": "activation_energy"
         }
       },
       "sample": [
@@ -2621,9 +5710,12 @@ window.SYNRXN_CATALOG = {
       "task": "property",
       "name": "lograte",
       "title": "Reaction log rates",
-      "description": "Logarithmic reaction-rate prediction benchmark.",
+      "description": "Dimensionless log10(k/k_ref) at 1000 K. Source k_ref is 1 in s^-1 for unimolecular or cm^3 mol^-1 s^-1 for bimolecular reactions; reaction order and reference units must be retained.",
       "benchmark_role": "Predict log reaction rates.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "heid2022machine",
         "bhoorasingh2017automated"
@@ -2633,6 +5725,18 @@ window.SYNRXN_CATALOG = {
       ],
       "row_identifier": "r_id",
       "row_identifier_unique": true,
+      "target_kinds": {
+        "lograte": "log10_normalized_rate_constant"
+      },
+      "target_units": {
+        "lograte": "dimensionless"
+      },
+      "unit_evidence": {
+        "primary_source": "https://pubs.acs.org/doi/10.1021/acs.jcim.1c00975",
+        "location": "Table 1",
+        "audit": "ncs/audit/property-native-lineage.json",
+        "conversion_applied": false
+      },
       "rows": 778,
       "size": 20166,
       "sha256": "ca79d7de36fde44961dd093a53c999356ac9aacf3aee524eb18bf90219f120f0",
@@ -2647,21 +5751,24 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "aam": {
           "role": "reaction",
           "description": "Atom-mapped reaction SMILES.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "lograte": {
           "role": "target",
           "description": "Logarithmic reaction-rate target.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": "dimensionless",
+          "quantity_kind": "log10_normalized_rate_constant"
         }
       },
       "sample": [
@@ -2715,9 +5822,12 @@ window.SYNRXN_CATALOG = {
       "task": "property",
       "name": "phosphatase",
       "title": "Phosphatase conversion",
-      "description": "Phosphatase reaction-conversion prediction benchmark.",
+      "description": "Source normalized phosphatase conversion as a dimensionless fraction, not yield percent. Original values and enzyme encodings are preserved.",
       "benchmark_role": "Predict phosphatase conversion.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "heid2022machine",
         "huang2015panoramic"
@@ -2727,6 +5837,18 @@ window.SYNRXN_CATALOG = {
       ],
       "row_identifier": "r_id",
       "row_identifier_unique": true,
+      "target_kinds": {
+        "Conversion": "normalized_conversion"
+      },
+      "target_units": {
+        "Conversion": "dimensionless"
+      },
+      "unit_evidence": {
+        "primary_source": "https://pubs.acs.org/doi/10.1021/acs.jcim.1c00975",
+        "location": "Table 1",
+        "audit": "ncs/audit/property-native-lineage.json",
+        "conversion_applied": false
+      },
       "rows": 33354,
       "size": 1137562,
       "sha256": "aca656158cb5b96cfa3378234641796e5becdf6647d7af0ae9f91b9e53639917",
@@ -2742,28 +5864,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "aam": {
           "role": "reaction",
           "description": "Atom-mapped reaction SMILES.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "Conversion": {
           "role": "target",
           "description": "Reaction conversion target.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": "dimensionless",
+          "quantity_kind": "normalized_conversion"
         },
         "onehot": {
           "role": "feature",
           "description": "Upstream one-hot encoded reaction context.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -2823,9 +5949,12 @@ window.SYNRXN_CATALOG = {
       "task": "property",
       "name": "rad6re",
       "title": "RAD-6 reaction enthalpies",
-      "description": "Reaction-enthalpy prediction benchmark.",
+      "description": "Forward reaction enthalpies in eV, matched to the native reactiondatabase product; do not pool numerically with kcal/mol enthalpy tables.",
       "benchmark_role": "Predict reaction enthalpy.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "heid2022machine",
         "stocker2020machine"
@@ -2835,6 +5964,18 @@ window.SYNRXN_CATALOG = {
       ],
       "row_identifier": "r_id",
       "row_identifier_unique": true,
+      "target_kinds": {
+        "dh": "reaction_enthalpy"
+      },
+      "target_units": {
+        "dh": "eV"
+      },
+      "unit_evidence": {
+        "primary_source": "https://pubs.acs.org/doi/10.1021/acs.jcim.1c00975",
+        "location": "Table 1",
+        "audit": "ncs/audit/property-native-lineage.json",
+        "conversion_applied": false
+      },
       "rows": 31923,
       "size": 866920,
       "sha256": "fd78145b61bf50e0267f61ae5e45681020a7de7d3fe552da26feabc3096db1d5",
@@ -2849,21 +5990,24 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "aam": {
           "role": "reaction",
           "description": "Atom-mapped reaction SMILES.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "dh": {
           "role": "target",
           "description": "Reaction-enthalpy target; consult the upstream record for units.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": "eV",
+          "quantity_kind": "reaction_enthalpy"
         }
       },
       "sample": [
@@ -2917,9 +6061,12 @@ window.SYNRXN_CATALOG = {
       "task": "property",
       "name": "rdb7",
       "title": "RDB7 activation energies",
-      "description": "Activation-energy benchmark with published partitions.",
+      "description": "23,852 source-derived directional barriers in kcal/mol from 11,926 CCSD(T)-F12/cc-pVDZ-F12 source records. Forward labels match dE0; reverse labels follow the published preprocessing convention dE0 minus dHrxn298. These are directional rows, not 23,852 independent transition states.",
       "benchmark_role": "Predict reaction activation energy.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "heid2023benchmark_chemprop"
       ],
@@ -2933,6 +6080,18 @@ window.SYNRXN_CATALOG = {
       ],
       "row_identifier": "r_id",
       "row_identifier_unique": true,
+      "target_kinds": {
+        "ea": "source_derived_barrier"
+      },
+      "target_units": {
+        "ea": "kcal/mol"
+      },
+      "unit_evidence": {
+        "primary_source": "https://pubs.acs.org/doi/10.1021/acs.jcim.3c01250",
+        "location": "Supporting Information Table S10 and source dataset descriptions",
+        "audit": "ncs/audit/property-native-lineage.json",
+        "conversion_applied": false
+      },
       "rows": 23852,
       "size": 640317,
       "sha256": "5980529ee8cf8ab0922df24048c69ba131d2f7ad623f5cdf9d7fb67b6466849e",
@@ -2948,30 +6107,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "aam": {
           "role": "reaction",
           "description": "Atom-mapped reaction SMILES.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ea": {
           "role": "target",
           "description": "Activation-energy target; consult the upstream record for units.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": "kcal/mol",
+          "quantity_kind": "source_derived_barrier"
         },
         "split": {
           "role": "partition",
-          "description": "Published train",
-          "validation": null,
-          "or test assignment.": null,
+          "description": "Upstream training, validation, or test assignment.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -3038,6 +6199,9 @@ window.SYNRXN_CATALOG = {
       "description": "Large-scale reaction activation-energy benchmark.",
       "benchmark_role": "Predict activation energy at reaction-dataset scale.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "heid2023benchmark_chemprop"
       ],
@@ -3051,6 +6215,18 @@ window.SYNRXN_CATALOG = {
       ],
       "row_identifier": "r_id",
       "row_identifier_unique": true,
+      "target_kinds": {
+        "ea": "activation_energy"
+      },
+      "target_units": {
+        "ea": "kcal/mol"
+      },
+      "unit_evidence": {
+        "primary_source": "https://pubs.acs.org/doi/10.1021/acs.jcim.3c01250",
+        "location": "Supporting Information Table S10 and source dataset descriptions",
+        "audit": "ncs/audit/property-native-lineage.json",
+        "conversion_applied": false
+      },
       "rows": 353984,
       "size": 13199958,
       "sha256": "74c5fbfd38b24409c17ddf2d8dc105ad728479df8a17b2bcf65c51a3ed8bed30",
@@ -3066,30 +6242,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "aam": {
           "role": "reaction",
           "description": "Atom-mapped reaction SMILES.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ea": {
           "role": "target",
           "description": "Activation-energy target; consult the upstream record for units.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": "kcal/mol",
+          "quantity_kind": "activation_energy"
         },
         "split": {
           "role": "partition",
-          "description": "Published train",
-          "validation": null,
-          "or test assignment.": null,
+          "description": "Upstream training, validation, or test assignment.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -3156,6 +6334,9 @@ window.SYNRXN_CATALOG = {
       "description": "SN2 reaction activation-energy benchmark.",
       "benchmark_role": "Predict activation energies for SN2 reactions.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "heid2023benchmark_chemprop"
       ],
@@ -3169,6 +6350,18 @@ window.SYNRXN_CATALOG = {
       ],
       "row_identifier": "r_id",
       "row_identifier_unique": true,
+      "target_kinds": {
+        "ea": "activation_energy"
+      },
+      "target_units": {
+        "ea": "kcal/mol"
+      },
+      "unit_evidence": {
+        "primary_source": "https://pubs.acs.org/doi/10.1021/acs.jcim.3c01250",
+        "location": "Supporting Information Table S10 and source dataset descriptions",
+        "audit": "ncs/audit/property-native-lineage.json",
+        "conversion_applied": false
+      },
       "rows": 2361,
       "size": 58133,
       "sha256": "2e3c58220e44dbf7597088861d642378abead0048f1a6c12f99771a0719db2ac",
@@ -3184,30 +6377,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "aam": {
           "role": "reaction",
           "description": "Atom-mapped reaction SMILES.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ea": {
           "role": "target",
           "description": "Activation-energy target; consult the upstream record for units.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": "kcal/mol",
+          "quantity_kind": "activation_energy"
         },
         "split": {
           "role": "partition",
-          "description": "Published train",
-          "validation": null,
-          "or test assignment.": null,
+          "description": "Upstream training, validation, or test assignment.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -3270,10 +6465,13 @@ window.SYNRXN_CATALOG = {
       "id": "property/snar",
       "task": "property",
       "name": "snar",
-      "title": "SNAr activation energies",
-      "description": "Nucleophilic aromatic substitution activation-energy benchmark.",
-      "benchmark_role": "Predict activation energies for SNAr reactions.",
+      "title": "SNAr activation free energies",
+      "description": "Source ea activation free-energy labels in kcal/mol inferred from experimental rate constants using the Eyring equation at source reaction temperatures; retain this interpretation separately from computed electronic or zero-point barriers.",
+      "benchmark_role": "Predict source-reported SNAr activation free energies.",
       "license": "CC BY 3.0",
+      "license_spdx": "CC-BY-3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "redistribution_partition": "main",
       "citations": [
         "jorner2021machine"
       ],
@@ -3282,6 +6480,18 @@ window.SYNRXN_CATALOG = {
       ],
       "row_identifier": "r_id",
       "row_identifier_unique": true,
+      "target_kinds": {
+        "ea": "activation_free_energy"
+      },
+      "target_units": {
+        "ea": "kcal/mol"
+      },
+      "unit_evidence": {
+        "primary_source": "https://pubs.rsc.org/en/content/articlehtml/2021/sc/d0sc04896h",
+        "location": "Reaction dataset section",
+        "audit": "ncs/audit/property-native-lineage.json",
+        "conversion_applied": false
+      },
       "rows": 503,
       "size": 5965,
       "sha256": "df8df5b8bc8b74910c7fe9960a8dd200182c5ef1bf91de906286cb71bfe60bcd",
@@ -3296,21 +6506,24 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn": {
           "role": "reaction",
           "description": "Reaction SMILES string.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ea": {
           "role": "target",
           "description": "Activation-energy target; consult the upstream record for units.",
           "logical_type": "number",
           "nullable": false,
-          "unit": null
+          "unit": "kcal/mol",
+          "quantity_kind": "activation_free_energy"
         }
       },
       "sample": [
@@ -3367,6 +6580,9 @@ window.SYNRXN_CATALOG = {
       "description": "Manually validated complex-transformation rebalancing benchmark.",
       "benchmark_role": "Recover balanced reactions for complex transformations and rearrangements.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "jaworski2019automatic",
         "lin2022atom"
@@ -3390,21 +6606,24 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn": {
           "role": "reaction",
           "description": "Reaction SMILES string.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ground_truth": {
           "role": "reference",
           "description": "Curated reference reaction or atom mapping.",
           "logical_type": "string",
           "nullable": true,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -3493,6 +6712,9 @@ window.SYNRXN_CATALOG = {
       "description": "Reaction-rebalancing benchmark with species missing from both sides.",
       "benchmark_role": "Recover omitted species on both sides of a reaction.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "liu2017retrosynthetic"
       ],
@@ -3515,21 +6737,24 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn": {
           "role": "reaction",
           "description": "Reaction SMILES string.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ground_truth": {
           "role": "reference",
           "description": "Curated reference reaction or atom mapping.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -3618,6 +6843,9 @@ window.SYNRXN_CATALOG = {
       "description": "Reaction-rebalancing benchmark with missing non-carbon species.",
       "benchmark_role": "Recover omitted non-carbon species.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "liu2017retrosynthetic"
       ],
@@ -3640,21 +6868,24 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn": {
           "role": "reaction",
           "description": "Reaction SMILES string.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ground_truth": {
           "role": "reference",
           "description": "Curated reference reaction or atom mapping.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -3743,6 +6974,9 @@ window.SYNRXN_CATALOG = {
       "description": "Reaction-rebalancing benchmark with species missing from one side.",
       "benchmark_role": "Recover omitted species on one side of a reaction.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "liu2017retrosynthetic"
       ],
@@ -3765,21 +6999,24 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn": {
           "role": "reaction",
           "description": "Reaction SMILES string.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "ground_truth": {
           "role": "reference",
           "description": "Curated reference reaction or atom mapping.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -3861,13 +7098,1265 @@ window.SYNRXN_CATALOG = {
       "depiction": "_static/catalog-reactions/rbl-mos.svg"
     },
     {
+      "id": "selectivity/hitea_chiral_resolution",
+      "task": "selectivity",
+      "name": "hitea_chiral_resolution",
+      "title": "HiTEA chiral-resolution enantiomeric excess",
+      "description": "Fifty chiral salt-resolution experiments with positive reported product yield and signed product ee measured by chiral SFC-MS; zero-reported-yield rows are excluded rather than labeled as racemic.",
+      "benchmark_role": "Predict signed experimental product enantiomeric excess from substrate and resolution conditions while preserving the unresolved favored-enantiomer convention.",
+      "license": "MIT",
+      "license_spdx": "MIT",
+      "license_url": "https://spdx.org/licenses/MIT.html",
+      "redistribution_partition": "main",
+      "citations": [
+        "kingsmith2024reactome"
+      ],
+      "targets": [
+        "selectivity_value"
+      ],
+      "row_identifier": "sample_id",
+      "row_identifier_unique": true,
+      "rows": 50,
+      "size": 5842,
+      "sha256": "deffeb88f4a3d9e1f1ea98ece7cdcda2f42ba8edaae899771df2aab5f1ddd8b7",
+      "columns": [
+        "sample_id",
+        "dataset",
+        "source_record_id",
+        "source_index",
+        "raw_reaction_smiles",
+        "reaction_smiles",
+        "canonical_reaction_smiles",
+        "substrate_smiles",
+        "canonical_substrate_smiles",
+        "reactants",
+        "products",
+        "candidate_site_indices",
+        "observed_site_indices",
+        "observed_site_count",
+        "site_index_basis",
+        "selectivity_value",
+        "selectivity_type",
+        "selectivity_unit",
+        "selectivity_sign_convention",
+        "stereochemistry_complete",
+        "reported_yield_pct",
+        "measurement_method",
+        "temperature_c",
+        "time_hours",
+        "solvent",
+        "reagents",
+        "reaction_class",
+        "screen_id",
+        "reference",
+        "citation",
+        "license_spdx",
+        "license_url",
+        "provenance",
+        "duplicate_group",
+        "chemical_split_group",
+        "conditions_json",
+        "source_metadata_json"
+      ],
+      "column_metadata": {
+        "sample_id": {
+          "role": "identifier",
+          "description": "Stable SynRXN identifier for a normalized record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "dataset": {
+          "role": "provenance",
+          "description": "Normalized SynRXN dataset name.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_record_id": {
+          "role": "source_identifier",
+          "description": "Identifier retained from the upstream record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_index": {
+          "role": "source_identifier",
+          "description": "Zero-based position of the record in the upstream table.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "raw_reaction_smiles": {
+          "role": "provenance",
+          "description": "Reaction SMILES exactly as supplied by the upstream source.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_smiles": {
+          "role": "reaction",
+          "description": "Recorded or normalized reaction SMILES with reactants, optional middle-field agents, and products.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "canonical_reaction_smiles": {
+          "role": "reaction",
+          "description": "Canonicalized reaction SMILES used for chemical grouping when canonicalization succeeds.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "substrate_smiles": {
+          "role": "feature",
+          "description": "Upstream substrate representation; atom indices refer to this string when site labels are supplied.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "canonical_substrate_smiles": {
+          "role": "feature",
+          "description": "Canonical substrate for identity grouping; upstream site indices retain their original namespace.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reactants": {
+          "role": "reaction",
+          "description": "Reactant side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "products": {
+          "role": "reaction",
+          "description": "Product side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "candidate_site_indices": {
+          "role": "feature",
+          "description": "Semicolon-separated zero-based candidate atom indices in the upstream substrate SMILES.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "observed_site_indices": {
+          "role": "target",
+          "description": "Semicolon-separated experimentally observed reactive atom indices in the upstream substrate SMILES.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "observed_site_count": {
+          "role": "summary",
+          "description": "Number of experimentally observed reactive sites in the record.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "site_index_basis": {
+          "role": "provenance",
+          "description": "Explicit convention defining which molecular representation and index origin the site labels use.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "selectivity_value": {
+          "role": "target",
+          "description": "Quantitative selectivity measurement retained without changing its upstream sign convention.",
+          "logical_type": "number",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "selectivity_type": {
+          "role": "provenance",
+          "description": "Selectivity target class such as enantiomeric excess or an observed regioselective site set.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "selectivity_unit": {
+          "role": "provenance",
+          "description": "Source target unit, including percent ee or an atom-site index.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "selectivity_sign_convention": {
+          "role": "provenance",
+          "description": "Source sign convention, or not applicable for site labels.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "stereochemistry_complete": {
+          "role": "quality",
+          "description": "Whether the structure and measurement identify the favored stereoisomer completely.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reported_yield_pct": {
+          "role": "context",
+          "description": "Optional experimental yield or recovery retained as context rather than as the selectivity target.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "measurement_method": {
+          "role": "provenance",
+          "description": "Experimental or analytical method used to determine the yield.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "temperature_c": {
+          "role": "feature",
+          "description": "Reaction temperature in degrees Celsius when reported.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "time_hours": {
+          "role": "feature",
+          "description": "Reaction duration in hours when reported.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "solvent": {
+          "role": "feature",
+          "description": "Solvent or solvent mixture reported for the reaction.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reagents": {
+          "role": "target",
+          "description": "Order-invariant dot-separated set of molecules explicitly annotated or conservatively inferred as reagents.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_class": {
+          "role": "provenance",
+          "description": "Upstream reaction class or campaign label.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "screen_id": {
+          "role": "provenance",
+          "description": "Identifier of the upstream high-throughput experiment screen.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reference": {
+          "role": "provenance",
+          "description": "Literature reference, patent identifier, or upstream accession.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "citation": {
+          "role": "provenance",
+          "description": "Upstream citation label embedded in the normalized record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "license_spdx": {
+          "role": "provenance",
+          "description": "SPDX identifier for the upstream dataset license.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "license_url": {
+          "role": "provenance",
+          "description": "URL of the upstream dataset license.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "provenance": {
+          "role": "provenance",
+          "description": "Human-readable description of the pinned upstream source snapshot.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "duplicate_group": {
+          "role": "partition",
+          "description": "Stable hash grouping records with the same normalized experiment representation.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "chemical_split_group": {
+          "role": "partition",
+          "description": "Stable hash grouping records by normalized chemical transformation independently of yield.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "conditions_json": {
+          "role": "context",
+          "description": "Compact JSON preserving structured operating conditions beyond the normalized scalar columns.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_metadata_json": {
+          "role": "provenance",
+          "description": "JSON object preserving additional upstream fields and unnormalized values.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        }
+      },
+      "sample": [
+        {
+          "sample_id": "hitea_chiral_resolution:RKB-04031719",
+          "dataset": "hitea_chiral_resolution",
+          "source_record_id": "RKB-04031719",
+          "source_index": "36176",
+          "raw_reaction_smiles": "\u003e\u003eCC(N[C@H](c1ccccc1)C)CC(F)(F)F",
+          "reaction_smiles": "",
+          "canonical_reaction_smiles": "",
+          "substrate_smiles": "CC(CC(F)(F)F)N[C@@H](C)c1ccccc1",
+          "canonical_substrate_smiles": "CC(CC(F)(F)F)N[C@@H](C)c1ccccc1",
+          "reactants": "",
+          "products": "CC(CC(F)(F)F)N[C@@H](C)c1ccccc1",
+          "candidate_site_indices": "",
+          "observed_site_indices": "",
+          "observed_site_count": "",
+          "site_index_basis": "",
+          "selectivity_value": "-62.92452347",
+          "selectivity_type": "enantiomeric_excess",
+          "selectivity_unit": "percent_ee",
+          "selectivity_sign_convention": "upstream_signed_product_ee_favored_enantiomer_undefined",
+          "stereochemistry_complete": "false",
+          "reported_yield_pct": "62",
+          "measurement_method": "chiral SFC-MS",
+          "temperature_c": "25",
+          "time_hours": "18",
+          "solvent": "MEK",
+          "reagents": "Ethane(SO3H)2",
+          "reaction_class": "chiral salt resolution",
+          "screen_id": "SCRN_253",
+          "reference": "10.1038/s41557-023-01393-w",
+          "citation": "King-Smith et al., Nature Chemistry (2024)",
+          "license_spdx": "MIT",
+          "license_url": "https://github.com/emmaking-smith/HiTEA/blob/ccc8cce274e70429498be829dd3bc57754f62265/LICENSE",
+          "provenance": "HiTEA 8_SEPT_APPROVED_full_dataset.csv at commit ccc8cce274e70429498be829dd3bc57754f62265",
+          "duplicate_group": "experiment:792e2351cf1e9bb3aa75356a5bf196550be3194d1d46ac6b67786f59a2cd6360",
+          "chemical_split_group": "substrate:22c95f37f5667f2a1906b0f4445adc28f9cd23904397bd1b959c524b5b699d8c",
+          "conditions_json": "{\"reagent_1\":\"Ethane(SO3H)2\",\"solvent\":\"MEK\",\"temperature_c\":\"25\",\"time_hours\":\"18\"}",
+          "source_metadata_json": "{\"dataset_entry_number\":\"6071\",\"notebook_id\":\"00119131-2833\",\"product_ee_raw\":\"-62.92452347\",\"product_id\":\"PF-07207009\",\"reported_yield_raw\":\"62\"}"
+        },
+        {
+          "sample_id": "hitea_chiral_resolution:RKB-04031720",
+          "dataset": "hitea_chiral_resolution",
+          "source_record_id": "RKB-04031720",
+          "source_index": "36177",
+          "raw_reaction_smiles": "\u003e\u003eCC(N[C@H](c1ccccc1)C)CC(F)(F)F",
+          "reaction_smiles": "",
+          "canonical_reaction_smiles": "",
+          "substrate_smiles": "CC(CC(F)(F)F)N[C@@H](C)c1ccccc1",
+          "canonical_substrate_smiles": "CC(CC(F)(F)F)N[C@@H](C)c1ccccc1",
+          "reactants": "",
+          "products": "CC(CC(F)(F)F)N[C@@H](C)c1ccccc1",
+          "candidate_site_indices": "",
+          "observed_site_indices": "",
+          "observed_site_count": "",
+          "site_index_basis": "",
+          "selectivity_value": "-70.10124651",
+          "selectivity_type": "enantiomeric_excess",
+          "selectivity_unit": "percent_ee",
+          "selectivity_sign_convention": "upstream_signed_product_ee_favored_enantiomer_undefined",
+          "stereochemistry_complete": "false",
+          "reported_yield_pct": "49",
+          "measurement_method": "chiral SFC-MS",
+          "temperature_c": "25",
+          "time_hours": "18",
+          "solvent": "Acetone",
+          "reagents": "HCl",
+          "reaction_class": "chiral salt resolution",
+          "screen_id": "SCRN_253",
+          "reference": "10.1038/s41557-023-01393-w",
+          "citation": "King-Smith et al., Nature Chemistry (2024)",
+          "license_spdx": "MIT",
+          "license_url": "https://github.com/emmaking-smith/HiTEA/blob/ccc8cce274e70429498be829dd3bc57754f62265/LICENSE",
+          "provenance": "HiTEA 8_SEPT_APPROVED_full_dataset.csv at commit ccc8cce274e70429498be829dd3bc57754f62265",
+          "duplicate_group": "experiment:0e30d436671b924b54bec561cce850718c9f6c20d5e1ce4b88ccf8bafda1854f",
+          "chemical_split_group": "substrate:22c95f37f5667f2a1906b0f4445adc28f9cd23904397bd1b959c524b5b699d8c",
+          "conditions_json": "{\"reagent_1\":\"HCl\",\"solvent\":\"Acetone\",\"temperature_c\":\"25\",\"time_hours\":\"18\"}",
+          "source_metadata_json": "{\"dataset_entry_number\":\"9000\",\"notebook_id\":\"00119131-2833\",\"product_ee_raw\":\"-70.10124651\",\"product_id\":\"PF-07207009\",\"reported_yield_raw\":\"49\"}"
+        },
+        {
+          "sample_id": "hitea_chiral_resolution:RKB-04031723",
+          "dataset": "hitea_chiral_resolution",
+          "source_record_id": "RKB-04031723",
+          "source_index": "36180",
+          "raw_reaction_smiles": "\u003e\u003eCC(N[C@H](c1ccccc1)C)CC(F)(F)F",
+          "reaction_smiles": "",
+          "canonical_reaction_smiles": "",
+          "substrate_smiles": "CC(CC(F)(F)F)N[C@@H](C)c1ccccc1",
+          "canonical_substrate_smiles": "CC(CC(F)(F)F)N[C@@H](C)c1ccccc1",
+          "reactants": "",
+          "products": "CC(CC(F)(F)F)N[C@@H](C)c1ccccc1",
+          "candidate_site_indices": "",
+          "observed_site_indices": "",
+          "observed_site_count": "",
+          "site_index_basis": "",
+          "selectivity_value": "-47.42188887",
+          "selectivity_type": "enantiomeric_excess",
+          "selectivity_unit": "percent_ee",
+          "selectivity_sign_convention": "upstream_signed_product_ee_favored_enantiomer_undefined",
+          "stereochemistry_complete": "false",
+          "reported_yield_pct": "32",
+          "measurement_method": "chiral SFC-MS",
+          "temperature_c": "25",
+          "time_hours": "18",
+          "solvent": "IPA",
+          "reagents": "H3PO4",
+          "reaction_class": "chiral salt resolution",
+          "screen_id": "SCRN_253",
+          "reference": "10.1038/s41557-023-01393-w",
+          "citation": "King-Smith et al., Nature Chemistry (2024)",
+          "license_spdx": "MIT",
+          "license_url": "https://github.com/emmaking-smith/HiTEA/blob/ccc8cce274e70429498be829dd3bc57754f62265/LICENSE",
+          "provenance": "HiTEA 8_SEPT_APPROVED_full_dataset.csv at commit ccc8cce274e70429498be829dd3bc57754f62265",
+          "duplicate_group": "experiment:1a490c47ecbf473d203623ba6cb62c61b57202ed06ba88223bc3c459d2874b7f",
+          "chemical_split_group": "substrate:22c95f37f5667f2a1906b0f4445adc28f9cd23904397bd1b959c524b5b699d8c",
+          "conditions_json": "{\"reagent_1\":\"H3PO4\",\"solvent\":\"IPA\",\"temperature_c\":\"25\",\"time_hours\":\"18\"}",
+          "source_metadata_json": "{\"dataset_entry_number\":\"12104\",\"notebook_id\":\"00119131-2833\",\"product_ee_raw\":\"-47.42188887\",\"product_id\":\"PF-07207009\",\"reported_yield_raw\":\"32\"}"
+        },
+        {
+          "sample_id": "hitea_chiral_resolution:RKB-04031725",
+          "dataset": "hitea_chiral_resolution",
+          "source_record_id": "RKB-04031725",
+          "source_index": "36182",
+          "raw_reaction_smiles": "\u003e\u003eCC(N[C@H](c1ccccc1)C)CC(F)(F)F",
+          "reaction_smiles": "",
+          "canonical_reaction_smiles": "",
+          "substrate_smiles": "CC(CC(F)(F)F)N[C@@H](C)c1ccccc1",
+          "canonical_substrate_smiles": "CC(CC(F)(F)F)N[C@@H](C)c1ccccc1",
+          "reactants": "",
+          "products": "CC(CC(F)(F)F)N[C@@H](C)c1ccccc1",
+          "candidate_site_indices": "",
+          "observed_site_indices": "",
+          "observed_site_count": "",
+          "site_index_basis": "",
+          "selectivity_value": "-50.93871257",
+          "selectivity_type": "enantiomeric_excess",
+          "selectivity_unit": "percent_ee",
+          "selectivity_sign_convention": "upstream_signed_product_ee_favored_enantiomer_undefined",
+          "stereochemistry_complete": "false",
+          "reported_yield_pct": "44",
+          "measurement_method": "chiral SFC-MS",
+          "temperature_c": "25",
+          "time_hours": "18",
+          "solvent": "IPA",
+          "reagents": "Ethane(SO3H)2",
+          "reaction_class": "chiral salt resolution",
+          "screen_id": "SCRN_253",
+          "reference": "10.1038/s41557-023-01393-w",
+          "citation": "King-Smith et al., Nature Chemistry (2024)",
+          "license_spdx": "MIT",
+          "license_url": "https://github.com/emmaking-smith/HiTEA/blob/ccc8cce274e70429498be829dd3bc57754f62265/LICENSE",
+          "provenance": "HiTEA 8_SEPT_APPROVED_full_dataset.csv at commit ccc8cce274e70429498be829dd3bc57754f62265",
+          "duplicate_group": "experiment:0e9a08f130980b345a795e2cbaaa2bcdcb61e23b736b2bc57386ce003d7f3f24",
+          "chemical_split_group": "substrate:22c95f37f5667f2a1906b0f4445adc28f9cd23904397bd1b959c524b5b699d8c",
+          "conditions_json": "{\"reagent_1\":\"Ethane(SO3H)2\",\"solvent\":\"IPA\",\"temperature_c\":\"25\",\"time_hours\":\"18\"}",
+          "source_metadata_json": "{\"dataset_entry_number\":\"9593\",\"notebook_id\":\"00119131-2833\",\"product_ee_raw\":\"-50.93871257\",\"product_id\":\"PF-07207009\",\"reported_yield_raw\":\"44\"}"
+        },
+        {
+          "sample_id": "hitea_chiral_resolution:RKB-04031726",
+          "dataset": "hitea_chiral_resolution",
+          "source_record_id": "RKB-04031726",
+          "source_index": "36183",
+          "raw_reaction_smiles": "\u003e\u003eCC(N[C@H](c1ccccc1)C)CC(F)(F)F",
+          "reaction_smiles": "",
+          "canonical_reaction_smiles": "",
+          "substrate_smiles": "CC(CC(F)(F)F)N[C@@H](C)c1ccccc1",
+          "canonical_substrate_smiles": "CC(CC(F)(F)F)N[C@@H](C)c1ccccc1",
+          "reactants": "",
+          "products": "CC(CC(F)(F)F)N[C@@H](C)c1ccccc1",
+          "candidate_site_indices": "",
+          "observed_site_indices": "",
+          "observed_site_count": "",
+          "site_index_basis": "",
+          "selectivity_value": "-47.17696829",
+          "selectivity_type": "enantiomeric_excess",
+          "selectivity_unit": "percent_ee",
+          "selectivity_sign_convention": "upstream_signed_product_ee_favored_enantiomer_undefined",
+          "stereochemistry_complete": "false",
+          "reported_yield_pct": "33",
+          "measurement_method": "chiral SFC-MS",
+          "temperature_c": "25",
+          "time_hours": "18",
+          "solvent": "MeCN",
+          "reagents": "Ethane(SO3H)2",
+          "reaction_class": "chiral salt resolution",
+          "screen_id": "SCRN_253",
+          "reference": "10.1038/s41557-023-01393-w",
+          "citation": "King-Smith et al., Nature Chemistry (2024)",
+          "license_spdx": "MIT",
+          "license_url": "https://github.com/emmaking-smith/HiTEA/blob/ccc8cce274e70429498be829dd3bc57754f62265/LICENSE",
+          "provenance": "HiTEA 8_SEPT_APPROVED_full_dataset.csv at commit ccc8cce274e70429498be829dd3bc57754f62265",
+          "duplicate_group": "experiment:e7db060ecbcb28b041cc685e3c1df2e3a44ffa7537909c5103abc935e913cdfb",
+          "chemical_split_group": "substrate:22c95f37f5667f2a1906b0f4445adc28f9cd23904397bd1b959c524b5b699d8c",
+          "conditions_json": "{\"reagent_1\":\"Ethane(SO3H)2\",\"solvent\":\"MeCN\",\"temperature_c\":\"25\",\"time_hours\":\"18\"}",
+          "source_metadata_json": "{\"dataset_entry_number\":\"11927\",\"notebook_id\":\"00119131-2833\",\"product_ee_raw\":\"-47.17696829\",\"product_id\":\"PF-07207009\",\"reported_yield_raw\":\"33\"}"
+        }
+      ],
+      "split_counts": {},
+      "null_counts": {
+        "sample_id": 0,
+        "dataset": 0,
+        "source_record_id": 0,
+        "source_index": 0,
+        "raw_reaction_smiles": 0,
+        "reaction_smiles": 17,
+        "canonical_reaction_smiles": 17,
+        "substrate_smiles": 0,
+        "canonical_substrate_smiles": 0,
+        "reactants": 17,
+        "products": 0,
+        "candidate_site_indices": 50,
+        "observed_site_indices": 50,
+        "observed_site_count": 50,
+        "site_index_basis": 50,
+        "selectivity_value": 0,
+        "selectivity_type": 0,
+        "selectivity_unit": 0,
+        "selectivity_sign_convention": 0,
+        "stereochemistry_complete": 0,
+        "reported_yield_pct": 0,
+        "measurement_method": 0,
+        "temperature_c": 0,
+        "time_hours": 0,
+        "solvent": 0,
+        "reagents": 33,
+        "reaction_class": 0,
+        "screen_id": 0,
+        "reference": 0,
+        "citation": 0,
+        "license_spdx": 0,
+        "license_url": 0,
+        "provenance": 0,
+        "duplicate_group": 0,
+        "chemical_split_group": 0,
+        "conditions_json": 0,
+        "source_metadata_json": 0
+      },
+      "target_summaries": {
+        "selectivity_value": {
+          "kind": "numeric",
+          "count": 50,
+          "min": -72.35257077,
+          "max": 99.42696816,
+          "mean": 6.3207122068
+        }
+      },
+      "reaction_column": "reaction_smiles",
+      "reaction_text": "CC(C)(N)C(=O)N1CC[C@](C)(N2CCc3c(-c4cnc(N)nc4)nc(N4CCOCC4)nc32)C1.O=S(=O)(O)O\u003e\u003eCC(C)(N)C(=O)N1CC[C@](C)(N2CCc3c(-c4cnc(N)nc4)nc(N4CCOCC4)nc32)C1",
+      "depiction": "_static/catalog-reactions/selectivity-hitea_chiral_resolution.svg"
+    },
+    {
+      "id": "selectivity/regiosqm_eas",
+      "task": "selectivity",
+      "name": "regiosqm_eas",
+      "title": "RegioSQM experimental EAS sites",
+      "description": "Literature-curated electrophilic aromatic substitution substrates with 604 experimentally observed aromatic C-H reaction sites across 535 records.",
+      "benchmark_role": "Predict the set of experimentally observed regioselective EAS atom sites using the zero-based atom order of the upstream substrate SMILES.",
+      "license": "MIT",
+      "license_spdx": "MIT",
+      "license_url": "https://spdx.org/licenses/MIT.html",
+      "redistribution_partition": "main",
+      "citations": [
+        "kromann2018regiosqm"
+      ],
+      "targets": [
+        "observed_site_indices"
+      ],
+      "row_identifier": "sample_id",
+      "row_identifier_unique": true,
+      "rows": 535,
+      "size": 75109,
+      "sha256": "c156301e943612c5b04db9216e5fa0c173539c966933bcd489e87d7691acd9ae",
+      "columns": [
+        "sample_id",
+        "dataset",
+        "source_record_id",
+        "source_index",
+        "raw_reaction_smiles",
+        "reaction_smiles",
+        "canonical_reaction_smiles",
+        "substrate_smiles",
+        "canonical_substrate_smiles",
+        "reactants",
+        "products",
+        "candidate_site_indices",
+        "observed_site_indices",
+        "observed_site_count",
+        "site_index_basis",
+        "selectivity_value",
+        "selectivity_type",
+        "selectivity_unit",
+        "selectivity_sign_convention",
+        "stereochemistry_complete",
+        "reported_yield_pct",
+        "measurement_method",
+        "temperature_c",
+        "time_hours",
+        "solvent",
+        "reagents",
+        "reaction_class",
+        "screen_id",
+        "reference",
+        "citation",
+        "license_spdx",
+        "license_url",
+        "provenance",
+        "duplicate_group",
+        "chemical_split_group",
+        "conditions_json",
+        "source_metadata_json"
+      ],
+      "column_metadata": {
+        "sample_id": {
+          "role": "identifier",
+          "description": "Stable SynRXN identifier for a normalized record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "dataset": {
+          "role": "provenance",
+          "description": "Normalized SynRXN dataset name.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_record_id": {
+          "role": "source_identifier",
+          "description": "Identifier retained from the upstream record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_index": {
+          "role": "source_identifier",
+          "description": "Zero-based position of the record in the upstream table.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "raw_reaction_smiles": {
+          "role": "provenance",
+          "description": "Reaction SMILES exactly as supplied by the upstream source.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_smiles": {
+          "role": "reaction",
+          "description": "Recorded or normalized reaction SMILES with reactants, optional middle-field agents, and products.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "canonical_reaction_smiles": {
+          "role": "reaction",
+          "description": "Canonicalized reaction SMILES used for chemical grouping when canonicalization succeeds.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "substrate_smiles": {
+          "role": "feature",
+          "description": "Upstream substrate representation; atom indices refer to this string when site labels are supplied.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "canonical_substrate_smiles": {
+          "role": "feature",
+          "description": "Canonical substrate for identity grouping; upstream site indices retain their original namespace.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reactants": {
+          "role": "reaction",
+          "description": "Reactant side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "products": {
+          "role": "reaction",
+          "description": "Product side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "candidate_site_indices": {
+          "role": "feature",
+          "description": "Semicolon-separated zero-based candidate atom indices in the upstream substrate SMILES.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "observed_site_indices": {
+          "role": "target",
+          "description": "Semicolon-separated experimentally observed reactive atom indices in the upstream substrate SMILES.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "observed_site_count": {
+          "role": "summary",
+          "description": "Number of experimentally observed reactive sites in the record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "site_index_basis": {
+          "role": "provenance",
+          "description": "Explicit convention defining which molecular representation and index origin the site labels use.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "selectivity_value": {
+          "role": "target",
+          "description": "Quantitative selectivity measurement retained without changing its upstream sign convention.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "selectivity_type": {
+          "role": "provenance",
+          "description": "Selectivity target class such as enantiomeric excess or an observed regioselective site set.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "selectivity_unit": {
+          "role": "provenance",
+          "description": "Source target unit, including percent ee or an atom-site index.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "selectivity_sign_convention": {
+          "role": "provenance",
+          "description": "Source sign convention, or not applicable for site labels.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "stereochemistry_complete": {
+          "role": "quality",
+          "description": "Whether the structure and measurement identify the favored stereoisomer completely.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reported_yield_pct": {
+          "role": "context",
+          "description": "Optional experimental yield or recovery retained as context rather than as the selectivity target.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "measurement_method": {
+          "role": "provenance",
+          "description": "Experimental or analytical method used to determine the yield.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "temperature_c": {
+          "role": "feature",
+          "description": "Reaction temperature in degrees Celsius when reported.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "time_hours": {
+          "role": "feature",
+          "description": "Reaction duration in hours when reported.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "solvent": {
+          "role": "feature",
+          "description": "Solvent or solvent mixture reported for the reaction.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reagents": {
+          "role": "target",
+          "description": "Order-invariant dot-separated set of molecules explicitly annotated or conservatively inferred as reagents.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_class": {
+          "role": "provenance",
+          "description": "Upstream reaction class or campaign label.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "screen_id": {
+          "role": "provenance",
+          "description": "Identifier of the upstream high-throughput experiment screen.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reference": {
+          "role": "provenance",
+          "description": "Literature reference, patent identifier, or upstream accession.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "citation": {
+          "role": "provenance",
+          "description": "Upstream citation label embedded in the normalized record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "license_spdx": {
+          "role": "provenance",
+          "description": "SPDX identifier for the upstream dataset license.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "license_url": {
+          "role": "provenance",
+          "description": "URL of the upstream dataset license.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "provenance": {
+          "role": "provenance",
+          "description": "Human-readable description of the pinned upstream source snapshot.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "duplicate_group": {
+          "role": "partition",
+          "description": "Stable hash grouping records with the same normalized experiment representation.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "chemical_split_group": {
+          "role": "partition",
+          "description": "Stable hash grouping records by normalized chemical transformation independently of yield.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "conditions_json": {
+          "role": "context",
+          "description": "Compact JSON preserving structured operating conditions beyond the normalized scalar columns.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_metadata_json": {
+          "role": "provenance",
+          "description": "JSON object preserving additional upstream fields and unnormalized values.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        }
+      },
+      "sample": [
+        {
+          "sample_id": "regiosqm_eas:comp1",
+          "dataset": "regiosqm_eas",
+          "source_record_id": "comp1",
+          "source_index": "0",
+          "raw_reaction_smiles": "",
+          "reaction_smiles": "",
+          "canonical_reaction_smiles": "",
+          "substrate_smiles": "n1ccc[nH]1",
+          "canonical_substrate_smiles": "c1cn[nH]c1",
+          "reactants": "",
+          "products": "",
+          "candidate_site_indices": "1;2;3",
+          "observed_site_indices": "2",
+          "observed_site_count": "1",
+          "site_index_basis": "zero_based_atom_order_in_upstream_substrate_smiles",
+          "selectivity_value": "",
+          "selectivity_type": "regioselective_site_set",
+          "selectivity_unit": "atom_index",
+          "selectivity_sign_convention": "not_applicable",
+          "stereochemistry_complete": "",
+          "reported_yield_pct": "",
+          "measurement_method": "literature-reported electrophilic aromatic substitution product",
+          "temperature_c": "",
+          "time_hours": "",
+          "solvent": "",
+          "reagents": "",
+          "reaction_class": "electrophilic aromatic substitution",
+          "screen_id": "",
+          "reference": "WO2015069310A1",
+          "citation": "Kromann et al., Chemical Science (2018)",
+          "license_spdx": "MIT",
+          "license_url": "https://github.com/jensengroup/db-regioselectivity/blob/f734ce480c61608c636c5d4c0e9866f6bcbbb9a9/LICENSE",
+          "provenance": "db-regioselectivity commit f734ce480c61608c636c5d4c0e9866f6bcbbb9a9",
+          "duplicate_group": "site_set:f4bc9715e02be6f11279f887e8ca0382dee49231b814d38dc006e2efb433095a",
+          "chemical_split_group": "substrate:bf3a6e744c00a4f42e2b59ab2ac44a08c2dbfa95741b914f9903e08971a87bc2",
+          "conditions_json": "{}",
+          "source_metadata_json": "{\"observed_sites_raw\":\"2\",\"reference\":\"WO2015069310A1\",\"reported_yield_and_electrophile_raw\":\"100% (NBS)\"}"
+        },
+        {
+          "sample_id": "regiosqm_eas:comp2",
+          "dataset": "regiosqm_eas",
+          "source_record_id": "comp2",
+          "source_index": "1",
+          "raw_reaction_smiles": "",
+          "reaction_smiles": "",
+          "canonical_reaction_smiles": "",
+          "substrate_smiles": "n1cccn1c1ncccn1",
+          "canonical_substrate_smiles": "c1cnc(-n2cccn2)nc1",
+          "reactants": "",
+          "products": "",
+          "candidate_site_indices": "1;2;3;7;8;9",
+          "observed_site_indices": "2",
+          "observed_site_count": "1",
+          "site_index_basis": "zero_based_atom_order_in_upstream_substrate_smiles",
+          "selectivity_value": "",
+          "selectivity_type": "regioselective_site_set",
+          "selectivity_unit": "atom_index",
+          "selectivity_sign_convention": "not_applicable",
+          "stereochemistry_complete": "",
+          "reported_yield_pct": "",
+          "measurement_method": "literature-reported electrophilic aromatic substitution product",
+          "temperature_c": "",
+          "time_hours": "",
+          "solvent": "",
+          "reagents": "",
+          "reaction_class": "electrophilic aromatic substitution",
+          "screen_id": "",
+          "reference": "WO2008156739A1",
+          "citation": "Kromann et al., Chemical Science (2018)",
+          "license_spdx": "MIT",
+          "license_url": "https://github.com/jensengroup/db-regioselectivity/blob/f734ce480c61608c636c5d4c0e9866f6bcbbb9a9/LICENSE",
+          "provenance": "db-regioselectivity commit f734ce480c61608c636c5d4c0e9866f6bcbbb9a9",
+          "duplicate_group": "site_set:9abb08c585e77f3d039978a9c65427683714c8596959fa2ee858475b89010b05",
+          "chemical_split_group": "substrate:bf2b7c339c10622f4b18ddc3c1e7eeedadc5fadaaac7c1c5299db2e16eabf948",
+          "conditions_json": "{}",
+          "source_metadata_json": "{\"observed_sites_raw\":\"2\",\"reference\":\"WO2008156739A1\",\"reported_yield_and_electrophile_raw\":\"85% (*Br2*)\"}"
+        },
+        {
+          "sample_id": "regiosqm_eas:comp3",
+          "dataset": "regiosqm_eas",
+          "source_record_id": "comp3",
+          "source_index": "2",
+          "raw_reaction_smiles": "",
+          "reaction_smiles": "",
+          "canonical_reaction_smiles": "",
+          "substrate_smiles": "n1ccc(n1c1c(cccc1)C)N",
+          "canonical_substrate_smiles": "Cc1ccccc1-n1nccc1N",
+          "reactants": "",
+          "products": "",
+          "candidate_site_indices": "1;2;7;8;9;10",
+          "observed_site_indices": "2",
+          "observed_site_count": "1",
+          "site_index_basis": "zero_based_atom_order_in_upstream_substrate_smiles",
+          "selectivity_value": "",
+          "selectivity_type": "regioselective_site_set",
+          "selectivity_unit": "atom_index",
+          "selectivity_sign_convention": "not_applicable",
+          "stereochemistry_complete": "",
+          "reported_yield_pct": "",
+          "measurement_method": "literature-reported electrophilic aromatic substitution product",
+          "temperature_c": "",
+          "time_hours": "",
+          "solvent": "",
+          "reagents": "",
+          "reaction_class": "electrophilic aromatic substitution",
+          "screen_id": "",
+          "reference": "US20100099681",
+          "citation": "Kromann et al., Chemical Science (2018)",
+          "license_spdx": "MIT",
+          "license_url": "https://github.com/jensengroup/db-regioselectivity/blob/f734ce480c61608c636c5d4c0e9866f6bcbbb9a9/LICENSE",
+          "provenance": "db-regioselectivity commit f734ce480c61608c636c5d4c0e9866f6bcbbb9a9",
+          "duplicate_group": "site_set:945edab145eab7a12b7b035cf50b2c9d9536caecaa61782c6f6d8d0fdd15e167",
+          "chemical_split_group": "substrate:ee879aff1591c20832a02898abeb665be626f34ccd897f2a38061b283bf063a0",
+          "conditions_json": "{}",
+          "source_metadata_json": "{\"observed_sites_raw\":\"2\",\"reference\":\"US20100099681\",\"reported_yield_and_electrophile_raw\":\"82% (*Br2*)\"}"
+        },
+        {
+          "sample_id": "regiosqm_eas:comp4",
+          "dataset": "regiosqm_eas",
+          "source_record_id": "comp4",
+          "source_index": "3",
+          "raw_reaction_smiles": "",
+          "reaction_smiles": "",
+          "canonical_reaction_smiles": "",
+          "substrate_smiles": "n1c(cc(n1c1nnc(cc1)Cl)C)C",
+          "canonical_substrate_smiles": "Cc1cc(C)n(-c2ccc(Cl)nn2)n1",
+          "reactants": "",
+          "products": "",
+          "candidate_site_indices": "2;9;10",
+          "observed_site_indices": "2",
+          "observed_site_count": "1",
+          "site_index_basis": "zero_based_atom_order_in_upstream_substrate_smiles",
+          "selectivity_value": "",
+          "selectivity_type": "regioselective_site_set",
+          "selectivity_unit": "atom_index",
+          "selectivity_sign_convention": "not_applicable",
+          "stereochemistry_complete": "",
+          "reported_yield_pct": "",
+          "measurement_method": "literature-reported electrophilic aromatic substitution product",
+          "temperature_c": "",
+          "time_hours": "",
+          "solvent": "",
+          "reagents": "",
+          "reaction_class": "electrophilic aromatic substitution",
+          "screen_id": "",
+          "reference": "10.1007/BF02977751",
+          "citation": "Kromann et al., Chemical Science (2018)",
+          "license_spdx": "MIT",
+          "license_url": "https://github.com/jensengroup/db-regioselectivity/blob/f734ce480c61608c636c5d4c0e9866f6bcbbb9a9/LICENSE",
+          "provenance": "db-regioselectivity commit f734ce480c61608c636c5d4c0e9866f6bcbbb9a9",
+          "duplicate_group": "site_set:897d5ca0a00a274ac2c2ef9452469a9841531f841469775bcb5f17a8a05740b1",
+          "chemical_split_group": "substrate:313b74df35e72ab5f76f82c49b61cfdcf13700a1e5f954f27c3c5de77b6269ae",
+          "conditions_json": "{}",
+          "source_metadata_json": "{\"observed_sites_raw\":\"2\",\"reference\":\"10.1007/BF02977751\",\"reported_yield_and_electrophile_raw\":\"74% (*SO2Cl2*)\"}"
+        },
+        {
+          "sample_id": "regiosqm_eas:comp5",
+          "dataset": "regiosqm_eas",
+          "source_record_id": "comp5",
+          "source_index": "4",
+          "raw_reaction_smiles": "",
+          "reaction_smiles": "",
+          "canonical_reaction_smiles": "",
+          "substrate_smiles": "c1cc(n[nH]1)c1ccc(c(c1)OC)[N+](=O)[O-]",
+          "canonical_substrate_smiles": "COc1cc(-c2cc[nH]n2)ccc1[N+](=O)[O-]",
+          "reactants": "",
+          "products": "",
+          "candidate_site_indices": "0;1;6;7;10",
+          "observed_site_indices": "1",
+          "observed_site_count": "1",
+          "site_index_basis": "zero_based_atom_order_in_upstream_substrate_smiles",
+          "selectivity_value": "",
+          "selectivity_type": "regioselective_site_set",
+          "selectivity_unit": "atom_index",
+          "selectivity_sign_convention": "not_applicable",
+          "stereochemistry_complete": "",
+          "reported_yield_pct": "",
+          "measurement_method": "literature-reported electrophilic aromatic substitution product",
+          "temperature_c": "",
+          "time_hours": "",
+          "solvent": "",
+          "reagents": "",
+          "reaction_class": "electrophilic aromatic substitution",
+          "screen_id": "",
+          "reference": "WO2007024843A3",
+          "citation": "Kromann et al., Chemical Science (2018)",
+          "license_spdx": "MIT",
+          "license_url": "https://github.com/jensengroup/db-regioselectivity/blob/f734ce480c61608c636c5d4c0e9866f6bcbbb9a9/LICENSE",
+          "provenance": "db-regioselectivity commit f734ce480c61608c636c5d4c0e9866f6bcbbb9a9",
+          "duplicate_group": "site_set:1f062def28a03771f9620e4b2881d0c93387330803a3955ec7e6a5909cb0ddbe",
+          "chemical_split_group": "substrate:6d8ef00ce2f1936e31dba14a72dd2a8fd35b29cbda662fbb76b129eb0c23e612",
+          "conditions_json": "{}",
+          "source_metadata_json": "{\"observed_sites_raw\":\"1\",\"reference\":\"WO2007024843A3\",\"reported_yield_and_electrophile_raw\":\"89% (NBS)\"}"
+        }
+      ],
+      "split_counts": {},
+      "null_counts": {
+        "sample_id": 0,
+        "dataset": 0,
+        "source_record_id": 0,
+        "source_index": 0,
+        "raw_reaction_smiles": 535,
+        "reaction_smiles": 535,
+        "canonical_reaction_smiles": 535,
+        "substrate_smiles": 0,
+        "canonical_substrate_smiles": 0,
+        "reactants": 535,
+        "products": 535,
+        "candidate_site_indices": 0,
+        "observed_site_indices": 0,
+        "observed_site_count": 0,
+        "site_index_basis": 0,
+        "selectivity_value": 535,
+        "selectivity_type": 0,
+        "selectivity_unit": 0,
+        "selectivity_sign_convention": 0,
+        "stereochemistry_complete": 535,
+        "reported_yield_pct": 535,
+        "measurement_method": 0,
+        "temperature_c": 535,
+        "time_hours": 535,
+        "solvent": 535,
+        "reagents": 535,
+        "reaction_class": 0,
+        "screen_id": 535,
+        "reference": 69,
+        "citation": 0,
+        "license_spdx": 0,
+        "license_url": 0,
+        "provenance": 0,
+        "duplicate_group": 0,
+        "chemical_split_group": 0,
+        "conditions_json": 0,
+        "source_metadata_json": 0
+      },
+      "target_summaries": {
+        "observed_site_indices": {
+          "kind": "categorical",
+          "count": 535,
+          "unique": 58,
+          "top": [
+            {
+              "value": "2",
+              "count": 79
+            },
+            {
+              "value": "6",
+              "count": 65
+            },
+            {
+              "value": "0",
+              "count": 63
+            },
+            {
+              "value": "1",
+              "count": 49
+            },
+            {
+              "value": "8",
+              "count": 42
+            },
+            {
+              "value": "5",
+              "count": 30
+            },
+            {
+              "value": "7",
+              "count": 21
+            },
+            {
+              "value": "4",
+              "count": 20
+            }
+          ]
+        }
+      },
+      "reaction_column": "reaction_smiles",
+      "reaction_text": null,
+      "depiction": null
+    },
+    {
       "id": "synthesis/da",
       "task": "synthesis",
       "name": "da",
       "title": "Diels–Alder synthesis",
       "description": "Class-specific Diels–Alder synthesis benchmark.",
       "benchmark_role": "Evaluate synthesis prediction for Diels–Alder reactions.",
-      "license": "CC BY 3.0",
+      "license": "Redistribution rights unresolved",
+      "license_spdx": "LicenseRef-Unknown",
+      "redistribution_partition": "excluded",
       "citations": [
         "lam2024every"
       ],
@@ -3887,171 +8376,13 @@ window.SYNRXN_CATALOG = {
         "r_id",
         "rsmi"
       ],
-      "column_metadata": {
-        "code": {
-          "role": "source_identifier",
-          "description": "Upstream reaction code.",
-          "logical_type": "string",
-          "nullable": false,
-          "unit": null
-        },
-        "reaction_original": {
-          "role": "reaction",
-          "description": "Original upstream reaction representation.",
-          "logical_type": "string",
-          "nullable": false,
-          "unit": null
-        },
-        "reaction": {
-          "role": "reaction",
-          "description": "Processed reaction representation.",
-          "logical_type": "string",
-          "nullable": false,
-          "unit": null
-        },
-        "r_id": {
-          "role": "identifier",
-          "description": "Stable row identifier supplied by SynRXN.",
-          "logical_type": "string",
-          "nullable": false,
-          "unit": null
-        },
-        "rsmi": {
-          "role": "reaction",
-          "description": "Reaction SMILES representation.",
-          "logical_type": "string",
-          "nullable": false,
-          "unit": null
-        }
-      },
-      "sample": [
-        {
-          "code": "0",
-          "reaction_original": "[C:1]([C:2]([C:3](=[C:4]([H:34])[H:35])[H:33])=[C:7]([H:36])[H:37])([H:30])([H:31])[H:32].[C:5]1(=[C:6]([H:17])[H:18])[C:8](=[O:9])[C:10]([H:19])([H:20])[C:11]([H:21])([H:22])[C:12]([Br:13])([H:23])[C:14]1([C:15]([H:24])([H:25])[H:26])[C:16]([H:27])([H:28])[H:29]\u003e\u003e[C:1]([C:2]1=[C:3]([H:33])[C:4]([H:34])([H:35])[C@@:5]…",
-          "reaction": "C=C1C(=O)CCC(Br)C1(C)C.C=CC(=C)C\u003e\u003eCC1=CCC2(CC1)C(=O)CCC(Br)C2(C)C",
-          "r_id": "0",
-          "rsmi": "[CH2:12]=[CH:13][C:14](=[CH2:15])[CH3:16].[CH2:1]=[C:2]1[C:3](=[O:4])[CH2:5][CH2:6][CH:7]([Br:8])[C:9]1([CH3:10])[CH3:11]\u003e\u003e[CH2:1]1[C:2]2([C:3](=[O:4])[CH2:5][CH2:6][CH:7]([Br:8])[C:9]2([CH3:10])[CH3:11])[CH2:12][CH:13]=[C:14]([CH3:16])[CH2:15]1"
-        },
-        {
-          "code": "1",
-          "reaction_original": "[C:15](=[C:16]([Cl:17])[C:18]#[N:19])([H:20])[H:21].[C:1](=[C:2]([C:3]([C:4]([C:5]12[C:6](=[O:7])[C:8]([H:29])=[C:9]([H:30])[N:10]1[C:11]([H:31])=[C:12]([H:32])[C:13]([H:33])=[C:14]2[H:34])([H:27])[H:28])([H:25])[H:26])[H:24])([H:22])[H:23]\u003e\u003e[C:1](=[C:2]([C:3]([C:4]([C@:5]12[C:6](=[O:7])[C:8]([H:29])=[C:9]([H:30])[N:1…",
-          "reaction": "C=C(Cl)C#N.C=CCCC12C=CC=CN1C=CC2=O\u003e\u003eC=CCCC12C(=O)C=CN1C1C=CC2CC1(Cl)C#N",
-          "r_id": "1",
-          "rsmi": "[CH2:1]=[C:2]([Cl:3])[C:4]#[N:5].[CH2:6]=[CH:7][CH2:8][CH2:9][C:10]12[CH:11]=[CH:12][CH:13]=[CH:14][N:15]1[CH:16]=[CH:17][C:18]2=[O:19]\u003e\u003e[CH2:1]1[C:2]([Cl:3])([C:4]#[N:5])[CH:14]2[CH:13]=[CH:12][CH:11]1[C:10]1([CH2:9][CH2:8][CH:7]=[CH2:6])[N:15]2[CH:16]=[CH:17][C:18]1=[O:19]"
-        },
-        {
-          "code": "2",
-          "reaction_original": "[C:10]1([H:15])=[C:11]([H:16])[C:12]([H:17])([H:18])[C:13]([H:19])=[C:14]1[H:20].[C:1]([C:2]([O:3][C:4]#[C:5][C:6](=[O:7])[O:8][C:9]([H:26])([H:27])[H:28])([H:24])[H:25])([H:21])([H:22])[H:23]\u003e\u003e[C:1]([C:2]([O:3][C:4]1=[C:5]([C:6](=[O:7])[O:8][C:9]([H:26])([H:27])[H:28])[C:10]2([H:15])[C:11]([H:16])=[C:12]([H:18])[C:13…",
-          "reaction": "C1=CCC=C1.CCOC#CC(=O)OC\u003e\u003eCCOC1=C(C(=O)OC)C2C=CC1C2",
-          "r_id": "2",
-          "rsmi": "[CH3:6][CH2:7][O:8][C:9]#[C:10][C:11](=[O:12])[O:13][CH3:14].[CH:1]1=[CH:2][CH2:3][CH:4]=[CH:5]1\u003e\u003e[CH:1]1=[CH:5][CH:4]2[CH2:3][CH:2]1[C:9]([O:8][CH2:7][CH3:6])=[C:10]2[C:11](=[O:12])[O:13][CH3:14]"
-        },
-        {
-          "code": "3",
-          "reaction_original": "[C:1]([O:2][C:3](=[O:4])/[C:5](=[C:11](\\[C:12](=[O:13])[O:14][C@@:15]([C:16]([H:35])([H:36])[H:37])([C:17]1=[C:18]([H:38])[C:19]([H:39])=[C:20]([H:40])[C:21]([H:41])=[C:22]1[H:42])[H:34])[H:33])[H:32])([H:29])([H:30])[H:31].[C:6]1([H:23])=[C:7]([H:24])[C:8]([H:25])=[C:9]([H:26])[C:10]1([H:27])[H:28]\u003e\u003e[C:1]([O:2][C:3](…",
-          "reaction": "C1=CCC=C1.COC(=O)C=CC(=O)OC(C)c1ccccc1\u003e\u003eCOC(=O)C1C2C=CC(C2)C1C(=O)OC(C)c1ccccc1",
-          "r_id": "3",
-          "rsmi": "[CH3:6][O:7][C:8](=[O:9])[CH:10]=[CH:11][C:12](=[O:13])[O:14][CH:15]([CH3:16])[c:17]1[cH:18][cH:19][cH:20][cH:21][cH:22]1.[CH:1]1=[CH:2][CH2:3][CH:4]=[CH:5]1\u003e\u003e[CH:1]1=[CH:5][CH:4]2[CH2:3][CH:2]1[CH:10]([C:8]([O:7][CH3:6])=[O:9])[CH:11]2[C:12](=[O:13])[O:14][CH:15]([CH3:16])[c:17]1[cH:18][cH:19][cH:20][cH:21][cH:22]1"
-        },
-        {
-          "code": "4",
-          "reaction_original": "[C:1]([C:2]1=[C:4]([H:19])[C:3]1([H:20])[H:21])([H:16])([H:17])[H:18].[C:5]1([H:10])=[C:6]([H:11])[C:7]([H:12])=[C:8]([H:13])[C:9]1([H:14])[H:15]\u003e\u003e[C:1]([C@:2]12[C:3]([H:20])([H:21])[C@@:4]1([H:19])[C@@:5]1([H:10])[C:6]([H:11])=[C:7]([H:12])[C@:8]2([H:13])[C:9]1([H:14])[H:15])([H:16])([H:17])[H:18]",
-          "reaction": "C1=CCC=C1.CC1=CC1\u003e\u003eCC12CC1C1C=CC2C1",
-          "r_id": "4",
-          "rsmi": "[CH3:6][C:7]1=[CH:8][CH2:9]1.[CH:1]1=[CH:2][CH2:3][CH:4]=[CH:5]1\u003e\u003e[CH:1]1=[CH:5][CH:4]2[CH2:3][CH:2]1[C:7]1([CH3:6])[CH:8]2[CH2:9]1"
-        }
-      ],
+      "sample": [],
       "split_counts": {},
-      "null_counts": {
-        "code": 0,
-        "reaction_original": 0,
-        "reaction": 0,
-        "r_id": 0,
-        "rsmi": 0
-      },
-      "target_summaries": {
-        "reaction": {
-          "kind": "categorical",
-          "count": 11011,
-          "unique": 10013,
-          "top": [
-            {
-              "value": "C1=CCC=C1.COc1ccc(C=CC(=O)c2ccccn2)cc1\u003e\u003eCOc1ccc(C2C3C=CC(C3)C2C(=O)c2ccccn2)cc1",
-              "count": 7
-            },
-            {
-              "value": "C1=CCC=C1.COC(=O)C=CC(=O)OC\u003e\u003eCOC(=O)C1C2C=CC(C2)C1C(=O)OC",
-              "count": 7
-            },
-            {
-              "value": "C1=CCC=C1.CC1=CC(=O)C(Cl)=C(Cl)C1=O\u003e\u003eCC12C(=O)C(Cl)=C(Cl)C(=O)C1C1C=CC2C1",
-              "count": 7
-            },
-            {
-              "value": "C1=CCC=C1.O=C(C=Cc1ccccc1)c1ccccn1\u003e\u003eO=C(c1ccccn1)C1C2C=CC(C2)C1c1ccccc1",
-              "count": 7
-            },
-            {
-              "value": "C1=CCC=C1.CC=CC(=O)OC\u003e\u003eCOC(=O)C1C2C=CC(C2)C1C",
-              "count": 6
-            },
-            {
-              "value": "CN(C)C=CC=CN(C)C.N#CC=CC#N\u003e\u003eCN(C)C1C=CC(N(C)C)C(C#N)C1C#N",
-              "count": 6
-            },
-            {
-              "value": "CN(C)C=CC=CN(C)C.COC(=O)C(C#N)=C(C#N)C(=O)OC\u003e\u003eCOC(=O)C1(C#N)C(N(C)C)C=CC(N(C)C)C1(C#N)C(=O)OC",
-              "count": 6
-            },
-            {
-              "value": "C1=CCC=C1.CC1CCC(C(C)C)C(OC(=O)C=CC(=O)OC2CC(C)CCC2C(C)C)C1\u003e\u003eCC1CCC(C(C)C)C(OC(=O)C2C3C=CC(C3)C2C(=O)OC2CC(C)CCC2C(C)C)C1",
-              "count": 6
-            }
-          ]
-        },
-        "rsmi": {
-          "kind": "categorical",
-          "count": 11011,
-          "unique": 10013,
-          "top": [
-            {
-              "value": "[CH3:6][O:7][c:8]1[cH:9][cH:10][c:11]([CH:12]=[CH:13][C:14](=[O:15])[c:16]2[cH:17][cH:18][cH:19][cH:20][n:21]2)[cH:22][cH:23]1.[CH:1]1=[CH:2][CH2:3][CH:4]=[CH:5]1\u003e\u003e[CH:1]1=[CH:5][CH:4]2[CH2:3][CH:2]1[CH:12]([c:11]1[cH:10][cH:9][c:8]([O:7][CH3:6])[cH:23][cH:22]1)[CH:13]2[C:14](=[O:15])[c:16]1[cH:17][cH:18][cH:19][cH:20][n:21]1",
-              "count": 7
-            },
-            {
-              "value": "[CH3:6][O:7][C:8](=[O:9])[CH:10]=[CH:11][C:12](=[O:13])[O:14][CH3:15].[CH:1]1=[CH:2][CH2:3][CH:4]=[CH:5]1\u003e\u003e[CH:1]1=[CH:5][CH:4]2[CH2:3][CH:2]1[CH:10]([C:8]([O:7][CH3:6])=[O:9])[CH:11]2[C:12](=[O:13])[O:14][CH3:15]",
-              "count": 7
-            },
-            {
-              "value": "[CH3:6][C:7]1=[CH:8][C:9](=[O:10])[C:11]([Cl:12])=[C:13]([Cl:14])[C:15]1=[O:16].[CH:1]1=[CH:2][CH2:3][CH:4]=[CH:5]1\u003e\u003e[CH:1]1=[CH:5][CH:4]2[CH2:3][CH:2]1[C:7]1([CH3:6])[CH:8]2[C:9](=[O:10])[C:11]([Cl:12])=[C:13]([Cl:14])[C:15]1=[O:16]",
-              "count": 7
-            },
-            {
-              "value": "[CH:1]1=[CH:2][CH2:3][CH:4]=[CH:5]1.[O:6]=[C:7]([CH:8]=[CH:9][c:10]1[cH:11][cH:12][cH:13][cH:14][cH:15]1)[c:16]1[cH:17][cH:18][cH:19][cH:20][n:21]1\u003e\u003e[CH:1]1=[CH:5][CH:4]2[CH2:3][CH:2]1[CH:8]([C:7](=[O:6])[c:16]1[cH:17][cH:18][cH:19][cH:20][n:21]1)[CH:9]2[c:10]1[cH:11][cH:12][cH:13][cH:14][cH:15]1",
-              "count": 7
-            },
-            {
-              "value": "[CH3:6][CH:7]=[CH:8][C:9](=[O:10])[O:11][CH3:12].[CH:1]1=[CH:2][CH2:3][CH:4]=[CH:5]1\u003e\u003e[CH:1]1=[CH:5][CH:4]2[CH2:3][CH:2]1[CH:7]([CH3:6])[CH:8]2[C:9](=[O:10])[O:11][CH3:12]",
-              "count": 6
-            },
-            {
-              "value": "[CH3:1][N:2]([CH3:3])[CH:4]=[CH:5][CH:6]=[CH:7][N:8]([CH3:9])[CH3:10].[N:11]#[C:12][CH:13]=[CH:14][C:15]#[N:16]\u003e\u003e[CH3:1][N:2]([CH3:3])[CH:4]1[CH:5]=[CH:6][CH:7]([N:8]([CH3:9])[CH3:10])[CH:14]([C:15]#[N:16])[CH:13]1[C:12]#[N:11]",
-              "count": 6
-            },
-            {
-              "value": "[CH3:11][O:12][C:13](=[O:14])[C:15]([C:16]#[N:17])=[C:18]([C:19]#[N:20])[C:21](=[O:22])[O:23][CH3:24].[CH3:1][N:2]([CH3:3])[CH:4]=[CH:5][CH:6]=[CH:7][N:8]([CH3:9])[CH3:10]\u003e\u003e[CH3:1][N:2]([CH3:3])[CH:4]1[CH:5]=[CH:6][CH:7]([N:8]([CH3:9])[CH3:10])[C:18]([C:19]#[N:20])([C:21](=[O:22])[O:23][CH3:24])[C:15]1([C:13]([O:12][CH3:11])=[O:14])[C:16]#[N:17]",
-              "count": 6
-            },
-            {
-              "value": "[CH3:6][CH:7]1[CH2:8][CH2:9][CH:10]([CH:11]([CH3:12])[CH3:13])[CH:14]([O:15][C:16](=[O:17])[CH:18]=[CH:19][C:20](=[O:21])[O:22][CH:23]2[CH2:24][CH:25]([CH3:26])[CH2:27][CH2:28][CH:29]2[CH:30]([CH3:31])[CH3:32])[CH2:33]1.[CH:1]1=[CH:2][CH2:3][CH:4]=[CH:5]1\u003e\u003e[CH:1]1=[CH:5][CH:4]2[CH2:3][CH:2]1[CH:18]([C:16]([O:15][CH:14]1[CH:10]([CH:11]([CH3:12])[CH3:13])[CH2:9][CH2:8][CH:7]([CH3:6])[CH2:33]1)=[O:17])[CH:19]2[C:20](=[O:21])[O:22][CH:23]1[CH2:24][CH:25]([CH3:26])[CH2:27][CH2:28][CH:29]1[CH:30]([CH3:31])[CH3:32]",
-              "count": 6
-            }
-          ]
-        }
-      },
-      "reaction_column": "rsmi",
-      "reaction_text": "[CH2:12]=[CH:13][C:14](=[CH2:15])[CH3:16].[CH2:1]=[C:2]1[C:3](=[O:4])[CH2:5][CH2:6][CH:7]([Br:8])[C:9]1([CH3:10])[CH3:11]\u003e\u003e[CH2:1]1[C:2]2([C:3](=[O:4])[CH2:5][CH2:6][CH:7]([Br:8])[C:9]2([CH3:10])[CH3:11])[CH2:12][CH:13]=[C:14]([CH3:16])[CH2:15]1",
-      "depiction": "_static/catalog-reactions/synthesis-da.svg"
+      "null_counts": {},
+      "target_summaries": {},
+      "reaction_column": null,
+      "reaction_text": null,
+      "depiction": null
     },
     {
       "id": "synthesis/uspto_500",
@@ -4061,6 +8392,9 @@ window.SYNRXN_CATALOG = {
       "description": "Reagent and catalyst inference benchmark.",
       "benchmark_role": "Predict reagents and catalysts from patent reactions.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "lu2022unified"
       ],
@@ -4089,30 +8423,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rxn": {
           "role": "reaction",
           "description": "Reaction SMILES string.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "reagent": {
           "role": "target",
           "description": "Reagent or catalyst target.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "split": {
           "role": "partition",
-          "description": "Published train",
-          "validation": null,
-          "or test assignment.": null,
+          "description": "Upstream training, validation, or test assignment.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -4211,6 +8547,9 @@ window.SYNRXN_CATALOG = {
       "description": "USPTO-50K synthesis and retrosynthesis benchmark.",
       "benchmark_role": "Evaluate single-step synthesis and retrosynthesis methods.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "chen2024precise",
         "liu2017retrosynthetic"
@@ -4238,30 +8577,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "aam": {
           "role": "reaction",
           "description": "Atom-mapped reaction SMILES.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "split": {
           "role": "partition",
-          "description": "Published train",
-          "validation": null,
-          "or test assignment.": null,
+          "description": "Upstream training, validation, or test assignment.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "source": {
           "role": "provenance",
           "description": "Upstream source or subset marker.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -4320,6 +8661,9 @@ window.SYNRXN_CATALOG = {
       "description": "Large-scale USPTO-MIT synthesis-prediction benchmark.",
       "benchmark_role": "Evaluate synthesis and reaction-center prediction at scale.",
       "license": "CC BY 4.0",
+      "license_spdx": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "redistribution_partition": "main",
       "citations": [
         "jin2017predicting_outcomes"
       ],
@@ -4348,30 +8692,32 @@ window.SYNRXN_CATALOG = {
           "description": "Stable row identifier supplied by SynRXN.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "aam": {
           "role": "reaction",
           "description": "Atom-mapped reaction SMILES.",
           "logical_type": "string",
           "nullable": true,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "split": {
           "role": "partition",
-          "description": "Published train",
-          "validation": null,
-          "or test assignment.": null,
+          "description": "Upstream training, validation, or test assignment.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         },
         "rc": {
           "role": "target",
           "description": "Reaction-center annotation.",
           "logical_type": "string",
           "nullable": false,
-          "unit": null
+          "unit": null,
+          "quantity_kind": null
         }
       },
       "sample": [
@@ -4461,6 +8807,1654 @@ window.SYNRXN_CATALOG = {
       "reaction_column": "aam",
       "reaction_text": "[C:1]([c:3]1[cH:19][n:9][c:14]([OH:5])[cH:4][cH:21]1)(=[O:20])[N:22]([CH3:8])[O:15][CH3:7].[CH:2]([CH2:6][Mg+:10])([CH3:11])[CH3:12].[Cl-:16].[O:13]1[CH2:23][CH2:18][CH2:17][CH2:24]1\u003e\u003e[C:1]([c:3]1[cH:19][n:9][c:14]([OH:5])[cH:4][cH:21]1)([CH2:6][CH:2]([CH3:11])[CH3:12])=[O:20]",
       "depiction": "_static/catalog-reactions/synthesis-uspto_mit.svg"
+    },
+    {
+      "id": "yield/buchwald_hartwig_ood",
+      "task": "yield",
+      "name": "buchwald_hartwig_ood",
+      "title": "Buchwald-Hartwig OOD yield benchmark",
+      "description": "Curated multi-campaign Buchwald-Hartwig amination records normalized from the BH-HTE-OOD source, with out-of-range yields quarantined.",
+      "benchmark_role": "Evaluate continuous yield prediction and out-of-distribution generalization across substrates, catalysts, conditions, and contributing campaigns.",
+      "license": "Apache-2.0",
+      "license_spdx": "Apache-2.0",
+      "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "redistribution_partition": "main",
+      "citations": [
+        "neves2026bh"
+      ],
+      "targets": [
+        "yield_pct"
+      ],
+      "row_identifier": "sample_id",
+      "row_identifier_unique": true,
+      "rows": 27438,
+      "size": 3109259,
+      "sha256": "1cae5ff9010813e242f6de2dc6bd3e33342f759be79c5d88ac4f3f46dc4ec409",
+      "columns": [
+        "sample_id",
+        "dataset",
+        "source_record_id",
+        "source_index",
+        "raw_reaction_smiles",
+        "reaction_smiles",
+        "canonical_reaction_smiles",
+        "reactants",
+        "reagents",
+        "products",
+        "yield_pct",
+        "yield_measurement_type",
+        "measurement_method",
+        "temperature_c",
+        "time_hours",
+        "solvent",
+        "catalyst",
+        "base",
+        "selectivity",
+        "mass_ion_count",
+        "reaction_class",
+        "screen_id",
+        "notebook_id",
+        "upstream_split",
+        "source",
+        "citation",
+        "license_spdx",
+        "license_url",
+        "provenance",
+        "duplicate_group",
+        "chemical_split_group",
+        "conditions_json",
+        "source_metadata_json"
+      ],
+      "column_metadata": {
+        "sample_id": {
+          "role": "identifier",
+          "description": "Stable SynRXN identifier for a normalized record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "dataset": {
+          "role": "provenance",
+          "description": "Normalized SynRXN dataset name.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_record_id": {
+          "role": "source_identifier",
+          "description": "Identifier retained from the upstream record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_index": {
+          "role": "source_identifier",
+          "description": "Zero-based position of the record in the upstream table.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "raw_reaction_smiles": {
+          "role": "provenance",
+          "description": "Reaction SMILES exactly as supplied by the upstream source.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_smiles": {
+          "role": "reaction",
+          "description": "Recorded or normalized reaction SMILES with reactants, optional middle-field agents, and products.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "canonical_reaction_smiles": {
+          "role": "reaction",
+          "description": "Canonicalized reaction SMILES used for chemical grouping when canonicalization succeeds.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reactants": {
+          "role": "reaction",
+          "description": "Reactant side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reagents": {
+          "role": "target",
+          "description": "Order-invariant dot-separated set of molecules explicitly annotated or conservatively inferred as reagents.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "products": {
+          "role": "reaction",
+          "description": "Product side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "yield_pct": {
+          "role": "target",
+          "description": "Reported reaction yield on a validated 0 to 100 percent scale.",
+          "logical_type": "number",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "yield_measurement_type": {
+          "role": "provenance",
+          "description": "Upstream yield type or normalized measurement category.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "measurement_method": {
+          "role": "provenance",
+          "description": "Experimental or analytical method used to determine the yield.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "temperature_c": {
+          "role": "feature",
+          "description": "Reaction temperature in degrees Celsius when reported.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "time_hours": {
+          "role": "feature",
+          "description": "Reaction duration in hours when reported.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "solvent": {
+          "role": "feature",
+          "description": "Solvent or solvent mixture reported for the reaction.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "catalyst": {
+          "role": "feature",
+          "description": "Catalyst or catalyst system reported for the reaction.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "base": {
+          "role": "feature",
+          "description": "Base reported for the reaction.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "selectivity": {
+          "role": "target",
+          "description": "Numeric product-selectivity measurement when the upstream value is quantitative.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "mass_ion_count": {
+          "role": "feature",
+          "description": "HiTEA mass-ion count retained from the upstream analytical record.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_class": {
+          "role": "provenance",
+          "description": "Upstream reaction class or campaign label.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "screen_id": {
+          "role": "provenance",
+          "description": "Identifier of the upstream high-throughput experiment screen.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "notebook_id": {
+          "role": "provenance",
+          "description": "Identifier of the upstream experiment notebook.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "upstream_split": {
+          "role": "partition",
+          "description": "Published upstream partition label retained without treating it as a universal SynRXN split.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source": {
+          "role": "provenance",
+          "description": "Upstream source or subset marker.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "citation": {
+          "role": "provenance",
+          "description": "Upstream citation label embedded in the normalized record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "license_spdx": {
+          "role": "provenance",
+          "description": "SPDX identifier for the upstream dataset license.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "license_url": {
+          "role": "provenance",
+          "description": "URL of the upstream dataset license.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "provenance": {
+          "role": "provenance",
+          "description": "Human-readable description of the pinned upstream source snapshot.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "duplicate_group": {
+          "role": "partition",
+          "description": "Stable hash grouping records with the same normalized experiment representation.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "chemical_split_group": {
+          "role": "partition",
+          "description": "Stable hash grouping records by normalized chemical transformation independently of yield.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "conditions_json": {
+          "role": "context",
+          "description": "Compact JSON preserving structured operating conditions beyond the normalized scalar columns.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_metadata_json": {
+          "role": "provenance",
+          "description": "JSON object preserving additional upstream fields and unnormalized values.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        }
+      },
+      "sample": [
+        {
+          "sample_id": "bh_hte_ood:00000_d1bca8bd2e72",
+          "dataset": "buchwald_hartwig_ood",
+          "source_record_id": "0",
+          "source_index": "0",
+          "raw_reaction_smiles": "Brc1cccnc1.CC(N)CCc1ccccc1.CS(=O)(=O)O[Pd]1(\u003c-Nc2ccccc2-c2ccccc21)\u003c-P(c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.C1CCC2=NCCCN2CC1.CS(C)=O\u003e\u003eCC(CCc1ccccc1)Nc1cccnc1",
+          "reaction_smiles": "Brc1cccnc1.CC(N)CCc1ccccc1\u003eCS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.C1CCC2=NCCCN2CC1.CS(C)=O\u003eCC(CCc1ccccc1)Nc1cccnc1",
+          "canonical_reaction_smiles": "Brc1cccnc1.CC(N)CCc1ccccc1\u003e\u003eCC(CCc1ccccc1)Nc1cccnc1",
+          "reactants": "Brc1cccnc1.CC(N)CCc1ccccc1",
+          "reagents": "CS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.C1CCC2=NCCCN2CC1.CS(C)=O",
+          "products": "CC(CCc1ccccc1)Nc1cccnc1",
+          "yield_pct": "0",
+          "yield_measurement_type": "hte_cad_or_isolated_harmonized",
+          "measurement_method": "CAD or isolated yield; harmonized upstream",
+          "temperature_c": "",
+          "time_hours": "",
+          "solvent": "CS(C)=O",
+          "catalyst": "CS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12",
+          "base": "C1CCC2=NCCCN2CC1",
+          "selectivity": "",
+          "mass_ion_count": "",
+          "reaction_class": "Buchwald-Hartwig C-N coupling",
+          "screen_id": "",
+          "notebook_id": "",
+          "upstream_split": "",
+          "source": "Dreher 2014",
+          "citation": "10.1038/s43588-026-01017-6",
+          "license_spdx": "Apache-2.0",
+          "license_url": "https://github.com/schwallergroup/bh-hte-ood/blob/a2770413fce269b49a35fb4b2e6471f25632d2ef/LICENSE.txt",
+          "provenance": "Neves et al. Nat Comput Sci 2026; bh-hte-ood curation",
+          "duplicate_group": "experiment:475de5940e294c19e5a75b0acfcdeb828b98742953f12870f8d82f8743b13c3d",
+          "chemical_split_group": "reaction:e4c77a9c9841a070e80ecfb92f9013831ca122b9a37d761e5b5dfc650e706d32",
+          "conditions_json": "{\"base\":\"C1CCC2=NCCCN2CC1\",\"base_name\":\"DBU\",\"catalyst\":\"CS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12\",\"catalyst_name\":\"binap-pd-g3\",\"solvent\":\"CS(C)=O\",\"solvent_name\":\"DMSO\"}",
+          "source_metadata_json": "{\"upstream_labels\":\"0\"}"
+        },
+        {
+          "sample_id": "bh_hte_ood:00001_1d9cefec9f7b",
+          "dataset": "buchwald_hartwig_ood",
+          "source_record_id": "1",
+          "source_index": "1",
+          "raw_reaction_smiles": "Brc1cccnc1.CC(N)CCc1ccccc1.CS(=O)(=O)O[Pd]1(\u003c-Nc2ccccc2-c2ccccc21)\u003c-P(c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.CN1CCCN2CCCN=C12.CS(C)=O\u003e\u003eCC(CCc1ccccc1)Nc1cccnc1",
+          "reaction_smiles": "Brc1cccnc1.CC(N)CCc1ccccc1\u003eCS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.CN1CCCN2CCCN=C12.CS(C)=O\u003eCC(CCc1ccccc1)Nc1cccnc1",
+          "canonical_reaction_smiles": "Brc1cccnc1.CC(N)CCc1ccccc1\u003e\u003eCC(CCc1ccccc1)Nc1cccnc1",
+          "reactants": "Brc1cccnc1.CC(N)CCc1ccccc1",
+          "reagents": "CS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.CN1CCCN2CCCN=C12.CS(C)=O",
+          "products": "CC(CCc1ccccc1)Nc1cccnc1",
+          "yield_pct": "0",
+          "yield_measurement_type": "hte_cad_or_isolated_harmonized",
+          "measurement_method": "CAD or isolated yield; harmonized upstream",
+          "temperature_c": "",
+          "time_hours": "",
+          "solvent": "CS(C)=O",
+          "catalyst": "CS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12",
+          "base": "CN1CCCN2CCCN=C12",
+          "selectivity": "",
+          "mass_ion_count": "",
+          "reaction_class": "Buchwald-Hartwig C-N coupling",
+          "screen_id": "",
+          "notebook_id": "",
+          "upstream_split": "",
+          "source": "Dreher 2014",
+          "citation": "10.1038/s43588-026-01017-6",
+          "license_spdx": "Apache-2.0",
+          "license_url": "https://github.com/schwallergroup/bh-hte-ood/blob/a2770413fce269b49a35fb4b2e6471f25632d2ef/LICENSE.txt",
+          "provenance": "Neves et al. Nat Comput Sci 2026; bh-hte-ood curation",
+          "duplicate_group": "experiment:31c02cf213906984e971210fac5a310396e99d4b24592159131823fe75b800d8",
+          "chemical_split_group": "reaction:e4c77a9c9841a070e80ecfb92f9013831ca122b9a37d761e5b5dfc650e706d32",
+          "conditions_json": "{\"base\":\"CN1CCCN2CCCN=C12\",\"base_name\":\"MTBD\",\"catalyst\":\"CS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12\",\"catalyst_name\":\"binap-pd-g3\",\"solvent\":\"CS(C)=O\",\"solvent_name\":\"DMSO\"}",
+          "source_metadata_json": "{\"upstream_labels\":\"0\"}"
+        },
+        {
+          "sample_id": "bh_hte_ood:00002_de35c981916d",
+          "dataset": "buchwald_hartwig_ood",
+          "source_record_id": "2",
+          "source_index": "2",
+          "raw_reaction_smiles": "Brc1cccnc1.CC(N)CCc1ccccc1.CS(=O)(=O)O[Pd]1(\u003c-Nc2ccccc2-c2ccccc21)\u003c-P(c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.CN(C)C(=NC(C)(C)C)N(C)C.CS(C)=O\u003e\u003eCC(CCc1ccccc1)Nc1cccnc1",
+          "reaction_smiles": "Brc1cccnc1.CC(N)CCc1ccccc1\u003eCS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.CN(C)C(=NC(C)(C)C)N(C)C.CS(C)=O\u003eCC(CCc1ccccc1)Nc1cccnc1",
+          "canonical_reaction_smiles": "Brc1cccnc1.CC(N)CCc1ccccc1\u003e\u003eCC(CCc1ccccc1)Nc1cccnc1",
+          "reactants": "Brc1cccnc1.CC(N)CCc1ccccc1",
+          "reagents": "CS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.CN(C)C(=NC(C)(C)C)N(C)C.CS(C)=O",
+          "products": "CC(CCc1ccccc1)Nc1cccnc1",
+          "yield_pct": "0",
+          "yield_measurement_type": "hte_cad_or_isolated_harmonized",
+          "measurement_method": "CAD or isolated yield; harmonized upstream",
+          "temperature_c": "",
+          "time_hours": "",
+          "solvent": "CS(C)=O",
+          "catalyst": "CS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12",
+          "base": "CN(C)C(=NC(C)(C)C)N(C)C",
+          "selectivity": "",
+          "mass_ion_count": "",
+          "reaction_class": "Buchwald-Hartwig C-N coupling",
+          "screen_id": "",
+          "notebook_id": "",
+          "upstream_split": "",
+          "source": "Dreher 2014",
+          "citation": "10.1038/s43588-026-01017-6",
+          "license_spdx": "Apache-2.0",
+          "license_url": "https://github.com/schwallergroup/bh-hte-ood/blob/a2770413fce269b49a35fb4b2e6471f25632d2ef/LICENSE.txt",
+          "provenance": "Neves et al. Nat Comput Sci 2026; bh-hte-ood curation",
+          "duplicate_group": "experiment:59d3b7f3f235f4640b35c31685fa6856983174faf064b477ac76f5c2071164ce",
+          "chemical_split_group": "reaction:e4c77a9c9841a070e80ecfb92f9013831ca122b9a37d761e5b5dfc650e706d32",
+          "conditions_json": "{\"base\":\"CN(C)C(=NC(C)(C)C)N(C)C\",\"base_name\":\"BTMG\",\"catalyst\":\"CS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12\",\"catalyst_name\":\"binap-pd-g3\",\"solvent\":\"CS(C)=O\",\"solvent_name\":\"DMSO\"}",
+          "source_metadata_json": "{\"upstream_labels\":\"0\"}"
+        },
+        {
+          "sample_id": "bh_hte_ood:00003_29345e50df37",
+          "dataset": "buchwald_hartwig_ood",
+          "source_record_id": "3",
+          "source_index": "3",
+          "raw_reaction_smiles": "Brc1cccnc1.CC(N)CCc1ccccc1.CS(=O)(=O)O[Pd]1(\u003c-Nc2ccccc2-c2ccccc21)\u003c-P(c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.CCN(CC)P1(=NC(C)(C)C)N(C)CCCN1C.CS(C)=O\u003e\u003eCC(CCc1ccccc1)Nc1cccnc1",
+          "reaction_smiles": "Brc1cccnc1.CC(N)CCc1ccccc1\u003eCS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.CCN(CC)P1(=NC(C)(C)C)N(C)CCCN1C.CS(C)=O\u003eCC(CCc1ccccc1)Nc1cccnc1",
+          "canonical_reaction_smiles": "Brc1cccnc1.CC(N)CCc1ccccc1\u003e\u003eCC(CCc1ccccc1)Nc1cccnc1",
+          "reactants": "Brc1cccnc1.CC(N)CCc1ccccc1",
+          "reagents": "CS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.CCN(CC)P1(=NC(C)(C)C)N(C)CCCN1C.CS(C)=O",
+          "products": "CC(CCc1ccccc1)Nc1cccnc1",
+          "yield_pct": "0.13729459",
+          "yield_measurement_type": "hte_cad_or_isolated_harmonized",
+          "measurement_method": "CAD or isolated yield; harmonized upstream",
+          "temperature_c": "",
+          "time_hours": "",
+          "solvent": "CS(C)=O",
+          "catalyst": "CS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12",
+          "base": "CCN(CC)P1(=NC(C)(C)C)N(C)CCCN1C",
+          "selectivity": "",
+          "mass_ion_count": "",
+          "reaction_class": "Buchwald-Hartwig C-N coupling",
+          "screen_id": "",
+          "notebook_id": "",
+          "upstream_split": "",
+          "source": "Dreher 2014",
+          "citation": "10.1038/s43588-026-01017-6",
+          "license_spdx": "Apache-2.0",
+          "license_url": "https://github.com/schwallergroup/bh-hte-ood/blob/a2770413fce269b49a35fb4b2e6471f25632d2ef/LICENSE.txt",
+          "provenance": "Neves et al. Nat Comput Sci 2026; bh-hte-ood curation",
+          "duplicate_group": "experiment:9fedca7388a06d89b5e80a9ddb6f6b37f28e5b7d2144fb9c144f19f7b0c9bf57",
+          "chemical_split_group": "reaction:e4c77a9c9841a070e80ecfb92f9013831ca122b9a37d761e5b5dfc650e706d32",
+          "conditions_json": "{\"base\":\"CCN(CC)P1(=NC(C)(C)C)N(C)CCCN1C\",\"base_name\":\"BEMP\",\"catalyst\":\"CS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12\",\"catalyst_name\":\"binap-pd-g3\",\"solvent\":\"CS(C)=O\",\"solvent_name\":\"DMSO\"}",
+          "source_metadata_json": "{\"upstream_labels\":\"0\"}"
+        },
+        {
+          "sample_id": "bh_hte_ood:00004_72320feb28c1",
+          "dataset": "buchwald_hartwig_ood",
+          "source_record_id": "4",
+          "source_index": "4",
+          "raw_reaction_smiles": "Brc1cccnc1.CC(N)CCc1ccccc1.CS(=O)(=O)O[Pd]1(\u003c-Nc2ccccc2-c2ccccc21)\u003c-P(c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.CC(C)(C)N=P(N1CCCC1)(N1CCCC1)N1CCCC1.CS(C)=O\u003e\u003eCC(CCc1ccccc1)Nc1cccnc1",
+          "reaction_smiles": "Brc1cccnc1.CC(N)CCc1ccccc1\u003eCS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.CC(C)(C)N=P(N1CCCC1)(N1CCCC1)N1CCCC1.CS(C)=O\u003eCC(CCc1ccccc1)Nc1cccnc1",
+          "canonical_reaction_smiles": "Brc1cccnc1.CC(N)CCc1ccccc1\u003e\u003eCC(CCc1ccccc1)Nc1cccnc1",
+          "reactants": "Brc1cccnc1.CC(N)CCc1ccccc1",
+          "reagents": "CS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.CC(C)(C)N=P(N1CCCC1)(N1CCCC1)N1CCCC1.CS(C)=O",
+          "products": "CC(CCc1ccccc1)Nc1cccnc1",
+          "yield_pct": "0",
+          "yield_measurement_type": "hte_cad_or_isolated_harmonized",
+          "measurement_method": "CAD or isolated yield; harmonized upstream",
+          "temperature_c": "",
+          "time_hours": "",
+          "solvent": "CS(C)=O",
+          "catalyst": "CS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12",
+          "base": "CC(C)(C)N=P(N1CCCC1)(N1CCCC1)N1CCCC1",
+          "selectivity": "",
+          "mass_ion_count": "",
+          "reaction_class": "Buchwald-Hartwig C-N coupling",
+          "screen_id": "",
+          "notebook_id": "",
+          "upstream_split": "",
+          "source": "Dreher 2014",
+          "citation": "10.1038/s43588-026-01017-6",
+          "license_spdx": "Apache-2.0",
+          "license_url": "https://github.com/schwallergroup/bh-hte-ood/blob/a2770413fce269b49a35fb4b2e6471f25632d2ef/LICENSE.txt",
+          "provenance": "Neves et al. Nat Comput Sci 2026; bh-hte-ood curation",
+          "duplicate_group": "experiment:44aa541019e4923fab3fe69f0071c5b32ecb99cc2f5cfe696b3b54aea283fe58",
+          "chemical_split_group": "reaction:e4c77a9c9841a070e80ecfb92f9013831ca122b9a37d761e5b5dfc650e706d32",
+          "conditions_json": "{\"base\":\"CC(C)(C)N=P(N1CCCC1)(N1CCCC1)N1CCCC1\",\"base_name\":\"BTTP\",\"catalyst\":\"CS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12\",\"catalyst_name\":\"binap-pd-g3\",\"solvent\":\"CS(C)=O\",\"solvent_name\":\"DMSO\"}",
+          "source_metadata_json": "{\"upstream_labels\":\"0\"}"
+        }
+      ],
+      "split_counts": {},
+      "null_counts": {
+        "sample_id": 0,
+        "dataset": 0,
+        "source_record_id": 0,
+        "source_index": 0,
+        "raw_reaction_smiles": 0,
+        "reaction_smiles": 0,
+        "canonical_reaction_smiles": 0,
+        "reactants": 0,
+        "reagents": 0,
+        "products": 0,
+        "yield_pct": 0,
+        "yield_measurement_type": 0,
+        "measurement_method": 0,
+        "temperature_c": 27438,
+        "time_hours": 27438,
+        "solvent": 0,
+        "catalyst": 0,
+        "base": 0,
+        "selectivity": 27438,
+        "mass_ion_count": 27438,
+        "reaction_class": 0,
+        "screen_id": 27438,
+        "notebook_id": 27438,
+        "upstream_split": 27438,
+        "source": 0,
+        "citation": 0,
+        "license_spdx": 0,
+        "license_url": 0,
+        "provenance": 0,
+        "duplicate_group": 0,
+        "chemical_split_group": 0,
+        "conditions_json": 0,
+        "source_metadata_json": 0
+      },
+      "target_summaries": {
+        "yield_pct": {
+          "kind": "numeric",
+          "count": 27438,
+          "min": 0.0,
+          "max": 100.0,
+          "mean": 20.37814088351345
+        }
+      },
+      "reaction_column": "reaction_smiles",
+      "reaction_text": "Brc1cccnc1.CC(N)CCc1ccccc1\u003eCS(=O)(=O)[O][Pd]1(\u003c-[NH2]c2ccccc2-c2cccc[c]21)\u003c-[P](c1ccccc1)(c1ccccc1)c1ccc2ccccc2c1-c1c(P(c2ccccc2)c2ccccc2)ccc2ccccc12.C1CCC2=NCCCN2CC1.CS(C)=O\u003eCC(CCc1ccccc1)Nc1cccnc1",
+      "depiction": "_static/catalog-reactions/yield-buchwald_hartwig_ood.svg"
+    },
+    {
+      "id": "yield/hitea",
+      "task": "yield",
+      "name": "hitea",
+      "title": "HiTEA reaction yield benchmark",
+      "description": "High-throughput experimentation records from the public HiTEA chemical reactome table with atom maps removed and analytical metadata retained.",
+      "benchmark_role": "Evaluate yield prediction on diverse high-throughput reaction classes with structured experimental context and abundant zero-yield observations.",
+      "license": "MIT",
+      "license_spdx": "MIT",
+      "license_url": "https://spdx.org/licenses/MIT.html",
+      "redistribution_partition": "main",
+      "citations": [
+        "kingsmith2024reactome"
+      ],
+      "targets": [
+        "yield_pct"
+      ],
+      "row_identifier": "sample_id",
+      "row_identifier_unique": true,
+      "rows": 39546,
+      "size": 2929498,
+      "sha256": "f0e0d0db9f37643bcebb5c9b6a29a9a6a950f7e92c05fc4541a07d9ca3d1d0e9",
+      "columns": [
+        "sample_id",
+        "dataset",
+        "source_record_id",
+        "source_index",
+        "raw_reaction_smiles",
+        "reaction_smiles",
+        "canonical_reaction_smiles",
+        "reactants",
+        "reagents",
+        "products",
+        "yield_pct",
+        "yield_measurement_type",
+        "measurement_method",
+        "temperature_c",
+        "time_hours",
+        "solvent",
+        "catalyst",
+        "base",
+        "selectivity",
+        "mass_ion_count",
+        "reaction_class",
+        "screen_id",
+        "notebook_id",
+        "upstream_split",
+        "source",
+        "citation",
+        "license_spdx",
+        "license_url",
+        "provenance",
+        "duplicate_group",
+        "chemical_split_group",
+        "conditions_json",
+        "source_metadata_json"
+      ],
+      "column_metadata": {
+        "sample_id": {
+          "role": "identifier",
+          "description": "Stable SynRXN identifier for a normalized record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "dataset": {
+          "role": "provenance",
+          "description": "Normalized SynRXN dataset name.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_record_id": {
+          "role": "source_identifier",
+          "description": "Identifier retained from the upstream record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_index": {
+          "role": "source_identifier",
+          "description": "Zero-based position of the record in the upstream table.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "raw_reaction_smiles": {
+          "role": "provenance",
+          "description": "Reaction SMILES exactly as supplied by the upstream source.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_smiles": {
+          "role": "reaction",
+          "description": "Recorded or normalized reaction SMILES with reactants, optional middle-field agents, and products.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "canonical_reaction_smiles": {
+          "role": "reaction",
+          "description": "Canonicalized reaction SMILES used for chemical grouping when canonicalization succeeds.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reactants": {
+          "role": "reaction",
+          "description": "Reactant side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reagents": {
+          "role": "target",
+          "description": "Order-invariant dot-separated set of molecules explicitly annotated or conservatively inferred as reagents.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "products": {
+          "role": "reaction",
+          "description": "Product side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "yield_pct": {
+          "role": "target",
+          "description": "Reported reaction yield on a validated 0 to 100 percent scale.",
+          "logical_type": "number",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "yield_measurement_type": {
+          "role": "provenance",
+          "description": "Upstream yield type or normalized measurement category.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "measurement_method": {
+          "role": "provenance",
+          "description": "Experimental or analytical method used to determine the yield.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "temperature_c": {
+          "role": "feature",
+          "description": "Reaction temperature in degrees Celsius when reported.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "time_hours": {
+          "role": "feature",
+          "description": "Reaction duration in hours when reported.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "solvent": {
+          "role": "feature",
+          "description": "Solvent or solvent mixture reported for the reaction.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "catalyst": {
+          "role": "feature",
+          "description": "Catalyst or catalyst system reported for the reaction.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "base": {
+          "role": "feature",
+          "description": "Base reported for the reaction.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "selectivity": {
+          "role": "target",
+          "description": "Numeric product-selectivity measurement when the upstream value is quantitative.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "mass_ion_count": {
+          "role": "feature",
+          "description": "HiTEA mass-ion count retained from the upstream analytical record.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_class": {
+          "role": "provenance",
+          "description": "Upstream reaction class or campaign label.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "screen_id": {
+          "role": "provenance",
+          "description": "Identifier of the upstream high-throughput experiment screen.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "notebook_id": {
+          "role": "provenance",
+          "description": "Identifier of the upstream experiment notebook.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "upstream_split": {
+          "role": "partition",
+          "description": "Published upstream partition label retained without treating it as a universal SynRXN split.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source": {
+          "role": "provenance",
+          "description": "Upstream source or subset marker.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "citation": {
+          "role": "provenance",
+          "description": "Upstream citation label embedded in the normalized record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "license_spdx": {
+          "role": "provenance",
+          "description": "SPDX identifier for the upstream dataset license.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "license_url": {
+          "role": "provenance",
+          "description": "URL of the upstream dataset license.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "provenance": {
+          "role": "provenance",
+          "description": "Human-readable description of the pinned upstream source snapshot.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "duplicate_group": {
+          "role": "partition",
+          "description": "Stable hash grouping records with the same normalized experiment representation.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "chemical_split_group": {
+          "role": "partition",
+          "description": "Stable hash grouping records by normalized chemical transformation independently of yield.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "conditions_json": {
+          "role": "context",
+          "description": "Compact JSON preserving structured operating conditions beyond the normalized scalar columns.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_metadata_json": {
+          "role": "provenance",
+          "description": "JSON object preserving additional upstream fields and unnormalized values.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        }
+      },
+      "sample": [
+        {
+          "sample_id": "hitea:RKB-04072174",
+          "dataset": "hitea",
+          "source_record_id": "RKB-04072174",
+          "source_index": "15408",
+          "raw_reaction_smiles": "[F:1][c:2]1[c:11]([c:7]2[cH:6][c:4]([Br:5])[cH:3]1)[nH:10][n:9][cH:8]2.[CH3:12]OS(OC)(=O)=O\u003e\u003e[CH3:12][n:10]1[c:11]([c:7]2[cH:8][n:9]1)[c:2]([F:1])[cH:3][c:4]([Br:5])[cH:6]2",
+          "reaction_smiles": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12\u003e\u003eCn1ncc2cc(Br)cc(F)c21",
+          "canonical_reaction_smiles": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12\u003e\u003eCn1ncc2cc(Br)cc(F)c21",
+          "reactants": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12",
+          "reagents": "PMP",
+          "products": "Cn1ncc2cc(Br)cc(F)c21",
+          "yield_pct": "20",
+          "yield_measurement_type": "uv_area_assay",
+          "measurement_method": "Product_Yield_PCT_Area_UV",
+          "temperature_c": "25",
+          "time_hours": "18",
+          "solvent": "MeCN",
+          "catalyst": "",
+          "base": "",
+          "selectivity": "18.21035672",
+          "mass_ion_count": "547137.877",
+          "reaction_class": "Alkylation",
+          "screen_id": "SCRN_11",
+          "notebook_id": "00119131-2953",
+          "upstream_split": "",
+          "source": "HiTEA",
+          "citation": "HiTEA repository release",
+          "license_spdx": "MIT",
+          "license_url": "https://github.com/emmaking-smith/HiTEA/blob/ccc8cce274e70429498be829dd3bc57754f62265/LICENSE",
+          "provenance": "HiTEA 8_SEPT_APPROVED_full_dataset.csv",
+          "duplicate_group": "experiment:63e15420ef0a1f2e5cdee0ec8926c221b13d9cc3525a5659a9f8b3141373c31f",
+          "chemical_split_group": "reaction:70a1f2b8258eda6ccfa7fbd6a4eac3e7c95a57547115b3c24aa1bcf2c48969a3",
+          "conditions_json": "{\"reagent_1\":\"PMP\",\"solvent\":\"MeCN\",\"temperature_c\":\"25.0\",\"time_hours\":\"18.0\"}",
+          "source_metadata_json": "{\"keyword\":\"ALKYLATION\",\"product_id\":\"PF-07225965\",\"reaction_group\":\"Lewis Acid Base Screening\",\"selectivity_raw\":\"18.21035672\",\"uv_wavelength_nm\":\"280.0\"}"
+        },
+        {
+          "sample_id": "hitea:RKB-04072175",
+          "dataset": "hitea",
+          "source_record_id": "RKB-04072175",
+          "source_index": "16887",
+          "raw_reaction_smiles": "[F:1][c:2]1[c:11]([c:7]2[cH:6][c:4]([Br:5])[cH:3]1)[nH:10][n:9][cH:8]2.[CH3:12]OS(OC)(=O)=O\u003e\u003e[CH3:12][n:10]1[c:11]([c:7]2[cH:8][n:9]1)[c:2]([F:1])[cH:3][c:4]([Br:5])[cH:6]2",
+          "reaction_smiles": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12\u003e\u003eCn1ncc2cc(Br)cc(F)c21",
+          "canonical_reaction_smiles": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12\u003e\u003eCn1ncc2cc(Br)cc(F)c21",
+          "reactants": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12",
+          "reagents": "PS",
+          "products": "Cn1ncc2cc(Br)cc(F)c21",
+          "yield_pct": "19",
+          "yield_measurement_type": "uv_area_assay",
+          "measurement_method": "Product_Yield_PCT_Area_UV",
+          "temperature_c": "25",
+          "time_hours": "18",
+          "solvent": "MeCN",
+          "catalyst": "",
+          "base": "",
+          "selectivity": "17.47569803",
+          "mass_ion_count": "810670.4238",
+          "reaction_class": "Alkylation",
+          "screen_id": "SCRN_11",
+          "notebook_id": "00119131-2953",
+          "upstream_split": "",
+          "source": "HiTEA",
+          "citation": "HiTEA repository release",
+          "license_spdx": "MIT",
+          "license_url": "https://github.com/emmaking-smith/HiTEA/blob/ccc8cce274e70429498be829dd3bc57754f62265/LICENSE",
+          "provenance": "HiTEA 8_SEPT_APPROVED_full_dataset.csv",
+          "duplicate_group": "experiment:5c5436f5319e057137c6ef34e335de4241add569e3bb994682223eec1f50a6de",
+          "chemical_split_group": "reaction:70a1f2b8258eda6ccfa7fbd6a4eac3e7c95a57547115b3c24aa1bcf2c48969a3",
+          "conditions_json": "{\"reagent_1\":\"PS\",\"solvent\":\"MeCN\",\"temperature_c\":\"25.0\",\"time_hours\":\"18.0\"}",
+          "source_metadata_json": "{\"keyword\":\"ALKYLATION\",\"product_id\":\"PF-07225965\",\"reaction_group\":\"Lewis Acid Base Screening\",\"selectivity_raw\":\"17.47569803\",\"uv_wavelength_nm\":\"280.0\"}"
+        },
+        {
+          "sample_id": "hitea:RKB-04072176",
+          "dataset": "hitea",
+          "source_record_id": "RKB-04072176",
+          "source_index": "16888",
+          "raw_reaction_smiles": "[CH3:1]OS(OC)(=O)=O.[F:2][c:3]1[c:12]([c:8]2[cH:7][c:5]([Br:6])[cH:4]1)[nH:11][n:10][cH:9]2\u003e\u003e[CH3:1][n:11]1[c:12]([c:8]2[cH:9][n:10]1)[c:3]([F:2])[cH:4][c:5]([Br:6])[cH:7]2",
+          "reaction_smiles": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12\u003e\u003eCn1ncc2cc(Br)cc(F)c21",
+          "canonical_reaction_smiles": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12\u003e\u003eCn1ncc2cc(Br)cc(F)c21",
+          "reactants": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12",
+          "reagents": "K2CO3(aq.)",
+          "products": "Cn1ncc2cc(Br)cc(F)c21",
+          "yield_pct": "19",
+          "yield_measurement_type": "uv_area_assay",
+          "measurement_method": "Product_Yield_PCT_Area_UV",
+          "temperature_c": "25",
+          "time_hours": "18",
+          "solvent": "tAmOH",
+          "catalyst": "",
+          "base": "",
+          "selectivity": "19.3656096",
+          "mass_ion_count": "48737.92749",
+          "reaction_class": "Alkylation",
+          "screen_id": "SCRN_11",
+          "notebook_id": "00119131-2953",
+          "upstream_split": "",
+          "source": "HiTEA",
+          "citation": "HiTEA repository release",
+          "license_spdx": "MIT",
+          "license_url": "https://github.com/emmaking-smith/HiTEA/blob/ccc8cce274e70429498be829dd3bc57754f62265/LICENSE",
+          "provenance": "HiTEA 8_SEPT_APPROVED_full_dataset.csv",
+          "duplicate_group": "experiment:0dcb85b3121a4beedf3536b05eefafe0a111a8b470244c1da2d033b168a5c080",
+          "chemical_split_group": "reaction:70a1f2b8258eda6ccfa7fbd6a4eac3e7c95a57547115b3c24aa1bcf2c48969a3",
+          "conditions_json": "{\"reagent_1\":\"K2CO3(aq.)\",\"solvent\":\"tAmOH\",\"temperature_c\":\"25.0\",\"time_hours\":\"18.0\"}",
+          "source_metadata_json": "{\"keyword\":\"ALKYLATION\",\"product_id\":\"PF-07225965\",\"reaction_group\":\"Lewis Acid Base Screening\",\"selectivity_raw\":\"19.3656096\",\"uv_wavelength_nm\":\"280.0\"}"
+        },
+        {
+          "sample_id": "hitea:RKB-04072177",
+          "dataset": "hitea",
+          "source_record_id": "RKB-04072177",
+          "source_index": "16889",
+          "raw_reaction_smiles": "[F:1][c:2]1[c:11]([c:7]2[cH:6][c:4]([Br:5])[cH:3]1)[nH:10][n:9][cH:8]2.[CH3:12]OS(OC)(=O)=O\u003e\u003e[CH3:12][n:10]1[c:11]([c:7]2[cH:8][n:9]1)[c:2]([F:1])[cH:3][c:4]([Br:5])[cH:6]2",
+          "reaction_smiles": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12\u003e\u003eCn1ncc2cc(Br)cc(F)c21",
+          "canonical_reaction_smiles": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12\u003e\u003eCn1ncc2cc(Br)cc(F)c21",
+          "reactants": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12",
+          "reagents": "CsOPiv",
+          "products": "Cn1ncc2cc(Br)cc(F)c21",
+          "yield_pct": "19",
+          "yield_measurement_type": "uv_area_assay",
+          "measurement_method": "Product_Yield_PCT_Area_UV",
+          "temperature_c": "25",
+          "time_hours": "18",
+          "solvent": "MeCN",
+          "catalyst": "",
+          "base": "",
+          "selectivity": "9.895099927",
+          "mass_ion_count": "596770.291",
+          "reaction_class": "Alkylation",
+          "screen_id": "SCRN_11",
+          "notebook_id": "00119131-2953",
+          "upstream_split": "",
+          "source": "HiTEA",
+          "citation": "HiTEA repository release",
+          "license_spdx": "MIT",
+          "license_url": "https://github.com/emmaking-smith/HiTEA/blob/ccc8cce274e70429498be829dd3bc57754f62265/LICENSE",
+          "provenance": "HiTEA 8_SEPT_APPROVED_full_dataset.csv",
+          "duplicate_group": "experiment:6625aa24c3f831341e78b64740ce0def53ac0d128547b907f5cbf2b9d9d51f97",
+          "chemical_split_group": "reaction:70a1f2b8258eda6ccfa7fbd6a4eac3e7c95a57547115b3c24aa1bcf2c48969a3",
+          "conditions_json": "{\"reagent_1\":\"CsOPiv\",\"solvent\":\"MeCN\",\"temperature_c\":\"25.0\",\"time_hours\":\"18.0\"}",
+          "source_metadata_json": "{\"keyword\":\"ALKYLATION\",\"product_id\":\"PF-07225965\",\"reaction_group\":\"Lewis Acid Base Screening\",\"selectivity_raw\":\"9.895099927\",\"uv_wavelength_nm\":\"280.0\"}"
+        },
+        {
+          "sample_id": "hitea:RKB-04072178",
+          "dataset": "hitea",
+          "source_record_id": "RKB-04072178",
+          "source_index": "17100",
+          "raw_reaction_smiles": "[F:1][c:2]1[c:11]([c:7]2[cH:6][c:4]([Br:5])[cH:3]1)[nH:10][n:9][cH:8]2.[CH3:12]OS(OC)(=O)=O\u003e\u003e[CH3:12][n:10]1[c:11]([c:7]2[cH:8][n:9]1)[c:2]([F:1])[cH:3][c:4]([Br:5])[cH:6]2",
+          "reaction_smiles": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12\u003e\u003eCn1ncc2cc(Br)cc(F)c21",
+          "canonical_reaction_smiles": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12\u003e\u003eCn1ncc2cc(Br)cc(F)c21",
+          "reactants": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12",
+          "reagents": "Na3PO4",
+          "products": "Cn1ncc2cc(Br)cc(F)c21",
+          "yield_pct": "18",
+          "yield_measurement_type": "uv_area_assay",
+          "measurement_method": "Product_Yield_PCT_Area_UV",
+          "temperature_c": "25",
+          "time_hours": "18",
+          "solvent": "Toluene",
+          "catalyst": "",
+          "base": "",
+          "selectivity": "34.52513893",
+          "mass_ion_count": "18128.25781",
+          "reaction_class": "Alkylation",
+          "screen_id": "SCRN_11",
+          "notebook_id": "00119131-2953",
+          "upstream_split": "",
+          "source": "HiTEA",
+          "citation": "HiTEA repository release",
+          "license_spdx": "MIT",
+          "license_url": "https://github.com/emmaking-smith/HiTEA/blob/ccc8cce274e70429498be829dd3bc57754f62265/LICENSE",
+          "provenance": "HiTEA 8_SEPT_APPROVED_full_dataset.csv",
+          "duplicate_group": "experiment:bc59b3f65eb2dff96ef7a9adf02887d217b7f6a3139287b12d98ef41cfcd5fd4",
+          "chemical_split_group": "reaction:70a1f2b8258eda6ccfa7fbd6a4eac3e7c95a57547115b3c24aa1bcf2c48969a3",
+          "conditions_json": "{\"reagent_1\":\"Na3PO4\",\"solvent\":\"Toluene\",\"temperature_c\":\"25.0\",\"time_hours\":\"18.0\"}",
+          "source_metadata_json": "{\"keyword\":\"ALKYLATION\",\"product_id\":\"PF-07225965\",\"reaction_group\":\"Lewis Acid Base Screening\",\"selectivity_raw\":\"34.52513893\",\"uv_wavelength_nm\":\"280.0\"}"
+        }
+      ],
+      "split_counts": {},
+      "null_counts": {
+        "sample_id": 0,
+        "dataset": 0,
+        "source_record_id": 0,
+        "source_index": 0,
+        "raw_reaction_smiles": 0,
+        "reaction_smiles": 0,
+        "canonical_reaction_smiles": 0,
+        "reactants": 192,
+        "reagents": 7439,
+        "products": 0,
+        "yield_pct": 0,
+        "yield_measurement_type": 0,
+        "measurement_method": 0,
+        "temperature_c": 711,
+        "time_hours": 1738,
+        "solvent": 326,
+        "catalyst": 24618,
+        "base": 39546,
+        "selectivity": 28154,
+        "mass_ion_count": 219,
+        "reaction_class": 0,
+        "screen_id": 0,
+        "notebook_id": 0,
+        "upstream_split": 39546,
+        "source": 0,
+        "citation": 0,
+        "license_spdx": 0,
+        "license_url": 0,
+        "provenance": 0,
+        "duplicate_group": 0,
+        "chemical_split_group": 0,
+        "conditions_json": 0,
+        "source_metadata_json": 0
+      },
+      "target_summaries": {
+        "yield_pct": {
+          "kind": "numeric",
+          "count": 39546,
+          "min": 0.0,
+          "max": 100.0,
+          "mean": 12.514894047438426
+        }
+      },
+      "reaction_column": "reaction_smiles",
+      "reaction_text": "COS(=O)(=O)OC.Fc1cc(Br)cc2cn[nH]c12\u003e\u003eCn1ncc2cc(Br)cc(F)c21",
+      "depiction": "_static/catalog-reactions/yield-hitea.svg"
+    },
+    {
+      "id": "yield/uspto_yield",
+      "task": "yield",
+      "name": "uspto_yield",
+      "title": "USPTO patent yield benchmark",
+      "description": "Lowe USPTO patent reactions curated into numerical-yield train, validation, and test partitions by Schwaller and co-workers.",
+      "benchmark_role": "Train and evaluate large-scale continuous yield prediction while retaining the published upstream partitions.",
+      "license": "MIT",
+      "license_spdx": "MIT",
+      "license_url": "https://spdx.org/licenses/MIT.html",
+      "redistribution_partition": "main",
+      "citations": [
+        "minidis2021uspto_yield",
+        "lowe2017uspto"
+      ],
+      "targets": [
+        "yield_pct"
+      ],
+      "row_identifier": "sample_id",
+      "row_identifier_unique": true,
+      "rows": 526468,
+      "size": 114345878,
+      "sha256": "a95706078ebba47315a91f853f27a3a3494e344b8ce782d53df0a5e5d5aa6f5b",
+      "columns": [
+        "sample_id",
+        "dataset",
+        "source_record_id",
+        "source_index",
+        "raw_reaction_smiles",
+        "reaction_smiles",
+        "canonical_reaction_smiles",
+        "reactants",
+        "reagents",
+        "products",
+        "yield_pct",
+        "yield_measurement_type",
+        "measurement_method",
+        "temperature_c",
+        "time_hours",
+        "solvent",
+        "catalyst",
+        "base",
+        "selectivity",
+        "mass_ion_count",
+        "reaction_class",
+        "screen_id",
+        "notebook_id",
+        "upstream_split",
+        "source",
+        "citation",
+        "license_spdx",
+        "license_url",
+        "provenance",
+        "duplicate_group",
+        "chemical_split_group",
+        "conditions_json",
+        "source_metadata_json"
+      ],
+      "column_metadata": {
+        "sample_id": {
+          "role": "identifier",
+          "description": "Stable SynRXN identifier for a normalized record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "dataset": {
+          "role": "provenance",
+          "description": "Normalized SynRXN dataset name.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_record_id": {
+          "role": "source_identifier",
+          "description": "Identifier retained from the upstream record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_index": {
+          "role": "source_identifier",
+          "description": "Zero-based position of the record in the upstream table.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "raw_reaction_smiles": {
+          "role": "provenance",
+          "description": "Reaction SMILES exactly as supplied by the upstream source.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_smiles": {
+          "role": "reaction",
+          "description": "Recorded or normalized reaction SMILES with reactants, optional middle-field agents, and products.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "canonical_reaction_smiles": {
+          "role": "reaction",
+          "description": "Canonicalized reaction SMILES used for chemical grouping when canonicalization succeeds.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reactants": {
+          "role": "reaction",
+          "description": "Reactant side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reagents": {
+          "role": "target",
+          "description": "Order-invariant dot-separated set of molecules explicitly annotated or conservatively inferred as reagents.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "products": {
+          "role": "reaction",
+          "description": "Product side of the normalized reaction SMILES.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "yield_pct": {
+          "role": "target",
+          "description": "Reported reaction yield on a validated 0 to 100 percent scale.",
+          "logical_type": "number",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "yield_measurement_type": {
+          "role": "provenance",
+          "description": "Upstream yield type or normalized measurement category.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "measurement_method": {
+          "role": "provenance",
+          "description": "Experimental or analytical method used to determine the yield.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "temperature_c": {
+          "role": "feature",
+          "description": "Reaction temperature in degrees Celsius when reported.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "time_hours": {
+          "role": "feature",
+          "description": "Reaction duration in hours when reported.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "solvent": {
+          "role": "feature",
+          "description": "Solvent or solvent mixture reported for the reaction.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "catalyst": {
+          "role": "feature",
+          "description": "Catalyst or catalyst system reported for the reaction.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "base": {
+          "role": "feature",
+          "description": "Base reported for the reaction.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "selectivity": {
+          "role": "target",
+          "description": "Numeric product-selectivity measurement when the upstream value is quantitative.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "mass_ion_count": {
+          "role": "feature",
+          "description": "HiTEA mass-ion count retained from the upstream analytical record.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "reaction_class": {
+          "role": "provenance",
+          "description": "Upstream reaction class or campaign label.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "screen_id": {
+          "role": "provenance",
+          "description": "Identifier of the upstream high-throughput experiment screen.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "notebook_id": {
+          "role": "provenance",
+          "description": "Identifier of the upstream experiment notebook.",
+          "logical_type": "string",
+          "nullable": true,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "upstream_split": {
+          "role": "partition",
+          "description": "Published upstream partition label retained without treating it as a universal SynRXN split.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source": {
+          "role": "provenance",
+          "description": "Upstream source or subset marker.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "citation": {
+          "role": "provenance",
+          "description": "Upstream citation label embedded in the normalized record.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "license_spdx": {
+          "role": "provenance",
+          "description": "SPDX identifier for the upstream dataset license.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "license_url": {
+          "role": "provenance",
+          "description": "URL of the upstream dataset license.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "provenance": {
+          "role": "provenance",
+          "description": "Human-readable description of the pinned upstream source snapshot.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "duplicate_group": {
+          "role": "partition",
+          "description": "Stable hash grouping records with the same normalized experiment representation.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "chemical_split_group": {
+          "role": "partition",
+          "description": "Stable hash grouping records by normalized chemical transformation independently of yield.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "conditions_json": {
+          "role": "context",
+          "description": "Compact JSON preserving structured operating conditions beyond the normalized scalar columns.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        },
+        "source_metadata_json": {
+          "role": "provenance",
+          "description": "JSON object preserving additional upstream fields and unnormalized values.",
+          "logical_type": "string",
+          "nullable": false,
+          "unit": null,
+          "quantity_kind": null
+        }
+      },
+      "sample": [
+        {
+          "sample_id": "uspto_yield:test:ID00000002",
+          "dataset": "uspto_yield",
+          "source_record_id": "ID00000002",
+          "source_index": "2",
+          "raw_reaction_smiles": "[C:1]([NH:5][NH:6][C:7]([C:12]#[N:13])([CH:9]1[CH2:11][CH2:10]1)[CH3:8])([CH3:4])([CH3:3])[CH3:2].[C:14]1(=O)CCCCC[CH2:15]1.C1(C(C)=O)CC1\u003e\u003e[C:1]([NH:5][NH:6][C:7]1([C:12]#[N:13])[CH2:8][CH2:15][CH2:14][CH2:10][CH2:11][CH2:9]1)([CH3:2])([CH3:3])[CH3:4]",
+          "reaction_smiles": "CC(C)(C)NNC(C)(C#N)C1CC1.O=C1CCCCCC1\u003eCC(=O)C1CC1\u003eCC(C)(C)NNC1(C#N)CCCCCC1",
+          "canonical_reaction_smiles": "CC(C)(C)NNC(C)(C#N)C1CC1.O=C1CCCCCC1\u003eCC(=O)C1CC1\u003eCC(C)(C)NNC1(C#N)CCCCCC1",
+          "reactants": "CC(C)(C)NNC(C)(C#N)C1CC1.O=C1CCCCCC1",
+          "reagents": "CC(=O)C1CC1",
+          "products": "CC(C)(C)NNC1(C#N)CCCCCC1",
+          "yield_pct": "95",
+          "yield_measurement_type": "patent_reported_curated",
+          "measurement_method": "text-mined yield curated by Minidis",
+          "temperature_c": "",
+          "time_hours": "",
+          "solvent": "",
+          "catalyst": "",
+          "base": "",
+          "selectivity": "",
+          "mass_ion_count": "",
+          "reaction_class": "",
+          "screen_id": "",
+          "notebook_id": "",
+          "upstream_split": "test",
+          "source": "USPTO 1976-Sep2016",
+          "citation": "10.6084/m9.figshare.14414039.v1",
+          "license_spdx": "MIT",
+          "license_url": "https://opensource.org/license/mit",
+          "provenance": "Minidis yield curation of the Schwaller/Lowe USPTO reaction corpus",
+          "duplicate_group": "reaction:e0eadebda09a8232c052e964acfe924d586eef45562a52d0afcdf72f5f5cd086",
+          "chemical_split_group": "reaction:ff5381835685f9ab52beed23e505b80fdcba0bbadb6560b53be5b9be52c67030",
+          "conditions_json": "{}",
+          "source_metadata_json": "{}"
+        },
+        {
+          "sample_id": "uspto_yield:test:ID00000007",
+          "dataset": "uspto_yield",
+          "source_record_id": "ID00000007",
+          "source_index": "7",
+          "raw_reaction_smiles": "[O:1]1[CH2:18][CH:2]1[CH2:3][O:4][C:5]1[CH:10]=[CH:9][C:8]([C:11]2[CH2:12][CH2:13][C:14](=[O:17])[NH:15][N:16]=2)=[CH:7][CH:6]=1.[CH:19]([NH2:22])([CH3:21])[CH3:20]\u003eCO\u003e[OH:1][CH:2]([CH2:18][NH:22][CH:19]([CH3:21])[CH3:20])[CH2:3][O:4][C:5]1[CH:10]=[CH:9][C:8]([C:11]2[CH2:12][CH2:13][C:14](=[O:17])[NH:15][N:16]=2)=[CH:…",
+          "reaction_smiles": "CC(C)N.O=C1CCC(c2ccc(OCC3CO3)cc2)=NN1\u003eCO\u003eCC(C)NCC(O)COc1ccc(C2=NNC(=O)CC2)cc1",
+          "canonical_reaction_smiles": "CC(C)N.O=C1CCC(c2ccc(OCC3CO3)cc2)=NN1\u003eCO\u003eCC(C)NCC(O)COc1ccc(C2=NNC(=O)CC2)cc1",
+          "reactants": "CC(C)N.O=C1CCC(c2ccc(OCC3CO3)cc2)=NN1",
+          "reagents": "CO",
+          "products": "CC(C)NCC(O)COc1ccc(C2=NNC(=O)CC2)cc1",
+          "yield_pct": "100",
+          "yield_measurement_type": "patent_reported_curated",
+          "measurement_method": "text-mined yield curated by Minidis",
+          "temperature_c": "",
+          "time_hours": "",
+          "solvent": "",
+          "catalyst": "",
+          "base": "",
+          "selectivity": "",
+          "mass_ion_count": "",
+          "reaction_class": "",
+          "screen_id": "",
+          "notebook_id": "",
+          "upstream_split": "test",
+          "source": "USPTO 1976-Sep2016",
+          "citation": "10.6084/m9.figshare.14414039.v1",
+          "license_spdx": "MIT",
+          "license_url": "https://opensource.org/license/mit",
+          "provenance": "Minidis yield curation of the Schwaller/Lowe USPTO reaction corpus",
+          "duplicate_group": "reaction:c8f96f74854c7d70d566be3bd0f237b82cc5c0ad33af6fbc7db1989e4c0fbc09",
+          "chemical_split_group": "reaction:127d97526d469b2cd0340ab6015d222761ada2f782f4f0128bcd65f71d129988",
+          "conditions_json": "{}",
+          "source_metadata_json": "{}"
+        },
+        {
+          "sample_id": "uspto_yield:test:ID00000008",
+          "dataset": "uspto_yield",
+          "source_record_id": "ID00000008",
+          "source_index": "8",
+          "raw_reaction_smiles": "Cl.[OH:2][C:3]1[CH:15]=[CH:14][CH:13]=[CH:12][C:4]=1[C:5]([CH2:7][CH2:8][C:9]([OH:11])=[O:10])=[O:6].[CH3:16]O\u003e\u003e[OH:2][C:3]1[CH:15]=[CH:14][CH:13]=[CH:12][C:4]=1[C:5]([CH2:7][CH2:8][C:9]([O:11][CH3:16])=[O:10])=[O:6]",
+          "reaction_smiles": "CO.O=C(O)CCC(=O)c1ccccc1O\u003eCl\u003eCOC(=O)CCC(=O)c1ccccc1O",
+          "canonical_reaction_smiles": "CO.O=C(O)CCC(=O)c1ccccc1O\u003eCl\u003eCOC(=O)CCC(=O)c1ccccc1O",
+          "reactants": "CO.O=C(O)CCC(=O)c1ccccc1O",
+          "reagents": "Cl",
+          "products": "COC(=O)CCC(=O)c1ccccc1O",
+          "yield_pct": "98",
+          "yield_measurement_type": "patent_reported_curated",
+          "measurement_method": "text-mined yield curated by Minidis",
+          "temperature_c": "",
+          "time_hours": "",
+          "solvent": "",
+          "catalyst": "",
+          "base": "",
+          "selectivity": "",
+          "mass_ion_count": "",
+          "reaction_class": "",
+          "screen_id": "",
+          "notebook_id": "",
+          "upstream_split": "test",
+          "source": "USPTO 1976-Sep2016",
+          "citation": "10.6084/m9.figshare.14414039.v1",
+          "license_spdx": "MIT",
+          "license_url": "https://opensource.org/license/mit",
+          "provenance": "Minidis yield curation of the Schwaller/Lowe USPTO reaction corpus",
+          "duplicate_group": "reaction:79cf39671a5bb1b83b7860dc29af16d3616f45c8e8c63caa9aa5d8e02a66195c",
+          "chemical_split_group": "reaction:94f7329a494efad8d5171324ba9f005f8b6c37493a7acc68d6315b12966b3172",
+          "conditions_json": "{}",
+          "source_metadata_json": "{}"
+        },
+        {
+          "sample_id": "uspto_yield:test:ID00000013",
+          "dataset": "uspto_yield",
+          "source_record_id": "ID00000013",
+          "source_index": "13",
+          "raw_reaction_smiles": "BrBr.[OH-:3].[Na+].[C:5]([C:8]1[CH:9]=[CH:10][C:11]2[O:20][C:15]3=[N:16][CH:17]=[CH:18][CH:19]=[C:14]3[C:13]([CH3:22])([CH3:21])[C:12]=2[CH:23]=1)(=[O:7])C\u003eO.O1CCOCC1\u003e[CH3:21][C:13]1([CH3:22])[C:14]2[C:15](=[N:16][CH:17]=[CH:18][CH:19]=2)[O:20][C:11]2[CH:10]=[CH:9][C:8]([C:5]([OH:7])=[O:3])=[CH:23][C:12]1=2 |f:1.2|",
+          "reaction_smiles": "CC(=O)c1ccc2c(c1)C(C)(C)c1cccnc1O2.[OH-]\u003eBrBr.C1COCCO1.O.[Na+]\u003eCC1(C)c2cc(C(=O)O)ccc2Oc2ncccc21",
+          "canonical_reaction_smiles": "CC(=O)c1ccc2c(c1)C(C)(C)c1cccnc1O2.[OH-]\u003eBrBr.C1COCCO1.O.[Na+]\u003eCC1(C)c2cc(C(=O)O)ccc2Oc2ncccc21",
+          "reactants": "CC(=O)c1ccc2c(c1)C(C)(C)c1cccnc1O2.[OH-]",
+          "reagents": "BrBr.C1COCCO1.O.[Na+]",
+          "products": "CC1(C)c2cc(C(=O)O)ccc2Oc2ncccc21",
+          "yield_pct": "78.6",
+          "yield_measurement_type": "patent_reported_curated",
+          "measurement_method": "text-mined yield curated by Minidis",
+          "temperature_c": "",
+          "time_hours": "",
+          "solvent": "",
+          "catalyst": "",
+          "base": "",
+          "selectivity": "",
+          "mass_ion_count": "",
+          "reaction_class": "",
+          "screen_id": "",
+          "notebook_id": "",
+          "upstream_split": "test",
+          "source": "USPTO 1976-Sep2016",
+          "citation": "10.6084/m9.figshare.14414039.v1",
+          "license_spdx": "MIT",
+          "license_url": "https://opensource.org/license/mit",
+          "provenance": "Minidis yield curation of the Schwaller/Lowe USPTO reaction corpus",
+          "duplicate_group": "reaction:a7fb493995d9c7fdd7337e383b844d169b0ca8a40d001c9b058d66d8a7864a97",
+          "chemical_split_group": "reaction:752d4fec6ebce0c16744b3e94397896752468c2730fc6555c5f13383ce3c9e32",
+          "conditions_json": "{}",
+          "source_metadata_json": "{}"
+        },
+        {
+          "sample_id": "uspto_yield:test:ID00000014",
+          "dataset": "uspto_yield",
+          "source_record_id": "ID00000014",
+          "source_index": "14",
+          "raw_reaction_smiles": "[N:1]1[CH:6]=[CH:5][CH:4]=[C:3]([CH2:7][OH:8])[CH:2]=1.[CH3:9][S:10][C:11]1[CH:16]=[CH:15][C:14]([N:17]=[C:18]=[O:19])=[CH:13][CH:12]=1\u003eC1N2CCN(CC2)C1.C1C=CC=CC=1\u003e[CH3:9][S:10][C:11]1[CH:12]=[CH:13][C:14]([NH:17][C:18](=[O:19])[O:8][CH2:7][C:3]2[CH:2]=[N:1][CH:6]=[CH:5][CH:4]=2)=[CH:15][CH:16]=1",
+          "reaction_smiles": "CSc1ccc(N=C=O)cc1.OCc1cccnc1\u003eC1CN2CCN1CC2.c1ccccc1\u003eCSc1ccc(NC(=O)OCc2cccnc2)cc1",
+          "canonical_reaction_smiles": "CSc1ccc(N=C=O)cc1.OCc1cccnc1\u003eC1CN2CCN1CC2.c1ccccc1\u003eCSc1ccc(NC(=O)OCc2cccnc2)cc1",
+          "reactants": "CSc1ccc(N=C=O)cc1.OCc1cccnc1",
+          "reagents": "C1CN2CCN1CC2.c1ccccc1",
+          "products": "CSc1ccc(NC(=O)OCc2cccnc2)cc1",
+          "yield_pct": "95",
+          "yield_measurement_type": "patent_reported_curated",
+          "measurement_method": "text-mined yield curated by Minidis",
+          "temperature_c": "",
+          "time_hours": "",
+          "solvent": "",
+          "catalyst": "",
+          "base": "",
+          "selectivity": "",
+          "mass_ion_count": "",
+          "reaction_class": "",
+          "screen_id": "",
+          "notebook_id": "",
+          "upstream_split": "test",
+          "source": "USPTO 1976-Sep2016",
+          "citation": "10.6084/m9.figshare.14414039.v1",
+          "license_spdx": "MIT",
+          "license_url": "https://opensource.org/license/mit",
+          "provenance": "Minidis yield curation of the Schwaller/Lowe USPTO reaction corpus",
+          "duplicate_group": "reaction:f133701458f7fc2a0e2dc10bd4aab7b74e0acda59d3e26f08be66c353745bc5b",
+          "chemical_split_group": "reaction:91f527d075ad8f47d14061ae2262e12f31a8f9e50abf716b84b34bf8ecb0df91",
+          "conditions_json": "{}",
+          "source_metadata_json": "{}"
+        }
+      ],
+      "split_counts": {},
+      "null_counts": {
+        "sample_id": 0,
+        "dataset": 0,
+        "source_record_id": 0,
+        "source_index": 0,
+        "raw_reaction_smiles": 0,
+        "reaction_smiles": 0,
+        "canonical_reaction_smiles": 0,
+        "reactants": 0,
+        "reagents": 36311,
+        "products": 0,
+        "yield_pct": 0,
+        "yield_measurement_type": 0,
+        "measurement_method": 0,
+        "temperature_c": 526468,
+        "time_hours": 526468,
+        "solvent": 526468,
+        "catalyst": 526468,
+        "base": 526468,
+        "selectivity": 526468,
+        "mass_ion_count": 526468,
+        "reaction_class": 526468,
+        "screen_id": 526468,
+        "notebook_id": 526468,
+        "upstream_split": 0,
+        "source": 0,
+        "citation": 0,
+        "license_spdx": 0,
+        "license_url": 0,
+        "provenance": 0,
+        "duplicate_group": 0,
+        "chemical_split_group": 0,
+        "conditions_json": 0,
+        "source_metadata_json": 0
+      },
+      "target_summaries": {
+        "yield_pct": {
+          "kind": "numeric",
+          "count": 526468,
+          "min": 6e-08,
+          "max": 100.0,
+          "mean": 65.01627494960769
+        }
+      },
+      "reaction_column": "reaction_smiles",
+      "reaction_text": "CC(C)(C)NNC(C)(C#N)C1CC1.O=C1CCCCCC1\u003eCC(=O)C1CC1\u003eCC(C)(C)NNC1(C#N)CCCCCC1",
+      "depiction": "_static/catalog-reactions/yield-uspto_yield.svg"
     }
   ]
 }

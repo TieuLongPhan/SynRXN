@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "dataset_key": "yield/buchwald_hartwig_ood.csv.gz",
+  "source_url": "https://github.com/schwallergroup/bh-hte-ood",
+  "source_doi": "10.5281/zenodo.19636649",
+  "source_commit_or_version": "a2770413fce269b49a35fb4b2e6471f25632d2ef",
+  "source_file": "BH_HTE_Curated_Dataset_v20260219.csv",
+  "source_sha256": "247473787c33fb22ee48a4177593188f2a2c6ef140756566fe4610fee89ba333",
+  "normalized_input_file": "buchwald_hartwig_ood.csv.gz",
+  "normalized_input_sha256": "623a0b58f4155d7438e8515e0075b3cbc776bf8567de8dd80d59f2c2027519aa",
+  "upstream_license": "Apache-2.0",
+  "license_url": "https://github.com/schwallergroup/bh-hte-ood/blob/a2770413fce269b49a35fb4b2e6471f25632d2ef/LICENSE.txt",
+  "required_attribution": [
+    "10.1038/s43588-026-01017-6",
+    "Original cohort citations listed by the upstream dataset"
+  ],
+  "redistribution_partition": "main",
+  "retrieved_at": "2026-08-21"
+}

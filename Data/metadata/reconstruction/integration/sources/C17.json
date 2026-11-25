@@ -1,0 +1,59 @@
+{
+  "id": "C17",
+  "name": "CHORISO",
+  "priority": "2 Targeted expansion",
+  "survey_license_note": "CC BY 4.0 on the Figshare data record.",
+  "paper_urls": [
+    "https://arxiv.org/abs/2312.09004"
+  ],
+  "data_urls": [
+    "https://figshare.com/articles/dataset/CHORISO_-_chemical_reaction_SMILES_from_academic_journals/22598230"
+  ],
+  "project_urls": [
+    "https://github.com/schwallergroup/choriso"
+  ],
+  "license_urls": [
+    "https://api.figshare.com/v2/articles/22598230"
+  ],
+  "license_verified": true,
+  "files": [
+    {
+      "name": "choriso_public.tar.gz",
+      "bytes": 240537498,
+      "checksum": "md5:7cd65aeb54d420495a3543273d5a8b10",
+      "url": "https://ndownloader.figshare.com/files/43525509"
+    },
+    {
+      "name": "uspto_public.tar.gz",
+      "bytes": 110133791,
+      "checksum": "md5:bb1efc07cc6a0ffe33659aa96aaec580",
+      "url": "https://ndownloader.figshare.com/files/43525521"
+    },
+    {
+      "name": "splits_choriso.tar.gz",
+      "bytes": 280021031,
+      "checksum": "md5:59360a503d3ab92c11627a6b523e6088",
+      "url": "https://ndownloader.figshare.com/files/43622058"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://api.figshare.com/v2/articles/22598230",
+      "status": 200,
+      "sha256": "1cecc9fee8454cce7a2c0ab44a65251a99e32ed1ba2f3d44d4aa22357a82fe9e",
+      "bytes": 5803,
+      "retrieved_at": "2026-10-20T15:35:02.461987+00:00"
+    }
+  ],
+  "record_id": "22598230",
+  "doi": "10.6084/m9.figshare.22598230.v1",
+  "title": "CHORISO - chemical reaction SMILES from academic journals",
+  "version": 1,
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "publication_date": "2023-12-15T13:23:23Z",
+  "description": "<p dir=\"ltr\">CHORISO (<b>CH</b>emical <b>O</b>rganic <b>R</b>eact<b>I</b>on <b>S</b>MILES <b>O</b>mnibus) is a curated dataset containing chemical reactions SMILES extracted from high-impact factor journals. It is built using the <a href=\"https://figshare.com/articles/dataset/original_data_zip/14647095\" rel=\"noreferrer\" target=\"_blank\">CJHIF</a> dataset, and the resulting data is used to propose a new holistic evaluation of reaction prediction models (see <a href=\"https://arxiv.org/abs/2312.09004\" rel=\"noreferrer\" target=\"_blank\">paper</a>). A detailed explanation of the processing steps and proposed metrics is included in this <a href=\"https://github.com/schwallergroup/choriso\" rel=\"noreferrer\" target=\"_blank\">repo</a><i>.</i></p><p dir=\"ltr\">The following files are included:</p><ul><li>choriso_public.tar.gz: compressed file containing the ChORISO dataset, 2'224'239 canonical reaction SMILES.</li><li>uspto_public.tar.gz: file containing the USPTO dataset cleaned and processed following the same pipeline than CHORISO.</li><li>splits.tar.gz: compressed folder containing the training, validation and test files used to train and evaluate models in the study.</li></ul><p><br></p>"
+}

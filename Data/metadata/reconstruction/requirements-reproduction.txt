@@ -1,0 +1,7 @@
+# Versions observed in the tested Python 3.12.12 / Linux environment.
+# These are sufficient for the stdlib preparation workflow and its tests.
+pytest==9.1.1
+iniconfig==2.3.0
+packaging==26.2
+pluggy==1.6.0
+Pygments==2.19.2

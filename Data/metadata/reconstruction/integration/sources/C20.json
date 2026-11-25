@@ -1,0 +1,17 @@
+{
+  "id": "C20",
+  "name": "OC20NEB",
+  "priority": "3 Optional",
+  "survey_license_note": "Project dataset specifies CC BY 4.0.",
+  "paper_urls": [
+    "https://doi.org/10.1021/acscatal.4c04272"
+  ],
+  "data_urls": [
+    "https://facebookresearch.github.io/fairchem/oc20neb/"
+  ],
+  "project_urls": [],
+  "license_urls": [],
+  "license_verified": false,
+  "files": [],
+  "requests": []
+}

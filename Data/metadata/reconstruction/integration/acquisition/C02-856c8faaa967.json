@@ -1,0 +1,12 @@
+{
+  "source_id": "C02",
+  "name": "Minot_preAL_Data.csv",
+  "bytes": 824834,
+  "checksum": "md5:2ddbc7badbe9ed3e832ba4fe5cbab3df",
+  "url": "https://zenodo.org/api/records/20773622/files/Minot_preAL_Data.csv/content",
+  "path": "Data/raw/synrxn2/C02/Minot_preAL_Data.csv",
+  "bytes_observed": 824834,
+  "sha256": "ee4c86f379ff01aedc973712cb9d47f66c996641611da7392d6c523bec84ebd4",
+  "md5": "2ddbc7badbe9ed3e832ba4fe5cbab3df",
+  "status": "verified"
+}

@@ -1,0 +1,7 @@
+C11: QuantumPioneer HAT database
+Data license: CC-BY-4.0
+Zenodo data-record grant.
+
+Primary source and attribution:
+https://doi.org/10.1021/jacs.6c10371
+https://zenodo.org/records/20060606

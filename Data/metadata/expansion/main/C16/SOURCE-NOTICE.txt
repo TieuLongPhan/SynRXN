@@ -1,0 +1,7 @@
+C16: OrgAIcat / iSynth
+Data license: MIT
+Official repository explicitly supplies code and datasets under MIT. Retain per-paper DOIs and endpoint definitions.
+
+Primary source and attribution:
+https://github.com/DeepSynthesis/orgaicat
+https://github.com/DeepSynthesis/orgaicat/tree/main/data

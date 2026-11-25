@@ -1,0 +1,73 @@
+{
+  "counting_unit": "source-table row",
+  "data_link": "data.csv.gz",
+  "family_id": "conditions",
+  "format": "csv.gz",
+  "key": "condition/orderly_condition",
+  "namespace": "canonical",
+  "registry_binding": {
+    "commercial_use_allowed": true,
+    "counting_unit": "source-table row",
+    "key": "condition/orderly_condition",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "partition": "main",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary",
+    "rows": 691105
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "evidence_ids": [
+      "synrxn_product_notice",
+      "orderly_data_grant"
+    ],
+    "expected_bytes": 398940745,
+    "expected_rows": 691105,
+    "expected_sha256": "789e1c41f6dcc00cff2600aa21d034db327428b2df29427721f2ba103ca91e57",
+    "format": "csv.gz",
+    "key": "condition/orderly_condition",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "canonical",
+    "partition": "main",
+    "path": "Data/condition/orderly_condition.csv.gz",
+    "qualification": "Independently captured source-specific grant for the actual dataset/repository data; preserve attribution, change notices and all applicable upstream terms.",
+    "rights_status": "verified_upstream_grant",
+    "role": "primary"
+  },
+  "role": "primary",
+  "rows": 691105,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "citations": [
+      "wigh2024orderly"
+    ],
+    "path": "Data/condition/orderly_condition.csv.gz",
+    "sha256": "789e1c41f6dcc00cff2600aa21d034db327428b2df29427721f2ba103ca91e57",
+    "source_catalogue": "doc/_static/catalog-data.json"
+  },
+  "source_table_metadata": {
+    "citations": [
+      "wigh2024orderly"
+    ],
+    "counting_unit": "source-table row",
+    "key": "condition/orderly_condition",
+    "legacy_field_eligible_rows": {},
+    "namespace": "canonical",
+    "path": "Data/condition/orderly_condition.csv.gz",
+    "role": "primary",
+    "rows": 691105,
+    "sha256": "789e1c41f6dcc00cff2600aa21d034db327428b2df29427721f2ba103ca91e57",
+    "source_catalogue": "doc/_static/catalog-data.json",
+    "title": "ORDerly condition-prediction benchmark"
+  },
+  "stored_path": "Data/families/conditions/condition_recovery/canonical/condition/orderly_condition/data.csv.gz",
+  "task_id": "condition_recovery",
+  "title": "ORDerly condition-prediction benchmark"
+}

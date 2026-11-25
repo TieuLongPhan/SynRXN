@@ -1,0 +1,137 @@
+{
+  "datasets": [
+    {
+      "accepted_rows": 691105,
+      "dataset": "orderly_condition",
+      "license_spdx": "CC-BY-4.0",
+      "missing_counts": {
+        "agent_1": 264395,
+        "agent_2": 425318,
+        "agent_3": 606245,
+        "reported_yield": 326007,
+        "solvent_1": 162196,
+        "solvent_2": 454356,
+        "temperature_c": 367629,
+        "time_hours": 370363
+      },
+      "output_file": "orderly_condition.csv.gz",
+      "output_sha256": "789e1c41f6dcc00cff2600aa21d034db327428b2df29427721f2ba103ca91e57",
+      "quality_counts": {
+        "temperature_outside_minus196_500": 28,
+        "yield_outside_0_100": 25716
+      },
+      "quarantine_reasons": {
+        "invalid_structure_or_required_field": 37
+      },
+      "quarantined_rows": 37,
+      "raw_rows": 691142,
+      "source_files": [
+        "orderly_condition_train.parquet",
+        "orderly_condition_test.parquet"
+      ],
+      "source_sha256": {
+        "test": "d9b2b8a34960db23904c06965113969c051565eb7379973f40a544f592897c55",
+        "train": "ac77033d91faa606d6cbe53d520d718b39d90ad4d708e7fab131bf656c520a25"
+      },
+      "split_counts": {
+        "test": 65441,
+        "train": 625664
+      },
+      "unique_chemical_split_groups": 669350,
+      "unique_condition_groups": 208167,
+      "unique_duplicate_groups": 691105,
+      "unique_source_record_ids": 691105
+    },
+    {
+      "accepted_rows": 123720,
+      "dataset": "ord_hte_condition",
+      "dataset_counts": {
+        "ord_dataset-1ec2807f02fa4beda27d2a81b86eb843": 1227,
+        "ord_dataset-2be11f57f3304e678ea8469baf6dd1bc": 1152,
+        "ord_dataset-3b5db90e337942ea886b8f5bc5e3aa72": 450,
+        "ord_dataset-3b8a2ef300e145468579027f206a3ac8": 1440,
+        "ord_dataset-47eaacc46c3a4487bbdf99adb1a15e41": 47015,
+        "ord_dataset-5c9a10329a8a48968d18879a48bb8ab2": 9632,
+        "ord_dataset-675eddcaa6674ce3ae61e79bbc1e1c08": 1536,
+        "ord_dataset-7acd6ad2bf4d4cff841cad008ab726d5": 960,
+        "ord_dataset-7d8f5fd922d4497d91cb81489b052746": 1536,
+        "ord_dataset-805ad863feef48579d95d86a728035f4": 50688,
+        "ord_dataset-9b8aa9a7835143ef8ce3f70abfab7545": 1670,
+        "ord_dataset-ac78456835404910b3a4c840248b6ac9": 1728,
+        "ord_dataset-b440f8c90b6343189093770060fc4098": 1152,
+        "ord_dataset-c5b00523487a4211a194160edf45e9ab": 1430,
+        "ord_dataset-d26118acda314269becc35db5c22dc59": 1728,
+        "ord_dataset-eeba974d3c284aed86d1c1d442260a1e": 376
+      },
+      "dataset_raw_counts": {
+        "ord_dataset-1ec2807f02fa4beda27d2a81b86eb843": 1227,
+        "ord_dataset-2be11f57f3304e678ea8469baf6dd1bc": 1152,
+        "ord_dataset-3b5db90e337942ea886b8f5bc5e3aa72": 450,
+        "ord_dataset-3b8a2ef300e145468579027f206a3ac8": 1440,
+        "ord_dataset-47eaacc46c3a4487bbdf99adb1a15e41": 47015,
+        "ord_dataset-5c9a10329a8a48968d18879a48bb8ab2": 9632,
+        "ord_dataset-675eddcaa6674ce3ae61e79bbc1e1c08": 1536,
+        "ord_dataset-7acd6ad2bf4d4cff841cad008ab726d5": 960,
+        "ord_dataset-7d8f5fd922d4497d91cb81489b052746": 1536,
+        "ord_dataset-805ad863feef48579d95d86a728035f4": 50688,
+        "ord_dataset-9b8aa9a7835143ef8ce3f70abfab7545": 1762,
+        "ord_dataset-ac78456835404910b3a4c840248b6ac9": 1728,
+        "ord_dataset-b440f8c90b6343189093770060fc4098": 1152,
+        "ord_dataset-c5b00523487a4211a194160edf45e9ab": 1430,
+        "ord_dataset-d26118acda314269becc35db5c22dc59": 1728,
+        "ord_dataset-eeba974d3c284aed86d1c1d442260a1e": 376
+      },
+      "license_spdx": "CC-BY-SA-4.0",
+      "output_file": "ord_hte_condition.csv.gz",
+      "output_sha256": "9d77cb0ef9233dd7922e4a65ea89e046051581c9200dd3eb7c85d3ae06514c5c",
+      "quarantine_reasons": {
+        "invalid_structure_or_required_field": 92
+      },
+      "quarantined_rows": 92,
+      "raw_rows": 123812,
+      "source_commit": "05fe1a62cb36d6bc3c07592ac1bd4ff1a4d8e43c",
+      "source_sha256": {
+        "ord_dataset-1ec2807f02fa4beda27d2a81b86eb843": "b1fd81bb3034644117b7d07e0471ede7370597bb4bd2433dd4b5c20bf02fad99",
+        "ord_dataset-2be11f57f3304e678ea8469baf6dd1bc": "c7d17ab4af3551a4b2883c6e18c1f3a49b6c19d30d37fad762802aeeb275d948",
+        "ord_dataset-3b5db90e337942ea886b8f5bc5e3aa72": "fce2d70c28db7100b3ca5c3f298484daf4c4043c11a18da066db16ad2e36012c",
+        "ord_dataset-3b8a2ef300e145468579027f206a3ac8": "f8438f4490541ecd38d92208decc48ff33424d52772cc42701b7eb886fc14b8a",
+        "ord_dataset-47eaacc46c3a4487bbdf99adb1a15e41": "7e09c98aa540e15d44959f03028590278bf508650950778568fd264d3a7535c4",
+        "ord_dataset-5c9a10329a8a48968d18879a48bb8ab2": "a2ea1363cb895b590ae765e918f98f90d243d6caba763ed74543ae62e503b0b0",
+        "ord_dataset-675eddcaa6674ce3ae61e79bbc1e1c08": "1ecc5469785e55997f244eb5f8d6dbc78029cbb233bd6a140b5f02d5d01860a1",
+        "ord_dataset-7acd6ad2bf4d4cff841cad008ab726d5": "b6dfe8e151a396c5332668c015bce764d23c667240e443495990205c66e4a1e5",
+        "ord_dataset-7d8f5fd922d4497d91cb81489b052746": "3d657d1eda5703b58b627565894890269b50b18e987709e70fd7968d83e59101",
+        "ord_dataset-805ad863feef48579d95d86a728035f4": "31b7c4762145e5dad973050373cd967bdd85caf3a9858767c83a17fed6c4af36",
+        "ord_dataset-9b8aa9a7835143ef8ce3f70abfab7545": "195765643b4aaad79d9ed82de6737a4855b9f2716e0bc0aa10cff950b7604d39",
+        "ord_dataset-ac78456835404910b3a4c840248b6ac9": "52a9d0084abc051a792bfb71501af03ec13bdabc24a7db4e33b7223ddf8c884c",
+        "ord_dataset-b440f8c90b6343189093770060fc4098": "d289e2e9fbb77df61faadeb65cfadfbee0216b05a7d209b3ae3b3aca04a9993a",
+        "ord_dataset-c5b00523487a4211a194160edf45e9ab": "73c04ce2acaf6cf2b6b3ecda8c623d2a321435f1f5830aedb0a0f1afd562bdc4",
+        "ord_dataset-d26118acda314269becc35db5c22dc59": "0a600968a24eff0a440e30685b2cb7b62030693605574105eb57b7f07329700b",
+        "ord_dataset-eeba974d3c284aed86d1c1d442260a1e": "dbf6dae9521463c542fa8abccd2a078742c8052c0af11db842d200d94403fac6"
+      },
+      "split_counts": {
+        "test": 6555,
+        "train": 109859,
+        "validation": 7306
+      }
+    },
+    {
+      "accepted_rows": 274439,
+      "dataset": "openexp",
+      "license_spdx": "CC-BY-SA-4.0",
+      "output_file": "openexp.csv.gz",
+      "output_sha256": "f38c6bf858aa6d6d983c15199fc90f28e999ba6ea670229ab0307e70e919edc2",
+      "quarantine_reasons": {},
+      "quarantined_rows": 0,
+      "raw_rows": 274439,
+      "source_file": "OpenExp.tar",
+      "source_sha256": "00eee069440638130d8341175a2ce65e284b8d1cb43261e1e7e543ff94f3fe1c",
+      "split_counts": {
+        "test": 27118,
+        "train": 219665,
+        "validation": 27656
+      },
+      "split_note": "SynRXN deterministic transformation-group 80/10/10 split; not the unreleased random paper split"
+    }
+  ],
+  "schema_version": "1.1"
+}

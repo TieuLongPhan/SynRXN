@@ -1,0 +1,31 @@
+{
+  "class_and_partial_constraints_supported": true,
+  "datasets": 11,
+  "date": "2026-10-27",
+  "exact": {
+    "cross_source_its_disagreement_groups": 681,
+    "cross_source_overlap_groups": 2151,
+    "distinct_reactions": 81597,
+    "groups_with_unverifiable_members": 2,
+    "hydrogen_only_disagreement_groups": 6,
+    "its_disagreement_groups": 885,
+    "overlap_groups": 10278,
+    "overlap_rows": 30161,
+    "parsed_rows": 101480,
+    "rows_beyond_unique": 19883,
+    "within_source_repeat_groups": 9012
+  },
+  "graph_preparation": [
+    {
+      "graph_status": "ok",
+      "records": 41080
+    }
+  ],
+  "manifest_sha256": "a70c6d0ca602eec2158c1b6dbed4b5a63ae376f3903369aad756de36f198b66d",
+  "post_build_parser_verification": "dative-parser-verification.json",
+  "records": 101480,
+  "schema": "synrxn.aam-overlap-verification.v2",
+  "source_tables_unchanged": true,
+  "stereo_ignored": true,
+  "tests": "64 passed, 3 subtests passed"
+}

@@ -1,0 +1,140 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 2,
+    "data_links": 2,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 2,
+    "stored_rows_across_unique_views": 166936,
+    "task_table_bindings": 2,
+    "tasks": 1,
+    "unique_table_views": 2
+  },
+  "tables": [
+    {
+      "data_link": "canonical/property/lograte/data.csv.gz",
+      "key": "property/lograte",
+      "metadata": "canonical/property/lograte/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "coverage/physics_rates/quantumpioneer_hAT_kinetics/data.csv",
+      "key": "physics_rates/quantumpioneer_hAT_kinetics",
+      "metadata": "coverage/physics_rates/quantumpioneer_hAT_kinetics/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "commercial_use_allowed": false,
+        "counting_unit": "source-table row",
+        "key": "property/lograte",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "noncommercial",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-NC-4.0",
+        "rights_status": "verified_noncommercial_grant",
+        "role": "primary",
+        "rows": 778
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/physics_rates/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "native computed HAT reaction with k298 and thermo-kinetic references",
+        "coverage_branch": "physics_rates",
+        "key": "physics_rates/quantumpioneer_hAT_kinetics",
+        "license": "CC-BY-4.0",
+        "namespace": "coverage",
+        "parent_groups": 135993,
+        "partition": "main",
+        "path": "Data/coverage_expansion/physics_rates/quantumpioneer_kinetics.csv",
+        "qualification": "Full166158 native positive finitek298 references. Native rates/TST are computed; no conversion to lograte legacy sourceunits. Exactrecorded-reactant groups keep candidateH-abstractionsites of same source reactants together; proposed split is new and does not establish scaffold independence. KineticCSVhasgasreferenceTST/thermo; no per-solvent correction inferred from separate solvationassets. No independent physical recomputation.",
+        "reference_evidence": "Computed native transition-state-theory rate coefficients and source Arrhenius fits; DLPNO+scaledDFTZPE barrier and reaction thermo references. Not experimental measurements.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 166158,
+        "sha256": "e81aa5f9158564e64356a524c046469e2a13e471469ff641713ded3c37ff1520",
+        "source_id": "QuantumPioneer2026",
+        "source_sha256": "1c1a836d371248cc47689450476c8cccfabd50bf9058cedad430e2a9a9ede213",
+        "source_url": "https://doi.org/10.5281/zenodo.20060606",
+        "target_units": {
+          "A_high": "m^3/(mol*s)",
+          "A_low": "m^3/(mol*s)",
+          "Ea_high": "kcal/mol;1000-2000Kfit",
+          "Ea_low": "kcal/mol;300-1000Kfit",
+          "P2M": "kcal/mol;sourcePetersson-to-Melius298K",
+          "barrier": "kcal/mol;DLPNO+scaledDFTZPE",
+          "deltaGrxn298": "kcal/mol;298K",
+          "deltaHrxn": "kcal/mol;DLPNO+scaledDFTZPE",
+          "deltaHrxn298": "kcal/mol;298K",
+          "k_298": "m^3/(mol*s)",
+          "log10_k_298": "log10 of rate expressed in m^3/(mol*s)"
+        },
+        "task_fields": {
+          "reaction_rates": {
+            "group_fields": [
+              "reactant_pair_group",
+              "source_record_id",
+              "proposed_split"
+            ],
+            "inputs": [
+              "reaction_smiles",
+              "temperature_K",
+              "theory"
+            ],
+            "metrics": [
+              "MAE_log10_k298",
+              "RMSE_log10_k298",
+              "coverage"
+            ],
+            "qualification": "Primary target is bimoleculark298; logarithm is the same target in transformedscale, not an independent label. ArrheniusA/Ea must never be input features for k298prediction.",
+            "targets": [
+              "k_298",
+              "log10_k_298"
+            ]
+          }
+        },
+        "task_ids": [
+          "reaction_rates",
+          "activation_barrier",
+          "reaction_energetics"
+        ]
+      }
+    ],
+    "canonical_keys": [
+      "property/lograte"
+    ],
+    "counting_units": [
+      "native computed HAT reaction with k298 and thermo-kinetic references",
+      "source-table row"
+    ],
+    "extension_adapter_ids": [],
+    "family_id": "physics",
+    "id": "reaction_rates",
+    "legacy_view_ids": [],
+    "metrics": [
+      "native_target_MAE",
+      "native_target_RMSE",
+      "coverage"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 166936,
+    "primary_table_count": 2,
+    "qualification": "Preserve log base, rate units, temperature and computed-versus-measured evidence. Arrhenius parameters are reference labels, not hidden inputs. Enzyme kcat needs enzyme context; Km and Ki are distinct parameters, not rate constants.",
+    "question": "Recorded reaction and available source context -> source-defined rate coefficient or its documented transform",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 2,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Reaction-rate prediction"
+  }
+}

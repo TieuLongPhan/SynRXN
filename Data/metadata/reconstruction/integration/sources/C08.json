@@ -1,0 +1,45 @@
+{
+  "id": "C08",
+  "name": "Transition1x",
+  "priority": "1 Integrate first",
+  "survey_license_note": "MIT on the Figshare data record, including the HDF5 archive.",
+  "paper_urls": [
+    "https://www.nature.com/articles/s41597-022-01870-w"
+  ],
+  "data_urls": [
+    "https://figshare.com/articles/dataset/Transition1x/19614657"
+  ],
+  "project_urls": [],
+  "license_urls": [
+    "https://api.figshare.com/v2/articles/19614657"
+  ],
+  "license_verified": true,
+  "files": [
+    {
+      "name": "Transition1x.h5",
+      "bytes": 6623929000,
+      "checksum": "md5:faab0413cf6b042b6d50e6272dea9a8c",
+      "url": "https://ndownloader.figshare.com/files/36035789"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://api.figshare.com/v2/articles/19614657",
+      "status": 200,
+      "sha256": "25324a78962714d3e64b236ebf2f846e17e511ac87120d3852c83c8d3ea80568",
+      "bytes": 3713,
+      "retrieved_at": "2026-10-20T15:34:41.965694+00:00"
+    }
+  ],
+  "record_id": "19614657",
+  "doi": "10.6084/m9.figshare.19614657.v4",
+  "title": "Transition1x",
+  "version": 4,
+  "license": {
+    "value": 3,
+    "name": "MIT",
+    "url": "https://opensource.org/licenses/MIT"
+  },
+  "publication_date": "2022-06-26T14:25:38Z",
+  "description": "<p dir=\"ltr\"><b>Transition1x - a dataset for building generalizable reactive machine learning potentials</b></p><p dir=\"ltr\">https://www.nature.com/articles/s41597-022-01870-w</p><p><br></p><p dir=\"ltr\">This dataset is constructed by running NEB on 10.000 reactions with H, C, N and O using the wb97x functional and 6-31G(d) basis set. This resulted in DFT calculations for 9.6 million molecular configurations on and around minimal energy paths on the potential energy surface. The data is intended for training ML models to work in transition state regions of chemical space.</p><p><br></p><p dir=\"ltr\">Dataloaders and example scripts are availble in https://gitlab.com/matschreiner/T1x</p><p dir=\"ltr\"><br></p><p dir=\"ltr\">The authors acknowledge support from the Novo Nordisk Foundation (SURE, NNF19OC0057822) and the European Union’s Horizon 2020 research and innovation program under Grant Agreement No. 957189 (BIG-MAP) and No. 957213 (BATTERY2030PLUS). Ole Winther also receives support from Novo Nordisk Foundation through the Center for Basic Machine Learning Research in Life Science (NNF20OC0062606) and the Pioneer Centre for AI, DNRF grant number P1</p>"
+}

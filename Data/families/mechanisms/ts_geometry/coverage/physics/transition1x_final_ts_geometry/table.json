@@ -1,0 +1,112 @@
+{
+  "counting_unit": "native reaction endpoint/transition-state triplet",
+  "data_link": "data.csv",
+  "family_id": "mechanisms",
+  "format": "csv",
+  "key": "physics/transition1x_final_ts_geometry",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/physics/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "native reaction endpoint/transition-state triplet",
+    "coverage_branch": "physics",
+    "key": "physics/transition1x_final_ts_geometry",
+    "license": "MIT",
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/physics/transition1x_final_ts_geometry.csv",
+    "qualification": "Source final NEB structures only; no intermediate-frame maximum substituted for TS. Missing final groups explicitly excluded; source-reported computational reference, independently recomputed saddle validation pending.",
+    "reference_evidence": "Computed: native wB97x/6-31G(d) NEB-region energies in eV, forces in eV/A, positions in A; trajectories and final endpoint/TS labels are source generated.",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 10073,
+    "sha256": "6c7512bb38663731d30e49bb9037d5b73ded283c1ffa8301b3d21ab5d437db82",
+    "source_id": "Transition1x2022",
+    "source_sha256": "6a20f8a3f49c50d462270d10d4c44ca102e788072e2096a91d70b5a0f598b629",
+    "source_url": "https://doi.org/10.6084/m9.figshare.19614657.v4",
+    "task_fields": {
+      "ts_geometry": {
+        "group_fields": [
+          "trajectory_id",
+          "formula",
+          "native_split"
+        ],
+        "inputs": [
+          "atomic_numbers",
+          "reactant_positions_A",
+          "product_positions_A",
+          "theory"
+        ],
+        "metrics": [
+          "symmetry-aware aligned RMSD_A",
+          "coverage"
+        ],
+        "targets": [
+          "ts_positions_A"
+        ]
+      }
+    },
+    "task_ids": [
+      "ts_geometry"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "native reaction endpoint/transition-state triplet",
+    "expected_bytes": null,
+    "expected_rows": 10073,
+    "expected_sha256": "6c7512bb38663731d30e49bb9037d5b73ded283c1ffa8301b3d21ab5d437db82",
+    "format": "csv",
+    "key": "physics/transition1x_final_ts_geometry",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/physics/transition1x_final_ts_geometry.csv",
+    "qualification": "Source final NEB structures only; no intermediate-frame maximum substituted for TS. Missing final groups explicitly excluded; source-reported computational reference, independently recomputed saddle validation pending.",
+    "reasons": [],
+    "reference_evidence": "Computed: native wB97x/6-31G(d) NEB-region energies in eV, forces in eV/A, positions in A; trajectories and final endpoint/TS labels are source generated.",
+    "release_eligible": true,
+    "source_id": "Transition1x2022",
+    "source_url": "https://doi.org/10.6084/m9.figshare.19614657.v4",
+    "task_ids": [
+      "ts_geometry"
+    ]
+  },
+  "role": "primary",
+  "rows": 10073,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/physics/transition1x_final_ts_geometry.csv",
+    "sha256": "6c7512bb38663731d30e49bb9037d5b73ded283c1ffa8301b3d21ab5d437db82",
+    "source_catalogue": "Data/coverage_expansion/physics/catalog.json",
+    "source_id": "Transition1x2022",
+    "source_urls": [
+      "https://doi.org/10.6084/m9.figshare.19614657.v4"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "native reaction endpoint/transition-state triplet",
+    "key": "physics/transition1x_final_ts_geometry",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/physics/transition1x_final_ts_geometry.csv",
+    "qualification": "Source final NEB structures only; no intermediate-frame maximum substituted for TS. Missing final groups explicitly excluded; source-reported computational reference, independently recomputed saddle validation pending.",
+    "role": "primary",
+    "rows": 10073,
+    "sha256": "6c7512bb38663731d30e49bb9037d5b73ded283c1ffa8301b3d21ab5d437db82",
+    "source_catalogue": "Data/coverage_expansion/physics/catalog.json",
+    "source_id": "Transition1x2022",
+    "source_urls": [
+      "https://doi.org/10.6084/m9.figshare.19614657.v4"
+    ],
+    "title": "Transition1x endpoint / TS triplets"
+  },
+  "stored_path": "Data/families/mechanisms/ts_geometry/coverage/physics/transition1x_final_ts_geometry/data.csv",
+  "task_id": "ts_geometry",
+  "title": "Transition1x endpoint / TS triplets"
+}

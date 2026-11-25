@@ -1,0 +1,51 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "family": {
+    "counting_units": [
+      "attempted substrate-scope experiment",
+      "recorded component-performance reference",
+      "source-derived qualified task row"
+    ],
+    "data_counting_policy": "Deduplicated by namespace/source-table key within this family only; row units can differ, source views can overlap and rows are not unique reactions. Inspect each binding's counting_unit and physical configuration counts.",
+    "data_status": "local task references present; qualification varies",
+    "future_task_ids": [],
+    "gaps": "Recorded ORD component-performance pairs and a catalytic enzyme-design subset provide finite measured lookup oracles; Minot provides bounded retrospective substrate-scope hits. Off-library performance and globally novel transformation discovery remain unmeasured.",
+    "id": "design",
+    "overlapping_view_count": 0,
+    "primary_source_rows": 57229,
+    "primary_table_count": 3,
+    "release_eligible_table_count": 3,
+    "scope": "Inverse design of catalysts, ligands, reagents or media; discover and verify new transformations or substrate scope under an explicit experiment budget.",
+    "task_ids": [
+      "reaction_component_design",
+      "new_reactivity_discovery"
+    ],
+    "title": "Catalyst/reagent design and new reactivity"
+  },
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 3,
+    "data_links": 3,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 3,
+    "stored_rows_across_unique_views": 57229,
+    "task_table_bindings": 3,
+    "tasks": 2,
+    "unique_table_views": 3
+  },
+  "tasks": [
+    {
+      "id": "reaction_component_design",
+      "metadata": "reaction_component_design/task.json",
+      "title": "Reaction-conditioned component design"
+    },
+    {
+      "id": "new_reactivity_discovery",
+      "metadata": "new_reactivity_discovery/task.json",
+      "title": "New reactivity and substrate-scope discovery"
+    }
+  ]
+}

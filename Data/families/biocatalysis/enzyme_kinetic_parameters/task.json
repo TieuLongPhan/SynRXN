@@ -1,0 +1,222 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 3,
+    "data_links": 3,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 3,
+    "stored_rows_across_unique_views": 36968,
+    "task_table_bindings": 3,
+    "tasks": 1,
+    "unique_table_views": 3
+  },
+  "tables": [
+    {
+      "data_link": "coverage/bio/brenda_record_kcat/data.parquet",
+      "key": "bio/brenda_record_kcat",
+      "metadata": "coverage/bio/brenda_record_kcat/table.json",
+      "namespace": "coverage"
+    },
+    {
+      "data_link": "coverage/bio/brenda_record_km/data.parquet",
+      "key": "bio/brenda_record_km",
+      "metadata": "coverage/bio/brenda_record_km/table.json",
+      "namespace": "coverage"
+    },
+    {
+      "data_link": "coverage/bio/brenda_record_ki/data.parquet",
+      "key": "bio/brenda_record_ki",
+      "metadata": "coverage/bio/brenda_record_ki/table.json",
+      "namespace": "coverage"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "catalog_path": "Data/coverage_expansion/bio/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "source-derived qualified task row",
+        "coverage_branch": "bio",
+        "key": "bio/brenda_record_kcat",
+        "license": "MIT AND CC-BY-4.0; CatPred contribution MIT; underlying BRENDA/UniProt data CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/bio/brenda_record_kcat.parquet",
+        "qualification": "Release subset contains only native rows explicitly labeled brenda, using each retained row's value/log10_value. All pooled max/mean target columns, sabio rows and ambiguous uniprot_search origins are excluded. This changes the prediction target from CatPred's aggregate benchmark to a retained BRENDA-record response. Source preprocessing capped extreme values; no claim of uncensored raw laboratory measurements. Intended source units retained, no independent experimental unit audit. Derived 40%-cluster split is not the original random split. Native combined source assets must not be redistributed as part of this cleared subset.",
+        "reference_evidence": "Identifiable BRENDA retained record, established by pinned source-specific processors and merge.py; mathematical log10/value consistency checked.",
+        "release_eligible": true,
+        "release_license_expression": "MIT AND CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 11775,
+        "sha256": "83583d5eee84fc0c0469375743c2c6088c6f0e01ce8531e21c684a042be4d33f",
+        "source_id": "C15",
+        "source_sha256": "1b42e2523be7ae55959fc277d1873713812e8000090bf4512c100e66c827f949",
+        "source_url": "https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/kcat-random_trainvaltest.csv",
+        "task_fields": {
+          "enzyme_kinetic_parameters": {
+            "group_fields": [
+              "sequence_group",
+              "native_pair_group",
+              "native_cluster_40",
+              "native_cluster_80",
+              "derived_split"
+            ],
+            "inputs": [
+              "enzyme_sequence",
+              "substrate_smiles",
+              "parameter",
+              "temperature_native",
+              "ph"
+            ],
+            "metrics": [
+              "parameter-specific log10 MAE",
+              "RMSE",
+              "R2"
+            ],
+            "targets": [
+              "target_log10_brenda_record"
+            ]
+          }
+        },
+        "task_ids": [
+          "enzyme_kinetic_parameters"
+        ]
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/bio/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "source-derived qualified task row",
+        "coverage_branch": "bio",
+        "key": "bio/brenda_record_km",
+        "license": "MIT AND CC-BY-4.0; CatPred contribution MIT; underlying BRENDA/UniProt data CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/bio/brenda_record_km.parquet",
+        "qualification": "Release subset contains only native rows explicitly labeled brenda, using each retained row's value/log10_value. All pooled max/mean target columns, sabio rows and ambiguous uniprot_search origins are excluded. This changes the prediction target from CatPred's aggregate benchmark to a retained BRENDA-record response. Source preprocessing capped extreme values; no claim of uncensored raw laboratory measurements. Intended source units retained, no independent experimental unit audit. Derived 40%-cluster split is not the original random split. Native combined source assets must not be redistributed as part of this cleared subset.",
+        "reference_evidence": "Identifiable BRENDA retained record, established by pinned source-specific processors and merge.py; mathematical log10/value consistency checked.",
+        "release_eligible": true,
+        "release_license_expression": "MIT AND CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 19676,
+        "sha256": "254de537b9178e0dde95a650bfe7775767a18c864fbd5973af938751ee8f8af5",
+        "source_id": "C15",
+        "source_sha256": "a567c1f3e26e72cf5167cd5ed82df49e016181a8f7c4b886c6faaf7cef831e42",
+        "source_url": "https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/km-random_trainvaltest.csv",
+        "task_fields": {
+          "enzyme_kinetic_parameters": {
+            "group_fields": [
+              "sequence_group",
+              "native_pair_group",
+              "native_cluster_40",
+              "native_cluster_80",
+              "derived_split"
+            ],
+            "inputs": [
+              "enzyme_sequence",
+              "substrate_smiles",
+              "parameter",
+              "temperature_native",
+              "ph"
+            ],
+            "metrics": [
+              "parameter-specific log10 MAE",
+              "RMSE",
+              "R2"
+            ],
+            "targets": [
+              "target_log10_brenda_record"
+            ]
+          }
+        },
+        "task_ids": [
+          "enzyme_kinetic_parameters"
+        ]
+      },
+      {
+        "catalog_path": "Data/coverage_expansion/bio/catalog.json",
+        "commercial_use_allowed": true,
+        "counting_unit": "source-derived qualified task row",
+        "coverage_branch": "bio",
+        "key": "bio/brenda_record_ki",
+        "license": "MIT AND CC-BY-4.0; CatPred contribution MIT; underlying BRENDA/UniProt data CC-BY-4.0",
+        "namespace": "coverage",
+        "partition": "main",
+        "path": "Data/coverage_expansion/bio/brenda_record_ki.parquet",
+        "qualification": "Release subset contains only native rows explicitly labeled brenda, using each retained row's value/log10_value. All pooled max/mean target columns, sabio rows and ambiguous uniprot_search origins are excluded. This changes the prediction target from CatPred's aggregate benchmark to a retained BRENDA-record response. Source preprocessing capped extreme values; no claim of uncensored raw laboratory measurements. Intended source units retained, no independent experimental unit audit. Derived 40%-cluster split is not the original random split. Native combined source assets must not be redistributed as part of this cleared subset.",
+        "reference_evidence": "Identifiable BRENDA retained record, established by pinned source-specific processors and merge.py; mathematical log10/value consistency checked.",
+        "release_eligible": true,
+        "release_license_expression": "MIT AND CC-BY-4.0",
+        "rights_status": "admitted_source_or_table_specific_grant",
+        "role": "primary",
+        "rows": 5517,
+        "sha256": "6c0d260b601df0ac8bca895a759ed0c8dc8b9eac5048deffe34c9071186ef704",
+        "source_id": "C15",
+        "source_sha256": "ba3bbddc54743298214d643206d6bc0c5e068fb01656f3f0d6e7bcba16456180",
+        "source_url": "https://raw.githubusercontent.com/maranasgroup/CatPred-DB/931583821ff875e873002730fbbdf1047acfde77/datasets/splits/ki-random_trainvaltest.csv",
+        "task_fields": {
+          "enzyme_kinetic_parameters": {
+            "group_fields": [
+              "sequence_group",
+              "native_pair_group",
+              "native_cluster_40",
+              "native_cluster_80",
+              "derived_split"
+            ],
+            "inputs": [
+              "enzyme_sequence",
+              "substrate_smiles",
+              "parameter",
+              "temperature_native",
+              "ph"
+            ],
+            "metrics": [
+              "parameter-specific log10 MAE",
+              "RMSE",
+              "R2"
+            ],
+            "targets": [
+              "target_log10_brenda_record"
+            ]
+          }
+        },
+        "task_ids": [
+          "enzyme_kinetic_parameters"
+        ]
+      }
+    ],
+    "candidate_ids": [],
+    "candidate_status": "Source acquisition and qualification required",
+    "canonical_keys": [],
+    "counting_units": [
+      "source-derived qualified task row"
+    ],
+    "evaluation": "Parameter-specific log/native errors and sequence/substrate transfer; kcat, Km and Ki are distinct quantities and never pooled as rate constants",
+    "extension_adapter_ids": [],
+    "family_id": "biocatalysis",
+    "id": "enzyme_kinetic_parameters",
+    "legacy_view_ids": [],
+    "metrics": [
+      "R2",
+      "RMSE",
+      "parameter-specific log10 MAE"
+    ],
+    "origin": "promoted_from_initial_19_roadmap_definitions",
+    "primary_source_rows": 36968,
+    "primary_table_count": 3,
+    "qualification": "Source-qualified variants are defined per binding; required-data scope remains recorded. Acquisition and reference checks do not establish completed model performance.",
+    "question": "Enzyme sequence, reaction/substrate and assay conditions -> source-defined kinetic parameter",
+    "readiness": "source_qualified_coverage_contract_available; model_evaluation_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 3,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "required_data": "Sequence-linked kcat, Km or Ki measurements with units, temperature, pH and assay context",
+    "title": "Enzyme kinetic-parameter prediction"
+  }
+}

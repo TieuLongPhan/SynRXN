@@ -37,8 +37,7 @@ def run_nonparametric(
     method_list: Optional[Union[List[str], str]] = None,
     save_root: str = "statistics",
 ) -> Dict[str, Dict[str, str]]:
-    """
-    Run Friedman test and Conover-Friedman posthoc for each metric.
+    """Run Friedman test and Conover-Friedman posthoc for each metric.
 
     :param report_df: Wide or long scoring DataFrame.
     :type report_df: pandas.DataFrame
@@ -48,13 +47,13 @@ def run_nonparametric(
     :type method_list: Optional[Union[list,str]]
     :param save_root: Root directory for outputs (default 'statistics').
     :type save_root: str
-    :returns: Mapping metric -> dict with 'friedman_dir' and 'conover_dir'.
+    :return: Mapping metric -> dict with 'friedman_dir' and 'conover_dir'.
     :rtype: Dict[str, Dict[str,str]]
 
     .. code-block:: python
 
         >>> import pandas as pd
-        >>> from statistics_pipeline.nonparametric import run_nonparametric
+        >>> from synrxn.statistics.nonparametric import run_nonparametric
         >>> df = pd.DataFrame({
         ...     "scoring":["acc","acc","acc","acc"],
         ...     "cv_cycle":[1,1,2,2],

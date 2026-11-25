@@ -1,0 +1,202 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 7,
+    "data_links": 7,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 7,
+    "stored_rows_across_unique_views": 124537,
+    "task_table_bindings": 7,
+    "tasks": 1,
+    "unique_table_views": 7
+  },
+  "tables": [
+    {
+      "data_link": "canonical/yield/hitea/data.csv.gz",
+      "key": "yield/hitea",
+      "metadata": "canonical/yield/hitea/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "canonical/yield/buchwald_hartwig_ood/data.csv.gz",
+      "key": "yield/buchwald_hartwig_ood",
+      "metadata": "canonical/yield/buchwald_hartwig_ood/table.json",
+      "namespace": "canonical"
+    },
+    {
+      "data_link": "expansion/C02/minot_al1_data/data.parquet",
+      "key": "C02/minot_al1_data",
+      "metadata": "expansion/C02/minot_al1_data/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C02/minot_al2_data/data.parquet",
+      "key": "C02/minot_al2_data",
+      "metadata": "expansion/C02/minot_al2_data/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C02/minot_al3_data/data.parquet",
+      "key": "C02/minot_al3_data",
+      "metadata": "expansion/C02/minot_al3_data/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C02/minot_preal_data/data.parquet",
+      "key": "C02/minot_preal_data",
+      "metadata": "expansion/C02/minot_preal_data/table.json",
+      "namespace": "expansion"
+    },
+    {
+      "data_link": "expansion/C03/cn_screen/data.parquet",
+      "key": "C03/cn_screen",
+      "metadata": "expansion/C03/cn_screen/table.json",
+      "namespace": "expansion"
+    }
+  ],
+  "task": {
+    "benchmark_result_status": "not completed by this planning work",
+    "bindings": [
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "yield/hitea",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "MIT",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 39546
+      },
+      {
+        "commercial_use_allowed": true,
+        "counting_unit": "source-table row",
+        "key": "yield/buchwald_hartwig_ood",
+        "legacy_field_eligible_rows": {},
+        "namespace": "canonical",
+        "partition": "main",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 27438
+      },
+      {
+        "adapter_ids": [
+          "condition_ranking"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_al1_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 2907
+      },
+      {
+        "adapter_ids": [
+          "condition_ranking"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_al2_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 954
+      },
+      {
+        "adapter_ids": [
+          "condition_ranking"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_al3_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 960
+      },
+      {
+        "adapter_ids": [
+          "condition_ranking"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE observation",
+        "key": "C02/minot_preal_data",
+        "namespace": "expansion",
+        "partition": "main",
+        "qualification": "Conversion is not isolated yield. Native binary labels are preserved; the adapter does not infer an undocumented threshold.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 2044
+      },
+      {
+        "adapter_ids": [
+          "condition_ranking"
+        ],
+        "commercial_use_allowed": true,
+        "counting_unit": "HTE experiment",
+        "key": "C03/cn_screen",
+        "namespace": "expansion",
+        "partition": "sharealike",
+        "qualification": "UPLC assay yields are selected by ORD measurement type and desired-product flag. Area and internal-standard measurements remain native metadata.",
+        "release_eligible": true,
+        "release_license_expression": "CC-BY-SA-4.0",
+        "rights_status": "verified_upstream_grant",
+        "role": "primary",
+        "rows": 50688
+      }
+    ],
+    "canonical_keys": [
+      "yield/hitea",
+      "yield/buchwald_hartwig_ood"
+    ],
+    "counting_units": [
+      "HTE experiment",
+      "HTE observation",
+      "source-table row"
+    ],
+    "extension_adapter_ids": [
+      "condition_ranking"
+    ],
+    "family_id": "conditions",
+    "id": "condition_ranking",
+    "legacy_view_ids": [],
+    "metrics": [
+      "observed_regret_at_1",
+      "observed_regret_at_3",
+      "panel_coverage"
+    ],
+    "origin": "initial_22_source_backed_definition",
+    "primary_source_rows": 124537,
+    "primary_table_count": 7,
+    "qualification": "Requires comparable observed panels; the initial HiTEA design has 429. Other source rows are candidates, not already qualified panels.",
+    "question": "Reaction and observed candidate settings -> ordering by recorded response",
+    "readiness": "extension_adapter_available; standardized_contract_and_qualification_pending",
+    "release_blocked_table_count": 0,
+    "release_eligible_table_count": 7,
+    "release_readiness": "at_least_one_source_qualified_redistributable_reference",
+    "title": "Ranking measured conditions"
+  }
+}

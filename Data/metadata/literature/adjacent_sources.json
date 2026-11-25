@@ -1,0 +1,269 @@
+{
+  "as_of": "2026-10-20",
+  "records": [
+    {
+      "paper_id": "n24-reactzyme",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/2e68b2367d2e0bc8dd6f0ff86e07c2eb-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/25268-/bibtex",
+        "/paper_files/paper/2024/file/2e68b2367d2e0bc8dd6f0ff86e07c2eb-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n24-care",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/05a7ad45d75a3082d7a3a70de8743140-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/23039-/bibtex",
+        "/paper_files/paper/2024/file/05a7ad45d75a3082d7a3a70de8743140-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n24-flexmol",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/3e560698f840bceef29e9566b9bd7312-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/26559-/bibtex",
+        "/paper_files/paper/2024/file/3e560698f840bceef29e9566b9bd7312-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n24-welqrate",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/5f2f8305cd1c5be7e8319aea306388ce-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/26749-/bibtex",
+        "/paper_files/paper/2024/file/5f2f8305cd1c5be7e8319aea306388ce-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n24-massspecgym",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/c6c31413d5c53b7d1c343c1498734b0f-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/27319-/bibtex",
+        "/paper_files/paper/2024/file/c6c31413d5c53b7d1c343c1498734b0f-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n24-spectra",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/e38e60b33bb2c6993e0865160cdb5cf1-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/26838-/bibtex",
+        "/paper_files/paper/2024/file/e38e60b33bb2c6993e0865160cdb5cf1-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n24-moleculepuzzles",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/f2b9e8e7a36d43ddfd3d55113d56b1e0-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/23642-/bibtex",
+        "/paper_files/paper/2024/file/f2b9e8e7a36d43ddfd3d55113d56b1e0-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n24-curation",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/605bbd006beee7e0589a51d6a50dcae1-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/23645-/bibtex",
+        "/paper_files/paper/2024/file/605bbd006beee7e0589a51d6a50dcae1-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n24-gess",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/a8063075b00168dc39bc81683619f1a8-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/24362-/bibtex",
+        "/paper_files/paper/2024/file/a8063075b00168dc39bc81683619f1a8-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n24-audits",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/a7ce9b6a4db012cdaac28dd48989a17d-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/24058-/bibtex",
+        "/paper_files/paper/2024/file/a7ce9b6a4db012cdaac28dd48989a17d-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n24-datacentric",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/ae00e5ce7142d02e30a8235ede1ec6fc-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/24736-/bibtex",
+        "/paper_files/paper/2024/file/ae00e5ce7142d02e30a8235ede1ec6fc-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n24-select",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/f6de5ed486b1802874fe9c70b50277e4-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/27403-/bibtex",
+        "/paper_files/paper/2024/file/f6de5ed486b1802874fe9c70b50277e4-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n24-dft",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/40d45b1e23d00d5895e65778e85cf8ee-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/24258-/bibtex",
+        "/paper_files/paper/2024/file/40d45b1e23d00d5895e65778e85cf8ee-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n25-chemix",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/2f803abdcad9de35b45d5a656dade45c-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/32886-/bibtex",
+        "/paper_files/paper/2025/file/2f803abdcad9de35b45d5a656dade45c-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n25-chempile",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/505dc6a661fe8dcffaac4c3621eea69d-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/32982-/bibtex",
+        "/paper_files/paper/2025/file/505dc6a661fe8dcffaac4c3621eea69d-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n25-chemx",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9e08a1db869a9646418e3371b24c6ae6-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/33291-/bibtex",
+        "/paper_files/paper/2025/file/9e08a1db869a9646418e3371b24c6ae6-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n25-boom",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/b94263f7f98c9766ea9a09761ddd88ee-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/33076-/bibtex",
+        "/paper_files/paper/2025/file/b94263f7f98c9766ea9a09761ddd88ee-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n25-roft",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/013acf7d59f4333131fc8581e86148b1-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/32904-/bibtex",
+        "/paper_files/paper/2025/file/013acf7d59f4333131fc8581e86148b1-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n25-modulm",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9d71f47d4f1d240b02bb173936e5bf01-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/32996-/bibtex",
+        "/paper_files/paper/2025/file/9d71f47d4f1d240b02bb173936e5bf01-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n25-fg",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/bcaa0c3f644f580857a56f38e305867e-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/32877-/bibtex",
+        "/paper_files/paper/2025/file/bcaa0c3f644f580857a56f38e305867e-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n25-molvision",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/c52d78d2776e3760405f054afbeb525f-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/32813-/bibtex",
+        "/paper_files/paper/2025/file/c52d78d2776e3760405f054afbeb525f-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n25-edbench",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/d412ba5c76774f921762644e82515da3-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/33181-/bibtex",
+        "/paper_files/paper/2025/file/d412ba5c76774f921762644e82515da3-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n25-operations",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/e0ed6d6c2ec6df05f929b8a67b78513a-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/33241-/bibtex",
+        "/paper_files/paper/2025/file/e0ed6d6c2ec6df05f929b8a67b78513a-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    },
+    {
+      "paper_id": "n25-uncertainty",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9e27bc7e3946992376f2a0c401a2e6db-Abstract-Datasets_and_Benchmarks_Track.html",
+      "status": 200,
+      "forums": [],
+      "links": [
+        "/paper_files/paper/33232-/bibtex",
+        "/paper_files/paper/2025/file/9e27bc7e3946992376f2a0c401a2e6db-Paper-Datasets_and_Benchmarks_Track.pdf"
+      ],
+      "abstract": null
+    }
+  ]
+}

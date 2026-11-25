@@ -1,0 +1,8 @@
+ChemSINDy published elementary-network simulation examples
+Source: https://github.com/nla-group/ChemSINDy/tree/9aa3f8adb997348bd1e85c1b61fa8a835a91c759
+Creators: Abraham Reyes-Velazquez; Stefan Güttel; Igor Larrosa; Jonas Latz
+License: MIT
+Source license declaration: https://github.com/nla-group/ChemSINDy/blob/9aa3f8adb997348bd1e85c1b61fa8a835a91c759/LICENSE
+License terms: https://opensource.org/licenses/MIT
+Changes in this distribution: Reviewed and transcribed M1/M20 stoichiometry; regenerated explicit ODE simulations using source notebook example settings. M1 uses exact native seed9006; M20 reconstructs printed rounded constants and initial values. These are derived simulated references, not experimental observations or a bitwise reproduction of hidden M20 random draws.
+No endorsement by the original authors is implied.

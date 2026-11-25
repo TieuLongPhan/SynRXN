@@ -1,0 +1,117 @@
+{
+  "counting_unit": "annotated chemical-conversion precedent query",
+  "data_link": "data.parquet",
+  "family_id": "representation",
+  "format": "parquet",
+  "key": "knowledge/EnzChemRED2024/retrieval",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/knowledge/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "annotated chemical-conversion precedent query",
+    "coverage_branch": "knowledge",
+    "key": "knowledge/EnzChemRED2024/retrieval",
+    "license": "CC-BY-4.0",
+    "namespace": "coverage",
+    "parent_groups": 2419,
+    "partition": "main",
+    "path": "Data/coverage_expansion/knowledge/retrieval.parquet",
+    "qualification": "Query-to-literature-precedent retrieval with expert linked conversion references, not graded mechanistic similarity. Gallery exposes only document IDs/text; gold entities and relation labels are withheld. Unannotated documents are unknown relevance, not confirmed negatives. Document text can be shared across query splits; no unseen-paper claim.",
+    "reference_evidence": "expert_annotated_conversion_document_links",
+    "release_eligible": true,
+    "release_license_expression": "CC-BY-4.0",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 2419,
+    "sha256": "92a65a8155800d2ab88eef695530051a81a2b82fa55f1bea790b8db0304fa6a5",
+    "source_id": "EnzChemRED2024",
+    "source_sha256": "046f6c00663d26cf172cb828b3fe68cab92a128de947545c01aff53060c06251",
+    "source_url": "https://doi.org/10.5281/zenodo.11067998",
+    "task_fields": {
+      "reaction_retrieval": {
+        "group_fields": [
+          "parent_group"
+        ],
+        "input_keys": [
+          "chemical_identifiers",
+          "chemical_names"
+        ],
+        "inputs": [
+          "inputs_json"
+        ],
+        "metrics": [
+          "recall_at_k",
+          "nDCG",
+          "query_coverage"
+        ],
+        "split_policy": "SHA-256 parent-group 80/10/10 seed 2027; native split retained separately",
+        "target_keys": [
+          "relevant_document_ids"
+        ],
+        "targets": [
+          "targets_json"
+        ]
+      }
+    },
+    "task_ids": [
+      "reaction_retrieval"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "annotated chemical-conversion precedent query",
+    "expected_bytes": 222082,
+    "expected_rows": 2419,
+    "expected_sha256": "92a65a8155800d2ab88eef695530051a81a2b82fa55f1bea790b8db0304fa6a5",
+    "format": "parquet",
+    "key": "knowledge/EnzChemRED2024/retrieval",
+    "license_expression": "CC-BY-4.0",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/knowledge/retrieval.parquet",
+    "qualification": "Query-to-literature-precedent retrieval with expert linked conversion references, not graded mechanistic similarity. Gallery exposes only document IDs/text; gold entities and relation labels are withheld. Unannotated documents are unknown relevance, not confirmed negatives. Document text can be shared across query splits; no unseen-paper claim.",
+    "reasons": [],
+    "reference_evidence": "expert_annotated_conversion_document_links",
+    "release_eligible": true,
+    "source_id": "EnzChemRED2024",
+    "source_url": "https://doi.org/10.5281/zenodo.11067998",
+    "task_ids": [
+      "reaction_retrieval"
+    ]
+  },
+  "role": "primary",
+  "rows": 2419,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/knowledge/retrieval.parquet",
+    "sha256": "92a65a8155800d2ab88eef695530051a81a2b82fa55f1bea790b8db0304fa6a5",
+    "source_catalogue": "Data/coverage_expansion/knowledge/catalog.json",
+    "source_id": "EnzChemRED2024",
+    "source_urls": [
+      "https://doi.org/10.5281/zenodo.11067998"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "annotated chemical-conversion precedent query",
+    "key": "knowledge/EnzChemRED2024/retrieval",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/knowledge/retrieval.parquet",
+    "qualification": "Query-to-literature-precedent retrieval with expert linked conversion references, not graded mechanistic similarity. Gallery exposes only document IDs/text; gold entities and relation labels are withheld. Unannotated documents are unknown relevance, not confirmed negatives. Document text can be shared across query splits; no unseen-paper claim.",
+    "role": "primary",
+    "rows": 2419,
+    "sha256": "92a65a8155800d2ab88eef695530051a81a2b82fa55f1bea790b8db0304fa6a5",
+    "source_catalogue": "Data/coverage_expansion/knowledge/catalog.json",
+    "source_id": "EnzChemRED2024",
+    "source_urls": [
+      "https://doi.org/10.5281/zenodo.11067998"
+    ],
+    "title": "EnzChemRED precedent queries"
+  },
+  "stored_path": "Data/families/representation/reaction_retrieval/coverage/knowledge/EnzChemRED2024/retrieval/data.parquet",
+  "task_id": "reaction_retrieval",
+  "title": "EnzChemRED precedent queries"
+}

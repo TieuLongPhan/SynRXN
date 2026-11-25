@@ -1,0 +1,13 @@
+{
+  "source_id": "C10",
+  "name": "RxnSolvKSE_dataset_v1.1.zip",
+  "bytes": 311651755,
+  "checksum": "md5:0c6f5ce05888ef366104e64c2bed0301",
+  "url": "https://zenodo.org/api/records/8423911/files/RxnSolvKSE_dataset_v1.1.zip/content",
+  "path": "Data/raw/synrxn2/C10/RxnSolvKSE_dataset_v1.1.zip",
+  "bytes_observed": 430940,
+  "sha256": "4586fd5baf7a3f1d7f5db394969bbee22cb4e85d00e0784a57b9ddbceb0809d6",
+  "md5": "8fc2de30172be58beee97ad05003466d",
+  "status": "unavailable",
+  "error": "source byte size differs from the pinned release"
+}

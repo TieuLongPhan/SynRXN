@@ -1,0 +1,753 @@
+{
+  "schema": "synrxn.classification-rights-recheck.v1",
+  "retrieved_on": "2026-10-20",
+  "policy": "User authorizes redistribution under original NC grants in an explicitly separate noncommercial research partition; preserve all native and curation notices. No frozen data is changed.",
+  "tables": [
+    {
+      "key": "classification/ecreact",
+      "rows": 185734,
+      "release_eligible": true,
+      "remaining_qualification": [
+        "This is the CLAIRE augmented version, not 185,734 independent experimental reactions.",
+        "The original 2022 ECREACT release cites the 2020 PathBank 1.0 source (ODbL); do not retrospectively apply the distinct 2024 PathBank 2.0 NC grant to that pinned source.",
+        "CLAIRE augmentation removes the per-record source-database column. Exact ultimate database provenance for each augmented row is not reconstructed.",
+        "MetaNetX declares CC BY 4.0 for its own contribution and preserves constituent-resource restrictions; the source report does not certify a commercial rights chain for every constituent record."
+      ],
+      "source_reproduction": {
+        "key": "classification/ecreact",
+        "native_path": "kdd/coverage/rights_recheck/classification/assets/syncat/Data/raw/claire_full.csv.gz",
+        "native_sha256": "cc3731eb2cacd598e2f096fd329460295408f65d0e818cd0a747c9fc6d9088c8",
+        "native_rows": 185734,
+        "rows": 185734,
+        "compared_columns": [
+          "r_id",
+          "rxn",
+          "ec1",
+          "ec2",
+          "ec3",
+          "split",
+          "orig_index"
+        ],
+        "recreated_values_equal": true
+      },
+      "status": "verified_author_data_grant",
+      "release_license_expression": "CC-BY-4.0 AND MIT AND ODbL-1.0",
+      "partition": "database_sharealike",
+      "reason": "The original CLAIRE authors explicitly publish the data as CC BY 4.0 on Zenodo14635841 and link that deposit from their pinned README. Its166918 training and 18,816 test augmented rows exactly match the 185,734-row SynCat source on reaction SMILES, EC3 and native split; the canonical curator reproduces every published field. Retain SynCat/ECREACT MIT notices and the original PathBank 1.0 ODbL database notice instead of claiming a uniform standalone CC BY 4.0 grant.",
+      "evidence_ids": [
+        "recheck_classification:zenodo-14635841.json",
+        "recheck_classification:claire/README.md",
+        "recheck_classification:claire-member/data/train_augmented.csv",
+        "recheck_classification:claire-member/data/test_augmented.csv",
+        "recheck_classification:syncat/LICENSE",
+        "recheck_classification:ecreact/LICENSE",
+        "recheck_classification:ecreact/README.md",
+        "recheck_classification:ecreact/data/ecreact-1.0.csv",
+        "recheck_classification:pathbank-2020-article.xml",
+        "recheck_classification:pathbank-about.html",
+        "recheck_classification:metanetx-terms.html",
+        "recheck_classification:brenda-terms.html",
+        "recheck_classification:rhea-terms.html",
+        "recheck_classification:classification-source-joins"
+      ],
+      "commercial_scope": "No blanket certification of all ultimate constituent-resource permissions; the verified author data grant is CC BY 4.0 and PathBank 1.0 database notice is ODbL."
+    },
+    {
+      "key": "classification/schneider_b",
+      "rows": 50000,
+      "release_eligible": true,
+      "remaining_qualification": [
+        "The original annotation release has an NC grant; broad downstream MIT redistribution does not establish an unqualified right to relabel every imported annotation CC BY 4.0.",
+        "NC preserves sharing and adaptation for noncommercial uses with attribution. It does not establish a commercial-use grant."
+      ],
+      "source_reproduction": {
+        "key": "classification/schneider_b",
+        "native_path": "kdd/coverage/rights_recheck/classification/assets/syncat/Data/raw/schneider50k_balanced.csv.gz",
+        "native_sha256": "30cdc91c278ef0cbb6bf5ebd2931a37fa80710b59347d152efc71e909a153cc2",
+        "native_rows": 50000,
+        "rows": 50000,
+        "compared_columns": [
+          "r_id",
+          "rxn",
+          "label",
+          "split"
+        ],
+        "recreated_values_equal": true
+      },
+      "status": "verified_noncommercial_data_grant",
+      "release_license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+      "partition": "noncommercial",
+      "reason": "The original Schneider 2015 data supplement currently has an explicit CC BY-NC 4.0 publisher grant. The same 50,000 reaction/class/source/split records occur in the pinned MIT RXNFP repository, then in SynCat; both SynCat balanced/unbalanced curators reproduce all canonical fields. Include for noncommercial research while preserving the original data grant and MIT notices.",
+      "evidence_ids": [
+        "recheck_classification:figshare-2213215.json",
+        "recheck_classification:ci5006614_si_002.zip",
+        "recheck_classification:syncat/LICENSE",
+        "recheck_classification:syncat/README.md",
+        "recheck_classification:gln/LICENSE",
+        "recheck_classification:gln/README.md",
+        "recheck_classification:classification-source-joins",
+        "recheck_classification:rxnfp/LICENSE",
+        "recheck_classification:rxnfp/data/schneider50k.tsv"
+      ]
+    },
+    {
+      "key": "classification/schneider_u",
+      "rows": 50000,
+      "release_eligible": true,
+      "remaining_qualification": [
+        "The original annotation release has an NC grant; broad downstream MIT redistribution does not establish an unqualified right to relabel every imported annotation CC BY 4.0.",
+        "NC preserves sharing and adaptation for noncommercial uses with attribution. It does not establish a commercial-use grant."
+      ],
+      "source_reproduction": {
+        "key": "classification/schneider_u",
+        "native_path": "kdd/coverage/rights_recheck/classification/assets/syncat/Data/raw/schneider50k_unbalanced.csv.gz",
+        "native_sha256": "7f1ef7e2890bddf1458ccd954aa7a4a82c991ade906d10f7b704d7a4496d9aed",
+        "native_rows": 50000,
+        "rows": 50000,
+        "compared_columns": [
+          "r_id",
+          "rxn",
+          "label",
+          "split"
+        ],
+        "recreated_values_equal": true
+      },
+      "status": "verified_noncommercial_data_grant",
+      "release_license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+      "partition": "noncommercial",
+      "reason": "The original Schneider 2015 data supplement currently has an explicit CC BY-NC 4.0 publisher grant. The same 50,000 reaction/class/source/split records occur in the pinned MIT RXNFP repository, then in SynCat; both SynCat balanced/unbalanced curators reproduce all canonical fields. Include for noncommercial research while preserving the original data grant and MIT notices.",
+      "evidence_ids": [
+        "recheck_classification:figshare-2213215.json",
+        "recheck_classification:ci5006614_si_002.zip",
+        "recheck_classification:syncat/LICENSE",
+        "recheck_classification:syncat/README.md",
+        "recheck_classification:gln/LICENSE",
+        "recheck_classification:gln/README.md",
+        "recheck_classification:classification-source-joins",
+        "recheck_classification:rxnfp/LICENSE",
+        "recheck_classification:rxnfp/data/schneider50k.tsv"
+      ]
+    },
+    {
+      "key": "classification/tpl_b",
+      "rows": 445115,
+      "release_eligible": true,
+      "remaining_qualification": [
+        "Repository-wide MIT grant for actual dataset files, not an inference from the paper license.",
+        "Template labels and balanced/unbalanced tables are derived views of the same patent corpus; no independent-experiment count is asserted."
+      ],
+      "source_reproduction": {
+        "key": "classification/tpl_b",
+        "native_path": "kdd/coverage/rights_recheck/classification/assets/syncat/Data/raw/USPTO_TPL_balanced.csv.gz",
+        "native_sha256": "8240ec326fa20550ca5c8e8ec620ac1dbb887c73fabc7560152c09b4e9b48831",
+        "native_rows": 445115,
+        "rows": 445115,
+        "compared_columns": [
+          "r_id",
+          "rxn",
+          "label",
+          "split"
+        ],
+        "recreated_values_equal": true
+      },
+      "status": "verified_repository_dataset_grant",
+      "release_license_expression": "CC-BY-4.0 AND MIT",
+      "partition": "main",
+      "reason": "The complete native dataset is redistributed in the pinned SynCat author repository under its MIT notice and all curated output fields reproduce exactly. The original RXNFP author README describes USPTO 1k TPL as its newly generated labels on the Lowe USPTO corpus, explicitly CC0 at the primary Figshare release. Preserve the native MIT notice with the SynRXN CC BY 4.0 curation attribution.",
+      "evidence_ids": [
+        "recheck_classification:syncat/LICENSE",
+        "recheck_classification:syncat/README.md",
+        "recheck_classification:syncat/Data/raw/USPTO_TPL_balanced.csv.gz",
+        "recheck_classification:rxnfp/LICENSE",
+        "recheck_classification:rxnfp/README.md",
+        "recheck_classification:rxnfp/data/uspto_1k_TPL/README.md",
+        "recheck_classification:figshare-5104873.json",
+        "recheck_classification:classification-source-joins"
+      ]
+    },
+    {
+      "key": "classification/tpl_u",
+      "rows": 445115,
+      "release_eligible": true,
+      "remaining_qualification": [
+        "Repository-wide MIT grant for actual dataset files, not an inference from the paper license.",
+        "Template labels and balanced/unbalanced tables are derived views of the same patent corpus; no independent-experiment count is asserted."
+      ],
+      "source_reproduction": {
+        "key": "classification/tpl_u",
+        "native_path": "kdd/coverage/rights_recheck/classification/assets/syncat/Data/raw/USPTO_TPL_unbalanced.csv.gz",
+        "native_sha256": "692f1cdf324d2607daf0194f3f225296766996f9d2508d8d1987bd23c7903fd1",
+        "native_rows": 445115,
+        "rows": 445115,
+        "compared_columns": [
+          "r_id",
+          "rxn",
+          "label",
+          "split"
+        ],
+        "recreated_values_equal": true
+      },
+      "status": "verified_repository_dataset_grant",
+      "release_license_expression": "CC-BY-4.0 AND MIT",
+      "partition": "main",
+      "reason": "The complete native dataset is redistributed in the pinned SynCat author repository under its MIT notice and all curated output fields reproduce exactly. The original RXNFP author README describes USPTO 1k TPL as its newly generated labels on the Lowe USPTO corpus, explicitly CC0 at the primary Figshare release. Preserve the native MIT notice with the SynRXN CC BY 4.0 curation attribution.",
+      "evidence_ids": [
+        "recheck_classification:syncat/LICENSE",
+        "recheck_classification:syncat/README.md",
+        "recheck_classification:syncat/Data/raw/USPTO_TPL_unbalanced.csv.gz",
+        "recheck_classification:rxnfp/LICENSE",
+        "recheck_classification:rxnfp/README.md",
+        "recheck_classification:rxnfp/data/uspto_1k_TPL/README.md",
+        "recheck_classification:figshare-5104873.json",
+        "recheck_classification:classification-source-joins"
+      ]
+    },
+    {
+      "key": "classification/uspto_50k_b",
+      "rows": 50016,
+      "release_eligible": true,
+      "remaining_qualification": [
+        "The original annotation release has an NC grant; broad downstream MIT redistribution does not establish an unqualified right to relabel every imported annotation CC BY 4.0.",
+        "NC preserves sharing and adaptation for noncommercial uses with attribution. It does not establish a commercial-use grant."
+      ],
+      "source_reproduction": {
+        "key": "classification/uspto_50k_b",
+        "native_path": "kdd/coverage/rights_recheck/classification/assets/syncat/Data/raw/USPTO_50k_balanced.csv.gz",
+        "native_sha256": "c3f203c2340bdf242b66390bdaeb1db4e974860a20d23800984db1d51a5883cb",
+        "native_rows": 50016,
+        "rows": 50016,
+        "compared_columns": [
+          "r_id",
+          "rxn",
+          "label",
+          "split"
+        ],
+        "recreated_values_equal": true
+      },
+      "status": "verified_noncommercial_data_grant",
+      "release_license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+      "partition": "noncommercial",
+      "reason": "The source chain goes through the Schneider 2016 USPTO-50K data release, whose actual dataset ZIP currently has an explicit CC BY-NC 4.0 publisher grant. The proximate SynCat and GLN repositories are MIT; preserve those notices without treating their code license as blanket relicensing of imported original annotations. Include the derived view in the noncommercial partition.",
+      "evidence_ids": [
+        "recheck_classification:figshare-4295660.json",
+        "recheck_classification:ci6b00564_si_002.zip",
+        "recheck_classification:syncat/LICENSE",
+        "recheck_classification:syncat/README.md",
+        "recheck_classification:gln/LICENSE",
+        "recheck_classification:gln/README.md",
+        "recheck_classification:classification-source-joins",
+        "recheck_classification:figshare-25046471.json",
+        "recheck_classification:figshare-25459573.json",
+        "recheck_classification:uspto50k-native-source-join"
+      ]
+    },
+    {
+      "key": "classification/uspto_50k_u",
+      "rows": 50016,
+      "release_eligible": true,
+      "remaining_qualification": [
+        "The original annotation release has an NC grant; broad downstream MIT redistribution does not establish an unqualified right to relabel every imported annotation CC BY 4.0.",
+        "NC preserves sharing and adaptation for noncommercial uses with attribution. It does not establish a commercial-use grant."
+      ],
+      "source_reproduction": {
+        "key": "classification/uspto_50k_u",
+        "native_path": "kdd/coverage/rights_recheck/classification/assets/syncat/Data/raw/USPTO_50k_unbalanced.csv.gz",
+        "native_sha256": "45aaae51f2be2f4e299ffc157cf36e5cb72c536ec441cc9079ffc8dbfdfa8d6f",
+        "native_rows": 50016,
+        "rows": 50016,
+        "compared_columns": [
+          "r_id",
+          "rxn",
+          "label",
+          "split"
+        ],
+        "recreated_values_equal": true
+      },
+      "status": "verified_noncommercial_data_grant",
+      "release_license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+      "partition": "noncommercial",
+      "reason": "The source chain goes through the Schneider 2016 USPTO-50K data release, whose actual dataset ZIP currently has an explicit CC BY-NC 4.0 publisher grant. The proximate SynCat and GLN repositories are MIT; preserve those notices without treating their code license as blanket relicensing of imported original annotations. Include the derived view in the noncommercial partition.",
+      "evidence_ids": [
+        "recheck_classification:figshare-4295660.json",
+        "recheck_classification:ci6b00564_si_002.zip",
+        "recheck_classification:syncat/LICENSE",
+        "recheck_classification:syncat/README.md",
+        "recheck_classification:gln/LICENSE",
+        "recheck_classification:gln/README.md",
+        "recheck_classification:classification-source-joins",
+        "recheck_classification:figshare-25046471.json",
+        "recheck_classification:figshare-25459573.json",
+        "recheck_classification:uspto50k-native-source-join"
+      ]
+    },
+    {
+      "key": "synthesis/uspto_50k",
+      "rows": 50016,
+      "release_eligible": true,
+      "remaining_qualification": [
+        "The original annotation release has an NC grant; broad downstream MIT redistribution does not establish an unqualified right to relabel every imported annotation CC BY 4.0.",
+        "NC preserves sharing and adaptation for noncommercial uses with attribution. It does not establish a commercial-use grant.",
+        "The existing source-join audit matches all 50,016 native patent records and molecules; 10,309 published rows lose stereochemistry, which remains explicitly documented.",
+        "The 2024 LocalMapper Figshare remapped-data deposit remains separately CC BY 4.0. The 2026 LocalMapper code NC-SA update is not automatically retroactive to that distinct data grant, and this table should not be relabeled NC-SA merely because the code changed."
+      ],
+      "source_reproduction": {
+        "path": "ncs/audit/uspto50k-source-join.json",
+        "rows": 50016,
+        "matched_graph_or_stereo_only_rows": 50016
+      },
+      "status": "verified_noncommercial_data_grant",
+      "release_license_expression": "CC-BY-4.0 AND MIT AND CC-BY-NC-4.0",
+      "partition": "noncommercial",
+      "reason": "The source chain goes through the Schneider 2016 USPTO-50K data release, whose actual dataset ZIP currently has an explicit CC BY-NC 4.0 publisher grant. The proximate SynCat and GLN repositories are MIT; preserve those notices without treating their code license as blanket relicensing of imported original annotations. Include the derived view in the noncommercial partition.",
+      "evidence_ids": [
+        "recheck_classification:figshare-4295660.json",
+        "recheck_classification:ci6b00564_si_002.zip",
+        "recheck_classification:syncat/LICENSE",
+        "recheck_classification:syncat/README.md",
+        "recheck_classification:gln/LICENSE",
+        "recheck_classification:gln/README.md",
+        "recheck_classification:classification-source-joins",
+        "recheck_classification:figshare-25046471.json",
+        "recheck_classification:figshare-25459573.json",
+        "recheck_classification:uspto50k-native-source-join"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "recheck_classification:brenda-terms.html",
+      "url": "https://www.brenda-enzymes.org/download.php",
+      "path": "kdd/coverage/rights_recheck/classification/assets/brenda-terms.html",
+      "bytes": 14549,
+      "sha256": "aef8bedb073332fae2a28d4a1ea0e8316c7bb4df46f5a33866129252b43033e8",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:ci5006614_si_002.zip",
+      "url": "https://ndownloader.figshare.com/files/3848755",
+      "path": "kdd/coverage/rights_recheck/classification/assets/ci5006614_si_002.zip",
+      "bytes": 22185657,
+      "sha256": "92ef6bc5f6e8ff278a1ca6b26e651d00c67fa51cab051e3d762a99d72e3fa98d",
+      "upstream_md5": "e803733cdcae6151930bbed420e07bb4",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:ci6b00564_si_002.zip",
+      "url": "https://ndownloader.figshare.com/files/7005749",
+      "path": "kdd/coverage/rights_recheck/classification/assets/ci6b00564_si_002.zip",
+      "bytes": 13100942,
+      "sha256": "ce95f5ac1ad7e37e06c537c4c78a6e6e0b792c5d3713ff3b9c032b8bf7f22fea",
+      "upstream_md5": "56d934489fa2a81c24c23d0232a287c4",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:claire-member/data/test_augmented.csv",
+      "url": "https://zenodo.org/api/records/14635841/files/data.zip/content",
+      "archive_member": "data/test_augmented.csv",
+      "archive_upstream_checksum": "md5:f18a49d410618d0c921f992cd7872f9a",
+      "archive_bytes": 921446213,
+      "member_crc32": "30519d06",
+      "path": "kdd/coverage/rights_recheck/classification/assets/claire_members/data/test_augmented.csv",
+      "bytes": 4456340,
+      "sha256": "e0b1a4901d31b8fe7a68314804429a785c3b87ddcc2b28c321f0a3c885b224cb",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:claire-member/data/train_augmented.csv",
+      "url": "https://zenodo.org/api/records/14635841/files/data.zip/content",
+      "archive_member": "data/train_augmented.csv",
+      "archive_upstream_checksum": "md5:f18a49d410618d0c921f992cd7872f9a",
+      "archive_bytes": 921446213,
+      "member_crc32": "c309a58a",
+      "path": "kdd/coverage/rights_recheck/classification/assets/claire_members/data/train_augmented.csv",
+      "bytes": 39580916,
+      "sha256": "eb0bd5ba43b241aa7af475509d2c5553c78429cb4f8228dd75385efc24a28bb7",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:claire-tree.json",
+      "url": "https://api.github.com/repos/zishuozeng/CLAIRE/git/trees/1379140a8edd75ac457824ff271802c2195ebb03?recursive=1",
+      "path": "kdd/coverage/rights_recheck/classification/assets/claire-tree.json",
+      "bytes": 17156,
+      "sha256": "b78e90aa65afde5f14dc045f38877225dc8caff71c5b718ea749578f4957dfb9",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:claire/README.md",
+      "url": "https://raw.githubusercontent.com/zishuozeng/CLAIRE/1379140a8edd75ac457824ff271802c2195ebb03/README.md",
+      "path": "kdd/coverage/rights_recheck/classification/assets/claire/README.md",
+      "bytes": 5427,
+      "sha256": "e5de1249a68fbdecce636c8e58606f6de49ae00b11b785cae7632662d50907fa",
+      "git_blob_sha1": "b1dfda9b8b3745b9e27efbd40b4fb68e718e89d7",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:ecreact-tree.json",
+      "url": "https://api.github.com/repos/rxn4chemistry/biocatalysis-model/git/trees/7a5add1c0bbafcf658a296d835f357f19936a1b5?recursive=1",
+      "path": "kdd/coverage/rights_recheck/classification/assets/ecreact-tree.json",
+      "bytes": 9103,
+      "sha256": "4d7a8b5ff086d03bf901ba102845eb05e6b1edb509dca7c476c7523b1b925545",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:ecreact/LICENSE",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/biocatalysis-model/7a5add1c0bbafcf658a296d835f357f19936a1b5/LICENSE",
+      "path": "kdd/coverage/rights_recheck/classification/assets/ecreact/LICENSE",
+      "bytes": 1070,
+      "sha256": "a5cbcb1b657239a289f23e31c756301d195b46dd3ad60c79ac54b5b714f48c7b",
+      "git_blob_sha1": "34a3e8a7b165654e418d02edcbaa6a890169c06c",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:ecreact/README.md",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/biocatalysis-model/7a5add1c0bbafcf658a296d835f357f19936a1b5/README.md",
+      "path": "kdd/coverage/rights_recheck/classification/assets/ecreact/README.md",
+      "bytes": 17366,
+      "sha256": "04466039ba2fbed43530a534c1e5dfa6245de952d134369476861cdc6c7a9aaf",
+      "git_blob_sha1": "31f2153e890e900fa3eba33330d2e295eba505ea",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:ecreact/data/ecreact-1.0.csv",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/biocatalysis-model/7a5add1c0bbafcf658a296d835f357f19936a1b5/data/ecreact-1.0.csv",
+      "path": "kdd/coverage/rights_recheck/classification/assets/ecreact/data/ecreact-1.0.csv",
+      "bytes": 16968874,
+      "sha256": "8cd53c30373feb7aa2f4336a0a15fd056503e59ffa21fddbbbb1c1369e09ccdd",
+      "git_blob_sha1": "f51ae2e5e9a1a7222b7902136d9347bd5934bc49",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:figshare-2213215.json",
+      "url": "https://api.figshare.com/v2/articles/2213215",
+      "path": "kdd/coverage/rights_recheck/classification/assets/figshare-2213215.json",
+      "bytes": 6527,
+      "sha256": "f1d2dcc043e0f72673f4cdd32370f498c162dc145b11a8e1a8e12c0b289b8bfd",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:figshare-2213242.json",
+      "url": "https://api.figshare.com/v2/articles/2213242",
+      "path": "kdd/coverage/rights_recheck/classification/assets/figshare-2213242.json",
+      "bytes": 6573,
+      "sha256": "ff311a9d82660f7728a925d8c132601d1cc6a91983426d528ac8b8d6ba6c6e5c",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:figshare-2213251.json",
+      "url": "https://api.figshare.com/v2/articles/2213251",
+      "path": "kdd/coverage/rights_recheck/classification/assets/figshare-2213251.json",
+      "bytes": 6531,
+      "sha256": "3f8159ad178ec0c8f7e95642cedc64690c333435b0c39112a68772941d869d69",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:figshare-25046471.json",
+      "url": "https://api.figshare.com/v2/articles/25046471",
+      "path": "kdd/coverage/rights_recheck/classification/assets/figshare-25046471.json",
+      "bytes": 3185,
+      "sha256": "3bc79d4fa1aaeb7bd7e6bf9218b56c3f02c155fdd5e76e35e133b10d0ec9fad6",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:figshare-25459573.json",
+      "url": "https://api.figshare.com/v2/articles/25459573",
+      "path": "kdd/coverage/rights_recheck/classification/assets/figshare-25459573.json",
+      "bytes": 2466,
+      "sha256": "48c70ca25da46e2219b31ad58c08c01b4a982063d7df1876137a43930ddeb3b3",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:figshare-4295660.json",
+      "url": "https://api.figshare.com/v2/articles/4295660",
+      "path": "kdd/coverage/rights_recheck/classification/assets/figshare-4295660.json",
+      "bytes": 6319,
+      "sha256": "fd888957f6061c44ecdb136f46568f236c8dbdf236fb83d0105673c8980590a0",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:figshare-5104873.json",
+      "url": "https://api.figshare.com/v2/articles/5104873",
+      "path": "kdd/coverage/rights_recheck/classification/assets/figshare-5104873.json",
+      "bytes": 5925,
+      "sha256": "a3eecb1ea24628600c2cdc93e499d965e170d87d5797d33738fe7b6106e623e4",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:gln-tree.json",
+      "url": "https://api.github.com/repos/Hanjun-Dai/GLN/git/trees/b5bd7b181a61a8289cc1d1a33825b2c417bed0ef?recursive=1",
+      "path": "kdd/coverage/rights_recheck/classification/assets/gln-tree.json",
+      "bytes": 23651,
+      "sha256": "7c9bf898af5ea1e03e3f6fe7c7d8bb80685e7ff53846fff404ad93879e4990a4",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:gln/LICENSE",
+      "url": "https://raw.githubusercontent.com/Hanjun-Dai/GLN/b5bd7b181a61a8289cc1d1a33825b2c417bed0ef/LICENSE",
+      "path": "kdd/coverage/rights_recheck/classification/assets/gln/LICENSE",
+      "bytes": 1111,
+      "sha256": "003c281d83ce8c3b187820fd22d048e42e22e2cf43c1e1af00c4bbc06d75e78c",
+      "git_blob_sha1": "8711888943657503b52ed3d4120d671127379ab7",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:gln/README.md",
+      "url": "https://raw.githubusercontent.com/Hanjun-Dai/GLN/b5bd7b181a61a8289cc1d1a33825b2c417bed0ef/README.md",
+      "path": "kdd/coverage/rights_recheck/classification/assets/gln/README.md",
+      "bytes": 6588,
+      "sha256": "0803667db4d533702f5e3172246ce1c25fce908cfc509e49a0b2aa774746f8af",
+      "git_blob_sha1": "42fd5ed043aff382774a0435e8c2f668e791285c",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:localmapper-tree.json",
+      "url": "https://api.github.com/repos/snu-micc/LocalMapper/git/trees/8ff6b3ff2109d834388d4e08ba69399ed3419cad?recursive=1",
+      "path": "kdd/coverage/rights_recheck/classification/assets/localmapper-tree.json",
+      "bytes": 16910,
+      "sha256": "2d397439a476e7f7583a06a8ecc1d16af27f07b0c9fbafa0b23ace90247f38c4",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:localmapper/LICENSE",
+      "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/8ff6b3ff2109d834388d4e08ba69399ed3419cad/LICENSE",
+      "path": "kdd/coverage/rights_recheck/classification/assets/localmapper/LICENSE",
+      "bytes": 920,
+      "sha256": "492704db651a67a9486c660fb16bf55e1e1792ef59f09dd737834ce90acf613a",
+      "git_blob_sha1": "098b46ef76e367ec4cca2daf2e5a5df68eb22a8c",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:localmapper/README.md",
+      "url": "https://raw.githubusercontent.com/snu-micc/LocalMapper/8ff6b3ff2109d834388d4e08ba69399ed3419cad/README.md",
+      "path": "kdd/coverage/rights_recheck/classification/assets/localmapper/README.md",
+      "bytes": 6458,
+      "sha256": "16bd61b494721503a04425198c999195384b347b914d9d2f6f79a51e99d9d235",
+      "git_blob_sha1": "7d417c98b3f4c972db9e3096ac839a0c22dd0c89",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:metanetx-terms.html",
+      "url": "https://www.metanetx.org/mnxdoc/mnxref.html",
+      "path": "kdd/coverage/rights_recheck/classification/assets/metanetx-terms.html",
+      "bytes": 28595,
+      "sha256": "2c4c0b583929710df598bb7c023f50aad6f567229fd937fd7c2aa46cd57f7294",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:pathbank-about.html",
+      "url": "https://pathbank.org/about",
+      "path": "kdd/coverage/rights_recheck/classification/assets/pathbank-about.html",
+      "bytes": 51028,
+      "sha256": "85e0d5a75409f4255b2fd9dc6a46e930d8345367c545e60e8a0bba18d8152cd7",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:rhea-terms.html",
+      "url": "https://www.rhea-db.org/help/license-disclaimer",
+      "path": "kdd/coverage/rights_recheck/classification/assets/rhea-terms.html",
+      "bytes": 9232,
+      "sha256": "dfbf6fec28cda9f260b5d08172acb7e313081ef678f5b8ea2205bf2fe4efac39",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:rxnfp-tree.json",
+      "url": "https://api.github.com/repos/rxn4chemistry/rxnfp/git/trees/6fd48f4927c2178555cc5d71dbfb225fb178f43c?recursive=1",
+      "path": "kdd/coverage/rights_recheck/classification/assets/rxnfp-tree.json",
+      "bytes": 48553,
+      "sha256": "9583c8607dc2942ed1accc369de5d2b83220da32a04ab0a9a27890cbd5110517",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:rxnfp/LICENSE",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxnfp/6fd48f4927c2178555cc5d71dbfb225fb178f43c/LICENSE",
+      "path": "kdd/coverage/rights_recheck/classification/assets/rxnfp/LICENSE",
+      "bytes": 1078,
+      "sha256": "4cd19ee3f984c4cf21234b36d941f80fe7cbac61b4a104a558813cd3948857ce",
+      "git_blob_sha1": "9f70e7c222a089e503fc5e61e8fb27f6d7e6bb4b",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:rxnfp/README.md",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxnfp/6fd48f4927c2178555cc5d71dbfb225fb178f43c/README.md",
+      "path": "kdd/coverage/rights_recheck/classification/assets/rxnfp/README.md",
+      "bytes": 4914,
+      "sha256": "679ebaa4bf0d414e67f854962a3359ab511ae067e1f6a4d264c977c5664104cf",
+      "git_blob_sha1": "45cff4fe5af65571a288a404356301ea56953b28",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:rxnfp/data/schneider50k.tsv",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxnfp/6fd48f4927c2178555cc5d71dbfb225fb178f43c/data/schneider50k.tsv",
+      "path": "kdd/coverage/rights_recheck/classification/assets/rxnfp/data/schneider50k.tsv",
+      "bytes": 25635610,
+      "sha256": "d85dc26729fdda73ca4b9ed5573a9a6be5ecff578317a47011e999bcec70156e",
+      "git_blob_sha1": "5d7faad69a75f539a50e5d254feee7c69bac3e8f",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:rxnfp/data/uspto_1k_TPL/README.md",
+      "url": "https://raw.githubusercontent.com/rxn4chemistry/rxnfp/6fd48f4927c2178555cc5d71dbfb225fb178f43c/data/uspto_1k_TPL/README.md",
+      "path": "kdd/coverage/rights_recheck/classification/assets/rxnfp/data/uspto_1k_TPL/README.md",
+      "bytes": 1047,
+      "sha256": "70e65ec8fa9fb8cca9d6643c999a1d4866fb5f524a95b1d252721c36772d3700",
+      "git_blob_sha1": "455b2f106b3e397d51872fa06668354c22944172",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:syncat-tree.json",
+      "url": "https://api.github.com/repos/phuocchung123/SynCat/git/trees/5f34a26cb90c95831268c635de3dea1be3b7552b?recursive=1",
+      "path": "kdd/coverage/rights_recheck/classification/assets/syncat-tree.json",
+      "bytes": 15593,
+      "sha256": "8a04805809cc8f6367c63ee511f75c5d571761a1566e8df7e74df70425b3bb20",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:syncat/Data/raw/USPTO_50k_balanced.csv.gz",
+      "url": "https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/Data/raw/USPTO_50k_balanced.csv.gz",
+      "path": "kdd/coverage/rights_recheck/classification/assets/syncat/Data/raw/USPTO_50k_balanced.csv.gz",
+      "bytes": 1317735,
+      "sha256": "c3f203c2340bdf242b66390bdaeb1db4e974860a20d23800984db1d51a5883cb",
+      "git_blob_sha1": "43dd072c10b7ebddfbe88a2a28839794a0d8df0f",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:syncat/Data/raw/USPTO_50k_unbalanced.csv.gz",
+      "url": "https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/Data/raw/USPTO_50k_unbalanced.csv.gz",
+      "path": "kdd/coverage/rights_recheck/classification/assets/syncat/Data/raw/USPTO_50k_unbalanced.csv.gz",
+      "bytes": 1243683,
+      "sha256": "45aaae51f2be2f4e299ffc157cf36e5cb72c536ec441cc9079ffc8dbfdfa8d6f",
+      "git_blob_sha1": "b65b9b2c809f65c21dd26db10e499ce348029998",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:syncat/Data/raw/USPTO_TPL_balanced.csv.gz",
+      "url": "https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/Data/raw/USPTO_TPL_balanced.csv.gz",
+      "path": "kdd/coverage/rights_recheck/classification/assets/syncat/Data/raw/USPTO_TPL_balanced.csv.gz",
+      "bytes": 15890719,
+      "sha256": "8240ec326fa20550ca5c8e8ec620ac1dbb887c73fabc7560152c09b4e9b48831",
+      "git_blob_sha1": "3faab2b2df7aaf12423491c04d3dc2b7524cff7b",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:syncat/Data/raw/USPTO_TPL_unbalanced.csv.gz",
+      "url": "https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/Data/raw/USPTO_TPL_unbalanced.csv.gz",
+      "path": "kdd/coverage/rights_recheck/classification/assets/syncat/Data/raw/USPTO_TPL_unbalanced.csv.gz",
+      "bytes": 13856838,
+      "sha256": "692f1cdf324d2607daf0194f3f225296766996f9d2508d8d1987bd23c7903fd1",
+      "git_blob_sha1": "a793f17023feabe2a7d3863af62bdc69cd852734",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:syncat/Data/raw/claire_full.csv.gz",
+      "url": "https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/Data/raw/claire_full.csv.gz",
+      "path": "kdd/coverage/rights_recheck/classification/assets/syncat/Data/raw/claire_full.csv.gz",
+      "bytes": 2826643,
+      "sha256": "cc3731eb2cacd598e2f096fd329460295408f65d0e818cd0a747c9fc6d9088c8",
+      "git_blob_sha1": "6462532692ee647c960ae9b8d9dfbf18badc8243",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:syncat/Data/raw/schneider50k_balanced.csv.gz",
+      "url": "https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/Data/raw/schneider50k_balanced.csv.gz",
+      "path": "kdd/coverage/rights_recheck/classification/assets/syncat/Data/raw/schneider50k_balanced.csv.gz",
+      "bytes": 1889942,
+      "sha256": "30cdc91c278ef0cbb6bf5ebd2931a37fa80710b59347d152efc71e909a153cc2",
+      "git_blob_sha1": "d2a3acb986f90ddddc1fd627ec8c1abd84174a43",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:syncat/Data/raw/schneider50k_unbalanced.csv.gz",
+      "url": "https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/Data/raw/schneider50k_unbalanced.csv.gz",
+      "path": "kdd/coverage/rights_recheck/classification/assets/syncat/Data/raw/schneider50k_unbalanced.csv.gz",
+      "bytes": 1743966,
+      "sha256": "7f1ef7e2890bddf1458ccd954aa7a4a82c991ade906d10f7b704d7a4496d9aed",
+      "git_blob_sha1": "c5854d4ca4dce73e38fc812ef214c92f33c6f591",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:syncat/LICENSE",
+      "url": "https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/LICENSE",
+      "path": "kdd/coverage/rights_recheck/classification/assets/syncat/LICENSE",
+      "bytes": 1070,
+      "sha256": "261990e16fed521db9d2319035d1303f278fd7df36375f9742a3fb77f5c0e126",
+      "git_blob_sha1": "fb1a553df65ba96a7f6f770e19f79766926a3ca8",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:syncat/README.md",
+      "url": "https://raw.githubusercontent.com/phuocchung123/SynCat/5f34a26cb90c95831268c635de3dea1be3b7552b/README.md",
+      "path": "kdd/coverage/rights_recheck/classification/assets/syncat/README.md",
+      "bytes": 4501,
+      "sha256": "a139283417ef6f0ebf523200db3069a0baf09957d1b3df11b59b17c0c1f4bb73",
+      "git_blob_sha1": "3f57c002cf5e9fd5252de76786f5638f95fcad5e",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:zenodo-14635841.json",
+      "url": "https://zenodo.org/api/records/14635841",
+      "path": "kdd/coverage/rights_recheck/classification/assets/zenodo-14635841.json",
+      "bytes": 4836,
+      "sha256": "c58851a52404ce2e660e293a1510fa52bf8bb07715470c624e64736c5707f42b",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:pathbank-2020-article.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6943071/fullTextXML",
+      "path": "kdd/coverage/rights_recheck/classification/assets/pathbank-2020-article.xml",
+      "bytes": 97868,
+      "sha256": "f25cb0511741e4584df2d2c1f111d6acf2865a3cd10b7cc943994fdbd5e12072",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:pathbank-2024-article.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10767802/fullTextXML",
+      "path": "kdd/coverage/rights_recheck/classification/assets/pathbank-2024-article.xml",
+      "bytes": 96594,
+      "sha256": "af249dcf62478c9e20f919d21f10c5bb20cda416668cad59593addea4b14d3ae",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:classification-source-joins",
+      "url": "local:verified-data-lineage-report",
+      "path": "kdd/coverage/rights_recheck/classification/source_joins.json",
+      "bytes": 3676,
+      "sha256": "4794613747467b9a3841b55698ca67b17ed965d81f00cc0c7c9298295c06aea3",
+      "status": "captured"
+    },
+    {
+      "id": "recheck_classification:uspto50k-native-source-join",
+      "url": "local:verified-data-lineage-report",
+      "path": "ncs/audit/uspto50k-source-join.json",
+      "bytes": 534,
+      "sha256": "fd46d3bf129a5ab4c5ae10adc00dbfda25eec9f70ab827d64318c5803a7c879a",
+      "status": "captured"
+    }
+  ],
+  "summary": {
+    "reviewed_tables": 8,
+    "eligible_under_explicit_partitions": 8,
+    "main": 2,
+    "database_sharealike": 1,
+    "noncommercial": 5,
+    "canonical_curators_reproduced_exactly": 7,
+    "canonical_curated_rows_reproduced_exactly": 1275996,
+    "claire_native_train_rows": 166918,
+    "claire_native_test_rows": 18816,
+    "claire_exact_source_join": true
+  },
+  "native_ecreact_source_breakdown": {
+    "version": "ECREACT 1.0 pinned commit 7a5add1c0bbafcf658a296d835f357f19936a1b5",
+    "native_rows": 62222,
+    "source_counts": {
+      "pathbank_reaction_smiles": 27835,
+      "metanetx_reaction_smiles": 19176,
+      "brenda_reaction_smiles": 8496,
+      "rhea_reaction_smiles": 6715
+    },
+    "scope": "Counts describe original ECREACT 1.0 source provenance, not reconstructed rowwise provenance for the augmented CLAIRE table."
+  },
+  "reproduce_commands": [
+    "python kdd/coverage/rights_recheck/classification/capture_evidence.py",
+    "python kdd/coverage/rights_recheck/classification/verify_source_joins.py"
+  ],
+  "scope_limit": "A reproducible technical licensing/provenance audit, not a blanket warranty of ultimate third-party title or all commercial rights."
+}

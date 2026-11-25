@@ -1,0 +1,8 @@
+Transition1x full native reactive trajectory release
+Source: https://doi.org/10.6084/m9.figshare.19614657.v4
+Creators: Mathias Schreiner
+License: MIT
+Source license declaration: https://api.figshare.com/v2/articles/19614657/versions/4
+License terms: https://opensource.org/licenses/MIT
+Changes in this distribution: Native HDF5 is unmodified. Added complete trajectory index, preserved native splits, extracted final endpoint/TS coordinates, explicit missing charge/spin status and task contracts.
+No endorsement by the original authors is implied.

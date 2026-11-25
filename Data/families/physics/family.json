@@ -1,0 +1,72 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "family": {
+    "counting_units": [
+      "complete derived simulated trajectory with known native-example parameters",
+      "complete native reaction trajectory; configuration_count gives individual atomic configurations",
+      "computed method-specific solution activation Gibbs reference",
+      "existing canonical reaction-condition observation",
+      "native computed HAT reaction with k298 and thermo-kinetic references",
+      "source-table row"
+    ],
+    "data_counting_policy": "Deduplicated by namespace/source-table key within this family only; row units can differ, source views can overlap and rows are not unique reactions. Inspect each binding's counting_unit and physical configuration counts.",
+    "data_status": "local task references present; qualification varies",
+    "future_task_ids": [],
+    "gaps": "Native reactive energy/force trajectories and scoped inverse-kinetics simulations are acquired; surface/periodic context, experimental rate-law identification and broader mechanism families remain gaps. Computed HAT rates are not experimental kinetic measurements.",
+    "id": "physics",
+    "overlapping_view_count": 2,
+    "primary_source_rows": 620683,
+    "primary_table_count": 14,
+    "release_eligible_table_count": 14,
+    "scope": "Activation and reaction energies, rates and rate laws, reactive energy/force fields and inference of kinetic parameters from observations.",
+    "task_ids": [
+      "activation_barrier",
+      "reaction_energetics",
+      "reaction_rates",
+      "reactive_potential",
+      "kinetic_parameter_inference"
+    ],
+    "title": "Reaction physics, energetics and kinetics"
+  },
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 16,
+    "data_links": 21,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 2,
+    "primary_table_views": 14,
+    "stored_rows_across_unique_views": 626455,
+    "task_table_bindings": 21,
+    "tasks": 5,
+    "unique_table_views": 16
+  },
+  "tasks": [
+    {
+      "id": "activation_barrier",
+      "metadata": "activation_barrier/task.json",
+      "title": "Activation-barrier prediction"
+    },
+    {
+      "id": "reaction_energetics",
+      "metadata": "reaction_energetics/task.json",
+      "title": "Reaction energy and thermochemistry"
+    },
+    {
+      "id": "reaction_rates",
+      "metadata": "reaction_rates/task.json",
+      "title": "Reaction-rate prediction"
+    },
+    {
+      "id": "reactive_potential",
+      "metadata": "reactive_potential/task.json",
+      "title": "Reactive energies and forces"
+    },
+    {
+      "id": "kinetic_parameter_inference",
+      "metadata": "kinetic_parameter_inference/task.json",
+      "title": "Kinetic parameter and rate-law inference"
+    }
+  ]
+}

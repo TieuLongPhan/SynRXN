@@ -1,0 +1,7 @@
+C21: LiPRED
+Data license: CC-BY-4.0
+Zenodo data-record grant; preserve calculation methods and solvent groups.
+
+Primary source and attribution:
+https://pubs.rsc.org/en/content/articlehtml/2026/cp/d6cp00088f
+https://doi.org/10.5281/zenodo.8396100

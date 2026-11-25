@@ -1,0 +1,142 @@
+{
+  "schema": "synrxn.kdd-preparation.v1",
+  "status": "planning_memberships; no predictive experiments",
+  "preparation_code_sha256": "8e5133c7134e147c586627bb42f8b4e3ff0cd568fdb48e43e1bef694c5ccdeac",
+  "target_meaning": "Recorded Product_Yield_PCT_Area_UV, not independently calibrated isolated yield",
+  "source": {
+    "canonical_file": "Data/yield/hitea.csv.gz",
+    "canonical_sha256": "f0e0d0db9f37643bcebb5c9b6a29a9a6a950f7e92c05fc4541a07d9ca3d1d0e9",
+    "upstream_url": "https://raw.githubusercontent.com/emmaking-smith/HiTEA/ccc8cce274e70429498be829dd3bc57754f62265/data/8_SEPT_APPROVED_full_dataset.csv",
+    "upstream_sha256": "9d3b35b8606538df7fc8dd9104b6dd43188ddc8dc43e3d9d3972e10a621ef889",
+    "canonical_rows": 39546,
+    "upstream_rows": 39546,
+    "exact_id_and_target_matches": 39546,
+    "eligible_rows": 39354,
+    "excluded_rows": 192,
+    "exclusion_reasons": {
+      "reactants": 192
+    }
+  },
+  "source_context_fields": [
+    "Solvent_1_Name",
+    "Reaction_T",
+    "Reaction_Time_hrs",
+    "Catalyst_1_eq",
+    "catalyst_1_ID_1_SMILES",
+    "catalyst_1_ID_2_SMILES",
+    "Catalyst_1_Short_Hand",
+    "Catalyst_2_eq",
+    "catalyst_2_ID_1_SMILES",
+    "catalyst_2_ID_2_SMILES",
+    "Catalyst_2_Short_Hand",
+    "Reactant_1_eq",
+    "Reactant_1_SMILES",
+    "Reactant_2_eq",
+    "reactant_2_SMILES",
+    "Reactant_3_eq",
+    "reactant_3_SMILES",
+    "Reagent_1_eq",
+    "Reagent_1_Short_Hand",
+    "Reagent_2_eq",
+    "Reagent_2_Short_Hand"
+  ],
+  "source_context_field_nonempty": {
+    "Solvent_1_Name": 39028,
+    "Reaction_T": 38643,
+    "Reaction_Time_hrs": 37616,
+    "Catalyst_2_eq": 29672,
+    "Reactant_1_eq": 38638,
+    "Reactant_1_SMILES": 39324,
+    "reactant_2_SMILES": 31862,
+    "Reactant_3_eq": 11907,
+    "Reagent_1_eq": 21829,
+    "Reagent_1_Short_Hand": 31144,
+    "Reagent_2_eq": 14031,
+    "Reactant_2_eq": 20223,
+    "reactant_3_SMILES": 3644,
+    "Catalyst_1_eq": 25201,
+    "catalyst_1_ID_1_SMILES": 14856,
+    "Catalyst_1_Short_Hand": 18821,
+    "catalyst_2_ID_1_SMILES": 20773,
+    "catalyst_2_ID_2_SMILES": 13,
+    "Reagent_2_Short_Hand": 3838,
+    "catalyst_1_ID_2_SMILES": 17028,
+    "Catalyst_2_Short_Hand": 24185
+  },
+  "observed_screens": 354,
+  "components_without_reactant_relation": 289,
+  "components_with_all_relations": 285,
+  "all_canonical_components_with_all_relations": 287,
+  "grouping_relations": [
+    "screen_id",
+    "notebook_id",
+    "chemical_split_group",
+    "duplicate_group",
+    "reactants"
+  ],
+  "grouped_fold_relation_overlaps": {
+    "screen_id": 0,
+    "notebook_id": 0,
+    "chemical_split_group": 0,
+    "duplicate_group": 0,
+    "reactants": 0
+  },
+  "row_diagnostic_relation_overlaps": {
+    "screen_id": 350,
+    "notebook_id": 350,
+    "chemical_split_group": 542,
+    "duplicate_group": 2677,
+    "reactants": 516
+  },
+  "outer_fold_rows": {
+    "0": 7872,
+    "1": 7871,
+    "2": 7871,
+    "3": 7870,
+    "4": 7870
+  },
+  "fold_policy": "For test fold f, validation=(f+1)%5; other three folds train; no target stratification",
+  "panels": 669,
+  "ranking_panels_at_least_5_candidates": 429,
+  "ranking_panel_rows": 38424,
+  "ranking_panels_by_fold": {
+    "1": 93,
+    "0": 89,
+    "3": 71,
+    "4": 89,
+    "2": 87
+  },
+  "recorded_input_cells": 36606,
+  "cells_with_multiple_rows": 1931,
+  "flat_cells_collapsing_retained_contexts": 2985,
+  "retained_cells_collapsing_raw_contexts": 594,
+  "bh_replication": {
+    "canonical_sha256": "1cae5ff9010813e242f6de2dc6bd3e33342f759be79c5d88ac4f3f46dc4ec409",
+    "rows": 27438,
+    "rows_labeled_hitea_source": 2632,
+    "rows_sharing_transform": 2302,
+    "rows_sharing_reactants": 1225,
+    "rows_after_union_of_exclusions": 24806,
+    "remaining_sources": {
+      "Dreher 2014": 768,
+      "Dreher 2016": 144,
+      "AZ ELN 2023": 744,
+      "Roche 2023": 3358,
+      "JNJ HTE 2024": 11276,
+      "Merck 2025": 4204,
+      "Dreher Doyle 2018": 4312
+    },
+    "qualification": "Exclusions use declared canonical keys and known source labels only"
+  },
+  "membership_sha256": "25eec47edbde72b62d174169e11a4267af964f88d213900781fb6ecea82ec734",
+  "initial_panel_cards_sha256": "ee90be6946061d753ec6a0d4e2c103f982998a49464f547df656f8a3f737f8ea",
+  "panel_review_sampling": {
+    "population": 669,
+    "seed": 2027,
+    "independent_simple_random_sample": 200,
+    "additional_targeted_context_collapse_sample": 60,
+    "samples_disjoint": true,
+    "human_review_status": "not performed; all cards pending"
+  },
+  "qualification": "Recorded relation disjointness and input availability are verified; hidden experimental dependence, physical reference correctness and pretraining exposure are not certified. Memberships are proposed and must be versioned before fitting."
+}

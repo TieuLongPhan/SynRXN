@@ -10,29 +10,21 @@ from sklearn.model_selection import train_test_split
 
 
 def setup_logging(log_level: str = "INFO", log_filename: str = None) -> logging.Logger:
-    """
-    Configures the logging for an application. It sets up logging to either the console
+    """Configures the logging for an application. It sets up logging to either the console
     or a file based on whether a log filename is provided. The function adjusts the
     logging level dynamically according to the specified log level.
 
-    Parameters
-    ----------
-    log_level : str, optional
-        Specifies the logging level. Accepted values are 'DEBUG', 'INFO', 'WARNING',
-        'ERROR', 'CRITICAL'. Default is 'INFO'.
-    log_filename : str, optional
-        Specifies the filename of the log file. If provided, logs will be written
-        to this file. If None, logs will be written to the console. Default is None.
+    :param log_level: Specifies the logging level. Accepted values are 'DEBUG', 'INFO', 'WARNING',
+                      'ERROR', 'CRITICAL'. Default is 'INFO'.
+    :type log_level: str, optional
+    :param log_filename: Specifies the filename of the log file. If provided, logs will be written
+                         to this file. If None, logs will be written to the console. Default is None.
+    :type log_filename: str, optional
 
-    Returns
-    -------
-    logging.Logger
-        The configured logger object.
+    :return: The configured logger object.
+    :rtype: logging.Logger
 
-    Raises
-    ------
-    ValueError
-        If the specified log_level is not recognized as a valid logging level.
+    :raises ValueError: If the specified log_level is not recognized as a valid logging level.
     """
     log_format = "%(asctime)s - %(levelname)s - %(message)s"
     numeric_level = getattr(logging, log_level.upper(), None)
@@ -55,17 +47,14 @@ def setup_logging(log_level: str = "INFO", log_filename: str = None) -> logging.
 
 
 def save_database(database: list[dict], pathname: str = "./Data/database.json") -> None:
-    """
-    Save a database (a list of dictionaries) to a JSON file.
+    """Save a database (a list of dictionaries) to a JSON file.
 
-    Args:
-        database: The database to be saved.
-        pathname: The path where the database will be saved.
-                    Defaults to './Data/database.json'.
+    :param database: The database to be saved.
+    :param pathname: The path where the database will be saved.
+                     Defaults to './Data/database.json'.
 
-    Raises:
-        TypeError: If the database is not a list of dictionaries.
-        ValueError: If there is an error writing the file.
+    :raises TypeError: If the database is not a list of dictionaries.
+    :raises ValueError: If there is an error writing the file.
     """
     if not all(isinstance(item, dict) for item in database):
         raise TypeError("Database should be a list of dictionaries.")
@@ -78,18 +67,14 @@ def save_database(database: list[dict], pathname: str = "./Data/database.json") 
 
 
 def load_database(pathname: str = "./Data/database.json") -> List[Dict]:
-    """
-    Load a database (a list of dictionaries) from a JSON file.
+    """Load a database (a list of dictionaries) from a JSON file.
 
-    Args:
-        pathname: The path from where the database will be loaded.
-                    Defaults to './Data/database.json'.
+    :param pathname: The path from where the database will be loaded.
+                     Defaults to './Data/database.json'.
 
-    Returns:
-        The loaded database.
+    :return: The loaded database.
 
-    Raises:
-        ValueError: If there is an error reading the file.
+    :raises ValueError: If there is an error reading the file.
     """
     try:
         with open(pathname, "r") as f:
@@ -100,26 +85,25 @@ def load_database(pathname: str = "./Data/database.json") -> List[Dict]:
 
 
 def save_to_pickle(data: List[Dict[str, Any]], filename: str) -> None:
-    """
-    Save a list of dictionaries to a pickle file.
+    """Save a list of dictionaries to a pickle file.
 
-    Parameters:
-    data (List[Dict[str, Any]]): A list of dictionaries to be saved.
-    filename (str): The name of the file where the data will be saved.
+    :param data: A list of dictionaries to be saved.
+    :type data: List[Dict[str, Any]]
+    :param filename: The name of the file where the data will be saved.
+    :type filename: str
     """
     with open(filename, "wb") as file:
         pickle.dump(data, file)
 
 
 def load_from_pickle(filename: str) -> List[Any]:
-    """
-    Load data from a pickle file.
+    """Load data from a pickle file.
 
-    Parameters:
-    filename (str): The name of the pickle file to load data from.
+    :param filename: The name of the pickle file to load data from.
+    :type filename: str
 
-    Returns:
-    List[Any]: The data loaded from the pickle file.
+    :return: The data loaded from the pickle file.
+    :rtype: List[Any]
     """
     with open(filename, "rb") as file:
         return pickle.load(file)
@@ -128,17 +112,19 @@ def load_from_pickle(filename: str) -> List[Any]:
 def stratified_random_sample(
     data: List[Dict], property_key: str, samples_per_class: int, seed: int = None
 ) -> List[Dict]:
-    """
-    Stratifies and samples data from a list of dictionaries based on a specified property.
+    """Stratifies and samples data from a list of dictionaries based on a specified property.
 
-    Parameters:
-    - data (List[Dict]): The data to sample from, a list of dictionaries.
-    - property_key (str): The key in the dictionaries to stratify by.
-    - samples_per_class (int): The number of samples to take from each class.
-    - seed (int): The seed for the random number generator for reproducibility.
+    :param data: The data to sample from, a list of dictionaries.
+    :type data: List[Dict]
+    :param property_key: The key in the dictionaries to stratify by.
+    :type property_key: str
+    :param samples_per_class: The number of samples to take from each class.
+    :type samples_per_class: int
+    :param seed: The seed for the random number generator for reproducibility.
+    :type seed: int
 
-    Returns:
-    - List[Dict]: A list of sampled dictionaries.
+    :return: A list of sampled dictionaries.
+    :rtype: List[Dict]
     """
 
     if seed is not None:
@@ -167,11 +153,10 @@ def stratified_random_sample(
 
 
 def ensure_directory_exists(directory_name):
-    """
-    Checks if a directory with the given name exists, and if not, creates it.
+    """Checks if a directory with the given name exists, and if not, creates it.
 
-    Parameters:
-    - directory_name (str): The name of the directory to check and potentially create.
+    :param directory_name: The name of the directory to check and potentially create.
+    :type directory_name: str
     """
     if not os.path.exists(directory_name):
         os.makedirs(directory_name)
@@ -181,11 +166,10 @@ def ensure_directory_exists(directory_name):
 
 
 def run_shell_command(command="mod_post"):
-    """
-    Executes a shell command and prints its output.
+    """Executes a shell command and prints its output.
 
-    Parameters:
-    - command (str): The shell command to execute.
+    :param command: The shell command to execute.
+    :type command: str
     """
     try:
         # Execute the command and capture the output
@@ -205,15 +189,14 @@ def run_shell_command(command="mod_post"):
 
 
 def create_unique_value_dict(original_dict):
-    """
-    Creates a dictionary where each unique value from the original dictionary
+    """Creates a dictionary where each unique value from the original dictionary
     is mapped to the first key associated with that value.
 
-    Parameters:
-        original_dict (dict): The original dictionary with potentially duplicate values.
+    :param original_dict: The original dictionary with potentially duplicate values.
+    :type original_dict: dict
 
-    Returns:
-        dict: A new dictionary with unique values and their first corresponding keys.
+    :return: A new dictionary with unique values and their first corresponding keys.
+    :rtype: dict
     """
     new_dict = {}
     for key, value in original_dict.items():
@@ -231,23 +214,26 @@ def train_val_test_split_df(
     test_size: float = 0.1,
     random_state: int = 42,
 ) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """
-    Splits a DataFrame into train, validation, and test sets with stratification.
+    """Splits a DataFrame into train, validation, and test sets with stratification.
 
-    Parameters:
-    - df (pd.DataFrame): The DataFrame to split.
-    - target (str): The name of the column to stratify by.
-    - train_size (float): Proportion of the dataset to include in the train split.
-    - val_size (float): Proportion of the dataset to include in the validation split.
-    - test_size (float): Proportion of the dataset to include in the test split.
-    - random_state (int): The seed used by the random number generator.
+    :param df: The DataFrame to split.
+    :type df: pd.DataFrame
+    :param target: The name of the column to stratify by.
+    :type target: str
+    :param train_size: Proportion of the dataset to include in the train split.
+    :type train_size: float
+    :param val_size: Proportion of the dataset to include in the validation split.
+    :type val_size: float
+    :param test_size: Proportion of the dataset to include in the test split.
+    :type test_size: float
+    :param random_state: The seed used by the random number generator.
+    :type random_state: int
 
-    Returns:
-    - Tuple[pd.DataFrame, pd.UtilityModel, pd.DataFrame]: A tuple containing the training
-    set, validation set, and test set as DataFrames.
+    :return: A tuple containing the training
+              set, validation set, and test set as DataFrames.
+    :rtype: Tuple[pd.DataFrame, pd.UtilityModel, pd.DataFrame]
 
-    Raises:
-    - AssertionError: If the sum of train_size, val_size, and test_size does not equal 1.
+    :raises AssertionError: If the sum of train_size, val_size, and test_size does not equal 1.
     """
     # Ensure the sizes sum to 1
     assert (
@@ -274,14 +260,13 @@ def train_val_test_split_df(
 
 
 def modify_smiles(smiles):
-    """
-    Modify the input SMILES string by replacing '.[HH]' with '[H][H]'.
+    """Modify the input SMILES string by replacing '.[HH]' with '[H][H]'.
 
-    Args:
-    smiles (str): The input SMILES string representing a chemical reaction.
+    :param smiles: The input SMILES string representing a chemical reaction.
+    :type smiles: str
 
-    Returns:
-    str: The modified SMILES string.
+    :return: The modified SMILES string.
+    :rtype: str
     """
     return smiles.replace("[HH]", "[H][H]")
 
@@ -289,24 +274,23 @@ def modify_smiles(smiles):
 def prune_branches(
     data: List[List[Dict[str, Optional[int]]]],
 ) -> List[List[Dict[str, Optional[int]]]]:
-    """
-    Prunes branches in a hierarchical structure where any parent does not exist in the
+    """Prunes branches in a hierarchical structure where any parent does not exist in the
     immediately preceding layer. Each layer is represented as a list of nodes, and
     each node is a dictionary with keys including 'Cluster_id' (integer) for the node's
     identifier and 'Parent' (integer or None for root nodes) for the node's parent ID
     in the previous layer.
 
-    Args:
-    - data (List[List[Dict[str, Optional[int]]]]): Hierarchical data where
-    each sub-list represents a layer.
+    :param data: Hierarchical data where
+                 each sub-list represents a layer.
+    :type data: List[List[Dict[str, Optional[int]]]]
 
-    Returns:
-    - List[List[Dict[str, Optional[int]]]]: Pruned hierarchical data containing
-    only nodes with existing parents.
+    :return: Pruned hierarchical data containing
+              only nodes with existing parents.
 
-    Each node's existence in a given layer depends on the presence of its 'Parent' ID in
-    the set of 'Cluster_id's from the immediately previous layer. Root nodes in the
-    first layer should have their 'Parent' set to None.
+              Each node's existence in a given layer depends on the presence of its 'Parent' ID in
+              the set of 'Cluster_id's from the immediately previous layer. Root nodes in the
+              first layer should have their 'Parent' set to None.
+    :rtype: List[List[Dict[str, Optional[int]]]]
     """
     # Dictionary to keep track of existing cluster IDs for each layer
     existing_ids: Dict[int, Set[int]] = {0: {item["Cluster_id"] for item in data[0]}}
@@ -335,19 +319,19 @@ def prune_branches(
 def reindex_data(
     data: List[List[Dict[str, Optional[int]]]], starting_indices: List[int]
 ) -> List[List[Dict[str, Optional[int]]]]:
-    """
-    Reindexes 'Cluster_id', 'Parent', and optionally 'Child' fields in hierarchical data.
+    """Reindexes 'Cluster_id', 'Parent', and optionally 'Child' fields in hierarchical data.
     First, each layer is normalized to start indexing from 0. Then, a layer-specific
     starting index from 'starting_indices' is added to each 'Cluster_id' in the layer.
 
-    Parameters:
-    - data (List[List[Dict[str, Optional[int]]]]): Hierarchical data
-    where each sub-list represents a layer.
-    - starting_indices (List[int]): The list of starting indices for 'Cluster_id'
-    in each layer.
+    :param data: Hierarchical data
+                 where each sub-list represents a layer.
+    :type data: List[List[Dict[str, Optional[int]]]]
+    :param starting_indices: The list of starting indices for 'Cluster_id'
+                             in each layer.
+    :type starting_indices: List[int]
 
-    Returns:
-    - List[List[Dict[str, Optional[int]]]]: Hierarchical data with updated indices.
+    :return: Hierarchical data with updated indices.
+    :rtype: List[List[Dict[str, Optional[int]]]]
     """
     reindexed_data = []
 
@@ -387,15 +371,12 @@ def reindex_data(
 
 
 def load_from_pickle_generator(file_path: str) -> Generator[Any, None, None]:
-    """
-    A generator that yields items from a pickle file where each pickle load returns a list
-    of dictionaries.
+    """Yield individual items from lists stored sequentially in a pickle file.
 
-    Paremeters:
-    - file_path (str): The path to the pickle file to load.
-
-    - Yields:
-    Any: Yields a single item from the list of dictionaries stored in the pickle file.
+    :param file_path: Path to the pickle file.
+    :type file_path: str
+    :yield: Each item in each serialized list, in stored order.
+    :ytype: Any
     """
     with open(file_path, "rb") as file:
         while True:
@@ -408,17 +389,18 @@ def load_from_pickle_generator(file_path: str) -> Generator[Any, None, None]:
 
 
 def collect_data(num_batches: int, temp_dir: str, file_template: str) -> List[Any]:
-    """
-    Collects and aggregates data from multiple pickle files into a single list.
+    """Collects and aggregates data from multiple pickle files into a single list.
 
-    Paremeters:
-    - num_batches (int): The number of batch files to process.
-    - temp_dir (str): The directory where the batch files are stored.
-    - file_template (str): The template string for batch file names, expecting an integer
-    formatter.
+    :param num_batches: The number of batch files to process.
+    :type num_batches: int
+    :param temp_dir: The directory where the batch files are stored.
+    :type temp_dir: str
+    :param file_template: The template string for batch file names, expecting an integer
+                          formatter.
+    :type file_template: str
 
-    Returns:
-    List[Any]: A list of aggregated data items from all batch files.
+    :return: A list of aggregated data items from all batch files.
+    :rtype: List[Any]
     """
     collected_data: List[Any] = []
     for i in range(num_batches):

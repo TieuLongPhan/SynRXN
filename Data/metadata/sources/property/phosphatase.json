@@ -1,0 +1,69 @@
+{
+  "citations": [
+    {
+      "citation_key": "heid2022machine",
+      "doi": "10.1021/acs.jcim.1c00975",
+      "entry_type": "article",
+      "title": "Machine Learning of Reaction Properties via Learned Representations of the Condensed Graph of Reaction",
+      "url": ""
+    },
+    {
+      "citation_key": "huang2015panoramic",
+      "doi": "10.1073/pnas.1423570112",
+      "entry_type": "article",
+      "title": "Panoramic View of a Superfamily of Phosphatases through Substrate Profiling",
+      "url": ""
+    }
+  ],
+  "dataset_key": "property/phosphatase.csv.gz",
+  "license_spdx": "CC-BY-4.0",
+  "license_url": "https://github.com/TieuLongPhan/SynRXN/blob/v1.2.1/Data/LICENSE",
+  "lock_status": "pinned_native_product_verified_rows",
+  "native_row_verification": {
+    "audit": "ncs/audit/property-native-lineage.json",
+    "dataset": "property/phosphatase.csv.gz",
+    "scope": "Exact reaction records and numeric targets; physically independent validation is not claimed."
+  },
+  "outstanding_fields": [
+    "original_observation_context"
+  ],
+  "published_release_origin": {
+    "archive_member": "Data/property/phosphatase.csv.gz",
+    "archive_sha256": "32a9036318da1a5ef27fc417027fc1c6ca561a9e12896ed636f21f17d956bdbe",
+    "bytes_identical_to_published_release": true,
+    "data_license_sha256": "5f96c10265969a0db847d99b13d055af517d6c3722352eea1bf042b907a25018",
+    "data_terms": "CC BY 4.0",
+    "doi": "10.5281/zenodo.22045145",
+    "license_evidence": "ncs/baselines/v1.2.1/Data/LICENSE",
+    "member_sha256": "aca656158cb5b96cfa3378234641796e5becdf6647d7af0ae9f91b9e53639917",
+    "version": "v1.2.1"
+  },
+  "qualification": "This pins the exact previously published curated SynRXN product and its explicit dataset-specific redistribution declaration. It does not recover original experimental document accessions or certify ultimate source lineage.",
+  "redistribution_partition": "main",
+  "release_checksum_recorded_in": "manifest.json",
+  "required_attribution": [
+    "10.1021/acs.jcim.1c00975",
+    "10.1073/pnas.1423570112"
+  ],
+  "retrieved_at": "2026-10-14",
+  "retrofit_note": "Retrofitted for a task family released before source locks were required. License, partition, and attribution are verified against the catalog and bibliography. The listed outstanding fields must be filled by a human upstream audit before this dataset is cited as reproducibly pinned. Release-side size, checksum, and row count are in manifest.json.",
+  "schema_version": "1.0",
+  "source_commit_or_version": "74094e26f42538ea7b7139e4db20abf80e5f0b38",
+  "source_doi": "10.5281/zenodo.22045145",
+  "source_file": "data/phosphatase.csv",
+  "source_sha256": "4570e3f4f313ffefb522dc78c69ddb007a6bf03723a085aa54ec9c60be3a4d12",
+  "source_url": "https://github.com/hesther/reactiondatabase",
+  "upstream_license": "CC BY 4.0",
+  "native_source_checks": [
+    {
+      "dataset": "property/phosphatase.csv.gz",
+      "native_file": "reactiondatabase/data/phosphatase.csv",
+      "native_sha256": "4570e3f4f313ffefb522dc78c69ddb007a6bf03723a085aa54ec9c60be3a4d12",
+      "rows_verified": 33354,
+      "max_numeric_serialization_difference": 0,
+      "row_join": "source order independently checked against every reaction and target"
+    }
+  ],
+  "native_audit": "ncs/audit/property-native-lineage.json",
+  "native_verified_on": "2026-10-15"
+}

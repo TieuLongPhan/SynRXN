@@ -1,0 +1,82 @@
+{
+  "counting_policy": "Stored rows retain their source-specific units. Shared tables appear under multiple tasks; do not add task or family row totals to count independent experiments. Explicit overlapping views are separate catalogue views.",
+  "family": {
+    "counting_units": [
+      "HTE experiment",
+      "HTE observation",
+      "source-table row"
+    ],
+    "data_counting_policy": "Deduplicated by namespace/source-table key within this family only; row units can differ, source views can overlap and rows are not unique reactions. Inspect each binding's counting_unit and physical configuration counts.",
+    "data_status": "local task references present; qualification varies",
+    "future_task_ids": [],
+    "gaps": "Robustness needs linked perturbations or a qualified transfer population; current response and feasibility labels do not by themselves provide that evidence. Generated negatives, expert judgments and measured failures remain separate.",
+    "id": "outcomes",
+    "molecular_accessibility_review": "feasibility_structure.md; optional adjacent endpoint, not admitted or counted in the 41-task registry",
+    "overlapping_view_count": 0,
+    "primary_source_rows": 14800167,
+    "primary_table_count": 11,
+    "release_eligible_table_count": 11,
+    "scope": "Yield, conversion and assay response; observed success/failure; proposal feasibility; sensitivity and transfer under declared perturbations.",
+    "task_groups": [
+      {
+        "id": "continuous_outcomes",
+        "task_ids": [
+          "yield_conversion"
+        ],
+        "title": "Measured response"
+      },
+      {
+        "evaluation_axes": [
+          "discrimination",
+          "probability calibration",
+          "selective risk versus coverage",
+          "source and chemistry transfer"
+        ],
+        "id": "feasibility",
+        "reference_policy": "Observed condition-specific success and expert proposal plausibility are separate endpoints. Generated negatives remain an optional, separately reported reference tier.",
+        "task_ids": [
+          "reaction_success",
+          "reaction_feasibility"
+        ],
+        "title": "Reaction feasibility"
+      }
+    ],
+    "task_ids": [
+      "yield_conversion",
+      "reaction_success",
+      "reaction_feasibility"
+    ],
+    "title": "Reaction outcomes, feasibility and robustness"
+  },
+  "schema": "synrxn.family-layout.v1",
+  "summary": {
+    "admitted_table_views": 11,
+    "data_links": 16,
+    "families": 1,
+    "held_bindings": 0,
+    "held_table_views": 0,
+    "overlapping_table_views": 0,
+    "primary_table_views": 11,
+    "stored_rows_across_unique_views": 14800167,
+    "task_table_bindings": 16,
+    "tasks": 3,
+    "unique_table_views": 11
+  },
+  "tasks": [
+    {
+      "id": "yield_conversion",
+      "metadata": "yield_conversion/task.json",
+      "title": "Yield, assay response and conversion"
+    },
+    {
+      "id": "reaction_success",
+      "metadata": "reaction_success/task.json",
+      "title": "Experimental reaction success"
+    },
+    {
+      "id": "reaction_feasibility",
+      "metadata": "reaction_feasibility/task.json",
+      "title": "Proposal feasibility"
+    }
+  ]
+}

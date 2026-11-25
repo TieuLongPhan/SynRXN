@@ -1,0 +1,61 @@
+{
+  "as_of": "2026-10-20",
+  "records": [
+    {
+      "paper_id": "r24-orderly",
+      "request": {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11094788/fullTextXML",
+        "resolved_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11094788/fullTextXML",
+        "status": 200,
+        "content_type": "application/xml",
+        "retrieved_on": "2026-10-20",
+        "bytes": 126712,
+        "sha256": "6acf9a5dd8209abedf8c6aab3d72b048897558d607e4dad043b100213c84ec89"
+      },
+      "file": "papers/r24-orderly.xml",
+      "title": "ORDerly: Data Sets\nand Benchmarks for Chemical Reaction\nData"
+    },
+    {
+      "paper_id": "r24-chemprop",
+      "request": {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10777403/fullTextXML",
+        "resolved_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10777403/fullTextXML",
+        "status": 200,
+        "content_type": "application/xml",
+        "retrieved_on": "2026-10-20",
+        "bytes": 143998,
+        "sha256": "223cc4b9034ab38f0208c313fdc75aa06520c8c365c1e7484a8582d89dbb64f7"
+      },
+      "file": "papers/r24-chemprop.xml",
+      "title": "Chemprop: A Machine Learning Package for Chemical\nProperty Prediction"
+    },
+    {
+      "paper_id": "r24-misato",
+      "request": {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11136668/fullTextXML",
+        "resolved_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11136668/fullTextXML",
+        "status": 200,
+        "content_type": "application/xml",
+        "retrieved_on": "2026-10-20",
+        "bytes": 145874,
+        "sha256": "416fc7b0c7154f45e9c19c875b34756490b42c7179d18ddf38db0b559de99237"
+      },
+      "file": "papers/r24-misato.xml",
+      "title": "MISATO: machine learning dataset of protein–ligand complexes for structure-based drug discovery"
+    },
+    {
+      "paper_id": "r26-bh-ood",
+      "request": {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13593570/fullTextXML",
+        "resolved_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13593570/fullTextXML",
+        "status": 200,
+        "content_type": "application/xml",
+        "retrieved_on": "2026-10-20",
+        "bytes": 94756,
+        "sha256": "d2333c69392965dfc054782b82e5af0c5d7b5f8bb9fbfb09fb58fad0add30ed6"
+      },
+      "file": "papers/r26-bh-ood.xml",
+      "title": "Robust out-of-distribution prediction of Buchwald–Hartwig reactions"
+    }
+  ]
+}

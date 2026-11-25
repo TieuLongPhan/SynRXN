@@ -6,11 +6,13 @@ import warnings
 
 
 class RepeatedGroupAwareSplitter:
-    """
-    RepeatedGroupAwareSplitter — group/label-aware repeated splitter.
+    """RepeatedGroupAwareSplitter — group/label-aware repeated splitter.
 
     Treats each unique value in `label_key` as an atomic unit (a group/cluster).
     Rows sharing the same label value will always be kept together.
+    Training, validation and test are nonempty. Cluster-level holdouts require
+    at least two groups per fold; separate-fold mode requires at least three
+    folds. Requested row ratios are approximate at whole-group granularity.
 
     :param n_splits: Number of folds (k). Must be >= 2.
     :type n_splits: int
@@ -31,12 +33,12 @@ class RepeatedGroupAwareSplitter:
     :param verbose: If True prints diagnostics after fit().
     :type verbose: bool
 
-    Example
-    -------
+    .. rubric:: Example
+
     .. code-block:: python
 
        import numpy as np
-       from repeated_group_aware_splitter import RepeatedGroupAwareSplitter
+       from synrxn.split.repeated_group_aware_kfold import RepeatedGroupAwareSplitter
 
        data = [
            {"wlfp": np.array([1,0,0]), "group": "A"},
@@ -51,7 +53,7 @@ class RepeatedGroupAwareSplitter:
            ratio=(8,1,1),
            label_key="group",
            random_state=0,
-           holdout_split_mode="cluster_level",
+           holdout_split_mode="separate_fold",
            raise_on_leak=False,
            verbose=True,
        )
@@ -75,6 +77,8 @@ class RepeatedGroupAwareSplitter:
     ):
         if n_splits < 2:
             raise ValueError("n_splits must be >= 2")
+        if int(n_repeats) < 1:
+            raise ValueError("n_repeats must be >= 1")
         if label_key is None:
             raise ValueError(
                 "label_key is required (input must contain a label column)"
@@ -83,12 +87,14 @@ class RepeatedGroupAwareSplitter:
             raise ValueError(
                 "holdout_split_mode must be 'cluster_level' or 'separate_fold'"
             )
+        if holdout_split_mode == "separate_fold" and n_splits < 3:
+            raise ValueError("separate_fold requires at least three folds for nonempty training, validation and test")
 
         self.n_splits = int(n_splits)
         self.n_repeats = int(n_repeats)
         self.ratio = tuple(int(x) for x in ratio)
-        if sum(self.ratio) <= 0:
-            raise ValueError("ratio must sum to a positive value")
+        if len(self.ratio) != 3 or any(x <= 0 for x in self.ratio):
+            raise ValueError("ratio must contain three positive entries for training, validation and test")
         self.label_key = label_key
         self.random_state = None if random_state is None else int(random_state)
         self.holdout_split_mode = holdout_split_mode
@@ -113,14 +119,22 @@ class RepeatedGroupAwareSplitter:
 
     # ---------------- public ----------------
     def fit(self, data: Iterable[Dict] | pd.DataFrame) -> "RepeatedGroupAwareSplitter":
-        """
-        Fit the splitter on `data`.
+        """Fit the splitter on `data`.
 
         :param data: pandas.DataFrame or iterable of dict-like records. Must contain `label_key`.
         :type data: Union[pd.DataFrame, Iterable[dict]]
-        :returns: self
+        :return: self
         """
         # normalize input to DataFrame
+        # A failed refit must not leave assignments from an earlier fit usable.
+        self._orig_index = None
+        self._orig_df = None
+        self._clusters = None
+        self._assignments_per_repeat = None
+        self._label_values = None
+        self._label_to_positions = None
+        self._check_results = None
+        self._all_splits_ok = None
         if isinstance(data, pd.DataFrame):
             df = data.copy()
         else:
@@ -128,6 +142,10 @@ class RepeatedGroupAwareSplitter:
 
         if self.label_key not in df.columns:
             raise KeyError(f"label_key '{self.label_key}' not found in input data")
+        if df[self.label_key].isna().any():
+            raise ValueError("Group labels must not be missing; rows cannot be silently dropped")
+        if not df.index.is_unique:
+            raise ValueError("Input index must be unique to identify rows in returned splits")
 
         # preserve original DataFrame (copy) for label lookups and to return original indices
         self._orig_df = df.copy()
@@ -156,11 +174,14 @@ class RepeatedGroupAwareSplitter:
         self._label_to_positions = label_to_positions
         self._clusters = clusters
 
-        if len(self._clusters) < self.n_splits:
-            warnings.warn(
-                f"Number of clusters ({len(self._clusters)}) < n_splits ({self.n_splits}). Some folds may be empty.",
-                UserWarning,
-            )
+        minimum_per_fold = 2 if self.holdout_split_mode == "cluster_level" else 1
+        required_clusters = self.n_splits * minimum_per_fold
+        if len(self._clusters) < required_clusters:
+            self._clusters = None
+            raise ValueError(
+                f"At least {required_clusters} independent groups are required for "
+                f"{self.n_splits} nonempty {self.holdout_split_mode} folds; "
+                "whole groups cannot be divided to fill validation/test partitions")
 
         # repeated deterministic assignments cluster_id -> fold_id
         self._assignments_per_repeat = []
@@ -229,12 +250,11 @@ class RepeatedGroupAwareSplitter:
     def get_split(
         self, repeat: int, holdout_fold: int
     ) -> Tuple[pd.Index, pd.Index, pd.Index]:
-        """
-        Return (train_idx, val_idx, test_idx) as pandas.Index into the original input.
+        """Return (train_idx, val_idx, test_idx) as pandas.Index into the original input.
 
         :param repeat: repeat index (0..n_repeats-1)
         :param holdout_fold: which fold is held out and split into val/test (0..n_splits-1)
-        :returns: (train_index, val_index, test_index)
+        :return: (train_index, val_index, test_index)
         """
         if (
             self._clusters is None
@@ -268,6 +288,13 @@ class RepeatedGroupAwareSplitter:
             val_pos, test_pos = self._separate_fold_val_test(
                 repeat, assignment, holdout_fold
             )
+            # Validation comes from another outer fold. Remove that entire fold
+            # from training as well as the held-out test fold.
+            validation_positions = set(val_pos)
+            train_pos = [position for position in train_pos if position not in validation_positions]
+
+        if not train_pos or not val_pos or not test_pos:
+            raise ValueError("The requested split cannot provide nonempty training, validation and test with whole groups")
 
         # map integer positions back to original index labels
         train_idx = self._orig_index.take(sorted(train_pos))
@@ -303,16 +330,16 @@ class RepeatedGroupAwareSplitter:
     def check_group_separation(
         self, raise_on_failure: bool = False
     ) -> Tuple[bool, List[Dict[str, Any]]]:
-        """
-        Check that groups (unique label_key values) are disjoint across train/val/test
-        for every (repeat, fold).
+        """Check group separation across train, validation and test for every fold.
 
-        :param raise_on_failure: If True raise AssertionError on first failing split.
-        :returns: (ok, results) where `ok` is True if all splits passed, and `results`
-                  is a list of dicts with keys:
-                    - 'repeat', 'fold', 'ok' (bool),
-                    - 'train_labels','val_labels','test_labels' (sets),
-                    - 'train&val','train&test','val&test' (intersection sets)
+        :param raise_on_failure: Raise AssertionError on the first leaking split.
+        :type raise_on_failure: bool
+        :return: A pair ``(ok, results)``. The Boolean is True when every split
+            passes. Each result dictionary records ``repeat``, ``fold``, ``ok``,
+            the three label sets (``train_labels``, ``val_labels``, ``test_labels``),
+            and their pairwise intersections (``train&val``, ``train&test``,
+            ``val&test``).
+        :rtype: tuple[bool, list[dict]]
         """
         if self._orig_df is None:
             raise RuntimeError("Call fit(...) before check_group_separation(...)")
@@ -364,11 +391,13 @@ class RepeatedGroupAwareSplitter:
         self, clusters: List[List[int]], rng: np.random.RandomState
     ) -> Dict[int, int]:
         """
-        Seed k folds with the k largest clusters (if available), then greedily assign remaining
-        clusters to the currently smallest fold.
+        Seed folds with the largest clusters, reserve enough whole groups for
+        nonempty validation/test, then balance remaining rows greedily.
         """
         k = self.n_splits
         fold_counts = [0] * k
+        fold_group_counts = [0] * k
+        minimum_per_fold = 2 if self.holdout_split_mode == "cluster_level" else 1
         assignment: Dict[int, int] = {}
 
         cluster_ids = list(range(len(clusters)))
@@ -381,14 +410,18 @@ class RepeatedGroupAwareSplitter:
         for fold_idx, cid in enumerate(seed_clusters):
             assignment[cid] = int(fold_idx)
             fold_counts[fold_idx] += len(clusters[cid])
+            fold_group_counts[fold_idx] += 1
 
         remaining = [cid for cid in cluster_ids if cid not in seed_clusters]
         for cid in remaining:
-            min_count = min(fold_counts)
-            candidate_folds = [f for f, c in enumerate(fold_counts) if c == min_count]
+            pending = [f for f in range(k) if fold_group_counts[f] < minimum_per_fold]
+            eligible = pending or list(range(k))
+            min_count = min(fold_counts[f] for f in eligible)
+            candidate_folds = [f for f in eligible if fold_counts[f] == min_count]
             chosen = int(rng.choice(candidate_folds))
             assignment[cid] = chosen
             fold_counts[chosen] += len(clusters[cid])
+            fold_group_counts[chosen] += 1
 
         return assignment
 
@@ -399,8 +432,8 @@ class RepeatedGroupAwareSplitter:
         holdout_cluster_ids = [
             cid for cid, f in assignment.items() if f == holdout_fold
         ]
-        if not holdout_cluster_ids:
-            return [], []
+        if len(holdout_cluster_ids) < 2:
+            raise ValueError("Each cluster-level holdout needs at least two independent groups")
         total_items = sum(len(self._clusters[cid]) for cid in holdout_cluster_ids)
         val_part, test_part = self.ratio[1], self.ratio[2]
         if (val_part + test_part) == 0:
@@ -429,10 +462,15 @@ class RepeatedGroupAwareSplitter:
             val_clusters: List[int] = []
             test_clusters: List[int] = []
             val_count = 0
-            for cid in sorted_cids:
-                if abs((val_count + len(self._clusters[cid])) - target_val) < abs(
-                    val_count - target_val
-                ):
+            for ordinal, cid in enumerate(sorted_cids):
+                if not val_clusters and ordinal == len(sorted_cids) - 1:
+                    take_validation = True
+                elif not test_clusters and ordinal == len(sorted_cids) - 1:
+                    take_validation = False
+                else:
+                    next_error = abs(val_count + len(self._clusters[cid]) - target_val)
+                    take_validation = next_error < abs(val_count - target_val)
+                if take_validation:
                     val_clusters.append(cid)
                     val_count += len(self._clusters[cid])
                 else:
@@ -452,7 +490,7 @@ class RepeatedGroupAwareSplitter:
                 pos_to_fold[pos] = f
         candidates = [f for f in range(self.n_splits) if f != holdout_fold]
         if not candidates:
-            return [], []
+            raise ValueError("A separate validation fold is required")
         fold_counts = {f: 0 for f in candidates}
         for pos, f in pos_to_fold.items():
             if f in fold_counts:

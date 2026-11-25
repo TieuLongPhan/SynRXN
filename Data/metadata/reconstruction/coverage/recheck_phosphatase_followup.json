@@ -1,0 +1,210 @@
+{
+  "schema": "synrxn.license-recheck.phosphatase-followup.v1",
+  "date": "2026-10-20",
+  "scope": "Supersedes the original-grant verification hold for a narrow noncommercial educational original-table reuse route. Original data, frozen catalog and prior audit report remain unchanged. This is a reviewed publication scope, not blanket CC or commercial permission.",
+  "tables": [
+    {
+      "key": "property/phosphatase",
+      "namespace": "canonical",
+      "rows": 33354,
+      "data_path": "Data/property/phosphatase.csv.gz",
+      "data_sha256": "aca656158cb5b96cfa3378234641796e5becdf6647d7af0ae9f91b9e53639917",
+      "declared_license_spdx": "CC-BY-4.0",
+      "release_eligible": true,
+      "status": "verified_noncommercial_educational_grant",
+      "release_license_expression": "CC-BY-4.0 AND LicenseRef-PNAS-NC-Educational",
+      "partition": "noncommercial_educational",
+      "commercial_use_allowed": false,
+      "verified_upstream_license_spdx": "LicenseRef-PNAS-NC-Educational",
+      "supersedes_recheck_report": {
+        "path": "kdd/coverage/recheck_property.json",
+        "sha256": "acadd44953809bc9a576ffb9bb228aa2e5f8ea48a0269c32d8588d30a4e71fe5"
+      },
+      "reason": "PNAS expressly permits original figures/tables under its exclusive License to Publish to be used without requesting permission for noncommercial educational purposes with the full journal reference. Its Standard PNAS License Terms explicitly cover volumes106\u2013118(2009\u20132021), including Huang et al.2015, volume112. The actual publisher License to Publish independently grants third-party noncommercial use of original author figures/tables and includes supporting-information rights on a nonexclusive basis. The curated CSV contains factual reaction/assay records, not article prose, figures, publisher layout or the complete paper. Every local reaction/target matches the exact pinned Heid author CSV; all33354 assay targets reconstruct from the original-named DatasetS2 spreadsheet mirror, as32918 direct numerical cells plus436 maximum-of-two-cell reconstructions. Admit this table only as a noncommercial educational benchmark under the explicit custom PNAS table-use conditions, retaining the SynRXN CC BY4 curation notice without claiming that either PNAS or Heid granted a new unrestricted CC BY4 license to the original observations.",
+      "evidence_ids": [
+        "synrxn_product_notice",
+        "reactiondatabase_readme",
+        "phosphatase_followup_standard_terms",
+        "phosphatase_followup_exclusive_ltp",
+        "phosphatase_followup_exclusive_ltp_text",
+        "phosphatase_followup_heid_figshare",
+        "phosphatase_followup_s1_author_mirror",
+        "phosphatase_followup_s2_author_mirror",
+        "phosphatase_followup_goldman_parser",
+        "phosphatase_followup_goldman_readme",
+        "phosphatase_followup_heid_native_csv",
+        "phosphatase_followup_original_article",
+        "phosphatase_followup_native_comparison"
+      ],
+      "grant_source_evidence_ids": [
+        "phosphatase_followup_standard_terms",
+        "phosphatase_followup_exclusive_ltp",
+        "phosphatase_followup_exclusive_ltp_text"
+      ],
+      "remaining_qualification": [
+        "Source grant is LicenseRef-PNAS-NC-Educational, not CC BY4 or CC BY-NC4. Noncommercial educational original-table reuse is the admitted publication purpose; commercial use requires separate permission. Retain the full original journal reference and both original and curator citations.",
+        "Heid reactiondatabase publicly distributes the exact33354-row file and explicitly points individual licenses to the respective manuscripts. Its public presence is provenance; the new admission rests on the specific PNAS table-use permission, not popularity of reuse or a repository software license.",
+        "Raw PNAS-hosted spreadsheet downloads were blocked. Original-named S1/S2 workbooks were captured from the independently pinned Goldman author repository mirror, whose README identifies them as source-paper supplements. Source workbook provenance is recorded; no newly verified publisher-hosted checksum is claimed.",
+        "The two maximum-of-two-cell rules exactly reconstruct all436 affected targets; they are identified as reconstructed curation transformations because Heid preprocessing code was not recovered. No original observation or local data byte was changed.",
+        "Despite the historical Conversion column name, the original screening values are corrected assay absorbance/activity responses, not calibrated percentage conversion. Original figure/text reproduction, article redistribution and scientific interpretation beyond the source assay context are outside this admission.",
+        "PNAS asks for author notification and no implied endorsement. No author was contacted and nothing was externally published during this audit. The eventual noncommercial educational release should retain the publisher notice and author-notification request."
+      ],
+      "source_lock_path": "Data/sources/property/phosphatase.json",
+      "source_lock_sha256": "52b4055038f880be54f6e8f80248edd6d14aee81445e987dd711aabad922787b",
+      "native_join_proof": {
+        "path": "kdd/coverage/rights_recheck/property_followup_phosphatase/phosphatase_native_table_comparison.json",
+        "sha256": "37a34b710f9fcf79b16180644d32b590f4e8680893a7df68b00024fed686ee24",
+        "reproduce": "python kdd/coverage/rights_recheck/property_followup_phosphatase/reproduce_phosphatase.py",
+        "reproduction_script_sha256": "ec21d4de8f608579c34fe2318f3e33e5f4a465a66959311a3620ed68f372663e"
+      },
+      "intended_use_constraints": {
+        "release_purpose": "noncommercial educational reaction-informatics benchmark",
+        "payload_scope": "curated factual CSV records and benchmark metadata only; no complete article, publisher layout, copied figures or prose",
+        "full_original_reference": "Huang H et al. Panoramic view of a superfamily of phosphatases through substrate profiling. Proceedings of the National Academy of Sciences of the United States of America112(16),E1974\u2013E1983(2015). https://doi.org/10.1073/pnas.1423570112",
+        "curator_reference": "Heid E and Green WH. Machine Learning of Reaction Properties via Learned Representations of the Condensed Graph of Reaction. Journal of Chemical Information and Modeling62(9),2101\u20132110(2022). https://doi.org/10.1021/acs.jcim.1c00975",
+        "custom_terms_url": "https://www.pnas.org/author-center/publication-charges/standard-pnas-license-terms",
+        "commercial_use_allowed": false,
+        "author_notification_performed": false
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "phosphatase_followup_standard_terms",
+      "url": "https://www.pnas.org/author-center/publication-charges/standard-pnas-license-terms",
+      "path": "kdd/coverage/rights_recheck/property_followup_phosphatase/standard_terms_rendered_excerpt.txt",
+      "bytes": 1381,
+      "sha256": "6374844b65fe80e5234030e6070ef01822577af9e895e398798005dc5f03b981",
+      "status": "captured",
+      "capture_method": "web.run rendered PDF text excerpt; whitespace and line breaks normalized; not a downloaded original PDF",
+      "web_source_reference": "turn137view0",
+      "source_pages": 2,
+      "rendered_source_total_lines": 52,
+      "excerpt_source_lines": [
+        0,
+        15
+      ],
+      "captured_at": "2026-10-20T21:10:01.093958+00:00",
+      "http_status": null,
+      "native_pdf_download_status": "direct requests returned HTTP 403; retained separately as failed attempt, not used as grant evidence"
+    },
+    {
+      "id": "phosphatase_followup_exclusive_ltp",
+      "url": "https://www.pnas.org/pb-assets/authors/authorlicense-1633461587717.pdf",
+      "resolved_url": "https://www.pnas.org/pb-assets/authors/authorlicense-1633461587717.pdf",
+      "path": "kdd/coverage/rights_recheck/property_followup_phosphatase/pnas_exclusive_ltp.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf;charset=UTF-8",
+      "bytes": 63595,
+      "sha256": "6356b453c53efd540657e152c8f5e99ba0f57b6a1fe239e5d6d5117f8404ab93",
+      "captured_at": "2026-10-20T21:06:41.845946+00:00",
+      "status": "captured"
+    },
+    {
+      "id": "phosphatase_followup_exclusive_ltp_text",
+      "url": "https://www.pnas.org/pb-assets/authors/authorlicense-1633461587717.pdf",
+      "path": "kdd/coverage/rights_recheck/property_followup_phosphatase/pnas_exclusive_ltp_extracted.txt",
+      "sha256": "f90ff83e8a9735cdbeb402578011c274c320cdbec56fa3c5a792405fa3268610",
+      "bytes": 5443,
+      "status": "captured",
+      "capture_method": "pdftotext -layout extraction from independently SHA256-pinned original publisher PDF",
+      "derived_from_evidence_id": "phosphatase_followup_exclusive_ltp"
+    },
+    {
+      "id": "phosphatase_followup_heid_figshare",
+      "url": "https://api.figshare.com/v2/articles/16930168",
+      "resolved_url": "https://api.figshare.com/v2/articles/16930168",
+      "path": "kdd/coverage/rights_recheck/property_followup_phosphatase/heid_figshare.txt",
+      "http_status": 200,
+      "content_type": "application/json",
+      "bytes": 7365,
+      "sha256": "7d58bbba6e286eba787f34afdd734a34d4f15d2ec26083c2493430e9c5fd8f5a",
+      "captured_at": "2026-10-20T21:06:42.088293+00:00",
+      "status": "captured"
+    },
+    {
+      "id": "phosphatase_followup_s1_author_mirror",
+      "url": "https://raw.githubusercontent.com/samgoldman97/enzyme-datasets/627556e265e2a52d39753e684c05b550d53a9be4/data/raw/phosphatase/pnas.1423570112.sd01.xlsx",
+      "resolved_url": "https://raw.githubusercontent.com/samgoldman97/enzyme-datasets/627556e265e2a52d39753e684c05b550d53a9be4/data/raw/phosphatase/pnas.1423570112.sd01.xlsx",
+      "path": "kdd/coverage/rights_recheck/property_followup_phosphatase/s1_author_mirror.xlsx",
+      "http_status": 200,
+      "bytes": 2088794,
+      "sha256": "359e78d0661e41e73fac0fdbcf21e393255667478180620c2217f0d209f090cc",
+      "content_type": "application/octet-stream",
+      "captured_at": "2026-10-20T21:07:40.324593+00:00",
+      "status": "captured"
+    },
+    {
+      "id": "phosphatase_followup_s2_author_mirror",
+      "url": "https://raw.githubusercontent.com/samgoldman97/enzyme-datasets/627556e265e2a52d39753e684c05b550d53a9be4/data/raw/phosphatase/pnas.1423570112.sd02.xlsx",
+      "resolved_url": "https://raw.githubusercontent.com/samgoldman97/enzyme-datasets/627556e265e2a52d39753e684c05b550d53a9be4/data/raw/phosphatase/pnas.1423570112.sd02.xlsx",
+      "path": "kdd/coverage/rights_recheck/property_followup_phosphatase/s2_author_mirror.xlsx",
+      "http_status": 200,
+      "bytes": 3068847,
+      "sha256": "9ea3391616d35476c20da631ce19f2e17bed3bb164917baeb399e204e5047de1",
+      "content_type": "application/octet-stream",
+      "captured_at": "2026-10-20T21:07:40.403995+00:00",
+      "status": "captured"
+    },
+    {
+      "id": "phosphatase_followup_goldman_parser",
+      "url": "https://raw.githubusercontent.com/samgoldman97/enzyme-datasets/627556e265e2a52d39753e684c05b550d53a9be4/bin/reformat_phosphatase.py",
+      "resolved_url": "https://raw.githubusercontent.com/samgoldman97/enzyme-datasets/627556e265e2a52d39753e684c05b550d53a9be4/bin/reformat_phosphatase.py",
+      "path": "kdd/coverage/rights_recheck/property_followup_phosphatase/goldman_parser.txt",
+      "http_status": 200,
+      "bytes": 10268,
+      "sha256": "ec7a43a4b4a2de459df53423d64d9653a2b0b022ff8ff6c6774d300dfe033ae1",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_at": "2026-10-20T21:07:39.961157+00:00",
+      "status": "captured"
+    },
+    {
+      "id": "phosphatase_followup_goldman_readme",
+      "url": "https://raw.githubusercontent.com/samgoldman97/enzyme-datasets/627556e265e2a52d39753e684c05b550d53a9be4/README.md",
+      "resolved_url": "https://raw.githubusercontent.com/samgoldman97/enzyme-datasets/627556e265e2a52d39753e684c05b550d53a9be4/README.md",
+      "path": "kdd/coverage/rights_recheck/property_followup_phosphatase/goldman_readme.txt",
+      "http_status": 200,
+      "bytes": 10552,
+      "sha256": "e5fe08d5010bde301815781d4484024289d19d4614a121d53e82207a40ebe500",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_at": "2026-10-20T21:07:39.957950+00:00",
+      "status": "captured"
+    },
+    {
+      "id": "phosphatase_followup_heid_native_csv",
+      "url": "https://raw.githubusercontent.com/hesther/reactiondatabase/74094e26f42538ea7b7139e4db20abf80e5f0b38/data/phosphatase.csv",
+      "resolved_url": "https://raw.githubusercontent.com/hesther/reactiondatabase/74094e26f42538ea7b7139e4db20abf80e5f0b38/data/phosphatase.csv",
+      "path": "kdd/coverage/rights_recheck/property_followup_phosphatase/heid_native_csv.txt",
+      "http_status": 200,
+      "bytes": 9697649,
+      "sha256": "4570e3f4f313ffefb522dc78c69ddb007a6bf03723a085aa54ec9c60be3a4d12",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_at": "2026-10-20T21:07:40.669998+00:00",
+      "status": "captured"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4413258/",
+      "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4413258/",
+      "status": "captured",
+      "path": "kdd/coverage/rights_recheck/property/phosphatase_pmc.txt",
+      "sha256": "c384efcdd4fd79388ef8819ca4d0f1e2eb0e345d77d726cbdd46fde0af1dcf55",
+      "bytes": 267331,
+      "id": "phosphatase_followup_original_article"
+    },
+    {
+      "id": "phosphatase_followup_native_comparison",
+      "url": "https://raw.githubusercontent.com/samgoldman97/enzyme-datasets/627556e265e2a52d39753e684c05b550d53a9be4/data/raw/phosphatase/pnas.1423570112.sd02.xlsx",
+      "path": "kdd/coverage/rights_recheck/property_followup_phosphatase/phosphatase_native_table_comparison.json",
+      "sha256": "37a34b710f9fcf79b16180644d32b590f4e8680893a7df68b00024fed686ee24",
+      "bytes": 55524,
+      "status": "captured",
+      "capture_method": "reconstructed offline comparison of pinned Heid table, immutable local CSV and original-named mirrored supplement; see reproduce_phosphatase.py"
+    }
+  ],
+  "capture_limitations": [
+    "Official standard-terms PDF was read with web.run; the stored excerpt transparently records rendered-text capture, not original PDF bytes or an invented successful HTTP response. Direct failed403 captures are preserved adjacent but not listed as grant evidence.",
+    "The independently captured official License-to-Publish PDF is stored as original PDF bytes and can be extracted with pdftotext.",
+    "Heid ACS Figshare16930168 is CC BY-NC4 but contains one supplementary PDF and not the reaction CSV; that license is recorded as corroborating article availability and is not represented as a direct grant for every externally linked reactiondatabase record."
+  ],
+  "decision_limit": "This is a source-evidence publication review for the specified factual table and intended use. It is not legal certification, an assertion that all factual observations are copyrighted, or authority to relicense original source rights."
+}

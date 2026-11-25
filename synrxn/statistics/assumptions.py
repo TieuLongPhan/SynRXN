@@ -28,8 +28,7 @@ def run_assumptions(
     method_list: Optional[Union[List[str], str]] = None,
     save_root: str = "statistics",
 ) -> Dict[str, str]:
-    """
-    Run assumption checks: Levene's test for variance homogeneity and visual normality.
+    """Run assumption checks: Levene's test for variance homogeneity and visual normality.
 
     :param report_df: Wide or long scoring DataFrame. Must include 'scoring' and 'cv_cycle'.
     :type report_df: pandas.DataFrame
@@ -39,13 +38,13 @@ def run_assumptions(
     :type method_list: Optional[Union[list,str]]
     :param save_root: Root directory to save outputs (default: "statistics").
     :type save_root: str
-    :returns: Mapping metric -> output directory path.
+    :return: Mapping metric -> output directory path.
     :rtype: Dict[str,str]
 
     .. code-block:: python
 
         >>> import pandas as pd
-        >>> from statistics_pipeline.assumptions import run_assumptions
+        >>> from synrxn.statistics.assumptions import run_assumptions
         >>> df = pd.DataFrame({
         ...     "scoring":["acc","acc","acc","acc"],
         ...     "cv_cycle":[1,1,2,2],

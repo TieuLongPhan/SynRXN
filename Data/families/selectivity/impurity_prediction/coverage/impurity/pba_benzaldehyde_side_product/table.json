@@ -1,0 +1,116 @@
+{
+  "counting_unit": "experimental reaction condition",
+  "data_link": "data.jsonl.gz",
+  "family_id": "selectivity",
+  "format": "jsonl.gz",
+  "key": "impurity/pba_benzaldehyde_side_product",
+  "namespace": "coverage",
+  "registry_binding": {
+    "catalog_path": "Data/coverage_expansion/impurity/catalog.json",
+    "commercial_use_allowed": true,
+    "counting_unit": "experimental reaction condition",
+    "coverage_branch": "impurity",
+    "key": "impurity/pba_benzaldehyde_side_product",
+    "license": "MIT",
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/impurity/pba_benzaldehyde_side_product.jsonl.gz",
+    "qualification": "756 native experimental conditions; benzaldehyde is explicitly identified by the source as the main undesired by-product of styrene epoxidation. The task predicts its measured-spectrum-derived yield for a known candidate. Native fitted zero values are preserved as quantitative estimates and are not relabelled absence/not-detected. Desired-product yield and selectivity columns are excluded from model inputs. No generated candidates or interpolated viewer tables are used. One chemical transformation with a catalyst-composition panel; grouping must prevent repeated compositions crossing splits.",
+    "reference_evidence": "Primary paper Figure6c–d and the 'Five-dimensional compositional space' section explicitly distinguish desired styrene oxide from benzaldehyde20b, the main by-product. Methods specify72°C/6h and UV–Vis spectral unmixing. Native summary README defines units and source CSV contains756 indexed catalyst-composition assays.",
+    "release_eligible": true,
+    "release_license_expression": "MIT",
+    "rights_status": "admitted_source_or_table_specific_grant",
+    "role": "primary",
+    "rows": 756,
+    "sha256": "b73a356906112988e8d1782f298d52ae73e45dd63054224ee84d0be30815ae35",
+    "source_id": "ROBOWSKI_IMPURITY2025",
+    "source_sha256": "4e5a6660698a5aaf5d9aff1e39f3cf8386005bf9cdf17715970cd01a7fd3abf4",
+    "source_url": "https://doi.org/10.1038/s41586-025-09490-1",
+    "task_fields": {
+      "impurity_prediction": {
+        "group_fields": [
+          "reaction_system",
+          "catalyst_composition_group"
+        ],
+        "inputs": [
+          "reactant_smiles",
+          "intended_product_smiles",
+          "candidate_side_product_smiles",
+          "catalyst_metal_fractions",
+          "temperature_C",
+          "duration_hours",
+          "fixed_context"
+        ],
+        "metrics": [
+          "MAE benzaldehyde yield percentage points",
+          "RMSE benzaldehyde yield percentage points"
+        ],
+        "scope": "One source-identified benzaldehyde side product; not an open-world impurity structure-discovery benchmark.",
+        "targets": [
+          "side_product_yield_percent"
+        ],
+        "variant": "closed-candidate experimental side-product profile"
+      }
+    },
+    "task_ids": [
+      "impurity_prediction"
+    ]
+  },
+  "release_admitted": true,
+  "rights": {
+    "commercial_use_allowed": true,
+    "counting_unit": "experimental reaction condition",
+    "expected_bytes": null,
+    "expected_rows": 756,
+    "expected_sha256": "b73a356906112988e8d1782f298d52ae73e45dd63054224ee84d0be30815ae35",
+    "format": "jsonl.gz",
+    "key": "impurity/pba_benzaldehyde_side_product",
+    "license_expression": "MIT",
+    "license_obligations": [
+      "Retain source attribution, applicable license notices and descriptions of changes."
+    ],
+    "namespace": "coverage",
+    "partition": "main",
+    "path": "Data/coverage_expansion/impurity/pba_benzaldehyde_side_product.jsonl.gz",
+    "qualification": "756 native experimental conditions; benzaldehyde is explicitly identified by the source as the main undesired by-product of styrene epoxidation. The task predicts its measured-spectrum-derived yield for a known candidate. Native fitted zero values are preserved as quantitative estimates and are not relabelled absence/not-detected. Desired-product yield and selectivity columns are excluded from model inputs. No generated candidates or interpolated viewer tables are used. One chemical transformation with a catalyst-composition panel; grouping must prevent repeated compositions crossing splits.",
+    "reasons": [],
+    "reference_evidence": "Primary paper Figure6c–d and the 'Five-dimensional compositional space' section explicitly distinguish desired styrene oxide from benzaldehyde20b, the main by-product. Methods specify72°C/6h and UV–Vis spectral unmixing. Native summary README defines units and source CSV contains756 indexed catalyst-composition assays.",
+    "release_eligible": true,
+    "source_id": "ROBOWSKI_IMPURITY2025",
+    "source_url": "https://doi.org/10.1038/s41586-025-09490-1",
+    "task_ids": [
+      "impurity_prediction"
+    ]
+  },
+  "role": "primary",
+  "rows": 756,
+  "schema": "synrxn.family-layout.v1",
+  "source": {
+    "path": "Data/coverage_expansion/impurity/pba_benzaldehyde_side_product.jsonl.gz",
+    "sha256": "b73a356906112988e8d1782f298d52ae73e45dd63054224ee84d0be30815ae35",
+    "source_catalogue": "Data/coverage_expansion/impurity/catalog.json",
+    "source_id": "ROBOWSKI_IMPURITY2025",
+    "source_urls": [
+      "https://doi.org/10.1038/s41586-025-09490-1"
+    ]
+  },
+  "source_table_metadata": {
+    "counting_unit": "experimental reaction condition",
+    "key": "impurity/pba_benzaldehyde_side_product",
+    "namespace": "coverage",
+    "path": "Data/coverage_expansion/impurity/pba_benzaldehyde_side_product.jsonl.gz",
+    "qualification": "756 native experimental conditions; benzaldehyde is explicitly identified by the source as the main undesired by-product of styrene epoxidation. The task predicts its measured-spectrum-derived yield for a known candidate. Native fitted zero values are preserved as quantitative estimates and are not relabelled absence/not-detected. Desired-product yield and selectivity columns are excluded from model inputs. No generated candidates or interpolated viewer tables are used. One chemical transformation with a catalyst-composition panel; grouping must prevent repeated compositions crossing splits.",
+    "role": "primary",
+    "rows": 756,
+    "sha256": "b73a356906112988e8d1782f298d52ae73e45dd63054224ee84d0be30815ae35",
+    "source_catalogue": "Data/coverage_expansion/impurity/catalog.json",
+    "source_id": "ROBOWSKI_IMPURITY2025",
+    "source_urls": [
+      "https://doi.org/10.1038/s41586-025-09490-1"
+    ],
+    "title": "PBA benzaldehyde side products"
+  },
+  "stored_path": "Data/families/selectivity/impurity_prediction/coverage/impurity/pba_benzaldehyde_side_product/data.jsonl.gz",
+  "task_id": "impurity_prediction",
+  "title": "PBA benzaldehyde side products"
+}

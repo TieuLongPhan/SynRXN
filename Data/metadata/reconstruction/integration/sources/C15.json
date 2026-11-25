@@ -1,0 +1,44 @@
+{
+  "id": "C15",
+  "name": "CatPred-DB",
+  "priority": "2 Targeted expansion",
+  "survey_license_note": "MIT on the Zenodo dataset record. Preserve BRENDA/SABIO-RK provenance and verify applicable upstream terms.",
+  "paper_urls": [
+    "https://www.nature.com/articles/s41467-025-57215-9"
+  ],
+  "data_urls": [
+    "https://zenodo.org/records/14775076"
+  ],
+  "project_urls": [
+    "https://github.com/maranasgroup/CatPred-DB"
+  ],
+  "license_urls": [
+    "https://zenodo.org/api/records/14775076"
+  ],
+  "license_verified": true,
+  "files": [
+    {
+      "name": "catpred-db.tar.gz",
+      "bytes": 1144517378,
+      "checksum": "md5:38149eb47e149a1cee67ec80834365e1",
+      "url": "https://zenodo.org/api/records/14775076/files/catpred-db.tar.gz/content"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://zenodo.org/api/records/14775076",
+      "status": 200,
+      "sha256": "3011a986c30da82ab775ca19a90b732f53fbf0d01bd6284eab0e16c37733e3f5",
+      "bytes": 4428,
+      "retrieved_at": "2026-10-20T15:34:55.926569+00:00"
+    }
+  ],
+  "record_id": "14775076",
+  "doi": "10.5281/zenodo.14775076",
+  "title": "CatPred: A comprehensive framework for deep learning in vitro enzyme kinetic parameters",
+  "license": {
+    "id": "mit-license"
+  },
+  "publication_date": "2025-01-30",
+  "description": "<p>Contains the processed datasets of CatPred-DB</p>"
+}

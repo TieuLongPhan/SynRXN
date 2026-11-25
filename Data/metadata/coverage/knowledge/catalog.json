@@ -1,0 +1,590 @@
+{
+  "schema": "synrxn.coverage-branch.v1",
+  "adapter": "kdd/coverage/adapters/knowledge.py",
+  "adapter_sha256": "85dbc4d94a087bc2a3f685f03e000e534c175ee3e66ea959ca78dce0bfa964c2",
+  "source_lock": "kdd/coverage/adapters/knowledge_sources.json",
+  "source_lock_sha256": "f5de6ba3cc9d8772d39667c4dd569e220ecf4f807374c4c4886053767a0a8ec9",
+  "sources": [
+    {
+      "id": "EnzChemRED2024",
+      "title": "EnzChemRED expert-annotated enzyme chemistry corpus",
+      "url": "https://doi.org/10.5281/zenodo.11067998",
+      "paper_url": "https://www.nature.com/articles/s41597-024-03835-7",
+      "license": "CC-BY-4.0",
+      "assets": [
+        {
+          "path": "Data/raw/synrxn2/C24/EnzChemRED.tar.gz",
+          "url": "https://zenodo.org/api/records/11067998/files/EnzChemRED.tar.gz/content",
+          "bytes": 1651363,
+          "sha256": "046f6c00663d26cf172cb828b3fe68cab92a128de947545c01aff53060c06251",
+          "upstream_checksum": "md5:d05097c7cc566d1a4d043862a608e38a",
+          "expected_bytes": 1651363,
+          "verification": "verified"
+        }
+      ],
+      "redistribution_allowed": true,
+      "rights": {
+        "grant_url": "https://zenodo.org/records/11067998",
+        "grant_snapshot": "kdd/integration/sources/C24.json",
+        "grant_snapshot_sha256": "e423b4841f396664402a4e6418c49d7c8b6ecbe96c45819c0877b334d90f7428",
+        "evidence": "Official data record declares cc-by-4.0 for the annotated dataset; retain PMID attribution and native text provenance."
+      },
+      "changes": "Parse BioC XML; preserve native spans and relations; generated deletion controls and query/gallery links are explicitly derived.",
+      "notice": {
+        "path": "Data/coverage_expansion/knowledge/EnzChemRED2024-NOTICE.txt",
+        "sha256": "4bfa6f55c4ed250dbd0033f0827679b2a376db2dc7221dc56b7e30e7a3b16684"
+      }
+    },
+    {
+      "id": "CatDRX_ORD2025",
+      "title": "Reaction-conditioned inverse component references from CatDRX's ORD derivative",
+      "url": "https://github.com/ohuelab/CatDRX/tree/f8952497761b0bf44cde4b48f8df3a8d40098f91",
+      "paper_url": "https://doi.org/10.1038/s42004-025-01732-7",
+      "license": "CC-BY-SA-4.0",
+      "assets": [
+        {
+          "path": "Data/raw/coverage/root/CatDRX/dataset/ord.csv",
+          "url": "https://raw.githubusercontent.com/ohuelab/CatDRX/f8952497761b0bf44cde4b48f8df3a8d40098f91/dataset/ord.csv",
+          "bytes": 29851700,
+          "sha256": "26517fd0168fec04224249c6fb6acba5b4f99260a80b917b42a66dfa30e66994",
+          "upstream_checksum": null,
+          "expected_bytes": 29851700,
+          "verification": "verified"
+        }
+      ],
+      "redistribution_allowed": true,
+      "rights": {
+        "grant_url": "https://github.com/open-reaction-database/ord-data/blob/704870642e5c93a141e6666436bc14a9b5f880ed/LICENSE",
+        "grant_snapshot": "Data/raw/synrxn2/notes/C03/LICENSE",
+        "grant_snapshot_sha256": "5e436ff8ffbb77d8607220e9bce20c8915d860010feeb6c1ebef5a85688e9b39",
+        "evidence": "Retain upstream ORD data CC BY-SA4.0, distinct from CatDRX MIT software license. Only the ORD-derived CSV is admitted; other third-party task CSVs are excluded pending their dataset grants."
+      },
+      "changes": "Generate target-isolated inverse component views; withhold catalyst structure, mass, identifiers and target-derived fields; retain source ORD IDs and measured responses.",
+      "notice": {
+        "path": "Data/coverage_expansion/knowledge/CatDRX_ORD2025-NOTICE.txt",
+        "sha256": "91a03d91251bc3e1d22371a83b00a714f8bf164f0a9370da6f5feffd891fbc05"
+      }
+    },
+    {
+      "id": "MinotScope2026",
+      "title": "Native adaptive borylation substrate-scope campaigns",
+      "url": "https://doi.org/10.5281/zenodo.20773622",
+      "paper_url": "https://www.nature.com/articles/s43588-026-01063-0",
+      "license": "CC-BY-4.0",
+      "redistribution_allowed": true,
+      "rights": {
+        "grant_url": "https://zenodo.org/records/20773622",
+        "grant_snapshot": "kdd/integration/sources/C02.json",
+        "grant_snapshot_sha256": "e34f223eaf579bff2c39982c580635d0770837f8054e5c5a42509354dbc76930",
+        "evidence": "Official data-record CC BY4.0 grant applies to the native measured campaign CSVs."
+      },
+      "assets": [
+        {
+          "path": "Data/raw/synrxn2/C02/Minot_AL1_Data.csv",
+          "url": "https://zenodo.org/api/records/20773622/files/Minot_AL1_Data.csv/content",
+          "bytes": 1140015,
+          "sha256": "56b5e6a470bef65f5d2d392fc458df0d2fc9c33360f6cc34673986074ba8f023",
+          "upstream_checksum": null,
+          "expected_bytes": 1140015,
+          "verification": "verified"
+        },
+        {
+          "path": "Data/raw/synrxn2/C02/Minot_AL2_Data.csv",
+          "url": "https://zenodo.org/api/records/20773622/files/Minot_AL2_Data.csv/content",
+          "bytes": 370564,
+          "sha256": "99a74890359de43f2b1ae8800b4204b8531a5e7f05a2e2708ccc5a390e59736f",
+          "upstream_checksum": null,
+          "expected_bytes": 370564,
+          "verification": "verified"
+        },
+        {
+          "path": "Data/raw/synrxn2/C02/Minot_AL3_Data.csv",
+          "url": "https://zenodo.org/api/records/20773622/files/Minot_AL3_Data.csv/content",
+          "bytes": 382624,
+          "sha256": "cc12b4dc38927c0840d6cb5a11d5f2bdd2f504163c0afcb7d32c212d74e90195",
+          "upstream_checksum": null,
+          "expected_bytes": 382624,
+          "verification": "verified"
+        },
+        {
+          "path": "Data/raw/synrxn2/C02/Minot_preAL_Data.csv",
+          "url": "https://zenodo.org/api/records/20773622/files/Minot_preAL_Data.csv/content",
+          "bytes": 824834,
+          "sha256": "ee4c86f379ff01aedc973712cb9d47f66c996641611da7392d6c523bec84ebd4",
+          "upstream_checksum": null,
+          "expected_bytes": 824834,
+          "verification": "verified"
+        }
+      ],
+      "changes": "Reuse measured source campaigns with explicit dates/rounds as retrospective substrate-scope discovery; no new experiments or chemical novelty labels.",
+      "notice": {
+        "path": "Data/coverage_expansion/knowledge/MinotScope2026-NOTICE.txt",
+        "sha256": "074013710326131b332978d175fdc2a88a77110ce67faf878b7ca13a24a9ea32"
+      }
+    }
+  ],
+  "tables": [
+    {
+      "id": "EnzChemRED2024/documents",
+      "path": "Data/coverage_expansion/knowledge/documents.parquet",
+      "format": "parquet",
+      "source_id": "EnzChemRED2024",
+      "source_url": "https://doi.org/10.5281/zenodo.11067998",
+      "source_sha256": "046f6c00663d26cf172cb828b3fe68cab92a128de947545c01aff53060c06251",
+      "license": "CC-BY-4.0",
+      "rights_status": "source_declared",
+      "rows": 1210,
+      "bytes": 1343931,
+      "sha256": "1aeb1adbe4b50434acf2dcc0756894f4b22be0a9757d5a59b0d9692243a1b9d4",
+      "columns": [
+        "sample_id",
+        "source_id",
+        "source_record_id",
+        "parent_group",
+        "split",
+        "native_split",
+        "inputs_json",
+        "targets_json",
+        "context_json",
+        "provenance_json"
+      ],
+      "counting_unit": "expert-annotated source document",
+      "parent_groups": 1210,
+      "split_counts": {
+        "train": 967,
+        "validation": 134,
+        "test": 109
+      },
+      "task_ids": [
+        "literature_extraction"
+      ],
+      "task_fields": {
+        "literature_extraction": {
+          "inputs": [
+            "inputs_json"
+          ],
+          "targets": [
+            "targets_json"
+          ],
+          "input_keys": [
+            "passages"
+          ],
+          "target_keys": [
+            "entities",
+            "relations"
+          ],
+          "group_fields": [
+            "parent_group"
+          ],
+          "metrics": [
+            "entity_F1",
+            "relation_F1",
+            "document_coverage"
+          ],
+          "split_policy": "SHA-256 parent-group 80/10/10 seed 2027; native split retained separately"
+        }
+      },
+      "role": "primary",
+      "reference_evidence": "expert_curated_text_annotations",
+      "qualification": "Native expert BioC entities/conversions from title/abstract text. Not full-paper multimodal extraction; offsets retain native passage coordinates.",
+      "source_assets": [
+        {
+          "path": "Data/raw/synrxn2/C24/EnzChemRED.tar.gz",
+          "url": "https://zenodo.org/api/records/11067998/files/EnzChemRED.tar.gz/content",
+          "bytes": 1651363,
+          "sha256": "046f6c00663d26cf172cb828b3fe68cab92a128de947545c01aff53060c06251",
+          "upstream_checksum": "md5:d05097c7cc566d1a4d043862a608e38a",
+          "expected_bytes": 1651363,
+          "verification": "verified"
+        }
+      ],
+      "storage_layout": "json_objects",
+      "release_eligible": true
+    },
+    {
+      "id": "EnzChemRED2024/curation",
+      "path": "Data/coverage_expansion/knowledge/curation.parquet",
+      "format": "parquet",
+      "source_id": "EnzChemRED2024",
+      "source_url": "https://doi.org/10.5281/zenodo.11067998",
+      "source_sha256": "046f6c00663d26cf172cb828b3fe68cab92a128de947545c01aff53060c06251",
+      "license": "CC-BY-4.0",
+      "rights_status": "source_declared",
+      "rows": 2267,
+      "bytes": 2124518,
+      "sha256": "55373a6d80a8e2c76f2472100936ce6209c463df76571c34e905be67a3fe5506",
+      "columns": [
+        "sample_id",
+        "source_id",
+        "source_record_id",
+        "parent_group",
+        "split",
+        "native_split",
+        "inputs_json",
+        "targets_json",
+        "context_json",
+        "provenance_json"
+      ],
+      "counting_unit": "controlled record-curation case",
+      "parent_groups": 1210,
+      "split_counts": {
+        "train": 1801,
+        "validation": 255,
+        "test": 211
+      },
+      "task_ids": [
+        "reaction_record_curation"
+      ],
+      "task_fields": {
+        "reaction_record_curation": {
+          "inputs": [
+            "inputs_json"
+          ],
+          "targets": [
+            "targets_json"
+          ],
+          "input_keys": [
+            "passages",
+            "candidate_record"
+          ],
+          "target_keys": [
+            "needs_correction",
+            "corrected_record"
+          ],
+          "group_fields": [
+            "parent_group"
+          ],
+          "metrics": [
+            "correction_F1",
+            "false_edit_rate",
+            "coverage"
+          ],
+          "split_policy": "SHA-256 parent-group 80/10/10 seed 2027; native split retained separately"
+        }
+      },
+      "role": "primary",
+      "reference_evidence": "expert_reference_with_generated_corruption",
+      "qualification": "Clean controls and deterministic single-relation deletions reuse independent expert annotations. This is a controlled corruption variant, not a dataset of naturally observed database errors. Keep both cases of each document together.",
+      "source_assets": [
+        {
+          "path": "Data/raw/synrxn2/C24/EnzChemRED.tar.gz",
+          "url": "https://zenodo.org/api/records/11067998/files/EnzChemRED.tar.gz/content",
+          "bytes": 1651363,
+          "sha256": "046f6c00663d26cf172cb828b3fe68cab92a128de947545c01aff53060c06251",
+          "upstream_checksum": "md5:d05097c7cc566d1a4d043862a608e38a",
+          "expected_bytes": 1651363,
+          "verification": "verified"
+        }
+      ],
+      "storage_layout": "json_objects",
+      "release_eligible": true
+    },
+    {
+      "id": "EnzChemRED2024/retrieval",
+      "path": "Data/coverage_expansion/knowledge/retrieval.parquet",
+      "format": "parquet",
+      "source_id": "EnzChemRED2024",
+      "source_url": "https://doi.org/10.5281/zenodo.11067998",
+      "source_sha256": "046f6c00663d26cf172cb828b3fe68cab92a128de947545c01aff53060c06251",
+      "license": "CC-BY-4.0",
+      "rights_status": "source_declared",
+      "rows": 2419,
+      "bytes": 222082,
+      "sha256": "92a65a8155800d2ab88eef695530051a81a2b82fa55f1bea790b8db0304fa6a5",
+      "columns": [
+        "sample_id",
+        "source_id",
+        "source_record_id",
+        "parent_group",
+        "split",
+        "native_split",
+        "inputs_json",
+        "targets_json",
+        "context_json",
+        "provenance_json"
+      ],
+      "counting_unit": "annotated chemical-conversion precedent query",
+      "parent_groups": 2419,
+      "split_counts": {
+        "validation": 251,
+        "train": 1907,
+        "test": 261
+      },
+      "task_ids": [
+        "reaction_retrieval"
+      ],
+      "task_fields": {
+        "reaction_retrieval": {
+          "inputs": [
+            "inputs_json"
+          ],
+          "targets": [
+            "targets_json"
+          ],
+          "input_keys": [
+            "chemical_identifiers",
+            "chemical_names"
+          ],
+          "target_keys": [
+            "relevant_document_ids"
+          ],
+          "group_fields": [
+            "parent_group"
+          ],
+          "metrics": [
+            "recall_at_k",
+            "nDCG",
+            "query_coverage"
+          ],
+          "split_policy": "SHA-256 parent-group 80/10/10 seed 2027; native split retained separately"
+        }
+      },
+      "role": "primary",
+      "reference_evidence": "expert_annotated_conversion_document_links",
+      "qualification": "Query-to-literature-precedent retrieval with expert linked conversion references, not graded mechanistic similarity. Gallery exposes only document IDs/text; gold entities and relation labels are withheld. Unannotated documents are unknown relevance, not confirmed negatives. Document text can be shared across query splits; no unseen-paper claim.",
+      "source_assets": [
+        {
+          "path": "Data/raw/synrxn2/C24/EnzChemRED.tar.gz",
+          "url": "https://zenodo.org/api/records/11067998/files/EnzChemRED.tar.gz/content",
+          "bytes": 1651363,
+          "sha256": "046f6c00663d26cf172cb828b3fe68cab92a128de947545c01aff53060c06251",
+          "upstream_checksum": "md5:d05097c7cc566d1a4d043862a608e38a",
+          "expected_bytes": 1651363,
+          "verification": "verified"
+        }
+      ],
+      "storage_layout": "json_objects",
+      "release_eligible": true
+    },
+    {
+      "id": "CatDRX_ORD2025/inverse_components",
+      "path": "Data/coverage_expansion/knowledge/inverse_components.parquet",
+      "format": "parquet",
+      "source_id": "CatDRX_ORD2025",
+      "source_url": "https://github.com/ohuelab/CatDRX/tree/f8952497761b0bf44cde4b48f8df3a8d40098f91",
+      "source_sha256": "26517fd0168fec04224249c6fb6acba5b4f99260a80b917b42a66dfa30e66994",
+      "license": "CC-BY-SA-4.0",
+      "rights_status": "source_declared",
+      "rows": 49876,
+      "bytes": 5599673,
+      "sha256": "430f23c5527312d8cdf84a036f5d60d49f20010db9f96be658d12dbc2bd887a7",
+      "columns": [
+        "sample_id",
+        "source_id",
+        "source_record_id",
+        "parent_group",
+        "split",
+        "native_split",
+        "inputs_json",
+        "targets_json",
+        "context_json",
+        "provenance_json"
+      ],
+      "counting_unit": "recorded component-performance reference",
+      "parent_groups": 2177,
+      "split_counts": {
+        "train": 41516,
+        "test": 4752,
+        "validation": 3608
+      },
+      "task_ids": [
+        "reaction_component_design"
+      ],
+      "task_fields": {
+        "reaction_component_design": {
+          "inputs": [
+            "inputs_json"
+          ],
+          "targets": [
+            "targets_json"
+          ],
+          "input_keys": [
+            "reactants",
+            "products",
+            "reagents",
+            "desired_response_pct_interval",
+            "time_h"
+          ],
+          "target_keys": [
+            "catalyst_smiles",
+            "observed_response_pct"
+          ],
+          "group_fields": [
+            "parent_group"
+          ],
+          "metrics": [
+            "component_recovery_top_k",
+            "structure_validity",
+            "training_relative_novelty",
+            "observed_oracle_response"
+          ],
+          "split_policy": "SHA-256 parent-group 80/10/10 seed 2027; native split retained separately"
+        }
+      },
+      "role": "primary",
+      "reference_evidence": "source_reported_measurement_and_recorded_component_structure",
+      "qualification": "Retrospective reaction-conditioned component generation/recovery with catalyst-identity holdout. Input does not list candidates; evaluation has a finite measured lookup oracle. No prospective de novo performance is inferred for off-dataset structures. Yield measurements, native candidate identities and upstream ORD reuse remain explicit.",
+      "source_assets": [
+        {
+          "path": "Data/raw/coverage/root/CatDRX/dataset/ord.csv",
+          "url": "https://raw.githubusercontent.com/ohuelab/CatDRX/f8952497761b0bf44cde4b48f8df3a8d40098f91/dataset/ord.csv",
+          "bytes": 29851700,
+          "sha256": "26517fd0168fec04224249c6fb6acba5b4f99260a80b917b42a66dfa30e66994",
+          "upstream_checksum": null,
+          "expected_bytes": 29851700,
+          "verification": "verified"
+        }
+      ],
+      "storage_layout": "json_objects",
+      "excluded_rows": {
+        "invalid_structure_or_response": 2571,
+        "unqualified_endpoint_or_context": 1
+      },
+      "release_eligible": true
+    },
+    {
+      "id": "MinotScope2026/scope_campaigns",
+      "path": "Data/coverage_expansion/knowledge/scope_campaigns.parquet",
+      "format": "parquet",
+      "source_id": "MinotScope2026",
+      "source_url": "https://doi.org/10.5281/zenodo.20773622",
+      "source_sha256": "56b5e6a470bef65f5d2d392fc458df0d2fc9c33360f6cc34673986074ba8f023",
+      "license": "CC-BY-4.0",
+      "rights_status": "source_declared",
+      "rows": 6865,
+      "bytes": 381078,
+      "sha256": "a7b517e03bc29b8bc789d86d3d7ca72318014938ba9e3637d7de2b7b9e6486ac",
+      "columns": [
+        "sample_id",
+        "source_id",
+        "source_record_id",
+        "parent_group",
+        "split",
+        "native_split",
+        "inputs_json",
+        "targets_json",
+        "context_json",
+        "provenance_json"
+      ],
+      "counting_unit": "attempted substrate-scope experiment",
+      "parent_groups": 568,
+      "split_counts": {
+        "train": 6028,
+        "validation": 600,
+        "test": 237
+      },
+      "task_ids": [
+        "new_reactivity_discovery"
+      ],
+      "task_fields": {
+        "new_reactivity_discovery": {
+          "inputs": [
+            "inputs_json"
+          ],
+          "targets": [
+            "targets_json"
+          ],
+          "input_keys": [
+            "additive_1_eq",
+            "additive_1_smiles",
+            "atmosphere",
+            "catalyst_1_eq",
+            "catalyst_1_smiles",
+            "concentration_mol_l",
+            "ligand_1_eq",
+            "ligand_1_smiles",
+            "ligand_2_eq",
+            "ligand_2_smiles",
+            "reagent_1_eq",
+            "reagent_1_smiles",
+            "reagent_2_eq",
+            "reagent_2_smiles",
+            "scale_mol",
+            "solvent_1_fraction",
+            "solvent_1_smiles",
+            "solvent_2_fraction",
+            "solvent_2_smiles",
+            "startingmat_1_eq",
+            "startingmat_1_smiles",
+            "temperature_deg_c",
+            "time_h"
+          ],
+          "target_keys": [
+            "native_hit_label",
+            "conversion_fraction"
+          ],
+          "group_fields": [
+            "parent_group"
+          ],
+          "metrics": [
+            "source_hit_recovery_vs_budget",
+            "substrate_scope_coverage",
+            "failure_accounting"
+          ],
+          "split_policy": "SHA-256 parent-group 80/10/10 seed 2027; native split retained separately"
+        }
+      },
+      "role": "primary",
+      "reference_evidence": "reported_experimental_hit_labels_and_conversion",
+      "qualification": "Bounded retrospective substrate-scope discovery variant from native adaptive rounds, preserving failed attempts and dates. Source success labels and conversion are references; no claim of new transformations, exhaustive product characterization or prospective discovery. These same observations already support other Minot tasks and are not additional independent experiments.",
+      "source_assets": [
+        {
+          "path": "Data/raw/synrxn2/C02/Minot_AL1_Data.csv",
+          "url": "https://zenodo.org/api/records/20773622/files/Minot_AL1_Data.csv/content",
+          "bytes": 1140015,
+          "sha256": "56b5e6a470bef65f5d2d392fc458df0d2fc9c33360f6cc34673986074ba8f023",
+          "upstream_checksum": null,
+          "expected_bytes": 1140015,
+          "verification": "verified"
+        },
+        {
+          "path": "Data/raw/synrxn2/C02/Minot_AL2_Data.csv",
+          "url": "https://zenodo.org/api/records/20773622/files/Minot_AL2_Data.csv/content",
+          "bytes": 370564,
+          "sha256": "99a74890359de43f2b1ae8800b4204b8531a5e7f05a2e2708ccc5a390e59736f",
+          "upstream_checksum": null,
+          "expected_bytes": 370564,
+          "verification": "verified"
+        },
+        {
+          "path": "Data/raw/synrxn2/C02/Minot_AL3_Data.csv",
+          "url": "https://zenodo.org/api/records/20773622/files/Minot_AL3_Data.csv/content",
+          "bytes": 382624,
+          "sha256": "cc12b4dc38927c0840d6cb5a11d5f2bdd2f504163c0afcb7d32c212d74e90195",
+          "upstream_checksum": null,
+          "expected_bytes": 382624,
+          "verification": "verified"
+        },
+        {
+          "path": "Data/raw/synrxn2/C02/Minot_preAL_Data.csv",
+          "url": "https://zenodo.org/api/records/20773622/files/Minot_preAL_Data.csv/content",
+          "bytes": 824834,
+          "sha256": "ee4c86f379ff01aedc973712cb9d47f66c996641611da7392d6c523bec84ebd4",
+          "upstream_checksum": null,
+          "expected_bytes": 824834,
+          "verification": "verified"
+        }
+      ],
+      "storage_layout": "json_objects",
+      "release_eligible": true
+    }
+  ],
+  "excluded_sources": [
+    {
+      "source": "SEISMiQ simulated_impurities.zip",
+      "reason": "2,541 prior generated candidates for five queries are not experimentally observed impurities; retained as reference-only acquisition, not a primary impurity benchmark."
+    },
+    {
+      "source": "SEISMiQ aggregated spectral test sets",
+      "reason": "Underlying aggregated spectral source terms differ; not admitted based solely on wrapper deposit license."
+    },
+    {
+      "source": "ElectroDiscovery2022 ACS supplement",
+      "reason": "Dataset record CC-BY-NC4.0 is outside the user's unrestricted redistribution release policy."
+    },
+    {
+      "source": "CatDRX non-ORD task CSVs",
+      "reason": "MIT software license alone is insufficient to clear all third-party dataset grants; only ORD-derived data retain their verified upstream ShareAlike license."
+    }
+  ]
+}
